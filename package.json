@@ -1,0 +1,11 @@
+{
+  "name": "simapas-graphql",
+  "version": "1.0.0",
+  "description": "sistema comercial con graphql",
+  "main": "build/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "BLACKDEATH",
+  "license": "ISC"
+}
