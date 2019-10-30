@@ -1,16 +1,36 @@
 type Query{
-    "Obtenemos la lista de todos los usuarios"
+    "Obtenemos la lista de todos los departamentos"
     departamentos: [Departamento!]
+    "Obtener la lista de todos los usuarios"
+    usuarios: [Usuario!]
 }
 
 type Mutation{
     "Registro de los departamentos"
     registroDepartamento(departamento: DepartamentoInput!): Departamento!
+    "Registro de usuarios"
+    registroUsuario(usuario: UsuarioInput!): Usuario!
 }
 type Departamento{
     _id: String!
     nombre: String!
 }
 input DepartamentoInput{
+    _id: String
     nombre: String!
+}
+input UsuarioInput
+{
+    nombre: String!
+    usuario: String!
+    contrasena: String!
+    departamento: DepartamentoInput!
+}
+type Usuario
+{
+    _id: String!
+    nombre: String!
+    usuario: String!
+    contrasena: String!
+    departamento: Departamento!
 }
