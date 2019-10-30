@@ -5,9 +5,10 @@ type Query{
 
 type Mutation{
     "Registro de los departamentos"
-    registroDepartamento(departamento: DepartamentoInput): Departamento!
+    registroDepartamento(departamento: DepartamentoInput!): Departamento!
 }
 type Departamento{
+    _id: String!
     nombre: String!
 }
 input DepartamentoInput{

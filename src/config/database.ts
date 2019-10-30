@@ -6,7 +6,7 @@ class Database
     async init()
     {
         const MONGODB = String(process.env.DATABASE);
-        const client = await MongoClient.connect(MONGODB, {useNewUrlParser: true});
+        const client = await MongoClient.connect(MONGODB, {useUnifiedTopology: true, useNewUrlParser: true});
         const db = await client.db();
         if (client.isConnected())
         {
