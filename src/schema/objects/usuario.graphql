@@ -1,0 +1,37 @@
+type Usuario
+{
+    _id:ID!
+    nombre: String!
+    usuario: String!
+    contrasena: String!
+    departamentoID: ID!
+}
+input UsuarioInput
+{
+    _id: ID
+    nombre: String!
+    usuario: String!
+    contrasena: String!
+    departamentoID: ID!
+    role: ROLE
+    img: String
+
+}
+enum ROLE
+{
+    SUPERADMIN,
+    ADMIN,
+    USUARIO
+}
+type ResultadoUsuario
+{
+    estatus: Boolean!
+    mensaje: String!
+    usuario: Usuario
+}
+type ResultadoToken
+{
+    estatus: Boolean!
+    mensaje: String!
+    token: String
+}

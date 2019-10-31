@@ -4,7 +4,7 @@ import cors from 'cors';
 import {ApolloServer} from "apollo-server-express";
 import {createServer} from 'http';
 import environments from "./config/environments";
-import schema from './schema';
+import schema from './schema/schema';
 import Database from "./config/database";
 
 if (process.env.NODE_ENV !== 'production')

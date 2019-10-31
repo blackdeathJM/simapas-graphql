@@ -6,6 +6,13 @@ const query: IResolvers =
     {
         Query:
             {
+                // ==================================DEPARTAMENTOS==============================================
+                async departamentos(_: void, __: any, {db}): Promise<any>
+                {
+                    return await db.collection('departamentos').find().toArray();
+                },
+                // ==================================FIN DEPARTAMENTOS==========================================
+                // =================================USUARIOS====================================================
                 async usuarios(_: void, __: any, {db}): Promise<any>
                 {
                     return await db.collection('usuarios').find().toArray();
@@ -55,6 +62,7 @@ const query: IResolvers =
                         usuario: info.usuario.loginUsuario
                     };
                 }
+                // ====================================FIN USUARIOS=============================================
             }
     };
 export default query;
