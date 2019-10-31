@@ -18,29 +18,29 @@ const query: IResolvers =
                         return {
                             estatus: false,
                             mensaje: 'Login incorrectos el usuario no existe',
-                            usuario: null
-                        }
+                            token: null
+                        };
                     }
                     if (!bcryptjs.compareSync(contrasena, loginUsuario.contrasena))
                     {
                         return {
                             estatus: false,
                             mensaje: 'Login incorrecto, la contraseña es incorrecta',
-                            usuario: null
-                        }
+                            token: null
+                        };
                     }
                     delete loginUsuario.contrasena;
+                    console.log(loginUsuario);
                     return {
                         estatus: true,
                         mensaje: 'Login correcto',
-                        token: new JWT().sign({usuario})
-                    }
+                        token: new JWT().sign({loginUsuario})
+                    };
                 },
                 perfil(_: void, __: any, {token})
                 {
                     let info: any = new JWT().verify(token);
-                    console.log(info);
-                    console.log(token);
+                    console.log(info.usuario.loginUsuario);
                     if (info === 'La autenticacion del token es invalida, por favor inicia sesion')
                     {
                         return {
@@ -52,8 +52,8 @@ const query: IResolvers =
                     return {
                         estatus: true,
                         mensaje: 'El token es correcto',
-                        usuario: info.usuario
-                    }
+                        usuario: info.usuario.loginUsuario
+                    };
                 }
             }
     };

@@ -7,7 +7,7 @@ class JWT
 
     sign(data: any): string
     {
-        return jwt.sign({usuario: data.usuario}, this.secretKey, {expiresIn: 24 * 60 * 60});
+        return jwt.sign({usuario: data}, this.secretKey, {expiresIn: 24 * 60 * 60});
     }
 
     verify(token: string): string
