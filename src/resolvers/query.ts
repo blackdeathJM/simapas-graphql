@@ -12,11 +12,13 @@ const query: IResolvers =
                     return await db.collection('departamentos').find().toArray();
                 },
                 // ==================================FIN DEPARTAMENTOS==========================================
+
                 // =================================USUARIOS====================================================
                 async usuarios(_: void, __: any, {db}): Promise<any>
                 {
                     return await db.collection('usuarios').find().toArray();
                 },
+
                 async login(_: void, {usuario, contrasena}, {db}): Promise<any>
                 {
                     const loginUsuario = await db.collection('usuarios').findOne({usuario});

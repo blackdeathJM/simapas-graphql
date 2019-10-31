@@ -1,10 +1,12 @@
 type Usuario
 {
-    _id:ID!
+    _id: ID!
     nombre: String!
     usuario: String!
     contrasena: String!
     departamentoID: ID!
+    role: ROLE
+    img: String
 }
 input UsuarioInput
 {
