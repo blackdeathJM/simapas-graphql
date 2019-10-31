@@ -23,7 +23,8 @@ async function init()
 
     const context: any = async ({req, connection}: any) =>
     {
-        return {db};
+        const token = req ? req.headers.authorization : connection.authorization;
+        return {db, token};
     };
     const server = new ApolloServer({
         schema,
