@@ -4,6 +4,8 @@ type Usuario
     nombre: String!
     usuario: String!
     contrasena: String!
+    role: ROLE!
+    img: String
     departamentoID: ID!
 }
 input UsuarioInput
@@ -12,9 +14,9 @@ input UsuarioInput
     nombre: String!
     usuario: String!
     contrasena: String!
-    departamentoID: ID!
-    role: ROLE
+    role: ROLE!
     img: String
+    departamentoID: ID!
 
 }
 enum ROLE

@@ -43,7 +43,4 @@ async function init()
     );
 }
 
-init().then(resultado =>
-{
-    return resultado;
-});
+init().then();
