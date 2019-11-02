@@ -12,7 +12,7 @@ type Query{
 type Mutation
 {
     "Registro de los departamentos"
-    registroDepartamento(departamento: DepartamentoInput!): Departamento!
+    registroDepartamento(departamento: DepartamentoInput!): ResultadoDepartamento!
     "Registro de usuarios"
     registroUsuario(usuario: UsuarioInput!): ResultadoUsuario!
 }

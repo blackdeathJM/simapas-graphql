@@ -7,8 +7,6 @@ type Usuario
     role: ROLE!
     img: String
     departamentoID: ID!
-    role: ROLE
-    img: String
 }
 input UsuarioInput
 {

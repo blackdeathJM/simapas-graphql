@@ -7,8 +7,21 @@ const mutation: IResolvers =
             {
                 async registroDepartamento(_: void, {departamento}, {db}): Promise<any>
                 {
-                    await db.collection('departamentos').insertOne(departamento);
-                    return departamento;
+                    return await db.collection('departamentos').insertOne(departamento).then(() =>
+                    {
+                        return {
+                            estatus: true,
+                            mensaje: `El departamento ${departamento.nombre} se registro de manera correcta`,
+                            departamento
+                        }
+                    }).catch((err: any) =>
+                    {
+                        return {
+                            estatus: false,
+                            mensaje: `Error al intentar registrar el departamento: ${err}`,
+                            departamento: null
+                        }
+                    });
                 },
 
                 async registroUsuario(_: void, {usuario}, {db}): Promise<any>
@@ -42,5 +55,4 @@ const mutation: IResolvers =
 
             }
     };
-
 export default mutation;

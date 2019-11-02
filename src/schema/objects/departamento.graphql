@@ -8,3 +8,9 @@ input DepartamentoInput
     _id: ID
     nombre: String!
 }
+type ResultadoDepartamento
+{
+    estatus: Boolean!
+    mensaje: String!
+    departamento: Departamento
+}

@@ -39,7 +39,6 @@ const query: IResolvers =
                         };
                     }
                     delete loginUsuario.contrasena;
-                    console.log(loginUsuario);
                     return {
                         estatus: true,
                         mensaje: 'Login correcto',
@@ -49,7 +48,6 @@ const query: IResolvers =
                 perfil(_: void, __: any, {token})
                 {
                     let info: any = new JWT().verify(token);
-                    console.log(info.usuario.loginUsuario);
                     if (info === 'La autenticacion del token es invalida, por favor inicia sesion')
                     {
                         return {
