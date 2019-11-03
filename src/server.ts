@@ -6,6 +6,7 @@ import {createServer} from 'http';
 import environments from "./config/environments";
 import schema from './schema/schema';
 import Database from "./config/database";
+import expressPlayground from 'graphql-playground-middleware-express';
 
 if (process.env.NODE_ENV !== 'production')
 {
@@ -33,6 +34,9 @@ async function init()
         introspection: true
     });
     server.applyMiddleware({app});
+    app.use('/', expressPlayground({
+        endpoint: '/graphql'
+    }));
 
     const PORT = process.env.PORT || 5300;
     const httpServer = createServer(app);

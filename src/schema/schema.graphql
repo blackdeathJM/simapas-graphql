@@ -8,7 +8,6 @@ type Query{
     "Obtener perfil de usuario con informacion del token"
     perfil: ResultadoUsuario!
 }
-
 type Mutation
 {
     "Registro de los departamentos"

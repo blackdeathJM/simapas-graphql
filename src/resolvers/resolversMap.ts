@@ -1,16 +1,12 @@
 import {IResolvers} from "graphql-tools";
-import Subscriptiondepartamento from "./subscriptions/departamento.resolver.subscription";
-import mutationDepartamento from "./mutations/departamento.resolver.mutation";
-import mutationUsuario from "./mutations/usuario.resolver.mutation";
-import queryDepartamento from "./queries/departamento.resolver.query";
-import queryUsuario from "./queries/usuario.resolver.query";
+import query from "./query";
+import mutation from "./mutation";
+import subscription from "./subscription";
 
 const resolvers: IResolvers =
     {
-            ...queryUsuario,
-            ...queryDepartamento,
-            ...mutationUsuario,
-            ...mutationDepartamento,
-            ...Subscriptiondepartamento
+        ...query,
+        ...mutation,
+        ...subscription
     };
 export default resolvers;

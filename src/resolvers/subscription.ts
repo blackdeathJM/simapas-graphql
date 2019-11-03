@@ -1,6 +1,6 @@
 import {IResolvers} from "graphql-tools";
 
-const Subscriptiondepartamento: IResolvers =
+const subscription: IResolvers =
     {
         Subscription:
             {
@@ -13,5 +13,4 @@ const Subscriptiondepartamento: IResolvers =
                     }
             }
     };
-
-export default Subscriptiondepartamento;
+export default subscription;
