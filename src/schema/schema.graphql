@@ -16,3 +16,7 @@ type Mutation
     "Registro de usuarios"
     registroUsuario(usuario: UsuarioInput!): ResultadoUsuario!
 }
+type Subscription
+{
+    cambioDepartamento: [Departamento!]
+}

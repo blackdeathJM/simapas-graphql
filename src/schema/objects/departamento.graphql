@@ -5,7 +5,6 @@ type Departamento
 }
 input DepartamentoInput
 {
-    _id: ID
     nombre: String!
 }
 type ResultadoDepartamento

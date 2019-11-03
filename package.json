@@ -31,6 +31,7 @@
 	"mongodb" : "^3.3.3",
 	"mongoose" : "^5.7.7",
 	"ncp" : "^2.0.0",
+	"subscriptions-transport-ws" : "^0.9.16",
 	"typescript" : "^3.6.4"
   },
   "devDependencies" : {
