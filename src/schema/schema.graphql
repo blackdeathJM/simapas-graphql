@@ -3,15 +3,17 @@ type Query
     "Obtenemos la lista de todos los departamentos"
     departamentos: [Departamento]!
     "Obterner departamento por ID"
-    departamentoID(id: ID!): DepartamentoRes
+    departamentoID(_id: ID!): DepartamentoRes
     "Obtener la lista de todos los usuarios"
     usuarios: [Usuario!]
     "Inicio de sesion"
-    login(usuario: ID!,  contrasena: String!): ResultadoToken!
+    login(usuario: ID!,  contrasena: String!): UsuarioToken!
     "Obtener perfil de usuario con informacion del token"
-    perfil: ResultadoUsuario!
+    perfil: UsuarioRes!
+    "Buscar usuario por su nombre de usuario"
+    buscarUsuario(usuario: String): UsuarioRes
     "Gestion de la foto de perfil del usuario"
-    fotoPerfil(nombreImg: String): ResultadoUsuario!
+    fotoPerfil(nombreImg: String): UsuarioRes!
 }
 type Mutation
 {
@@ -20,9 +22,9 @@ type Mutation
     "Actualizar el nombre del departamento"
     actualizarDepartamento(_id: ID!, nombreDeptoActualizar: DepartamentoInput!): DepartamentoRes!
     "Registro de usuarios"
-    registroUsuario(usuario: UsuarioInput!): ResultadoUsuario!
+    registroUsuario(usuario: UsuarioInput!): UsuarioRes!
     "Actualizacion de un usuario"
-    actualizarUsuario(_id: ID!, usuario: UsuarioInput!): ResultadoUsuario!
+    actualizarUsuario(_id: ID!, usuario: UsuarioInput!): UsuarioRes!
 }
 type Subscription
 {

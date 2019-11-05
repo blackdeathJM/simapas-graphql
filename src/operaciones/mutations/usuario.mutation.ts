@@ -34,7 +34,7 @@ export async function regUsuario(usuario: any, db: any)
     )
 }
 
-/*export async function actualizarPerfil(usuario: any, db: any, tipo: string, archivo: any)
+/*export async function actualizarPerfil(usuario: string, db: any, tipo: string, archivo: any)
 {
     if (!archivo)
     {
@@ -42,5 +42,5 @@ export async function regUsuario(usuario: any, db: any)
     }
     // obtener el nombre del archivo
     let archivoNombre = archivo.img;
-    let nombreCortado = archivo.img.split('.');
+    let separarExtension = archivo.img.split('.');
 }*/

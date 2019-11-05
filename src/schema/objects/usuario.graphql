@@ -24,13 +24,13 @@ enum ROLE
     ADMIN,
     USUARIO
 }
-type ResultadoUsuario
+type UsuarioRes
 {
     estatus: Boolean!
     mensaje: String!
     usuario: Usuario
 }
-type ResultadoToken
+type UsuarioToken
 {
     estatus: Boolean!
     mensaje: String!

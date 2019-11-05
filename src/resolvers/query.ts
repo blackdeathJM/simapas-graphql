@@ -10,10 +10,10 @@ const query: IResolvers =
                 {
                     return await obtenerDeptos(db)
                 },
-                async departamentoID(_: void, _id, {db}): Promise<any>
+                async departamentoID(_: void, {nombre}, {db}): Promise<any>
                 {
-                    console.log('dentro de la funcion', _id);
-                    return await obtenerDeptoID(_id, db);
+                    console.log('dentro de la funcion', nombre);
+                    return await obtenerDeptoID(nombre, db);
                 },
                 async usuarios(_: void, __: any, {db})
                 {

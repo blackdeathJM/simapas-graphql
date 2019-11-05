@@ -24,12 +24,10 @@ export async function registroDepto(depto: any, pubsub: any, db: any)
     )
 }
 
-export async function actualizarDepto(_id: string, nombreDeptoActualizar: any, db: any)
+export async function actualizarDepto(_id: any, nombreDeptoActualizar: any, db: any)
 {
-    console.log('ID desde la consola', _id);
-    console.log('nombre del departamento desde la consola', nombreDeptoActualizar);
-    return await db.collection('departamentos').updateOne(
-        {_id},
+    let departamentoActualizado = await db.collection('departamentos').updateOne(
+        {_id: _id},
         {$set: {nombreDeptoActualizar}}
     ).then(
         async () =>
@@ -37,7 +35,7 @@ export async function actualizarDepto(_id: string, nombreDeptoActualizar: any, d
             return {
                 estatus: true,
                 mensaje: 'El departamento se actualizo de manera correcta',
-                departamento: nombreDeptoActualizar
+                departamento: departamentoActualizado
             }
         }
     ).catch(
