@@ -15,7 +15,7 @@ const query: IResolvers =
                 {
                     return await obtenerDeptos(db)
                 },
-                async departamentoID(_: void, _id: any, {db}): Promise<any>
+                async departamentoID(_: void, {_id}: any, {db}): Promise<any>
                 {
                     return await buscarDeptoID(_id, db);
                 },
