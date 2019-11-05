@@ -1,6 +1,11 @@
 import {IResolvers} from "graphql-tools";
-import {obtenerDeptoID, obtenerDeptos} from "../operaciones/querys/departamento.query";
-import {loginUsuario, obtenerTodosLosUsuarios, perfilUsuario,} from "../operaciones/querys/usuarios.query";
+import {buscarDeptoID, obtenerDeptos} from "../operaciones/querys/departamento.query";
+import {
+    loginUsuario,
+    obtenerTodosLosUsuarios,
+    obtenerUsuarioPorSuNombreDeUsuario,
+    perfilUsuario,
+} from "../operaciones/querys/usuarios.query";
 
 const query: IResolvers =
     {
@@ -10,14 +15,17 @@ const query: IResolvers =
                 {
                     return await obtenerDeptos(db)
                 },
-                async departamentoID(_: void, {nombre}, {db}): Promise<any>
+                async departamentoID(_: void, _id: any, {db}): Promise<any>
                 {
-                    console.log('dentro de la funcion', nombre);
-                    return await obtenerDeptoID(nombre, db);
+                    return await buscarDeptoID(_id, db);
                 },
                 async usuarios(_: void, __: any, {db})
                 {
                     return await obtenerTodosLosUsuarios(db);
+                },
+                async buscarUsuario(_: any, usuario: string, db: any)
+                {
+                    return await obtenerUsuarioPorSuNombreDeUsuario(usuario, db);
                 },
                 async login(_: void, {usuario, contrasena}, {db}): Promise<any>
                 {

@@ -50,3 +50,15 @@ export async function perfilUsuario(token: string)
         usuario: info.usuario.loginUsuario
     };
 }
+
+export async function obtenerUsuarioPorSuNombreDeUsuario(usuario: string, db: any)
+{
+    // const datosUsuario = await db.collection('usuarios').findOne({usuario: usuario});
+    const datosUsuario = await db.collection('usuarios').findOne({usuario});
+    console.log('??????????', datosUsuario);
+    return {
+        estatus: true,
+        mensaje: 'Usuario buscado por su ID',
+        usuario: datosUsuario
+    }
+}
