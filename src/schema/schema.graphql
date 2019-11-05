@@ -20,7 +20,7 @@ type Mutation
     "Registro de los departamentos"
     registroDepartamento(departamento: DepartamentoInput!): DepartamentoRes!
     "Actualizar el nombre del departamento"
-    actualizarDepartamento(_id: ID!, nombreDeptoActualizar: DepartamentoInput!): DepartamentoRes!
+    actualizarDepartamento(nombreDeptoActualizar: DepartamentoInput!): DepartamentoRes!
     "Registro de usuarios"
     registroUsuario(usuario: UsuarioInput!): UsuarioRes!
     "Actualizacion de un usuario"
