@@ -10,6 +10,7 @@ type Usuario
 }
 input UsuarioInput
 {
+    _id: String
     nombre: String!
     usuario: String!
     contrasena: String!

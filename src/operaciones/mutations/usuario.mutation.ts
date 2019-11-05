@@ -12,19 +12,35 @@ export async function regUsuario(usuario: any, db: any)
         }
     }
     usuario.contrasena = bcryptjs.hashSync(usuario.contrasena, 10);
-    return await db.collection('usuarios').insertOne(usuario).then(() =>
-    {
-        return {
-            estatus: true,
-            mensaje: 'Datos agregados con exito',
-            usuario
-        };
-    }).catch(() =>
-    {
-        return {
-            estatus: false,
-            mensaje: 'Usuario no se puede registrar',
-            usuario: null
+    return await db.collection('usuarios').insertOne(usuario).then(
+        async () =>
+        {
+            // aqui ponemos la subcripcion si se requiere
+            return {
+                estatus: true,
+                mensaje: 'Datos agregados con exito',
+                usuario
+            };
         }
-    });
+    ).catch(
+        async () =>
+        {
+            return {
+                estatus: false,
+                mensaje: 'Usuario no se puede registrar',
+                usuario: null
+            }
+        }
+    )
 }
+
+/*export async function actualizarPerfil(usuario: any, db: any, tipo: string, archivo: any)
+{
+    if (!archivo)
+    {
+        console.log('No se tiene un archivo');
+    }
+    // obtener el nombre del archivo
+    let archivoNombre = archivo.img;
+    let nombreCortado = archivo.img.split('.');
+}*/

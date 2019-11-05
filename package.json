@@ -22,6 +22,8 @@
 	"express" : "^4.17.1",
 	"express-fileupload" : "^1.1.6-alpha.6",
 	"graphql" : "^14.5.8",
+	"graphql-compose-connection" : "^6.0.3",
+	"graphql-compose-pagination" : "^6.0.3",
 	"graphql-import-node" : "0.0.4",
 	"graphql-playground-middleware-express" : "^1.7.12",
 	"graphql-tools" : "^4.0.6",

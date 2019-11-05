@@ -1,0 +1,5 @@
+otro tipo va dentro del schema.graphql
+
+union depto_usuario =
+| Departamento
+| Usuario

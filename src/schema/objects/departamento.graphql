@@ -5,9 +5,10 @@ type Departamento
 }
 input DepartamentoInput
 {
+    _id: ID
     nombre: String!
 }
-type ResultadoDepartamento
+type DepartamentoRes
 {
     estatus: Boolean!
     mensaje: String!
