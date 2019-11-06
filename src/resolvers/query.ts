@@ -23,18 +23,19 @@ const query: IResolvers =
                 {
                     return await obtenerTodosLosUsuarios(db);
                 },
-                async buscarUsuario(_: any, usuario: string, db: any)
+                async buscarUsuario(_: any, {usuario}, {db})
                 {
+                    console.log('Usuario capturado desde el playground', usuario);
                     return await obtenerUsuarioPorSuNombreDeUsuario(usuario, db);
                 },
                 async login(_: void, {usuario, contrasena}, {db}): Promise<any>
                 {
                     return await loginUsuario(usuario, contrasena, db)
                 },
-                perfil(_: void, __: any, {token})
+                async perfil(_: void, __: any, {token})
                 {
                     return perfilUsuario(token);
-                }
+                },
             }
     };
 export default query;

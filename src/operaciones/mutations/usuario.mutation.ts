@@ -34,6 +34,36 @@ export async function regUsuario(usuario: any, db: any)
     )
 }
 
+export async function actualizarPerfilUsuario(usuario: string, nombre: string, role: string, img: string, db: any)
+{
+    console.log('usuario', usuario);
+    console.log('objeto usuario', nombre);
+
+    return await db.collection('usuarios').findOneAndUpdate(
+        {usuario},
+        {$set: {nombre, role, img}}
+    ).then(
+        async () =>
+        {
+            return {
+                estatus: true,
+                mensaje: 'Datos actualizados de manera correcta'
+            }
+        }
+    ).catch(
+        async () =>
+        {
+            {
+                return {
+                    estatus: false,
+                    mensaje: 'Error al intentar actualizar el perfil de este usuario',
+                    usuario: null
+                }
+            }
+        }
+    );
+}
+
 /*export async function actualizarPerfil(usuario: string, db: any, tipo: string, archivo: any)
 {
     if (!archivo)

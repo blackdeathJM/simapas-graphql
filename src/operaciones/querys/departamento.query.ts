@@ -1,4 +1,4 @@
-import { ObjectId } from "bson";
+import {ObjectId} from "bson";
 
 export async function obtenerDeptos(db: any)
 {
@@ -6,7 +6,7 @@ export async function obtenerDeptos(db: any)
 }
 
 // forma 1 de consulta por ID
-export async function obtenerDeptoID(id: any, db: any): Promise<any>
+/*export async function obtenerDeptoID(id: any, db: any): Promise<any>
 {
     const departamento = await db.collection('departamentos').findOne({_id: new ObjectId(id)});
     console.log('Valor de la respuesta para obetener departamento por id', departamento);
@@ -15,7 +15,7 @@ export async function obtenerDeptoID(id: any, db: any): Promise<any>
         mensaje: 'Operacion realizada con exito',
         departamento
     }
-}
+}*/
 
 // forma 2 de consulta por ID
 export async function buscarDeptoID(id: any, db: any)

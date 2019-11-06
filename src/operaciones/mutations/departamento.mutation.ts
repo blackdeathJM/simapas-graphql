@@ -1,5 +1,5 @@
 import {enviarNotificacionDepto} from "../subscriptions/departamento.subcription";
-import { ObjectId } from "bson";
+import {ObjectId} from "bson";
 
 export async function registroDepto(depto: any, pubsub: any, db: any)
 {
@@ -25,23 +25,22 @@ export async function registroDepto(depto: any, pubsub: any, db: any)
     )
 }
 
-export async function actualizarDepto(_id: any, nombre: any, db: any)
+export async function actualizarDepto(_id: any, nombre: string, db: any)
 {
-    console.log('Valor del id del departamento', _id);
-    console.log('Datos del departamento actualizar', nombre);
     return await db.collection('departamentos').updateOne(
         {_id: new ObjectId(_id)},
-        {$set: {nombre}}
+        {$set: {nombre}},
     ).then(
         async () =>
         {
             return {
                 estatus: true,
                 mensaje: 'El departamento se actualizo de manera correcta',
-                departamento: {
-                    _id,
-                    nombre
-                }
+                departamento:
+                    {
+                        _id,
+                        nombre
+                    }
             }
         }
     ).catch(
@@ -55,4 +54,3 @@ export async function actualizarDepto(_id: any, nombre: any, db: any)
         }
     );
 }
-

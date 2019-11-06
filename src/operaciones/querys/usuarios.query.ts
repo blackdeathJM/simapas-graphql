@@ -53,12 +53,23 @@ export async function perfilUsuario(token: string)
 
 export async function obtenerUsuarioPorSuNombreDeUsuario(usuario: string, db: any)
 {
-    // const datosUsuario = await db.collection('usuarios').findOne({usuario: usuario});
-    const datosUsuario = await db.collection('usuarios').findOne({usuario});
-    console.log('??????????', datosUsuario);
-    return {
-        estatus: true,
-        mensaje: 'Usuario buscado por su ID',
-        usuario: datosUsuario
-    }
+    return await db.collection('usuarios').findOne({usuario}).then(
+        async (res: any) =>
+        {
+            return {
+                estatus: true,
+                mensaje: 'La busqueda fue satisfactoria',
+                usuario: res
+            }
+        }
+    ).catch(
+        async (err: any) =>
+        {
+            return {
+                estatus: false,
+                mensaje: 'Error en la busqueda', err,
+                usuario: null
+            }
+        }
+    )
 }

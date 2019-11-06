@@ -11,7 +11,7 @@ type Query
     "Obtener perfil de usuario con informacion del token"
     perfil: UsuarioRes!
     "Buscar usuario por su nombre de usuario"
-    buscarUsuario(usuario: String): UsuarioRes
+    buscarUsuario(usuario: String!): UsuarioRes!
     "Gestion de la foto de perfil del usuario"
     fotoPerfil(nombreImg: String): UsuarioRes!
 }
@@ -24,7 +24,7 @@ type Mutation
     "Registro de usuarios"
     registroUsuario(usuario: UsuarioInput!): UsuarioRes!
     "Actualizacion de un usuario"
-    actualizarUsuario(_id: ID!, usuario: UsuarioInput!): UsuarioRes!
+    actualizarUsuario(usuario: UsuarioInput!): UsuarioRes!
 }
 type Subscription
 {
