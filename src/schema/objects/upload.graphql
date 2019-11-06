@@ -2,10 +2,11 @@ type SubidaArchivos
 {
     _id: ID!
     nombre: String!
+    descripcion: String!
     fechaSubida: String!
 }
 
 input SubidaArchivosInput
 {
-    nombre: String!
+    archivo: String!
 }
