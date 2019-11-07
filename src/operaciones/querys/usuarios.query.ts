@@ -73,3 +73,19 @@ export async function obtenerUsuarioPorSuNombreDeUsuario(usuario: string, db: an
         }
     )
 }
+
+export async function obtenerNombreDeptoAsignado(id: any, db: any)
+{
+    return await db.collection('usuarios').findOne({id}).then(
+        async (res: any) =>
+        {
+            console.log('buscando nombre del depato', res);
+            return {}
+        }
+    ).catch(
+        async () =>
+        {
+
+        }
+    )
+}

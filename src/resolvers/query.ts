@@ -2,10 +2,12 @@ import {IResolvers} from "graphql-tools";
 import {buscarDeptoID, obtenerDeptos} from "../operaciones/querys/departamento.query";
 import {
     loginUsuario,
+    obtenerNombreDeptoAsignado,
     obtenerTodosLosUsuarios,
     obtenerUsuarioPorSuNombreDeUsuario,
     perfilUsuario,
 } from "../operaciones/querys/usuarios.query";
+import {ultimoFolio} from "../operaciones/querys/folio.query";
 
 const query: IResolvers =
     {
@@ -25,8 +27,11 @@ const query: IResolvers =
                 },
                 async buscarUsuario(_: any, {usuario}, {db})
                 {
-                    console.log('Usuario capturado desde el playground', usuario);
                     return await obtenerUsuarioPorSuNombreDeUsuario(usuario, db);
+                },
+                async buscarUsuarioDepartamento(_: any, {id}, {db})
+                {
+                    return await obtenerNombreDeptoAsignado(id, db);
                 },
                 async login(_: void, {usuario, contrasena}, {db}): Promise<any>
                 {
@@ -36,6 +41,10 @@ const query: IResolvers =
                 {
                     return perfilUsuario(token);
                 },
+                async buscarUltimoFolio(_: any, {numFolio}, {db})
+                {
+                    return await ultimoFolio(numFolio, db);
+                }
             }
     };
 export default query;

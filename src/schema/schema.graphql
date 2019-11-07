@@ -14,6 +14,10 @@ type Query
     buscarUsuario(usuario: String!): UsuarioRes!
     "Gestion de la foto de perfil del usuario"
     fotoPerfil(nombreImg: String): UsuarioRes!
+    "Buscar folio por el numero de folio"
+    buscarUltimoFolio(numFolio: Int!): FolioRes!
+    "Obtener el nombre del departamento con el departamentoID en una union"
+    buscarUsuarioDepartamento(id: ID!): DeptoUsuarioRes
 }
 type Mutation
 {
@@ -23,6 +27,8 @@ type Mutation
     actualizarDepartamento(nombreDeptoActualizar: DepartamentoInput!): DepartamentoRes!
     "Registro de usuarios"
     registroUsuario(usuario: UsuarioInput!): UsuarioRes!
+    "Registro de folio con el folio auto generado"
+    registroFolio(folio: FolioInput!): FolioRes
     "Actualizacion de un usuario"
     actualizarUsuario(usuario: UsuarioInput!): UsuarioRes!
 }
@@ -30,3 +36,5 @@ type Subscription
 {
     cambioDepartamento: [Departamento!]
 }
+
+union DeptoUsuarioRes = Usuario | Departamento

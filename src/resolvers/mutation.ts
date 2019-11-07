@@ -1,6 +1,7 @@
 import {IResolvers} from "graphql-tools";
 import {actualizarDepto, registroDepto} from "../operaciones/mutations/departamento.mutation";
 import {actualizarPerfilUsuario, regUsuario} from "../operaciones/mutations/usuario.mutation";
+import {registrarFolio} from "../operaciones/mutations/folio.mutation";
 // import { ObjectId } from "bson";
 
 const mutation: IResolvers =
@@ -22,6 +23,10 @@ const mutation: IResolvers =
                 async actualizarUsuario(_: void, {usuario}, {db})
                 {
                     return await actualizarPerfilUsuario(usuario.usuario, usuario.nombre, usuario.role, usuario.img, db);
+                },
+                async registroFolio(_: void, {folio}, {db})
+                {
+                    return await registrarFolio(folio, db);
                 }
             }
     };
