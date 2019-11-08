@@ -1,17 +1,17 @@
 type Query
 {
     "Obtenemos la lista de todos los departamentos"
-    departamentos: [Departamento]!
+    departamentos: [INodo!]
     "Obterner departamento por ID"
     departamentoID(_id: ID!): DepartamentoRes
     "Obtener la lista de todos los usuarios"
-    usuarios: [Usuario!]
+    usuarios: [UsuarioRes]
     "Inicio de sesion"
     login(usuario: ID!,  contrasena: String!): UsuarioToken!
     "Obtener perfil de usuario con informacion del token"
     perfil: UsuarioRes!
     "Buscar usuario por su nombre de usuario"
-    buscarUsuario(usuario: String!): UsuarioRes!
+    buscarUsuario(usuario: String!): DeptoUsuarioRes
     "Buscar folio por el numero de folio"
     buscarUltimoFolio(numFolio: Int!): FolioRes!
     "Obtener el nombre del departamento con el departamentoID en una union"
@@ -29,13 +29,9 @@ type Mutation
     registroFolio(folio: FolioInput!): FolioRes
     "Actualizacion de un usuario"
     actualizarUsuario(usuario: UsuarioInput!): UsuarioRes!
-    "Actualizar la imagen del usuario"
-    subirImgPerfil(file: Upload!):File!
 }
 type Subscription
 {
     cambioDepartamento: [Departamento!]
 }
-scalar Upload
-
 union DeptoUsuarioRes = Usuario | Departamento

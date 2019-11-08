@@ -11,6 +11,24 @@ import {ultimoFolio} from "../operaciones/querys/folio.query";
 
 const query: IResolvers =
     {
+        INodo:
+            {
+                __resolveType: (obj: any, context: any, info: string) =>
+                {
+                    console.log('========', obj);
+                    if (obj.usuario)
+                    {
+                        console.log('????????????', obj.usuario);
+                        return 'Usuario'
+                    }
+                    if (obj.nombre)
+                    {
+                        console.log('++++++++++++', obj.nombre);
+                        return 'Departamento'
+                    }
+                    return null
+                }
+            },
         Query:
             {
                 async departamentos(_: void, __: any, {db}): Promise<any>
@@ -45,6 +63,6 @@ const query: IResolvers =
                 {
                     return await ultimoFolio(numFolio, db);
                 }
-            }
+            },
     };
 export default query;

@@ -9,5 +9,4 @@ const schema: GraphQLSchema = makeExecutableSchema({
     typeDefs,
     resolvers,
 });
-
 export default schema;

@@ -1,4 +1,4 @@
-type Departamento
+type Departamento implements INodo
 {
     _id: ID!
     nombre: String!

@@ -1,0 +1,5 @@
+interface INodo
+{
+    _id:ID
+    nombre: String!
+}

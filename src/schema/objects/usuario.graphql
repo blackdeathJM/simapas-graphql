@@ -1,4 +1,4 @@
-type Usuario
+type Usuario implements INodo
 {
     _id: ID!
     nombre: String!
@@ -6,7 +6,7 @@ type Usuario
     contrasena: String!
     role: ROLE!
     img: String
-    departamentoID: ID!
+    departamento: Departamento!
 }
 input UsuarioInput
 {
@@ -26,8 +26,8 @@ enum ROLE
 }
 type UsuarioRes
 {
-    estatus: Boolean!
-    mensaje: String!
+    estatus: Boolean
+    mensaje: String
     usuario: Usuario
 }
 type UsuarioToken
