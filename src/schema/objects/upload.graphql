@@ -1,12 +1,8 @@
-type SubidaArchivos
+type File
 {
     _id: ID!
-    nombre: String!
-    descripcion: String!
-    fechaSubida: String!
-}
-
-input SubidaArchivosInput
-{
-    archivo: String!
+    path: String!
+    nombreArchivo: String!
+    mimetype: String!
+    encoding: String!
 }

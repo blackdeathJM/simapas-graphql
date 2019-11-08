@@ -1,6 +1,9 @@
 import express from 'express';
+import graphqlHTTP from 'express-graphql'
+import {graphqlUploadExpress} from 'graphql-upload'
 import compression from 'compression';
 import cors from 'cors';
+import bodyParser from 'body-parser';
 import {ApolloServer, PubSub} from "apollo-server-express";
 import {createServer} from 'http';
 import environments from "./config/environments";
@@ -26,6 +29,7 @@ async function init()
     const context: any = async ({req, connection}: any) =>
     {
         const token = req ? req.headers.authorization : connection.authorization;
+        const params = req ? req.headers.params : connection.params;
         return {db, token, pubsub};
     };
     const server = new ApolloServer({
@@ -35,8 +39,14 @@ async function init()
     });
     server.applyMiddleware({app});
     app.use('/', expressPlayground({
-        endpoint: '/graphql'
-    }));
+            endpoint: '/graphql',
+        }),
+        //==================================================================
+        bodyParser.json(),
+        graphqlUploadExpress({maxFileSize: 10000000, maxFiles: 10}),
+        graphqlHTTP({schema})
+        //====================================================================
+    );
 
     const PORT = process.env.PORT || 5300;
     const httpServer = createServer(app);

@@ -12,8 +12,6 @@ type Query
     perfil: UsuarioRes!
     "Buscar usuario por su nombre de usuario"
     buscarUsuario(usuario: String!): UsuarioRes!
-    "Gestion de la foto de perfil del usuario"
-    fotoPerfil(nombreImg: String): UsuarioRes!
     "Buscar folio por el numero de folio"
     buscarUltimoFolio(numFolio: Int!): FolioRes!
     "Obtener el nombre del departamento con el departamentoID en una union"
@@ -31,10 +29,13 @@ type Mutation
     registroFolio(folio: FolioInput!): FolioRes
     "Actualizacion de un usuario"
     actualizarUsuario(usuario: UsuarioInput!): UsuarioRes!
+    "Actualizar la imagen del usuario"
+    subirImgPerfil(file: Upload!):File!
 }
 type Subscription
 {
     cambioDepartamento: [Departamento!]
 }
+scalar Upload
 
 union DeptoUsuarioRes = Usuario | Departamento
