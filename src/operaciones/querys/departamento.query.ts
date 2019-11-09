@@ -44,4 +44,3 @@ export async function buscarDeptoRelacion(id: any, db: any)
 {
     return await db.collection('departamentos').findOne({_id: new ObjectId(id)});
 }
-

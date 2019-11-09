@@ -2,7 +2,6 @@ import {IResolvers} from "graphql-tools";
 import {buscarDeptoID, obtenerDeptos} from "../operaciones/querys/departamento.query";
 import {
     loginUsuario,
-    obtenerNombreDeptoAsignado,
     obtenerTodosLosUsuarios,
     obtenerUsuarioPorSuNombreDeUsuario,
     perfilUsuario,
@@ -11,24 +10,24 @@ import {ultimoFolio} from "../operaciones/querys/folio.query";
 
 const query: IResolvers =
     {
-        INodo:
-            {
-                __resolveType: (obj: any, context: any, info: string) =>
-                {
-                    console.log('========', obj);
-                    if (obj.usuario)
+        /*        INodo:
                     {
-                        console.log('????????????', obj.usuario);
-                        return 'Usuario'
-                    }
-                    if (obj.nombre)
-                    {
-                        console.log('++++++++++++', obj.nombre);
-                        return 'Departamento'
-                    }
-                    return null
-                }
-            },
+                        __resolveType: (obj: any, context: any, info: string) =>
+                        {
+                            console.log('========', obj);
+                            if (obj.usuario)
+                            {
+                                console.log('????????????', obj.usuario);
+                                return 'Usuario'
+                            }
+                            if (obj.nombre)
+                            {
+                                console.log('++++++++++++', obj.nombre);
+                                return 'Departamento'
+                            }
+                            return null
+                        }
+                    },*/
         Query:
             {
                 async obtenerDepartamentos(_: void, __: any, {db})
@@ -47,10 +46,10 @@ const query: IResolvers =
                 {
                     return await obtenerUsuarioPorSuNombreDeUsuario(usuario, db);
                 },
-                async buscarUsuarioDepartamento(_: any, {id}, {db})
-                {
-                    return await obtenerNombreDeptoAsignado(id, db);
-                },
+                /*                async buscarUsuarioDepartamento(_: any, {id}, {db})
+                                {
+                                    return await obtenerNombreDeptoAsignado(id, db);
+                                },*/
                 async login(_: void, {usuario, contrasena}, {db})
                 {
                     return await loginUsuario(usuario, contrasena, db)

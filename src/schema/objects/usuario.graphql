@@ -19,12 +19,6 @@ input UsuarioInput
     img: String
     departamentoID: ID!
 }
-enum ROLE
-{
-    SUPERADMIN,
-    ADMIN,
-    USUARIO
-}
 type UsuarioRes
 {
     estatus: Boolean
@@ -36,4 +30,10 @@ type UsuarioToken
     estatus: Boolean!
     mensaje: String!
     token: String
+}
+enum ROLE
+{
+    SUPERADMIN,
+    ADMIN,
+    USUARIO
 }

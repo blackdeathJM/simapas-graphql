@@ -11,11 +11,9 @@ type Query
     "Obtener perfil de usuario con informacion del token"
     perfil: UsuarioRes!
     "Buscar usuario por su nombre de usuario"
-    buscarUsuario(usuario: String!): DeptoUsuarioRes
+    buscarUsuario(usuario: String!): UsuarioRes!
     "Buscar folio por el numero de folio"
     buscarUltimoFolio(numFolio: Int!): FolioRes!
-    "Obtener el nombre del departamento con el departamentoID en una union"
-    buscarUsuarioDepartamento(id: ID!): DeptoUsuarioRes
 }
 type Mutation
 {
@@ -34,4 +32,3 @@ type Subscription
 {
     cambioDepartamento: [Departamento!]
 }
-union DeptoUsuarioRes = Usuario | Departamento
