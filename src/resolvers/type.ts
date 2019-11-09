@@ -1,5 +1,5 @@
 import {IResolvers} from 'graphql-tools';
-import {obtenerDeptos} from "../operaciones/querys/departamento.query";
+import {buscarDeptoRelacion} from "../operaciones/querys/departamento.query";
 
 const type: IResolvers =
     {
@@ -7,29 +7,7 @@ const type: IResolvers =
             {
                 departamento: async (parent: any, __: any, {db}) =>
                 {
-                    let resDeptoo: Array<any> = [];
-                    const deptoID = parent.departamentoID;
-                    return await obtenerDeptos(db).then(
-                        async (resDepto: any) =>
-                        {
-                            resDepto.map((res: any) =>
-                            {
-                                if (res._id === deptoID)
-                                {
-                                    resDeptoo.push(res);
-                                    console.log('*-*-*-*-*-*-*-*-*-*-*', resDeptoo);
-                                } else
-                                {
-                                    console.log('El else');
-                                }
-                            });
-                        }
-                    ).catch(
-                        async () =>
-                        {
-
-                        }
-                    )
+                    return await buscarDeptoRelacion(parent.departamentoID, db);
                 }
             }
     };

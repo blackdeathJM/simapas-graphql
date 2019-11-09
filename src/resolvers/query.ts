@@ -31,11 +31,11 @@ const query: IResolvers =
             },
         Query:
             {
-                async obtenerDepartamentos(_: void, __: any, {db}): Promise<any>
+                async obtenerDepartamentos(_: void, __: any, {db})
                 {
                     return await obtenerDeptos(db)
                 },
-                async departamentoID(_: void, {_id}: any, {db}): Promise<any>
+                async departamentoID(_: void, {_id}: any, {db})
                 {
                     return await buscarDeptoID(_id, db);
                 },
@@ -51,7 +51,7 @@ const query: IResolvers =
                 {
                     return await obtenerNombreDeptoAsignado(id, db);
                 },
-                async login(_: void, {usuario, contrasena}, {db}): Promise<any>
+                async login(_: void, {usuario, contrasena}, {db})
                 {
                     return await loginUsuario(usuario, contrasena, db)
                 },

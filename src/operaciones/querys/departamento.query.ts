@@ -9,7 +9,6 @@ export async function obtenerDeptos(db: any)
 /*export async function obtenerDeptoID(id: any, db: any): Promise<any>
 {
     const departamento = await db.collection('departamentos').findOne({_id: new ObjectId(id)});
-    console.log('Valor de la respuesta para obetener departamento por id', departamento);
     return {
         estatus: true,
         mensaje: 'Operacion realizada con exito',
@@ -40,3 +39,9 @@ export async function buscarDeptoID(id: any, db: any)
         }
     );
 }
+
+export async function buscarDeptoRelacion(id: any, db: any)
+{
+    return await db.collection('departamentos').findOne({_id: new ObjectId(id)});
+}
+
