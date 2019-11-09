@@ -31,7 +31,7 @@ const query: IResolvers =
             },
         Query:
             {
-                async departamentos(_: void, __: any, {db}): Promise<any>
+                async obtenerDepartamentos(_: void, __: any, {db}): Promise<any>
                 {
                     return await obtenerDeptos(db)
                 },
@@ -39,7 +39,7 @@ const query: IResolvers =
                 {
                     return await buscarDeptoID(_id, db);
                 },
-                async usuarios(_: void, __: any, {db})
+                async obtenerUsuarios(_: void, __: any, {db})
                 {
                     return await obtenerTodosLosUsuarios(db);
                 },

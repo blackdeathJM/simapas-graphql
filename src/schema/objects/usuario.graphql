@@ -1,11 +1,12 @@
-type Usuario implements INodo
+type Usuario
 {
     _id: ID!
+    departamentoID: ID!
     nombre: String!
     usuario: String!
     contrasena: String!
     role: ROLE!
-    img: String
+    img: String!
     departamento: Departamento!
 }
 input UsuarioInput
