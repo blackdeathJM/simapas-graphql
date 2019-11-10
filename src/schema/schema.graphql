@@ -12,8 +12,10 @@ type Query
     perfil: UsuarioRes!
     "Buscar usuario por su nombre de usuario"
     buscarUsuario(usuario: String!): UsuarioRes!
-    "Buscar folio por el numero de folio"
-    buscarUltimoFolio(numFolio: Int!): FolioRes!
+    "Obtener todos los folios"
+    obtenerFoliosTodos:[Folio!]
+    "Consultar el ultimo folio registrado"
+    ultimoFolio: [Folio!]!
 }
 type Mutation
 {
@@ -24,7 +26,7 @@ type Mutation
     "Registro de usuarios"
     registroUsuario(usuario: UsuarioInput!): UsuarioRes!
     "Registro de folio con el folio auto generado"
-    registroFolio(folio: FolioInput!): FolioRes
+    registroFolio(folio: FolioInput!): FolioRes!
     "Actualizacion de un usuario"
     actualizarUsuario(usuario: UsuarioInput!): UsuarioRes!
 }

@@ -1,39 +1,45 @@
 export async function registrarFolio(folio: any, db: any): Promise<any>
 {
-    const checarFolio = await db.collection('folios').findOne({numFolio: folio.numFolio});
-    if (checarFolio !== null)
-    {
-        console.log('numero de folio', checarFolio);
-        return {
-            estatus: false,
-            mensaje: 'El folio no se pudo resgistrar porque fue asignado cierra la ventana y vuelvela abrir para generar un nuevo FOLIO',
-            folio: null
-        }
-    }
-    /*    const ultimoFolio = await db.collection('folios').find().limit(1).sort({numFolio: -1}).toArray();
-        if (ultimoFolio === 0)
+    return await db.collection('folios').findOne({numFolio: folio.numFolio}).then(
+        async (rest: any) =>
         {
-            folio.numFolio = 1;
-        } else
-        {
-            folio.numFolio = ultimoFolio[0].ultimoFolio = + 1
-        }*/
-    return await db.collection('folios').insertOne(folio).then(
-        async (res: any) =>
-        {
-            console.log('Respuesta', res);
-            return {
-                estatus: true,
-                mensaje: 'Folio registrado de manera correcta',
-                folio: res
+            if (rest !== null)
+            {
+                return {
+                    estatus: false,
+                    mensaje: 'Este numero de folio se acaba de utilizar en otro departamento por favor cierra la ventana y vuelve abrirla para generar uno nuevo',
+                    folio: null
+                }
+            } else
+            {
+                return await db.collection('folios').insertOne(folio).then(
+                    async (res: any) =>
+                    {
+                        console.log('***', res.ops);
+                        return {
+                            estatus: true,
+                            mensaje: 'Se ha registrado de manera correcta el folio',
+                            folio: res.ops
+                        }
+                    }
+                ).catch(
+                    async (err: any) =>
+                    {
+                        return {
+                            estatus: false,
+                            mensaje: 'Ocurrio un error al tratar de registrar el nuevo folio: ' + err,
+                            folio: null
+                        }
+                    }
+                )
             }
         }
     ).catch(
-        async () =>
+        async (err: any) =>
         {
             return {
                 estatus: false,
-                mensaje: 'Error al intentar registrar el folio',
+                mensaje: 'Ocurrio un error inesperado', err,
                 folio: null
             }
         }

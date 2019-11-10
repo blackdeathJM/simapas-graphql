@@ -1,13 +1,13 @@
 type Folio
 {
     _id: ID
-    numFolio: Int!
-    titulo: String!
-    folio: String!
-    tipo: TIPO!
-    descripcion: String!
-    fechaCreacion: String!
-    asigUsuario: String!
+    numFolio: Int
+    titulo: String
+    folio: String
+    tipo: TIPO
+    descripcion: String
+    fechaCreacion: String
+    asigUsuario: String
     archivo: String
 }
 
@@ -34,5 +34,5 @@ type FolioRes
 {
     estatus: Boolean!
     mensaje: String!
-    folio: Folio
+    folio: [Folio]
 }
