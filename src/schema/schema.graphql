@@ -7,7 +7,7 @@ type Query
     "Obtener la lista de todos los usuarios"
     obtenerUsuarios: [Usuario!]
     "Inicio de sesion"
-    login(usuario: ID!,  contrasena: String!): UsuarioToken!
+    login(usuario: String!,  contrasena: String!): UsuarioToken!
     "Obtener perfil de usuario con informacion del token"
     perfil: UsuarioRes!
     "Buscar usuario por su nombre de usuario"
