@@ -3,3 +3,7 @@ otro tipo va dentro del schema.graphql
 union depto_usuario =
 | Departamento
 | Usuario
+
+
+para subir imagenes
+en el form del html se agrego el enctype="multipart/form-data"

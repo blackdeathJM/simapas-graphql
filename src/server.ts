@@ -1,6 +1,5 @@
 import express from 'express';
 import graphqlHTTP from 'express-graphql'
-import {graphqlUploadExpress} from 'graphql-upload'
 import compression from 'compression';
 import cors from 'cors';
 import bodyParser from 'body-parser';
@@ -19,17 +18,42 @@ if (process.env.NODE_ENV !== 'production')
 async function init()
 {
     const app = express();
+    // =====================================================================
+    /*    const almacenamientoArchivo = multer.diskStorage({
+            destination: (req, file, cb) =>
+            {
+                cb(null, 'images');
+            },
+            filename: (req, file, cb) =>
+            {
+                cb(null, new Date().toISOString() + '-' + file.originalname)
+            }
+        });
+        const filtrarArchivo = (req:any, file:any, cb:any) =>
+        {
+            if (file.mimeType === '')
+            {
+                cb(null, true);
+            } else
+            {
+                cb(null, false)
+            }
+        };*/
+    // ====================================================================
     const pubsub = new PubSub();
     app.use('*', cors());
     app.use(compression());
-
+    app.use(bodyParser.json());
+    // ===============================================================
+    // app.use(multer({storage: almacenamientoArchivo, fileFilter: filtrarArchivo}).single('image'));
+    // =================================================================
     const database = new Database();
     const db = await database.init();
 
     const context: any = async ({req, connection}: any) =>
     {
         const token = req ? req.headers.authorization : connection.authorization;
-        const params = req ? req.headers.params : connection.params;
+        // const params = req ? req.headers.params : connection.params;
         return {db, token, pubsub};
     };
     const server = new ApolloServer({
@@ -41,11 +65,7 @@ async function init()
     app.use('/', expressPlayground({
             endpoint: '/graphql',
         }),
-        //==================================================================
-        bodyParser.json(),
-        graphqlUploadExpress({maxFileSize: 10000000, maxFiles: 10}),
         graphqlHTTP({schema})
-        //====================================================================
     );
 
     const PORT = process.env.PORT || 5300;
