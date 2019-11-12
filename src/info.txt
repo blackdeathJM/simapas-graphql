@@ -7,3 +7,6 @@ union depto_usuario =
 
 para subir imagenes
 en el form del html se agrego el enctype="multipart/form-data"
+
+
+// quitar el subscribe

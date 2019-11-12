@@ -25,7 +25,7 @@ export async function registroDepto(depto: any, pubsub: any, db: any)
     )
 }
 
-export async function actualizarDepto(_id: any, nombre: string, db: any)
+export async function actualizarDepto(_id: ObjectId, nombre: string, db: any)
 {
     return await db.collection('departamentos').updateOne(
         {_id: new ObjectId(_id)},
