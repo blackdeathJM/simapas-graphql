@@ -7,6 +7,7 @@ type Usuario
     contrasena: String!
     role: ROLE!
     img: String!
+    foliosPermitidos: Int
     departamento: Departamento
 }
 input UsuarioInput
@@ -17,6 +18,7 @@ input UsuarioInput
     contrasena: String!
     role: ROLE!
     img: String
+    foliosPermitidos: Int
     departamentoID: ID!
 }
 type UsuarioRes

@@ -17,5 +17,4 @@ class Database
         return db;
     }
 }
-
 export default Database;

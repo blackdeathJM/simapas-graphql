@@ -18,35 +18,12 @@ if (process.env.NODE_ENV !== 'production')
 async function init()
 {
     const app = express();
-    // =====================================================================
-    /*    const almacenamientoArchivo = multer.diskStorage({
-            destination: (req, file, cb) =>
-            {
-                cb(null, 'images');
-            },
-            filename: (req, file, cb) =>
-            {
-                cb(null, new Date().toISOString() + '-' + file.originalname)
-            }
-        });
-        const filtrarArchivo = (req:any, file:any, cb:any) =>
-        {
-            if (file.mimeType === '')
-            {
-                cb(null, true);
-            } else
-            {
-                cb(null, false)
-            }
-        };*/
-    // ====================================================================
+
     const pubsub = new PubSub();
     app.use('*', cors());
     app.use(compression());
     app.use(bodyParser.json());
-    // ===============================================================
-    // app.use(multer({storage: almacenamientoArchivo, fileFilter: filtrarArchivo}).single('image'));
-    // =================================================================
+
     const database = new Database();
     const db = await database.init();
 
@@ -83,5 +60,4 @@ async function init()
         }
     );
 }
-
 init().then();
