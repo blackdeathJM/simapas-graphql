@@ -9,6 +9,7 @@ import environments from "./config/environments";
 import schema from './schema/schema';
 import Database from "./config/database";
 import expressPlayground from 'graphql-playground-middleware-express';
+import * as path from "path";
 
 if (process.env.NODE_ENV !== 'production')
 {
@@ -22,7 +23,8 @@ async function init()
     app.use('*', cors());
     app.use(compression());
     app.use(bodyParser.json());
-
+// importar rutas
+//     const archivosRoutes = require('./operaciones/mutations/upload.mutation');
     const database = new Database();
     const db = await database.init();
 
@@ -38,12 +40,14 @@ async function init()
         introspection: true
     });
     server.applyMiddleware({app});
+    app.use(require('./operaciones/mutations/upload.mutation'));
     app.use('/', expressPlayground({
             endpoint: '/graphql',
         }),
         graphqlHTTP({schema})
     );
-
+    // ruta estatica para el uso de multer
+    app.use(express.static(path.join(__dirname, 'public')));
     const PORT = process.env.PORT || 5300;
     const httpServer = createServer(app);
     server.installSubscriptionHandlers(httpServer);

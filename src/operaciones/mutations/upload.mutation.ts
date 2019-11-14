@@ -9,21 +9,18 @@ const router = express.Router();
 export async function subirArchivos(carpeta: string, tipoDeArchivo: string, _id: string)
 {
     const storage = multer.diskStorage({
-        destination: path.join(__filename, 'uploads'),
+        destination: path.join(__dirname, 'public/uploads'),
         filename: (req, file, cb) =>
         {
             cb(null, uuidv4() + path.extname(file.originalname));
         }
-    });
-    const subirArchivo = multer({
-        storage,
-        limits: {fileSize: 1000000}
     });
     switch (tipoDeArchivo)
     {
         case 'perfil':
             // lugar a donde se van a subir los archivos
             router.post('/uploads/images/' + carpeta, multer({
+                storage,
                 dest: path.join(__dirname, '../uploads'),
                 fileFilter: function (req, file, cb)
                 {
@@ -37,8 +34,9 @@ export async function subirArchivos(carpeta: string, tipoDeArchivo: string, _id:
                     {
                         cb(null, false);
                     }
-                }
-            }).single('imgPerfil'));
+                },
+                limits: {fieldSize: 2000000}
+            }).single('archivo'));
             break;
         case 'evidencia':
             router.post('/uploads/images/evidencias/' + carpeta, multer({}).array('evidencias', 10));
