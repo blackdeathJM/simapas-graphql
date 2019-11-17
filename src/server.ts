@@ -1,17 +1,14 @@
 import express from 'express';
 import graphqlHTTP from 'express-graphql'
 import compression from 'compression';
-import cors from 'cors';
 import bodyParser from 'body-parser';
 import {ApolloServer, PubSub} from "apollo-server-express";
 import {createServer} from 'http';
 import environments from "./config/environments";
 import schema from './schema/schema';
 import Database from "./config/database";
-import expressPlayground from 'graphql-playground-middleware-express';
+// import expressPlayground from 'graphql-playground-middleware-express';
 import path from "path";
-import multer from "multer";
-import uuidv4 from "uuidv4";
 
 if (process.env.NODE_ENV !== 'production')
 {
@@ -20,42 +17,25 @@ if (process.env.NODE_ENV !== 'production')
 
 async function init()
 {
+    const archivoRuta = require('./almacenamientoMulter/multer');
     const app = express();
-    const storage = multer.diskStorage({
-        destination: path.join(__dirname, 'public/uploads'),
-        filename: (req, file, cb) =>
-        {
-            cb(null, uuidv4() + path.extname(file.originalname));
-        }
-    });
-    app.use(multer({
-        storage,
-        dest: path.join(__dirname, 'public/uploads'),
-        fileFilter: function (req, file, cb)
-        {
-
-            const filetypes = /jpeg|jpg|png|.pdf/;
-            const mimetype = filetypes.test(file.mimetype);
-            const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
-
-            if (mimetype && extname)
-            {
-                return cb(null, true);
-            }
-            cb(null, false);
-        },
-        limits: {fileSize: 1000000},
-    }).single('archivo'));
-
     const pubsub = new PubSub();
-    app.use('*', cors());
+    // app.use('*', cors());
     app.use(compression());
     app.use(bodyParser.json());
-// importar rutas
-//     const archivosRoutes = require('./operaciones/mutations/upload.mutation');
+    app.use(bodyParser.json()).use(bodyParser.urlencoded({extended: true}));
+    app.use(express.static(path.join(__dirname, 'uploads')));
+    app.use(function (req, res, next)
+    {
+        res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");
+        res.header("Access-Control-Allow-Origin", "http://localhost:4200");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        res.header("Access-Control-Allow-Credentials", "true");
+        next();
+    });
+
     const database = new Database();
     const db = await database.init();
-
     const context: any = async ({req, connection}: any) =>
     {
         const token = req ? req.headers.authorization : connection.authorization;
@@ -67,17 +47,14 @@ async function init()
         context,
         introspection: true
     });
+
     server.applyMiddleware({app});
-
-    // app.use(require('./operaciones/mutations/upload.mutation'));
-    app.use('/', expressPlayground({
-            endpoint: '/graphql',
-        }),
-        graphqlHTTP({schema})
-    );
-    // ruta estatica para el uso de multer
-    app.use(express.static(path.join(__dirname, 'public')));
-
+    app.use('/file', archivoRuta);
+    app.use('/graphql', graphqlHTTP({schema}));
+    /*    app.use('/', expressPlayground({
+            }),
+            graphqlHTTP({schema})
+        );*/
     const PORT = process.env.PORT || 5300;
     const httpServer = createServer(app);
     server.installSubscriptionHandlers(httpServer);
