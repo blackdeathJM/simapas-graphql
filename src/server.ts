@@ -17,7 +17,7 @@ if (process.env.NODE_ENV !== 'production')
 
 async function init()
 {
-    const archivoRuta = require('./almacenamientoMulter/multer');
+    const archivoRuta = require('./configMuter/folios');
     const app = express();
     const pubsub = new PubSub();
     // app.use('*', cors());
