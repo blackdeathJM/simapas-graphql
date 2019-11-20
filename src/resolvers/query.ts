@@ -6,7 +6,7 @@ import {
     obtenerUsuarioPorSuNombreDeUsuario,
     perfilUsuario,
 } from "../operaciones/querys/usuarios.query";
-import {folioUltimo, todosLosFolios} from "../operaciones/querys/folio.query";
+import {folioPorUsuario, folioUltimo, todosLosFolios} from "../operaciones/querys/folio.query";
 
 const query: IResolvers =
     {
@@ -56,7 +56,7 @@ const query: IResolvers =
                 },
                 async perfil(_: void, __: any, {token})
                 {
-                    return perfilUsuario(token);
+                    return await perfilUsuario(token);
                 },
                 async obtenerFoliosTodos(_: void, __: void, {db})
                 {
@@ -65,6 +65,12 @@ const query: IResolvers =
                 async ultimoFolio(_: any, __: any, {db})
                 {
                     return await folioUltimo(db);
+                },
+                async folioUsuario(_: void, {asigUsuario}, {db})
+                {
+                    const fol = await folioPorUsuario(asigUsuario, db);
+                    console.log('Datos recibidos correctamente', fol);
+                    return fol;
                 }
             },
     };

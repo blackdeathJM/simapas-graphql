@@ -1,16 +1,3 @@
-type Folio
-{
-    _id: ID
-    numFolio: Int
-    titulo: String
-    folio: String
-    tipo: TIPO
-    descripcion: String
-    fechaCreacion: String
-    asigUsuario: String
-    archivo: String
-}
-
 input FolioInput
 {
     _id: ID
@@ -21,7 +8,25 @@ input FolioInput
     descripcion: String!
     fechaCreacion: String!
     asigUsuario: String!
-    archivo: String
+    archivoUrl: String
+}
+type Folio
+{
+    _id: ID
+    numFolio: Int
+    titulo: String
+    folio: String
+    tipo: TIPO
+    descripcion: String
+    fechaCreacion: String
+    asigUsuario: String
+    archivoUrl: String
+}
+type FolioRes
+{
+    estatus: Boolean!
+    mensaje: String!
+    folio: [Folio]
 }
 enum TIPO
 {
@@ -29,10 +34,4 @@ enum TIPO
     MEMORANDUM
     CIRCULAR
     OTRO
-}
-type FolioRes
-{
-    estatus: Boolean!
-    mensaje: String!
-    folio: [Folio]
 }

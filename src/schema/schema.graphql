@@ -1,36 +1,43 @@
 type Query
 {
-    "Obtenemos la lista de todos los departamentos"
+    "DEPARTAMENTO - Obtenemos la lista de todos los departamentos"
     obtenerDepartamentos: [Departamento!]
-    "Obterner departamento por ID"
+    "DEPARTAMENTO - Obterner departamento por ID"
     departamentoID(_id: ID!): DepartamentoRes
-    "Obtener la lista de todos los usuarios"
+
+    "USUARIO - Obtener la lista de todos los usuarios"
     obtenerUsuarios: [Usuario!]
-    "Inicio de sesion"
+    "USUARIO - Inicio de sesion"
     login(usuario: String!,  contrasena: String!): UsuarioToken!
-    "Obtener perfil de usuario con informacion del token"
+    "USUARIO - Obtener perfil de usuario con informacion del token"
     perfil: UsuarioRes!
-    "Buscar usuario por su nombre de usuario"
+    "USUARIO - Buscar usuario por su nombre de usuario"
     buscarUsuario(usuario: String!): UsuarioRes!
-    "Obtener todos los folios"
-    obtenerFoliosTodos:[Folio!]
-    "Consultar el ultimo folio registrado"
-    ultimoFolio: [Folio!]!
+
+    "DOCUMENTO - Obtener todos los folios"
+    obtenerFoliosTodos: FolioRes
+    "DOCUMENTO - Consultar el ultimo folio registrado"
+    ultimoFolio: [Folio]!
+    "DOCUMENTO - Consultar los folios asignados a un usuario regreg"
+    folioUsuario(asigUsuario: String!): FolioRes
 }
 type Mutation
 {
-    "Registro de los departamentos"
+    "DEPARTAMENTO - Registro de los departamentos"
     registroDepartamento(departamento: DepartamentoInput!): DepartamentoRes!
-    "Actualizar el nombre del departamento"
+    "DEPARTAMENTO - Actualizar el nombre del departamento"
     actualizarDepartamento(nombreDeptoActualizar: DepartamentoInput!): DepartamentoRes!
-    "Registro de usuarios"
+
+    "USUARIO - Registro de usuarios"
     registroUsuario(usuario: UsuarioInput!): UsuarioRes!
-    "Registro de folio con el folio auto generado"
-    registroFolio(folio: FolioInput!): FolioRes!
-    "Actualizacion de un usuario"
+    "USUARIO - Actualizacion de un usuario"
     actualizarUsuario(usuario: UsuarioInput!): UsuarioRes!
+
+    "DOCUMENTO - Registro de folio con el folio auto generado"
+    registroFolio(folio: FolioInput!): FolioRes!
 }
 type Subscription
 {
+    "DEPARTAMENTO - Detectar cambios"
     cambioDepartamento: [Departamento!]
 }

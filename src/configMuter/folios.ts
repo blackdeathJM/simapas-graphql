@@ -12,16 +12,13 @@ const storage = multer.diskStorage({
     },
     filename: (req, file, cb) =>
     {
-        console.log('En el filename', req);
-        console.log('El file de filename', file);
-        console.log('el callback del filename', cb);
         cb(null, file.originalname);
     }
 });
 
 const uploadArchivo = multer({
     storage,
-    limits: {fileSize: 1000000},
+    limits: {fileSize: 10000000},
     fileFilter: (req, file, cb) =>
     {
         const filetypes = /jpeg|jpg|png|pdf/;
@@ -32,7 +29,7 @@ const uploadArchivo = multer({
         {
             return cb(null, true);
         }
-        cb(null, false);
+        cb(new Error('La imagen no es soportada'), false);
     }
 }).single('file');
 
