@@ -68,9 +68,7 @@ const query: IResolvers =
                 },
                 async folioUsuario(_: void, {asigUsuario}, {db})
                 {
-                    const fol = await folioPorUsuario(asigUsuario, db);
-                    console.log('Datos recibidos correctamente', fol);
-                    return fol;
+                    return await folioPorUsuario(asigUsuario, db);
                 }
             },
     };
