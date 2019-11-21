@@ -15,11 +15,11 @@ type Query
     buscarUsuario(usuario: String!): UsuarioRes!
 
     "DOCUMENTO - Obtener todos los folios"
-    obtenerFoliosTodos: FolioRes
+    obtenerFoliosTodos: [Folio]
     "DOCUMENTO - Consultar el ultimo folio registrado"
     ultimoFolio: [Folio]!
     "DOCUMENTO - Consultar los folios asignados a un usuario regreg"
-    folioUsuario(asigUsuario: String!): FolioRes
+    folioUsuario(asigUsuario: String!): [Folio]
 }
 type Mutation
 {

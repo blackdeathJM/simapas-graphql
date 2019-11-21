@@ -46,10 +46,6 @@ const query: IResolvers =
                 {
                     return await obtenerUsuarioPorSuNombreDeUsuario(usuario, db);
                 },
-                /*                async buscarUsuarioDepartamento(_: any, {id}, {db})
-                                {
-                                    return await obtenerNombreDeptoAsignado(id, db);
-                                },*/
                 async login(_: void, {usuario, contrasena}, {db})
                 {
                     return await loginUsuario(usuario, contrasena, db)
