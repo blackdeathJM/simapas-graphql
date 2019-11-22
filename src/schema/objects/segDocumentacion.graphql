@@ -1,0 +1,34 @@
+type Documento
+{
+    _id: ID
+    identificadorDoc: String!
+    foio: String
+    dependencia: String!
+    titulo: String!
+    dirigido: [String!]
+    fechaRecepcion: String!
+    fechaLimitEntrega: String!
+    fechaEnvio: String
+    estatus: ESTATUS!
+}
+
+input DocumentoInput
+{
+    _id: ID
+    identificadorDoc: String!
+    foio: String
+    dependencia: String!
+    titulo: String!
+    dirigido: [String!]
+    fechaRecepcion: String!
+    fechaLimitEntrega: String!
+    fechaEnvio: String
+    estatus: ESTATUS!
+}
+
+enum ESTATUS
+{
+    RECIBIDO
+    PENDIENTE
+    ENTREGADO
+}

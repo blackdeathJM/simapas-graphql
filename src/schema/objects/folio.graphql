@@ -9,6 +9,7 @@ input FolioInput
     fechaCreacion: String!
     asigUsuario: String!
     archivoUrl: String
+    archivoRespuesta: String
 }
 type Folio
 {
@@ -21,6 +22,7 @@ type Folio
     fechaCreacion: String
     asigUsuario: String
     archivoUrl: String
+    archivoRespuesta: String
 }
 type FolioRes
 {
