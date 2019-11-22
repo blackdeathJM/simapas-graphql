@@ -1,0 +1,15 @@
+type Mutation
+{
+	"DEPARTAMENTO - Registro de los departamentos"
+	registroDepartamento(departamento: DepartamentoInput!): DepartamentoRes!
+	"DEPARTAMENTO - Actualizar el nombre del departamento"
+	actualizarDepartamento(nombreDeptoActualizar: DepartamentoInput!): DepartamentoRes!
+
+	"USUARIO - Registro de usuarios"
+	registroUsuario(usuario: UsuarioInput!): UsuarioRes!
+	"USUARIO - Actualizacion de un usuario"
+	actualizarUsuario(usuario: UsuarioInput!): UsuarioRes!
+
+	"DOCUMENTO - Registro de folio con el folio auto generado"
+	registroFolio(folio: FolioInput!): FolioRes!
+}
