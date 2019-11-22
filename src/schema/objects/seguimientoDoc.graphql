@@ -14,6 +14,21 @@ type Seguimiento
 
 }
 
+input SeguimientoInput
+{
+    _id: ID
+    folio: String
+    dependencia: String!
+    titulo: String!
+    fechaRecepcion: String!
+    fechaEntrega: String!
+    fechaEnvio: String!
+    observaciones: String
+    docSubido: String
+    usuarioDirigido: [String!]
+    estatus: estatus!
+}
+
 enum estatus
 {
     ENTREGADO
