@@ -7,28 +7,10 @@ import {
     perfilUsuario,
 } from "../operaciones/querys/usuarios.query";
 import {folioPorUsuario, folioUltimo, todosLosFolios} from "../operaciones/querys/folio.query";
-import {docsPorUsuario, todosLosDocumentos} from "../operaciones/querys/segDocumentacion.query";
+import {docsPorUsuario, docsPorUsuarioYEstatus, todosLosDocumentos} from "../operaciones/querys/segDocumentacion.query";
 
 const query: IResolvers =
     {
-        /*        INodo:
-                    {
-                        __resolveType: (obj: any, context: any, info: string) =>
-                        {
-                            console.log('========', obj);
-                            if (obj.usuario)
-                            {
-                                console.log('????????????', obj.usuario);
-                                return 'Usuario'
-                            }
-                            if (obj.nombre)
-                            {
-                                console.log('++++++++++++', obj.nombre);
-                                return 'Departamento'
-                            }
-                            return null
-                        }
-                    },*/
         Query:
             {
                 // DEPARTAMENTOS
@@ -71,13 +53,17 @@ const query: IResolvers =
                     return await folioPorUsuario(asigUsuario, db);
                 },
                 // SEGUIMIENTO DE DOCUMENTACION
-                async obtenerDocsUsuario(_: void, {usuario}, {db})
+                async obtenerDocsUsuario(_: void, {dirigido}, {db})
                 {
-                    return await docsPorUsuario(usuario, db);
+                    return await docsPorUsuario(dirigido, db);
                 },
                 async todosDocumentos(_: void, __: void, {db})
                 {
                     return await todosLosDocumentos(db);
+                },
+                async obtenerDocsUsuarioStatus(_: void, {asignado, estatus}, {db})
+                {
+                    return await docsPorUsuarioYEstatus(asignado, estatus, db);
                 }
             },
     };

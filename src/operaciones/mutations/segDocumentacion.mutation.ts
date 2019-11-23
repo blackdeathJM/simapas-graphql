@@ -1,12 +1,12 @@
 export async function agregarDocSeguimiento(segDocumentacion: any, db: any)
 {
     return await db.collection('segDocumentacion').insertOne(segDocumentacion).then(
-        async (res: any) =>
+        async () =>
         {
             return {
                 estatus: true,
                 mensaje: 'El documento fue registrado con exito',
-                documento: res
+                documento: segDocumentacion
             }
         }
     ).catch(

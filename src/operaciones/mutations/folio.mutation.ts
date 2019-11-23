@@ -15,7 +15,6 @@ export async function registrarFolio(folio: any, db: any): Promise<any>
                 return await db.collection('folios').insertOne(folio).then(
                     async (res: any) =>
                     {
-                        console.log('***', res.ops);
                         return {
                             estatus: true,
                             mensaje: 'Se ha registrado de manera correcta el folio',

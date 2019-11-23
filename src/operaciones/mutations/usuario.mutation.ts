@@ -36,9 +36,6 @@ export async function regUsuario(usuario: any, db: any)
 
 export async function actualizarPerfilUsuario(usuario: string, nombre: string, role: string, img: string, db: any)
 {
-    console.log('usuario', usuario);
-    console.log('objeto usuario', nombre);
-
     return await db.collection('usuarios').findOneAndUpdate(
         {usuario},
         {$set: {nombre, role, img}}

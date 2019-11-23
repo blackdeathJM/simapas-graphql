@@ -7,9 +7,17 @@ export async function todosLosDocumentos(db: any)
         });
 }
 
-export async function docsPorUsuario(usuario: String, db: any)
+export async function docsPorUsuario(dirigido: any, db: any)
 {
-    return await db.collection('segDocumentacion').find({usuario}).toArray().then(async (res: any) =>
+    return await db.collection('segDocumentacion').find({dirigido}).toArray().then(async (res: any) =>
+    {
+        return res;
+    });
+}
+
+export async function docsPorUsuarioYEstatus(dirigido: string, estatus: boolean, db: any)
+{
+    return await db.collection('segDocumentacion').find({dirigido, estatus}).toArray().then(async (res: any) =>
     {
         return res;
     });

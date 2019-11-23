@@ -24,5 +24,7 @@ type Query
 	"SEGUIMIENTO DOCUMENTACION - Consultar todos los registros"
 	todosDocumentos: [Documento]
 	"SEGUIMIENTO DOCUMENTACION - Control de documentos"
-	obtenerDocsUsuario(usuario: String): Documento
+	obtenerDocsUsuario(dirigido: String!): [Documento]
+	"SEGUIMIENTO DOCUMENTACION- Obtener documentos por usuario y por su estatus"
+	obtenerDocsUsuarioStatus(dirigido: String!, estatus: Boolean!): [Documento]
 }

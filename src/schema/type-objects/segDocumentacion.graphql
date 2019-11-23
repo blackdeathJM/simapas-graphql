@@ -1,39 +1,45 @@
 type Documento
 {
-    _id: ID
-    identificadorDoc: String!
-    foio: String
-    dependencia: String!
-    titulo: String!
-    dirigido: [String!]
-    fechaRecepcion: String!
-    fechaLimitEntrega: String!
-    fechaEnvio: String
-    estatus: ESTATUS!
+	_id: ID
+	identificadorDoc: String!
+	folio: String
+	dependencia: String!
+	comentario: String
+	titulo: String!
+	dirigido: [String!]
+	fechaRecepcion: String!
+	fechaLimitEntrega: String!
+	fechaEnvio: String
+	docUrl: String
+	autorizado: Boolean!
+	estatus: ESTATUS!
 }
 
 input DocumentoInput
 {
-    _id: ID
-    identificadorDoc: String!
-    foio: String
-    dependencia: String!
-    titulo: String!
-    dirigido: [String!]
-    fechaRecepcion: String!
-    fechaLimitEntrega: String!
-    fechaEnvio: String
-    estatus: ESTATUS!
+	_id: ID
+	identificadorDoc: String!
+	folio: String
+	dependencia: String!
+	comentario: String
+	titulo: String!
+	dirigido: [String!]
+	fechaRecepcion: String!
+	fechaLimitEntrega: String!
+	fechaEnvio: String
+	docUrl: String
+	autorizado: Boolean!
+	estatus: ESTATUS!
 }
 type DocumentoRes
 {
-    estatus: Boolean!
-    mensaje: String!
-    documento: Documento
+	estatus: Boolean!
+	mensaje: String!
+	documento: Documento
 }
 enum ESTATUS
 {
-    RECIBIDO
-    PENDIENTE
-    ENTREGADO
+	RECIBIDO
+	PENDIENTE
+	ENTREGADO
 }
