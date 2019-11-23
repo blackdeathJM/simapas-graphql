@@ -2,12 +2,14 @@ import {IResolvers} from "graphql-tools";
 import {actualizarDepto, registroDepto} from "../operaciones/mutations/departamento.mutation";
 import {actualizarPerfilUsuario, regUsuario} from "../operaciones/mutations/usuario.mutation";
 import {registrarFolio} from "../operaciones/mutations/folio.mutation";
+import {agregarDocSeguimiento} from "../operaciones/mutations/segDocumentacion.mutation";
 // import { ObjectId } from "bson";
 
 const mutation: IResolvers =
     {
         Mutation:
             {
+                // DEPARTAMENTO
                 async registroDepartamento(_: void, {departamento}, {pubsub, db})
                 {
                     return await registroDepto(departamento, pubsub, db);
@@ -16,6 +18,7 @@ const mutation: IResolvers =
                 {
                     return await actualizarDepto(nombreDeptoActualizar._id, nombreDeptoActualizar.nombre, db);
                 },
+                // USUARIO
                 async registroUsuario(_: void, {usuario}, {db})
                 {
                     return await regUsuario(usuario, db);
@@ -24,9 +27,15 @@ const mutation: IResolvers =
                 {
                     return await actualizarPerfilUsuario(usuario.usuario, usuario.nombre, usuario.role, usuario.img, db);
                 },
+                // FOLIO
                 async registroFolio(_: void, {folio}, {db})
                 {
                     return await registrarFolio(folio, db);
+                },
+                // SEGUIMIENTO DOCUMENTACION
+                async registroSegDocumentacion(_: void, {regDocumentacion}, {db})
+                {
+                    return await agregarDocSeguimiento(regDocumentacion, db);
                 }
             }
     };

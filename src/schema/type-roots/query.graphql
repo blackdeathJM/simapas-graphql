@@ -20,4 +20,9 @@ type Query
 	ultimoFolio: [Folio]!
 	"DOCUMENTO - Consultar los folios asignados a un usuario regreg"
 	folioUsuario(asigUsuario: String!): [Folio]
+
+	"SEGUIMIENTO DOCUMENTACION - Consultar todos los registros"
+	todosDocumentos: [Documento]
+	"SEGUIMIENTO DOCUMENTACION - Control de documentos"
+	obtenerDocsUsuario(usuario: String): Documento
 }

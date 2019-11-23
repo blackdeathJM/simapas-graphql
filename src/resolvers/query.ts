@@ -7,6 +7,7 @@ import {
     perfilUsuario,
 } from "../operaciones/querys/usuarios.query";
 import {folioPorUsuario, folioUltimo, todosLosFolios} from "../operaciones/querys/folio.query";
+import {docsPorUsuario, todosLosDocumentos} from "../operaciones/querys/segDocumentacion.query";
 
 const query: IResolvers =
     {
@@ -30,6 +31,7 @@ const query: IResolvers =
                     },*/
         Query:
             {
+                // DEPARTAMENTOS
                 async obtenerDepartamentos(_: void, __: any, {db})
                 {
                     return await obtenerDeptos(db)
@@ -38,6 +40,7 @@ const query: IResolvers =
                 {
                     return await buscarDeptoID(_id, db);
                 },
+                // USUARIOS
                 async obtenerUsuarios(_: void, __: any, {db})
                 {
                     return await obtenerTodosLosUsuarios(db);
@@ -54,6 +57,7 @@ const query: IResolvers =
                 {
                     return await perfilUsuario(token);
                 },
+                // FOLIOS
                 async obtenerFoliosTodos(_: void, __: void, {db})
                 {
                     return await todosLosFolios(db);
@@ -65,6 +69,15 @@ const query: IResolvers =
                 async folioUsuario(_: void, {asigUsuario}, {db})
                 {
                     return await folioPorUsuario(asigUsuario, db);
+                },
+                // SEGUIMIENTO DE DOCUMENTACION
+                async obtenerDocsUsuario(_: void, {usuario}, {db})
+                {
+                    return await docsPorUsuario(usuario, db);
+                },
+                async todosDocumentos(_: void, __: void, {db})
+                {
+                    return await todosLosDocumentos(db);
                 }
             },
     };

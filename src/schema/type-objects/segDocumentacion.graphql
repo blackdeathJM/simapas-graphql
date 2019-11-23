@@ -25,7 +25,12 @@ input DocumentoInput
     fechaEnvio: String
     estatus: ESTATUS!
 }
-
+type DocumentoRes
+{
+    estatus: Boolean!
+    mensaje: String!
+    documento: Documento
+}
 enum ESTATUS
 {
     RECIBIDO
