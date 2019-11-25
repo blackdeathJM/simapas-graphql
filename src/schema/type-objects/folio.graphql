@@ -9,7 +9,7 @@ input FolioInput
     fechaCreacion: String!
     asigUsuario: String!
     archivoUrl: String
-    archivoRespuesta: String
+    folioRespuesta: String
 }
 type Folio
 {
@@ -22,13 +22,13 @@ type Folio
     fechaCreacion: String
     asigUsuario: String
     archivoUrl: String
-    archivoRespuesta: String
+    folioRespuesta: String
 }
 type FolioRes
 {
     estatus: Boolean!
     mensaje: String!
-    folio: [Folio]
+    folio: Folio
 }
 enum TIPO
 {

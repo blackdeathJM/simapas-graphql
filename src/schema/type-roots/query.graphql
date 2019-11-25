@@ -26,5 +26,5 @@ type Query
 	"SEGUIMIENTO DOCUMENTACION - Control de documentos"
 	obtenerDocsUsuario(dirigido: String!): [Documento]
 	"SEGUIMIENTO DOCUMENTACION- Obtener documentos por usuario y por su estatus"
-	obtenerDocsUsuarioStatus(dirigido: String!, estatus: Boolean!): [Documento]
+	obtenerDocsUsuarioStatus(dirigido: String!, estatus: String!, autorizado: Boolean!): [Documento]
 }

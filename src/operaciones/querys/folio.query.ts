@@ -1,16 +1,21 @@
-export async function todosLosFolios(db: any) {
-    return await db.collection('folios').find().toArray().then((res: any) => {
+export async function todosLosFolios(db: any)
+{
+    return await db.collection('folios').find().toArray().then((res: any) =>
+    {
         return res;
     });
 }
 
-export async function folioUltimo(db: any) {
-    return await db.collection('folios').find().limit(1).sort({numFolio: -1}).toArray().then(async (res: any) => {
+export async function folioUltimo(db: any)
+{
+    return await db.collection('folios').find().limit(1).sort({numFolio: -1}).toArray().then(async (res: any) =>
+    {
         return res;
     });
 }
 
-export async function folioPorUsuario(asigUsuario: string, db: any) {
+export async function folioPorUsuario(asigUsuario: string, db: any)
+{
     return await db.collection('folios').find({asigUsuario}).toArray();
 }
 

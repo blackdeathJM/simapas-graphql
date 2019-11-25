@@ -52,19 +52,21 @@ const query: IResolvers =
                 {
                     return await folioPorUsuario(asigUsuario, db);
                 },
+                async todosDocumentos(_: void, __: void, {db})
+                {
+                    return await todosLosDocumentos(db);
+                },
                 // SEGUIMIENTO DE DOCUMENTACION
                 async obtenerDocsUsuario(_: void, {dirigido}, {db})
                 {
                     return await docsPorUsuario(dirigido, db);
                 },
-                async todosDocumentos(_: void, __: void, {db})
+                async obtenerDocsUsuarioStatus(_: void, {dirigido, estatus, autorizado}, {db}
+                )
                 {
-                    return await todosLosDocumentos(db);
-                },
-                async obtenerDocsUsuarioStatus(_: void, {asignado, estatus}, {db})
-                {
-                    return await docsPorUsuarioYEstatus(asignado, estatus, db);
+                    return await docsPorUsuarioYEstatus(dirigido, estatus, autorizado, db);
                 }
             },
-    };
+    }
+;
 export default query;

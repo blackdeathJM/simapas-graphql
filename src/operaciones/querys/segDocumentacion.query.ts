@@ -7,7 +7,7 @@ export async function todosLosDocumentos(db: any)
         });
 }
 
-export async function docsPorUsuario(dirigido: any, db: any)
+export async function docsPorUsuario(dirigido: string, db: any)
 {
     return await db.collection('segDocumentacion').find({dirigido}).toArray().then(async (res: any) =>
     {
@@ -15,9 +15,14 @@ export async function docsPorUsuario(dirigido: any, db: any)
     });
 }
 
-export async function docsPorUsuarioYEstatus(dirigido: string, estatus: boolean, db: any)
+export async function docsPorUsuarioYEstatus(dirigido: string, estatus: string, autorizado: boolean, db: any)
 {
-    return await db.collection('segDocumentacion').find({dirigido, estatus}).toArray().then(async (res: any) =>
+    // {$and: [{dirigido}, {estatus}]}
+    return await db.collection('segDocumentacion').find({
+        dirigido,
+        estatus,
+        autorizado
+    }).toArray().then(async (res: any) =>
     {
         return res;
     });
