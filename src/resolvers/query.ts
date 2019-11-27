@@ -7,7 +7,12 @@ import {
     perfilUsuario,
 } from "../operaciones/querys/usuarios.query";
 import {folioPorUsuario, folioUltimo, todosLosFolios} from "../operaciones/querys/folio.query";
-import {docsPorUsuario, docsPorUsuarioYEstatus, todosLosDocumentos} from "../operaciones/querys/segDocumentacion.query";
+import {
+    docsPorUsuario,
+    docsPorUsuarioYEstatus,
+    docsUsuarioEstatusPAR,
+    todosLosDocumentos
+} from "../operaciones/querys/segDocumentacion.query";
 
 const query: IResolvers =
     {
@@ -61,10 +66,13 @@ const query: IResolvers =
                 {
                     return await docsPorUsuario(dirigido, db);
                 },
-                async obtenerDocsUsuarioStatus(_: void, {dirigido, estatus, autorizado}, {db}
-                )
+                async obtenerDocsUsuarioStatus(_: void, {dirigido, estatus, autorizado}, {db})
                 {
                     return await docsPorUsuarioYEstatus(dirigido, estatus, autorizado, db);
+                },
+                async obtenerDocsUsuarioStatusPAR(_: void, {dirigido}, {db})
+                {
+                    return await docsUsuarioEstatusPAR(dirigido, db);
                 }
             },
     }

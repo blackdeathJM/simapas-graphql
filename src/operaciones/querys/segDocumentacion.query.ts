@@ -17,13 +17,15 @@ export async function docsPorUsuario(dirigido: string, db: any)
 
 export async function docsPorUsuarioYEstatus(dirigido: string, estatus: string, autorizado: boolean, db: any)
 {
-    // {$and: [{dirigido}, {estatus}]}
-    return await db.collection('segDocumentacion').find({
-        dirigido,
-        estatus,
-        autorizado
-    }).toArray().then(async (res: any) =>
+    //
+    return await db.collection('segDocumentacion').find({$and: [{dirigido}, {estatus}, {autorizado}]}).toArray().then(async (res: any) =>
     {
         return res;
     });
+}
+
+export async function docsUsuarioEstatusPAR(dirigido: string, db: any)
+{
+    console.log('valor de la variable', dirigido);
+    return await db.collection('segDocumentacion').find({dirigido, estatus: {$ne: "ENTREGADO"}}).toArray();
 }

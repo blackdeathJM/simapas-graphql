@@ -39,8 +39,8 @@ type DocumentoRes
 }
 enum ESTATUS
 {
-	RECIBIDO
 	PENDIENTE
+	APROBADO
 	RECHAZADO
 	ENTREGADO
 }
