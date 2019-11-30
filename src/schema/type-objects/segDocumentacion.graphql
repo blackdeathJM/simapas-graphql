@@ -5,6 +5,7 @@ type Documento
 	folio: String
 	dependencia: String!
 	comentario: String
+	observaciones: String
 	titulo: String!
 	dirigido: [String!]
 	fechaRecepcion: String!
@@ -22,6 +23,7 @@ input DocumentoInput
 	folio: String
 	dependencia: String!
 	comentario: String
+	observaciones: String
 	titulo: String!
 	dirigido: [String!]
 	fechaRecepcion: String!
