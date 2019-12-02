@@ -2,6 +2,7 @@ import express from 'express';
 import graphqlHTTP from 'express-graphql'
 import compression from 'compression';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 import {ApolloServer, PubSub} from "apollo-server-express";
 import {createServer} from 'http';
 import environments from "./config/environments";
@@ -20,7 +21,7 @@ async function init()
     const archivoRuta = require('./configMuter/folios');
     const app = express();
     const pubsub = new PubSub();
-    // app.use('*', cors());
+    app.use('*', cors({}));
     app.use(compression());
     app.use(bodyParser.json());
     app.use(bodyParser.json()).use(bodyParser.urlencoded({extended: true}));

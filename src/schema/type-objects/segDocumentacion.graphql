@@ -6,7 +6,7 @@ type Documento
 	dependencia: String!
 	comentario: String
 	observaciones: String
-	titulo: String!
+	asunto: String!
 	dirigido: [String!]
 	fechaRecepcion: String!
 	fechaLimitEntrega: String!
@@ -24,7 +24,7 @@ input DocumentoInput
 	dependencia: String!
 	comentario: String
 	observaciones: String
-	titulo: String!
+	asunto: String!
 	dirigido: [String!]
 	fechaRecepcion: String!
 	fechaLimitEntrega: String!
