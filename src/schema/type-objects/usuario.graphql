@@ -5,9 +5,8 @@ type Usuario
     nombre: String!
     usuario: String!
     contrasena: String!
-    role: ROLE!
+    role: [ROLE]!
     img: String!
-    foliosPermitidos: Int
     departamento: Departamento
 }
 input UsuarioInput
@@ -16,9 +15,8 @@ input UsuarioInput
     nombre: String!
     usuario: String!
     contrasena: String!
-    role: ROLE!
+    role: [ROLE]!
     img: String
-    foliosPermitidos: Int
     departamentoID: ID!
 }
 type UsuarioRes
@@ -37,5 +35,8 @@ enum ROLE
 {
     SUPERADMIN,
     ADMIN,
-    USUARIO
+    USUARIO,
+    TELEMETRIA,
+    AUX_TELEMETRIA,
+    VISITANTE
 }

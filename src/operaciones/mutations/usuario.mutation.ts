@@ -34,11 +34,11 @@ export async function regUsuario(usuario: any, db: any)
     )
 }
 
-export async function actualizarPerfilUsuario(usuario: string, nombre: string, role: string, img: string, db: any)
+export async function actualizarPerfilUsuario(usuario: string, nombre: string, img: string, db: any)
 {
     return await db.collection('usuarios').findOneAndUpdate(
         {usuario},
-        {$set: {nombre, role, img}}
+        {$set: {nombre, img}}
     ).then(
         async () =>
         {

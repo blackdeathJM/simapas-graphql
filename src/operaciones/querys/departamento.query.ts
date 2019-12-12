@@ -15,7 +15,6 @@ export async function obtenerDeptos(db: any)
         departamento
     }
 }*/
-
 // forma 2 de consulta por ID
 export async function buscarDeptoID(id: any, db: any)
 {
@@ -24,7 +23,7 @@ export async function buscarDeptoID(id: any, db: any)
         {
             return {
                 estatus: true,
-                mensaje: 'Resultado de la consulta',
+                mensaje: 'Busqueda de departamento por _id',
                 departamento: result
             }
         }
@@ -33,7 +32,7 @@ export async function buscarDeptoID(id: any, db: any)
         {
             return {
                 estatus: false,
-                mensaje: 'Fallo la consulta del departamento',
+                mensaje: 'Fallo la consulta del departamento por _id',
                 departamento: null
             }
         }

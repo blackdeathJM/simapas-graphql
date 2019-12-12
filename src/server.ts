@@ -2,7 +2,6 @@ import express from 'express';
 import graphqlHTTP from 'express-graphql'
 import compression from 'compression';
 import bodyParser from 'body-parser';
-import cors from 'cors';
 import {ApolloServer, PubSub} from "apollo-server-express";
 import {createServer} from 'http';
 import environments from "./config/environments";
@@ -21,7 +20,6 @@ async function init()
     const archivoRuta = require('./configMuter/folios');
     const app = express();
     const pubsub = new PubSub();
-    app.use('*', cors({}));
     app.use(compression());
     app.use(bodyParser.json());
     app.use(bodyParser.json()).use(bodyParser.urlencoded({extended: true}));
@@ -30,7 +28,7 @@ async function init()
     {
         res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");
         res.header("Access-Control-Allow-Origin", "http://localhost:4200");
-        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Cache-Control");
         res.header("Access-Control-Allow-Credentials", "true");
         next();
     });

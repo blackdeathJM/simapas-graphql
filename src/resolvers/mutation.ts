@@ -25,7 +25,7 @@ const mutation: IResolvers =
                 },
                 async actualizarUsuario(_: void, {usuario}, {db})
                 {
-                    return await actualizarPerfilUsuario(usuario.usuario, usuario.nombre, usuario.role, usuario.img, db);
+                    return await actualizarPerfilUsuario(usuario.usuario, usuario.nombre, usuario.img, db);
                 },
                 // FOLIO
                 async registroFolio(_: void, {folio}, {db})

@@ -1,3 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 /node_modules/
 /uploads/
+/src/uploads/
+src/schema/enums/
+src/schema/input/

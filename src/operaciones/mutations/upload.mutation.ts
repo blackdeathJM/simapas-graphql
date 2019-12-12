@@ -1,7 +1,6 @@
 import multer from "multer";
 import path from "path";
 import express from 'express';
-import uuidv4 from "uuidv4";
 
 const router = express.Router();
 
@@ -12,7 +11,7 @@ export async function subirArchivos(carpeta: string, tipoDeArchivo: string, _id:
         destination: path.join(__dirname, 'public/uploads'),
         filename: (req, file, cb) =>
         {
-            cb(null, uuidv4() + path.extname(file.originalname));
+            // cb(null, uuidv4() + path.extname(file.originalname));
         }
     });
     switch (tipoDeArchivo)
