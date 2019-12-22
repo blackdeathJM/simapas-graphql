@@ -1,12 +1,13 @@
-import {enviarNotificacionDepto} from "../subscriptions/departamento.subcription";
 import {ObjectId} from "bson";
+
+// import {enviarNotificacionDepto} from "../subscriptions/departamento.subcription";
 
 export async function registroDepto(depto: any, pubsub: any, db: any)
 {
     return await db.collection('departamentos').insertOne(depto).then(
         async () =>
         {
-            await enviarNotificacionDepto(pubsub, db);
+            // await enviarNotificacionDepto(pubsub, db);
             return {
                 estatus: true,
                 mensaje: `El departamento ${depto.nombre} se registro de manera correcta`,

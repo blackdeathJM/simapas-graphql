@@ -1,4 +1,5 @@
 import {IResolvers} from "graphql-tools";
+import {subscripciones} from "../config/constants";
 
 const subscription: IResolvers =
     {
@@ -8,7 +9,7 @@ const subscription: IResolvers =
                     {
                         subscribe: (_: void, __: any, {pubsub}) =>
                         {
-                            return pubsub.asyncIterator('cambioDepartamentos');
+                            return pubsub.asyncIterator(subscripciones.DEPARTAMENTO);
                         }
                     }
             }

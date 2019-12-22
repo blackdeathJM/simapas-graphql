@@ -3,7 +3,6 @@ import {actualizarDepto, registroDepto} from "../operaciones/mutations/departame
 import {actualizarPerfilUsuario, regUsuario} from "../operaciones/mutations/usuario.mutation";
 import {registrarFolio} from "../operaciones/mutations/folio.mutation";
 import {agregarDocSeguimiento} from "../operaciones/mutations/segDocumentacion.mutation";
-// import { ObjectId } from "bson";
 
 const mutation: IResolvers =
     {

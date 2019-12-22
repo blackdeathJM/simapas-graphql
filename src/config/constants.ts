@@ -10,4 +10,9 @@ if (process.env.NODE_ENV !== 'production')
         DEPARTAMENTOS: 'departamentos',
         USUARIOS: 'usuarios'
     }*/
+
+export const subscripciones =
+    {
+        DEPARTAMENTO: 'cambioDepartamentos'
+    };
 export const SECRET_KEY = process.env.SECRET_KEY || 'blackdeath';
