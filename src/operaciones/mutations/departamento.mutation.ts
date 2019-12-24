@@ -7,6 +7,17 @@ export async function registroDepto(depto: any, pubsub: any, db: any)
     return await db.collection('departamentos').insertOne(depto).then(
         async () =>
         {
+            return depto;
+        }
+    ).catch(
+        async () =>
+        {
+            return null
+        }
+    );
+    /*return await db.collection('departamentos').insertOne(depto).then(
+        async () =>
+        {
             // await enviarNotificacionDepto(pubsub, db);
             return {
                 estatus: true,
@@ -23,7 +34,7 @@ export async function registroDepto(depto: any, pubsub: any, db: any)
                 departamento: null
             }
         }
-    )
+    )*/
 }
 
 export async function actualizarDepto(_id: ObjectId, nombre: string, db: any)
@@ -35,23 +46,14 @@ export async function actualizarDepto(_id: ObjectId, nombre: string, db: any)
         async () =>
         {
             return {
-                estatus: true,
-                mensaje: 'El departamento se actualizo de manera correcta',
-                departamento:
-                    {
-                        _id,
-                        nombre
-                    }
+                _id,
+                nombre
             }
         }
     ).catch(
         async () =>
         {
-            return {
-                estatus: false,
-                mensaje: 'Error al actualizar el departamento',
-                departamento: null
-            }
+            return null
         }
     );
 }
