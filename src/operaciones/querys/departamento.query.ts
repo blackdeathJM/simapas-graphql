@@ -1,20 +1,9 @@
-import {ObjectId} from "bson";
+import { ObjectId } from "bson";
 
 export async function obtenerDeptos(db: any)
 {
     return await db.collection('departamentos').find().toArray();
 }
-
-// forma 1 de consulta por ID
-/*export async function obtenerDeptoID(id: any, db: any): Promise<any>
-{
-    const departamento = await db.collection('departamentos').findOne({_id: new ObjectId(id)});
-    return {
-        estatus: true,
-        mensaje: 'Operacion realizada con exito',
-        departamento
-    }
-}*/
 // forma 2 de consulta por ID
 export async function buscarDeptoID(id: any, db: any)
 {
