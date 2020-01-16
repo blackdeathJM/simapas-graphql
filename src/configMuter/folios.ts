@@ -8,7 +8,7 @@ const storage = multer.diskStorage({
     destination: (req, file, cb) =>
     {
         console.log(file.location);
-        cb(null, path.join(__dirname, '../uploads'));
+        cb(null, path.join(__dirname, '../uploads/folios'));
     },
     filename: (req, file, cb) =>
     {
@@ -33,7 +33,7 @@ const uploadArchivo = multer({
     }
 }).single('file');
 
-router.post('/upload', function (req, res, next)
+router.post('/upload/folios', function (req, res, next)
 {
     uploadArchivo(req, res, function (err)
     {

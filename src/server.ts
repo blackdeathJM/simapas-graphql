@@ -7,7 +7,6 @@ import { createServer } from 'http';
 import environments from "./config/environments";
 import schema from './schema/schema';
 import Database from "./config/database";
-import cors from 'cors';
 import path from "path";
 
 if (process.env.NODE_ENV !== 'production')
@@ -22,25 +21,24 @@ async function init()
     const pubsub = new PubSub();
     app.use(compression());
     app.use(bodyParser.json());
-    app.use(cors());
     app.use(bodyParser.json()).use(bodyParser.urlencoded({extended: true}));
     app.use(express.static(path.join(__dirname, 'uploads')));
-    app.head('/graphql', (req, res) =>
+    /*    app.head('/graphql', (req, res) =>
+        {
+            res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");
+            res.header("Access-Control-Allow-Origin", "http://localhost:4200");
+            res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Cache-Control");
+            res.header("Access-Control-Allow-Credentials", "true");
+            res.end();
+        });*/
+    app.use(function (req, res, next)
     {
         res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");
         res.header("Access-Control-Allow-Origin", "http://localhost:4200");
         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Cache-Control");
         res.header("Access-Control-Allow-Credentials", "true");
-        res.end();
+        next();
     });
-    /*        app.use(function (req, res, next)
-            {
-                res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");
-                res.header("Access-Control-Allow-Origin", "http://localhost:4200");
-                res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Cache-Control");
-                res.header("Access-Control-Allow-Credentials", "true");
-                next();
-            });*/
 
     const database = new Database();
     const db = await database.init();
@@ -59,10 +57,6 @@ async function init()
     server.applyMiddleware({app});
     app.use('/file', archivoRuta);
     app.use('/graphql', graphqlHTTP({schema}));
-    /*    app.use('/', expressPlayground({
-            }),
-            graphqlHTTP({schema})
-        );*/
     const PORT = process.env.PORT || 5300;
     const httpServer = createServer(app);
     server.installSubscriptionHandlers(httpServer);
