@@ -5,13 +5,11 @@ import path from 'path';
 const router = express.Router();
 
 const storage = multer.diskStorage({
-    destination: (req, file, cb) =>
-    {
+    destination: (req, file, cb) => {
         console.log(file.location);
         cb(null, path.join(__dirname, '../uploads/folios'));
     },
-    filename: (req, file, cb) =>
-    {
+    filename: (req, file, cb) => {
         cb(null, file.originalname);
     }
 });
@@ -29,14 +27,11 @@ const uploadArchivo = multer({
         }
         cb(new Error('La imagen no es soportada'), false);
     }
-}).array('file');
+}).single('file');
 
-router.post('/upload/folios', function (req, res, next)
-{
-    uploadArchivo(req, res, function (err)
-    {
-        if (err)
-        {
+router.post('/upload/folios', function (req, res, next) {
+    uploadArchivo(req, res, function (err) {
+        if (err) {
             return res.status(501).json({error: err});
         }
         // agregar las funcionalidades para la base de datos
