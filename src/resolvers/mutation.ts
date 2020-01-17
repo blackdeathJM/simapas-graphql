@@ -1,8 +1,8 @@
-import {IResolvers} from "graphql-tools";
-import {actualizarDepto, registroDepto} from "../operaciones/mutations/departamento.mutation";
-import {actualizarPerfilUsuario, regUsuario} from "../operaciones/mutations/usuario.mutation";
-import {registrarFolio} from "../operaciones/mutations/folio.mutation";
-import {agregarDocSeguimiento} from "../operaciones/mutations/segDocumentacion.mutation";
+import { IResolvers } from "graphql-tools";
+import { actualizarDepto, registroDepto } from "../operaciones/mutations/departamento.mutation";
+import { actualizarPerfilUsuario, regUsuario } from "../operaciones/mutations/usuario.mutation";
+import { acUrlFolio, registrarFolio } from "../operaciones/mutations/folio.mutation";
+import { agregarDocSeguimiento } from "../operaciones/mutations/segDocumentacion.mutation";
 
 const mutation: IResolvers =
     {
@@ -30,6 +30,10 @@ const mutation: IResolvers =
                 async registroFolio(_: void, {folio}, {db})
                 {
                     return await registrarFolio(folio, db);
+                },
+                async acUrlFolio(_: void, {id, archivoUrl}, {db})
+                {
+                    return await acUrlFolio(id, archivoUrl, db);
                 },
                 // SEGUIMIENTO DOCUMENTACION
                 async registroSegDocumentacion(_: void, {regDocumentacion}, {db})

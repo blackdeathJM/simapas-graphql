@@ -10,9 +10,10 @@ type Mutation
 	"USUARIO - Actualizacion de un usuario"
 	actualizarUsuario(usuario: UsuarioInput!): UsuarioRes!
 
-	"DOCUMENTO - Registro de folio con el folio auto generado"
+	"FOLIOS - Registro de folio con el folio auto generado"
 	registroFolio(folio: FolioInput!): FolioRes!
-
+	"FOLIOS - Actualizar archivoUrl"
+	acUrlFolio(id: ID!, archivoUrl: String!): Folio!
 	"SEGUIMIENTO DE DOCUMENTACION- Registro de los documentos externos"
 	registroSegDocumentacion(regDocumentacion: DocumentoInput!):DocumentoRes!
 }

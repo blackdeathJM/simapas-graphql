@@ -1,3 +1,5 @@
+import { ObjectId } from "bson";
+
 export async function registrarFolio(folio: any, db: any): Promise<any>
 {
     return await db.collection('folios').findOne({numFolio: folio.numFolio}).then(
@@ -5,7 +7,6 @@ export async function registrarFolio(folio: any, db: any): Promise<any>
         {
             if (rest)
             {
-                console.log('rsafd', rest);
                 return {
                     estatus: false,
                     mensaje: 'Este numero de folio se acaba de utilizar en otro departamento por favor cierra la ventana y vuelve abrirla para generar uno nuevo',
@@ -44,4 +45,25 @@ export async function registrarFolio(folio: any, db: any): Promise<any>
             }
         }
     )
+}
+
+export async function acUrlFolio(id: ObjectId, archivoUrl: string, db: any)
+{
+    console.log('nuevo', archivoUrl);
+    return await db.collection('folios').findOneAndUpdate({_id: new ObjectId(id)}, {$set: {archivoUrl}}).then(
+        async () =>
+        {
+            return {
+                _id: id,
+                archivoUrl
+            }
+        }
+    ).catch(
+        async () =>
+        {
+            return {
+                _id: 'Error no se registro'
+            }
+        }
+    );
 }

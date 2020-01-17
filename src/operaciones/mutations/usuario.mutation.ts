@@ -60,14 +60,3 @@ export async function actualizarPerfilUsuario(usuario: string, nombre: string, i
         }
     );
 }
-
-/*export async function actualizarPerfil(usuario: string, db: any, tipo: string, archivo: any)
-{
-    if (!archivo)
-    {
-        console.log('No se tiene un archivo');
-    }
-    // obtener el nombre del archivo
-    let archivoNombre = archivo.img;
-    let separarExtension = archivo.img.split('.');
-}*/
