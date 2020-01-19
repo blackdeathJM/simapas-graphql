@@ -15,13 +15,15 @@ if (process.env.NODE_ENV !== 'production') {
 
 async function init()
 {
-    const archivoRuta = require('./configMuter/folios');
+    const folioRuta = require('./configMuter/folios.routes');
     const app = express();
     const pubsub = new PubSub();
-    app.use(compression());
+    // app.use(bodyParser.json()).use(bodyParser.urlencoded({extended: true}));
+    app.use(bodyParser.urlencoded({extended: false}));
     app.use(bodyParser.json());
-    app.use(bodyParser.json()).use(bodyParser.urlencoded({extended: true}));
-    app.use(express.static(path.join(__dirname, 'uploads')));
+    app.use(express.static(path.join(__dirname, 'public')));
+    // app.use('/uploads', express.static('uploads'));
+    app.use(compression());
     app.use(function (req, res, next)
     {
         res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");
@@ -46,7 +48,7 @@ async function init()
     });
 
     server.applyMiddleware({app});
-    app.use('/file', archivoRuta);
+    app.use('/file', folioRuta);
     app.use('/graphql', graphqlHTTP({schema}));
     const PORT = process.env.PORT || 5300;
     const httpServer = createServer(app);
