@@ -3,6 +3,6 @@ import {agFolio, obFolio} from "./folio";
 
 const router = express.Router();
 
-router.route('/folio').post(agFolio).get(obFolio);
+router.post('/folio', agFolio).get('/:archivoUrl', obFolio);
 
 module.exports = router;
