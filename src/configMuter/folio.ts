@@ -10,6 +10,9 @@ export async function agFolio(req: Request, res: Response): Promise<any>
         if (error) {
             return res.status(501).json({error});
         }
+        if (req.file.filename) {
+            console.log('Si lleva archivo');
+        }
         let nvoRuta = path.resolve(__dirname, '../public/uploads/folios/' + req.file.filename);
         fs.rename(req.file.path, nvoRuta);
         return res.json({nombreOriginal: req.file.originalname, nombreSubido: req.file.filename})
