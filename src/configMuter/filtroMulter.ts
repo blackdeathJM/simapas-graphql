@@ -4,7 +4,7 @@ import {storage} from "./almacenamientoMulter";
 
 export const uploadArchivo = multer({
     storage,
-    limits: {fileSize: 10000000},
+    limits: {fileSize: 200000000},
     fileFilter: (req, file, cb) =>
     {
         const filetypes = /jpeg|jpg|png|pdf/;
@@ -14,6 +14,6 @@ export const uploadArchivo = multer({
         if (mimetype && extname) {
             return cb(null, true);
         }
-        cb(new Error('La imagen no es soportada'), false);
+        cb(new Error('El archivo no es soportado'), false);
     }
 }).single('file');
