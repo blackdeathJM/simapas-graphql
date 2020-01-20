@@ -12,7 +12,8 @@ export async function agFolio(req: Request, res: Response): Promise<any>
         }
         if (req.file.filename) {
             let nvoRuta = path.resolve(__dirname, '../public/uploads/folios/' + req.file.filename);
-            fs.rename(req.file.path, nvoRuta);
+            fs.move(req.file.path, nvoRuta);
+            // fs.rename(req.file.path, nvoRuta);
             return res.json({nombreOriginal: req.file.originalname, nombreSubido: req.file.filename})
         } else {
             return res.json({mensaje: 'Error al intentar agregar el archivo'});
@@ -22,7 +23,6 @@ export async function agFolio(req: Request, res: Response): Promise<any>
 
 export async function obFolio(req: Request, res: Response): Promise<any>
 {
-    console.log('parametros', req.query.archivoUrl);
     let archivoUrl = req.query.archivoUrl;
     return res.sendFile(path.resolve(__dirname, `../public/uploads/folios/${archivoUrl}`));
 }
