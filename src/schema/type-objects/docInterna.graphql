@@ -39,5 +39,5 @@ type DocInternaRes
 {
     estatus: Boolean!
     mensaje: String!
-    docInterna: DocInterna!
+    docInterna: DocInterna
 }
