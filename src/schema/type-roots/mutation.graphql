@@ -1,19 +1,23 @@
 type Mutation
 {
-	"DEPARTAMENTO - Registro de los departamentos"
+    "DEPARTAMENTO - Registro de los departamentos"
     registroDepartamento(departamento: DepartamentoInput!): Departamento!
     "DEPARTAMENTO - Actualizar el nombre del departamento"
     actualizarDepartamento(nombreDeptoActualizar: DepartamentoInput!): Departamento!
 
     "USUARIO - Registro de usuarios"
     registroUsuario(usuario: UsuarioInput!): UsuarioRes!
-	"USUARIO - Actualizacion de un usuario"
-	actualizarUsuario(usuario: UsuarioInput!): UsuarioRes!
+    "USUARIO - Actualizacion de un usuario"
+    actualizarUsuario(usuario: UsuarioInput!): UsuarioRes!
 
-	"FOLIOS - Registro de folio con el folio auto generado"
-	registroFolio(folio: FolioInput!): FolioRes!
-	"FOLIOS - Actualizar archivoUrl"
-	acUrlFolio(id: ID!, archivoUrl: String!): Folio!
-	"SEGUIMIENTO DE DOCUMENTACION- Registro de los documentos externos"
-	registroSegDocumentacion(regDocumentacion: DocumentoInput!):DocumentoRes!
+    "FOLIOS - Registro de folio con el folio auto generado"
+    registroFolio(folio: FolioInput!): FolioRes!
+    "FOLIOS - Actualizar archivoUrl"
+    acUrlFolio(id: ID!, archivoUrl: String!): Folio!
+    "SEGUIMIENTO DE DOCUMENTACION- Registro de los documentos externos"
+    registroSegDocumentacion(regDocumentacion: DocumentoInput!):DocumentoRes!
+
+    "DOCUMENTACION INTERNA- Registro de la documentacion interna"
+    agDocInterna(agNotificacion: DocInternaInput!): DocInternaRes!
+    acDocVistoUsuario(folioInterno: String!, usuario: String!): DocInternaRes!
 }

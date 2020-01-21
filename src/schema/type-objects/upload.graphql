@@ -1,8 +1,0 @@
-type File
-{
-    _id: ID!
-    path: String!
-    nombreArchivo: String!
-    mimetype: String!
-    encoding: String!
-}
