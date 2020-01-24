@@ -2,4 +2,6 @@ type Subscription
 {
 	"DEPARTAMENTO - Detectar cambios"
 	cambioDepartamento: [Departamento!]
+	"DOC INTERNA: Detectar cambios en las notificaciones de mensajes"
+	cambioDocInterna: [DocInterna!]
 }
