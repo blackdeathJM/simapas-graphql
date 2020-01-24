@@ -13,6 +13,7 @@ if (process.env.NODE_ENV !== 'production')
 
 export const subscripciones =
     {
-        DEPARTAMENTO: 'cambioDepartamentos'
+        DEPARTAMENTO: 'cambioDepartamentos',
+        DOCINTERNA: 'cambioDocInterna'
     };
 export const SECRET_KEY = process.env.SECRET_KEY || 'blackdeath';

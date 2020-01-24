@@ -19,5 +19,6 @@ type Mutation
 
     "DOCUMENTACION INTERNA- Registro de la documentacion interna"
     agDocInterna(agNotificacion: DocInternaInput!): DocInternaRes!
+    "DOCUMENTACION INTERNA: Cambio visto a true para la notificacion"
     acDocVistoUsuario(folioInterno: String!, usuario: String!): DocInternaRes!
 }
