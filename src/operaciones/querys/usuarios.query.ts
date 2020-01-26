@@ -34,7 +34,6 @@ export async function loginUsuario(usuario: string, contrasena: string, db: any)
 export async function perfilUsuario(token: string)
 {
     let info: any = new JWT().verify(token);
-    console.log('Verificacion de token', info);
     if (info === 'La autenticacion del token es invalida, por favor inicia sesion') {
         return {
             estatus: false,
