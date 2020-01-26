@@ -3,7 +3,6 @@ export async function todasNotificacionesDocInterna(db: any) {
 }
 
 export async function todasNotificacionesUsuario(usuario: string, db: any) {
-    console.log('Usuario', usuario);
     return await db.collection("docInterna").find({"usuarioDestino.usuario": usuario}).toArray();
 }
 

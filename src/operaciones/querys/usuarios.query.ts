@@ -9,16 +9,14 @@ export async function obtenerTodosLosUsuarios(db: any)
 export async function loginUsuario(usuario: string, contrasena: string, db: any)
 {
     const loginUsuario = await db.collection('usuarios').findOne({usuario});
-    if (loginUsuario === null)
-    {
+    if (loginUsuario === null) {
         return {
             estatus: false,
             mensaje: 'Login incorrectos el usuario no existe',
             token: null
         };
     }
-    if (!bcryptjs.compareSync(contrasena, loginUsuario.contrasena))
-    {
+    if (!bcryptjs.compareSync(contrasena, loginUsuario.contrasena)) {
         return {
             estatus: false,
             mensaje: 'Login incorrecto, la contraseña es incorrecta',
@@ -36,8 +34,8 @@ export async function loginUsuario(usuario: string, contrasena: string, db: any)
 export async function perfilUsuario(token: string)
 {
     let info: any = new JWT().verify(token);
-    if (info === 'La autenticacion del token es invalida, por favor inicia sesion')
-    {
+    console.log('Verificacion de token', info);
+    if (info === 'La autenticacion del token es invalida, por favor inicia sesion') {
         return {
             estatus: false,
             mensaje: info,

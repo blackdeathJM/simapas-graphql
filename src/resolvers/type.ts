@@ -3,7 +3,7 @@ import {buscarDeptoRelacion} from "../operaciones/querys/departamento.query";
 
 const type: IResolvers =
     {
-        Usuario:
+        Usuario: // este es el tipo que se encuentra en type-objects
             {
                 departamento: async (parent: any, __: any, {db}) =>
                 {
