@@ -25,7 +25,7 @@ input UsuarioDestinoInput
 {
     usuario: String!
     visto: Boolean!
-    fechaVisto: String!
+    fechaVisto: String
 }
 
 type UsuarioDestino
