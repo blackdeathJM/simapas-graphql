@@ -1,5 +1,5 @@
 import {subscripciones} from "../../config/constants";
-import {todasNotificacionesDocInterna} from "../querys/docInterna";
+import {todasNotificacionesDocInterna} from "../querys/docInterna.query";
 
 async function enviarNotificacionDocInterna(pubsub: any, db: any)
 {

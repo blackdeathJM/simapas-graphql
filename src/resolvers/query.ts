@@ -17,7 +17,7 @@ import {
     docInternaUsuarioVisto,
     todasNotificacionesDocInterna,
     todasNotificacionesUsuario
-} from "../operaciones/querys/docInterna";
+} from "../operaciones/querys/docInterna.query";
 
 const query: IResolvers =
     {
