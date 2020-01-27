@@ -42,13 +42,13 @@ const mutation: IResolvers =
                     return await agregarDocSeguimiento(regDocumentacion, db);
                 },
                 // DOCUMENTACION INTERNA
-                async agDocInterna(_: void, {agNotificacion}, {db})
+                async agDocInterna(_: void, {agNotificacion}, {pubsub, db})
                 {
-                    return await agDocInterna(agNotificacion, db);
+                    return await agDocInterna(agNotificacion, pubsub, db);
                 },
-                async acDocVistoUsuario(_: void, {usuario, folioInterno}, {db})
+                async acDocVistoUsuario(_: void, {usuario, folioInterno}, {pubsub, db})
                 {
-                    return await acVistoPorUsuario(usuario, folioInterno, db);
+                    return await acVistoPorUsuario(usuario, folioInterno, pubsub, db);
                 }
             }
     };

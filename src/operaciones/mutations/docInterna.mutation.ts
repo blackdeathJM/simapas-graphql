@@ -1,4 +1,12 @@
-export async function agDocInterna(agNotificacion: any, db: any)
+import {subscripciones} from "../../config/constants";
+import {todasNotificacionesDocInterna} from "../querys/docInterna";
+
+async function enviarNotificacionDocInterna(pubsub: any, db: any)
+{
+    pubsub.publish(subscripciones.DOCINTERNA, {cambioDocInterna: await todasNotificacionesDocInterna(db)})
+}
+
+export async function agDocInterna(agNotificacion: any, pubsub: any, db: any)
 {
     let totalNotificaciones = await db.collection("docInterna").countDocuments();
 
@@ -11,6 +19,7 @@ export async function agDocInterna(agNotificacion: any, db: any)
         return await db.collection("docInterna").insertOne(agNotificacion).then(
             async () =>
             {
+                enviarNotificacionDocInterna(pubsub, db);
                 return {
                     estatus: true,
                     mensaje: 'Datos agregados con exito',
@@ -30,12 +39,23 @@ export async function agDocInterna(agNotificacion: any, db: any)
     }
 }
 
-export async function acVistoPorUsuario(usuario: string, folioInterno: string, db: any)
+export async function acVistoPorUsuario(usuario: string, folioInterno: string, pubsub: any, db: any)
 {
-    return await db.collection("docInterna").findOneAndUpdate({$and: [{folioInterno}, {"usuarioDestino.usuario": usuario}]}, {$set: {"usuarioDestino.$.visto": true}},
+    const dia = new Date().getDate();
+    const mes = new Date().getMonth() + 1;
+    const ano = new Date().getFullYear();
+    const fechaVisto = `${dia}/${mes}/${ano}`;
+
+    return await db.collection("docInterna").findOneAndUpdate({$and: [{folioInterno}, {"usuarioDestino.usuario": usuario}]}, {
+            $set: {
+                "usuarioDestino.$.visto": true,
+                "usuarioDestino.$.fechaVisto": fechaVisto
+            }
+        },
         false, true).then(
         async (res: any) =>
         {
+            enviarNotificacionDocInterna(pubsub, db);
             return {
                 estatus: true,
                 mensaje: 'La notificacion ha modificado como vista',
