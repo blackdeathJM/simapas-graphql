@@ -42,9 +42,8 @@ const mutation: IResolvers =
                     return await agregarDocSeguimiento(regDocumentacion, db);
                 },
                 // DOCUMENTACION INTERNA
-                async agDocInterna(_: void, {agNotificacion}, {pubsub, db})
-                {
-                    return await agDocInterna(agNotificacion, pubsub, db);
+                async agDocInterna(_: void, {agNotificacion}, {pubsub, db, cadena}) {
+                    return await agDocInterna(agNotificacion, pubsub, db, cadena);
                 },
                 async acDocVistoUsuario(_: void, {usuario, folioInterno}, {pubsub, db})
                 {

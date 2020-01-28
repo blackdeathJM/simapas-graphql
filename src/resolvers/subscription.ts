@@ -20,10 +20,16 @@ const subscription: IResolvers =
                     },
                 envNotUsuarioVisto:
                     {
-                        subscribe: withFilter((pubsub) => pubsub.asyncIterator([subscripciones.NOT_DOC_INTERNA]), async (payload: any, variables: any) => {
-                            return payload.NOT_DOC_INTERNA.usuarioDestino.usuario === variables.usuario
-                        })
+                        subscribe: (_: void, __: void, {pubsub}) => {
+                            return pubsub.asyncIterator([subscripciones.NOT_DOC_INTERNA])
+                        }
                     }
+                /*                envNotUsuarioVisto:
+                                    {
+                                        subscribe: withFilter((pubsub) => pubsub.asyncIterator([subscripciones.NOT_DOC_INTERNA]), async (payload: any, variables: any) => {
+                                            return payload.NOT_DOC_INTERNA.usuarioDestino.usuario === variables.usuario
+                                        })
+                                    }*/
             }
     };
 export default subscription;

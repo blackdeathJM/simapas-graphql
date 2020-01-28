@@ -13,8 +13,7 @@ if (process.env.NODE_ENV !== 'production') {
     const envs = environments;
 }
 
-async function init()
-{
+async function init() {
     const folioRuta = require('./configMuter/folios.routes');
     const app = express();
     const pubsub = new PubSub();
@@ -24,8 +23,7 @@ async function init()
     app.use(express.static(path.join(__dirname, 'public')));
     // app.use('/uploads', express.static('uploads'));
     app.use(compression());
-    app.use(function (req, res, next)
-    {
+    app.use(function (req, res, next) {
         res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");
         res.header("Access-Control-Allow-Origin", "http://localhost:4200");
         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Cache-Control");
@@ -35,11 +33,11 @@ async function init()
 
     const database = new Database();
     const db = await database.init();
-    const context: any = async ({req, connection}: any) =>
-    {
+    const context: any = async ({req, connection}: any) => {
         const token = req ? req.headers.authorization : connection.authorization;
+        const cadena = req ? req.headers.cadena : connection.cadena;
         // const params = req ? req.headers.params : connection.params;
-        return {db, token, pubsub};
+        return {db, token, cadena, pubsub};
     };
     const server = new ApolloServer({
         schema,
@@ -57,8 +55,7 @@ async function init()
         {
             port: PORT
         },
-        () =>
-        {
+        () => {
             console.log('==============================SERVIDOR============================');
             console.log(`Sistema comercial Graphql http://localhost:${PORT}${server.graphqlPath}`);
             console.log(`Sistema comercial susbcripciones con Graphql ws://localhost:${PORT}${server.subscriptionsPath}`);
