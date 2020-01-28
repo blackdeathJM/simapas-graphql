@@ -1,10 +1,4 @@
-import {subscripciones} from "../../config/constants";
-import {todasNotificacionesDocInterna} from "../querys/docInterna.query";
-
-async function enviarNotificacionDocInterna(pubsub: any, db: any)
-{
-    pubsub.publish(subscripciones.DOCINTERNA, {cambioDocInterna: await todasNotificacionesDocInterna(db)})
-}
+import {enviarNotificacionDocInterna} from "../subscriptions/docInterna.subscription";
 
 export async function agDocInterna(agNotificacion: any, pubsub: any, db: any)
 {
@@ -19,7 +13,7 @@ export async function agDocInterna(agNotificacion: any, pubsub: any, db: any)
         return await db.collection("docInterna").insertOne(agNotificacion).then(
             async () =>
             {
-                enviarNotificacionDocInterna(pubsub, db);
+                await enviarNotificacionDocInterna(pubsub, db);
                 return {
                     estatus: true,
                     mensaje: 'Datos agregados con exito',
@@ -55,7 +49,7 @@ export async function acVistoPorUsuario(usuario: string, folioInterno: string, p
         false, true).then(
         async (res: any) =>
         {
-            enviarNotificacionDocInterna(pubsub, db);
+            await enviarNotificacionDocInterna(pubsub, db);
             return {
                 estatus: true,
                 mensaje: 'La notificacion ha modificado como vista',

@@ -7,13 +7,15 @@ const subscription: IResolvers =
             {
                 cambioDepartamento:
                     {
-                        subscribe: (_: void, __: any, {pubsub}) => {
+                        subscribe: (_: void, __: any, {pubsub}) =>
+                        {
                             return pubsub.asyncIterator(subscripciones.DEPARTAMENTO);
                         }
                     },
                 cambioDocInterna:
                     {
-                        subscribe: (_: void, __: any, {pubsub}) => {
+                        subscribe: (_: void, __: any, {pubsub}) =>
+                        {
                             return pubsub.asyncIterator(subscripciones.DOCINTERNA);
                         }
                     }
