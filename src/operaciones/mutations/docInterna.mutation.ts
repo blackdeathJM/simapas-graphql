@@ -41,15 +41,14 @@ export async function acVistoPorUsuario(usuario: string, folioInterno: string, p
     const fechaVisto = `${dia}/${mes}/${ano}`;
 
     return await db.collection("docInterna").findOneAndUpdate({$and: [{folioInterno}, {"usuarioDestino.usuario": usuario}]}, {
-            $set: {
-                "usuarioDestino.$.visto": true,
-                "usuarioDestino.$.fechaVisto": fechaVisto
-            }
-        },
-        false, true).then(
-        async (res: any) =>
-        {
+        $set: {
+            "usuarioDestino.$.visto": true,
+            "usuarioDestino.$.fechaVisto": fechaVisto
+        }
+    }).then(
+        async (res: any) => {
             await enviarNotificacionDocInterna(pubsub, db);
+            console.log('++++', res);
             return {
                 estatus: true,
                 mensaje: 'La notificacion ha modificado como vista',

@@ -1,7 +1,6 @@
 import environments from "./environments";
 
-if (process.env.NODE_ENV !== 'production')
-{
+if (process.env.NODE_ENV !== 'production') {
     const environment = environments;
 }
 
@@ -14,6 +13,7 @@ if (process.env.NODE_ENV !== 'production')
 export const subscripciones =
     {
         DEPARTAMENTO: 'cambioDepartamentos',
-        DOCINTERNA: 'cambioDocInterna'
+        DOCINTERNA: 'cambioDocInterna',
+        NOT_DOC_INTERNA: 'notDocInterna'
     };
 export const SECRET_KEY = process.env.SECRET_KEY || 'blackdeath';
