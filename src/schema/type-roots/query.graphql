@@ -22,13 +22,13 @@ type Query
     folioUsuario(asigUsuario: String!): [Folio]
 
     "DOC EXTERNA: Consultar todos los registros"
-    todosDocumentos: [Documento]
+    todosDocumentos: [DocumentoExterno]
     "DOC EXTERNA: Control de documentos"
-    obtenerDocsUsuario(usuario: String!): [Documento]
+    obtenerDocsUsuario(usuario: String!): [DocumentoExterno]
     "DOC EXTERNA: Obtener documentos por usuario y por su estatus"
-    obtenerDocsUsuarioStatus(dirigido: String!, estatus: String!, autorizado: Boolean!): [Documento]
+    obtenerDocsUsuarioStatus(dirigido: String!, estatus: String!, autorizado: Boolean!): [DocumentoExterno]
     "DOC EXTERNA: Obtener los documentos por usuario con el estatus pendiente, aprobado o rechazado"
-    obtenerDocsUsuarioStatusPAR(dirigido: String!): [Documento]
+    obtenerDocsUsuarioStatusPAR(dirigido: String!): [DocumentoExterno]
 
     "DOC INTERNA: Obtener todas las notificaciones"
     obNotiDocInterna:[DocInterna]

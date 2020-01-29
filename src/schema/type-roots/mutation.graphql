@@ -16,7 +16,7 @@ type Mutation
     acUrlFolio(id: ID!, archivoUrl: String!): Folio!
     # =============================DOC EXTERNA===================================================
     "DOC EXTERNA: Registro de los documentos externos"
-    regDocExterno(regDoc: DocumentoInput!):DocumentoRes!
+    regDocExterno(regDoc: DocumentoExternoInput!):DocumentoExternoRes!
     # =============================DOC INTERNA ==================================================
     "DOC INTERNA- Registro de la documentacion interna"
     agDocInterna(agNotificacion: DocInternaInput!): DocInternaRes!

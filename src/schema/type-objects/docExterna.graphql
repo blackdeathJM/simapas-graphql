@@ -1,22 +1,19 @@
-type Documento
+type DocumentoExterno
 {
     _id: ID
-    identificadorDoc: String!
+    identificadorDoc: String
     folio: String
-    dependencia: String!
+    dependencia: String
     comentario: String
     observaciones: String
     asunto: String!
-    usuarioDestino: [Usuario!]
-    fechaRecepcion: String!
-    fechaLimitEntrega: String!
-    fechaEnvio: String
-    docUrl: String
-    autorizado: Boolean!
-    estatus: ESTATUS!
+    usuarioDestino: [UsuarioDocExterno]
+    fechaRecepcion: String
+    fechaLimitEntrega: String
+    estatus: ESTATUS
 }
 
-input DocumentoInput
+input DocumentoExternoInput
 {
     _id: ID
     identificadorDoc: String!
@@ -25,31 +22,33 @@ input DocumentoInput
     comentario: String
     observaciones: String
     asunto: String!
-    usuarioDestino: [UsuarioInput!]
+    usuarioDestino: [UsuarioDocExternoInput!]!
     fechaRecepcion: String!
     fechaLimitEntrega: String!
-    fechaEnvio: String
-    docUrl: String
     estatus: ESTATUS!
 }
-type Usuario
+type UsuarioDocExterno
 {
     usuario: String
     observaciones: String
+    docUrl: String
+    fechaEnvio: String
     autorizado: Boolean
 }
-input UsuarioInput
+input UsuarioDocExternoInput
 {
     usuario: String!
     observaciones: String
+    docUrl: String
+    fechaEnvio: String
     autorizado: Boolean
 }
 
-type DocumentoRes
+type DocumentoExternoRes
 {
     estatus: Boolean!
     mensaje: String!
-    documento: Documento
+    documento: DocumentoExterno
 }
 enum ESTATUS
 {
