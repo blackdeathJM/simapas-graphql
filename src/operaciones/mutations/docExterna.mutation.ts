@@ -1,12 +1,14 @@
-export async function agregarDocSeguimiento(segDocumentacion: any, db: any)
+import {COLECCIONES} from "../../config/constants";
+
+export async function registroDoc(regDoc: any, db: any)
 {
-    return await db.collection('segDocumentacion').insertOne(segDocumentacion).then(
+    return await db.collection(COLECCIONES.DOCEXTERNA).insertOne(regDoc).then(
         async () =>
         {
             return {
                 estatus: true,
                 mensaje: 'El documento fue registrado con exito',
-                documento: segDocumentacion
+                documento: regDoc
             }
         }
     ).catch(
@@ -15,6 +17,7 @@ export async function agregarDocSeguimiento(segDocumentacion: any, db: any)
             return {
                 estatus: false,
                 mensaje: 'Ocurrio un error al intentar registrar el documento: ', err,
+                totalDocs: 0,
                 documento: null
             }
         }

@@ -4,11 +4,13 @@ if (process.env.NODE_ENV !== 'production') {
     const environment = environments;
 }
 
-/*export const COLECCIONES =
+export const COLECCIONES =
     {
         DEPARTAMENTOS: 'departamentos',
-        USUARIOS: 'usuarios'
-    }*/
+        USUARIOS: 'usuarios',
+        DOCINTERNA: 'docInterna',
+        DOCEXTERNA: 'docExterna'
+    };
 
 export const subscripciones =
     {

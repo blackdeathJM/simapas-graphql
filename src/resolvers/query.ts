@@ -12,7 +12,7 @@ import {
     docsPorUsuarioYEstatus,
     docsUsuarioEstatusPAR,
     todosLosDocumentos
-} from "../operaciones/querys/segDocumentacion.query";
+} from "../operaciones/querys/docExterna.query";
 import {
     docInternaUsuarioVisto,
     todasNotificacionesDocInterna,
@@ -56,7 +56,7 @@ const query: IResolvers =
                 async todosDocumentos(_: void, __: void, {db}) {
                     return await todosLosDocumentos(db);
                 },
-                // SEGUIMIENTO DE DOCUMENTACION
+                // DOCUMENTACION EXTERNA
                 async obtenerDocsUsuario(_: void, {dirigido}, {db}) {
                     return await docsPorUsuario(dirigido, db);
                 },

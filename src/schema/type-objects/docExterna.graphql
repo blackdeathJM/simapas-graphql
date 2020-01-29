@@ -1,0 +1,60 @@
+type Documento
+{
+    _id: ID
+    identificadorDoc: String!
+    folio: String
+    dependencia: String!
+    comentario: String
+    observaciones: String
+    asunto: String!
+    usuarioDestino: [Usuario!]
+    fechaRecepcion: String!
+    fechaLimitEntrega: String!
+    fechaEnvio: String
+    docUrl: String
+    autorizado: Boolean!
+    estatus: ESTATUS!
+}
+
+input DocumentoInput
+{
+    _id: ID
+    identificadorDoc: String!
+    folio: String
+    dependencia: String!
+    comentario: String
+    observaciones: String
+    asunto: String!
+    usuarioDestino: [UsuarioInput!]
+    fechaRecepcion: String!
+    fechaLimitEntrega: String!
+    fechaEnvio: String
+    docUrl: String
+    estatus: ESTATUS!
+}
+type Usuario
+{
+    usuario: String
+    observaciones: String
+    autorizado: Boolean
+}
+input UsuarioInput
+{
+    usuario: String!
+    observaciones: String
+    autorizado: Boolean
+}
+
+type DocumentoRes
+{
+    estatus: Boolean!
+    mensaje: String!
+    documento: Documento
+}
+enum ESTATUS
+{
+    PENDIENTE
+    APROBADO
+    RECHAZADO
+    ENTREGADO
+}

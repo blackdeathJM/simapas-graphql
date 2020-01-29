@@ -2,7 +2,7 @@ import {IResolvers} from "graphql-tools";
 import {actualizarDepto, registroDepto} from "../operaciones/mutations/departamento.mutation";
 import {actualizarPerfilUsuario, regUsuario} from "../operaciones/mutations/usuario.mutation";
 import {acUrlFolio, registrarFolio} from "../operaciones/mutations/folio.mutation";
-import {agregarDocSeguimiento} from "../operaciones/mutations/segDocumentacion.mutation";
+import {registroDoc} from "../operaciones/mutations/docExterna.mutation";
 import {acVistoPorUsuario, agDocInterna} from "../operaciones/mutations/docInterna.mutation";
 
 const mutation: IResolvers =
@@ -36,14 +36,15 @@ const mutation: IResolvers =
                 {
                     return await acUrlFolio(id, archivoUrl, db);
                 },
-                // SEGUIMIENTO DOCUMENTACION
-                async registroSegDocumentacion(_: void, {regDocumentacion}, {db})
+                // DOCUMENTACION EXTERNA
+                async regDocExterno(_: void, {regDoc}, {db})
                 {
-                    return await agregarDocSeguimiento(regDocumentacion, db);
+                    return await registroDoc(regDoc, db);
                 },
                 // DOCUMENTACION INTERNA
-                async agDocInterna(_: void, {agNotificacion}, {pubsub, db, cadena}) {
-                    return await agDocInterna(agNotificacion, pubsub, db, cadena);
+                async agDocInterna(_: void, {agNotificacion}, {pubsub, db})
+                {
+                    return await agDocInterna(agNotificacion, pubsub, db);
                 },
                 async acDocVistoUsuario(_: void, {usuario, folioInterno}, {pubsub, db})
                 {

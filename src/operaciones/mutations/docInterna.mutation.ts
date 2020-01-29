@@ -1,6 +1,7 @@
-import {enviarNotificacionDocInterna, envNotiDocInternaUsuarioVisto} from "../subscriptions/docInterna.subscription";
+import {enviarNotificacionDocInterna} from "../subscriptions/docInterna.subscription";
 
-export async function agDocInterna(agNotificacion: any, pubsub: any, db: any, usuario: string) {
+export async function agDocInterna(agNotificacion: any, pubsub: any, db: any)
+{
     let totalNotificaciones = await db.collection("docInterna").countDocuments();
 
     if (totalNotificaciones != null) {
@@ -10,10 +11,11 @@ export async function agDocInterna(agNotificacion: any, pubsub: any, db: any, us
         let anoActual = new Date().getFullYear();
         agNotificacion.folioInterno = `FOL-${agNotificacion.num}-SIMAPAS/${anoActual}`;
         return await db.collection("docInterna").insertOne(agNotificacion).then(
-            async () => {
-                console.log('Usuario Cabecera', usuario);
+            async () =>
+            {
                 // await enviarNotificacionDocInterna(pubsub, db);
-                await envNotiDocInternaUsuarioVisto(pubsub, usuario, db);
+                // el usuario fue pasado por la cabecera, la definicion esta en el server en el contexto
+                // await envNotiDocInternaUsuarioVisto(pubsub, usuario, db);
                 return {
                     estatus: true,
                     mensaje: 'Datos agregados con exito',
@@ -21,7 +23,8 @@ export async function agDocInterna(agNotificacion: any, pubsub: any, db: any, us
                 }
             }
         ).catch(
-            async (error: any) => {
+            async (error: any) =>
+            {
                 return {
                     estatus: false,
                     mensaje: 'Error en el servidor al intentar agregar la notificacion', error,
@@ -32,7 +35,8 @@ export async function agDocInterna(agNotificacion: any, pubsub: any, db: any, us
     }
 }
 
-export async function acVistoPorUsuario(usuario: string, folioInterno: string, pubsub: any, db: any) {
+export async function acVistoPorUsuario(usuario: string, folioInterno: string, pubsub: any, db: any)
+{
     const dia = new Date().getDate();
     const mes = new Date().getMonth() + 1;
     const ano = new Date().getFullYear();
@@ -44,9 +48,10 @@ export async function acVistoPorUsuario(usuario: string, folioInterno: string, p
             "usuarioDestino.$.fechaVisto": fechaVisto
         }
     }).then(
-        async (res: any) => {
-            // await enviarNotificacionDocInterna(pubsub, db);
-            await envNotiDocInternaUsuarioVisto(pubsub, usuario, db);
+        async (res: any) =>
+        {
+            await enviarNotificacionDocInterna(pubsub, db);
+            // await envNotiDocInternaUsuarioVisto(pubsub, usuario, db);
             return {
                 estatus: true,
                 mensaje: 'La notificacion ha modificado como vista',

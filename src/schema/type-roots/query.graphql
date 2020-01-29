@@ -21,19 +21,19 @@ type Query
     "DOCUMENTO - Consultar los folios asignados a un usuario regreg"
     folioUsuario(asigUsuario: String!): [Folio]
 
-    "SEGUIMIENTO DOCUMENTACION - Consultar todos los registros"
+    "DOC EXTERNA: Consultar todos los registros"
     todosDocumentos: [Documento]
-    "SEGUIMIENTO DOCUMENTACION - Control de documentos"
-    obtenerDocsUsuario(dirigido: String!): [Documento]
-    "SEGUIMIENTO DOCUMENTACION- Obtener documentos por usuario y por su estatus"
+    "DOC EXTERNA: Control de documentos"
+    obtenerDocsUsuario(usuario: String!): [Documento]
+    "DOC EXTERNA: Obtener documentos por usuario y por su estatus"
     obtenerDocsUsuarioStatus(dirigido: String!, estatus: String!, autorizado: Boolean!): [Documento]
-    "SEGUIMIENTO DOCUMENTACION- Obtener los documentos por usuario con el estatus pendiente, aprobado o rechazado"
+    "DOC EXTERNA: Obtener los documentos por usuario con el estatus pendiente, aprobado o rechazado"
     obtenerDocsUsuarioStatusPAR(dirigido: String!): [Documento]
 
-    "NOTIFICACIONES: Obtener todas las notificaciones"
+    "DOC INTERNA: Obtener todas las notificaciones"
     obNotiDocInterna:[DocInterna]
-    "NOTIFICACIONES: Obtener todas las notificaciones por usuario"
+    "DOC INTERNA: Obtener todas las notificaciones por usuario"
     obNotiUsuario(usuario: String!): [DocInterna]
-    "NOTIFICACIONES: Obtener todas las notificaciones por usuario que no se hayan visto"
+    "DOC INTERNA: Obtener todas las notificaciones por usuario que no se hayan visto"
     obNotificacionesPorUsuarioYVisto(usuario: String!, visto: Boolean): [DocInterna]
 }
