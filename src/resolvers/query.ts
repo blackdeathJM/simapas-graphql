@@ -10,8 +10,7 @@ import {folioPorUsuario, folioUltimo, todosLosFolios} from "../operaciones/query
 import {
     docsPorUsuario,
     docsPorUsuarioYEstatus,
-    docsUsuarioEstatusPAR,
-    todosLosDocumentos
+    docsUsuarioEstatusPAR, todosDocsExternos
 } from "../operaciones/querys/docExterna.query";
 import {
     docInternaUsuarioVisto,
@@ -53,12 +52,12 @@ const query: IResolvers =
                 async folioUsuario(_: void, {asigUsuario}, {db}) {
                     return await folioPorUsuario(asigUsuario, db);
                 },
-                async todosDocumentos(_: void, __: void, {db}) {
-                    return await todosLosDocumentos(db);
-                },
                 // DOCUMENTACION EXTERNA
-                async obtenerDocsUsuario(_: void, {dirigido}, {db}) {
-                    return await docsPorUsuario(dirigido, db);
+                async todosDocumentosExternos(_: void, __: void, {db}) {
+                    return await todosDocsExternos(db);
+                },
+                async obDocsUsuarioExterno(_: void, {usuario}, {db}) {
+                    return await docsPorUsuario(usuario, db);
                 },
                 async obtenerDocsUsuarioStatus(_: void, {dirigido, estatus, autorizado}, {db}) {
                     return await docsPorUsuarioYEstatus(dirigido, estatus, autorizado, db);

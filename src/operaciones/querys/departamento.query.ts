@@ -1,4 +1,5 @@
-import { ObjectId } from "bson";
+import {ObjectId} from "bson";
+import {COLECCIONES} from "../../config/constants";
 
 export async function obtenerDeptos(db: any)
 {
@@ -30,5 +31,5 @@ export async function buscarDeptoID(id: any, db: any)
 
 export async function buscarDeptoRelacion(id: any, db: any)
 {
-    return await db.collection('departamentos').findOne({_id: new ObjectId(id)});
+    return await db.collection(COLECCIONES.DEPARTAMENTOS).findOne({_id: new ObjectId(id)});
 }

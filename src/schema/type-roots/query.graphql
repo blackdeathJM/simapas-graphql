@@ -21,10 +21,10 @@ type Query
     "DOCUMENTO - Consultar los folios asignados a un usuario regreg"
     folioUsuario(asigUsuario: String!): [Folio]
 
-    "DOC EXTERNA: Consultar todos los registros"
-    todosDocumentos: [DocumentoExterno]
-    "DOC EXTERNA: Control de documentos"
-    obtenerDocsUsuario(usuario: String!): [DocumentoExterno]
+    "DOC EXTERNA: Consultar todos los registros para el administrador"
+    todosDocumentosExternos: [DocumentoExterno]
+    "DOC EXTERNA: Obtiene todods los documentos por usuario"
+    obDocsUsuarioExterno(usuario: String!): [DocumentoExterno]
     "DOC EXTERNA: Obtener documentos por usuario y por su estatus"
     obtenerDocsUsuarioStatus(dirigido: String!, estatus: String!, autorizado: Boolean!): [DocumentoExterno]
     "DOC EXTERNA: Obtener los documentos por usuario con el estatus pendiente, aprobado o rechazado"
