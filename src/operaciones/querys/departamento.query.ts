@@ -29,7 +29,8 @@ export async function buscarDeptoID(id: any, db: any)
     );
 }
 
-export async function buscarDeptoRelacion(id: any, db: any)
+export async function buscarDeptoRelacion(id: ObjectId, db: any)
 {
+    console.log('depto', id);
     return await db.collection(COLECCIONES.DEPARTAMENTOS).findOne({_id: new ObjectId(id)});
 }

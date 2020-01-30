@@ -17,7 +17,6 @@ export async function registroDoc(regDoc: any, db: any)
             return {
                 estatus: false,
                 mensaje: 'Ocurrio un error al intentar registrar el documento: ', err,
-                totalDocs: 0,
                 documento: null
             }
         }
