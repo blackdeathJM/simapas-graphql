@@ -1,5 +1,4 @@
 import {COLECCIONES} from "../../config/constants";
-import {ObjectId} from "bson";
 
 // consultar todos los documentos para la consulta del administrador
 export async function todosDocsExternos(db: any)
@@ -31,15 +30,7 @@ export async function docsUsuarioEstatusPAR(dirigido: string, db: any)
     return await db.collection(COLECCIONES.DOCEXTERNA).find({dirigido, estatus: {$ne: "ENTREGADO"}}).toArray();
 }
 
-export async function buscarDocExternaRleacion(usuario: any, db: any)
+/*export async function buscarDocExternaRleacion(usuario: any, db: any)
 {
-    let usuararioExt: string[] = [];
-    for (const i of usuario) {
-        usuararioExt.push(i.usuario);
-        console.log('i', i.usuario);
-        return await db.collection(COLECCIONES.USUARIOS).find({_id: new ObjectId(i.usuario)}).toArray().then((value: any) =>
-        {
-            return value;
-        });
-    }
-}
+    return await db.collection(COLECCIONES.USUARIOS).find().toArray().populate('_id')
+}*/
