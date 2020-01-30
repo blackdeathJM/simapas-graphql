@@ -1,0 +1,7 @@
+extend type Mutation
+{
+    "USUARIO - Registro de usuarios"
+    registroUsuario(usuario: UsuarioInput!): UsuarioRes!
+    "USUARIO - Actualizacion de un usuario"
+    actualizarUsuario(usuario: UsuarioInput!): UsuarioRes!
+}

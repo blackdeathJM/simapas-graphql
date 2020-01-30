@@ -1,0 +1,11 @@
+extend type Query
+{
+    "USUARIO - Obtener la lista de todos los usuarios"
+    obtenerUsuarios: [Usuario!]
+    "USUARIO - Inicio de sesion"
+    login(usuario: String!,  contrasena: String!): UsuarioToken!
+    "USUARIO - Obtener perfil de usuario con informacion del token"
+    perfil: UsuarioRes!
+    "USUARIO - Buscar usuario por su nombre de usuario"
+    buscarUsuario(usuario: String!): UsuarioRes!
+}
