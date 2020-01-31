@@ -11,6 +11,8 @@ type DocumentoExterno
     fechaRecepcion: String
     fechaLimitEntrega: String
     acuseUrl: String
+    docUrl: String
+    docRespUrl: String
     estatus: ESTATUS
 }
 
@@ -27,6 +29,8 @@ input DocumentoExternoInput
     fechaRecepcion: String!
     fechaLimitEntrega: String!
     acuseUrl: String
+    docUrl: String
+    docRespUrl: String
     estatus: ESTATUS!
 }
 type UsuarioDocExterno
