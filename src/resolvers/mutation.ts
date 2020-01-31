@@ -1,8 +1,8 @@
 import {IResolvers} from "graphql-tools";
 import {actualizarDepto, registroDepto} from "../operaciones/mutations/departamento.mutation";
-import {actualizarPerfilUsuario, regUsuario} from "../operaciones/mutations/usuario.mutation";
+import {acPerfilUsuario, regUsuario} from "../operaciones/mutations/usuario.mutation";
 import {acUrlFolio, registrarFolio} from "../operaciones/mutations/folio.mutation";
-import {registroDoc} from "../operaciones/mutations/docExterna.mutation";
+import {acUrlDocExt, registroDoc} from "../operaciones/mutations/docExterna.mutation";
 import {acVistoPorUsuario, agDocInterna} from "../operaciones/mutations/docInterna.mutation";
 
 const mutation: IResolvers =
@@ -25,29 +25,28 @@ const mutation: IResolvers =
                 },
                 async actualizarUsuario(_: void, {usuario}, {db})
                 {
-                    return await actualizarPerfilUsuario(usuario.usuario, usuario.nombre, usuario.img, db);
+                    return await acPerfilUsuario(usuario.usuario, usuario.nombre, usuario.img, db);
                 },
                 // FOLIO
                 async registroFolio(_: void, {folio}, {db})
                 {
                     return await registrarFolio(folio, db);
                 },
-                async acUrlFolio(_: void, {id, archivoUrl}, {db})
-                {
+                async acUrlFolio(_: void, {id, archivoUrl}, {db}) {
                     return await acUrlFolio(id, archivoUrl, db);
                 },
-                // DOCUMENTACION EXTERNA
-                async regDocExterno(_: void, {regDoc}, {pubsub, db})
-                {
+                // ========================DOCUMENTACION EXTERNA============================
+                async regDocExterno(_: void, {regDoc}, {pubsub, db}) {
                     return await registroDoc(regDoc, pubsub, db);
                 },
+                async acDocExtUrlGral(_: void, {id, docUrl}, {pubsub, db}) {
+                    return await acUrlDocExt(id, docUrl, pubsub, db);
+                },
                 // DOCUMENTACION INTERNA
-                async agDocInterna(_: void, {agNotificacion}, {pubsub, db})
-                {
+                async agDocInterna(_: void, {agNotificacion}, {pubsub, db}) {
                     return await agDocInterna(agNotificacion, pubsub, db);
                 },
-                async acDocVistoUsuario(_: void, {usuario, folioInterno}, {pubsub, db})
-                {
+                async acDocVistoUsuario(_: void, {usuario, folioInterno}, {pubsub, db}) {
                     return await acVistoPorUsuario(usuario, folioInterno, pubsub, db);
                 }
             }

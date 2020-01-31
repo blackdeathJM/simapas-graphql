@@ -14,7 +14,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 async function init() {
-    const folioRuta = require('./configMuter/folios.routes');
+    const docsGral = require('./configMuter/docs.routes');
     const app = express();
     const pubsub = new PubSub();
     // app.use(bodyParser.json()).use(bodyParser.urlencoded({extended: true}));
@@ -46,7 +46,7 @@ async function init() {
     });
 
     server.applyMiddleware({app});
-    app.use('/file', folioRuta);
+    app.use('/file', docsGral);
     app.use('/graphql', graphqlHTTP({schema}));
     const PORT = process.env.PORT || 5300;
     const httpServer = createServer(app);

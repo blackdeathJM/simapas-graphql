@@ -71,9 +71,8 @@ const query: IResolvers =
                 {
                     return await docsPorUsuario(usuario, db);
                 },
-                async obDocsUsuarioEstatus(_: void, {usuario, estatus}, {db})
-                {
-                    return await docsUsuarioEstatus(usuario, estatus, db);
+                async obDocsUsuarioEstatus(_: void, {usuario, estatusGral}, {db}) {
+                    return await docsUsuarioEstatus(usuario, estatusGral, db);
                 },
                 async obtenerDocsUsuarioStatusPAR(_: void, {dirigido}, {db})
                 {

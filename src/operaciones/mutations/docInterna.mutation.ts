@@ -1,4 +1,5 @@
 import {enviarNotificacionDocInterna} from "../subscriptions/docInterna.subscription";
+import {FECHA_ACTUAL} from "../../config/constants";
 
 export async function agDocInterna(agNotificacion: any, pubsub: any, db: any)
 {
@@ -37,15 +38,10 @@ export async function agDocInterna(agNotificacion: any, pubsub: any, db: any)
 
 export async function acVistoPorUsuario(usuario: string, folioInterno: string, pubsub: any, db: any)
 {
-    const dia = new Date().getDate();
-    const mes = new Date().getMonth() + 1;
-    const ano = new Date().getFullYear();
-    const fechaVisto = `${dia}/${mes}/${ano}`;
-
     return await db.collection("docInterna").findOneAndUpdate({$and: [{folioInterno}, {"usuarioDestino.usuario": usuario}]}, {
         $set: {
             "usuarioDestino.$.visto": true,
-            "usuarioDestino.$.fechaVisto": fechaVisto
+            "usuarioDestino.$.fechaVisto": FECHA_ACTUAL
         }
     }).then(
         async (res: any) =>

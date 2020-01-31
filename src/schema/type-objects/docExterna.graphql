@@ -13,7 +13,7 @@ type DocumentoExterno
     acuseUrl: String
     docUrl: String
     docRespUrl: String
-    estatus: ESTATUS
+    estatusGral: ESTATUS
 }
 
 input DocumentoExternoInput
@@ -31,7 +31,7 @@ input DocumentoExternoInput
     acuseUrl: String
     docUrl: String
     docRespUrl: String
-    estatus: ESTATUS!
+    estatusGral: ESTATUS!
 }
 type UsuarioDocExterno
 {
@@ -40,6 +40,7 @@ type UsuarioDocExterno
     docUrl: String
     fechaEnvio: String
     autorizado: Boolean
+    estatus: ESTATUS
 }
 input UsuarioDocExternoInput
 {
@@ -48,6 +49,7 @@ input UsuarioDocExternoInput
     docUrl: String
     fechaEnvio: String
     autorizado: Boolean
+    estatus: ESTATUS!
 }
 
 type DocumentoExternoRes
