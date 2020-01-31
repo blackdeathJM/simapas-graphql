@@ -10,6 +10,7 @@ type DocumentoExterno
     usuarioDestino: [UsuarioDocExterno]
     fechaRecepcion: String
     fechaLimitEntrega: String
+    acuseUrl: String
     estatus: ESTATUS
 }
 
@@ -25,6 +26,7 @@ input DocumentoExternoInput
     usuarioDestino: [UsuarioDocExternoInput!]!
     fechaRecepcion: String!
     fechaLimitEntrega: String!
+    acuseUrl: String
     estatus: ESTATUS!
 }
 type UsuarioDocExterno

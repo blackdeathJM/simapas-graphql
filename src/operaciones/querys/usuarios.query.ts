@@ -27,13 +27,13 @@ export async function loginUsuario(usuario: string, contrasena: string, db: any)
     return {
         estatus: true,
         mensaje: 'Login correcto',
-        token: new JWT().sign({loginUsuario})
+        token: new JWT().firmar({loginUsuario})
     };
 }
 
 export async function perfilUsuario(token: string)
 {
-    let info: any = new JWT().verify(token);
+    let info: any = new JWT().verificar(token);
     if (info === 'La autenticacion del token es invalida, por favor inicia sesion') {
         return {
             estatus: false,

@@ -37,9 +37,9 @@ const mutation: IResolvers =
                     return await acUrlFolio(id, archivoUrl, db);
                 },
                 // DOCUMENTACION EXTERNA
-                async regDocExterno(_: void, {regDoc}, {db})
+                async regDocExterno(_: void, {regDoc}, {pubsub, db})
                 {
-                    return await registroDoc(regDoc, db);
+                    return await registroDoc(regDoc, pubsub, db);
                 },
                 // DOCUMENTACION INTERNA
                 async agDocInterna(_: void, {agNotificacion}, {pubsub, db})

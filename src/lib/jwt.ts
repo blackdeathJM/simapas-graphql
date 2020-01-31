@@ -5,19 +5,17 @@ class JWT
 {
     private secretKey = SECRET_KEY as string;
 
-    sign(data: any): string
+    firmar(data: any): string
     {
         return jwt.sign({usuario: data}, this.secretKey, {expiresIn: 24 * 60 * 60});
     }
 
-    verify(token: string): string
+    verificar(token: string): string
     {
-        try
-        {
+        try {
             return jwt.verify(token, this.secretKey) as string;
-        } catch (e)
-        {
-            return 'La autenticacion del token es invalida, por favor inicia sesion';
+        } catch (e) {
+            return 'La autenticacion del token es invalida, por favor inicia sesion: ' + e;
         }
     }
 }

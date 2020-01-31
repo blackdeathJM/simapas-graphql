@@ -5,7 +5,7 @@ extend type Query
     "DOC EXTERNA: Obtiene todods los documentos por usuario"
     obDocsUsuarioExterno(usuario: String!): [DocumentoExterno]
     "DOC EXTERNA: Obtener documentos por usuario y por su estatus"
-    obtenerDocsUsuarioStatus(dirigido: String!, estatus: String!, autorizado: Boolean!): [DocumentoExterno]
+    obDocsUsuarioEstatus(usuario: String!, estatus: String!): [DocumentoExterno]
     "DOC EXTERNA: Obtener los documentos por usuario con el estatus pendiente, aprobado o rechazado"
     obtenerDocsUsuarioStatusPAR(dirigido: String!): [DocumentoExterno]
 }

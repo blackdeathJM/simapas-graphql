@@ -13,7 +13,7 @@ export async function agDocInterna(agNotificacion: any, pubsub: any, db: any)
         return await db.collection("docInterna").insertOne(agNotificacion).then(
             async () =>
             {
-                // await enviarNotificacionDocInterna(pubsub, db);
+                await enviarNotificacionDocInterna(pubsub, db);
                 // el usuario fue pasado por la cabecera, la definicion esta en el server en el contexto
                 // await envNotiDocInternaUsuarioVisto(pubsub, usuario, db);
                 return {
