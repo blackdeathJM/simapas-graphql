@@ -27,6 +27,7 @@ export async function acUrlDocExt(id: ObjectId, docUrl: string, pubSub: any, db:
     // actualizamos el comapo docUrl para subir el documento al servidor
     return await db.collection(COLECCIONES.DOCEXTERNA).findOneAndUpdate({_id: new ObjectId(id)}, {$set: {docUrl}}).then(
         async (documento: any) => {
+            await envNotificacionDocExt(pubSub, db);
             return {
                 estatus: true,
                 mensaje: 'El documento se ha actualizado con exito',
