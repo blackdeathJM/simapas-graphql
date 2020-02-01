@@ -1,0 +1,38 @@
+import {Request, Response} from "express";
+import {uploadArchivo} from "./filtroMulter";
+import path from "path";
+import fs from 'fs-extra';
+
+export async function agDocs(req: Request, res: Response): Promise<any>
+{
+    uploadArchivo(req, res, function (error)
+    {
+        if (error) {
+            return res.status(501).json({'Ocurrio un error': error});
+        }
+        if (req.file.filename) {
+            // extraer el prefijo del archivo
+            const obPrefijo = req.file.filename.split('-', 1);
+            let checarRuta = path.resolve(__dirname, `../public/uploads/${obPrefijo}`);
+
+            if (!fs.pathExistsSync(checarRuta)) {
+                fs.mkdirsSync(checarRuta);
+            }
+
+            let nvoRuta = path.resolve(__dirname, `../public/uploads/${obPrefijo}/` + req.file.filename);
+            fs.move(req.file.path, nvoRuta);
+            // fs.rename(req.file.path, nvoRuta);
+            return res.json({nombreOriginal: req.file.originalname, nombreSubido: req.file.filename})
+        } else {
+            return res.json({mensaje: 'Error al intentar agregar el archivo'});
+        }
+    });
+}
+
+export async function obDocs(req: Request, res: Response): Promise<any>
+{
+    //req.params.archivoUrl
+    let archivoUrl = req.query.archivoUrl;
+    let carpeta = req.params.archivoUrl;
+    return res.sendFile(path.resolve(__dirname, `../public/uploads/${carpeta}/${archivoUrl}`));
+}
