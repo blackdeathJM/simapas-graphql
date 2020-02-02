@@ -1,23 +1,9 @@
 import {IResolvers} from "graphql-tools";
 import {buscarDeptoID, obtenerDeptos} from "../operaciones/querys/departamento.query";
-import {
-    loginUsuario,
-    obtenerTodosLosUsuarios,
-    obtenerUsuarioPorSuNombreDeUsuario,
-    perfilUsuario,
-} from "../operaciones/querys/usuarios.query";
+import {loginUsuario, obtenerTodosLosUsuarios, obtenerUsuarioPorSuNombreDeUsuario, perfilUsuario,} from "../operaciones/querys/usuarios.query";
 import {folioPorUsuario, folioUltimo, todosLosFolios} from "../operaciones/querys/folio.query";
-import {
-    docsPorUsuario,
-    docsUsuarioEstatus,
-    docsUsuarioEstatusPAR,
-    todosDocsExternos
-} from "../operaciones/querys/docExterna.query";
-import {
-    docInternaUsuarioVisto,
-    todasNotificacionesDocInterna,
-    todasNotificacionesUsuario
-} from "../operaciones/querys/docInterna.query";
+import {docsPorUsuario, docsUsuarioEstatus, docsUsuarioEstatusPAR, todosDocsExternos} from "../operaciones/querys/docExterna.query";
+import {docInternaUsuarioVisto, todasNotificacionesDocInterna, todasNotificacionesUsuario} from "../operaciones/querys/docInterna.query";
 
 const query: IResolvers =
     {
@@ -71,7 +57,8 @@ const query: IResolvers =
                 {
                     return await docsPorUsuario(usuario, db);
                 },
-                async obDocsUsuarioEstatus(_: void, {usuario, estatusGral}, {db}) {
+                async obDocsUsuarioEstatus(_: void, {usuario, estatusGral}, {db})
+                {
                     return await docsUsuarioEstatus(usuario, estatusGral, db);
                 },
                 async obtenerDocsUsuarioStatusPAR(_: void, {dirigido}, {db})
@@ -87,7 +74,7 @@ const query: IResolvers =
                 {
                     return await todasNotificacionesUsuario(usuario, db);
                 },
-                async obNotificacionesPorUsuarioYVisto(_: void, {usuario, visto}, {db})
+                async obNotUsuarioVisto(_: void, {usuario, visto}, {db})
                 {
                     return await docInternaUsuarioVisto(usuario, visto, db);
                 }

@@ -1,7 +1,7 @@
 import {enviarNotificacionDocInterna} from "../subscriptions/docInterna.subscription";
 import {FECHA_ACTUAL} from "../../config/constants";
 
-export async function agDocInterna(agNotificacion: any, pubsub: any, db: any)
+export async function agDocumentoInterno(agNotificacion: any, pubsub: any, db: any)
 {
     let totalNotificaciones = await db.collection("docInterna").countDocuments();
 
@@ -10,6 +10,7 @@ export async function agDocInterna(agNotificacion: any, pubsub: any, db: any)
 
         agNotificacion.num = totalNotificaciones;
         let anoActual = new Date().getFullYear();
+
         agNotificacion.folioInterno = `FOL-${agNotificacion.num}-SIMAPAS/${anoActual}`;
         return await db.collection("docInterna").insertOne(agNotificacion).then(
             async () =>
@@ -36,7 +37,7 @@ export async function agDocInterna(agNotificacion: any, pubsub: any, db: any)
     }
 }
 
-export async function acVistoPorUsuario(usuario: string, folioInterno: string, pubsub: any, db: any)
+export async function acVistoUsuario(folioInterno: string, usuario: string, pubsub: any, db: any)
 {
     return await db.collection("docInterna").findOneAndUpdate({$and: [{folioInterno}, {"usuarioDestino.usuario": usuario}]}, {
         $set: {
