@@ -61,7 +61,8 @@ type DocumentoExternoRes
 enum ESTATUS
 {
     PENDIENTE
-    APROBADO
     RECHAZADO
+    APROBADO
+    LISTO
     ENTREGADO
 }

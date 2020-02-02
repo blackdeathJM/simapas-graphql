@@ -1,5 +1,22 @@
 import {COLECCIONES} from "../../config/constants";
 
+const filtroDocsExt =
+    {
+        identificadorDoc: 1,
+        folio: 1,
+        dependencia: 1,
+        comentario: 1,
+        observaciones: 1,
+        asunto: 1,
+        fechaRecepcion: 1,
+        fechaLimitEntrega: 1,
+        acuseUrl: 1,
+        docUrl: 1,
+        docRespUrl: 1,
+        estatusGral: 1,
+        "usuarioDestino.$": 1
+    };
+
 // consultar todos los documentos para la consulta del administrador
 export async function todosDocsExternos(db: any)
 {
@@ -19,7 +36,8 @@ export async function docsPorUsuario(usuario: string, db: any)
 // Consultar documentos por usuario y el estatus general del documento
 export async function docsUsuarioEstatus(usuario: string, estatusGral: string, db: any)
 {
-    return await db.collection(COLECCIONES.DOCEXTERNA).find({$and: [{estatusGral}, {'usuarioDestino': {$elemMatch: {usuario}}}]}).toArray();
+    // return await db.collection(COLECCIONES.DOCEXTERNA).find({$and: [{estatusGral}, {'usuarioDestino': {$elemMatch: {usuario}}}]}).toArray();
+    return await db.collection(COLECCIONES.DOCEXTERNA).find({estatusGral, "usuarioDestino.usuario": usuario}, {projection: filtroDocsExt}).toArray();
 }
 
 export async function docsUsuarioEstatusPAR(dirigido: string, db: any)
