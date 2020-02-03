@@ -76,3 +76,12 @@ export async function acUrlDocExtUsuario(id: ObjectId, usuario: string, docUrl: 
         }
     );
 }
+
+export async function actObsEstaPorUsuDocExt(docExterno: any, pubsub: any, db: any)
+{
+    let id = docExterno._id;
+    let usuario = docExterno.usuarioDestino.usuario;
+
+    // Actualizamos el campo de observaciones y el estatus cuando el administrador rechaza el documento
+    return await db.collection(COLECCIONES.DOC_EXTERNA).findOneAndUpdate()
+}

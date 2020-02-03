@@ -4,5 +4,8 @@ extend type Mutation
     regDocExterno(regDoc: DocumentoExternoInput!):DocumentoExternoRes!
     "DOC EXTERNA: Actualizar el campo donde se guardara el nombre del archivo subido"
     acDocExtUrlGral(id: String!, docUrl: String!): DocumentoExternoRes!
-    acDocExtUrlUsuario(id: String!, usuario: String!, docUrl: String!): DocumentoExterno!
+    "DOC EXTERNA: Actualizar el campo de docUrl por usuario"
+    acDocExtUrlUsuario(id: String!, usuario: String!, docUrl: String!): DocumentoExternoRes!
+    "DOC EXTERNA: Actualizar el campo de observaciones y estatus por usuario"
+    acObEstUsuario(docExterno: DocumentoExternoInput!): DocumentoExternoRes!
 }
