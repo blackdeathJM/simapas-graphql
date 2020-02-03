@@ -12,7 +12,7 @@ export async function agDocs(req: Request, res: Response): Promise<any>
         }
         if (req.file.filename) {
             // extraer el prefijo del archivo
-            const obPrefijo = req.file.filename.split('-', 1);
+            const obPrefijo = req.file.filename.split('-', 1).shift();
             let checarRuta = path.resolve(__dirname, `../public/uploads/${obPrefijo}`);
 
             if (!fs.pathExistsSync(checarRuta)) {
@@ -20,7 +20,18 @@ export async function agDocs(req: Request, res: Response): Promise<any>
             }
 
             let nvoRuta = path.resolve(__dirname, `../public/uploads/${obPrefijo}/` + req.file.filename);
-            fs.move(req.file.path, nvoRuta);
+
+            // chear el directorio para saber que los archivos que se esta guardando bienen del los documentos externos que el usuario sube de manera temporal para su aprobacion del admin
+
+            if (obPrefijo === 'deu') {
+
+                if (fs.existsSync(nvoRuta)) {
+                    console.log("El archivo existe");
+                    fs.removeSync(nvoRuta)
+                }
+            }
+
+            fs.moveSync(req.file.path, nvoRuta);
             // fs.rename(req.file.path, nvoRuta);
             return res.json({nombreOriginal: req.file.originalname, nombreSubido: req.file.filename})
         } else {

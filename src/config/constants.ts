@@ -8,8 +8,8 @@ export const COLECCIONES =
     {
         DEPARTAMENTOS: 'departamentos',
         USUARIOS: 'usuarios',
-        DOCINTERNA: 'docInterna',
-        DOCEXTERNA: 'docExterna'
+        DOC_INTERNA: 'docInterna',
+        DOC_EXTERNA: 'docExterna'
     };
 
 export const SUBSCRIPCIONES =

@@ -13,16 +13,16 @@ const modeloDocInterna =
 
 export async function todasNotificacionesDocInterna(db: any)
 {
-    return await db.collection(COLECCIONES.DOCINTERNA).find().toArray();
+    return await db.collection(COLECCIONES.DOC_INTERNA).find().toArray();
 }
 
 export async function todasNotificacionesUsuario(usuario: string, db: any)
 {
-    return await db.collection(COLECCIONES.DOCINTERNA).find({"usuarioDestino.usuario": usuario}).toArray();
+    return await db.collection(COLECCIONES.DOC_INTERNA).find({"usuarioDestino.usuario": usuario}).toArray();
 }
 
 export async function docInternaUsuarioVisto(usuario: string, visto: boolean, db: any)
 {
-    return await db.collection(COLECCIONES.DOCINTERNA).find({usuarioDestino: {$elemMatch: {usuario, visto}}}, {projection: modeloDocInterna}).toArray();
+    return await db.collection(COLECCIONES.DOC_INTERNA).find({usuarioDestino: {$elemMatch: {usuario, visto}}}, {projection: modeloDocInterna}).toArray();
 
 }

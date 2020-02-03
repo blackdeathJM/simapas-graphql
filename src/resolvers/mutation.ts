@@ -2,7 +2,7 @@ import {IResolvers} from "graphql-tools";
 import {actualizarDepto, registroDepto} from "../operaciones/mutations/departamento.mutation";
 import {acPerfilUsuario, regUsuario} from "../operaciones/mutations/usuario.mutation";
 import {acUrlFolio, registrarFolio} from "../operaciones/mutations/folio.mutation";
-import {acUrlDocExt, registroDoc} from "../operaciones/mutations/docExterna.mutation";
+import {acUrlDocExt, acUrlDocExtUsuario, registroDoc} from "../operaciones/mutations/docExterna.mutation";
 import {acVistoUsuario, agDocumentoInterno} from "../operaciones/mutations/docInterna.mutation";
 
 const mutation: IResolvers =
@@ -43,6 +43,10 @@ const mutation: IResolvers =
                 async acDocExtUrlGral(_: void, {id, docUrl}, {pubsub, db})
                 {
                     return await acUrlDocExt(id, docUrl, pubsub, db);
+                },
+                async acDocExtUrlUsuario(_: void, {id, usuario, docUrl}, {pubsub, db})
+                {
+                    return await acUrlDocExtUsuario(id, usuario, docUrl, pubsub, db);
                 },
                 // DOCUMENTACION INTERNA
                 async agDocInterna(_: void, {agNotificacion}, {pubsub, db})
