@@ -1,5 +1,5 @@
-import {enviarNotificacionDocInterna} from "../subscriptions/docInterna.subscription";
-import {FECHA_ACTUAL} from "../../config/constants";
+import {COLECCIONES, FECHA_ACTUAL} from "../../config/constants";
+import {notDocInternaUsuarioVisto} from "../subscriptions/docInterna.subscription";
 
 export async function agDocumentoInterno(agNotificacion: any, pubsub: any, db: any)
 {
@@ -12,21 +12,26 @@ export async function agDocumentoInterno(agNotificacion: any, pubsub: any, db: a
         let anoActual = new Date().getFullYear();
 
         agNotificacion.folioInterno = `FOL-${agNotificacion.num}-SIMAPAS/${anoActual}`;
-        return await db.collection("docInterna").insertOne(agNotificacion).then(
-            async () =>
+        return await db.collection(COLECCIONES.DOC_INTERNA).insertOne(agNotificacion).then(
+            async (docInterna: any) =>
             {
-                await enviarNotificacionDocInterna(pubsub, db);
-                // el usuario fue pasado por la cabecera, la definicion esta en el server en el contexto
-                // await envNotiDocInternaUsuarioVisto(pubsub, usuario, db);
+                // recibe el usuario que hace la peticion por eso no funciona bien
+                console.log('longitud', agNotificacion.usuarioDestino.length);
+
+                for (let i = 0; i < agNotificacion.usuarioDestino.length; i++) {
+                    console.log('usuarioConsulta', agNotificacion.usuarioDestino[i].usuario);
+                    await notDocInternaUsuarioVisto(agNotificacion.usuarioDestino[i].usuario, false, pubsub, db);
+                }
                 return {
                     estatus: true,
                     mensaje: 'Datos agregados con exito',
-                    docInterna: agNotificacion
+                    docInterna: docInterna.ops
                 }
             }
         ).catch(
             async (error: any) =>
             {
+                console.log('error', error);
                 return {
                     estatus: false,
                     mensaje: 'Error en el servidor al intentar agregar la notificacion', error,
@@ -47,8 +52,6 @@ export async function acVistoUsuario(folioInterno: string, usuario: string, pubs
     }).then(
         async (res: any) =>
         {
-            await enviarNotificacionDocInterna(pubsub, db);
-            // await envNotiDocInternaUsuarioVisto(pubsub, usuario, db);
             return {
                 estatus: true,
                 mensaje: 'La notificacion ha modificado como vista',

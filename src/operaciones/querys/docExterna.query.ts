@@ -44,7 +44,3 @@ export async function docsUsuarioEstatusPAR(dirigido: string, db: any)
     return await db.collection(COLECCIONES.DOC_EXTERNA).find({dirigido, estatusGral: {$ne: "ENTREGADO"}}).toArray();
 }
 
-/*export async function buscarDocExternaRleacion(usuario: any, db: any)
- {
- return await db.collection(COLECCIONES.USUARIOS).find().toArray().populate('_id')
- }*/

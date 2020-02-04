@@ -26,7 +26,6 @@ export async function agDocs(req: Request, res: Response): Promise<any>
             if (obPrefijo === 'deu') {
 
                 if (fs.existsSync(nvoRuta)) {
-                    console.log("El archivo existe");
                     fs.removeSync(nvoRuta)
                 }
             }

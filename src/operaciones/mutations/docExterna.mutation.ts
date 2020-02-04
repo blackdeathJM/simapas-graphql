@@ -1,5 +1,4 @@
 import {COLECCIONES} from "../../config/constants";
-import {envNotificacionDocExt} from "../subscriptions/docExterna.susbcription";
 import {ObjectId} from "bson";
 
 export async function registroDoc(regDoc: any, pubsub: any, db: any)
@@ -7,7 +6,6 @@ export async function registroDoc(regDoc: any, pubsub: any, db: any)
     return await db.collection(COLECCIONES.DOC_EXTERNA).insertOne(regDoc).then(
         async () =>
         {
-            await envNotificacionDocExt(pubsub, db).then().catch(err => console.log(err));
             return {
                 estatus: true,
                 mensaje: 'El documento fue registrado con exito',
@@ -32,7 +30,6 @@ export async function acUrlDocExt(id: ObjectId, docUrl: string, pubSub: any, db:
     return await db.collection(COLECCIONES.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(id)}, {$set: {docUrl}}).then(
         async (documento: any) =>
         {
-            await envNotificacionDocExt(pubSub, db);
             return {
                 estatus: true,
                 mensaje: 'El documento se ha actualizado con exito',
@@ -44,7 +41,7 @@ export async function acUrlDocExt(id: ObjectId, docUrl: string, pubSub: any, db:
         {
             return {
                 estatus: false,
-                mensaje: 'Error al intentar actualizar el documento',
+                mensaje: 'Error al intentar actualizar el documento', error,
                 documento: null
             }
         }
@@ -58,11 +55,10 @@ export async function acUrlDocExtUsuario(id: ObjectId, usuario: string, docUrl: 
         {$set: {"usuarioDestino.$.docUrl": docUrl}}).then(
         async (documento: any) =>
         {
-            await envNotificacionDocExt(pubsub, db);
             return {
                 estatus: true,
                 mensaje: 'El documento fue actualizado con exito',
-                documento
+                documento: documento.value
             }
         }
     ).catch(
@@ -77,11 +73,27 @@ export async function acUrlDocExtUsuario(id: ObjectId, usuario: string, docUrl: 
     );
 }
 
-export async function actObsEstaPorUsuDocExt(docExterno: any, pubsub: any, db: any)
+export async function actObsEstaPorUsuDocExt(_id: string, usuario: string, observaciones: string, estatus: string, pubsub: any, db: any)
 {
-    let id = docExterno._id;
-    let usuario = docExterno.usuarioDestino.usuario;
-
     // Actualizamos el campo de observaciones y el estatus cuando el administrador rechaza el documento
-    return await db.collection(COLECCIONES.DOC_EXTERNA).findOneAndUpdate()
+    return await db.collection(COLECCIONES.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(_id), "usuarioDestino.usuario": usuario},
+        {$set: {observaciones, estatus}}).then(
+        async (documento: any) =>
+        {
+            return {
+                estatus: true,
+                mensaje: 'Los datos se han actualizado con exito',
+                documento
+            }
+        }).catch(
+        async (error: any) =>
+        {
+            return {
+                estatus: false,
+                mensaje: 'Error al intentar actualizar los datos', error,
+                documento: null
+            }
+
+        });
 }
+

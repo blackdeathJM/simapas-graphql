@@ -12,33 +12,22 @@ const subscription: IResolvers =
                             return pubsub.asyncIterator(SUBSCRIPCIONES.DEPARTAMENTO);
                         }
                     },
-                cambioDocInterna:
+                nvaNotInterna:
                     {
-                        subscribe: (_: void, __: any, {pubsub}) =>
-                        {
-                            return pubsub.asyncIterator([SUBSCRIPCIONES.DOCINTERNA]);
-                        }
-                    },
-                envNotUsuarioVisto:
-                    {
+                        /*               subscribe: withFilter((_: any, __: any, {pubsub}) => pubsub.asyncIterator([SUBSCRIPCIONES.NEW_DOC_INTERNA]),
+                         (payload, variables) =>
+                         {
+                         const valor = payload.nvaNotInterna.usuarioDestino.filter((filtroSubDoc: any) => filtroSubDoc.usuario === variables.usuario)
+
+                         return valor[0].usuario === variables.usuario;
+                         })*/
                         subscribe: (_: void, __: void, {pubsub}) =>
                         {
-                            return pubsub.asyncIterator([SUBSCRIPCIONES.NOT_DOC_INTERNA])
+                            return pubsub.asyncIterator(SUBSCRIPCIONES.NEW_DOC_INTERNA);
                         }
                     },
-                /*                envNotUsuarioVisto:
-                 {
-                 subscribe: withFilter((pubsub) => pubsub.asyncIterator([subscripciones.NOT_DOC_INTERNA]), async (payload: any, variables: any) => {
-                 return payload.NOT_DOC_INTERNA.usuarioDestino.usuario === variables.usuario
-                 })
-                 }*/
                 envNotDocExterna:
-                    {
-                        subscribe: (_: void, __: void, {pubsub}) =>
-                        {
-                            return pubsub.asyncIterator([SUBSCRIPCIONES.NOT_DOC_EXTERNA])
-                        }
-                    }
+                    {}
             }
     };
 export default subscription;

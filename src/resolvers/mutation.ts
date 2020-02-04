@@ -48,12 +48,12 @@ const mutation: IResolvers =
                 {
                     return await acUrlDocExtUsuario(id, usuario, docUrl, pubsub, db);
                 },
-                async acObEstUsuario(_: void, {docExterno}, {pubsub, db})
+                async acObEstUsuario(_: void, {_id, usuario, observaciones, estatus}, {pubsub, db})
                 {
-                    return await actObsEstaPorUsuDocExt(docExterno, pubsub, db);
+                    return await actObsEstaPorUsuDocExt(_id, usuario, observaciones, estatus, pubsub, db);
                 },
                 // =========================DOCUMENTACION INTERNA====================================
-                async agDocInterna(_: void, {agNotificacion}, {pubsub, db})
+                async agDocInterna(_: void, {agNotificacion}, {pubsub, db, cadena})
                 {
                     return await agDocumentoInterno(agNotificacion, pubsub, db);
                 },

@@ -1,16 +1,12 @@
-import {docInternaUsuarioVisto, todasNotificacionesDocInterna} from "../querys/docInterna.query";
 import {SUBSCRIPCIONES} from "../../config/constants";
+import {docInternaUsuarioVisto} from "../querys/docInterna.query";
 
-export async function enviarNotificacionDocInterna(pubsub: any, db: any)
-{
-    await pubsub.publish(SUBSCRIPCIONES.DOCINTERNA, {cambioDocInterna: await todasNotificacionesDocInterna(db)});
-}
 
-export async function envNotiDocInternaUsuarioVisto(pubSub: any, usuario: string, db: any)
-{
-    await pubSub.publish(SUBSCRIPCIONES.NOT_DOC_INTERNA, {envNotUsuarioVisto: await docInternaUsuarioVisto(usuario, false, db)});
-}
-
-/*export async function envNotiDocInternaUsuarioVisto(pubSub: any, usuario: string, db: any) {
- await pubSub.publish(subscripciones.NOT_DOC_INTERNA, {payload: usuario})
+/*export async function notDocInternaUsuarioVisto(nvaNotificacion: any, pubsub: any, db: any)
+ {
+ await pubsub.publish(SUBSCRIPCIONES.NEW_DOC_INTERNA, {nvaNotInterna: nvaNotificacion});
  }*/
+export async function notDocInternaUsuarioVisto(usuario: string, visto: boolean, pubsub: any, db: any)
+{
+    await pubsub.publish(SUBSCRIPCIONES.NEW_DOC_INTERNA, {nvaNotInterna: docInternaUsuarioVisto(usuario, visto, db)});
+}

@@ -39,7 +39,6 @@ async function init()
     {
         const token = req ? req.headers.authorization : connection.authorization;
         const cadena = req ? req.headers.cadena : connection.cadena;
-        // const params = req ? req.headers.params : connection.params;
         return {db, token, cadena, pubsub};
     };
 
