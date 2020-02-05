@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CodeComments">
-    <comments />
+    <comments>
+      <comment>
+        <place path="src/operaciones/mutations/docExterna.mutation.ts" from="2199" to="2199" />
+        <text />
+        <data>Subida de archivos de la documentacion externa</data>
+      </comment>
+    </comments>
   </component>
 </project>

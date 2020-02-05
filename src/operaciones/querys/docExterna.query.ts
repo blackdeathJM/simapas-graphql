@@ -39,8 +39,8 @@ export async function docsUsuarioEstatus(usuario: string, estatusGral: string, d
     return await db.collection(COLECCIONES.DOC_EXTERNA).find({estatusGral, "usuarioDestino.usuario": usuario}, {projection: filtroDocsExt}).toArray();
 }
 
-export async function docsUsuarioEstatusPAR(dirigido: string, db: any)
+export async function obDocsExtUsuarioFolio(usuario: string, estatus: string, db: any)
 {
-    return await db.collection(COLECCIONES.DOC_EXTERNA).find({dirigido, estatusGral: {$ne: "ENTREGADO"}}).toArray();
+    return await db.collection(COLECCIONES.DOC_EXTERNA).find({usuarioDestino: {$elemMatch: {usuario, estatus}}}, {projection: filtroDocsExt}).toArray();
 }
 

@@ -7,5 +7,7 @@ extend type Mutation
     "DOC EXTERNA: Actualizar el campo de docUrl por usuario para su aprobacion"
     acDocExtUrlUsuario(id: String!, usuario: String!, docUrl: String!): DocumentoExternoRes!
     "DOC EXTERNA: Actualizar el campo de observaciones y estatus por usuario"
-    acObEstUsuario(_id: String!, usuario: String!, observaciones: String, estatus: String): DocumentoExternoRes!
+    acObEstUsuario(_id: String!, usuario: String!, observaciones: String!, estatus: String!): DocumentoExternoRes!
+    "DOC EXTERNA: Actualizar el campo del folio para el documento y cambiar el estatus y el estatus general a LISTO "
+    acEstEstGralUsuarioFolio(_id: String!, usuario: String!, estatus: String!, estatusGral: String!): DocumentoExternoRes!
 }

@@ -77,13 +77,13 @@ export async function actObsEstaPorUsuDocExt(_id: string, usuario: string, obser
 {
     // Actualizamos el campo de observaciones y el estatus cuando el administrador rechaza el documento
     return await db.collection(COLECCIONES.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(_id), "usuarioDestino.usuario": usuario},
-        {$set: {observaciones, estatus}}).then(
+        {$set: {"usuarioDestino.$.observaciones": observaciones, "usuarioDestino.$.estatus": estatus}}).then(
         async (documento: any) =>
         {
             return {
                 estatus: true,
                 mensaje: 'Los datos se han actualizado con exito',
-                documento
+                documento: documento.value
             }
         }).catch(
         async (error: any) =>
@@ -97,3 +97,23 @@ export async function actObsEstaPorUsuDocExt(_id: string, usuario: string, obser
         });
 }
 
+export async function acEstEstGralFolioUsuario(_id: string, usuario: string, estatus: string, estatusGral: string, db: any)
+{
+    return await db.collection(COLECCIONES.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(_id), "usuarioDestino.usuario": usuario},
+        {estatusGral, "usuarioDestino.$.estatus": estatus}).then(
+        async (documento: any) =>
+        {
+            return {
+                estatus: true,
+                mensaje: 'Ha cambiado el estatus del documento',
+                documento: documento.value
+            }
+        }).catch((error: any) =>
+    {
+        return {
+            estatus: false,
+            mensaje: 'Hubo un error al tratar de actualizar el documento', error,
+            documento: null
+        }
+    })
+}

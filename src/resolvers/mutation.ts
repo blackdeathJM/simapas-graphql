@@ -2,7 +2,7 @@ import {IResolvers} from "graphql-tools";
 import {actualizarDepto, registroDepto} from "../operaciones/mutations/departamento.mutation";
 import {acPerfilUsuario, regUsuario} from "../operaciones/mutations/usuario.mutation";
 import {acUrlFolio, registrarFolio} from "../operaciones/mutations/folio.mutation";
-import {actObsEstaPorUsuDocExt, acUrlDocExt, acUrlDocExtUsuario, registroDoc} from "../operaciones/mutations/docExterna.mutation";
+import {acEstEstGralFolioUsuario, actObsEstaPorUsuDocExt, acUrlDocExt, acUrlDocExtUsuario, registroDoc} from "../operaciones/mutations/docExterna.mutation";
 import {acVistoUsuario, agDocumentoInterno} from "../operaciones/mutations/docInterna.mutation";
 
 const mutation: IResolvers =
@@ -32,7 +32,8 @@ const mutation: IResolvers =
                 {
                     return await registrarFolio(folio, db);
                 },
-                async acUrlFolio(_: void, {id, archivoUrl}, {db}) {
+                async acUrlFolio(_: void, {id, archivoUrl}, {db})
+                {
                     return await acUrlFolio(id, archivoUrl, db);
                 },
                 // ========================DOCUMENTACION EXTERNA============================
@@ -51,6 +52,10 @@ const mutation: IResolvers =
                 async acObEstUsuario(_: void, {_id, usuario, observaciones, estatus}, {pubsub, db})
                 {
                     return await actObsEstaPorUsuDocExt(_id, usuario, observaciones, estatus, pubsub, db);
+                },
+                async acEstEstGralUsuarioFolio(_: void, {_id, usuario, estatus, estatusGral}, {db})
+                {
+                    return await acEstEstGralFolioUsuario(_id, usuario, estatus, estatusGral, db);
                 },
                 // =========================DOCUMENTACION INTERNA====================================
                 async agDocInterna(_: void, {agNotificacion}, {pubsub, db, cadena})
