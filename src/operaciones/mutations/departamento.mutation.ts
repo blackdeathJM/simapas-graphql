@@ -1,9 +1,10 @@
-import { ObjectId } from "bson";
+import {ObjectId} from "bson";
 
 // import {enviarNotificacionDepto} from "../subscriptions/departamento.subcription";
 
-export async function registroDepto(depto: any, pubsub: any, db: any)
+export async function regDepto(depto: any, pubsub: any, db: any)
 {
+    console.log("Depto", depto);
     return await db.collection('departamentos').insertOne(depto).then(
         async () =>
         {

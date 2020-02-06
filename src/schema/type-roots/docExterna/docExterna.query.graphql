@@ -8,4 +8,6 @@ extend type Query
     obDocsUsuarioEstatus(usuario: String!, estatusGral: String!): [DocumentoExterno]
     "DOC EXTERNA: Obtener docExt por usuario y por estatus de aprobado"
     obDocUsuarioEstatusDeUsuario(usuario: String!, estatus: String!): [DocumentoExterno]
+    "DOC EXTERNA: Relacion con folios"
+    docExtRel(_id: ID!): DocumentoExterno
 }

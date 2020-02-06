@@ -1,4 +1,5 @@
 import {COLECCIONES} from "../../config/constants";
+import {ObjectId} from "bson";
 
 let filtroDocsExt =
     {
@@ -44,3 +45,8 @@ export async function obDocsExtUsuarioFolio(usuario: string, estatus: string, db
     return await db.collection(COLECCIONES.DOC_EXTERNA).find({usuarioDestino: {$elemMatch: {usuario, estatus}}}, {projection: filtroDocsExt}).toArray();
 }
 
+export async function buscarDocExt(_id: ObjectId, db: any)
+{
+    console.log('id', _id);
+    return await db.collection(COLECCIONES.DOC_EXTERNA).findOne({_id: new ObjectId(_id)});
+}

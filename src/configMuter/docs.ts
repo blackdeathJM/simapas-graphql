@@ -1,11 +1,11 @@
 import {Request, Response} from "express";
-import {uploadArchivo} from "./filtroMulter";
+import {subiArchivo} from "./filtroMulter";
 import path from "path";
 import fs from 'fs-extra';
 
 export async function agDocs(req: Request, res: Response): Promise<any>
 {
-    uploadArchivo(req, res, function (error)
+    subiArchivo(req, res, function (error)
     {
         if (error) {
             return res.status(501).json({'Ocurrio un error': error});

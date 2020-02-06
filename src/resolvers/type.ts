@@ -10,12 +10,12 @@ const type: IResolvers =
                     return await buscarDeptoRelacion(parent.departamentoID, db);
                 }
             },
-        /*        DocumentoExterno:
-                    {
-                        usuarioDestino: async (parent: any, __: any, {db}) =>
-                        {
-                            return await buscarDocExternaRleacion(parent.usuarioDestino, db);
-                        }
-                    }*/
+/*        Folio:
+ {
+ docExtFk: async (parent: any, __: any, {db}) => {
+ console.log('buscarRelacion', parent);
+ return await buscarDocExt(parent.docExtRel, db);
+ }
+ }*/
     };
 export default type;

@@ -2,7 +2,7 @@ import multer from "multer";
 import path from "path";
 import {storage} from "./almacenamientoMulter";
 
-export const uploadArchivo = multer({
+export const subiArchivo = multer({
     storage,
     limits: {fileSize: 200000000},
     fileFilter: (req, file, cb) =>

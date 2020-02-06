@@ -9,7 +9,8 @@ export const COLECCIONES =
         DEPARTAMENTOS: 'departamentos',
         USUARIOS: 'usuarios',
         DOC_INTERNA: 'docInterna',
-        DOC_EXTERNA: 'docExterna'
+        DOC_EXTERNA: 'docExterna',
+        FOLIOS: 'folios'
     };
 
 export const SUBSCRIPCIONES =

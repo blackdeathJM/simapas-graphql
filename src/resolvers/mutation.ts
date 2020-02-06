@@ -1,8 +1,8 @@
 import {IResolvers} from "graphql-tools";
-import {actualizarDepto, registroDepto} from "../operaciones/mutations/departamento.mutation";
+import {actualizarDepto, regDepto} from "../operaciones/mutations/departamento.mutation";
 import {acPerfilUsuario, regUsuario} from "../operaciones/mutations/usuario.mutation";
 import {acUrlFolio, registrarFolio} from "../operaciones/mutations/folio.mutation";
-import {acEstEstGralFolioUsuario, actObsEstaPorUsuDocExt, acUrlDocExt, acUrlDocExtUsuario, registroDoc} from "../operaciones/mutations/docExterna.mutation";
+import {acDocExtEstatusGralDocRepUrlFolio, acEstEstGralFolioUsuario, actObsEstaPorUsuDocExt, acUrlDocExt, acUrlDocExtUsuario, registroDoc} from "../operaciones/mutations/docExterna.mutation";
 import {acVistoUsuario, agDocumentoInterno} from "../operaciones/mutations/docInterna.mutation";
 
 const mutation: IResolvers =
@@ -12,7 +12,7 @@ const mutation: IResolvers =
                 // DEPARTAMENTO
                 async registroDepartamento(_: void, {departamento}, {pubsub, db})
                 {
-                    return await registroDepto(departamento, pubsub, db);
+                    return await regDepto(departamento, pubsub, db);
                 },
                 async actualizarDepartamento(_: void, {nombreDeptoActualizar}, {db})
                 {
@@ -53,9 +53,13 @@ const mutation: IResolvers =
                 {
                     return await actObsEstaPorUsuDocExt(_id, usuario, observaciones, estatus, pubsub, db);
                 },
-                async acEstEstGralUsuarioFolio(_: void, {_id, usuario, estatus, estatusGral}, {db})
+                async acEstEstGralUsuarioFolio(_: void, {_id, usuario, estatus, estatusGral, folio}, {db})
                 {
-                    return await acEstEstGralFolioUsuario(_id, usuario, estatus, estatusGral, db);
+                    return await acEstEstGralFolioUsuario(_id, usuario, estatus, estatusGral, folio, db);
+                },
+                async acDocResUrlEstatusPorIdDocExt(_: void, {_id, estatusGral, docRespUrl, folio}, {db})
+                {
+                    return await acDocExtEstatusGralDocRepUrlFolio(_id, estatusGral, docRespUrl, folio, db);
                 },
                 // =========================DOCUMENTACION INTERNA====================================
                 async agDocInterna(_: void, {agNotificacion}, {pubsub, db, cadena})

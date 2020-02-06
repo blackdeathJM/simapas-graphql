@@ -2,7 +2,7 @@ import {IResolvers} from "graphql-tools";
 import {buscarDeptoID, obtenerDeptos} from "../operaciones/querys/departamento.query";
 import {loginUsuario, obtenerTodosLosUsuarios, obtenerUsuarioPorSuNombreDeUsuario, perfilUsuario,} from "../operaciones/querys/usuarios.query";
 import {folioPorUsuario, folioUltimo, todosLosFolios} from "../operaciones/querys/folio.query";
-import {docsPorUsuario, docsUsuarioEstatus, obDocsExtUsuarioFolio, todosDocsExternos} from "../operaciones/querys/docExterna.query";
+import {buscarDocExt, docsPorUsuario, docsUsuarioEstatus, obDocsExtUsuarioFolio, todosDocsExternos} from "../operaciones/querys/docExterna.query";
 import {docInternaUsuarioVisto, todasNotificacionesDocInterna, todasNotificacionesUsuario} from "../operaciones/querys/docInterna.query";
 
 const query: IResolvers =
@@ -64,6 +64,10 @@ const query: IResolvers =
                 async obDocUsuarioEstatusDeUsuario(_: void, {usuario, estatus}, {db})
                 {
                     return await obDocsExtUsuarioFolio(usuario, estatus, db);
+                },
+                async docExtRel(_: void, {_id}, {db})
+                {
+                    return await buscarDocExt(_id, db);
                 },
                 // DOCUMENTACION INTERNA
                 async obNotiDocInterna(_: void, __: void, {db})

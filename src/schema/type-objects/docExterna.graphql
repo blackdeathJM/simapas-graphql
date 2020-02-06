@@ -65,4 +65,5 @@ enum ESTATUS
     APROBADO
     LISTO
     ENTREGADO
+    TERMINADO
 }
