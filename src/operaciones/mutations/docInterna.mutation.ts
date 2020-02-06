@@ -1,5 +1,4 @@
 import {COLECCIONES, FECHA_ACTUAL} from "../../config/constants";
-import {notDocInternaUsuarioVisto} from "../subscriptions/docInterna.subscription";
 
 export async function agDocumentoInterno(agNotificacion: any, pubsub: any, db: any)
 {
@@ -18,10 +17,10 @@ export async function agDocumentoInterno(agNotificacion: any, pubsub: any, db: a
                 // recibe el usuario que hace la peticion por eso no funciona bien
                 console.log('longitud', agNotificacion.usuarioDestino.length);
 
-                for (let i = 0; i < agNotificacion.usuarioDestino.length; i++) {
-                    console.log('usuarioConsulta', agNotificacion.usuarioDestino[i].usuario);
-                    await notDocInternaUsuarioVisto(agNotificacion.usuarioDestino[i].usuario, false, pubsub, db);
-                }
+                /*                for (let i = 0; i < agNotificacion.usuarioDestino.length; i++) {
+                 console.log('usuarioConsulta', agNotificacion.usuarioDestino[i].usuario);
+                 await notDocInternaUsuarioVisto(agNotificacion.usuarioDestino[i].usuario, false, pubsub, db);
+                 }*/
                 return {
                     estatus: true,
                     mensaje: 'Datos agregados con exito',
