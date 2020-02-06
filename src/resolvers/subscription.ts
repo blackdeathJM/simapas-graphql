@@ -1,5 +1,6 @@
 import {IResolvers} from "graphql-tools";
 import {SUBSCRIPCIONES} from "../config/constants";
+import {withFilter} from 'apollo-server'
 
 const subscription: IResolvers =
     {
@@ -7,8 +8,7 @@ const subscription: IResolvers =
             {
                 cambioDepartamento:
                     {
-                        subscribe: (_: void, __: any, {pubsub}) =>
-                        {
+                        subscribe: (_: void, __: any, {pubsub}) => {
                             return pubsub.asyncIterator(SUBSCRIPCIONES.DEPARTAMENTO);
                         }
                     },
@@ -21,13 +21,21 @@ const subscription: IResolvers =
 
                          return valor[0].usuario === variables.usuario;
                          })*/
-                        subscribe: (_: void, __: void, {pubsub}) =>
-                        {
+                        subscribe: (_: void, __: void, {pubsub}) => {
                             return pubsub.asyncIterator(SUBSCRIPCIONES.NEW_DOC_INTERNA);
                         }
                     },
-                envNotDocExterna:
-                    {}
+                todosDocsExt:
+                    {
+                        subscribe: withFilter((_: any, __: any, {pubsub}) => pubsub.asyncIterator([SUBSCRIPCIONES.NOT_DOC_EXTERNA]),
+                            (payload, variables) => {
+                                console.log('payload', payload);
+                                console.log('variables', variables);
+                                const valor = payload.todosDocsExt.role;
+                                return valor === variables.role;
+                            })
+                    }
             }
     };
+
 export default subscription;

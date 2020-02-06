@@ -14,6 +14,7 @@ type DocumentoExterno
     docUrl: String
     docRespUrl: String
     estatusGral: ESTATUS
+    fechaTerminado: String
 }
 
 input DocumentoExternoInput
@@ -32,6 +33,7 @@ input DocumentoExternoInput
     docUrl: String
     docRespUrl: String
     estatusGral: ESTATUS!
+    fechaTerminado: String
 }
 type UsuarioDocExterno
 {
