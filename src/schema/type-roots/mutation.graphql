@@ -1,7 +1,7 @@
 type Mutation
 {
     "DEPARTAMENTO - Registro de los departamentos"
-    registroDepartamento(departamento: DepartamentoInput!): Departamento!
+    registroDepto(departamento: DepartamentoInput!): DepartamentoRes!
     "DEPARTAMENTO - Actualizar el nombre del departamento"
-    actualizarDepartamento(nombreDeptoActualizar: DepartamentoInput!): Departamento!
+    actualizarDepto(nombreDeptoActualizar: DepartamentoInput!): DepartamentoRes!
 }

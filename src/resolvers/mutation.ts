@@ -1,5 +1,5 @@
 import {IResolvers} from "graphql-tools";
-import {actualizarDepto, regDepto} from "../operaciones/mutations/departamento.mutation";
+import {acDepto, regDepto} from "../operaciones/mutations/departamento.mutation";
 import {acPerfilUsuario, regUsuario} from "../operaciones/mutations/usuario.mutation";
 import {acUrlFolio, registrarFolio} from "../operaciones/mutations/folio.mutation";
 import {acDocExtEstatusGralDocRepUrlFolio, acEstEstGralFolioUsuario, actObsEstaPorUsuDocExt, acUrlDocExt, acUrlDocExtUsuario, registroDoc} from "../operaciones/mutations/docExterna.mutation";
@@ -10,13 +10,13 @@ const mutation: IResolvers =
         Mutation:
             {
                 // DEPARTAMENTO
-                async registroDepartamento(_: void, {departamento}, {pubsub, db})
+                async registroDepto(_: void, {departamento}, {pubsub, db})
                 {
                     return await regDepto(departamento, pubsub, db);
                 },
-                async actualizarDepartamento(_: void, {nombreDeptoActualizar}, {db})
+                async actualizarDepto(_: void, {nombreDeptoActualizar}, {db})
                 {
-                    return await actualizarDepto(nombreDeptoActualizar._id, nombreDeptoActualizar.nombre, db);
+                    return await acDepto(nombreDeptoActualizar._id, nombreDeptoActualizar.nombre, db);
                 },
                 // USUARIO
                 async registroUsuario(_: void, {usuario}, {db})
