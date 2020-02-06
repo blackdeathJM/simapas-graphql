@@ -16,8 +16,7 @@ export const COLECCIONES =
 export const SUBSCRIPCIONES =
     {
         DEPARTAMENTO: 'cambioDepartamentos',
-        DOCINTERNA: 'cambioDocInterna',
-        NEW_DOC_INTERNA: 'nvaNotInterna',
+        NOT_DOC_INTERNA: 'todosDocInterna',
         NOT_DOC_EXTERNA: 'todosDocsExt'
     };
 export const SECRET_KEY = process.env.SECRET_KEY || 'blackdeath';
