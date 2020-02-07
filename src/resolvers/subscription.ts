@@ -32,18 +32,3 @@ const subscription: IResolvers =
     };
 
 export default subscription;
-
-/*
-nvaNotInterna:
-{
-    /!*               subscribe: withFilter((_: any, __: any, {pubsub}) => pubsub.asyncIterator([SUBSCRIPCIONES.NEW_DOC_INTERNA]),
-     (payload, variables) =>
-     {
-     const valor = payload.nvaNotInterna.usuarioDestino.filter((filtroSubDoc: any) => filtroSubDoc.usuario === variables.usuario)
-
-     return valor[0].usuario === variables.usuario;
-     })*!/
-    subscribe: (_: void, __: void, {pubsub}) => {
-        return pubsub.asyncIterator(SUBSCRIPCIONES.NEW_DOC_INTERNA);
-    }
-},*/
