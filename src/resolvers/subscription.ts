@@ -18,17 +18,30 @@ const subscription: IResolvers =
                             return pubsub.asyncIterator(SUBSCRIPCIONES.NOT_DOC_INTERNA);
                         }
                     },
-                todosDocsExt:
+                notAgDocInterna:
                     {
-                        subscribe: withFilter((_: any, __: any, {pubsub}) => pubsub.asyncIterator([SUBSCRIPCIONES.NOT_DOC_EXTERNA]),
+                        subscribe: withFilter((_: any, __: any, {pubsub}) => pubsub.asyncIterator([SUBSCRIPCIONES.NOT_DOC_INTERNA_AG]),
                             (payload, variables) => {
                                 console.log('payload', payload);
                                 console.log('variables', variables);
-                                const valor = payload.todosDocsExt.role;
-                                return valor === variables.role;
+                                return true
                             })
+                    },
+                todosDocsExt:
+                    {
+                        subscribe: (_: void, __: void, {pubsub}) => {
+                            return pubsub.asyncIterator(SUBSCRIPCIONES.NOT_DOC_EXTERNA);
+                        }
                     }
             }
     };
 
 export default subscription;
+/*
+subscribe: withFilter((_: any, __: any, {pubsub}) => pubsub.asyncIterator([SUBSCRIPCIONES.NOT_DOC_EXTERNA]),
+    (payload, variables) => {
+        console.log('payload', payload);
+        console.log('variables', variables);
+        const valor = payload.todosDocsExt.role;
+        return valor === variables.role;
+    })*/

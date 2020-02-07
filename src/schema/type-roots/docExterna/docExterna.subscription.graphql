@@ -2,5 +2,5 @@ extend type Subscription
 {
     "DOC EXTERNA: detectar cambio en la documentacion externa"
     #enviar notificacion de cambio al agregar doc externo, cambiar estatus
-    todosDocsExt(role: String!):[DocumentoExterno]
+    todosDocsExt:[DocumentoExterno]
 }
