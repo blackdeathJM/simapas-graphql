@@ -3,7 +3,7 @@ extend type Query
     "DOCUMENTO - Obtener todos los folios"
     obtenerFoliosTodos: [Folio]
     "DOCUMENTO - Consultar el ultimo folio registrado"
-    ultimoFolio: [Folio]!
+    ultimoFolio: UltimoFolio!
     "DOCUMENTO - Consultar los folios asignados a un usuario regreg"
     folioUsuario(asigUsuario: String!): [Folio]
 }

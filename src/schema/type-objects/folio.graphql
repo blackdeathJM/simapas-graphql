@@ -31,6 +31,12 @@ type FolioRes
     mensaje: String!
     folio: Folio
 }
+type UltimoFolio
+{
+    estatus: Boolean!
+    mensaje: String!
+    ultimoFolio: Int!
+}
 enum TIPO
 {
     OFICIO

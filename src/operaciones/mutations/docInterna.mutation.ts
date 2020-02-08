@@ -13,7 +13,7 @@ export async function agDocumentoInterno(agNotificacion: any, pubsub: any, db: a
         agNotificacion.folioInterno = `FOL-${agNotificacion.num}-SIMAPAS/${anoActual}`;
         return await db.collection(COLECCIONES.DOC_INTERNA).insertOne(agNotificacion).then(
             async (docInterna: any) => {
-                await notAgNvaDocInterna(docInterna.ops, pubsub, db);
+                await notAgNvaDocInterna(docInterna.ops, pubsub);
                 return {
                     estatus: true,
                     mensaje: 'Datos agregados con exito',
