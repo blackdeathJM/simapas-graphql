@@ -2,7 +2,4 @@ extend type Subscription
 {
     "DOC INTERNA: Detectar cambios en las notificaciones de mensajes"
     todosDocInterna: [DocInterna]
-    "DOC INTERNA: Detectar cambios usuario y visto"
-    #Detectar cambios cuando se agrega una nueva notificacion filtrando solo por usuario y por visto
-    notAgDocInterna(usuarios: [String!]): [DocInterna]
 }

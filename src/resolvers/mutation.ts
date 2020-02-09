@@ -2,7 +2,15 @@ import {IResolvers} from "graphql-tools";
 import {acDepto, regDepto} from "../operaciones/mutations/departamento.mutation";
 import {acPerfilUsuario, regUsuario} from "../operaciones/mutations/usuario.mutation";
 import {acUrlFolio, registrarFolio} from "../operaciones/mutations/folio.mutation";
-import {acDocExtEstatusGralDocRepUrlFolio, acEstEstGralFolioUsuario, actObsEstaPorUsuDocExt, acUrlDocExt, acUrlDocExtUsuario, registroDoc} from "../operaciones/mutations/docExterna.mutation";
+import {
+    acDocExtEstatusGralDocRepUrlFolio,
+    acEstatusGralEstatusUsuarioTerminado,
+    acEstEstGralFolioUsuario,
+    actObsEstaPorUsuDocExt,
+    acUrlDocExt,
+    acUrlDocExtUsuario,
+    registroDoc
+} from "../operaciones/mutations/docExterna.mutation";
 import {acVistoUsuario, agDocumentoInterno} from "../operaciones/mutations/docInterna.mutation";
 
 const mutation: IResolvers =
@@ -45,23 +53,33 @@ const mutation: IResolvers =
                 {
                     return await acUrlDocExt(id, docUrl, pubsub, db);
                 },
-                async acDocExtUrlUsuario(_: void, {id, usuario, docUrl}, {pubsub, db}) {
+                async acDocExtUrlUsuario(_: void, {id, usuario, docUrl}, {pubsub, db})
+                {
                     return await acUrlDocExtUsuario(id, usuario, docUrl, pubsub, db);
                 },
-                async acObEstUsuario(_: void, {_id, usuario, observaciones, estatus}, {pubsub, db}) {
+                async acObEstUsuario(_: void, {_id, usuario, observaciones, estatus}, {pubsub, db})
+                {
                     return await actObsEstaPorUsuDocExt(_id, usuario, observaciones, estatus, pubsub, db);
                 },
-                async acEstEstGralUsuarioFolio(_: void, {_id, usuario, estatus, estatusGral, folio}, {pubsub, db}) {
+                async acEstEstGralUsuarioFolio(_: void, {_id, usuario, estatus, estatusGral, folio}, {pubsub, db})
+                {
                     return await acEstEstGralFolioUsuario(_id, usuario, estatus, estatusGral, folio, pubsub, db);
                 },
-                async acDocResUrlEstatusPorIdDocExt(_: void, {_id, estatusGral, docRespUrl, folio}, {pubsub, db}) {
+                async acDocResUrlEstatusPorIdDocExt(_: void, {_id, estatusGral, docRespUrl, folio}, {pubsub, db})
+                {
                     return await acDocExtEstatusGralDocRepUrlFolio(_id, estatusGral, docRespUrl, folio, pubsub, db);
                 },
+                async acEstatusGralTerminado(_: void, {_id}, {pubsub, db})
+                {
+                    return await acEstatusGralEstatusUsuarioTerminado(_id, pubsub, db);
+                },
                 // =========================DOCUMENTACION INTERNA====================================
-                async agDocInterna(_: void, {agNotificacion}, {pubsub, db, cadena}) {
+                async agDocInterna(_: void, {agNotificacion}, {pubsub, db, cadena})
+                {
                     return await agDocumentoInterno(agNotificacion, pubsub, db);
                 },
-                async acDocVistoUsuario(_: void, {folioInterno, usuario}, {pubsub, db}) {
+                async acDocVistoUsuario(_: void, {folioInterno, usuario}, {pubsub, db})
+                {
                     return await acVistoUsuario(folioInterno, usuario, pubsub, db);
                 }
             }

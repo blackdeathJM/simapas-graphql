@@ -12,4 +12,6 @@ extend type Mutation
     acEstEstGralUsuarioFolio(_id: String!, usuario: String!, estatus: String!, estatusGral: String!, folio: String!): DocumentoExternoRes!
     "DOC EXTERNA: Actualir el campo de docRespUrl y el campo de folio de nuevo por si no se guardo al momento de registrar el folio a ENTREGADO y el estatus del usuario ENTREGADO"
     acDocResUrlEstatusPorIdDocExt(_id: String!, estatusGral: String!, docRespUrl: String!, folio: String! ): DocumentoExternoRes!
+    "DOC EXTERNA: Actualizar el estatusGral a TERMINADO para dar por finalizado todo el proceso"
+    acEstatusGralTerminado(_id: ID!): DocumentoExternoRes!
 }

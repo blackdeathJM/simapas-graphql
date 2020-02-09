@@ -1,7 +1,8 @@
 import {COLECCIONES, FECHA_ACTUAL} from "../../config/constants";
-import {notAgNvaDocInterna} from "../subscriptions/docInterna.subscription";
+import {notTodosDocInterna} from "../subscriptions/docInterna.subscription";
 
-export async function agDocumentoInterno(agNotificacion: any, pubsub: any, db: any) {
+export async function agDocumentoInterno(agNotificacion: any, pubsub: any, db: any)
+{
     let totalNotificaciones = await db.collection("docInterna").countDocuments();
 
     if (totalNotificaciones != null) {
@@ -12,8 +13,9 @@ export async function agDocumentoInterno(agNotificacion: any, pubsub: any, db: a
 
         agNotificacion.folioInterno = `FOL-${agNotificacion.num}-SIMAPAS/${anoActual}`;
         return await db.collection(COLECCIONES.DOC_INTERNA).insertOne(agNotificacion).then(
-            async (docInterna: any) => {
-                await notAgNvaDocInterna(docInterna.ops, pubsub);
+            async (docInterna: any) =>
+            {
+                await notTodosDocInterna(pubsub, db);
                 return {
                     estatus: true,
                     mensaje: 'Datos agregados con exito',
@@ -21,7 +23,8 @@ export async function agDocumentoInterno(agNotificacion: any, pubsub: any, db: a
                 }
             }
         ).catch(
-            async (error: any) => {
+            async (error: any) =>
+            {
                 console.log('error', error);
                 return {
                     estatus: false,
@@ -33,14 +36,16 @@ export async function agDocumentoInterno(agNotificacion: any, pubsub: any, db: a
     }
 }
 
-export async function acVistoUsuario(folioInterno: string, usuario: string, pubsub: any, db: any) {
+export async function acVistoUsuario(folioInterno: string, usuario: string, pubsub: any, db: any)
+{
     return await db.collection("docInterna").findOneAndUpdate({$and: [{folioInterno}, {"usuarioDestino.usuario": usuario}]}, {
         $set: {
             "usuarioDestino.$.visto": true,
             "usuarioDestino.$.fechaVisto": FECHA_ACTUAL
         }
     }).then(
-        async (res: any) => {
+        async (res: any) =>
+        {
             return {
                 estatus: true,
                 mensaje: 'La notificacion ha modificado como vista',
