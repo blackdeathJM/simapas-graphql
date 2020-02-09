@@ -69,9 +69,9 @@ const mutation: IResolvers =
                 {
                     return await acDocExtEstatusGralDocRepUrlFolio(_id, estatusGral, docRespUrl, folio, pubsub, db);
                 },
-                async acEstatusGralTerminado(_: void, {_id}, {pubsub, db})
+                async acEstatusGralTerminado(_: void, {_id, estatusGral, acuseUrl, folio}, {pubsub, db})
                 {
-                    return await acEstatusGralEstatusUsuarioTerminado(_id, pubsub, db);
+                    return await acEstatusGralEstatusUsuarioTerminado(_id, estatusGral, acuseUrl, folio, pubsub, db);
                 },
                 // =========================DOCUMENTACION INTERNA====================================
                 async agDocInterna(_: void, {agNotificacion}, {pubsub, db, cadena})

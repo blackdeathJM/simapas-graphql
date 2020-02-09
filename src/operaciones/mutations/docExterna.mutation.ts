@@ -159,11 +159,10 @@ export async function acDocExtEstatusGralDocRepUrlFolio(_id: ObjectId, estatusGr
 }
 
 // Actualizamos el estatusGeneral del documento como el estatus del usuario a Terminado para dar por finalizado el proceso
-export async function acEstatusGralEstatusUsuarioTerminado(_id: string, pubSub: any, db: any)
+export async function acEstatusGralEstatusUsuarioTerminado(_id: string, estatusGral: string, acuseUrl: string, folio: string, pubSub: any, db: any)
 {
-    console.log('el id', _id);
     return await db.collection(COLECCIONES.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(_id)},
-        {$set: {estatusGral: "TERMINADO", folio: "NO ASIGNADO", fechaTerminado: FECHA_ACTUAL}}).then(
+        {$set: {estatusGral, folio, acuseUrl, fechaTerminado: FECHA_ACTUAL}}).then(
         async (documento: any) =>
         {
             await notTodosDocsExt(pubSub, db);
