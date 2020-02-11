@@ -1510,6 +1510,11 @@ graphql-import-node@^0.0.4:
   resolved "https://registry.yarnpkg.com/graphql-import-node/-/graphql-import-node-0.0.4.tgz#0522f058978c7e1b99d1e6be1b851ee17007b111"
   integrity sha512-okpdABQIgIM0qdx9Mfgdu6fTsFEazZmHZdEU34cijkUj9D1db1SyPRGHPxbXmbacamhEF41ckxpCAgHiGliryQ==
 
+graphql-merge-resolvers@^1.1.12:
+  version "1.1.12"
+  resolved "https://registry.yarnpkg.com/graphql-merge-resolvers/-/graphql-merge-resolvers-1.1.12.tgz#1e3abaf6437d447546dad9aff242d665ac57ed6e"
+  integrity sha512-ZUXfPrvWwXoGfFBVfXATiXptLYJzU3XE45fQuPt3Ff/JPoc8cayB50JsqgW5bF6rAnkSi1OvTE4opqwdICMIIw==
+
 graphql-middleware@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/graphql-middleware/-/graphql-middleware-4.0.2.tgz#eb589bf428e1795e48cd6a3cfeeba0807b996ebd"
