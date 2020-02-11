@@ -1,14 +1,14 @@
 import {IResolvers} from "graphql-tools";
-import subscription from "./subscription";
 import unionMutationResolver from "./unionMutation";
 import unionQueryResolver from "./unionQuery";
 import unionTypeResolver from "./unionTypes";
+import unionSubscriptionResolver from "./unionSubscription";
 
 const resolvers: IResolvers =
     {
         ...unionQueryResolver,
         ...unionMutationResolver,
-        ...subscription,
-        ...unionTypeResolver
+        ...unionTypeResolver,
+        ...unionSubscriptionResolver
     };
 export default resolvers;

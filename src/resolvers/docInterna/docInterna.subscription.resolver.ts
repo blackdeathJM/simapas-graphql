@@ -1,32 +1,20 @@
 import {IResolvers} from "graphql-tools";
-import {SUBSCRIPCIONES} from "../config/constants";
+import {SUBSCRIPCIONES} from "../../config/constants";
 
-const subscription: IResolvers =
+const docInternaSubscription: IResolvers =
     {
         Subscription:
             {
-                cambioDepartamento:
-                    {
-                        subscribe: (_: void, __: any, {pubsub}) => {
-                            return pubsub.asyncIterator([SUBSCRIPCIONES.DEPARTAMENTO]);
-                        }
-                    },
                 todosDocInterna:
                     {
-                        subscribe: (_: void, __: any, {pubsub}) => {
+                        subscribe: (_: void, __: any, {pubsub}) =>
+                        {
                             return pubsub.asyncIterator([SUBSCRIPCIONES.NOT_DOC_INTERNA]);
                         }
                     },
-                todosDocsExt:
-                    {
-                        subscribe: (_: void, __: void, {pubsub}) => {
-                            return pubsub.asyncIterator([SUBSCRIPCIONES.NOT_DOC_EXTERNA]);
-                        }
-                    }
             }
     };
-
-export default subscription;
+export default docInternaSubscription;
 /*
  subscribe: withFilter((_: any, __: any, {pubsub}) => pubsub.asyncIterator([SUBSCRIPCIONES.NOT_DOC_EXTERNA]),
  (payload, variables) => {
