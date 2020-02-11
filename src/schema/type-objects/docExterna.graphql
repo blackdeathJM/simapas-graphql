@@ -1,6 +1,7 @@
 type DocumentoExterno
 {
     _id: ID
+    noSeguimiento: Int
     identificadorDoc: String
     folio: String
     dependencia: String
@@ -20,6 +21,7 @@ type DocumentoExterno
 input DocumentoExternoInput
 {
     _id: ID
+    noSeguimiento: Int!
     identificadorDoc: String!
     folio: String
     dependencia: String!

@@ -1,5 +1,4 @@
 import {IResolvers} from "graphql-tools";
-import {buscarDeptoID, obtenerDeptos} from "../operaciones/querys/departamento.query";
 import {loginUsuario, obtenerTodosLosUsuarios, obtenerUsuarioPorSuNombreDeUsuario, perfilUsuario,} from "../operaciones/querys/usuarios.query";
 import {folioPorUsuario, folioUltimo, todosLosFolios} from "../operaciones/querys/folio.query";
 import {buscarDocExt, docsPorUsuario, docsUsuarioEstatus, obDocsExtUsuarioFolio, todosDocsExternos} from "../operaciones/querys/docExterna.query";
@@ -9,15 +8,6 @@ const query: IResolvers =
     {
         Query:
             {
-                // DEPARTAMENTOS
-                async obtenerDepartamentos(_: void, __: any, {db})
-                {
-                    return await obtenerDeptos(db)
-                },
-                async departamentoID(_: void, {_id}: any, {db})
-                {
-                    return await buscarDeptoID(_id, db);
-                },
                 // USUARIOS
                 async obtenerUsuarios(_: void, __: any, {db})
                 {
