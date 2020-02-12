@@ -28,8 +28,7 @@ const mutationDeptos: IResolvers =
                                 departamento: null
                             }
 
-                        }
-                    );
+                        });
                 },
                 async actualizarDepto(_: void, {deptoInput}, {db})
                 {
@@ -51,8 +50,7 @@ const mutationDeptos: IResolvers =
                                 mensaje: 'Error al intentar actualizar el departamento', error,
                                 departamento: null
                             }
-                        }
-                    );
+                        });
                 },
             }
     };
