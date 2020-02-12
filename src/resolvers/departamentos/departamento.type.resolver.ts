@@ -9,9 +9,7 @@ const typeDepto: IResolvers =
                 departamento: async (parent: any, __: any, {db}) =>
                 {
                     console.log('Parent', parent);
-                    const resultado = await db.collection(COLECCIONES.DEPARTAMENTOS).findOne({_id: new ObjectId(parent.departamentoID)});
-                    console.log('resultado', resultado);
-                    return resultado;
+                    return await db.collection(COLECCIONES.DEPARTAMENTOS).findOne({_id: new ObjectId(parent.departamentoID)});
                 }
             },
     };
