@@ -1,3 +1,16 @@
+type Folio
+{
+    _id: ID
+    numFolio: Int
+    titulo: String
+    folio: String
+    tipo: TIPO
+    descripcion: String
+    fechaCreacion: String
+    asigUsuario: String
+    archivoUrl: String
+    folioRespuesta: String
+}
 input FolioInput
 {
     _id: ID
@@ -11,20 +24,7 @@ input FolioInput
     archivoUrl: String
     folioRespuesta: String
 }
-type Folio
-{
-    _id: ID
-    numFolio: Int
-    titulo: String
-    folio: String
-    tipo: TIPO
-    descripcion: String
-    fechaCreacion: String
-    asigUsuario: String
-    archivoUrl: String
-    folioRespuesta: String
-    docExtFk: DocumentoExterno
-}
+
 type FolioRes
 {
     estatus: Boolean!
