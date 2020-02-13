@@ -45,7 +45,7 @@ const mutationDocInterna: IResolvers =
                         )
                     }
                 },
-                async acDocVistoUsuario(_: void, {folioInterno, usuario}, {db})
+                async acDocVistoUsuario(_: void, {folioInterno, usuario}, {pubsub, db})
                 {
                     return await db.collection("docInterna").findOneAndUpdate({$and: [{folioInterno}, {"usuarioDestino.usuario": usuario}]}, {
                         $set: {
@@ -55,6 +55,7 @@ const mutationDocInterna: IResolvers =
                     }).then(
                         async (res: any) =>
                         {
+                            await notTodosDocInterna(pubsub, db);
                             return {
                                 estatus: true,
                                 mensaje: 'La notificacion ha modificado como vista',

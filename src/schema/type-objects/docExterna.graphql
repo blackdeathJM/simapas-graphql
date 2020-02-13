@@ -16,6 +16,7 @@ type DocumentoExterno
     docRespUrl: String
     estatusGral: ESTATUS
     fechaTerminado: String
+    noProceso: Int
 }
 
 input DocumentoExternoInput
@@ -36,6 +37,7 @@ input DocumentoExternoInput
     docRespUrl: String
     estatusGral: ESTATUS!
     fechaTerminado: String
+    noProceso: Int!
 }
 type UsuarioDocExterno
 {
@@ -67,7 +69,7 @@ enum ESTATUS
     PENDIENTE
     RECHAZADO
     APROBADO
-    LISTO
     ENTREGADO
+    LISTO
     TERMINADO
 }

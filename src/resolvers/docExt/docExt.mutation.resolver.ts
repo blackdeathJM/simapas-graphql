@@ -13,7 +13,7 @@ const mutationDocExt: IResolvers =
     {
         Mutation:
             {
-                // Registro del documento externo
+                // PASO 1: Registrar el documento externo
                 async regDocExterno(_: void, {regDoc}, {pubsub, db})
                 {
                     return await db.collection(COLECCIONES.DOC_EXTERNA).insertOne(regDoc).then(
@@ -41,7 +41,7 @@ const mutationDocExt: IResolvers =
                 // y hara una subscripcion para actualizar la lista de documentos en la tabla principal
                 async acDocExtUrlGral(_: void, {id, docUrl}, {pubsub, db})
                 {
-                    return await db.collection(COLECCIONES.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(id)}, {$set: {docUrl}}).then(
+                    return await db.collection(COLECCIONES.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(id)}, {$set: {docUrl, estatusGral: 'PENDIENTE'}}).then(
                         async (documento: any) =>
                         {
                             await notTodosDocsExt(pubsub, db);

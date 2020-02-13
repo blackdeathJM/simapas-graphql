@@ -8,7 +8,6 @@ const typeDepto: IResolvers =
             {
                 departamento: async (parent: any, __: any, {db}) =>
                 {
-                    console.log('Parent', parent);
                     return await db.collection(COLECCIONES.DEPARTAMENTOS).findOne({_id: new ObjectId(parent.departamentoID)});
                 }
             },
