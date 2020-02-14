@@ -46,10 +46,10 @@ const queryDocExt: IResolvers =
                 {
                     return await db.collection(COLECCIONES.DOC_EXTERNA).find({'usuarioDestino': {$elemMatch: {usuario}}}).toArray().then();
                 },
-                // Consultar documentos por usuario y el estatus general del documento que sera el mismo que el estatus del usuario
-                async obDocsUsuarioEstatus(_: void, {usuario, estatusGral}, {db})
+                // Consultar documentos por usuario y el noProces Donde sea menor ya que puede ser PERNDIENTE O RECHAZADO
+                async obDocsUsuarioEstatus(_: void, {usuario, noProceso}, {db})
                 {
-                    return await db.collection(COLECCIONES.DOC_EXTERNA).find({estatusGral, "usuarioDestino.usuario": usuario}, {projection: filtroDocsExt}).toArray();
+                    return await db.collection(COLECCIONES.DOC_EXTERNA).find({noProceso: {$lte: noProceso}, "usuarioDestino.usuario": usuario}, {projection: filtroDocsExt}).toArray();
                 },
                 async obDocUsuarioEstatusDeUsuario(_: void, {usuario, estatus}, {db})
                 {

@@ -1,17 +1,19 @@
 extend type Mutation
 {
     "DOC EXTERNA: Registro de los documentos externos"
-    regDocExterno(regDoc: DocumentoExternoInput!):DocumentoExternoRes!
+    regDocExterno(documentoExternoInput: DocumentoExternoInput!):DocumentoExternoRes!
     "DOC EXTERNA: Actualizar el campo donde se guardara el nombre del archivo subido"
-    acDocExtUrlGral(id: String!, docUrl: String!): DocumentoExternoRes!
+    acDocExtUrlGral(id: String!, docUrl: String!, noProceso: Int!): DocumentoExternoRes!
     "DOC EXTERNA: Actualizar el campo de docUrl por usuario para su aprobacion"
     acDocExtUrlUsuario(id: String!, usuario: String!, docUrl: String!): DocumentoExternoRes!
     "DOC EXTERNA: Actualizar el campo de observaciones y estatus por usuario"
-    acObEstUsuario(_id: String!, usuario: String!, observaciones: String!, estatus: String!): DocumentoExternoRes!
+    acObEstUsuario(_id: ID!, noProceso: Int!, usuario: String!, observaciones: String!, noSubproceso: Int!, estatus: String): DocumentoExternoRes!
     "DOC EXTERNA: Actualizar el campo del folio para el documento y cambiar el estatus y el estatus general a LISTO "
     acEstEstGralUsuarioFolio(_id: String!, usuario: String!, estatus: String!, estatusGral: String!, folio: String!): DocumentoExternoRes!
     "DOC EXTERNA: Actualir el campo de docRespUrl y el campo de folio de nuevo por si no se guardo al momento de registrar el folio a ENTREGADO y el estatus del usuario ENTREGADO"
     acDocResUrlEstatusPorIdDocExt(_id: String!, estatusGral: String!, docRespUrl: String!, folio: String! ): DocumentoExternoRes!
     "DOC EXTERNA: Actualizar el estatusGral a TERMINADO para dar por finalizado todo el proceso y el acuseUrl"
-    acEstatusGralTerminado(_id: ID!,estatusGral: String! acuseUrl: String, folio: String): DocumentoExternoRes!
+    acEstatusGralTerminado(_id: ID!, noProceso: Int!, acuseUrl: String, folio: String): DocumentoExternoRes!
+    "DOC EXTERNA: Actualizar por entidad"
+    acEntidadDocExt(documentoExternoInput: DocumentoExternoInput!): DocumentoExternoRes!
 }

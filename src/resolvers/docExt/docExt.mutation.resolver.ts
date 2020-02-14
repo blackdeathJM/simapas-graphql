@@ -14,16 +14,18 @@ const mutationDocExt: IResolvers =
         Mutation:
             {
                 // PASO 1: Registrar el documento externo
-                async regDocExterno(_: void, {regDoc}, {pubsub, db})
+                async regDocExterno(_: void, {documentoExternoInput}, {pubsub, db})
                 {
-                    return await db.collection(COLECCIONES.DOC_EXTERNA).insertOne(regDoc).then(
-                        async () =>
+                    const totalDocExt = await db.collection(COLECCIONES.DOC_EXTERNA).countDocuments();
+                    documentoExternoInput.noSeguimiento = totalDocExt + 1;
+                    return await db.collection(COLECCIONES.DOC_EXTERNA).insertOne(documentoExternoInput).then(
+                        async (agDocExt: any) =>
                         {
                             await notTodosDocsExt(pubsub, db);
                             return {
                                 estatus: true,
                                 mensaje: 'El documento fue registrado con exito',
-                                documento: regDoc
+                                documento: agDocExt.ops
                             }
                         }
                     ).catch(
@@ -32,31 +34,6 @@ const mutationDocExt: IResolvers =
                             return {
                                 estatus: false,
                                 mensaje: 'Ocurrio un error al intentar registrar el documento: ', err,
-                                documento: null
-                            }
-                        }
-                    )
-                },
-                // Actualizamos la urldoc donde se guardara el nombre del archivo externo que sera el arhivo en el servidor y el cual podran ver los usuarios a los que se envia el documento
-                // y hara una subscripcion para actualizar la lista de documentos en la tabla principal
-                async acDocExtUrlGral(_: void, {id, docUrl}, {pubsub, db})
-                {
-                    return await db.collection(COLECCIONES.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(id)}, {$set: {docUrl, estatusGral: 'PENDIENTE'}}).then(
-                        async (documento: any) =>
-                        {
-                            await notTodosDocsExt(pubsub, db);
-                            return {
-                                estatus: true,
-                                mensaje: 'El documento se ha actualizado con exito',
-                                documento
-                            }
-                        }
-                    ).catch(
-                        async (error: any) =>
-                        {
-                            return {
-                                estatus: false,
-                                mensaje: 'Error al intentar actualizar el documento', error,
                                 documento: null
                             }
                         }
@@ -91,14 +68,20 @@ const mutationDocExt: IResolvers =
                         }
                     );
                 },
-                // Actualizamos el campo de observaciones por usuario al que le rechazara o aprobara el documento
-                async acObEstUsuario(_: void, {_id, usuario, observaciones, estatus}, {pubsub, db})
+                // Actualizamos el campo de observaciones del subdocumento de usuarioDestino y pasamos al proceso de RECHAZADO
+                async acObEstUsuario(_: void, {_id, noProceso, usuario, observaciones, noSubproceso, estatus}, {pubsub, db})
                 {
-                    return await db.collection(COLECCIONES.DOC_EXTERNA).findOneAndUpdate({
+                    return await db.collection(COLECCIONES.DOC_EXTERNA).findOneAndUpdate(
+                        {
                             _id: new ObjectId(_id),
                             "usuarioDestino.usuario": usuario
                         },
-                        {$set: {"usuarioDestino.$.observaciones": observaciones, "usuarioDestino.$.estatus": estatus}}).then(
+                        {
+                            $set: {
+                                noProceso, "usuarioDestino.$.observaciones": observaciones,
+                                "usuarioDestino.$.noSubproceso": noSubproceso, "usuarioDestino.$.estatus": estatus
+                            }
+                        }).then(
                         async (documento: any) =>
                         {
                             await notTodosDocsExt(pubsub, db);
@@ -117,6 +100,31 @@ const mutationDocExt: IResolvers =
                             }
 
                         });
+                },
+                //PASO: 2 Actualizamos la urldoc donde se guardara el nombre del archivo externo que sera el arhivo en el servidor y el cual podran ver los usuarios a los que se envia el documento
+                // y hara una subscripcion para actualizar la lista de documentos en la tabla principal
+                async acDocExtUrlGral(_: void, {id, docUrl, noProceso}, {pubsub, db})
+                {
+                    return await db.collection(COLECCIONES.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(id)}, {$set: {docUrl, noProceso}}).then(
+                        async (documento: any) =>
+                        {
+                            await notTodosDocsExt(pubsub, db);
+                            return {
+                                estatus: true,
+                                mensaje: 'El documento se ha actualizado con exito',
+                                documento
+                            }
+                        }
+                    ).catch(
+                        async (error: any) =>
+                        {
+                            return {
+                                estatus: false,
+                                mensaje: 'Error al intentar actualizar el documento', error,
+                                documento: null
+                            }
+                        }
+                    )
                 },
                 // Actializamos el estatus general y el folio de nuevo por si no se guardo cuando se cargo
                 // el documento asi como el estatus del usuario cuando se le apruebe el documento pasandolo a---------
@@ -164,10 +172,10 @@ const mutationDocExt: IResolvers =
                     })
                 },
                 // Actualizamos el estatusGeneral del documento como el estatus del usuario a Terminado para dar por finalizado el proceso
-                async acEstatusGralTerminado(_: void, {_id, estatusGral, acuseUrl, folio}, {pubsub, db})
+                async acEstatusGralTerminado(_: void, {_id, noProceso, acuseUrl, folio}, {pubsub, db})
                 {
                     return await db.collection(COLECCIONES.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(_id)},
-                        {$set: {estatusGral, folio, acuseUrl, fechaTerminado: FECHA_ACTUAL}}).then(
+                        {$set: {noProceso, folio, acuseUrl, fechaTerminado: FECHA_ACTUAL}}).then(
                         async (documento: any) =>
                         {
                             await notTodosDocsExt(pubsub, db);
@@ -186,6 +194,29 @@ const mutationDocExt: IResolvers =
                             }
                         }
                     )
+                },
+                // Actualizar docExt por entidad completamente
+                async acEntidadDocExt(_: void, {documentoExternoInput}, {pubsub, db})
+                {
+                    return await db.collection(COLECCIONES.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(documentoExternoInput._id)},
+                        {$addToSet: documentoExternoInput}).then(
+                        async (docExt: any) =>
+                        {
+                            await notTodosDocsExt(pubsub, db);
+                            return {
+                                estatus: true,
+                                mensaje: 'Entidad actualizada con exito',
+                                documento: docExt.value
+                            }
+                        }).catch(
+                        async (error: any) =>
+                        {
+                            return {
+                                estatus: false,
+                                mensaje: 'Ha ocurrido un error al intentar actualizar la entidad',
+                                documento: null
+                            }
+                        });
                 },
             }
     };

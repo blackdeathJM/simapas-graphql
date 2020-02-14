@@ -14,7 +14,6 @@ type DocumentoExterno
     acuseUrl: String
     docUrl: String
     docRespUrl: String
-    estatusGral: ESTATUS
     fechaTerminado: String
     noProceso: Int
 }
@@ -35,7 +34,6 @@ input DocumentoExternoInput
     acuseUrl: String
     docUrl: String
     docRespUrl: String
-    estatusGral: ESTATUS!
     fechaTerminado: String
     noProceso: Int!
 }
@@ -46,7 +44,8 @@ type UsuarioDocExterno
     docUrl: String
     fechaEnvio: String
     autorizado: Boolean
-    estatus: ESTATUS
+    estatus: String
+    noSubproceso: Int
 }
 input UsuarioDocExternoInput
 {
@@ -55,7 +54,8 @@ input UsuarioDocExternoInput
     docUrl: String
     fechaEnvio: String
     autorizado: Boolean
-    estatus: ESTATUS!
+    estatus: String
+    noSubproceso: Int
 }
 
 type DocumentoExternoRes
@@ -63,13 +63,4 @@ type DocumentoExternoRes
     estatus: Boolean!
     mensaje: String!
     documento: DocumentoExterno
-}
-enum ESTATUS
-{
-    PENDIENTE
-    RECHAZADO
-    APROBADO
-    ENTREGADO
-    LISTO
-    TERMINADO
 }
