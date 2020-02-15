@@ -4,18 +4,21 @@ import {ObjectId} from "bson";
 
 let filtroDocsExt =
     {
+        "_id": 1,
         "identificadorDoc": 1,
         "folio": 1,
+        "noSeguimiento": 1,
+        "noProceso": 1,
         "dependencia": 1,
         "comentario": 1,
         "observaciones": 1,
         "asunto": 1,
         "fechaRecepcion": 1,
         "fechaLimitEntrega": 1,
+        "fechaTerminado": 1,
         "acuseUrl": 1,
         "docUrl": 1,
         "docRespUrl": 1,
-        "estatusGral": 1,
         "usuarioDestino.$": 1
     };
 
@@ -47,13 +50,14 @@ const queryDocExt: IResolvers =
                     return await db.collection(COLECCIONES.DOC_EXTERNA).find({'usuarioDestino': {$elemMatch: {usuario}}}).toArray().then();
                 },
                 // Consultar documentos por usuario y el noProces Donde sea menor ya que puede ser PERNDIENTE O RECHAZADO
-                async obDocsUsuarioEstatus(_: void, {usuario, noProceso}, {db})
+                async usuarioNoProceso(_: void, {usuario, noProceso}, {db})
                 {
                     return await db.collection(COLECCIONES.DOC_EXTERNA).find({noProceso: {$lte: noProceso}, "usuarioDestino.usuario": usuario}, {projection: filtroDocsExt}).toArray();
                 },
-                async obDocUsuarioEstatusDeUsuario(_: void, {usuario, estatus}, {db})
+
+                async noSubprocesoUsuario(_: void, {usuario, noSubproceso}, {db})
                 {
-                    return await db.collection(COLECCIONES.DOC_EXTERNA).find({usuarioDestino: {$elemMatch: {usuario, estatus}}}, {projection: filtroDocsExt}).toArray();
+                    return await db.collection(COLECCIONES.DOC_EXTERNA).find({usuarioDestino: {$elemMatch: {usuario, noSubproceso}}}, {projection: filtroDocsExt}).toArray();
                 },
                 async docExtRel(_: void, {_id}, {db})
                 {

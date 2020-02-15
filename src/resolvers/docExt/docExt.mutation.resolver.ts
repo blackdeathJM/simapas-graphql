@@ -103,7 +103,7 @@ const mutationDocExt: IResolvers =
                 },
                 //PASO: 2 Actualizamos la urldoc donde se guardara el nombre del archivo externo que sera el arhivo en el servidor y el cual podran ver los usuarios a los que se envia el documento
                 // y hara una subscripcion para actualizar la lista de documentos en la tabla principal
-                async acDocExtUrlGral(_: void, {id, docUrl, noProceso}, {pubsub, db})
+                async acDocUrl(_: void, {id, docUrl, noProceso}, {pubsub, db})
                 {
                     return await db.collection(COLECCIONES.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(id)}, {$set: {docUrl, noProceso}}).then(
                         async (documento: any) =>
@@ -126,12 +126,11 @@ const mutationDocExt: IResolvers =
                         }
                     )
                 },
-                // Actializamos el estatus general y el folio de nuevo por si no se guardo cuando se cargo
-                // el documento asi como el estatus del usuario cuando se le apruebe el documento pasandolo a---------
-                async acEstEstGralUsuarioFolio(_: void, {_id, usuario, estatus, estatusGral, folio}, {pubsub, db})
+                // Actualizamos el noProceo, noSubproceso y estatus cuando se le asigna el folio
+                async acEstEstGralUsuarioFolio(_: void, {_id, usuario, noSubproceso, noProceso, folio, estatus}, {pubsub, db})
                 {
                     return await db.collection(COLECCIONES.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(_id), "usuarioDestino.usuario": usuario},
-                        {$set: {estatusGral, folio, "usuarioDestino.$.estatus": estatus}}).then(
+                        {$set: {noProceso, folio, "usuarioDestino.$.noSubproceso": noSubproceso, "usuarioDestino.$.estatus": estatus}}).then(
                         async (documento: any) =>
                         {
                             await notTodosDocsExt(pubsub, db);
@@ -149,11 +148,11 @@ const mutationDocExt: IResolvers =
                         }
                     })
                 },
-                // Actualizamos el campo donde se va a guardar el archivo cargado final por el usuario
-                async acDocResUrlEstatusPorIdDocExt(_: void, {_id, estatusGral, docRespUrl, folio}, {pubsub, db})
+                // Actualizamos el campo donde se va a guardar el archivo cargado final por el usuario, el cual la busqueda folio al que se dio respuesta que es el id
+                async acDocResUrlNoProceso(_: void, {folioRespuesta, noProceso, docRespUrl, folio, usuario, noSubproceso, estatus}, {pubsub, db})
                 {
-                    return await db.collection(COLECCIONES.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(_id)},
-                        {$set: {estatusGral, docRespUrl, folio}}).then(
+                    return await db.collection(COLECCIONES.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(folioRespuesta), "usuarioDestino.usuario": usuario},
+                        {$set: {noProceso, docRespUrl, folio, "usuarioDestino.$.noSubproceso": noSubproceso, "usuarioDestino.$.estatus": estatus}}).then(
                         async (documento: any) =>
                         {
                             await notTodosDocsExt(pubsub, db);
@@ -164,6 +163,7 @@ const mutationDocExt: IResolvers =
                             }
                         }).catch((error: any) =>
                     {
+                        db.collection(COLECCIONES.FOLIOS).findOneAndDelete(folio);
                         return {
                             estatus: false,
                             mensaje: 'Error al intentar guardar el documento consulta al administrador', error,
@@ -172,8 +172,9 @@ const mutationDocExt: IResolvers =
                     })
                 },
                 // Actualizamos el estatusGeneral del documento como el estatus del usuario a Terminado para dar por finalizado el proceso
-                async acEstatusGralTerminado(_: void, {_id, noProceso, acuseUrl, folio}, {pubsub, db})
+                async acTerminarDoc(_: void, {_id, noProceso, acuseUrl, folio}, {pubsub, db})
                 {
+                    console.log('los datos llegan', _id, noProceso, acuseUrl, folio);
                     return await db.collection(COLECCIONES.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(_id)},
                         {$set: {noProceso, folio, acuseUrl, fechaTerminado: FECHA_ACTUAL}}).then(
                         async (documento: any) =>
