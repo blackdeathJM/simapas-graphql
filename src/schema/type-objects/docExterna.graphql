@@ -46,6 +46,7 @@ type UsuarioDocExterno
     autorizado: Boolean
     estatus: String
     noSubproceso: Int
+    notificar: Boolean
 }
 input UsuarioDocExternoInput
 {
@@ -56,6 +57,7 @@ input UsuarioDocExternoInput
     autorizado: Boolean
     estatus: String
     noSubproceso: Int
+    notificar: Boolean
 }
 
 type DocumentoExternoRes
