@@ -174,7 +174,6 @@ const mutationDocExt: IResolvers =
                 // Actualizamos el estatusGeneral del documento como el estatus del usuario a Terminado para dar por finalizado el proceso
                 async acTerminarDoc(_: void, {_id, noProceso, acuseUrl, folio}, {pubsub, db})
                 {
-                    console.log('los datos llegan', _id, noProceso, acuseUrl, folio);
                     return await db.collection(COLECCIONES.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(_id)},
                         {$set: {noProceso, folio, acuseUrl, fechaTerminado: FECHA_ACTUAL}}).then(
                         async (documento: any) =>
@@ -218,6 +217,30 @@ const mutationDocExt: IResolvers =
                                 documento: null
                             }
                         });
+                },
+                async acNotificar(_: void, {notificar, usuario, _id}, {pubsub, db})
+                {
+                    return await db.collection(COLECCIONES.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(_id), "usuarioDestino.usuario": usuario},
+                        {notificar}).then(
+                        async (docExt: any) =>
+                        {
+                            await notTodosDocsExt(pubsub, db);
+                            return {
+                                estatus: true,
+                                mensaje: 'Notificacion actualizada con exito',
+                                documento: docExt.value
+                            }
+                        }
+                    ).catch(
+                        async (error: any) =>
+                        {
+                            return {
+                                estatus: false,
+                                mensaje: 'Ocurrio un error al intentar actualizar la notificacion: ' + error,
+                                documento: null
+                            }
+                        }
+                    )
                 },
             }
     };

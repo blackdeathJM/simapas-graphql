@@ -38,7 +38,7 @@ const mutationDeptos: IResolvers =
                         {
                             return {
                                 estatus: true,
-                                mensaje: 'Datos actualizados',
+                                mensaje: 'Departamento actualizado correctamente',
                                 departamento: departamento.value
                             }
                         }

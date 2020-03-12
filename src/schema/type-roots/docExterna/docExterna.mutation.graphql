@@ -16,4 +16,6 @@ extend type Mutation
     acTerminarDoc(_id: ID!, noProceso: Int!, acuseUrl: String, folio: String): DocumentoExternoRes!
     "DOC EXTERNA: Actualizar por entidad"
     acEntidadDocExt(documentoExternoInput: DocumentoExternoInput!): DocumentoExternoRes!
+    "DOC EXTERNA: Notificacion"
+    acNotificar(notificar: Boolean!, usuario: String!, _id: ID!): DocumentoExternoRes!
 }

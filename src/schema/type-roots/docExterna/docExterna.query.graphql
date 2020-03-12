@@ -10,4 +10,6 @@ extend type Query
     noSubprocesoUsuario(usuario: String!, noSubproceso: Int!): [DocumentoExterno]
     "DOC EXTERNA: Relacion con folios"
     docExtRel(_id: ID!): DocumentoExterno
+    "DOC EXTERNA: notificacion"
+    notificacion(_id: ID!, usuario: String!): DocumentoExternoRes
 }

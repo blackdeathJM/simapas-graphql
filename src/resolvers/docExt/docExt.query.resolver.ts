@@ -63,6 +63,10 @@ const queryDocExt: IResolvers =
                 {
                     return await db.collection(COLECCIONES.DOC_EXTERNA).findOne({_id: new ObjectId(_id)});
                 },
+                async notificacion(_: void, {_id, usuario}, {db})
+                {
+                    return await db.collection(COLECCIONES.DOC_EXTERNA).findOne({_id: new ObjectId(_id), "usuarioDestino.usuario": usuario});
+                }
             }
     };
 export default queryDocExt;
