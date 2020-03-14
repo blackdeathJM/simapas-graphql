@@ -213,7 +213,7 @@ const mutationDocExt: IResolvers =
                         {
                             return {
                                 estatus: false,
-                                mensaje: 'Ha ocurrido un error al intentar actualizar la entidad',
+                                mensaje: 'Ha ocurrido un error al intentar actualizar la entidad ' + error,
                                 documento: null
                             }
                         });
@@ -221,7 +221,7 @@ const mutationDocExt: IResolvers =
                 async acNotificar(_: void, {notificar, usuario, _id}, {pubsub, db})
                 {
                     return await db.collection(COLECCIONES.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(_id), "usuarioDestino.usuario": usuario},
-                        {notificar}).then(
+                        {$set: {"usuarioDestino.$.notificar": notificar}}).then(
                         async (docExt: any) =>
                         {
                             await notTodosDocsExt(pubsub, db);
