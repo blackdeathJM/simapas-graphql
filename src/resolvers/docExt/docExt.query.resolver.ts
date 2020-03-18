@@ -63,9 +63,9 @@ const queryDocExt: IResolvers =
                 {
                     return await db.collection(COLECCIONES.DOC_EXTERNA).findOne({_id: new ObjectId(_id)});
                 },
-                async notificacion(_: void, {_id, usuario}, {db})
+                async docEntreFechas(_: void, {fechaRecepcion}, {db})
                 {
-                    return await db.collection(COLECCIONES.DOC_EXTERNA).findOne({_id: new ObjectId(_id), "usuarioDestino.usuario": usuario});
+                    return await db.collection(COLECCIONES.DOC_EXTERNA).find({$gte: fechaRecepcion, $lte: fechaRecepcion}).toArray();
                 }
             }
     };
