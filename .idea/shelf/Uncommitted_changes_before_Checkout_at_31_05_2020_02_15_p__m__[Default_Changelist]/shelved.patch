@@ -1,0 +1,18 @@
+Index: .idea/simapas-graphql.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"PYTHON_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\">\r\n    <content url=\"file://$MODULE_DIR$\" />\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n  <component name=\"TestRunnerService\">\r\n    <option name=\"PROJECT_TEST_RUNNER\" value=\"Unittests\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/simapas-graphql.iml	(revision 7e19a48a1257cb11d5112514377020b4cd824dd2)
++++ .idea/simapas-graphql.iml	(date 1590952312271)
+@@ -1,5 +1,8 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <module type="PYTHON_MODULE" version="4">
++  <component name="ModuleRunConfigurationManager">
++    <shared />
++  </component>
+   <component name="NewModuleRootManager">
+     <content url="file://$MODULE_DIR$" />
+     <orderEntry type="inheritedJdk" />
