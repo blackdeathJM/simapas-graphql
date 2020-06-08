@@ -24,14 +24,14 @@
     "express": "^4.17.1",
     "express-graphql": "^0.9.0",
     "fs-extra": "^9.0.1",
-    "graphql": "^14.6.0",
+    "graphql": "14.6.0",
     "graphql-compose": "^7.18.1",
     "graphql-compose-connection": "^6.2.1",
     "graphql-compose-pagination": "^6.0.3",
     "graphql-import-node": "^0.0.4",
     "graphql-merge-resolvers": "^1.1.16",
     "graphql-middleware": "^4.0.2",
-    "graphql-playground-middleware-express": "^1.7.15",
+    "graphql-playground-middleware-express": "^1.7.18",
     "graphql-tools": "^6.0.8",
     "graphql-upload": "^11.0.0",
     "http": "^0.0.0",
@@ -71,7 +71,7 @@
     "@types/shortid": "^0.0.29",
     "nodemon": "^2.0.4",
     "ts-node": "^8.10.2",
-    "typescript": "^3.9.5",
+    "typescript": "3.8.3",
     "yarn-upgrade-all": "^0.5.2"
   }
 }
