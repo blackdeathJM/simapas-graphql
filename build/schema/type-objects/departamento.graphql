@@ -1,0 +1,16 @@
+type Departamento
+{
+    _id: ID
+    nombre: String
+}
+input DepartamentoInput
+{
+    _id: ID
+    nombre: String!
+}
+type DepartamentoRes
+{
+    estatus: Boolean!
+    mensaje: String!
+    departamento: Departamento
+}

@@ -1,0 +1,46 @@
+type Folio
+{
+    _id: ID
+    numFolio: Int
+    titulo: String
+    folio: String
+    tipo: TIPO
+    descripcion: String
+    fechaCreacion: String
+    asigUsuario: String
+    archivoUrl: String
+    folioRespuesta: String
+}
+input FolioInput
+{
+    _id: ID
+    numFolio: Int!
+    titulo: String!
+    folio: String!
+    tipo: TIPO!
+    descripcion: String!
+    fechaCreacion: String!
+    asigUsuario: String!
+    archivoUrl: String
+    folioRespuesta: String
+}
+
+type FolioRes
+{
+    estatus: Boolean!
+    mensaje: String!
+    folio: Folio
+}
+type UltimoFolio
+{
+    estatus: Boolean!
+    mensaje: String!
+    ultimoFolio: Int!
+}
+enum TIPO
+{
+    OFICIO
+    MEMORANDUM
+    CIRCULAR
+    OTRO
+}

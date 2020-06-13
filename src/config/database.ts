@@ -1,4 +1,4 @@
-import MongoClient from 'mongodb'
+import MongoClient from 'mongodb';
 import chalk from 'chalk';
 
 class Database
