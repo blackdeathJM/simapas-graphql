@@ -1,5 +1,0 @@
-type Subscription
-{
-    "DEPARTAMENTO - Detectar cambios"
-    cambioDepartamento: [Departamento]
-}

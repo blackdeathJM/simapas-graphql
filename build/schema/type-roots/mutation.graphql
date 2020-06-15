@@ -1,7 +1,0 @@
-type Mutation
-{
-    "DEPARTAMENTO - Registro de los departamentos"
-    registroDepto(departamento: DepartamentoInput!): DepartamentoRes!
-    "DEPARTAMENTO - Actualizar el nombre del departamento"
-    actualizarDepto(deptoInput: DepartamentoInput!): DepartamentoRes!
-}
