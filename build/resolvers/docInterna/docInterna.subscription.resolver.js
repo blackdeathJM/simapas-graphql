@@ -4,8 +4,7 @@ const constants_1 = require("../../config/constants");
 const docInternaSubscription = {
     Subscription: {
         todosDocInterna: {
-            subscribe: (_, __, {pubsub}) =>
-            {
+            subscribe: (_, __, {pubsub}) => {
                 return pubsub.asyncIterator([constants_1.SUBSCRIPCIONES.NOT_DOC_INTERNA]);
             }
         },

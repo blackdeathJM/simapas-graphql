@@ -27,7 +27,8 @@ async function init()
     {
         res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");
         // res.header("Access-Control-Allow-Origin", "http://192.168.1.15:5642");
-        res.header("Access-Control-Allow-Origin", "http://localhost:4200");
+        // res.header("Access-Control-Allow-Origin", "http://localhost:4200");
+        res.header("Access-Control-Allow-Origin", "http://localhost:5642");
         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Cache-Control");
         res.header("Access-Control-Allow-Credentials", "true");
         next();

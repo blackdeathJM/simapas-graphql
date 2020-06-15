@@ -4,8 +4,7 @@ const constants_1 = require("../../config/constants");
 const docExtSubscription = {
     Subscription: {
         todosDocsExt: {
-            subscribe: (_, __, {pubsub}) =>
-            {
+            subscribe: (_, __, {pubsub}) => {
                 return pubsub.asyncIterator([constants_1.SUBSCRIPCIONES.NOT_DOC_EXTERNA]);
             }
         }

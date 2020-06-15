@@ -1,33 +1,31 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function(thisArg, _arguments, P, generator)
-{
-    function adopt(value) { return value instanceof P ? value : new P(function(resolve) { resolve(value); }); }
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) {
+        return value instanceof P ? value : new P(function (resolve) {
+            resolve(value);
+        });
+    }
 
-    return new (P || (P = Promise))(function(resolve, reject)
-    {
-        function fulfilled(value)
-        {
-            try
-            {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) {
+            try {
                 step(generator.next(value));
-            } catch(e)
-            {
+            } catch (e) {
                 reject(e);
             }
         }
 
-        function rejected(value)
-        {
-            try
-            {
+        function rejected(value) {
+            try {
                 step(generator["throw"](value));
-            } catch(e)
-            {
+            } catch (e) {
                 reject(e);
             }
         }
 
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        function step(result) {
+            result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
+        }
 
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
@@ -54,62 +52,45 @@ let filtroDocsExt = {
     "usuarioDestino.$": 1
 };
 
-function todosDocExt(db)
-{
-    return __awaiter(this, void 0, void 0, function* ()
-    {
-        return yield db.collection(constants_1.COLECCIONES.DOC_EXTERNA).find().toArray().then((res) => __awaiter(this, void 0, void 0, function* ()
-        {
+function todosDocExt(db) {
+    return __awaiter(this, void 0, void 0, function* () {
+        return yield db.collection(constants_1.COLECCIONES.DOC_EXTERNA).find().toArray().then((res) => __awaiter(this, void 0, void 0, function* () {
             return res;
-        })).catch(() => __awaiter(this, void 0, void 0, function* ()
-        {
+        })).catch(() => __awaiter(this, void 0, void 0, function* () {
             return null;
         }));
     });
 }
-
 exports.todosDocExt = todosDocExt;
 const queryDocExt = {
     Query: {
-        todosDocumentosExternos(_, __, {db})
-        {
-            return __awaiter(this, void 0, void 0, function* ()
-            {
+        todosDocumentosExternos(_, __, {db}) {
+            return __awaiter(this, void 0, void 0, function* () {
                 return yield todosDocExt(db);
             });
         },
-        obDocsUsuarioExterno(_, {usuario}, {db})
-        {
-            return __awaiter(this, void 0, void 0, function* ()
-            {
+        obDocsUsuarioExterno(_, {usuario}, {db}) {
+            return __awaiter(this, void 0, void 0, function* () {
                 return yield db.collection(constants_1.COLECCIONES.DOC_EXTERNA).find({'usuarioDestino': {$elemMatch: {usuario}}}).toArray().then();
             });
         },
-        usuarioNoProceso(_, {usuario, noProceso}, {db})
-        {
-            return __awaiter(this, void 0, void 0, function* ()
-            {
+        usuarioNoProceso(_, {usuario, noProceso}, {db}) {
+            return __awaiter(this, void 0, void 0, function* () {
                 return yield db.collection(constants_1.COLECCIONES.DOC_EXTERNA).find({noProceso: {$lte: noProceso}, "usuarioDestino.usuario": usuario}, {projection: filtroDocsExt}).toArray();
             });
         },
-        noSubprocesoUsuario(_, {usuario, noSubproceso}, {db})
-        {
-            return __awaiter(this, void 0, void 0, function* ()
-            {
+        noSubprocesoUsuario(_, {usuario, noSubproceso}, {db}) {
+            return __awaiter(this, void 0, void 0, function* () {
                 return yield db.collection(constants_1.COLECCIONES.DOC_EXTERNA).find({usuarioDestino: {$elemMatch: {usuario, noSubproceso}}}, {projection: filtroDocsExt}).toArray();
             });
         },
-        docExtRel(_, {_id}, {db})
-        {
-            return __awaiter(this, void 0, void 0, function* ()
-            {
+        docExtRel(_, {_id}, {db}) {
+            return __awaiter(this, void 0, void 0, function* () {
                 return yield db.collection(constants_1.COLECCIONES.DOC_EXTERNA).findOne({_id: new bson_1.ObjectId(_id)});
             });
         },
-        docEntreFechas(_, {fechaRecepcion}, {db})
-        {
-            return __awaiter(this, void 0, void 0, function* ()
-            {
+        docEntreFechas(_, {fechaRecepcion}, {db}) {
+            return __awaiter(this, void 0, void 0, function* () {
                 return yield db.collection(constants_1.COLECCIONES.DOC_EXTERNA).find({$gte: fechaRecepcion, $lte: fechaRecepcion}).toArray();
             });
         }

@@ -1,33 +1,31 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function(thisArg, _arguments, P, generator)
-{
-    function adopt(value) { return value instanceof P ? value : new P(function(resolve) { resolve(value); }); }
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) {
+        return value instanceof P ? value : new P(function (resolve) {
+            resolve(value);
+        });
+    }
 
-    return new (P || (P = Promise))(function(resolve, reject)
-    {
-        function fulfilled(value)
-        {
-            try
-            {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) {
+            try {
                 step(generator.next(value));
-            } catch(e)
-            {
+            } catch (e) {
                 reject(e);
             }
         }
 
-        function rejected(value)
-        {
-            try
-            {
+        function rejected(value) {
+            try {
                 step(generator["throw"](value));
-            } catch(e)
-            {
+            } catch (e) {
                 reject(e);
             }
         }
 
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        function step(result) {
+            result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
+        }
 
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
@@ -35,14 +33,11 @@ var __awaiter = (this && this.__awaiter) || function(thisArg, _arguments, P, gen
 Object.defineProperty(exports, "__esModule", {value: true});
 const constants_1 = require("../../config/constants");
 
-function todasNotificacionesDocInterna(db)
-{
-    return __awaiter(this, void 0, void 0, function* ()
-    {
+function todasNotificacionesDocInterna(db) {
+    return __awaiter(this, void 0, void 0, function* () {
         return yield db.collection(constants_1.COLECCIONES.DOC_INTERNA).find().toArray();
     });
 }
-
 exports.todasNotificacionesDocInterna = todasNotificacionesDocInterna;
 const modeloDocInterna = {
     "fechaCreacion": 1,
@@ -55,24 +50,18 @@ const modeloDocInterna = {
 };
 const queryDocInterna = {
     Query: {
-        obNotiDocInterna(_, __, {db})
-        {
-            return __awaiter(this, void 0, void 0, function* ()
-            {
+        obNotiDocInterna(_, __, {db}) {
+            return __awaiter(this, void 0, void 0, function* () {
                 return yield todasNotificacionesDocInterna(db);
             });
         },
-        obNotiUsuario(_, {usuario}, {db})
-        {
-            return __awaiter(this, void 0, void 0, function* ()
-            {
+        obNotiUsuario(_, {usuario}, {db}) {
+            return __awaiter(this, void 0, void 0, function* () {
                 return yield db.collection(constants_1.COLECCIONES.DOC_INTERNA).find({"usuarioDestino.usuario": usuario}).toArray();
             });
         },
-        obNotUsuarioVisto(_, {usuario, visto}, {db})
-        {
-            return __awaiter(this, void 0, void 0, function* ()
-            {
+        obNotUsuarioVisto(_, {usuario, visto}, {db}) {
+            return __awaiter(this, void 0, void 0, function* () {
                 return yield db.collection(constants_1.COLECCIONES.DOC_INTERNA).find({usuarioDestino: {$elemMatch: {usuario, visto}}}, {projection: modeloDocInterna}).toArray();
             });
         }
