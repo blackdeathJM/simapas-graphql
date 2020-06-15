@@ -13,8 +13,7 @@ if (process.env.NODE_ENV !== 'production') {
     const envs = environments;
 }
 
-async function init()
-{
+async function init() {
     const docsGral = require('./configMuter/docs.routes');
     const app = express();
     const pubsub = new PubSub();
@@ -23,8 +22,7 @@ async function init()
     app.use(bodyParser.json());
     app.use(express.static(path.join(__dirname, 'public')));
     app.use(compression());
-    app.use(function (req, res, next)
-    {
+    app.use(function (req, res, next) {
         res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");
         // res.header("Access-Control-Allow-Origin", "http://192.168.1.15:5642");
         res.header("Access-Control-Allow-Origin", "http://localhost:4200");
@@ -36,8 +34,7 @@ async function init()
     const database = new Database();
     const db = await database.init();
 
-    const context: any = async ({req, connection}: any) =>
-    {
+    const context: any = async ({req, connection}: any) => {
         const token = req ? req.headers.authorization : connection.authorization;
         const cadena = req ? req.headers.cadena : connection.cadena;
         return {db, token, cadena, pubsub};
@@ -62,8 +59,7 @@ async function init()
         {
             port: PORT
         },
-        () =>
-        {
+        () => {
             console.log('==============================SERVIDOR============================');
             console.log(`Sistema comercial Graphql http://localhost:${PORT}${server.graphqlPath}`);
             console.log(`Sistema comercial susbcripciones con Graphql ws://localhost:${PORT}${server.subscriptionsPath}`);
