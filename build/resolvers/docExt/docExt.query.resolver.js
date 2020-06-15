@@ -5,7 +5,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
             resolve(value);
         });
     }
-
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) {
             try {
@@ -51,7 +50,6 @@ let filtroDocsExt = {
     "docRespUrl": 1,
     "usuarioDestino.$": 1
 };
-
 function todosDocExt(db) {
     return __awaiter(this, void 0, void 0, function* () {
         return yield db.collection(constants_1.COLECCIONES.DOC_EXTERNA).find().toArray().then((res) => __awaiter(this, void 0, void 0, function* () {

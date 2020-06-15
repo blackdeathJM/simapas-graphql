@@ -5,7 +5,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
             resolve(value);
         });
     }
-
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) {
             try {
@@ -33,7 +32,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", {value: true});
 const constants_1 = require("../../config/constants");
 const docInterna_query_Resolver_1 = require("./docInterna.query.Resolver");
-
 function notTodosDocInterna(pubsub, db) {
     return __awaiter(this, void 0, void 0, function* () {
         yield pubsub.publish(constants_1.SUBSCRIPCIONES.NOT_DOC_INTERNA, {todosDocInterna: docInterna_query_Resolver_1.todasNotificacionesDocInterna(db)});

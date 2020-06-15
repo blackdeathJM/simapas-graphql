@@ -5,7 +5,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
             resolve(value);
         });
     }
-
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) {
             try {
@@ -37,7 +36,6 @@ Object.defineProperty(exports, "__esModule", {value: true});
 const filtroMulter_1 = require("./filtroMulter");
 const path_1 = __importDefault(require("path"));
 const fs_extra_1 = __importDefault(require("fs-extra"));
-
 function agDocs(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         filtroMulter_1.subiArchivo(req, res, function (error) {
@@ -65,7 +63,6 @@ function agDocs(req, res) {
     });
 }
 exports.agDocs = agDocs;
-
 function obDocs(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         let archivoUrl = req.query.archivoUrl;

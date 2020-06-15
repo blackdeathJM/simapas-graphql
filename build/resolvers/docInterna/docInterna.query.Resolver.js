@@ -5,7 +5,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
             resolve(value);
         });
     }
-
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) {
             try {
@@ -32,7 +31,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", {value: true});
 const constants_1 = require("../../config/constants");
-
 function todasNotificacionesDocInterna(db) {
     return __awaiter(this, void 0, void 0, function* () {
         return yield db.collection(constants_1.COLECCIONES.DOC_INTERNA).find().toArray();

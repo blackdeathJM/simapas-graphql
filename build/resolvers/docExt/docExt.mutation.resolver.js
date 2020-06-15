@@ -5,7 +5,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
             resolve(value);
         });
     }
-
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) {
             try {
@@ -34,7 +33,6 @@ Object.defineProperty(exports, "__esModule", {value: true});
 const constants_1 = require("../../config/constants");
 const bson_1 = require("bson");
 const docExt_query_resolver_1 = require("./docExt.query.resolver");
-
 function notTodosDocsExt(pubSub, db) {
     return __awaiter(this, void 0, void 0, function* () {
         yield pubSub.publish(constants_1.SUBSCRIPCIONES.NOT_DOC_EXTERNA, {todosDocsExt: docExt_query_resolver_1.todosDocExt(db)});

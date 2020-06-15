@@ -5,7 +5,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
             resolve(value);
         });
     }
-
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) {
             try {
@@ -47,7 +46,6 @@ const path_1 = __importDefault(require("path"));
 if (process.env.NODE_ENV !== 'production') {
     const envs = environments_1.default;
 }
-
 function init() {
     return __awaiter(this, void 0, void 0, function* () {
         const docsGral = require('./configMuter/docs.routes');

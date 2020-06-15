@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", {value: true});
-
 class Datetime {
     static formatWithTwoDigits(value) {
         if (+value < 10) {
@@ -8,7 +7,6 @@ class Datetime {
         }
         return String(value);
     }
-
     addDays(days, date, customDate = '') {
         let date_ = new Date(date);
         if (customDate !== '') {
@@ -17,7 +15,6 @@ class Datetime {
         date_.setDate(date_.getDate() + days);
         return date;
     }
-
     getCurrentDateTime(dateSeparateSymbol = '-') {
         const dateTime = new Date();
         let dateDay = Datetime.formatWithTwoDigits(String(dateTime.getDate()));

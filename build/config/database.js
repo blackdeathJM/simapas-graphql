@@ -5,7 +5,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
             resolve(value);
         });
     }
-
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) {
             try {
@@ -36,7 +35,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", {value: true});
 const mongodb_1 = __importDefault(require("mongodb"));
 const chalk_1 = __importDefault(require("chalk"));
-
 class Database {
     init() {
         return __awaiter(this, void 0, void 0, function* () {
