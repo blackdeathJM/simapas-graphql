@@ -1,5 +1,5 @@
 import express from 'express';
-import {agDocs, obDocs} from "./docs";
+import {agDocs, obDocs} from './docs';
 
 const router = express.Router();
 
