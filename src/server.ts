@@ -1,5 +1,5 @@
 import express from 'express';
-import graphqlHTTP from 'express-graphql'
+import graphqlHTTP from 'express-graphql';
 import compression from 'compression';
 import bodyParser from 'body-parser';
 import {ApolloServer, PubSub} from "apollo-server-express";
