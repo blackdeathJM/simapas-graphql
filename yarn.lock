@@ -640,6 +640,15 @@
     globby "11.0.1"
     unixify "1.0.0"
 
+"@graphql-tools/load-files@6.0.3":
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/load-files/-/load-files-6.0.3.tgz#8736324a9dd6a52a37d30044beeae57c2bcc7079"
+  integrity sha512-B7oUvkOrb1pNoOjlDGjZYQeKxbvxiGrlSyt6CxbmHmIEAn98EvSD348QwOpSfhEQudCYcwGcX+kfPQ6O6fxSgw==
+  dependencies:
+    fs-extra "9.0.0"
+    globby "11.0.0"
+    unixify "1.0.0"
+
 "@graphql-tools/load@6.0.14":
   version "6.0.14"
   resolved "https://registry.yarnpkg.com/@graphql-tools/load/-/load-6.0.14.tgz#c26e1a1d20a6b02815eceadc0484758aff1188f2"
@@ -662,6 +671,15 @@
   dependencies:
     "@graphql-tools/schema" "6.0.14"
     "@graphql-tools/utils" "6.0.14"
+    tslib "~2.0.0"
+
+"@graphql-tools/merge@6.0.3":
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/merge/-/merge-6.0.3.tgz#e8c21f0258bbc98a56d39a2c285cab29c3379b7d"
+  integrity sha512-Tdt6r6n/LvmBnYruRRykBOzOZTcAzp5q5d753tsMg57RC8AmShmGXDUpDPPwX6qIxPkra5r9f0pPH18h0mPpYQ==
+  dependencies:
+    "@graphql-tools/schema" "6.0.3"
+    "@graphql-tools/utils" "6.0.3"
     tslib "~2.0.0"
 
 "@graphql-tools/mock@6.0.14":
@@ -705,6 +723,14 @@
     "@graphql-tools/utils" "6.0.14"
     tslib "~2.0.0"
 
+"@graphql-tools/schema@6.0.3":
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/schema/-/schema-6.0.3.tgz#e242ecbf1fbfe152dfb598d75fef055eb4dab217"
+  integrity sha512-HThJuZvlHbrH6++Zb60LMx/4ZPwJ+VqfRDg2lvgFvfiU7EtEbnidU0S+x9rg8inx30LzMg1Oc+pdLoyIZCAYaw==
+  dependencies:
+    "@graphql-tools/utils" "6.0.3"
+    tslib "~2.0.0"
+
 "@graphql-tools/stitch@6.0.14":
   version "6.0.14"
   resolved "https://registry.yarnpkg.com/@graphql-tools/stitch/-/stitch-6.0.14.tgz#6f424acbd48780e384f8a3d80a417aa441552655"
@@ -739,6 +765,13 @@
   integrity sha512-2VCOJtbVOde5m553JJE8NhP/eYR63Zqo/YdSlhZkpTGmWXg0sJKIIJ0c1eozCm+JSVMu3P08BatgnEC7DIl92A==
   dependencies:
     "@ardatan/aggregate-error" "0.0.1"
+    camel-case "4.1.1"
+
+"@graphql-tools/utils@6.0.3":
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-6.0.3.tgz#54a2ff019707d84227771a7b1c11536ee32fc563"
+  integrity sha512-uS01PqtjOeEoG309orxYlnb8TIehsI27N4Z8NxmadTzkkLW98FfbUm62CjSHvc1IqgiQZSkqDuKqS4vy8lbUFQ==
+  dependencies:
     camel-case "4.1.1"
 
 "@graphql-tools/utils@^6.0.0":
@@ -2373,6 +2406,16 @@ fs-capacitor@^6.1.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/fs-capacitor/-/fs-capacitor-6.2.0.tgz#fa79ac6576629163cb84561995602d8999afb7f5"
   integrity sha512-nKcE1UduoSKX27NSZlg879LdQc94OtbOsEmKMN2MBNudXREvijRKx2GEBsTMTfws+BrbkJoEuynbGSVRSpauvw==
+
+fs-extra@9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-9.0.0.tgz#b6afc31036e247b2466dc99c29ae797d5d4580a3"
+  integrity sha512-pmEYSk3vYsG/bF651KPUXZ+hvjpgWYw/Gc7W9NFUe3ZVLczKKWIij3IKpOrQcdw4TILtibFslZ0UmR8Vvzig4g==
+  dependencies:
+    at-least-node "^1.0.0"
+    graceful-fs "^4.2.0"
+    jsonfile "^6.0.1"
+    universalify "^1.0.0"
 
 fs-extra@9.0.1, fs-extra@^9.0.1:
   version "9.0.1"

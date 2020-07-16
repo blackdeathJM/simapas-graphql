@@ -1,4 +1,4 @@
-extend type Query
+type Query
 {
     "DOCUMENTO - Obtener todos los folios"
     obtenerFoliosTodos: [Folio]

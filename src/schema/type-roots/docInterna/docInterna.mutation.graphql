@@ -1,4 +1,4 @@
-extend type Mutation
+type Mutation
 {
     "DOC INTERNA- Registro de la documentacion interna"
     agDocInterna(agNotificacion: DocInternaInput!): DocInternaRes!
