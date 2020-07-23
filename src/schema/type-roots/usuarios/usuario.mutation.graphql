@@ -4,4 +4,6 @@ type Mutation
     registroUsuario(usuario: UsuarioInput!): UsuarioRes!
     "USUARIO - Actualizacion de un usuario"
     actualizarUsuario(usuario: UsuarioInput!): UsuarioRes!
+    "USUARIO - Eliminar usuario"
+    eliminarUsuario(_id: ID!): UsuarioRes!
 }

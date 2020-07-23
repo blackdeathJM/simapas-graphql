@@ -1,5 +1,5 @@
 import {IResolvers} from "graphql-tools";
-import {COLECCIONES, FECHA_ACTUAL, SUBSCRIPCIONES} from "../../config/constants";
+import {ENTIDAD_DB, FECHA_ACTUAL, SUBSCRIPCIONES} from "../../config/global";
 import {todasNotificacionesDocInterna} from "./docInterna.query.Resolver";
 
 async function notTodosDocInterna(pubsub: any, db: any)
@@ -22,9 +22,8 @@ const mutationDocInterna: IResolvers =
                         let anoActual = new Date().getFullYear();
 
                         agNotificacion.folioInterno = `FOL-${agNotificacion.num}-SIMAPAS/${anoActual}`;
-                        return await db.collection(COLECCIONES.DOC_INTERNA).insertOne(agNotificacion).then(
-                            async (docInterna: any) =>
-                            {
+                        return await db.collection(ENTIDAD_DB.DOC_INTERNA).insertOne(agNotificacion).then(
+                            async (docInterna: any) => {
                                 await notTodosDocInterna(pubsub, db);
                                 return {
                                     estatus: true,

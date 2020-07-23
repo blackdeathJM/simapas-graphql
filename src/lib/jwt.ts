@@ -1,4 +1,4 @@
-import {SECRET_KEY} from "../config/constants";
+import {SECRET_KEY} from "../config/global";
 import jwt from 'jsonwebtoken';
 
 class JWT

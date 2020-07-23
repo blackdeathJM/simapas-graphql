@@ -1,5 +1,5 @@
 import {IResolvers} from "graphql-tools";
-import {COLECCIONES} from "../../config/constants";
+import {ENTIDAD_DB} from "../../config/global";
 import {ObjectId} from "bson";
 
 const mutationDeptos: IResolvers =
@@ -10,9 +10,8 @@ const mutationDeptos: IResolvers =
                 async registroDepto(_: void, {departamento}, {db})
                 {
 
-                    return await db.collection(COLECCIONES.DEPARTAMENTOS).insertOne(departamento).then(
-                        async (departamento: any) =>
-                        {
+                    return await db.collection(ENTIDAD_DB.DEPARTAMENTOS).insertOne(departamento).then(
+                        async (departamento: any) => {
                             return {
                                 estatus: true,
                                 mensaje: 'Departamento insertado satisfactoriamente',
@@ -32,10 +31,9 @@ const mutationDeptos: IResolvers =
                 },
                 async actualizarDepto(_: void, {deptoInput}, {db})
                 {
-                    return await db.collection(COLECCIONES.DEPARTAMENTOS).findOneAndUpdate({_id: new ObjectId(deptoInput._id)},
+                    return await db.collection(ENTIDAD_DB.DEPARTAMENTOS).findOneAndUpdate({_id: new ObjectId(deptoInput._id)},
                         {$set: {nombre: deptoInput.nombre}}).then(
-                        async (departamento: any) =>
-                        {
+                        async (departamento: any) => {
                             return {
                                 estatus: true,
                                 mensaje: 'Departamento actualizado correctamente',

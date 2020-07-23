@@ -1,6 +1,7 @@
 import {IResolvers} from "graphql-tools";
 import bcryptjs from "bcryptjs";
 import JWT from "../../lib/jwt";
+import {ENTIDAD_DB} from "../../config/global";
 
 const queryUsuarios: IResolvers =
     {
@@ -8,13 +9,12 @@ const queryUsuarios: IResolvers =
             {
                 async obtenerUsuarios(_: void, __: any, {db})
                 {
-                    return await db.collection('usuarios').find().toArray();
+                    return await db.collection(ENTIDAD_DB.USUARIOS).find().toArray();
                 },
                 async buscarUsuario(_: any, {usuario}, {db})
                 {
-                    return await db.collection('usuarios').findOne({usuario: usuario.usuario}).then(
-                        async (res: any) =>
-                        {
+                    return await db.collection(ENTIDAD_DB.USUARIOS).findOne({usuario: usuario.usuario}).then(
+                        async (res: any) => {
                             return {
                                 estatus: true,
                                 mensaje: 'La busqueda fue satisfactoria',
@@ -34,7 +34,7 @@ const queryUsuarios: IResolvers =
                 },
                 async login(_: void, {usuario, contrasena}, {db})
                 {
-                    const loginUsuario = await db.collection('usuarios').findOne({usuario});
+                    const loginUsuario = await db.collection(ENTIDAD_DB.USUARIOS).findOne({usuario});
                     if (loginUsuario === null) {
                         return {
                             estatus: false,

@@ -1,5 +1,5 @@
 import {IResolvers} from "graphql-tools";
-import {COLECCIONES} from "../../config/constants";
+import {ENTIDAD_DB} from "../../config/global";
 import {ObjectId} from "bson";
 
 const typeDepto: IResolvers =
@@ -8,8 +8,9 @@ const typeDepto: IResolvers =
             {
                 departamento: async (parent: any, __: any, {db}) =>
                 {
-                    return await db.collection(COLECCIONES.DEPARTAMENTOS).findOne({_id: new ObjectId(parent.departamentoID)});
+                    return await db.collection(ENTIDAD_DB.DEPARTAMENTOS).findOne({_id: new ObjectId(parent.departamentoID)});
                 }
             },
     };
+
 export default typeDepto;

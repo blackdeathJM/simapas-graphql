@@ -1,5 +1,5 @@
 import {IResolvers} from "graphql-tools";
-import {SUBSCRIPCIONES} from "../../config/constants";
+import {SUBSCRIPCIONES} from "../../config/global";
 
 const docExtSubscription: IResolvers =
     {

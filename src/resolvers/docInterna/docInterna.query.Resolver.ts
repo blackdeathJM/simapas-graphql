@@ -1,9 +1,9 @@
 import {IResolvers} from "graphql-tools";
-import {COLECCIONES} from "../../config/constants";
+import {ENTIDAD_DB} from "../../config/global";
 
 export async function todasNotificacionesDocInterna(db: any)
 {
-    return await db.collection(COLECCIONES.DOC_INTERNA).find().toArray();
+    return await db.collection(ENTIDAD_DB.DOC_INTERNA).find().toArray();
 }
 
 const modeloDocInterna =
@@ -26,11 +26,11 @@ const queryDocInterna: IResolvers =
                 },
                 async obNotiUsuario(_: void, {usuario}, {db})
                 {
-                    return await db.collection(COLECCIONES.DOC_INTERNA).find({"usuarioDestino.usuario": usuario}).toArray();
+                    return await db.collection(ENTIDAD_DB.DOC_INTERNA).find({"usuarioDestino.usuario": usuario}).toArray();
                 },
                 async obNotUsuarioVisto(_: void, {usuario, visto}, {db})
                 {
-                    return await db.collection(COLECCIONES.DOC_INTERNA).find({usuarioDestino: {$elemMatch: {usuario, visto}}}, {projection: modeloDocInterna}).toArray();
+                    return await db.collection(ENTIDAD_DB.DOC_INTERNA).find({usuarioDestino: {$elemMatch: {usuario, visto}}}, {projection: modeloDocInterna}).toArray();
                 }
             }
     };
