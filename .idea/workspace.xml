@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d5c65be-f6c1-4893-be87-3c655ee05a96" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/config/global.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/constants.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/jwt.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/jwt.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/departamentos/departamento.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/departamentos/departamento.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/departamentos/departamento.type.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/departamentos/departamento.type.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/docExt.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/docExt.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/docExt.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/docExt.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/docExt.subscription.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/docExt.subscription.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docInterna/docInterna.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docInterna/docInterna.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docInterna/docInterna.query.Resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docInterna/docInterna.query.Resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docInterna/docInterna.subscription.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docInterna/docInterna.subscription.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/folios/folio.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/folios/folio.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/folios/folio.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/folios/folio.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/usuarios/usuario.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/usuarios/usuario.mutation.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +64,7 @@
       <workItem from="1595482001303" duration="14000" />
       <workItem from="1595482665890" duration="4625000" />
       <workItem from="1595488536682" duration="566000" />
-      <workItem from="1595490901068" duration="1686000" />
+      <workItem from="1595490901068" duration="3182000" />
     </task>
     <task id="LOCAL-00001" summary="Funcionando">
       <created>1595286250311</created>
@@ -89,15 +73,28 @@
       <option name="project" value="LOCAL" />
       <updated>1595286250311</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Eliminar usuario">
+      <created>1595493062911</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1595493062911</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="Funcionando" />
-    <option name="LAST_COMMIT_MESSAGE" value="Funcionando" />
+    <MESSAGE value="Eliminar usuario" />
+    <option name="LAST_COMMIT_MESSAGE" value="Eliminar usuario" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="640" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1595479806605">
@@ -108,10 +105,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="703" y="354" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595488654279" />
-    <state x="578" y="0" key="CommitChangelistDialog2" timestamp="1595286248648">
+    <state x="578" y="0" key="CommitChangelistDialog2" timestamp="1595493060504">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="578" y="0" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595286248648" />
+    <state x="578" y="0" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595493060504" />
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1595197522807">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -124,10 +121,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="777" y="159" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595294341919" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1595286255679">
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1595493064871">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595286255679" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595493064871" />
     <state x="1985" y="80" width="1652" height="870" maximized="true" key="dock-window-1" timestamp="1595487021542">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
