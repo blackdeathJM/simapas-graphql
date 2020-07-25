@@ -1,0 +1,13 @@
+input FolioInput
+{
+    _id: ID
+    numFolio: Int!
+    titulo: String!
+    folio: String!
+    tipo: TIPO!
+    descripcion: String!
+    fechaCreacion: String!
+    asigUsuario: String!
+    archivoUrl: String
+    folioRespuesta: String
+}

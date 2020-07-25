@@ -1,0 +1,18 @@
+input DocInternaInput
+{
+    _id: ID
+    fechaCreacion: String!
+    num: Int
+    folioInterno: String
+    asunto: String!
+    contenido: String!
+    atte: String!
+    usuarioDestino: [UsuarioDestinoInput!]
+}
+
+input UsuarioDestinoInput
+{
+    usuario: String!
+    visto: Boolean!
+    fechaVisto: String
+}

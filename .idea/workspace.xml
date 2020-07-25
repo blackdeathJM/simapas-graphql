@@ -2,12 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d5c65be-f6c1-4893-be87-3c655ee05a96" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.subscription.resolver.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schema/enums/folio.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schema/inputs/docExterna.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schema/inputs/docInterna.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schema/inputs/folio.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schema/type-roots/usuarios/usuario.subscription.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/global.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/global.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/docInterna/docInterna.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docInterna/docInterna.mutation.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/docInterna/docInterna.subscription.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docInterna/docInterna.subscription.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/unionSubscription.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionSubscription.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.mutation.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.query.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/docExterna.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/docExterna.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/docInterna.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/docInterna.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/folio.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/folio.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/usuarios/usuario.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/usuarios/usuario.query.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="GraphQL File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -30,13 +54,19 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/public/uploads/perfil" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
     <property name="terminalCustomCommandExecutionTurnOff" value="false" />
     <property name="ts.external.directory.path" value="D:\Documents\Proyectos\Backend\simapas-graphql\node_modules\typescript\lib" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\perfil" />
+    </key>
+  </component>
+  <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -65,6 +95,20 @@
       <workItem from="1595482665890" duration="4625000" />
       <workItem from="1595488536682" duration="566000" />
       <workItem from="1595490901068" duration="3182000" />
+      <workItem from="1595526714107" duration="780000" />
+      <workItem from="1595547524487" duration="1929000" />
+      <workItem from="1595557011709" duration="702000" />
+      <workItem from="1595569424062" duration="142000" />
+      <workItem from="1595569614665" duration="4525000" />
+      <workItem from="1595617734759" duration="7957000" />
+      <workItem from="1595638822641" duration="2370000" />
+      <workItem from="1595641244652" duration="600000" />
+      <workItem from="1595644016747" duration="643000" />
+      <workItem from="1595644724098" duration="40000" />
+      <workItem from="1595645018054" duration="182000" />
+      <workItem from="1595645265624" duration="173000" />
+      <workItem from="1595645458617" duration="197000" />
+      <workItem from="1595665398034" duration="4136000" />
     </task>
     <task id="LOCAL-00001" summary="Funcionando">
       <created>1595286250311</created>
@@ -80,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595493062911</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Eliminar usuario">
+      <created>1595526869981</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1595526869981</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,10 +156,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="703" y="354" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595488654279" />
-    <state x="578" y="0" key="CommitChangelistDialog2" timestamp="1595493060504">
+    <state x="578" y="0" width="1021" height="1040" key="CommitChangelistDialog2" timestamp="1595526868383">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="578" y="0" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595493060504" />
+    <state x="578" y="0" width="1021" height="1040" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595526868383" />
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1595197522807">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -117,18 +168,34 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="818" y="440" key="Github.Dialog.Accounts.Choose/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595286277127" />
-    <state x="777" y="159" key="SettingsEditor" timestamp="1595294341919">
+    <state x="540" y="254" key="IDE.errors.dialog" timestamp="1595645193069">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="777" y="159" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595294341919" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1595493064871">
+    <state x="540" y="254" key="IDE.errors.dialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595645193069" />
+    <state x="777" y="159" key="SettingsEditor" timestamp="1595669217389">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595493064871" />
-    <state x="1985" y="80" width="1652" height="870" maximized="true" key="dock-window-1" timestamp="1595487021542">
+    <state x="777" y="159" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595669217389" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1595526872050">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595526872050" />
+    <state x="1920" y="86" width="1554" height="882" maximized="true" key="dock-window-1" timestamp="1595669942600">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="1985" y="80" width="1652" height="870" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595487021542" />
+    <state x="1920" y="86" width="1554" height="882" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595669942600" />
+    <state x="2006" y="249" width="1554" height="882" maximized="true" key="dock-window-2" timestamp="1595669942600">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2006" y="249" width="1554" height="882" maximized="true" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595669942600" />
+    <state x="1958" y="195" width="1607" height="851" maximized="true" key="dock-window-3" timestamp="1595626539257">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1958" y="195" width="1607" height="851" maximized="true" key="dock-window-3/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595626539257" />
+    <state x="2249" y="78" width="1607" height="851" maximized="true" key="dock-window-4" timestamp="1595628812075">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2249" y="78" width="1607" height="851" maximized="true" key="dock-window-4/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595628812075" />
     <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1595286519616">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

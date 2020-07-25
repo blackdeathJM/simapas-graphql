@@ -3,27 +3,28 @@ import bcryptjs from "bcryptjs";
 import JWT from "../../lib/jwt";
 import {ENTIDAD_DB} from "../../config/global";
 
+export async function obtenerUsuarios(db: any) {
+    return await db.collection(ENTIDAD_DB.USUARIOS).find().toArray();
+}
+
 const queryUsuarios: IResolvers =
     {
         Query:
             {
-                async obtenerUsuarios(_: void, __: any, {db})
-                {
-                    return await db.collection(ENTIDAD_DB.USUARIOS).find().toArray();
+                async obtenerUsuarios(_: void, __: any, {db}) {
+                    return await obtenerUsuarios(db);
                 },
-                async buscarUsuario(_: any, {usuario}, {db})
-                {
+                async buscarUsuario(_: any, {usuario}, {db}) {
                     return await db.collection(ENTIDAD_DB.USUARIOS).findOne({usuario: usuario.usuario}).then(
-                        async (res: any) => {
+                        async (usuario: any) => {
                             return {
                                 estatus: true,
                                 mensaje: 'La busqueda fue satisfactoria',
-                                usuario: res
+                                usuario
                             }
                         }
                     ).catch(
-                        async (err: any) =>
-                        {
+                        async (err: any) => {
                             return {
                                 estatus: false,
                                 mensaje: 'Error en la busqueda', err,
@@ -32,8 +33,7 @@ const queryUsuarios: IResolvers =
                         }
                     )
                 },
-                async login(_: void, {usuario, contrasena}, {db})
-                {
+                async login(_: void, {usuario, contrasena}, {db}) {
                     const loginUsuario = await db.collection(ENTIDAD_DB.USUARIOS).findOne({usuario});
                     if (loginUsuario === null) {
                         return {
@@ -56,8 +56,7 @@ const queryUsuarios: IResolvers =
                         token: new JWT().firmar({loginUsuario})
                     };
                 },
-                async perfil(_: void, __: any, {token})
-                {
+                async perfil(_: void, __: any, {token}) {
                     let info: any = new JWT().verificar(token);
                     if (info === 'La autenticacion del token es invalida, por favor inicia sesion') {
                         return {

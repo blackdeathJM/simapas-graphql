@@ -11,19 +11,6 @@ type Folio
     archivoUrl: String
     folioRespuesta: String
 }
-input FolioInput
-{
-    _id: ID
-    numFolio: Int!
-    titulo: String!
-    folio: String!
-    tipo: TIPO!
-    descripcion: String!
-    fechaCreacion: String!
-    asigUsuario: String!
-    archivoUrl: String
-    folioRespuesta: String
-}
 
 type FolioRes
 {
@@ -36,11 +23,4 @@ type UltimoFolio
     estatus: Boolean!
     mensaje: String!
     ultimoFolio: Int!
-}
-enum TIPO
-{
-    OFICIO
-    MEMORANDUM
-    CIRCULAR
-    OTRO
 }

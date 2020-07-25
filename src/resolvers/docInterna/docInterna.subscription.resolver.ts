@@ -11,7 +11,7 @@ const docInternaSubscription: IResolvers =
                         {
                             return pubsub.asyncIterator([SUBSCRIPCIONES.NOT_DOC_INTERNA]);
                         }
-                    },
+                    }
             }
     };
 export default docInternaSubscription;

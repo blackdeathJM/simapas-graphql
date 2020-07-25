@@ -16,7 +16,8 @@ export enum SUBSCRIPCIONES {
     DEPARTAMENTO = 'cambioDepartamentos',
     NOT_DOC_INTERNA = 'todosDocInterna',
     NOT_DOC_INTERNA_AG = 'agDocInterna',
-    NOT_DOC_EXTERNA = 'todosDocsExt'
+    NOT_DOC_EXTERNA = 'todosDocsExt',
+    NOT_USUARIOS_SESSION = 'usuarioSession'
 }
 
 const dia = new Date().getDate();

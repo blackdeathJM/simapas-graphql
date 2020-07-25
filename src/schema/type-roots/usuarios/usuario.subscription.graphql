@@ -1,0 +1,5 @@
+type Subscription
+{
+    "Cambios en el inicio de sesion"
+    sessionUsuario: [Usuario]
+}

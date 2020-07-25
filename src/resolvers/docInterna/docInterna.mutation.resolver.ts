@@ -2,8 +2,7 @@ import {IResolvers} from "graphql-tools";
 import {ENTIDAD_DB, FECHA_ACTUAL, SUBSCRIPCIONES} from "../../config/global";
 import {todasNotificacionesDocInterna} from "./docInterna.query.Resolver";
 
-async function notTodosDocInterna(pubsub: any, db: any)
-{
+async function notTodosDocInterna(pubsub: any, db: any) {
     await pubsub.publish(SUBSCRIPCIONES.NOT_DOC_INTERNA, {todosDocInterna: todasNotificacionesDocInterna(db)});
 }
 
@@ -11,8 +10,7 @@ const mutationDocInterna: IResolvers =
     {
         Mutation:
             {
-                async agDocInterna(_: void, {agNotificacion}, {pubsub, db})
-                {
+                async agDocInterna(_: void, {agNotificacion}, {pubsub, db}) {
                     let totalNotificaciones = await db.collection("docInterna").countDocuments();
 
                     if (totalNotificaciones != null) {
@@ -32,9 +30,7 @@ const mutationDocInterna: IResolvers =
                                 }
                             }
                         ).catch(
-                            async (error: any) =>
-                            {
-                                console.log('error', error);
+                            async (error: any) => {
                                 return {
                                     estatus: false,
                                     mensaje: 'Error en el servidor al intentar agregar la notificacion', error,
@@ -44,16 +40,14 @@ const mutationDocInterna: IResolvers =
                         )
                     }
                 },
-                async acDocVistoUsuario(_: void, {folioInterno, usuario}, {pubsub, db})
-                {
+                async acDocVistoUsuario(_: void, {folioInterno, usuario}, {pubsub, db}) {
                     return await db.collection("docInterna").findOneAndUpdate({$and: [{folioInterno}, {"usuarioDestino.usuario": usuario}]}, {
                         $set: {
                             "usuarioDestino.$.visto": true,
                             "usuarioDestino.$.fechaVisto": FECHA_ACTUAL
                         }
                     }).then(
-                        async (res: any) =>
-                        {
+                        async (res: any) => {
                             await notTodosDocInterna(pubsub, db);
                             return {
                                 estatus: true,
@@ -62,8 +56,7 @@ const mutationDocInterna: IResolvers =
                             }
                         }
                     ).catch(
-                        async (error: any) =>
-                        {
+                        async (error: any) => {
                             return {
                                 estatus: false,
                                 mensaje: 'Error al tratar de actualizar el estatus del mensaje: ' + error,
