@@ -1,5 +1,6 @@
 import {IResolvers} from "graphql-tools";
 import {ObjectId} from "bson";
+import {IDepartamento} from "./model/departamento.interface";
 
 const queryDeptos: IResolvers =
     {
@@ -10,11 +11,18 @@ const queryDeptos: IResolvers =
                 },
                 async departamentoID(_: void, {_id}: any, {db}) {
                     return await db.collection('departamentos').findOne({_id: new ObjectId(_id)}).then(
-                        async (result: any) => {
+                        async (departamento: IDepartamento) => {
+                            if (departamento === null) {
+                                return {
+                                    estatus: true,
+                                    mensaje: 'No se encontro un registro con ese Id',
+                                    departamento
+                                }
+                            }
                             return {
                                 estatus: true,
-                                mensaje: 'Busqueda de departamento por _id',
-                                departamento: result
+                                mensaje: 'Busqueda realizada con exito',
+                                departamento
                             }
                         }
                     ).catch(

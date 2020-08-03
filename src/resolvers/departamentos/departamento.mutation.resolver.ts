@@ -6,15 +6,14 @@ const mutationDeptos: IResolvers =
     {
         Mutation:
             {
-                // DEPARTAMENTO
                 async registroDepto(_: void, {departamento}, {db}) {
-
                     return await db.collection(ENTIDAD_DB.DEPARTAMENTOS).insertOne(departamento).then(
-                        async (departamento: any) => {
+                        async (depto: any) => {
                             return {
                                 estatus: true,
                                 mensaje: 'Departamento insertado satisfactoriamente',
-                                departamento: departamento.value
+                                //En la respuesta obtenemos el primer elemento del array de objectos que regresa el then
+                                departamento: depto.ops[0]
                             }
                         }
                     ).catch(
@@ -24,17 +23,16 @@ const mutationDeptos: IResolvers =
                                 mensaje: 'Ocurrio un error al tratar de registrar el departamento', error,
                                 departamento: null
                             }
-
                         });
                 },
                 async actualizarDepto(_: void, {deptoInput}, {db}) {
                     return await db.collection(ENTIDAD_DB.DEPARTAMENTOS).findOneAndUpdate({_id: new ObjectId(deptoInput._id)},
-                        {$set: {nombre: deptoInput.nombre}}).then(
-                        async (departamento: any) => {
+                        {$set: {nombre: deptoInput.nombre}}, {returnNewDocument: true}).then(
+                        async () => {
                             return {
                                 estatus: true,
                                 mensaje: 'Departamento actualizado correctamente',
-                                departamento: departamento.value
+                                departamento: deptoInput
                             }
                         }
                     ).catch(
