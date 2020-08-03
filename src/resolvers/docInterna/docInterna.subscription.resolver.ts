@@ -7,8 +7,7 @@ const docInternaSubscription: IResolvers =
             {
                 todosDocInterna:
                     {
-                        subscribe: (_: void, __: any, {pubsub}) =>
-                        {
+                        subscribe: (_: void, __: any, {pubsub}) => {
                             return pubsub.asyncIterator([SUBSCRIPCIONES.NOT_DOC_INTERNA]);
                         }
                     }

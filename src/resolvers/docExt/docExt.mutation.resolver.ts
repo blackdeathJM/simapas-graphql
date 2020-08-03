@@ -4,8 +4,7 @@ import {ObjectId} from "bson";
 import {todosDocExt} from "./docExt.query.resolver";
 
 
-async function notTodosDocsExt(pubSub: any, db: any)
-{
+async function notTodosDocsExt(pubSub: any, db: any) {
     await pubSub.publish(SUBSCRIPCIONES.NOT_DOC_EXTERNA, {todosDocsExt: todosDocExt(db)});
 }
 
@@ -14,8 +13,7 @@ const mutationDocExt: IResolvers =
         Mutation:
             {
                 // PASO 1: Registrar el documento externo
-                async regDocExterno(_: void, {documentoExternoInput}, {pubsub, db})
-                {
+                async regDocExterno(_: void, {documentoExternoInput}, {pubsub, db}) {
                     const totalDocExt = await db.collection(ENTIDAD_DB.DOC_EXTERNA).countDocuments();
                     documentoExternoInput.noSeguimiento = totalDocExt + 1;
                     return await db.collection(ENTIDAD_DB.DOC_EXTERNA).insertOne(documentoExternoInput).then(
@@ -28,8 +26,7 @@ const mutationDocExt: IResolvers =
                             }
                         }
                     ).catch(
-                        async (err: any) =>
-                        {
+                        async (err: any) => {
                             return {
                                 estatus: false,
                                 mensaje: 'Ocurrio un error al intentar registrar el documento: ', err,
@@ -40,8 +37,7 @@ const mutationDocExt: IResolvers =
                 },
                 // Actualizamos el docUrl del usuario donde se guardara el nombre del documento en lo que es aprobado por el administrador realizamos la subscripcion para que el administrador vea la liga
                 // del documento y lo pueda revisar para aprobar o rechazar
-                async acDocExtUrlUsuario(_: void, {id, usuario, docUrl}, {pubsub, db})
-                {
+                async acDocExtUrlUsuario(_: void, {id, usuario, docUrl}, {pubsub, db}) {
                     return await db.collection(ENTIDAD_DB.DOC_EXTERNA).findOneAndUpdate({
                             _id: new ObjectId(id),
                             "usuarioDestino.usuario": usuario
@@ -56,8 +52,7 @@ const mutationDocExt: IResolvers =
                             }
                         }
                     ).catch(
-                        async (error: any) =>
-                        {
+                        async (error: any) => {
                             return {
                                 estatus: false,
                                 mensaje: 'Error al intentar actualizar el documento', error,
@@ -67,8 +62,7 @@ const mutationDocExt: IResolvers =
                     );
                 },
                 // Actualizamos el campo de observaciones del subdocumento de usuarioDestino y pasamos al proceso de RECHAZADO
-                async acObEstUsuario(_: void, {_id, noProceso, usuario, observaciones, noSubproceso, estatus}, {pubsub, db})
-                {
+                async acObEstUsuario(_: void, {_id, noProceso, usuario, observaciones, noSubproceso, estatus}, {pubsub, db}) {
                     return await db.collection(ENTIDAD_DB.DOC_EXTERNA).findOneAndUpdate(
                         {
                             _id: new ObjectId(_id),
@@ -80,8 +74,7 @@ const mutationDocExt: IResolvers =
                                 "usuarioDestino.$.noSubproceso": noSubproceso, "usuarioDestino.$.estatus": estatus
                             }
                         }).then(
-                        async (documento: any) =>
-                        {
+                        async (documento: any) => {
                             await notTodosDocsExt(pubsub, db);
                             return {
                                 estatus: true,
@@ -89,8 +82,7 @@ const mutationDocExt: IResolvers =
                                 documento: documento.value
                             }
                         }).catch(
-                        async (error: any) =>
-                        {
+                        async (error: any) => {
                             return {
                                 estatus: false,
                                 mensaje: 'Error al intentar actualizar los datos', error,
@@ -101,8 +93,7 @@ const mutationDocExt: IResolvers =
                 },
                 //PASO: 2 Actualizamos la urldoc donde se guardara el nombre del archivo externo que sera el arhivo en el servidor y el cual podran ver los usuarios a los que se envia el documento
                 // y hara una subscripcion para actualizar la lista de documentos en la tabla principal
-                async acDocUrl(_: void, {id, docUrl, noProceso}, {pubsub, db})
-                {
+                async acDocUrl(_: void, {id, docUrl, noProceso}, {pubsub, db}) {
                     return await db.collection(ENTIDAD_DB.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(id)}, {$set: {docUrl, noProceso}}).then(
                         async (documento: any) => {
                             await notTodosDocsExt(pubsub, db);
@@ -113,8 +104,7 @@ const mutationDocExt: IResolvers =
                             }
                         }
                     ).catch(
-                        async (error: any) =>
-                        {
+                        async (error: any) => {
                             return {
                                 estatus: false,
                                 mensaje: 'Error al intentar actualizar el documento', error,
@@ -124,8 +114,7 @@ const mutationDocExt: IResolvers =
                     )
                 },
                 // Actualizamos el noProceo, noSubproceso y estatus cuando se le asigna el folio
-                async acEstEstGralUsuarioFolio(_: void, {_id, usuario, noSubproceso, noProceso, folio, estatus}, {pubsub, db})
-                {
+                async acEstEstGralUsuarioFolio(_: void, {_id, usuario, noSubproceso, noProceso, folio, estatus}, {pubsub, db}) {
                     return await db.collection(ENTIDAD_DB.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(_id), "usuarioDestino.usuario": usuario},
                         {$set: {noProceso, folio, "usuarioDestino.$.noSubproceso": noSubproceso, "usuarioDestino.$.estatus": estatus}}).then(
                         async (documento: any) => {
@@ -135,8 +124,7 @@ const mutationDocExt: IResolvers =
                                 mensaje: 'Ha cambiado el estatus del documento',
                                 documento: documento.value
                             }
-                        }).catch((error: any) =>
-                    {
+                        }).catch((error: any) => {
                         return {
                             estatus: false,
                             mensaje: 'Hubo un error al tratar de actualizar el documento', error,
@@ -145,8 +133,7 @@ const mutationDocExt: IResolvers =
                     })
                 },
                 // Actualizamos el campo donde se va a guardar el archivo cargado final por el usuario, el cual la busqueda folio al que se dio respuesta que es el id
-                async acDocResUrlNoProceso(_: void, {folioRespuesta, noProceso, docRespUrl, folio, usuario, noSubproceso, estatus}, {pubsub, db})
-                {
+                async acDocResUrlNoProceso(_: void, {folioRespuesta, noProceso, docRespUrl, folio, usuario, noSubproceso, estatus}, {pubsub, db}) {
                     return await db.collection(ENTIDAD_DB.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(folioRespuesta), "usuarioDestino.usuario": usuario},
                         {$set: {noProceso, docRespUrl, folio, "usuarioDestino.$.noSubproceso": noSubproceso, "usuarioDestino.$.estatus": estatus}}).then(
                         async (documento: any) => {
@@ -156,8 +143,7 @@ const mutationDocExt: IResolvers =
                                 mensaje: 'El archivo fue colocado en la raiz del documento',
                                 documento: documento.value
                             }
-                        }).catch((error: any) =>
-                    {
+                        }).catch((error: any) => {
                         db.collection(ENTIDAD_DB.FOLIOS).findOneAndDelete(folio);
                         return {
                             estatus: false,
@@ -167,8 +153,7 @@ const mutationDocExt: IResolvers =
                     })
                 },
                 // Actualizamos el estatusGeneral del documento como el estatus del usuario a Terminado para dar por finalizado el proceso
-                async acTerminarDoc(_: void, {_id, noProceso, acuseUrl, folio}, {pubsub, db})
-                {
+                async acTerminarDoc(_: void, {_id, noProceso, acuseUrl, folio}, {pubsub, db}) {
                     return await db.collection(ENTIDAD_DB.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(_id)},
                         {$set: {noProceso, folio, acuseUrl, fechaTerminado: FECHA_ACTUAL}}).then(
                         async (documento: any) => {
@@ -179,8 +164,7 @@ const mutationDocExt: IResolvers =
                                 documento: documento.doc
                             }
                         }).catch(
-                        async (err: any) =>
-                        {
+                        async (err: any) => {
                             return {
                                 estatus: false,
                                 mensaje: 'Ha ocurrido un error al intentar actualizar el documento' + err,
@@ -190,8 +174,7 @@ const mutationDocExt: IResolvers =
                     )
                 },
                 // Actualizar docExt por entidad completamente
-                async acEntidadDocExt(_: void, {documentoExternoInput}, {pubsub, db})
-                {
+                async acEntidadDocExt(_: void, {documentoExternoInput}, {pubsub, db}) {
                     return await db.collection(ENTIDAD_DB.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(documentoExternoInput._id)},
                         {$addToSet: documentoExternoInput}).then(
                         async (docExt: any) => {
@@ -202,8 +185,7 @@ const mutationDocExt: IResolvers =
                                 documento: docExt.value
                             }
                         }).catch(
-                        async (error: any) =>
-                        {
+                        async (error: any) => {
                             return {
                                 estatus: false,
                                 mensaje: 'Ha ocurrido un error al intentar actualizar la entidad ' + error,
@@ -211,8 +193,7 @@ const mutationDocExt: IResolvers =
                             }
                         });
                 },
-                async acNotificar(_: void, {notificar, usuario, _id}, {pubsub, db})
-                {
+                async acNotificar(_: void, {notificar, usuario, _id}, {pubsub, db}) {
                     return await db.collection(ENTIDAD_DB.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(_id), "usuarioDestino.usuario": usuario},
                         {$set: {"usuarioDestino.$.notificar": notificar}}).then(
                         async (docExt: any) => {
@@ -224,8 +205,7 @@ const mutationDocExt: IResolvers =
                             }
                         }
                     ).catch(
-                        async (error: any) =>
-                        {
+                        async (error: any) => {
                             return {
                                 estatus: false,
                                 mensaje: 'Ocurrio un error al intentar actualizar la notificacion: ' + error,

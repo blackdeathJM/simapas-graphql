@@ -6,8 +6,7 @@ const mutationFolios: IResolvers =
     {
         Mutation:
             {
-                async registroFolio(_: void, {folio}, {db})
-                {
+                async registroFolio(_: void, {folio}, {db}) {
                     return await db.collection(ENTIDAD_DB.FOLIOS).findOne({numFolio: folio.numFolio}).then(
                         async (rest: any) => {
                             if (rest) {
@@ -18,8 +17,7 @@ const mutationFolios: IResolvers =
                                 }
                             } else {
                                 return await db.collection('folios').insertOne(folio).then(
-                                    async () =>
-                                    {
+                                    async () => {
                                         return {
                                             estatus: true,
                                             mensaje: 'Se ha registrado de manera correcta el folio',
@@ -27,8 +25,7 @@ const mutationFolios: IResolvers =
                                         }
                                     }
                                 ).catch(
-                                    async () =>
-                                    {
+                                    async () => {
                                         return {
                                             estatus: false,
                                             mensaje: 'Ocurrio un error al tratar de registrar el nuevo folio: ',
@@ -40,8 +37,7 @@ const mutationFolios: IResolvers =
                         }
                     )
                 },
-                async acUrlFolio(_: void, {id, archivoUrl}, {db})
-                {
+                async acUrlFolio(_: void, {id, archivoUrl}, {db}) {
 
                     return await db.collection(ENTIDAD_DB.FOLIOS).findOneAndUpdate({_id: new ObjectId(id)}, {$set: {archivoUrl}}).then(
                         async () => {

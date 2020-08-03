@@ -7,8 +7,7 @@ const docExtSubscription: IResolvers =
             {
                 todosDocsExt:
                     {
-                        subscribe: (_: void, __: void, {pubsub}) =>
-                        {
+                        subscribe: (_: void, __: void, {pubsub}) => {
                             return pubsub.asyncIterator([SUBSCRIPCIONES.NOT_DOC_EXTERNA]);
                         }
                     }

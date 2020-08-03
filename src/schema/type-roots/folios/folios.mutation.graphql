@@ -1,4 +1,4 @@
-type Mutation
+extend type Mutation
 {
     "FOLIOS - Registro de folio con el folio auto generado"
     registroFolio(folio: FolioInput!): FolioResType!

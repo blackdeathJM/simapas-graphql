@@ -1,4 +1,4 @@
-type Query
+extend type Query
 {
     "DOC INTERNA: Obtener todas las notificaciones"
     obNotiDocInterna:[DocInternaType]

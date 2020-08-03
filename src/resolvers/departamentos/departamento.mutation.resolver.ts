@@ -7,8 +7,7 @@ const mutationDeptos: IResolvers =
         Mutation:
             {
                 // DEPARTAMENTO
-                async registroDepto(_: void, {departamento}, {db})
-                {
+                async registroDepto(_: void, {departamento}, {db}) {
 
                     return await db.collection(ENTIDAD_DB.DEPARTAMENTOS).insertOne(departamento).then(
                         async (departamento: any) => {
@@ -19,8 +18,7 @@ const mutationDeptos: IResolvers =
                             }
                         }
                     ).catch(
-                        async (error: any) =>
-                        {
+                        async (error: any) => {
                             return {
                                 estatus: false,
                                 mensaje: 'Ocurrio un error al tratar de registrar el departamento', error,
@@ -29,8 +27,7 @@ const mutationDeptos: IResolvers =
 
                         });
                 },
-                async actualizarDepto(_: void, {deptoInput}, {db})
-                {
+                async actualizarDepto(_: void, {deptoInput}, {db}) {
                     return await db.collection(ENTIDAD_DB.DEPARTAMENTOS).findOneAndUpdate({_id: new ObjectId(deptoInput._id)},
                         {$set: {nombre: deptoInput.nombre}}).then(
                         async (departamento: any) => {
@@ -41,8 +38,7 @@ const mutationDeptos: IResolvers =
                             }
                         }
                     ).catch(
-                        async (error: any) =>
-                        {
+                        async (error: any) => {
                             return {
                                 estatus: false,
                                 mensaje: 'Error al intentar actualizar el departamento', error,

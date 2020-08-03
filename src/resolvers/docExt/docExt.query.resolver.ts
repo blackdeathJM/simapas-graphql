@@ -22,8 +22,7 @@ let filtroDocsExt =
         "usuarioDestino.$": 1
     };
 
-export async function todosDocExt(db: any)
-{
+export async function todosDocExt(db: any) {
     return await db.collection(ENTIDAD_DB.DOC_EXTERNA).find().toArray().then(
         async (res: any) => {
             return res;
@@ -38,31 +37,25 @@ const queryDocExt: IResolvers =
     {
         Query:
             {
-                async todosDocumentosExternos(_: void, __: void, {db})
-                {
+                async todosDocumentosExternos(_: void, __: void, {db}) {
                     return await todosDocExt(db);
                 },
                 // consultar documentos por usuario sera usado por el admistrador
-                async obDocsUsuarioExterno(_: void, {usuario}, {db})
-                {
+                async obDocsUsuarioExterno(_: void, {usuario}, {db}) {
                     return await db.collection(ENTIDAD_DB.DOC_EXTERNA).find({'usuarioDestino': {$elemMatch: {usuario}}}).toArray().then();
                 },
                 // Consultar documentos por usuario y el noProces Donde sea menor ya que puede ser PERNDIENTE O RECHAZADO
-                async usuarioNoProceso(_: void, {usuario, noProceso}, {db})
-                {
+                async usuarioNoProceso(_: void, {usuario, noProceso}, {db}) {
                     return await db.collection(ENTIDAD_DB.DOC_EXTERNA).find({noProceso: {$lte: noProceso}, "usuarioDestino.usuario": usuario}, {projection: filtroDocsExt}).toArray();
                 },
 
-                async noSubprocesoUsuario(_: void, {usuario, noSubproceso}, {db})
-                {
+                async noSubprocesoUsuario(_: void, {usuario, noSubproceso}, {db}) {
                     return await db.collection(ENTIDAD_DB.DOC_EXTERNA).find({usuarioDestino: {$elemMatch: {usuario, noSubproceso}}}, {projection: filtroDocsExt}).toArray();
                 },
-                async docExtRel(_: void, {_id}, {db})
-                {
+                async docExtRel(_: void, {_id}, {db}) {
                     return await db.collection(ENTIDAD_DB.DOC_EXTERNA).findOne({_id: new ObjectId(_id)});
                 },
-                async docEntreFechas(_: void, {fechaRecepcion}, {db})
-                {
+                async docEntreFechas(_: void, {fechaRecepcion}, {db}) {
                     return await db.collection(ENTIDAD_DB.DOC_EXTERNA).find({$gte: fechaRecepcion, $lte: fechaRecepcion}).toArray();
                 }
             }

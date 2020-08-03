@@ -38,8 +38,7 @@ export async function agDocs(req: Request, res: Response): Promise<any> {
     });
 }
 
-export async function obDocs(req: Request, res: Response): Promise<any>
-{
+export async function obDocs(req: Request, res: Response): Promise<any> {
     //req.params.archivoUrl
     let archivoUrl = req.query.archivoUrl;
     let carpeta = req.params.archivoUrl;

@@ -5,14 +5,12 @@ const queryFolios: IResolvers =
     {
         Query:
             {
-                async obtenerFoliosTodos(_: void, __: void, {db})
-                {
+                async obtenerFoliosTodos(_: void, __: void, {db}) {
                     return await db.collection(ENTIDAD_DB.FOLIOS).find().toArray().then((res: any) => {
                         return res;
                     });
                 },
-                async ultimoFolio(_: any, __: any, {db})
-                {
+                async ultimoFolio(_: any, __: any, {db}) {
                     return await db.collection(ENTIDAD_DB.FOLIOS).countDocuments().then(
                         async (ultimoFolio: number) => {
                             return {
@@ -22,8 +20,7 @@ const queryFolios: IResolvers =
                             }
                         }
                     ).catch(
-                        async () =>
-                        {
+                        async () => {
                             return {
                                 estatus: false,
                                 mensaje: 'Error al tratar extraer el ultimo folio registrado',
@@ -32,8 +29,7 @@ const queryFolios: IResolvers =
                         }
                     )
                 },
-                async folioUsuario(_: void, {asigUsuario}, {db})
-                {
+                async folioUsuario(_: void, {asigUsuario}, {db}) {
                     return await db.collection(ENTIDAD_DB.FOLIOS).find({asigUsuario}).toArray();
                 },
             }

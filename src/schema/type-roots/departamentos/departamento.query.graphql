@@ -1,4 +1,4 @@
-type Query
+extend type Query
 {
     "DEPARTAMENTO - Obtenemos la lista de todos los departamentos"
     obtenerDepartamentos: [DepartamentoType]
