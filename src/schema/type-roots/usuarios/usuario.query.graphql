@@ -1,11 +1,11 @@
 type Query
 {
     "USUARIO - Obtener la lista de todos los usuarios"
-    obtenerUsuarios: [Usuario]
+    obtenerUsuarios: [UsuarioType]
     "USUARIO - Inicio de sesion"
-    login(usuario: String!,  contrasena: String!): UsuarioToken!
+    login(usuario: String!,  contrasena: String!): UsuarioTokenType!
     "USUARIO - Obtener per de usuario con informacion del token"
-    perfil: UsuarioRes!
+    perfil: UsuarioResType!
     "USUARIO - Buscar usuario por su nombre de usuario"
-    buscarUsuario(usuario: String!): UsuarioRes!
+    buscarUsuario(usuario: String!): UsuarioResType!
 }

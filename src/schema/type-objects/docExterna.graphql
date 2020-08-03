@@ -1,4 +1,4 @@
-type DocumentoExterno
+type DocumentoExternoType
 {
     _id: ID
     noSeguimiento: Int
@@ -8,7 +8,7 @@ type DocumentoExterno
     comentario: String
     observaciones: String
     asunto: String
-    usuarioDestino: [UsuarioDocExterno]
+    usuarioDestino: [UsuarioDocExternoType]
     fechaRecepcion: String
     fechaLimitEntrega: String
     acuseUrl: String
@@ -18,7 +18,7 @@ type DocumentoExterno
     noProceso: Int
 }
 
-type UsuarioDocExterno
+type UsuarioDocExternoType
 {
     usuario: String
     observaciones: String
@@ -30,9 +30,9 @@ type UsuarioDocExterno
     notificar: Boolean
 }
 
-type DocumentoExternoRes
+type DocumentoExternoResType
 {
     estatus: Boolean!
     mensaje: String!
-    documento: DocumentoExterno
+    documento: DocumentoExternoType
 }

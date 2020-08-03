@@ -1,0 +1,5 @@
+fragment departamentoFragment on IDepartamento
+{
+    _id
+    nombre
+}

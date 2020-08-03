@@ -4,10 +4,9 @@ import {ObjectId} from "bson";
 
 const typeDepto: IResolvers =
     {
-        Usuario:
+        UsuarioType:
             {
-                departamento: async (parent: any, __: any, {db}) =>
-                {
+                departamento: async (parent: any, __: any, {db}) => {
                     return await db.collection(ENTIDAD_DB.DEPARTAMENTOS).findOne({_id: new ObjectId(parent.departamentoID)});
                 }
             },

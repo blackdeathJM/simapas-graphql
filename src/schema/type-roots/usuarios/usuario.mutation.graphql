@@ -1,9 +1,9 @@
 type Mutation
 {
     "USUARIO - Registro de usuarios"
-    registroUsuario(usuario: UsuarioInput!): UsuarioRes!
+    registroUsuario(usuario: UsuarioInput!): UsuarioResType!
     "USUARIO - Actualizacion de un usuario"
-    actualizarUsuario(usuario: UsuarioInput!): UsuarioRes!
+    actualizarUsuario(usuario: UsuarioInput!): UsuarioResType!
     "USUARIO - Eliminar usuario"
-    eliminarUsuario(_id: ID!): UsuarioRes!
+    eliminarUsuario(_id: ID!): UsuarioResType!
 }

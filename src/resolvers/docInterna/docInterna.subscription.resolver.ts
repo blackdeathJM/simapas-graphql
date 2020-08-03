@@ -23,13 +23,3 @@ export default docInternaSubscription;
  const valor = payload.todosDocsExt.role;
  return valor === variables.role;
  })*/
-/*
- notAgDocInterna:
- {
- subscribe: withFilter((_: any, __: any, {pubsub}) => pubsub.asyncIterator([SUBSCRIPCIONES.NOT_DOC_INTERNA_AG]),
- (payload, variables) => {
- console.log('payload', payload);
- console.log('variables', variables);
- return true
- })
- },*/

@@ -1,5 +1,5 @@
 type Subscription
 {
     "DOC INTERNA: Detectar cambios en las notificaciones de mensajes"
-    todosDocInterna: [DocInterna]
+    todosDocInterna: [DocInternaType]
 }

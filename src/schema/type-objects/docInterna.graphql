@@ -1,4 +1,4 @@
-type DocInterna
+type DocInternaType
 {
     _id: ID
     fechaCreacion: String
@@ -7,19 +7,19 @@ type DocInterna
     asunto: String
     contenido: String
     atte: String
-    usuarioDestino: [UsuarioDestino]
+    usuarioDestino: [UsuarioDestinoType]
 }
 
-type UsuarioDestino
+type UsuarioDestinoType
 {
     usuario: String
     visto: Boolean
     fechaVisto: String
 }
 
-type DocInternaRes
+type DocInternaResType
 {
     estatus: Boolean!
     mensaje: String!
-    docInterna: DocInterna
+    docInterna: DocInternaType
 }

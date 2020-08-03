@@ -1,4 +1,4 @@
-type Folio
+type FolioType
 {
     _id: ID
     numFolio: Int
@@ -12,13 +12,13 @@ type Folio
     folioRespuesta: String
 }
 
-type FolioRes
+type FolioResType
 {
     estatus: Boolean!
     mensaje: String!
-    folio: Folio
+    folio: FolioType
 }
-type UltimoFolio
+type UltimoFolioType
 {
     estatus: Boolean!
     mensaje: String!

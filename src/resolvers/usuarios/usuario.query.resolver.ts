@@ -3,8 +3,24 @@ import bcryptjs from "bcryptjs";
 import JWT from "../../lib/jwt";
 import {ENTIDAD_DB} from "../../config/global";
 
-export async function obtenerUsuarios(db: any) {
-    return await db.collection(ENTIDAD_DB.USUARIOS).find().toArray();
+export async function obtenerUsuario(usuario: any, db: any) {
+    return await db.collection(ENTIDAD_DB.USUARIOS).findOne({usuario: usuario.usuario}).then(
+        async (usuario: any) => {
+            return {
+                estatus: true,
+                mensaje: 'La busqueda fue satisfactoria',
+                usuario
+            }
+        }
+    ).catch(
+        async (err: any) => {
+            return {
+                estatus: false,
+                mensaje: 'Error en la busqueda', err,
+                usuario: null
+            }
+        }
+    )
 }
 
 const queryUsuarios: IResolvers =
@@ -12,26 +28,10 @@ const queryUsuarios: IResolvers =
         Query:
             {
                 async obtenerUsuarios(_: void, __: any, {db}) {
-                    return await obtenerUsuarios(db);
+                    return await db.collection(ENTIDAD_DB.USUARIOS).find().toArray();
                 },
-                async buscarUsuario(_: any, {usuario}, {db}) {
-                    return await db.collection(ENTIDAD_DB.USUARIOS).findOne({usuario: usuario.usuario}).then(
-                        async (usuario: any) => {
-                            return {
-                                estatus: true,
-                                mensaje: 'La busqueda fue satisfactoria',
-                                usuario
-                            }
-                        }
-                    ).catch(
-                        async (err: any) => {
-                            return {
-                                estatus: false,
-                                mensaje: 'Error en la busqueda', err,
-                                usuario: null
-                            }
-                        }
-                    )
+                async buscarUsuario(_: void, {usuario}, {db}) {
+                    return await obtenerUsuario(usuario, db);
                 },
                 async login(_: void, {usuario, contrasena}, {db}) {
                     const loginUsuario = await db.collection(ENTIDAD_DB.USUARIOS).findOne({usuario});

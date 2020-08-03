@@ -1,21 +1,21 @@
 type Mutation
 {
     "DOC EXTERNA: Registro de los documentos externos"
-    regDocExterno(documentoExternoInput: DocumentoExternoInput!):DocumentoExternoRes!
+    regDocExterno(documentoExternoInput: DocumentoExternoInput!):DocumentoExternoResType!
     "DOC EXTERNA: Actualizar el campo donde se guardara el nombre del archivo subido"
-    acDocUrl(id: String!, docUrl: String!, noProceso: Int!): DocumentoExternoRes!
+    acDocUrl(id: String!, docUrl: String!, noProceso: Int!): DocumentoExternoResType!
     "DOC EXTERNA: Actualizar el campo de docUrl por usuario para su aprobacion"
-    acDocExtUrlUsuario(id: String!, usuario: String!, docUrl: String!): DocumentoExternoRes!
+    acDocExtUrlUsuario(id: String!, usuario: String!, docUrl: String!): DocumentoExternoResType!
     "DOC EXTERNA: Actualizar el campo de observaciones y estatus por usuario"
-    acObEstUsuario(_id: ID!, noProceso: Int!, usuario: String!, observaciones: String!, noSubproceso: Int!, estatus: String): DocumentoExternoRes!
+    acObEstUsuario(_id: ID!, noProceso: Int!, usuario: String!, observaciones: String!, noSubproceso: Int!, estatus: String): DocumentoExternoResType!
     "DOC EXTERNA: Actualizar el campo del folio para el documento y cambiar el estatus y el estatus general a LISTO "
-    acEstEstGralUsuarioFolio(_id: String!, usuario: String!, noSubproceso: Int!, noProceso: Int!, folio: String!, estatus: String!): DocumentoExternoRes!
+    acEstEstGralUsuarioFolio(_id: String!, usuario: String!, noSubproceso: Int!, noProceso: Int!, folio: String!, estatus: String!): DocumentoExternoResType!
     "DOC EXTERNA: Actualir el campo de docRespUrl y el campo de folio de nuevo por si no se guardo al momento de registrar el folio a ENTREGADO y el estatus del usuario ENTREGADO"
-    acDocResUrlNoProceso(folioRespuesta: ID!, noProceso: Int!, docRespUrl: String, folio: String!, usuario: String!, noSubproceso: Int!, estatus: String! ): DocumentoExternoRes!
+    acDocResUrlNoProceso(folioRespuesta: ID!, noProceso: Int!, docRespUrl: String, folio: String!, usuario: String!, noSubproceso: Int!, estatus: String! ): DocumentoExternoResType!
     "DOC EXTERNA: Actualizar el estatusGral a TERMINADO para dar por finalizado todo el proceso y el acuseUrl"
-    acTerminarDoc(_id: ID!, noProceso: Int!, acuseUrl: String, folio: String): DocumentoExternoRes!
+    acTerminarDoc(_id: ID!, noProceso: Int!, acuseUrl: String, folio: String): DocumentoExternoResType!
     "DOC EXTERNA: Actualizar por entidad"
-    acEntidadDocExt(documentoExternoInput: DocumentoExternoInput!): DocumentoExternoRes!
+    acEntidadDocExt(documentoExternoInput: DocumentoExternoInput!): DocumentoExternoResType!
     "DOC EXTERNA: Notificacion"
-    acNotificar(notificar: Boolean!, usuario: String!, _id: ID!): DocumentoExternoRes!
+    acNotificar(notificar: Boolean!, usuario: String!, _id: ID!): DocumentoExternoResType!
 }

@@ -1,7 +1,7 @@
 type Mutation
 {
     "FOLIOS - Registro de folio con el folio auto generado"
-    registroFolio(folio: FolioInput!): FolioRes!
+    registroFolio(folio: FolioInput!): FolioResType!
     "FOLIOS - Actualizar archivoUrl"
-    acUrlFolio(id: ID!, archivoUrl: String!): Folio!
+    acUrlFolio(id: ID!, archivoUrl: String!): FolioType!
 }
