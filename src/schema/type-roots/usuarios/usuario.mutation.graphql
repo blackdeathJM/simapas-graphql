@@ -6,4 +6,6 @@ extend type Mutation
     actualizarUsuario(usuario: UsuarioInput!): UsuarioResType!
     "USUARIO - Eliminar usuario"
     eliminarUsuario(_id: ID!): UsuarioResType!
+    "USUARIO - Actualizar role"
+    actualizarRole(_id: ID! role: [ROLE!]): UsuarioResType!
 }

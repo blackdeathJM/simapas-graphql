@@ -89,6 +89,26 @@ const mutationUsuarios: IResolvers =
                             }
                         }
                     )
+                },
+                async actualizarRole(_: void, {_id, role}, {db}) {
+                    return await db.collection(ENTIDAD_DB.USUARIOS).findOneAndUpdate({_id: new ObjectId(_id)},
+                        {$set: {role}}, {$returnNewDocument: true}).then(
+                        async (respuesta: any) => {
+                            return {
+                                estatus: true,
+                                mensaje: 'Se ha modificado con exito el rol del usuario',
+                                usuario: respuesta.value
+                            }
+                        }
+                    ).catch(
+                        async () => {
+                            return {
+                                estatus: false,
+                                mensaje: 'Error al tratar de modificar roles',
+                                usuario: null
+                            }
+                        }
+                    )
                 }
             }
     };
