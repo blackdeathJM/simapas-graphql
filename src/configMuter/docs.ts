@@ -7,6 +7,7 @@ import {Request, Response} from "express";
 export async function agDocs(req: Request, res: Response): Promise<any> {
     subiArchivo(req, res, function (error: any) {
         if (error) {
+            console.log('error', error);
             return res.status(501).json({'Ocurrio un error': error});
         }
         if (req.file.filename) {
@@ -22,7 +23,7 @@ export async function agDocs(req: Request, res: Response): Promise<any> {
 
             // chear el directorio para saber que los archivos que se esta guardando bienen del los documentos externos que el usuario sube de manera temporal para su aprobacion del admin
 
-            if (obPrefijo === 'deu') {
+            if (obPrefijo === 'deu' || obPrefijo === 'per') {
 
                 if (fs.existsSync(nvoRuta)) {
                     fs.removeSync(nvoRuta)

@@ -2,7 +2,7 @@ import multer from "multer";
 import path from "path";
 import fs from 'fs-extra';
 
-export const storage = multer.diskStorage({
+export const almacenamiento = multer.diskStorage({
     destination: (req, file, cb) => {
         let ruta = '../public/uploads/temp';
         let checarRuta = path.resolve(__dirname, ruta);
