@@ -4,7 +4,7 @@ import {almacenamiento} from "./almacenamientoMulter";
 
 export const subiArchivo = multer({
     storage: almacenamiento,
-    limits: {fileSize: 1000000},
+    limits: {fileSize: 200000000},
     fileFilter: (req, file, cb) => {
         const filetypes = /jpeg|jpg|png|pdf/;
         const mimetype = filetypes.test(file.mimetype);

@@ -8,4 +8,8 @@ extend type Mutation
     eliminarUsuario(_id: ID!): UsuarioResType!
     "USUARIO - Actualizar role"
     actualizarRole(_id: ID! role: [ROLE!]): UsuarioResType!
+    "USUARIO - Actualizar contrasena"
+    actualizarContrasena(_id: ID!, contrasena: String!): UsuarioResType!
+    "USUARIO - Actualizar imagen de perfil"
+    actualizarImgPerfil(_id: ID!, img: String): UsuarioResType!
 }

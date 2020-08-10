@@ -3,6 +3,7 @@ import bcryptjs from "bcryptjs";
 import {ENTIDAD_DB, SUBSCRIPCIONES} from "../../config/global";
 import {ObjectId} from "bson";
 import {obtenerUsuario} from "./usuario.query.resolver";
+import JWT from "../../lib/jwt";
 
 async function notSessionUsuario(usuario: string, pubsub: any, db: any) {
     await pubsub.publish(SUBSCRIPCIONES.NOT_USUARIOS_SESSION, {sessionUsuario: obtenerUsuario(usuario, db)});
@@ -12,10 +13,8 @@ const mutationUsuarios: IResolvers =
     {
         Mutation:
             {
-
                 async registroUsuario(_: void, {usuario}, {db}) {
                     const checharUsuario = await db.collection(ENTIDAD_DB.USUARIOS).findOne({usuario: usuario.usuario});
-
                     if (checharUsuario !== null) {
                         return {
                             estatus: false,
@@ -23,9 +22,7 @@ const mutationUsuarios: IResolvers =
                             usuario: null
                         }
                     }
-
                     usuario.contrasena = bcryptjs.hashSync(usuario.contrasena, 10);
-
                     return await db.collection(ENTIDAD_DB.USUARIOS).insertOne(usuario).then(
                         async () => {
                             // aqui ponemos la subcripcion si se requiere
@@ -45,7 +42,6 @@ const mutationUsuarios: IResolvers =
                         }
                     )
                 },
-
                 async actualizarUsuario(_: void, {usuario}, {pubsub, db}) {
                     return await db.collection(ENTIDAD_DB.USUARIOS).findOneAndUpdate(
                         {usuario},
@@ -70,26 +66,6 @@ const mutationUsuarios: IResolvers =
                         }
                     );
                 },
-                async eliminarUsuario(_: void, {_id}, {pubsub, db}) {
-                    return await db.collection(ENTIDAD_DB.USUARIOS).findOneAndDelete({_id: new ObjectId(_id)}).then(
-                        async () => {
-                            await notSessionUsuario(_id, pubsub, db);
-                            return {
-                                estatus: true,
-                                mensaje: 'El usuario fue eliminado con exito',
-                                usuario: null
-                            }
-                        }
-                    ).catch(
-                        async () => {
-                            return {
-                                estatus: false,
-                                mensaje: 'Ocurrio un error al tratar de eliminar el usuario',
-                                usuario: null
-                            }
-                        }
-                    )
-                },
                 async actualizarRole(_: void, {_id, role}, {db}) {
                     return await db.collection(ENTIDAD_DB.USUARIOS).findOneAndUpdate({_id: new ObjectId(_id)},
                         {$set: {role}}, {$returnNewDocument: true}).then(
@@ -105,6 +81,62 @@ const mutationUsuarios: IResolvers =
                             return {
                                 estatus: false,
                                 mensaje: 'Error al tratar de modificar roles',
+                                usuario: null
+                            }
+                        }
+                    )
+                },
+                async actualizarContrasena(_void, {_id, contrasena}, {token, db}) {
+                    let infoToken = new JWT().verificar(token);
+                    console.log('validacion token', infoToken);
+                    if (infoToken) {
+                        return {
+                            estatus: false,
+                            mensaje: infoToken,
+                            usuario: null
+                        }
+                    } else {
+                        const nvaContrasena = bcryptjs.hashSync(contrasena, 10);
+                        console.log('nueva contrasena', nvaContrasena);
+                        /*                        return await db.collection(ENTIDAD_DB.USUARIOS).findOneAndUpdate(
+                                                    {_id: new ObjectId(_id)},
+                                                    {$set: {contrasena: nvaContrasena}}
+                                                ).then(
+                                                    async () => {
+                                                        return {
+                                                            status: true,
+                                                            mensaje: 'La contrasena fue modificada con exito'
+                                                        }
+                                                    }
+                                                ).catch(
+                                                    async (error: any) => {
+                                                        return {
+                                                            status: false,
+                                                            mensaje: 'Ocurrio un error al intentar modificar la contrasena' + error,
+                                                            usuario: null
+                                                        }
+                                                    }
+                                                )*/
+                    }
+                },
+                async actualizarImgPerfil(_: void, {_id, img}, {db}) {
+
+                },
+                async eliminarUsuario(_: void, {_id}, {pubsub, db}) {
+                    return await db.collection(ENTIDAD_DB.USUARIOS).findOneAndDelete({_id: new ObjectId(_id)}).then(
+                        async () => {
+                            await notSessionUsuario(_id, pubsub, db);
+                            return {
+                                estatus: true,
+                                mensaje: 'El usuario fue eliminado con exito',
+                                usuario: null
+                            }
+                        }
+                    ).catch(
+                        async () => {
+                            return {
+                                estatus: false,
+                                mensaje: 'Ocurrio un error al tratar de eliminar el usuario',
                                 usuario: null
                             }
                         }

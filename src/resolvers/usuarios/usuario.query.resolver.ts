@@ -71,7 +71,6 @@ const queryUsuarios: IResolvers =
                         usuario: info.usuario.loginUsuario
                     };
                 },
-
             }
     };
 export default queryUsuarios;
