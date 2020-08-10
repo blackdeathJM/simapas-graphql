@@ -1,6 +1,7 @@
 import {IResolvers} from "graphql-tools";
 import {ENTIDAD_DB} from "../../config/global";
 import {ObjectId} from "bson";
+import {Db} from "mongodb";
 
 const mutationDeptos: IResolvers =
     {
@@ -26,13 +27,14 @@ const mutationDeptos: IResolvers =
                         });
                 },
                 async actualizarDepto(_: void, {deptoInput}, {db}) {
-                    return await db.collection(ENTIDAD_DB.DEPARTAMENTOS).findOneAndUpdate({_id: new ObjectId(deptoInput._id)},
-                        {$set: {nombre: deptoInput.nombre}}, {returnNewDocument: true}).then(
-                        async () => {
+                    const database = db as Db;
+                    return await database.collection(ENTIDAD_DB.DEPARTAMENTOS).findOneAndUpdate({_id: new ObjectId(deptoInput._id)},
+                        {$set: {nombre: deptoInput.nombre}}, {returnOriginal: false}).then(
+                        async (departamento: any) => {
                             return {
                                 estatus: true,
                                 mensaje: 'Departamento actualizado correctamente',
-                                departamento: deptoInput
+                                departamento: departamento.value
                             }
                         }
                     ).catch(

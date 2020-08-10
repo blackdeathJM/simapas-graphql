@@ -1,7 +1,8 @@
 import {IResolvers} from "graphql-tools";
 import {ENTIDAD_DB} from "../../config/global";
+import {Db} from "mongodb";
 
-export async function todasNotificacionesDocInterna(db: any) {
+export async function todasNotificacionesDocInterna(db: Db) {
     return await db.collection(ENTIDAD_DB.DOC_INTERNA).find().toArray();
 }
 
@@ -15,6 +16,7 @@ const modeloDocInterna =
         "num": 1,
         "usuarioDestino.$": 1
     };
+
 const queryDocInterna: IResolvers =
     {
         Query:
@@ -23,10 +25,12 @@ const queryDocInterna: IResolvers =
                     return await todasNotificacionesDocInterna(db);
                 },
                 async obNotiUsuario(_: void, {usuario}, {db}) {
-                    return await db.collection(ENTIDAD_DB.DOC_INTERNA).find({"usuarioDestino.usuario": usuario}).toArray();
+                    const database = db as Db;
+                    return await database.collection(ENTIDAD_DB.DOC_INTERNA).find({"usuarioDestino.usuario": usuario}).toArray();
                 },
                 async obNotUsuarioVisto(_: void, {usuario, visto}, {db}) {
-                    return await db.collection(ENTIDAD_DB.DOC_INTERNA).find({usuarioDestino: {$elemMatch: {usuario, visto}}}, {projection: modeloDocInterna}).toArray();
+                    const database = db as Db;
+                    return await database.collection(ENTIDAD_DB.DOC_INTERNA).find({usuarioDestino: {$elemMatch: {usuario, visto}}}, {projection: modeloDocInterna}).toArray();
                 }
             }
     };

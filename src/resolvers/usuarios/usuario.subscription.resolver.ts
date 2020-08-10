@@ -12,7 +12,8 @@ const usuarioSubscriptionResolver: IResolvers =
                                                     return pubsub.asyncIterator([SUBSCRIPCIONES.NOT_USUARIOS_SESSION]);
                                                 }*/
 
-                        subscribe: withFilter((_: void, __: void, {pubsub}) => pubsub.asyncIterator([SUBSCRIPCIONES.NOT_USUARIOS_SESSION]),
+                        subscribe: withFilter((_, __, {pubsub}) =>
+                                pubsub.asyncIterator([SUBSCRIPCIONES.NOT_USUARIOS_SESSION]),
                             (payload, args) => {
                                 console.log('payload', payload.sessionUsuario);
                                 console.log('variables', args);

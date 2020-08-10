@@ -1,5 +1,6 @@
 import {IResolvers} from "graphql-tools";
 import {SUBSCRIPCIONES} from "../../config/global";
+import {PubSub} from "apollo-server-express";
 
 const docExtSubscription: IResolvers =
     {
@@ -7,8 +8,9 @@ const docExtSubscription: IResolvers =
             {
                 todosDocsExt:
                     {
-                        subscribe: (_: void, __: void, {pubsub}) => {
-                            return pubsub.asyncIterator([SUBSCRIPCIONES.NOT_DOC_EXTERNA]);
+                        subscribe: (_, __, {pubsub}) => {
+                            const subscripcion = pubsub as PubSub;
+                            return subscripcion.asyncIterator([SUBSCRIPCIONES.NOT_DOC_EXTERNA]);
                         }
                     }
             }

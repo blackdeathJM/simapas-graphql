@@ -1,27 +1,27 @@
 import express from 'express';
-import graphqlHTTP from 'express-graphql';
 import compression from 'compression';
 import bodyParser from 'body-parser';
 import {ApolloServer, PubSub} from "apollo-server-express";
 import {createServer} from 'http';
-import environments from "./config/environments";
 import schema from './schema/schema';
 import Database from "./config/database";
 import path from "path";
+import cors from 'cors';
+import expressPlayGround from 'graphql-playground-middleware-express';
 
 if (process.env.NODE_ENV !== 'production') {
-    const envs = environments;
 }
 
 async function init() {
     const docsGral = require('./configMuter/docs.routes');
     const app = express();
-    const pubsub = new PubSub();
+    app.use('*', cors());
+    app.use(compression());
     // app.use(bodyParser.json()).use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.urlencoded({extended: false}));
     app.use(bodyParser.json());
     app.use(express.static(path.join(__dirname, 'public')));
-    app.use(compression());
+
     app.use(function (req, res, next) {
         res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");
         // res.header("Access-Control-Allow-Origin", '*');
@@ -31,6 +31,7 @@ async function init() {
         next();
     });
 
+    const pubsub = new PubSub();
     const database = new Database();
     const db = await database.init();
 
@@ -47,11 +48,13 @@ async function init() {
     });
 
     server.applyMiddleware({app});
-    /*    app.use('/', expressPlayground({
-     endpoint: '/graphql'
-     }));*/
+
     app.use('/file', docsGral);
-    app.use('/graphql', graphqlHTTP({schema}));
+        app.use('/', expressPlayGround({
+     endpoint: '/graphql'
+     }));
+    // app.use('/graphql', graphqlHTTP({schema}));
+
     const PORT = process.env.PORT || 5300;
     const httpServer = createServer(app);
     server.installSubscriptionHandlers(httpServer);

@@ -1,8 +1,10 @@
 import {IResolvers} from "graphql-tools";
 import {ENTIDAD_DB, FECHA_ACTUAL, SUBSCRIPCIONES} from "../../config/global";
 import {todasNotificacionesDocInterna} from "./docInterna.query.Resolver";
+import {PubSub} from "apollo-server-express";
+import {Db} from "mongodb";
 
-async function notTodosDocInterna(pubsub: any, db: any) {
+async function notTodosDocInterna(pubsub: PubSub , db: Db) {
     await pubsub.publish(SUBSCRIPCIONES.NOT_DOC_INTERNA, {todosDocInterna: todasNotificacionesDocInterna(db)});
 }
 
@@ -11,7 +13,8 @@ const mutationDocInterna: IResolvers =
         Mutation:
             {
                 async agDocInterna(_: void, {agNotificacion}, {pubsub, db}) {
-                    let totalNotificaciones = await db.collection("docInterna").countDocuments();
+                    const database = db as Db;
+                    let totalNotificaciones = await database.collection("docInterna").countDocuments();
 
                     if (totalNotificaciones != null) {
                         totalNotificaciones += 1;
@@ -20,7 +23,7 @@ const mutationDocInterna: IResolvers =
                         let anoActual = new Date().getFullYear();
 
                         agNotificacion.folioInterno = `FOL-${agNotificacion.num}-SIMAPAS/${anoActual}`;
-                        return await db.collection(ENTIDAD_DB.DOC_INTERNA).insertOne(agNotificacion).then(
+                        return await database.collection(ENTIDAD_DB.DOC_INTERNA).insertOne(agNotificacion).then(
                             async (docInterna: any) => {
                                 await notTodosDocInterna(pubsub, db);
                                 return {
@@ -40,15 +43,18 @@ const mutationDocInterna: IResolvers =
                         )
                     }
                 },
-                async acDocVistoUsuario(_: void, {folioInterno, usuario}, {pubsub, db}) {
-                    return await db.collection("docInterna").findOneAndUpdate({$and: [{folioInterno}, {"usuarioDestino.usuario": usuario}]}, {
+                async acDocVistoUsuario(_, {folioInterno, usuario}, {pubsub, db}) {
+                   const database = db as Db;
+                   const subscripcion = pubsub as PubSub;
+                    return await database.collection("docInterna").findOneAndUpdate({$and: [{folioInterno},
+                            {"usuarioDestino.usuario": usuario}]}, {
                         $set: {
                             "usuarioDestino.$.visto": true,
                             "usuarioDestino.$.fechaVisto": FECHA_ACTUAL
                         }
                     }).then(
                         async (res: any) => {
-                            await notTodosDocInterna(pubsub, db);
+                            await notTodosDocInterna(subscripcion, database);
                             return {
                                 estatus: true,
                                 mensaje: 'La notificacion ha modificado como vista',

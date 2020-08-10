@@ -1,5 +1,4 @@
 export class Datetime {
-
     private static formatWithTwoDigits(value: number | string) {
         if (+value < 10) {
             return `0${value}`;

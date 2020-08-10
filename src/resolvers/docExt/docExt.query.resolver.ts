@@ -1,6 +1,7 @@
 import {IResolvers} from "graphql-tools";
 import {ENTIDAD_DB} from "../../config/global";
 import {ObjectId} from "bson";
+import {Db} from "mongodb";
 
 let filtroDocsExt =
     {
@@ -22,7 +23,7 @@ let filtroDocsExt =
         "usuarioDestino.$": 1
     };
 
-export async function todosDocExt(db: any) {
+export async function todosDocExt(db: Db) {
     return await db.collection(ENTIDAD_DB.DOC_EXTERNA).find().toArray().then(
         async (res: any) => {
             return res;
@@ -37,26 +38,32 @@ const queryDocExt: IResolvers =
     {
         Query:
             {
-                async todosDocumentosExternos(_: void, __: void, {db}) {
+                async todosDocumentosExternos(_, __, {db}) {
                     return await todosDocExt(db);
                 },
                 // consultar documentos por usuario sera usado por el admistrador
-                async obDocsUsuarioExterno(_: void, {usuario}, {db}) {
-                    return await db.collection(ENTIDAD_DB.DOC_EXTERNA).find({'usuarioDestino': {$elemMatch: {usuario}}}).toArray().then();
+                async obDocsUsuarioExterno(_, {usuario}, {db}) {
+                    const database = db as Db;
+                    return await database.collection(ENTIDAD_DB.DOC_EXTERNA).find({'usuarioDestino': {$elemMatch: {usuario}}}).toArray().then();
                 },
                 // Consultar documentos por usuario y el noProces Donde sea menor ya que puede ser PERNDIENTE O RECHAZADO
                 async usuarioNoProceso(_: void, {usuario, noProceso}, {db}) {
-                    return await db.collection(ENTIDAD_DB.DOC_EXTERNA).find({noProceso: {$lte: noProceso}, "usuarioDestino.usuario": usuario}, {projection: filtroDocsExt}).toArray();
+                    const database = db as Db;
+                    return await database.collection(ENTIDAD_DB.DOC_EXTERNA).find({noProceso: {$lte: noProceso}, "usuarioDestino.usuario": usuario},
+                        {projection: filtroDocsExt}).toArray();
                 },
 
-                async noSubprocesoUsuario(_: void, {usuario, noSubproceso}, {db}) {
+                async noSubprocesoUsuario(_, {usuario, noSubproceso}, {db}) {
+                    const database = db as Db;
                     return await db.collection(ENTIDAD_DB.DOC_EXTERNA).find({usuarioDestino: {$elemMatch: {usuario, noSubproceso}}}, {projection: filtroDocsExt}).toArray();
                 },
-                async docExtRel(_: void, {_id}, {db}) {
-                    return await db.collection(ENTIDAD_DB.DOC_EXTERNA).findOne({_id: new ObjectId(_id)});
+                async docExtRel(_, {_id}, {db}) {
+                    const database = db as Db;
+                    return await database.collection(ENTIDAD_DB.DOC_EXTERNA).findOne({_id: new ObjectId(_id)});
                 },
-                async docEntreFechas(_: void, {fechaRecepcion}, {db}) {
-                    return await db.collection(ENTIDAD_DB.DOC_EXTERNA).find({$gte: fechaRecepcion, $lte: fechaRecepcion}).toArray();
+                async docEntreFechas(_, {fechaRecepcion}, {db}) {
+                    const database = db as Db;
+                    return await database.collection(ENTIDAD_DB.DOC_EXTERNA).find({$gte: fechaRecepcion, $lte: fechaRecepcion}).toArray();
                 }
             }
     };

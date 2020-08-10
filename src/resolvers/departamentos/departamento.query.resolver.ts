@@ -1,28 +1,37 @@
 import {IResolvers} from "graphql-tools";
 import {ObjectId} from "bson";
 import {IDepartamento} from "./model/departamento.interface";
+import {Db} from 'mongodb';
+import {ENTIDAD_DB} from "../../config/global";
 
 const queryDeptos: IResolvers =
     {
         Query:
             {
-                async obtenerDepartamentos(_: void, __: any, {db}) {
-                    return await db.collection('departamentos').find().toArray();
+                async obtenerDepartamentos(_, __, {db}) {
+                    const database = db as Db;
+                    return await database.collection(ENTIDAD_DB.DEPARTAMENTOS).find().toArray().then().catch(
+                        async () => {
+                            return null
+                        }
+                    );
                 },
-                async departamentoID(_: void, {_id}: any, {db}) {
-                    return await db.collection('departamentos').findOne({_id: new ObjectId(_id)}).then(
+                async departamentoID(_, {_id}, {db}) {
+                    const database = db as Db;
+                    return await database.collection(ENTIDAD_DB.DEPARTAMENTOS).findOne({_id: new ObjectId(_id)}).then(
                         async (departamento: IDepartamento) => {
                             if (departamento === null) {
                                 return {
                                     estatus: true,
                                     mensaje: 'No se encontro un registro con ese Id',
-                                    departamento
+                                    departamento: null
                                 }
-                            }
-                            return {
-                                estatus: true,
-                                mensaje: 'Busqueda realizada con exito',
-                                departamento
+                            } else {
+                                return {
+                                    estatus: true,
+                                    mensaje: 'Busqueda realizada con exito',
+                                    departamento: departamento
+                                }
                             }
                         }
                     ).catch(
