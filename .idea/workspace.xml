@@ -34,7 +34,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="se coloco el tipado a la base de datos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/database.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/database.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +41,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="modularizarSchemaNvaForma" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1fbgO3IKwxE363ZdoOsgddKGjjC" />
@@ -89,7 +93,7 @@
       <workItem from="1597020036865" duration="22038000" />
       <workItem from="1597052736543" duration="647000" />
       <workItem from="1597055073468" duration="20000" />
-      <workItem from="1597055096972" duration="1603000" />
+      <workItem from="1597055096972" duration="3662000" />
     </task>
     <task id="LOCAL-00001" summary="Creacion del mutate para actualizar los roles de los usuarios">
       <created>1596572391127</created>
@@ -119,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597053348891</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="se coloco el tipado a la base de datos">
+      <created>1597056874295</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1597056874295</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,17 +155,21 @@
     <option name="LAST_COMMIT_MESSAGE" value="se coloco el tipado a la base de datos" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1597053359320">
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1597056876825">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597053359320" />
-    <state x="2016" y="222" width="1619" height="824" maximized="true" key="dock-window-1" timestamp="1597024994132">
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597056876825" />
+    <state x="1920" y="0" width="1615" height="900" maximized="true" key="dock-window-1" timestamp="1597057316025">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2016" y="222" width="1619" height="824" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597024994132" />
+    <state x="1920" y="0" width="1615" height="900" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597057316025" />
     <state x="1920" y="0" width="1619" height="824" maximized="true" key="dock-window-2" timestamp="1597035072887">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="1920" y="0" width="1619" height="824" maximized="true" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597035072887" />
+    <state x="713" y="416" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1597058189343">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="713" y="416" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597058189343" />
   </component>
 </project>
