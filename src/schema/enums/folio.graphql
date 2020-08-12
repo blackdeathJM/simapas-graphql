@@ -1,7 +1,0 @@
-enum TIPO
-{
-    OFICIO
-    MEMORANDUM
-    CIRCULAR
-    OTRO
-}

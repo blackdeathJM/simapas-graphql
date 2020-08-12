@@ -8,23 +8,21 @@ input DocumentoExternoInput
     comentario: String
     observaciones: String
     asunto: String!
-    usuarioDestino: [UsuarioDocExternoInput!]!
-    fechaRecepcion: String!
-    fechaLimitEntrega: String!
-    acuseUrl: String
     docUrl: String
     docRespUrl: String
+    acuseUrl: String
+    fechaRecepcion: String!
+    fechaLimitEntrega: String!
     fechaTerminado: String
-    noProceso: Int!
+    proceso: PROCESOS_DOCUMENTACION
+    usuarioDestino: [UsuarioDocExternoInput!]!
 }
 input UsuarioDocExternoInput
 {
     usuario: String!
     observaciones: String
-    docUrl: String
+    docUrlTemp: String
     fechaEnvio: String
-    autorizado: Boolean
-    estatus: String
-    noSubproceso: Int
+    proceso: PROCESOS_DOCUMENTACION
     notificar: Boolean
 }

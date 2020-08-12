@@ -1,9 +1,9 @@
 input DocInternaInput
 {
     _id: ID
-    fechaCreacion: String!
     num: Int
     folioInterno: String
+    fechaCreacion: String!
     asunto: String!
     contenido: String!
     atte: String!
@@ -15,4 +15,5 @@ input UsuarioDestinoInput
     usuario: String!
     visto: Boolean!
     fechaVisto: String
+    notificar: Boolean
 }

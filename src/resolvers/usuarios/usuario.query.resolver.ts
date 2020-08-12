@@ -59,21 +59,32 @@ const queryUsuarios: IResolvers =
                         token: new JWT().firmar({loginUsuario})
                     };
                 },
-                async perfil(_, __, {token}) {
-                    let info: any = new JWT().verificar(token);
-                    console.log('resultado Toker', info);
-                    if (info === 'La autenticacion del token es invalida, por favor inicia sesion') {
+
+                async validarTokenG(_, __, {token}) {
+                    console.log('Token recibido', token);
+
+                    let infoToken: any = new JWT().verificar(token);
+                    try {
+                        if (infoToken) {
+                            return {
+                                estatus: true,
+                                mensaje: 'Token valido',
+                                usuario: infoToken.usuario.loginUsuario
+                            }
+                        } else {
+                            return {
+                                estatus: false,
+                                mensaje: infoToken,
+                                usuario: null
+                            }
+                        }
+                    } catch (error) {
                         return {
                             estatus: false,
-                            mensaje: info,
+                            mensaje: `Ocurrio una excepcion que no se puedo controlar: ${error}`,
                             usuario: null
                         }
                     }
-                    return {
-                        estatus: true,
-                        mensaje: 'El token es correcto',
-                        usuario: info.usuario.loginUsuario
-                    };
                 },
             }
     };

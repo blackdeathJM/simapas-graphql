@@ -4,8 +4,8 @@ extend type Query
     obtenerUsuarios: [UsuarioType]
     "USUARIO - Inicio de sesion"
     login(usuario: String!,  contrasena: String!): UsuarioTokenType!
-    "USUARIO - Obtener per de usuario con informacion del token"
-    perfil: UsuarioResType!
+    "USUARIO - Validar token de usuario"
+    validarTokenG: UsuarioResType!
     "USUARIO - Buscar usuario por su nombre de usuario"
     buscarUsuario(usuario: String!): UsuarioResType!
 }

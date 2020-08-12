@@ -7,7 +7,7 @@ import schema from './schema/schema';
 import Database from "./config/database";
 import path from "path";
 import cors from 'cors';
-import expressPlayGround from 'graphql-playground-middleware-express';
+import graphqlHTTP from "express-graphql";
 
 if (process.env.NODE_ENV !== 'production') {
 }
@@ -37,8 +37,7 @@ async function init() {
 
     const context: any = async ({req, connection}: any) => {
         const token = req ? req.headers.authorization : connection.authorization;
-        const cadena = req ? req.headers.cadena : connection.cadena;
-        return {db, token, cadena, pubsub};
+        return {db, token, pubsub};
     };
 
     const server = new ApolloServer({
@@ -50,10 +49,10 @@ async function init() {
     server.applyMiddleware({app});
 
     app.use('/file', docsGral);
-        app.use('/', expressPlayGround({
-     endpoint: '/graphql'
-     }));
-    // app.use('/graphql', graphqlHTTP({schema}));
+    /*    app.use('/', expressPlayGround({
+            endpoint: '/graphql'
+        }));*/
+    app.use('/graphql', graphqlHTTP({schema}));
 
     const PORT = process.env.PORT || 5300;
     const httpServer = createServer(app);

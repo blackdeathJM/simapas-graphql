@@ -33,7 +33,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="se coloco el tipado a la base de datos">
+      <change afterPath="$PROJECT_DIR$/src/lib/validarToken.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schema/enums/enums.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/jwt.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/jwt.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.query.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/enums/folio.graphql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/enums/usuario.graphql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/inputs/docExterna.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/docExterna.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/inputs/docInterna.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/docInterna.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/usuarios/usuario.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/usuarios/usuario.query.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +103,14 @@
       <workItem from="1597020036865" duration="22038000" />
       <workItem from="1597052736543" duration="647000" />
       <workItem from="1597055073468" duration="20000" />
-      <workItem from="1597055096972" duration="3662000" />
+      <workItem from="1597055096972" duration="6873000" />
+      <workItem from="1597093292337" duration="10573000" />
+      <workItem from="1597113797812" duration="8335000" />
+      <workItem from="1597159790682" duration="1188000" />
+      <workItem from="1597171726181" duration="1260000" />
+      <workItem from="1597180999909" duration="929000" />
+      <workItem from="1597188475625" duration="3142000" />
+      <workItem from="1597266012423" duration="3933000" />
     </task>
     <task id="LOCAL-00001" summary="Creacion del mutate para actualizar los roles de los usuarios">
       <created>1596572391127</created>
@@ -130,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597056874295</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="se coloco el tipado a la base de datos">
+      <created>1597060853085</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1597060853086</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,10 +179,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="se coloco el tipado a la base de datos" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1597056876825">
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1597060854742">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597056876825" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597060854742" />
     <state x="1920" y="0" width="1615" height="900" maximized="true" key="dock-window-1" timestamp="1597057316025">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
