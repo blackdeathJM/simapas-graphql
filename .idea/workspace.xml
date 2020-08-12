@@ -32,19 +32,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="se coloco el tipado a la base de datos">
-      <change afterPath="$PROJECT_DIR$/src/lib/validarToken.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/enums/enums.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/jwt.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/jwt.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/enums/folio.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/enums/usuario.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/docExterna.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/docExterna.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/docInterna.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/docInterna.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/usuarios/usuario.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/usuarios/usuario.query.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.ts" afterDir="false" />
-    </list>
+    <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Se creo de nuevo la documentacion" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,7 +41,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="modularizarSchemaNvaForma" />
+        <entry key="$PROJECT_DIR$" value="MARY" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -110,7 +98,7 @@
       <workItem from="1597171726181" duration="1260000" />
       <workItem from="1597180999909" duration="929000" />
       <workItem from="1597188475625" duration="3142000" />
-      <workItem from="1597266012423" duration="3933000" />
+      <workItem from="1597266012423" duration="4257000" />
     </task>
     <task id="LOCAL-00001" summary="Creacion del mutate para actualizar los roles de los usuarios">
       <created>1596572391127</created>
@@ -154,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597060853086</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Se creo de nuevo la documentacion">
+      <created>1597276257981</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1597276257982</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,7 +171,8 @@
     <MESSAGE value="modificacion de los types utilizando extend para que no marque error, solo se utilizo en los que marcaba error" />
     <MESSAGE value="Creacion del mutate para actualizar los roles de los usuarios" />
     <MESSAGE value="se coloco el tipado a la base de datos" />
-    <option name="LAST_COMMIT_MESSAGE" value="se coloco el tipado a la base de datos" />
+    <MESSAGE value="Se creo de nuevo la documentacion" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se creo de nuevo la documentacion" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1597060854742">
