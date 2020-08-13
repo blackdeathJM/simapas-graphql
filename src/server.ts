@@ -6,7 +6,6 @@ import {createServer} from 'http';
 import schema from './schema/schema';
 import Database from "./config/database";
 import path from "path";
-import cors from 'cors';
 import graphqlHTTP from "express-graphql";
 
 if (process.env.NODE_ENV !== 'production') {
@@ -15,7 +14,6 @@ if (process.env.NODE_ENV !== 'production') {
 async function init() {
     const docsGral = require('./configMuter/docs.routes');
     const app = express();
-    app.use('*', cors());
     app.use(compression());
     // app.use(bodyParser.json()).use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.urlencoded({extended: false}));
