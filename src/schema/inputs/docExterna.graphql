@@ -1,4 +1,4 @@
-input DocumentoExternoInput
+input DocExtInput
 {
     _id: ID
     noSeguimiento: Int!
@@ -12,17 +12,18 @@ input DocumentoExternoInput
     docRespUrl: String
     acuseUrl: String
     fechaRecepcion: String!
-    fechaLimitEntrega: String!
+    fechaLimiteEntrega: String!
     fechaTerminado: String
-    proceso: PROCESOS_DOCUMENTACION
-    usuarioDestino: [UsuarioDocExternoInput!]!
+    proceso: PROCESOS_DOC!
+    usuarioDestino: [UsuarioDestinoDocExtInput!]!
 }
-input UsuarioDocExternoInput
+input UsuarioDestinoDocExtInput
 {
     usuario: String!
     observaciones: String
-    docUrlTemp: String
+    docUrl: String
     fechaEnvio: String
-    proceso: PROCESOS_DOCUMENTACION
+    autorizado: Boolean
+    subproceso: PROCESOS_DOC!
     notificar: Boolean
 }

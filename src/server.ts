@@ -47,10 +47,11 @@ async function init() {
     server.applyMiddleware({app});
 
     app.use('/file', docsGral);
-    /*    app.use('/', expressPlayGround({
-            endpoint: '/graphql'
+    /*    app.use('/', expressPlayground({
+            endpoint: '/graphql',
         }));*/
-    app.use('/graphql', graphqlHTTP({schema}));
+
+    app.use('/graphql',  graphqlHTTP({schema}));
 
     const PORT = process.env.PORT || 5300;
     const httpServer = createServer(app);

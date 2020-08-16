@@ -15,7 +15,7 @@ let filtroDocsExt =
         "observaciones": 1,
         "asunto": 1,
         "fechaRecepcion": 1,
-        "fechaLimitEntrega": 1,
+        "fechaLimiteEntrega": 1,
         "fechaTerminado": 1,
         "acuseUrl": 1,
         "docUrl": 1,
@@ -38,7 +38,7 @@ const queryDocExt: IResolvers =
     {
         Query:
             {
-                async todosDocumentosExternos(_, __, {db}) {
+                async todosDocsExt(_, __, {db}) {
                     return await todosDocExt(db);
                 },
                 // consultar documentos por usuario sera usado por el admistrador

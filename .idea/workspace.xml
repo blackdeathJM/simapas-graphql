@@ -33,8 +33,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Se creo de nuevo la documentacion">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/configMuter/docs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/configMuter/docs.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/docExt.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/docExt.mutation.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/docExt.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/docExt.query.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/enums/enums.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/enums/enums.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/inputs/docExterna.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/docExterna.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/docExterna.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/docExterna.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.mutation.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.query.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.subscription.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.subscription.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,6 +65,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -104,7 +113,17 @@
       <workItem from="1597180999909" duration="929000" />
       <workItem from="1597188475625" duration="3142000" />
       <workItem from="1597266012423" duration="8608000" />
-      <workItem from="1597291398729" duration="23291000" />
+      <workItem from="1597291398729" duration="23517000" />
+      <workItem from="1597361482442" duration="114000" />
+      <workItem from="1597361724766" duration="3214000" />
+      <workItem from="1597373072455" duration="792000" />
+      <workItem from="1597383933203" duration="939000" />
+      <workItem from="1597440293391" duration="1198000" />
+      <workItem from="1597446118641" duration="2014000" />
+      <workItem from="1597459243783" duration="15011000" />
+      <workItem from="1597519120898" duration="4954000" />
+      <workItem from="1597527028095" duration="669000" />
+      <workItem from="1597538708081" duration="1803000" />
     </task>
     <task id="LOCAL-00001" summary="Creacion del mutate para actualizar los roles de los usuarios">
       <created>1596572391127</created>
@@ -162,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597276577108</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Se creo de nuevo la documentacion">
+      <created>1597360053080</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1597360053080</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,14 +214,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="Se creo de nuevo la documentacion" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="468" y="165" key="SettingsEditor" timestamp="1597344732827">
+    <state x="468" y="165" width="1230" height="710" key="SettingsEditor" timestamp="1597523240005">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="468" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597344732827" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1597276579438">
+    <state x="468" y="165" width="1230" height="710" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597523240005" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1597360055230">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597276579438" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597360055230" />
     <state x="1920" y="0" width="1615" height="900" maximized="true" key="dock-window-1" timestamp="1597057316025">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -208,5 +234,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="713" y="416" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597058189343" />
+    <state x="2536" y="240" key="run.anything.popup" timestamp="1597480326811">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2536" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597480326811" />
   </component>
 </project>
