@@ -4,8 +4,8 @@ type Query
     todosDocsExt: [DocExtType]
     "DOC EXTERNA: Obtiene todos los documentos por usuario"
     obDocsUsuarioExterno(usuario: String!): [DocExtType]
-    "DOC EXTERNA: Obtener documentos de cada usuario donde tengan procesos pendientes rechazado aprobado"
-    subProceso(subproceso: String!): [DocExtType]
+    "DOC EXTERNA: Obtener documentos por usuario y subproceso para mostrar en el area de usuarios"
+    usuarioSubproceso(usuario: String!, subproceso: String!): [DocExtType]
 
     "DOC EXTERNA: Obtener docExt por usuario y por estatus de aprobado"
     noSubprocesoUsuario(usuario: String!, noSubproceso: Int!): [DocExtType]

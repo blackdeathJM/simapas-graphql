@@ -53,32 +53,30 @@ const queryDocExt: IResolvers =
                     return await database.collection(ENTIDAD_DB.DOC_EXTERNA).find({'usuarioDestino': {$elemMatch: {usuario}}}).toArray().then();
                 },
                 // Consultar documento que sera enviado al usuario
-                async subProceso(_: void, {subproceso}, {db})
+                async usuarioSubproceso(_: void, {usuario, subproceso}, {db})
                 {
                     const database = db as Db;
-                    return database.collection(ENTIDAD_DB.DOC_EXTERNA).aggregate([
-                        {
-                            $project:
-                                {
-                                    usuarioDestino:
-                                        {
-                                            $filter:
-                                                {
-                                                    input: "$usuarioDestino",
-                                                    as: 'sub',
-                                                    cond: {$eq: ["$$sub.subproceso", subproceso]}
-                                                }
-                                        }
-                                }
-                        }
-                    ]).toArray();
+                    return await database.collection(ENTIDAD_DB.DOC_EXTERNA).find(
+                        {usuarioDestino: {$elemMatch: {usuario, subproceso: {$in: ['PENDIENTE', 'RECHAZADO', 'APROBADO', 'ACUSE']}}}},
+                        {projection: filtroDocsExt}).toArray();
+                    // return await database.collection(ENTIDAD_DB.DOC_EXTERNA).aggregate([
+                    //     {
+                    //         $project:
+                    //             {
+                    //                 usuarioDestino:
+                    //                     {
+                    //                         $filter:
+                    //                             {
+                    //                                 input: "$usuarioDestino",
+                    //                                 as: 'sub',
+                    //                                 cond: {$eq: ["$$sub.subproceso", subproceso]}
+                    //                             }
+                    //                     }
+                    //             }
+                    //     }
+                    // ]).toArray().then(async (resultado) => resultado).catch(error => console.log('Error: ' + error));
                 },
 
-                async noSubprocesoUsuario(_, {usuario, noSubproceso}, {db})
-                {
-                    const database = db as Db;
-                    return await database.collection(ENTIDAD_DB.DOC_EXTERNA).find({usuarioDestino: {$elemMatch: {usuario, noSubproceso}}}, {projection: filtroDocsExt}).toArray();
-                },
                 async docExtRel(_, {_id}, {db})
                 {
                     const database = db as Db;
