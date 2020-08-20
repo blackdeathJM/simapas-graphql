@@ -1,6 +1,6 @@
 import {IResolvers} from "graphql-tools";
 import {withFilter} from 'apollo-server'
-import {SUBSCRIPCIONES} from "../../config/global";
+import {PUB_SUB} from "../../config/global";
 
 const usuarioSubscriptionResolver: IResolvers =
     {
@@ -13,7 +13,7 @@ const usuarioSubscriptionResolver: IResolvers =
                                                 }*/
 
                         subscribe: withFilter((_, __, {pubsub}) =>
-                                pubsub.asyncIterator([SUBSCRIPCIONES.NOT_USUARIOS_SESSION]),
+                                pubsub.asyncIterator([PUB_SUB.NOT_USUARIOS_SESSION]),
                             (payload, args) => {
                                 console.log('payload', payload.sessionUsuario);
                                 console.log('variables', args);

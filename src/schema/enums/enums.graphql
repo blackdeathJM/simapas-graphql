@@ -19,6 +19,7 @@ enum ROLE
     LEER
     MODIFICAR
 }
+
 enum PROCESOS_DOC
 {
     ENVIADO

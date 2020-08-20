@@ -1,14 +1,14 @@
 import {IResolvers} from "graphql-tools";
 import bcryptjs from "bcryptjs";
 import {PubSub} from "apollo-server-express";
-import {ENTIDAD_DB, SUBSCRIPCIONES} from "../../config/global";
+import {ENTIDAD_DB, PUB_SUB} from "../../config/global";
 import {ObjectId} from "bson";
 import {obtenerUsuario} from "./usuario.query.resolver";
 import JWT from "../../lib/jwt";
 import {Db} from "mongodb";
 
 async function notSessionUsuario(usuario: string, pubsub: PubSub, db: Db) {
-    await pubsub.publish(SUBSCRIPCIONES.NOT_USUARIOS_SESSION, {sessionUsuario: obtenerUsuario(usuario, db)});
+    await pubsub.publish(PUB_SUB.NOT_USUARIOS_SESSION, {sessionUsuario: obtenerUsuario(usuario, db)});
 }
 
 const mutationUsuarios: IResolvers =

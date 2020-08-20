@@ -1,5 +1,5 @@
 import {IResolvers} from "graphql-tools";
-import {SUBSCRIPCIONES} from "../../config/global";
+import {PUB_SUB} from "../../config/global";
 
 const docInternaSubscription: IResolvers =
     {
@@ -8,7 +8,7 @@ const docInternaSubscription: IResolvers =
                 todosDocInterna:
                     {
                         subscribe: (_: void, __: any, {pubsub}) => {
-                            return pubsub.asyncIterator([SUBSCRIPCIONES.NOT_DOC_INTERNA]);
+                            return pubsub.asyncIterator([PUB_SUB.NOT_DOC_INTERNA]);
                         }
                     }
             }

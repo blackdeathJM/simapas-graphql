@@ -1,11 +1,11 @@
 import {IResolvers} from "graphql-tools";
-import {ENTIDAD_DB, FECHA_ACTUAL, SUBSCRIPCIONES} from "../../config/global";
+import {ENTIDAD_DB, FECHA_ACTUAL, PUB_SUB} from "../../config/global";
 import {todasNotificacionesDocInterna} from "./docInterna.query.Resolver";
 import {PubSub} from "apollo-server-express";
 import {Db} from "mongodb";
 
 async function notTodosDocInterna(pubsub: PubSub , db: Db) {
-    await pubsub.publish(SUBSCRIPCIONES.NOT_DOC_INTERNA, {todosDocInterna: todasNotificacionesDocInterna(db)});
+    await pubsub.publish(PUB_SUB.NOT_DOC_INTERNA, {todosDocInterna: todasNotificacionesDocInterna(db)});
 }
 
 const mutationDocInterna: IResolvers =

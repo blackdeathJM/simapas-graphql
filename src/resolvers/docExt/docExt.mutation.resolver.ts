@@ -1,5 +1,5 @@
 import {IResolvers} from "graphql-tools";
-import {ENTIDAD_DB, FECHA_ACTUAL, SUBSCRIPCIONES} from "../../config/global";
+import {ENTIDAD_DB, FECHA_ACTUAL, PUB_SUB} from "../../config/global";
 import {ObjectId} from "bson";
 import {todosDocExt} from "./docExt.query.resolver";
 import {Db} from "mongodb";
@@ -8,7 +8,7 @@ import {PubSub} from "apollo-server-express";
 
 async function notTodosDocsExt(pubSub: PubSub, db: Db)
 {
-    await pubSub.publish(SUBSCRIPCIONES.NOT_DOC_EXTERNA, {todosDocsExt: todosDocExt(db)});
+    return await pubSub.publish(PUB_SUB.DOC_EXT, {todosDocsExtSub: todosDocExt(db)});
 }
 
 const mutationDocExt: IResolvers =
@@ -28,6 +28,7 @@ const mutationDocExt: IResolvers =
                             return await database.collection(ENTIDAD_DB.DOC_EXTERNA).insertOne(docExt).then(
                                 async (doc) =>
                                 {
+                                    await notTodosDocsExt(pubsub, db);
                                     return {
                                         estatus: true,
                                         mensaje: 'El documento fue insertado con exito',
@@ -55,8 +56,37 @@ const mutationDocExt: IResolvers =
                             }
                         });
                 },
-                // Actualizamos el docUrl del usuario donde se guardara el nombre del documento en lo que es aprobado por el administrador realizamos la subscripcion para que el administrador vea la liga
-                // del documento y lo pueda revisar para aprobar o rechazar
+                //PASO: 2 Actualizamos la urldoc donde se guardara el nombre del archivo externo que sera el arhivo en el servidor y el cual podran ver los usuarios a los que se envia el documento
+                // y hara una subscripcion para actualizar la lista de documentos en la tabla principal y activar notificacion
+                async acDocExtUrl(_: void, {id, docUrl, proceso}, {pubsub, db})
+                {
+                    const database = db as Db;
+
+                    return await database.collection(ENTIDAD_DB.DOC_EXTERNA).updateOne(
+                        {_id: new ObjectId(id), usuarioDestino: {$elemMatch: {notificarUsuario: false}}},
+                        {$set: {docUrl, proceso, "usuarioDestino.$[].notificarUsuario": true}},
+                        {upsert: true}).then(
+                        async (documento: any) =>
+                        {
+                            await notTodosDocsExt(pubsub, db);
+                            return {
+                                estatus: true,
+                                mensaje: 'El documento se ha actualizado con exito',
+                                documento
+                            }
+                        }
+                    ).catch(
+                        async (error: any) =>
+                        {
+                            return {
+                                estatus: false,
+                                mensaje: 'Error al intentar actualizar el documento', error,
+                                documento: null
+                            }
+                        }
+                    )
+                },
+
                 async acDocExtUrlUsuario(_, {id, usuario, docUrl}, {pubsub, db})
                 {
                     const database = db as Db;
@@ -119,32 +149,7 @@ const mutationDocExt: IResolvers =
 
                         });
                 },
-                //PASO: 2 Actualizamos la urldoc donde se guardara el nombre del archivo externo que sera el arhivo en el servidor y el cual podran ver los usuarios a los que se envia el documento
-                // y hara una subscripcion para actualizar la lista de documentos en la tabla principal
-                async acDocUrl(_: void, {id, docUrl, noProceso}, {pubsub, db})
-                {
-                    const database = db as Db;
-                    return await database.collection(ENTIDAD_DB.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(id)}, {$set: {docUrl, noProceso}}).then(
-                        async (documento: any) =>
-                        {
-                            await notTodosDocsExt(pubsub, db);
-                            return {
-                                estatus: true,
-                                mensaje: 'El documento se ha actualizado con exito',
-                                documento
-                            }
-                        }
-                    ).catch(
-                        async (error: any) =>
-                        {
-                            return {
-                                estatus: false,
-                                mensaje: 'Error al intentar actualizar el documento', error,
-                                documento: null
-                            }
-                        }
-                    )
-                },
+
                 // Actualizamos el noProceo, noSubproceso y estatus cuando se le asigna el folio
                 async acEstEstGralUsuarioFolio(_, {_id, usuario, noSubproceso, noProceso, folio, estatus}, {pubsub, db})
                 {

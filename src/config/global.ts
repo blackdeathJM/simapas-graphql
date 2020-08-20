@@ -12,11 +12,11 @@ export enum ENTIDAD_DB {
     FOLIOS = 'folios'
 }
 
-export enum SUBSCRIPCIONES {
+export enum PUB_SUB {
     DEPARTAMENTO = 'cambioDepartamentos',
     NOT_DOC_INTERNA = 'todosDocInterna',
     NOT_DOC_INTERNA_AG = 'agDocInterna',
-    NOT_DOC_EXTERNA = 'todosDocsExt',
+    DOC_EXT = 'obDocsExtTodos',
     NOT_USUARIOS_SESSION = 'usuarioSession'
 }
 

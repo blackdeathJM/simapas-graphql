@@ -25,5 +25,6 @@ input UsuarioDestinoDocExtInput
     fechaEnvio: String
     autorizado: Boolean
     subproceso: PROCESOS_DOC!
-    notificar: Boolean
+    notificarAdministrador: Boolean
+    notificarUsuario: Boolean
 }
