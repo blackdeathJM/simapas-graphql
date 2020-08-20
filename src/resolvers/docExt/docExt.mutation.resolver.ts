@@ -87,6 +87,11 @@ const mutationDocExt: IResolvers =
                     )
                 },
 
+
+
+
+
+
                 async acDocExtUrlUsuario(_, {id, usuario, docUrl}, {pubsub, db})
                 {
                     const database = db as Db;

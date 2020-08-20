@@ -34,19 +34,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Se creo de nuevo la documentacion">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/global.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/global.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/docExt.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/docExt.mutation.resolver.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/docExt.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/docExt.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/docExt.subscription.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/docExt.subscription.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docInterna/docInterna.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docInterna/docInterna.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docInterna/docInterna.subscription.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docInterna/docInterna.subscription.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.subscription.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.subscription.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/enums/enums.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/enums/enums.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/docExterna.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/docExterna.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/docExterna.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/docExterna.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.mutation.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.subscription.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.subscription.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.query.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +129,7 @@
       <workItem from="1597796930287" duration="2871000" />
       <workItem from="1597804824034" duration="1709000" />
       <workItem from="1597815976092" duration="3705000" />
-      <workItem from="1597857749837" duration="15243000" />
+      <workItem from="1597857749837" duration="24407000" />
     </task>
     <task id="LOCAL-00001" summary="Creacion del mutate para actualizar los roles de los usuarios">
       <created>1596572391127</created>
@@ -211,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597551694841</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Se creo de nuevo la documentacion">
+      <created>1597883722476</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1597883722476</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,10 +238,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="468" y="165" width="1230" height="710" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597523240005" />
-    <state x="2472" y="234" key="Vcs.Push.Dialog.v2" timestamp="1597551696634">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1597883729613">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597360055230" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597883729613" />
     <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597551696634" />
     <state x="2188" y="112" width="1668" height="866" key="dock-window-1" timestamp="1597877368330">
       <screen x="1920" y="0" width="1920" height="1040" />

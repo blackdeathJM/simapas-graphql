@@ -53,11 +53,25 @@ const queryDocExt: IResolvers =
                     return await database.collection(ENTIDAD_DB.DOC_EXTERNA).find({'usuarioDestino': {$elemMatch: {usuario}}}).toArray().then();
                 },
                 // Consultar documento que sera enviado al usuario
-                async usuarioNoProceso(_: void, {usuario, noProceso}, {db})
+                async subProceso(_: void, {subproceso}, {db})
                 {
                     const database = db as Db;
-                    return await database.collection(ENTIDAD_DB.DOC_EXTERNA).find({noProceso: {$lte: noProceso}, "usuarioDestino.usuario": usuario},
-                        {projection: filtroDocsExt}).toArray();
+                    return database.collection(ENTIDAD_DB.DOC_EXTERNA).aggregate([
+                        {
+                            $project:
+                                {
+                                    usuarioDestino:
+                                        {
+                                            $filter:
+                                                {
+                                                    input: "$usuarioDestino",
+                                                    as: 'sub',
+                                                    cond: {$eq: ["$$sub.subproceso", subproceso]}
+                                                }
+                                        }
+                                }
+                        }
+                    ]).toArray();
                 },
 
                 async noSubprocesoUsuario(_, {usuario, noSubproceso}, {db})
