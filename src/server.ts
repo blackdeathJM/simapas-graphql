@@ -8,10 +8,12 @@ import Database from "./config/database";
 import path from "path";
 import graphqlHTTP from "express-graphql";
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== 'production')
+{
 }
 
-async function init() {
+async function init()
+{
     const docsGral = require('./configMuter/docs.routes');
     const app = express();
     app.use(compression());
@@ -20,7 +22,8 @@ async function init() {
     app.use(bodyParser.json());
     app.use(express.static(path.join(__dirname, 'public')));
 
-    app.use(function (req, res, next) {
+    app.use(function (req, res, next)
+    {
         res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");
         // res.header("Access-Control-Allow-Origin", '*');
         res.header("Access-Control-Allow-Origin", "http://localhost:4200");
@@ -33,9 +36,11 @@ async function init() {
     const database = new Database();
     const db = await database.init();
 
-    const context: any = async ({req, connection}: any) => {
+    const context: any = async ({req, connection}: any) =>
+    {
         const token = req ? req.headers.authorization : connection.authorization;
-        return {db, token, pubsub};
+        const contexto = req ? req.headers.contexto : connection.contexto;
+        return {db, token, pubsub, contexto};
     };
 
     const server = new ApolloServer({
@@ -51,7 +56,7 @@ async function init() {
             endpoint: '/graphql',
         }));*/
 
-    app.use('/graphql',  graphqlHTTP({schema}));
+    app.use('/graphql', graphqlHTTP({schema}));
 
     const PORT = process.env.PORT || 5300;
     const httpServer = createServer(app);
@@ -60,7 +65,8 @@ async function init() {
         {
             port: PORT
         },
-        () => {
+        () =>
+        {
             console.log('==============================SERVIDOR============================');
             console.log(`Sistema comercial Graphql http://localhost:${PORT}${server.graphqlPath}`);
             console.log(`Sistema comercial susbcripciones con Graphql ws://localhost:${PORT}${server.subscriptionsPath}`);

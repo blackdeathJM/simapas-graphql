@@ -13,6 +13,14 @@ const docExtSubscription: IResolvers =
                             const subscripcion = pubsub as PubSub;
                             return subscripcion.asyncIterator([PUB_SUB.DOC_EXT]);
                         }
+                    },
+                usuarioSubprocesoSub:
+                    {
+                        subscribe: (_, {id, subproceso}, {pubsub}) =>
+                        {
+                            const subscripcion = pubsub as PubSub;
+                            return subscripcion.asyncIterator([PUB_SUB.DOC_EXT_USUSUBPROCESO]);
+                        }
                     }
             }
     };

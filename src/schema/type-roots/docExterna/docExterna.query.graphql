@@ -3,12 +3,11 @@ type Query
     "DOC EXTERNA: Consultar todos los registros para el administrador"
     todosDocsExt: [DocExtType]
     "DOC EXTERNA: Obtiene todos los documentos por usuario"
-    obDocsUsuarioExterno(usuario: String!): [DocExtType]
+    todosLosDocsPorUsuario(usuario: String!): [DocExtType]
     "DOC EXTERNA: Obtener documentos por usuario y subproceso para mostrar en el area de usuarios"
-    usuarioSubproceso(usuario: String!, subproceso: String!): [DocExtType]
+    usuarioSubproceso(usuario: String!, subprocesos: [String!]!): [DocExtType]
 
-    "DOC EXTERNA: Obtener docExt por usuario y por estatus de aprobado"
-    noSubprocesoUsuario(usuario: String!, noSubproceso: Int!): [DocExtType]
+
     "DOC EXTERNA: Relacion con folios"
     docExtRel(_id: ID!): DocExtType
     "DOC EXTERNA: Consulta entre fechas"

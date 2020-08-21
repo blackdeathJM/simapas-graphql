@@ -16,7 +16,7 @@ const mutationDocExt: IResolvers =
         Mutation:
             {
                 // PASO 1: Registrar el documento externo
-                async regDocExt(_, {docExt}, {pubsub, db})
+                async regDocExt(_, {docExt}, {pubsub, db, contexto})
                 {
                     const database = db as Db;
                     // Contamos el total de documentos para asignar el cosecutivo que sera el numero de seguimiento
@@ -28,7 +28,18 @@ const mutationDocExt: IResolvers =
                             return await database.collection(ENTIDAD_DB.DOC_EXTERNA).insertOne(docExt).then(
                                 async (doc) =>
                                 {
+                                    // const datos = JSON.parse(objecto);
+                                    // console.log('objecto', datos);
                                     await notTodosDocsExt(pubsub, db);
+                                    await database.collection(ENTIDAD_DB.DOC_EXTERNA).find(
+                                        {usuarioDestino: {$elemMatch: {subproceso: {$in: JSON.parse(contexto)}}}}
+                                    ).toArray().then(
+                                        async (documentos) =>
+                                        {
+                                            const subscripcion = pubsub as PubSub;
+                                            await subscripcion.publish(PUB_SUB.DOC_EXT_USUSUBPROCESO, {usuarioSubprocesoSub: documentos});
+                                        }
+                                    );
                                     return {
                                         estatus: true,
                                         mensaje: 'El documento fue insertado con exito',
@@ -86,10 +97,6 @@ const mutationDocExt: IResolvers =
                         }
                     )
                 },
-
-
-
-
 
 
                 async acDocExtUrlUsuario(_, {id, usuario, docUrl}, {pubsub, db})

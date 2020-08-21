@@ -6,7 +6,6 @@ input DocExtInput
     folio: String
     dependencia: String!
     comentario: String
-    observaciones: String
     asunto: String!
     docUrl: String
     docRespUrl: String

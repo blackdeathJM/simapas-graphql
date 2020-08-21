@@ -13,10 +13,9 @@ export enum ENTIDAD_DB {
 }
 
 export enum PUB_SUB {
-    DEPARTAMENTO = 'cambioDepartamentos',
     NOT_DOC_INTERNA = 'todosDocInterna',
-    NOT_DOC_INTERNA_AG = 'agDocInterna',
     DOC_EXT = 'obDocsExtTodos',
+    DOC_EXT_USUSUBPROCESO = 'usuariosSubproceso',
     NOT_USUARIOS_SESSION = 'usuarioSession'
 }
 
