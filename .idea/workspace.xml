@@ -33,17 +33,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Se creo de nuevo la documentacion">
-      <change afterPath="$PROJECT_DIR$/src/resolvers/docExt/proyecciones.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/global.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/global.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/docExt.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/docExt.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/docExt.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/docExt.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/docExt.subscription.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/docExt.subscription.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/docExterna.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/docExterna.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/docExterna.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/docExterna.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.query.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.subscription.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.subscription.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +128,7 @@
       <workItem from="1597815976092" duration="3705000" />
       <workItem from="1597857749837" duration="24434000" />
       <workItem from="1597900941862" duration="11351000" />
-      <workItem from="1597948532082" duration="24230000" />
+      <workItem from="1597948532082" duration="25429000" />
     </task>
     <task id="LOCAL-00001" summary="Creacion del mutate para actualizar los roles de los usuarios">
       <created>1596572391127</created>
@@ -231,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597921705719</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Se creo de nuevo la documentacion">
+      <created>1597986147533</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1597986147533</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,10 +258,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="468" y="165" width="1230" height="710" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597523240005" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1597921709579">
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1597986149574">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597921709579" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597986149574" />
     <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597551696634" />
     <state x="2169" y="27" width="1668" height="1026" maximized="true" key="dock-window-1" timestamp="1597957827180">
       <screen x="1920" y="0" width="1920" height="1040" />
