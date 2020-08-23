@@ -103,7 +103,7 @@ const mutationDocExt: IResolvers =
                         }
                     )
                 },
-
+                // Actualizar el docUrl del usuario donde subira la respuesta que guardaremos de manera temporal
                 async acDocUrlEnUsuarioDestino(_: void, {id, usuario, docUrl}, {pubsub, db, contexto})
                 {
                     const baseDatos = db as Db;
