@@ -15,26 +15,15 @@
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:npm_and_yarn" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
     </expand>
     <select />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Se creo de nuevo la documentacion">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/docExt.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/docExt.mutation.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/database.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/database.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/configMuter/docs.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/configMuter/docs.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,9 +48,15 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/public/uploads/per" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.TypeScript" />
     <property name="ts.external.directory.path" value="D:\Documents\Proyectos\Backend\simapas-graphql\node_modules\typescript\lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\per" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -132,6 +127,10 @@
       <workItem from="1597948532082" duration="31994000" />
       <workItem from="1598054707147" duration="1990000" />
       <workItem from="1598071346284" duration="3795000" />
+      <workItem from="1598226002978" duration="1524000" />
+      <workItem from="1598230294402" duration="3374000" />
+      <workItem from="1598242175821" duration="97000" />
+      <workItem from="1598247239538" duration="3109000" />
     </task>
     <task id="LOCAL-00001" summary="Creacion del mutate para actualizar los roles de los usuarios">
       <created>1596572391127</created>
@@ -271,6 +270,22 @@
     <option name="LAST_COMMIT_MESSAGE" value="Se creo de nuevo la documentacion" />
   </component>
   <component name="WindowStateProjectService">
+    <state width="1879" height="148" key="GridCell.Tab.0.bottom" timestamp="1598223730415">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1879" height="148" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598223730415" />
+    <state width="1879" height="148" key="GridCell.Tab.0.center" timestamp="1598223730414">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1879" height="148" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598223730414" />
+    <state width="1879" height="148" key="GridCell.Tab.0.left" timestamp="1598223730414">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1879" height="148" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598223730414" />
+    <state width="1879" height="148" key="GridCell.Tab.0.right" timestamp="1598223730415">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1879" height="148" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598223730415" />
     <state x="468" y="165" width="1230" height="710" key="SettingsEditor" timestamp="1597523240005">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

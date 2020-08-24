@@ -6,20 +6,26 @@ import {createServer} from 'http';
 import schema from './schema/schema';
 import Database from "./config/database";
 import path from "path";
-import graphqlHTTP from "express-graphql";
+import expressPlayground from 'graphql-playground-middleware-express';
+// import graphqlHTTP from "express-graphql";
+import environments from "./config/environments";
+import {router} from "./configMuter/docs.routes";
 
 if (process.env.NODE_ENV !== 'production')
 {
+    const env = environments;
+    console.log(env);
 }
 
 async function init()
 {
-    const docsGral = require('./configMuter/docs.routes');
     const app = express();
     app.use(compression());
     // app.use(bodyParser.json()).use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.urlencoded({extended: false}));
     app.use(bodyParser.json());
+
+
     app.use(express.static(path.join(__dirname, 'public')));
 
     app.use(function (req, res, next)
@@ -46,20 +52,21 @@ async function init()
     const server = new ApolloServer({
         schema,
         context,
-        introspection: true
+        introspection: true,
+
     });
 
     server.applyMiddleware({app});
 
-    app.use('/file', docsGral);
+    app.use('/file', router);
     /*    app.use('/', expressPlayground({
             endpoint: '/graphql',
         }));*/
+    // app.use('/graphql', graphqlHTTP({schema}));
+    app.get('/', expressPlayground({endpoint: '/graphql'}));
 
-    app.use('/graphql', graphqlHTTP({schema}));
-
-    const PORT = process.env.PORT || 5300;
     const httpServer = createServer(app);
+    const PORT = process.env.PORT || 5300;
     server.installSubscriptionHandlers(httpServer);
     httpServer.listen(
         {
