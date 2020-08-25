@@ -40,7 +40,6 @@ const queryDocExt: IResolvers =
                 // Consultar documento que sera enviado al usuario el subproceso es un array
                 async usuarioSubproceso(_: void, {usuario, subprocesos}, {db})
                 {
-                    console.log('query', subprocesos);
                     const database = db as Db;
                     return await database.collection(ENTIDAD_DB.DOC_EXTERNA).find(
                         {usuarioDestino: {$elemMatch: {usuario, subproceso: {$in: subprocesos}}}},

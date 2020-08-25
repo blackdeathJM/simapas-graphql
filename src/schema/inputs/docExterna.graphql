@@ -14,6 +14,7 @@ input DocExtInput
     fechaLimiteEntrega: String!
     fechaTerminado: String
     proceso: PROCESOS_DOC!
+    notificarAdministrador: Int
     usuarioDestino: [UsuarioDestinoDocExtInput!]!
 }
 input UsuarioDestinoDocExtInput
@@ -24,6 +25,5 @@ input UsuarioDestinoDocExtInput
     fechaEnvio: String
     autorizado: Boolean
     subproceso: PROCESOS_DOC!
-    notificarAdministrador: Boolean
     notificarUsuario: Boolean
 }

@@ -14,6 +14,7 @@ type DocExtType
     fechaLimiteEntrega: String
     fechaTerminado: String
     proceso: PROCESOS_DOC
+    notificarAdministrador: Int
     usuarioDestino: [UsuarioDestinoDocExtType]
 }
 type UsuarioDestinoDocExtType
@@ -24,7 +25,6 @@ type UsuarioDestinoDocExtType
     fechaEnvio: String
     autorizado: Boolean
     subproceso: PROCESOS_DOC
-    notificarAdministrador: Boolean
     notificarUsuario: Boolean
 }
 type DocExtResType

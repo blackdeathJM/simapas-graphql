@@ -21,7 +21,7 @@ async function notActUsuarioSubProceso(pubsub: PubSub, db: Db, contexto: any)
         {
             const subscripcion = pubsub as PubSub;
             await subscripcion.publish(PUB_SUB.DOC_EXT_USUSUBPROCESO, {usuarioSubprocesoSub: documentos});
-        });
+        }).catch(error => console.log('Error al ejecutar la subscripcion: ' + error));
 }
 
 const mutationDocExt: IResolvers =
@@ -41,8 +41,6 @@ const mutationDocExt: IResolvers =
                             return await database.collection(ENTIDAD_DB.DOC_EXTERNA).insertOne(docExt).then(
                                 async (doc) =>
                                 {
-                                    // const datos = JSON.parse(objecto);
-                                    // console.log('objecto', datos);
                                     await notTodosDocsExt(pubsub, db);
                                     await notActUsuarioSubProceso(pubsub, db, contexto);
                                     return {
@@ -77,7 +75,6 @@ const mutationDocExt: IResolvers =
                 async acDocExtUrl(_: void, {id, docUrl, proceso}, {pubsub, db, contexto})
                 {
                     const database = db as Db;
-
                     return await database.collection(ENTIDAD_DB.DOC_EXTERNA).updateOne(
                         {_id: new ObjectId(id), usuarioDestino: {$elemMatch: {notificarUsuario: false}}},
                         {$set: {docUrl, proceso, "usuarioDestino.$[].notificarUsuario": true}},
@@ -104,33 +101,48 @@ const mutationDocExt: IResolvers =
                     )
                 },
                 // Actualizar el docUrl del usuario donde subira la respuesta que guardaremos de manera temporal
-                async acDocUrlEnUsuarioDestino(_: void, {id, usuario, docUrl}, {pubsub, db, contexto})
+                async acDocUrlEnUsuarioDestino(_: void, {id, usuario, docUrl, subproceso}, {pubsub, db, contexto})
                 {
                     const baseDatos = db as Db;
-                    return await baseDatos.collection(ENTIDAD_DB.DOC_EXTERNA).updateOne(
-                        {_id: new ObjectId(id), usuarioDestino: {$elemMatch: usuario}},
-                        {$set: {"usuarioDestino.$.docUrl": docUrl, "usuarioDestino.$.notificarAdministrador": true}},
-                        {upsert: true}).then(
-                        async (documento: any) =>
+                    return await baseDatos.collection(ENTIDAD_DB.DOC_EXTERNA).findOne(
+                        {_id: new ObjectId(id)}).then(
+                        async (documentos) =>
                         {
-                            await notTodosDocsExt(pubsub, db);
-                            await notActUsuarioSubProceso(pubsub, db, contexto);
-                            return {
-                                estatus: true,
-                                mensaje: 'El documento se ha actualizado con exito',
-                                documento
-                            }
+                            let totalNotificaciones = documentos.notificarAdministrador + 1;
+
+                            return await baseDatos.collection(ENTIDAD_DB.DOC_EXTERNA).findOneAndUpdate(
+                                {_id: new ObjectId(id), usuarioDestino: {$elemMatch: {usuario}}},
+                                // {$set: {"usuarioDestino.$.docUrl": docUrl, "usuarioDestino.$.notificarAdministrador": notificarAdministrador}},
+                                {
+                                    $set: {
+                                        notificarAdministrador: totalNotificaciones, "usuarioDestino.$.docUrl": docUrl,
+                                        "usuarioDestino.$.subproceso": subproceso
+                                    }
+                                },
+                                {returnOriginal: false}).then(
+                                async (documento: any) =>
+                                {
+                                    await notTodosDocsExt(pubsub, db);
+                                    // await notActUsuarioSubProceso(pubsub, db, contexto);
+                                    return {
+                                        estatus: true,
+                                        mensaje: 'El documento se ha actualizado con exito',
+                                        documento
+                                    }
+                                }
+                            ).catch(
+                                async (error: any) =>
+                                {
+                                    console.log('error', error);
+                                    return {
+                                        estatus: false,
+                                        mensaje: 'Error al intentar actualizar el documento', error,
+                                        documento: null
+                                    }
+                                }
+                            )
                         }
-                    ).catch(
-                        async (error: any) =>
-                        {
-                            return {
-                                estatus: false,
-                                mensaje: 'Error al intentar actualizar el documento', error,
-                                documento: null
-                            }
-                        }
-                    )
+                    ).catch();
                 },
 
 

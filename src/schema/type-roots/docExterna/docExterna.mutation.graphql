@@ -5,8 +5,9 @@ extend type Mutation
     "DOC EXTERNA: Actualizar el campo donde se guardara el nombre del archivo subido"
     acDocExtUrl(id: String!, docUrl: String!, proceso: String!): DocExtResType!
     "DOC EXTERNA: actualizamos la respuesta del usuario y cambiamos el valor del documento respuesta que esta"
-    # el documento se guardara en el usuarioDestino en docUrl
-    acDocUrlEnUsuarioDestino(id: String!, usuario: String!, docUrl: String!): DocExtResType!
+    acDocUrlEnUsuarioDestino(id: String!, usuario: String!, docUrl: String!, subproceso: String!): DocExtResType
+
+
 
 
     "DOC EXTERNA: Actualizar el campo de docUrl por usuario para su aprobacion"
