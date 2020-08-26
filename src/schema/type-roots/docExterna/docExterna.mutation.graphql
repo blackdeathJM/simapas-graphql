@@ -6,8 +6,8 @@ extend type Mutation
     acDocExtUrl(id: String!, docUrl: String!, proceso: String!): DocExtResType!
     "DOC EXTERNA: actualizamos la respuesta del usuario y cambiamos el valor del documento respuesta que esta"
     acDocUrlEnUsuarioDestino(id: String!, usuario: String!, docUrl: String!, subproceso: String!): DocExtResType
-
-
+    "DOC EXTERNA: Apagar la notificacion del usuario cuando envia la respuesta y restamos uno de notificar administrador"
+    acNotificacionPorUsuario(id: ID!, usuario: String!, notificarRespDelUsuario: Boolean!, notificarAdministrador: Int!): Boolean
 
 
     "DOC EXTERNA: Actualizar el campo de docUrl por usuario para su aprobacion"

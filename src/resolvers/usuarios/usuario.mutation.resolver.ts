@@ -1,7 +1,7 @@
 import {IResolvers} from "graphql-tools";
 import bcryptjs from "bcryptjs";
 import {PubSub} from "apollo-server-express";
-import {ENTIDAD_DB, PUB_SUB} from "../../config/global";
+import {COLECCION, PUB_SUB} from "../../config/global";
 import {ObjectId} from "bson";
 import {obtenerUsuario} from "./usuario.query.resolver";
 import JWT from "../../lib/jwt";
@@ -17,7 +17,7 @@ const mutationUsuarios: IResolvers =
             {
                 async registroUsuario(_: void, {usuario}, {db}) {
                     const database = db as Db;
-                    const checharUsuario = await database.collection(ENTIDAD_DB.USUARIOS).findOne({usuario: usuario.usuario});
+                    const checharUsuario = await database.collection(COLECCION.USUARIOS).findOne({usuario: usuario.usuario});
                     if (checharUsuario !== null) {
                         return {
                             estatus: false,
@@ -26,7 +26,7 @@ const mutationUsuarios: IResolvers =
                         }
                     }
                     usuario.contrasena = bcryptjs.hashSync(usuario.contrasena, 10);
-                    return await database.collection(ENTIDAD_DB.USUARIOS).insertOne(usuario).then(
+                    return await database.collection(COLECCION.USUARIOS).insertOne(usuario).then(
                         async () => {
                             // aqui ponemos la subcripcion si se requiere
                             return {
@@ -47,7 +47,7 @@ const mutationUsuarios: IResolvers =
                 },
                 async actualizarUsuario(_: void, {usuario}, {pubsub, db}) {
                     const database = db as Db;
-                    return await database.collection(ENTIDAD_DB.USUARIOS).findOneAndUpdate(
+                    return await database.collection(COLECCION.USUARIOS).findOneAndUpdate(
                         {usuario},
                         {$set: {nombre: usuario.nombre, img: usuario.img}}
                     ).then(
@@ -72,7 +72,7 @@ const mutationUsuarios: IResolvers =
                 },
                 async actualizarRole(_: void, {_id, role}, {db}) {
                     const database = db as Db;
-                    return await database.collection(ENTIDAD_DB.USUARIOS).findOneAndUpdate({_id: new ObjectId(_id)},
+                    return await database.collection(COLECCION.USUARIOS).findOneAndUpdate({_id: new ObjectId(_id)},
                         {$set: {role}}, {returnOriginal: false}).then(
                         async (respuesta: any) => {
                             return {
@@ -131,7 +131,7 @@ const mutationUsuarios: IResolvers =
                 },
                 async eliminarUsuario(_: void, {_id}, {pubsub, db}) {
                     const database = db as Db;
-                    return await database.collection(ENTIDAD_DB.USUARIOS).findOneAndDelete({_id: new ObjectId(_id)}).then(
+                    return await database.collection(COLECCION.USUARIOS).findOneAndDelete({_id: new ObjectId(_id)}).then(
                         async () => {
                             await notSessionUsuario(_id, pubsub, db);
                             return {

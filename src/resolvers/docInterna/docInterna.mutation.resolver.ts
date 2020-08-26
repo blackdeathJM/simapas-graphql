@@ -1,5 +1,5 @@
 import {IResolvers} from "graphql-tools";
-import {ENTIDAD_DB, FECHA_ACTUAL, PUB_SUB} from "../../config/global";
+import {COLECCION, FECHA_ACTUAL, PUB_SUB} from "../../config/global";
 import {todasNotificacionesDocInterna} from "./docInterna.query.Resolver";
 import {PubSub} from "apollo-server-express";
 import {Db} from "mongodb";
@@ -23,7 +23,7 @@ const mutationDocInterna: IResolvers =
                         let anoActual = new Date().getFullYear();
 
                         agNotificacion.folioInterno = `FOL-${agNotificacion.num}-SIMAPAS/${anoActual}`;
-                        return await database.collection(ENTIDAD_DB.DOC_INTERNA).insertOne(agNotificacion).then(
+                        return await database.collection(COLECCION.DOC_INTERNA).insertOne(agNotificacion).then(
                             async (docInterna: any) => {
                                 await notTodosDocInterna(pubsub, db);
                                 return {

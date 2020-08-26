@@ -62,6 +62,7 @@ async function init()
     /*    app.use('/', expressPlayground({
             endpoint: '/graphql',
         }));*/
+
     // app.use('/graphql', graphqlHTTP({schema}));
     app.get('/', expressPlayground({endpoint: '/graphql'}));
 

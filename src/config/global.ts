@@ -4,7 +4,7 @@ if (process.env.NODE_ENV !== 'production') {
     const environment = environments;
 }
 
-export enum ENTIDAD_DB {
+export enum COLECCION {
     DEPARTAMENTOS = 'departamentos',
     USUARIOS = 'usuarios',
     DOC_INTERNA = 'docInterna',

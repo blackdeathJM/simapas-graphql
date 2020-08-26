@@ -1,12 +1,12 @@
 import {IResolvers} from "graphql-tools";
-import {ENTIDAD_DB} from "../../config/global";
+import {COLECCION} from "../../config/global";
 import {ObjectId} from "bson";
 import {Db} from "mongodb";
 import {filtroDocsExt} from "./proyecciones";
 
 export async function todosDocExt(db: Db)
 {
-    return await db.collection(ENTIDAD_DB.DOC_EXTERNA).find().toArray().then(
+    return await db.collection(COLECCION.DOC_EXTERNA).find().toArray().then(
         async (res: any) =>
         {
             return res;
@@ -35,13 +35,13 @@ const queryDocExt: IResolvers =
                 async todosLosDocsPorUsuario(_, {usuario}, {db})
                 {
                     const database = db as Db;
-                    return await database.collection(ENTIDAD_DB.DOC_EXTERNA).find({'usuarioDestino': {$elemMatch: {usuario}}}).toArray().then();
+                    return await database.collection(COLECCION.DOC_EXTERNA).find({'usuarioDestino': {$elemMatch: {usuario}}}).toArray().then();
                 },
                 // Consultar documento que sera enviado al usuario el subproceso es un array
                 async usuarioSubproceso(_: void, {usuario, subprocesos}, {db})
                 {
                     const database = db as Db;
-                    return await database.collection(ENTIDAD_DB.DOC_EXTERNA).find(
+                    return await database.collection(COLECCION.DOC_EXTERNA).find(
                         {usuarioDestino: {$elemMatch: {usuario, subproceso: {$in: subprocesos}}}},
                         {projection: filtroDocsExt}).toArray().then(async (documentos) =>
                     {
@@ -70,12 +70,12 @@ const queryDocExt: IResolvers =
             async docExtRel(_, {_id}, {db})
             {
                 const database = db as Db;
-                return await database.collection(ENTIDAD_DB.DOC_EXTERNA).findOne({_id: new ObjectId(_id)});
+                return await database.collection(COLECCION.DOC_EXTERNA).findOne({_id: new ObjectId(_id)});
             },
             async docEntreFechas(_, {fechaRecepcion}, {db})
             {
                 const database = db as Db;
-                return await database.collection(ENTIDAD_DB.DOC_EXTERNA).find({$gte: fechaRecepcion, $lte: fechaRecepcion}).toArray();
+                return await database.collection(COLECCION.DOC_EXTERNA).find({$gte: fechaRecepcion, $lte: fechaRecepcion}).toArray();
             }
         }
     };

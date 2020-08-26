@@ -1,5 +1,5 @@
 import {IResolvers} from "graphql-tools";
-import {ENTIDAD_DB} from "../../config/global";
+import {COLECCION} from "../../config/global";
 import {Db} from "mongodb";
 
 const queryFolios: IResolvers =
@@ -8,13 +8,13 @@ const queryFolios: IResolvers =
             {
                 async obtenerFoliosTodos(_: void, __: void, {db}) {
                     const database = db as Db;
-                    return await database.collection(ENTIDAD_DB.FOLIOS).find().toArray().then((res: any) => {
+                    return await database.collection(COLECCION.FOLIOS).find().toArray().then((res: any) => {
                         return res;
                     });
                 },
                 async ultimoFolio(_: any, __: any, {db}) {
                     const database = db as Db;
-                    return await database.collection(ENTIDAD_DB.FOLIOS).countDocuments().then(
+                    return await database.collection(COLECCION.FOLIOS).countDocuments().then(
                         async (ultimoFolio: number) => {
                             return {
                                 estatus: true,
@@ -34,7 +34,7 @@ const queryFolios: IResolvers =
                 },
                 async folioUsuario(_: void, {asigUsuario}, {db}) {
                     const database = db as Db;
-                    return await database.collection(ENTIDAD_DB.FOLIOS).find({asigUsuario}).toArray();
+                    return await database.collection(COLECCION.FOLIOS).find({asigUsuario}).toArray();
                 },
             }
     };

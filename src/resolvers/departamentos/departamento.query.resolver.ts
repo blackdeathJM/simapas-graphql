@@ -2,7 +2,7 @@ import {IResolvers} from "graphql-tools";
 import {ObjectId} from "bson";
 import {IDepartamento} from "./model/departamento.interface";
 import {Db} from 'mongodb';
-import {ENTIDAD_DB} from "../../config/global";
+import {COLECCION} from "../../config/global";
 
 const queryDeptos: IResolvers =
     {
@@ -10,7 +10,7 @@ const queryDeptos: IResolvers =
             {
                 async obtenerDepartamentos(_, __, {db}) {
                     const database = db as Db;
-                    return await database.collection(ENTIDAD_DB.DEPARTAMENTOS).find().toArray().then().catch(
+                    return await database.collection(COLECCION.DEPARTAMENTOS).find().toArray().then().catch(
                         async () => {
                             return null
                         }
@@ -18,7 +18,7 @@ const queryDeptos: IResolvers =
                 },
                 async departamentoID(_, {_id}, {db}) {
                     const database = db as Db;
-                    return await database.collection(ENTIDAD_DB.DEPARTAMENTOS).findOne({_id: new ObjectId(_id)}).then(
+                    return await database.collection(COLECCION.DEPARTAMENTOS).findOne({_id: new ObjectId(_id)}).then(
                         async (departamento: IDepartamento) => {
                             if (departamento === null) {
                                 return {

@@ -1,5 +1,5 @@
 import {IResolvers} from "graphql-tools";
-import {ENTIDAD_DB, FECHA_ACTUAL, PUB_SUB} from "../../config/global";
+import {COLECCION, FECHA_ACTUAL, PUB_SUB} from "../../config/global";
 import {ObjectId} from "bson";
 import {todosDocExt} from "./docExt.query.resolver";
 import {Db} from "mongodb";
@@ -14,7 +14,7 @@ async function notTodosDocsExt(pubSub: PubSub, db: Db)
 async function notActUsuarioSubProceso(pubsub: PubSub, db: Db, contexto: any)
 {
     const database = db as Db;
-    await database.collection(ENTIDAD_DB.DOC_EXTERNA).find(
+    await database.collection(COLECCION.DOC_EXTERNA).find(
         {usuarioDestino: {$elemMatch: {subproceso: {$in: JSON.parse(contexto)}}}}
     ).toArray().then(
         async (documentos) =>
@@ -33,12 +33,12 @@ const mutationDocExt: IResolvers =
                 {
                     const database = db as Db;
                     // Contamos el total de documentos para asignar el cosecutivo que sera el numero de seguimiento
-                    return await database.collection(ENTIDAD_DB.DOC_EXTERNA).countDocuments().then(
+                    return await database.collection(COLECCION.DOC_EXTERNA).countDocuments().then(
                         async (totalDocumentos) =>
                         {
                             docExt.noSeguimiento = totalDocumentos + 1;
 
-                            return await database.collection(ENTIDAD_DB.DOC_EXTERNA).insertOne(docExt).then(
+                            return await database.collection(COLECCION.DOC_EXTERNA).insertOne(docExt).then(
                                 async (doc) =>
                                 {
                                     await notTodosDocsExt(pubsub, db);
@@ -75,7 +75,7 @@ const mutationDocExt: IResolvers =
                 async acDocExtUrl(_: void, {id, docUrl, proceso}, {pubsub, db, contexto})
                 {
                     const database = db as Db;
-                    return await database.collection(ENTIDAD_DB.DOC_EXTERNA).updateOne(
+                    return await database.collection(COLECCION.DOC_EXTERNA).updateOne(
                         {_id: new ObjectId(id), usuarioDestino: {$elemMatch: {notificarUsuario: false}}},
                         {$set: {docUrl, proceso, "usuarioDestino.$[].notificarUsuario": true}},
                         {upsert: true}).then(
@@ -104,19 +104,19 @@ const mutationDocExt: IResolvers =
                 async acDocUrlEnUsuarioDestino(_: void, {id, usuario, docUrl, subproceso}, {pubsub, db, contexto})
                 {
                     const baseDatos = db as Db;
-                    return await baseDatos.collection(ENTIDAD_DB.DOC_EXTERNA).findOne(
+                    return await baseDatos.collection(COLECCION.DOC_EXTERNA).findOne(
                         {_id: new ObjectId(id)}).then(
                         async (documentos) =>
                         {
                             let totalNotificaciones = documentos.notificarAdministrador + 1;
 
-                            return await baseDatos.collection(ENTIDAD_DB.DOC_EXTERNA).findOneAndUpdate(
+                            return await baseDatos.collection(COLECCION.DOC_EXTERNA).findOneAndUpdate(
                                 {_id: new ObjectId(id), usuarioDestino: {$elemMatch: {usuario}}},
                                 // {$set: {"usuarioDestino.$.docUrl": docUrl, "usuarioDestino.$.notificarAdministrador": notificarAdministrador}},
                                 {
                                     $set: {
                                         notificarAdministrador: totalNotificaciones, "usuarioDestino.$.docUrl": docUrl,
-                                        "usuarioDestino.$.subproceso": subproceso
+                                        "usuarioDestino.$.subproceso": subproceso, "usuarioDestino.$.notificarRespDelUsuario": true
                                     }
                                 },
                                 {returnOriginal: false}).then(
@@ -144,7 +144,36 @@ const mutationDocExt: IResolvers =
                         }
                     ).catch();
                 },
+                async acNotificacionPorUsuario(_: void, {id, usuario, notificarRespDelUsuario, notificarAdministrador}, {pubsub, db})
+                {
+                    const basedatos = db as Db;
+                    // Obtener el numero de notificaciones que se tienen en el documento
+                    const totalNotificacionesAdministrador = await basedatos.collection(COLECCION.DOC_EXTERNA).findOne(
+                        {_id: new ObjectId(id)}, {projection: {_id: 0, notificarAdministrador: 1}});
 
+                    // restamos una unidad al acumulado que tiene las notificaciones del administrador
+                    let totalNotiAdmin = await totalNotificacionesAdministrador.notificarAdministrador + notificarAdministrador;
+                    // Si las notificaciones son menores a cero se actualizara con cero ya que no puede haber notificaciones negativasa
+                    if (totalNotiAdmin < 0)
+                    {
+                        totalNotiAdmin = 0;
+                    }
+
+                    // Apagamos la notificacion del usuario
+                    const notificacionDelUsuario = await basedatos.collection(COLECCION.DOC_EXTERNA).findOneAndUpdate(
+                        {_id: new ObjectId(id), usuarioDestino: {$elemMatch: {usuario}}},
+                        {$set: {notificarAdministrador: totalNotiAdmin, "usuarioDestino.$.notificarRespDelUsuario": notificarRespDelUsuario}})
+
+                    return await Promise.all([totalNotificacionesAdministrador, totalNotiAdmin,
+                        notificacionDelUsuario, notTodosDocsExt(pubsub, db)]).then(
+                        // ([consulta, operacion, mutacion]) =>
+                        async () =>
+                        {
+                            // se retorna true como respuesta de la consulta
+                            return true;
+                        }
+                    );
+                },
 
 // +++++++++++++++++++++++=============================+++++++++++++++++++++++++===================++++++++++++++++++++++++
 
@@ -152,7 +181,7 @@ const mutationDocExt: IResolvers =
             async acDocExtUrlUsuario(_, {id, usuario, docUrl}, {pubsub, db})
             {
                 const database = db as Db;
-                return await database.collection(ENTIDAD_DB.DOC_EXTERNA).findOneAndUpdate({
+                return await database.collection(COLECCION.DOC_EXTERNA).findOneAndUpdate({
                         _id: new ObjectId(id),
                         "usuarioDestino.usuario": usuario
                     },
@@ -181,7 +210,7 @@ const mutationDocExt: IResolvers =
             async acObEstUsuario(_, {_id, noProceso, usuario, observaciones, noSubproceso, estatus}, {pubsub, db})
             {
                 const database = db as Db;
-                return await database.collection(ENTIDAD_DB.DOC_EXTERNA).findOneAndUpdate(
+                return await database.collection(COLECCION.DOC_EXTERNA).findOneAndUpdate(
                     {
                         _id: new ObjectId(_id),
                         "usuarioDestino.usuario": usuario
@@ -216,7 +245,7 @@ const mutationDocExt: IResolvers =
             async acEstEstGralUsuarioFolio(_, {_id, usuario, noSubproceso, noProceso, folio, estatus}, {pubsub, db})
             {
                 const database = db as Db;
-                return await database.collection(ENTIDAD_DB.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(_id), "usuarioDestino.usuario": usuario},
+                return await database.collection(COLECCION.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(_id), "usuarioDestino.usuario": usuario},
                     {$set: {noProceso, folio, "usuarioDestino.$.noSubproceso": noSubproceso, "usuarioDestino.$.estatus": estatus}}).then(
                     async (documento: any) =>
                     {
@@ -239,7 +268,7 @@ const mutationDocExt: IResolvers =
             async acDocResUrlNoProceso(_, {folioRespuesta, noProceso, docRespUrl, folio, usuario, noSubproceso, estatus}, {pubsub, db})
             {
                 const database = db as Db;
-                return await database.collection(ENTIDAD_DB.DOC_EXTERNA).findOneAndUpdate(
+                return await database.collection(COLECCION.DOC_EXTERNA).findOneAndUpdate(
                     {_id: new ObjectId(folioRespuesta), "usuarioDestino.usuario": usuario},
                     {
                         $set: {
@@ -257,7 +286,7 @@ const mutationDocExt: IResolvers =
                         }
                     }).catch((error: any) =>
                 {
-                    db.collection(ENTIDAD_DB.FOLIOS).findOneAndDelete(folio);
+                    db.collection(COLECCION.FOLIOS).findOneAndDelete(folio);
                     return {
                         estatus: false,
                         mensaje: 'Error al intentar guardar el documento consulta al administrador', error,
@@ -269,7 +298,7 @@ const mutationDocExt: IResolvers =
             async acTerminarDoc(_: void, {_id, noProceso, acuseUrl, folio}, {pubsub, db})
             {
                 const database = db as Db;
-                return await database.collection(ENTIDAD_DB.DOC_EXTERNA).findOneAndUpdate(
+                return await database.collection(COLECCION.DOC_EXTERNA).findOneAndUpdate(
                     {_id: new ObjectId(_id)},
                     {$set: {noProceso, folio, acuseUrl, fechaTerminado: FECHA_ACTUAL}},
                     {returnOriginal: false}).then(
@@ -296,7 +325,7 @@ const mutationDocExt: IResolvers =
             async acEntidadDocExt(_: void, {documentoExternoInput}, {pubsub, db})
             {
                 const database = db as Db;
-                return await database.collection(ENTIDAD_DB.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(documentoExternoInput._id)},
+                return await database.collection(COLECCION.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(documentoExternoInput._id)},
                     {$addToSet: documentoExternoInput}).then(
                     async (docExt: any) =>
                     {
@@ -319,7 +348,7 @@ const mutationDocExt: IResolvers =
             async acNotificar(_: void, {notificar, usuario, _id}, {pubsub, db})
             {
                 const database = db as Db;
-                return await database.collection(ENTIDAD_DB.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(_id), "usuarioDestino.usuario": usuario},
+                return await database.collection(COLECCION.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(_id), "usuarioDestino.usuario": usuario},
                     {$set: {"usuarioDestino.$.notificar": notificar}}).then(
                     async (docExt: any) =>
                     {

@@ -1,6 +1,6 @@
 import {IResolvers} from "graphql-tools";
 import {ObjectId} from "bson";
-import {ENTIDAD_DB} from "../../config/global";
+import {COLECCION} from "../../config/global";
 import {Db} from "mongodb";
 
 const mutationFolios: IResolvers =
@@ -9,7 +9,7 @@ const mutationFolios: IResolvers =
             {
                 async registroFolio(_: void, {folio}, {db}) {
                     const database = db as Db;
-                    return await database.collection(ENTIDAD_DB.FOLIOS).findOne({numFolio: folio.numFolio}).then(
+                    return await database.collection(COLECCION.FOLIOS).findOne({numFolio: folio.numFolio}).then(
                         async (rest: any) => {
                             if (rest) {
                                 return {
@@ -41,7 +41,7 @@ const mutationFolios: IResolvers =
                 },
                 async acUrlFolio(_: void, {id, archivoUrl}, {db}) {
 const database = db as Db;
-                    return await database.collection(ENTIDAD_DB.FOLIOS).findOneAndUpdate({_id: new ObjectId(id)},
+                    return await database.collection(COLECCION.FOLIOS).findOneAndUpdate({_id: new ObjectId(id)},
                         {$set: {archivoUrl}}).then(
                         async () => {
                             return {

@@ -25,6 +25,7 @@ type UsuarioDestinoDocExtType
     fechaEnvio: String
     autorizado: Boolean
     subproceso: PROCESOS_DOC
+    notificarRespDelUsuario: Boolean
     notificarUsuario: Boolean
 }
 type DocExtResType
