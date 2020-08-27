@@ -162,10 +162,11 @@ const mutationDocExt: IResolvers =
                     // Apagamos la notificacion del usuario
                     const notificacionDelUsuario = await basedatos.collection(COLECCION.DOC_EXTERNA).findOneAndUpdate(
                         {_id: new ObjectId(id), usuarioDestino: {$elemMatch: {usuario}}},
-                        {$set: {notificarAdministrador: totalNotiAdmin, "usuarioDestino.$.notificarRespDelUsuario": notificarRespDelUsuario}})
+                        {$set: {notificarAdministrador: totalNotiAdmin, "usuarioDestino.$.notificarRespDelUsuario": notificarRespDelUsuario}},
+                        {returnOriginal: false})
 
                     return await Promise.all([totalNotificacionesAdministrador, totalNotiAdmin,
-                        notificacionDelUsuario, notTodosDocsExt(pubsub, db)]).then(
+                        notificacionDelUsuario]).then(
                         // ([consulta, operacion, mutacion]) =>
                         async () =>
                         {
