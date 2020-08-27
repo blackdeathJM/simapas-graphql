@@ -4,10 +4,10 @@ import {PubSub} from "apollo-server-express";
 import {COLECCION, PUB_SUB} from "../../config/global";
 import {ObjectId} from "bson";
 import {obtenerUsuario} from "./usuario.query.resolver";
-import JWT from "../../lib/jwt";
 import {Db} from "mongodb";
 
-async function notSessionUsuario(usuario: string, pubsub: PubSub, db: Db) {
+async function notSessionUsuario(usuario: string, pubsub: PubSub, db: Db)
+{
     await pubsub.publish(PUB_SUB.NOT_USUARIOS_SESSION, {sessionUsuario: obtenerUsuario(usuario, db)});
 }
 
@@ -15,10 +15,12 @@ const mutationUsuarios: IResolvers =
     {
         Mutation:
             {
-                async registroUsuario(_: void, {usuario}, {db}) {
+                async registroUsuario(_: void, {usuario}, {db})
+                {
                     const database = db as Db;
                     const checharUsuario = await database.collection(COLECCION.USUARIOS).findOne({usuario: usuario.usuario});
-                    if (checharUsuario !== null) {
+                    if (checharUsuario !== null)
+                    {
                         return {
                             estatus: false,
                             mensaje: `El usuario ${usuario.usuario} ya existe`,
@@ -27,7 +29,8 @@ const mutationUsuarios: IResolvers =
                     }
                     usuario.contrasena = bcryptjs.hashSync(usuario.contrasena, 10);
                     return await database.collection(COLECCION.USUARIOS).insertOne(usuario).then(
-                        async () => {
+                        async () =>
+                        {
                             // aqui ponemos la subcripcion si se requiere
                             return {
                                 estatus: true,
@@ -36,7 +39,8 @@ const mutationUsuarios: IResolvers =
                             };
                         }
                     ).catch(
-                        async () => {
+                        async () =>
+                        {
                             return {
                                 estatus: false,
                                 mensaje: 'Usuario no se puede registrar',
@@ -45,36 +49,13 @@ const mutationUsuarios: IResolvers =
                         }
                     )
                 },
-                async actualizarUsuario(_: void, {usuario}, {pubsub, db}) {
-                    const database = db as Db;
-                    return await database.collection(COLECCION.USUARIOS).findOneAndUpdate(
-                        {usuario},
-                        {$set: {nombre: usuario.nombre, img: usuario.img}}
-                    ).then(
-                        async () => {
-                            await notSessionUsuario(usuario._id, pubsub, db);
-                            return {
-                                estatus: true,
-                                mensaje: 'Datos actualizados de manera correcta'
-                            }
-                        }
-                    ).catch(
-                        async () => {
-                            {
-                                return {
-                                    estatus: false,
-                                    mensaje: 'Error al intentar actualizar el per de este usuario',
-                                    usuario: null
-                                }
-                            }
-                        }
-                    );
-                },
-                async actualizarRole(_: void, {_id, role}, {db}) {
+                async actualizarRole(_: void, {_id, role}, {db})
+                {
                     const database = db as Db;
                     return await database.collection(COLECCION.USUARIOS).findOneAndUpdate({_id: new ObjectId(_id)},
                         {$set: {role}}, {returnOriginal: false}).then(
-                        async (respuesta: any) => {
+                        async (respuesta: any) =>
+                        {
                             return {
                                 estatus: true,
                                 mensaje: 'Se ha modificado con exito el rol del usuario',
@@ -82,7 +63,8 @@ const mutationUsuarios: IResolvers =
                             }
                         }
                     ).catch(
-                        async () => {
+                        async () =>
+                        {
                             return {
                                 estatus: false,
                                 mensaje: 'Error al tratar de modificar roles',
@@ -91,48 +73,47 @@ const mutationUsuarios: IResolvers =
                         }
                     )
                 },
-                async actualizarContrasena(_void, {_id, contrasena}, {token, db}) {
-                    const database = db as Db;
+                async actualizarContrasena(_void, {usuario, actualContrasena, nvaContrasena}, {db})
+                {
+                    const baseDatos = db as Db;
+                    // let infoToken = new JWT().verificar(token);
+                    // console.log(infoToken);
+                    console.log('Contrasenas recibidas', actualContrasena, nvaContrasena);
+                    return true;
 
-                    let infoToken = new JWT().verificar(token);
-                    console.log('validacion token', infoToken);
-                    if (infoToken) {
-                        return {
-                            estatus: false,
-                            mensaje: infoToken,
-                            usuario: null
+                },
+                async actualizarImgPerfil(_: void, {usuario, img}, {db})
+                {
+                    const baseDatos = db as Db;
+                    return await baseDatos.collection(COLECCION.USUARIOS).findOneAndUpdate(
+                        {usuario},
+                        {$set: {img}},
+                        {returnOriginal: false}).then(
+                        async (usuario) =>
+                        {
+                            return {
+                                estatus: true,
+                                mensaje: 'La imagen del usuario se ha cambiado con exito',
+                                usuario: usuario.value
+                            }
                         }
-                    } else {
-                        const nvaContrasena = bcryptjs.hashSync(contrasena, 10);
-                        console.log('nueva contrasena', nvaContrasena);
-                        /*                        return await db.collection(ENTIDAD_DB.USUARIOS).findOneAndUpdate(
-                                                    {_id: new ObjectId(_id)},
-                                                    {$set: {contrasena: nvaContrasena}}
-                                                ).then(
-                                                    async () => {
-                                                        return {
-                                                            status: true,
-                                                            mensaje: 'La contrasena fue modificada con exito'
-                                                        }
-                                                    }
-                                                ).catch(
-                                                    async (error: any) => {
-                                                        return {
-                                                            status: false,
-                                                            mensaje: 'Ocurrio un error al intentar modificar la contrasena' + error,
-                                                            usuario: null
-                                                        }
-                                                    }
-                                                )*/
-                    }
+                    ).catch(
+                        async (error) =>
+                        {
+                            return {
+                                estatus: false,
+                                mensaje: 'Error al tratar de actualizar la imagen de perfil: ' + error,
+                                usuario: null
+                            }
+                        }
+                    )
                 },
-                async actualizarImgPerfil(_: void, {_id, img}, {db}) {
-
-                },
-                async eliminarUsuario(_: void, {_id}, {pubsub, db}) {
+                async eliminarUsuario(_: void, {_id}, {pubsub, db})
+                {
                     const database = db as Db;
                     return await database.collection(COLECCION.USUARIOS).findOneAndDelete({_id: new ObjectId(_id)}).then(
-                        async () => {
+                        async () =>
+                        {
                             await notSessionUsuario(_id, pubsub, db);
                             return {
                                 estatus: true,
@@ -141,7 +122,8 @@ const mutationUsuarios: IResolvers =
                             }
                         }
                     ).catch(
-                        async () => {
+                        async () =>
+                        {
                             return {
                                 estatus: false,
                                 mensaje: 'Ocurrio un error al tratar de eliminar el usuario',

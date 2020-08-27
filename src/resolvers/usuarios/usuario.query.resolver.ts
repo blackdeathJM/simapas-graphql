@@ -61,8 +61,6 @@ const queryUsuarios: IResolvers =
                 },
 
                 async validarTokenG(_, __, {token}) {
-                    console.log('Token recibido', token);
-
                     let infoToken: any = new JWT().verificar(token);
                     try {
                         if (infoToken) {
