@@ -5,6 +5,7 @@ import {COLECCION, PUB_SUB} from "../../config/global";
 import {ObjectId} from "bson";
 import {obtenerUsuario} from "./usuario.query.resolver";
 import {Db} from "mongodb";
+import JWT from "../../lib/jwt";
 
 async function notSessionUsuario(usuario: string, pubsub: PubSub, db: Db)
 {
@@ -73,15 +74,65 @@ const mutationUsuarios: IResolvers =
                         }
                     )
                 },
+
                 async actualizarContrasena(_void, {usuario, actualContrasena, nvaContrasena}, {db})
                 {
                     const baseDatos = db as Db;
-                    // let infoToken = new JWT().verificar(token);
-                    // console.log(infoToken);
-                    console.log('Contrasenas recibidas', actualContrasena, nvaContrasena);
-                    return true;
-
+                    // buscar el usuario
+                    return await baseDatos.collection(COLECCION.USUARIOS).findOne({usuario}).then(
+                        async (respuesta) =>
+                        {
+                            if (respuesta.usuario)
+                            {
+                                if (bcryptjs.compareSync(actualContrasena, respuesta.contrasena))
+                                {
+                                    respuesta.contrasena = bcryptjs.hashSync(nvaContrasena, 10);
+                                    return await baseDatos.collection(COLECCION.USUARIOS).findOneAndUpdate(
+                                        {usuario},
+                                        {$set: {contrasena: respuesta.contrasena}},
+                                        {returnOriginal: false}).then(
+                                        async (contrasenaCambiada) =>
+                                        {
+                                            delete contrasenaCambiada.value.contrasena;
+                                            const nvaContrasena = contrasenaCambiada.value
+                                            return {
+                                                estatus: true,
+                                                mensaje: 'La contrasena se ha cambiado con exito',
+                                                token: new JWT().firmar({nvaContrasena})
+                                            }
+                                        }
+                                    ).catch(
+                                        async (error) =>
+                                        {
+                                            return {
+                                                estatus: false,
+                                                mensaje: 'Ocurrio un error al tratar de actualizar la contrasena' + error,
+                                                token: null
+                                            }
+                                        }
+                                    )
+                                } else
+                                {
+                                    return {
+                                        estatus: false,
+                                        mensaje: 'Tu contrasena actual no coincide con la que esta registrada',
+                                        token: null
+                                    }
+                                }
+                            }
+                        }
+                    ).catch(
+                        async (error) =>
+                        {
+                            return {
+                                estatus: false,
+                                mensaje: 'Ocurrio un error inseperado' + error,
+                                token: null
+                            }
+                        }
+                    )
                 },
+
                 async actualizarImgPerfil(_: void, {usuario, img}, {db})
                 {
                     const baseDatos = db as Db;
@@ -108,6 +159,7 @@ const mutationUsuarios: IResolvers =
                         }
                     )
                 },
+
                 async eliminarUsuario(_: void, {_id}, {pubsub, db})
                 {
                     const database = db as Db;

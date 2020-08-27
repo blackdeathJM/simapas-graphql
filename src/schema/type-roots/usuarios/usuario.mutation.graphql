@@ -9,5 +9,5 @@ extend type Mutation
     "USUARIO - Actualizar imagen de perfil"
     actualizarImgPerfil(usuario: String!, img: String): UsuarioResType!
     "USUARIO - Actualizar contrasena"
-    actualizarContrasena(usuario: String!, actualContrasena: String!, nvaContrasena: String!): Boolean!
+    actualizarContrasena(usuario: String!, actualContrasena: String!, nvaContrasena: String!): UsuarioTokenType!
 }

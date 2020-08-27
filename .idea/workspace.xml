@@ -22,7 +22,6 @@
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Se creo de nuevo la documentacion">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.query.resolver.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/schema/type-roots/usuarios/usuario.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/usuarios/usuario.mutation.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -140,7 +139,7 @@
       <workItem from="1598395437879" duration="13355000" />
       <workItem from="1598472660565" duration="1312000" />
       <workItem from="1598488075972" duration="1998000" />
-      <workItem from="1598498074728" duration="10987000" />
+      <workItem from="1598498074728" duration="15706000" />
     </task>
     <task id="LOCAL-00001" summary="Creacion del mutate para actualizar los roles de los usuarios">
       <created>1596572391127</created>
@@ -289,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598502988243</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Se creo de nuevo la documentacion">
+      <created>1598526694929</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1598526694929</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,10 +341,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="468" y="165" width="1230" height="710" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598478425542" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1598502990146">
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1598526696627">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598502990146" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598526696627" />
     <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597551696634" />
     <state x="1920" y="153" width="1682" height="845" maximized="true" key="dock-window-1" timestamp="1598518902802">
       <screen x="1920" y="0" width="1920" height="1040" />
