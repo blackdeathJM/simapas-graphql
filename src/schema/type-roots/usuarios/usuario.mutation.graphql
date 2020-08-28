@@ -7,7 +7,7 @@ extend type Mutation
     "USUARIO - Actualizar role"
     actualizarRole(_id: ID! role: [ROLE!]): UsuarioResType!
     "USUARIO - Actualizar imagen de perfil"
-    actualizarImgPerfil(usuario: String!, img: String): UsuarioResType!
+    actualizarImgPerfil(usuario: String!, img: String): UsuarioTokenType!
     "USUARIO - Actualizar contrasena"
     actualizarContrasena(usuario: String!, actualContrasena: String!, nvaContrasena: String!): UsuarioTokenType!
 }

@@ -1,26 +1,19 @@
 import {IResolvers} from "graphql-tools";
-import {withFilter} from 'apollo-server'
+import {PubSub} from 'apollo-server'
 import {PUB_SUB} from "../../config/global";
 
 const usuarioSubscriptionResolver: IResolvers =
     {
         Subscription:
             {
-                sessionUsuario:
+                cambiarRoleUsuario:
                     {
-                        /*                        subscribe: (_: void, __: void, {pubsub}) => {
-                                                    return pubsub.asyncIterator([SUBSCRIPCIONES.NOT_USUARIOS_SESSION]);
-                                                }*/
-
-                        subscribe: withFilter((_, __, {pubsub}) =>
-                                pubsub.asyncIterator([PUB_SUB.NOT_USUARIOS_SESSION]),
-                            (payload, args) => {
-                                console.log('payload', payload.sessionUsuario);
-                                console.log('variables', args);
-                                return true;
-                            })
+                        subscribe: (_, __, {pubsub}) =>
+                        {
+                            const subscripcion = pubsub as PubSub;
+                            return subscripcion.asyncIterator([PUB_SUB.NOT_CAMBIO_ROLE])
+                        }
                     }
-
             }
     };
 export default usuarioSubscriptionResolver;

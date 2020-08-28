@@ -10,6 +10,10 @@ extend type Mutation
     acNotificacionPorUsuario(id: ID!, usuario: String!, notificarRespDelUsuario: Boolean!, notificarAdministrador: Int!): Boolean
 
 
+
+
+
+
     "DOC EXTERNA: Actualizar el campo de docUrl por usuario para su aprobacion"
     acDocExtUrlUsuario(id: String!, usuario: String!, docUrl: String!): DocExtResType!
     "DOC EXTERNA: Actualizar el campo de observaciones y estatus por usuario"

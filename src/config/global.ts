@@ -1,10 +1,12 @@
 import environments from "./environments";
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== 'production')
+{
     const environment = environments;
 }
 
-export enum COLECCION {
+export enum COLECCION
+{
     DEPARTAMENTOS = 'departamentos',
     USUARIOS = 'usuarios',
     DOC_INTERNA = 'docInterna',
@@ -12,11 +14,13 @@ export enum COLECCION {
     FOLIOS = 'folios'
 }
 
-export enum PUB_SUB {
+export enum PUB_SUB
+{
     NOT_DOC_INTERNA = 'todosDocInterna',
     DOC_EXT = 'obDocsExtTodos',
     DOC_EXT_USUSUBPROCESO = 'usuariosSubproceso',
-    NOT_USUARIOS_SESSION = 'usuarioSession'
+    NOT_USUARIOS_SESSION = 'usuarioSession',
+    NOT_CAMBIO_ROLE = 'usuarioCambioRole'
 }
 
 const dia = new Date().getDate();

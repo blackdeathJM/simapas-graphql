@@ -50,13 +50,16 @@ const mutationUsuarios: IResolvers =
                         }
                     )
                 },
-                async actualizarRole(_: void, {_id, role}, {db})
+
+                async actualizarRole(_: void, {_id, role}, {pubsub, db})
                 {
                     const database = db as Db;
                     return await database.collection(COLECCION.USUARIOS).findOneAndUpdate({_id: new ObjectId(_id)},
                         {$set: {role}}, {returnOriginal: false}).then(
                         async (respuesta: any) =>
                         {
+                            const subscripcion = pubsub as PubSub;
+                            await subscripcion.publish(PUB_SUB.NOT_CAMBIO_ROLE, {cambiarRoleUsuario: respuesta.value});
                             return {
                                 estatus: true,
                                 mensaje: 'Se ha modificado con exito el rol del usuario',
@@ -142,10 +145,12 @@ const mutationUsuarios: IResolvers =
                         {returnOriginal: false}).then(
                         async (usuario) =>
                         {
+                            const usuarioPerfil = usuario.value;
+                            delete usuarioPerfil.contrasena;
                             return {
                                 estatus: true,
                                 mensaje: 'La imagen del usuario se ha cambiado con exito',
-                                usuario: usuario.value
+                                token: new JWT().firmar(usuarioPerfil)
                             }
                         }
                     ).catch(
@@ -154,7 +159,7 @@ const mutationUsuarios: IResolvers =
                             return {
                                 estatus: false,
                                 mensaje: 'Error al tratar de actualizar la imagen de perfil: ' + error,
-                                usuario: null
+                                token: null
                             }
                         }
                     )

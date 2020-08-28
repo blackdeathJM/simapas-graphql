@@ -1,5 +1,5 @@
 type Subscription
 {
-    "Cambios en el inicio de sesion"
-    sessionUsuario(_id: ID): UsuarioType
+    "Cambios en roles"
+    cambiarRoleUsuario: UsuarioTokenType!
 }

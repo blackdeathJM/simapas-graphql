@@ -21,8 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Se creo de nuevo la documentacion">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/global.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/global.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/docExt.subscription.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/docExt.subscription.resolver.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.mutation.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.subscription.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.subscription.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.mutation.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/schema/type-roots/usuarios/usuario.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/usuarios/usuario.mutation.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/usuarios/usuario.subscription.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/usuarios/usuario.subscription.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +144,11 @@
       <workItem from="1598395437879" duration="13355000" />
       <workItem from="1598472660565" duration="1312000" />
       <workItem from="1598488075972" duration="1998000" />
-      <workItem from="1598498074728" duration="15706000" />
+      <workItem from="1598498074728" duration="15741000" />
+      <workItem from="1598569253006" duration="1216000" />
+      <workItem from="1598572833249" duration="2421000" />
+      <workItem from="1598584793043" duration="632000" />
+      <workItem from="1598597231049" duration="6857000" />
     </task>
     <task id="LOCAL-00001" summary="Creacion del mutate para actualizar los roles de los usuarios">
       <created>1596572391127</created>
@@ -295,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598526694929</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Se creo de nuevo la documentacion">
+      <created>1598534869242</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1598534869243</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,6 +337,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Se creo de nuevo la documentacion" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1598584621576">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598584621576" />
     <state width="1879" height="148" key="GridCell.Tab.0.bottom" timestamp="1598223730415">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -341,15 +361,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="468" y="165" width="1230" height="710" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598478425542" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1598526696627">
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1598534871587">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598526696627" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598534871587" />
     <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597551696634" />
-    <state x="1920" y="153" width="1682" height="845" maximized="true" key="dock-window-1" timestamp="1598518902802">
+    <state x="1920" y="139" width="1674" height="884" maximized="true" key="dock-window-1" timestamp="1598611647744">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="1920" y="153" width="1682" height="845" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598518902802" />
+    <state x="1920" y="139" width="1674" height="884" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598611647744" />
     <state x="2188" y="108" width="1668" height="914" maximized="true" key="dock-window-2" timestamp="1597968197126">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
