@@ -64,19 +64,6 @@ const queryDocExt: IResolvers =
                     //     }
                     // ]).toArray().then(async (resultado) => resultado).catch(error => console.log('Error: ' + error));
                 },
-
-// =====================================================================================================================
-// ============================================================================================================
-            async docExtRel(_, {_id}, {db})
-            {
-                const database = db as Db;
-                return await database.collection(COLECCION.DOC_EXTERNA).findOne({_id: new ObjectId(_id)});
-            },
-            async docEntreFechas(_, {fechaRecepcion}, {db})
-            {
-                const database = db as Db;
-                return await database.collection(COLECCION.DOC_EXTERNA).find({$gte: fechaRecepcion, $lte: fechaRecepcion}).toArray();
-            }
         }
     };
 export default queryDocExt;

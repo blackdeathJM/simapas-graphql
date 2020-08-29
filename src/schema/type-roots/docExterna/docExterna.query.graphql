@@ -6,10 +6,4 @@ type Query
     todosLosDocsPorUsuario(usuario: String!): [DocExtType]
     "DOC EXTERNA: Obtener documentos por usuario y subproceso para mostrar en el area de usuarios"
     usuarioSubproceso(usuario: String!, subprocesos: [String!]!): [DocExtType]
-
-
-    "DOC EXTERNA: Relacion con folios"
-    docExtRel(_id: ID!): DocExtType
-    "DOC EXTERNA: Consulta entre fechas"
-    docEntreFechas(fechaRecepcion: String!): [DocExtType]
 }
