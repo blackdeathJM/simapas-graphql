@@ -58,8 +58,15 @@ const mutationUsuarios: IResolvers =
                         {$set: {role}}, {returnOriginal: false}).then(
                         async (respuesta: any) =>
                         {
+                            console.log('actualizar role', respuesta.value);
+
+                            delete respuesta.value.contrasena;
+                            respuesta.value.contrasena = '*******';
+                            const nvoTokenRole = respuesta.value;
                             const subscripcion = pubsub as PubSub;
-                            await subscripcion.publish(PUB_SUB.NOT_CAMBIO_ROLE, {cambiarRoleUsuario: respuesta.value});
+
+                            await subscripcion.publish(PUB_SUB.NOT_CAMBIO_ROLE, {cambiarRoleUsuario: new JWT().firmar(nvoTokenRole)});
+
                             return {
                                 estatus: true,
                                 mensaje: 'Se ha modificado con exito el rol del usuario',
