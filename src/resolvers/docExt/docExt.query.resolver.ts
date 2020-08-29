@@ -1,6 +1,5 @@
 import {IResolvers} from "graphql-tools";
 import {COLECCION} from "../../config/global";
-import {ObjectId} from "bson";
 import {Db} from "mongodb";
 import {filtroDocsExt} from "./proyecciones";
 
@@ -64,6 +63,12 @@ const queryDocExt: IResolvers =
                     //     }
                     // ]).toArray().then(async (resultado) => resultado).catch(error => console.log('Error: ' + error));
                 },
-        }
+                async docsAprobadosPorUsuario(_, {usuario, autorizado}, {db})
+                {
+                    const baseDatos = db as Db;
+                    return await baseDatos.collection(COLECCION.DOC_EXTERNA).find(
+                        {usuarioDestino: {$elemMatch: {usuario, autorizado}}}).toArray();
+                }
+            }
     };
 export default queryDocExt;

@@ -16,19 +16,11 @@ const queryFolios: IResolvers =
                     const database = db as Db;
                     return await database.collection(COLECCION.FOLIOS).countDocuments().then(
                         async (ultimoFolio: number) => {
-                            return {
-                                estatus: true,
-                                mensaje: 'Consulta realizada correctamente',
-                                ultimoFolio
-                            }
+                            return ultimoFolio
                         }
                     ).catch(
                         async () => {
-                            return {
-                                estatus: false,
-                                mensaje: 'Error al tratar extraer el ultimo folio registrado',
-                                ultimoFolio: 0
-                            }
+                            return 0
                         }
                     )
                 },

@@ -1,9 +1,9 @@
 extend type Query
 {
+    "DOCUMENTO - Consultar el ultimo folio registrado"
+    ultimoFolio: Int!
     "DOCUMENTO - Obtener todos los folios"
     obtenerFoliosTodos: [FolioType]
-    "DOCUMENTO - Consultar el ultimo folio registrado"
-    ultimoFolio: UltimoFolioType!
     "DOCUMENTO - Consultar los folios asignados a un usuario regreg"
     folioUsuario(asigUsuario: String!): [FolioType]
 }
