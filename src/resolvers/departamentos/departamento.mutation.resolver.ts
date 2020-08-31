@@ -1,50 +1,17 @@
 import {IResolvers} from "graphql-tools";
-import {COLECCION} from "../../config/global";
-import {ObjectId} from "bson";
-import {Db} from "mongodb";
+import DepartamentoMutationService from "../../services/departamentos/departamento-mutation.service";
 
 const mutationDeptos: IResolvers =
     {
         Mutation:
             {
-                async registroDepto(_: void, {departamento}, {db}) {
-                    return await db.collection(COLECCION.DEPARTAMENTOS).insertOne(departamento).then(
-                        async (depto: any) => {
-                            return {
-                                estatus: true,
-                                mensaje: 'Departamento insertado satisfactoriamente',
-                                //En la respuesta obtenemos el primer elemento del array de objectos que regresa el then
-                                departamento: depto.ops[0]
-                            }
-                        }
-                    ).catch(
-                        async (error: any) => {
-                            return {
-                                estatus: false,
-                                mensaje: 'Ocurrio un error al tratar de registrar el departamento', error,
-                                departamento: null
-                            }
-                        });
+                async registroDepto(_, {departamento}, {db})
+                {
+                    return new DepartamentoMutationService(_, {departamento}, {db}).registrarElemento();
                 },
-                async actualizarDepto(_: void, {deptoInput}, {db}) {
-                    const database = db as Db;
-                    return await database.collection(COLECCION.DEPARTAMENTOS).findOneAndUpdate({_id: new ObjectId(deptoInput._id)},
-                        {$set: {nombre: deptoInput.nombre}}, {returnOriginal: false}).then(
-                        async (departamento: any) => {
-                            return {
-                                estatus: true,
-                                mensaje: 'Departamento actualizado correctamente',
-                                departamento: departamento.value
-                            }
-                        }
-                    ).catch(
-                        async (error: any) => {
-                            return {
-                                estatus: false,
-                                mensaje: 'Error al intentar actualizar el departamento', error,
-                                departamento: null
-                            }
-                        });
+                async actualizarDepto(_, {departamento}, {db})
+                {
+                    return new DepartamentoMutationService(_, {departamento}, {db}).actualizarElemento();
                 },
             }
     };

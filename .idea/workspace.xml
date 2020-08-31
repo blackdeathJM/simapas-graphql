@@ -19,11 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Se creo de nuevo la documentacion">
+    <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="factorizacion de departamentos terminada">
+      <change afterPath="$PROJECT_DIR$/src/services/departamentos/departamento-mutation.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/validaciones.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/departamentos/departamento.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/departamentos/departamento.mutation.resolver.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/departamentos/departamento.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/departamentos/departamento.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/departamento.services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/departamento.services.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/departamentos/departamento.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/departamentos/departamento.mutation.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/departamento.services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/departamentos/departamento-query.services.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +59,9 @@
     <property name="ts.external.directory.path" value="D:\Documents\Proyectos\Backend\simapas-graphql\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\services\departamentos" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\per" />
@@ -157,7 +164,7 @@
       <workItem from="1598860217109" duration="134000" />
       <workItem from="1598860795419" duration="9406000" />
       <workItem from="1598889720953" duration="818000" />
-      <workItem from="1598891528777" duration="1819000" />
+      <workItem from="1598891528777" duration="10528000" />
     </task>
     <task id="LOCAL-00001" summary="Creacion del mutate para actualizar los roles de los usuarios">
       <created>1596572391127</created>
@@ -348,7 +355,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598872099622</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="factorizacion de departamentos terminada">
+      <created>1598893842271</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1598893842271</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,7 +385,8 @@
     <MESSAGE value="Creacion del mutate para actualizar los roles de los usuarios" />
     <MESSAGE value="se coloco el tipado a la base de datos" />
     <MESSAGE value="Se creo de nuevo la documentacion" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se creo de nuevo la documentacion" />
+    <MESSAGE value="factorizacion de departamentos terminada" />
+    <option name="LAST_COMMIT_MESSAGE" value="factorizacion de departamentos terminada" />
   </component>
   <component name="WindowStateProjectService">
     <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1598584621576">
@@ -398,23 +413,27 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="468" y="165" width="1230" height="710" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598478425542" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1598872102135">
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1598893843959">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598872102135" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598893843959" />
     <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597551696634" />
-    <state x="158" y="188" width="1712" height="872" maximized="true" key="dock-window-1" timestamp="1598674312647">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="158" y="188" width="1712" height="872" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598674312647" />
-    <state x="2207" y="91" width="1649" height="925" maximized="true" key="dock-window-2" timestamp="1598690346856">
+    <state x="2016" y="273" width="1564" height="870" maximized="true" key="dock-window-1" timestamp="1598894427627">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2207" y="91" width="1649" height="925" maximized="true" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598690346856" />
-    <state x="1920" y="256" width="1668" height="794" maximized="true" key="dock-window-3" timestamp="1597982940840">
+    <state x="2016" y="273" width="1564" height="870" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598894427626" />
+    <state x="2197" y="0" width="1564" height="870" maximized="true" key="dock-window-2" timestamp="1598900134247">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="1920" y="256" width="1668" height="794" maximized="true" key="dock-window-3/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597982940840" />
+    <state x="2197" y="0" width="1564" height="870" maximized="true" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598900134247" />
+    <state x="2120" y="36" width="1564" height="909" maximized="true" key="dock-window-3" timestamp="1598901484043">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2120" y="36" width="1564" height="909" maximized="true" key="dock-window-3/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598901484043" />
+    <state x="2013" y="46" width="1564" height="909" maximized="true" key="dock-window-4" timestamp="1598901484043">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2013" y="46" width="1564" height="909" maximized="true" key="dock-window-4/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598901484043" />
     <state x="713" y="416" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1597058189343">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -1,8 +1,8 @@
-import {COLECCION} from "../config/global";
-import ResolversOperacionesService from "./resolver-operaciones";
-import {IContextData} from "../interfaces/context-data-interface";
+import {COLECCION} from "../../config/global";
+import ResolversOperacionesService from "../resolver-operaciones";
+import {IContextData} from "../../interfaces/context-data-interface";
 
-class DepartamentoServices extends ResolversOperacionesService
+class DepartamentoQueryServices extends ResolversOperacionesService
 {
     constructor(root: object, variables: object, context: IContextData)
     {super(root, variables, context);}
@@ -20,4 +20,4 @@ class DepartamentoServices extends ResolversOperacionesService
     }
 }
 
-export default DepartamentoServices;
+export default DepartamentoQueryServices;

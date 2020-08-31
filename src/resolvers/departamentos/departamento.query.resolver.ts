@@ -1,5 +1,5 @@
 import {IResolvers} from "graphql-tools";
-import DepartamentoServices from "../../services/departamento.services";
+import DepartamentoQueryServices from "../../services/departamentos/departamento-query.services";
 
 const queryDeptos: IResolvers =
     {
@@ -7,11 +7,11 @@ const queryDeptos: IResolvers =
             {
                 async obtenerDeptos(_, __, {db})
                 {
-                    return new DepartamentoServices(_, __, {db}).listaElementos();
+                    return new DepartamentoQueryServices(_, __, {db}).listaElementos();
                 },
                 async departamentoID(_, {_id}, {db})
                 {
-                    return new DepartamentoServices(_, {_id}, {db}).elementoDetalle();
+                    return new DepartamentoQueryServices(_, {_id}, {db}).elementoDetalle();
                 }
             }
     };
