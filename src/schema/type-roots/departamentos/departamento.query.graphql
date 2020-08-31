@@ -1,7 +1,7 @@
 extend type Query
 {
     "DEPARTAMENTO - Obtenemos la lista de todos los departamentos"
-    obtenerDepartamentos: [DepartamentoType]
+    obtenerDeptos: RespDepto
     "DEPARTAMENTO - Obterner departamento por ID"
-    departamentoID(_id: ID!): DepartamentoResType
+    departamentoID(_id: ID!): RespDepto
 }

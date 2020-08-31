@@ -1,5 +1,5 @@
 extend type Subscription
 {
     "DEPARTAMENTO - Detectar cambios"
-    cambioDepartamento: [DepartamentoType]
+    cambioDepartamento: [DeptoType]
 }

@@ -1,12 +1,13 @@
-type DepartamentoType implements IDepartamento
+type DeptoType implements IDepartamento
 {
     _id: ID
     nombre: String!
 }
 
-type DepartamentoResType
+type RespDepto
 {
     estatus: Boolean!
     mensaje: String!
-    departamento: DepartamentoType
+    departamento: DeptoType
+    departamentos: [DeptoType]
 }

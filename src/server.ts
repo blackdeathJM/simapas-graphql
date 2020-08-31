@@ -10,6 +10,7 @@ import expressPlayground from 'graphql-playground-middleware-express';
 // import graphqlHTTP from "express-graphql";
 import environments from "./config/environments";
 import {router} from "./configMuter/docs.routes";
+import {IContext} from "./interfaces/context-interface";
 
 if (process.env.NODE_ENV !== 'production')
 {
@@ -42,10 +43,10 @@ async function init()
     const database = new Database();
     const db = await database.init();
 
-    const context: any = async ({req, connection}: any) =>
+    const context: any = async ({req, connection}: IContext) =>
     {
-        const token = req ? req.headers.authorization : connection.authorization;
-        const contexto = req ? req.headers.contexto : connection.contexto;
+        const token = (req) ? req.headers.authorization : connection.authorization;
+        const contexto = (req) ? req.headers.context : connection.context;
         return {db, token, pubsub, contexto};
     };
 

@@ -7,7 +7,7 @@ type UsuarioType implements IUsuario
     contrasena: String!
     role: [ROLE]!
     img: String!
-    departamento: DepartamentoType
+    departamento: DeptoType
 }
 
 type UsuarioResType
