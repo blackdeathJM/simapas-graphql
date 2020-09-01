@@ -3,14 +3,8 @@ import bcryptjs from "bcryptjs";
 import {PubSub} from "apollo-server-express";
 import {COLECCION, PUB_SUB} from "../../config/global";
 import {ObjectId} from "bson";
-import {obtenerUsuario} from "./usuario.query.resolver";
 import {Db} from "mongodb";
 import JWT from "../../lib/jwt";
-
-async function notSessionUsuario(usuario: string, pubsub: PubSub, db: Db)
-{
-    await pubsub.publish(PUB_SUB.NOT_USUARIOS_SESSION, {sessionUsuario: obtenerUsuario(usuario, db)});
-}
 
 const mutationUsuarios: IResolvers =
     {
@@ -178,7 +172,6 @@ const mutationUsuarios: IResolvers =
                     return await database.collection(COLECCION.USUARIOS).findOneAndDelete({_id: new ObjectId(_id)}).then(
                         async () =>
                         {
-                            await notSessionUsuario(_id, pubsub, db);
                             return {
                                 estatus: true,
                                 mensaje: 'El usuarios fue eliminado con exito',

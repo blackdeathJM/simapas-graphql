@@ -19,30 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="factorizacion de departamentos terminada">
-      <change afterPath="$PROJECT_DIR$/src/resolvers/usuarios/models/usuario-interface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-mutation-service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-query-service.ts" afterDir="false" />
+    <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Refactorizando usuarios">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/configMuter/docs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/configMuter/docs.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/departamentos/departamento.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/departamentos/departamento.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/departamentos/departamento.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/departamentos/departamento.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/docExt.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/docExt.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/docExt.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/docExt.query.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/operaciones-db.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/departamentos/services/departamento-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/departamentos/services/departamento-mutation.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/departamentos/services/departamento-query.services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/departamentos/services/departamento-query.services.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-query-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-query-service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.mutation.resolver.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/usuario.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/usuario.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.mutation.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.query.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.subscription.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.subscription.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/docInterna/docInterna.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/docInterna/docInterna.query.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/folios/folios.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/folios/folios.query.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/usuarios/usuario.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/usuarios/usuario.mutation.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/usuarios/usuario.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/usuarios/usuario.query.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/departamentos/departamento-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/departamentos/services/departamento-mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/departamentos/departamento-query.services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/departamentos/services/departamento-query.services.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/validaciones.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/validaciones.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +166,11 @@
       <workItem from="1598860795419" duration="9406000" />
       <workItem from="1598889720953" duration="818000" />
       <workItem from="1598891528777" duration="14403000" />
-      <workItem from="1598921445934" duration="5022000" />
+      <workItem from="1598921445934" duration="5284000" />
+      <workItem from="1598930759574" duration="6235000" />
+      <workItem from="1598940251468" duration="5364000" />
+      <workItem from="1598947419078" duration="469000" />
+      <workItem from="1598947923734" duration="4611000" />
     </task>
     <task id="LOCAL-00001" summary="Creacion del mutate para actualizar los roles de los usuarios">
       <created>1596572391127</created>
@@ -385,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598903105976</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Refactorizando usuarios">
+      <created>1598929180196</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1598929180196</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,13 +406,18 @@
     <MESSAGE value="se coloco el tipado a la base de datos" />
     <MESSAGE value="Se creo de nuevo la documentacion" />
     <MESSAGE value="factorizacion de departamentos terminada" />
-    <option name="LAST_COMMIT_MESSAGE" value="factorizacion de departamentos terminada" />
+    <MESSAGE value="Refactorizando usuarios" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactorizando usuarios" />
   </component>
   <component name="WindowStateProjectService">
     <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1598584621576">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598584621576" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598950150280">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598950150280" />
     <state width="1879" height="148" key="GridCell.Tab.0.bottom" timestamp="1598859207843">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -436,15 +438,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="468" y="165" width="1230" height="710" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598478425542" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1598903107420">
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1598929182287">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598903107420" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598929182287" />
     <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597551696634" />
-    <state x="1920" y="57" width="1557" height="908" maximized="true" key="dock-window-1" timestamp="1598928956209">
+    <state x="1951" y="24" width="1709" height="922" maximized="true" key="dock-window-1" timestamp="1598951067500">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="1920" y="57" width="1557" height="908" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598928956209" />
+    <state x="1951" y="24" width="1709" height="922" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598951067500" />
     <state x="2197" y="0" width="1564" height="870" maximized="true" key="dock-window-2" timestamp="1598900134247">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

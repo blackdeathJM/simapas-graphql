@@ -1,7 +1,5 @@
-import {buscarElementos, buscarUnElemento, buscarUnoYActualizar, insertarUnElemento} from "../lib/operaciones-db";
 import {IVariables} from "../interfaces/variables-interface";
 import {IContextData} from "../interfaces/context-data-interface";
-import {ObjectId} from "bson";
 
 class ResolversOperacionesService
 {
@@ -9,18 +7,17 @@ class ResolversOperacionesService
     {
     }
 
-    protected async lista(coleccion: string, element: string)
+    protected async arregloDeElementos(coleccion: string, mensaje: string, filtro: object)
     {
         try
         {
-            return await buscarElementos(this.context.db!, coleccion).then(
+            return await this.context.db!.collection(coleccion).find(filtro).toArray().then(
                 async (elementos) =>
                 {
                     return {
                         estatus: true,
-                        mensaje: `Lista de ${element} cargada correctamente`,
-                        elementos: elementos,
-                        elemento: null
+                        mensaje: `Lista de ${mensaje} cargada correctamente`,
+                        elementos: elementos
                     }
                 }
             )
@@ -28,26 +25,24 @@ class ResolversOperacionesService
         {
             return {
                 estatus: false,
-                mensaje: `No se pudo cargar la lista de ${element}: ${e}`,
-                elementos: null,
-                elemento: null,
+                mensaje: `No se pudo cargar la lista de ${mensaje}: ${e}`,
+                elementos: null
             }
         }
     }
 
-    protected async busquedaElementoPorID(coleccion: string)
+    protected async buscarUnElemento(mensaje: string, coleccion: string, filtro: object, opciones: object)
     {
         try
         {
-            return await buscarUnElemento(this.context.db!, coleccion, {_id: new ObjectId(this.variables._id)}).then(
+            return await this.context.db!.collection(coleccion).findOne(filtro, opciones).then(
                 (res) =>
                 {
-                    console.log('resolver-operations', res);
                     if (res)
                     {
                         return {
                             estatus: true,
-                            mensaje: `los ${coleccion} ha sido cargada correctamente`,
+                            mensaje: `${mensaje}`,
                             elemento: res
                         };
                     }
@@ -70,50 +65,16 @@ class ResolversOperacionesService
         }
     }
 
-    protected async buscarElementoPersonalizadoFiltro(coleccion: string, filtro: object)
+    protected async agregarUnElemento(mensaje: string, coleccion: string, documento: object)
     {
         try
         {
-            return await buscarUnElemento(this.context.db!, coleccion, filtro).then(
-                (res) =>
-                {
-                    if (res)
-                    {
-                        return {
-                            estatus: true,
-                            mensaje: `los ${coleccion} ha sido cargada correctamente`,
-                            elemento: res
-                        };
-                    }
-                }
-            ).catch((e) =>
-            {
-                return {
-                    estatus: false,
-                    mensaje: `Los ${coleccion} no se han obtenido verifica tus parametros de consulta`,
-                    elemento: null
-                }
-            });
-        } catch (e)
-        {
-            return {
-                estatus: false,
-                mensaje: `Ha ocurrido un error inesperado: ${e}`,
-                elemento: null
-            }
-        }
-    }
-
-    protected async agregarUnElemento(coleccion: string, documento: object, etiqueta: string)
-    {
-        try
-        {
-            return await insertarUnElemento(this.context.db!, coleccion, documento).then(
+            return await this.context.db?.collection(coleccion).insertOne(documento).then(
                 (res) =>
                 {
                     return {
                         estatus: true,
-                        mensaje: `El documento ${etiqueta} se ha agregado correctamente a la coleccion`,
+                        mensaje: ``,
                         elemento: res.ops[0]
                     }
                 }
@@ -122,7 +83,7 @@ class ResolversOperacionesService
                 {
                     return {
                         estatus: false,
-                        mensaje: `Ha ocurrio un error al tratar de registrar ${etiqueta}: ${error}`,
+                        mensaje: `${mensaje}: ${error}`,
                         elemento: null
                     }
                 }
@@ -131,22 +92,23 @@ class ResolversOperacionesService
         {
             return {
                 estatus: false,
-                mensaje: `Ha ocurrido un error inesperado al tratar de registrar ${etiqueta}: ${e}`,
+                mensaje: `Ha ocurrido un error inesperado al tratar de registrar: ${e}`,
                 elemento: null
             }
         }
     }
 
-    protected async actualizarUnElemento(coleccion: string, filtro: object, actualizar: object, opciones: object, etiqueta: string)
+    protected async buscarUnoYActualizar(mensaje: string, coleccion: string, filtro: object, actualizar: object, opciones: object)
     {
         try
         {
-            return await buscarUnoYActualizar(this.context.db!, coleccion, filtro, actualizar, opciones).then(
+            return await this.context.db!.collection(coleccion).findOneAndUpdate(filtro, actualizar, opciones).then(
                 (res) =>
                 {
+                    console.log('respuesta', res);
                     return {
                         estatus: true,
-                        mensaje: `El documento ${etiqueta} se ha actualizado correctamente`,
+                        mensaje: `${mensaje}`,
                         elemento: res.value
                     }
                 }
@@ -155,7 +117,7 @@ class ResolversOperacionesService
                 {
                     return {
                         estatus: false,
-                        mensaje: `Ha ocurrido un error al tratar de actualizar ${etiqueta}: ${error}`,
+                        mensaje: `${mensaje}: ${error}`,
                         elemento: null
                     }
                 }

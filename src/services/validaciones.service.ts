@@ -1,5 +1,3 @@
-import {Db} from "mongodb";
-
 class ValidacionesService
 {
     constructor() {}
@@ -7,6 +5,11 @@ class ValidacionesService
     public static checarDato(valor: string)
     {
         return (!(valor === '' || valor === undefined));
+    }
+
+    public static checarObjecto(objecto: object)
+    {
+        return (objecto === null || objecto === undefined);
     }
 
     // async checarEnBaseDatosQueNoExiste(valor: object, coleccion: string)

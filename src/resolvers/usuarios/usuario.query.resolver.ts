@@ -1,9 +1,8 @@
 import {IResolvers} from "graphql-tools";
-import bcryptjs from "bcryptjs";
 import JWT from "../../lib/jwt";
+import UsuarioQueryService from "./services/usuario-query-service";
 import {COLECCION} from "../../config/global";
 import {Db} from "mongodb";
-import UsuarioQueryService from "./services/usuario-query-service";
 
 export async function obtenerUsuario(usuario: any, db: Db)
 {
@@ -38,34 +37,11 @@ const queryUsuarios: IResolvers =
                 },
                 async buscarUsuario(_, {usuario}, {db})
                 {
-                    return new UsuarioQueryService(_, {usuario}, {db}).buscarUsuarioPorUsuario();
+                    return new UsuarioQueryService(_, {usuario}, {db}).buscarPorUsuario();
                 },
                 async login(_, {usuario, contrasena}, {db})
                 {
-                    const database = db as Db;
-                    const loginUsuario = await database.collection(COLECCION.USUARIOS).findOne({usuario});
-                    if (loginUsuario === null)
-                    {
-                        return {
-                            estatus: false,
-                            mensaje: 'Login incorrectos el usuarios no existe',
-                            token: null
-                        };
-                    }
-                    if (!bcryptjs.compareSync(contrasena, loginUsuario.contrasena))
-                    {
-                        return {
-                            estatus: false,
-                            mensaje: 'Login incorrecto, la contraseña es incorrecta',
-                            token: null
-                        };
-                    }
-                    delete loginUsuario.contrasena;
-                    return {
-                        estatus: true,
-                        mensaje: 'Login correcto',
-                        token: new JWT().firmar({loginUsuario})
-                    };
+                    return new UsuarioQueryService(_, {usuario: usuario, contrasena: contrasena}, {db}).loginUsuario();
                 },
 
                 async validarTokenG(_, __, {token})
