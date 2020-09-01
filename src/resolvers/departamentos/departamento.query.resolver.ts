@@ -1,5 +1,5 @@
 import {IResolvers} from "graphql-tools";
-import DepartamentoQueryServices from "../../services/departamentos/departamento-query.services";
+import DepartamentoQueryServices from "./services/departamento-query.services";
 
 const queryDeptos: IResolvers =
     {

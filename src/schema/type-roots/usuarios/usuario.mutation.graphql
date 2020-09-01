@@ -1,13 +1,13 @@
 extend type Mutation
 {
     "USUARIO - Registro de usuarios"
-    registroUsuario(usuario: UsuarioInput!): UsuarioResType!
-    "USUARIO - Eliminar usuario"
-    eliminarUsuario(_id: ID!): UsuarioResType!
+    registroUsuario(usuario: UsuarioInput!): ResUsuario!
+    "USUARIO - Eliminar usuarios"
+    eliminarUsuario(_id: ID!): ResUsuario!
     "USUARIO - Actualizar role"
-    actualizarRole(_id: ID! role: [ROLE!]): UsuarioResType!
+    actualizarRole(_id: ID! role: [ROLE!]): ResUsuario!
     "USUARIO - Actualizar imagen de perfil"
-    actualizarImgPerfil(usuario: String!, img: String): UsuarioTokenType!
+    actualizarImgPerfil(usuario: String!, img: String): ResUsuarioToken!
     "USUARIO - Actualizar contrasena"
-    actualizarContrasena(usuario: String!, actualContrasena: String!, nvaContrasena: String!): UsuarioTokenType!
+    actualizarContrasena(usuario: String!, actualContrasena: String!, nvaContrasena: String!): ResUsuarioToken!
 }

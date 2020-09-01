@@ -2,10 +2,10 @@ type Query
 {
     "DOC EXTERNA: Consultar todos los registros para el administrador"
     todosDocsExt: [DocExtType]
-    "DOC EXTERNA: Obtiene todos los documentos por usuario"
+    "DOC EXTERNA: Obtiene todos los documentos por usuarios"
     todosLosDocsPorUsuario(usuario: String!): [DocExtType]
-    "DOC EXTERNA: Obtener documentos por usuario y subproceso para mostrar en el area de usuarios"
+    "DOC EXTERNA: Obtener documentos por usuarios y subproceso para mostrar en el area de usuarios"
     usuarioSubproceso(usuario: String!, subprocesos: [String!]!): [DocExtType],
-    "DOC EXTERNA: Obtener todos los documentos que ya han sido autorizados por usuario destino para asignarles folio"
+    "DOC EXTERNA: Obtener todos los documentos que ya han sido autorizados por usuarios destino para asignarles folio"
     docsAprobadosPorUsuario(usuario: String!, autorizado: Boolean!): [DocExtType]
 }

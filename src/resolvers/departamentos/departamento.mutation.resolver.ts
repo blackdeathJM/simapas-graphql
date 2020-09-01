@@ -1,5 +1,5 @@
 import {IResolvers} from "graphql-tools";
-import DepartamentoMutationService from "../../services/departamentos/departamento-mutation.service";
+import DepartamentoMutationService from "./services/departamento-mutation.service";
 
 const mutationDeptos: IResolvers =
     {

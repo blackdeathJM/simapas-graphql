@@ -30,13 +30,13 @@ const queryDocExt: IResolvers =
                 {
                     return await todosDocExt(db);
                 },
-                // consultar documentos por usuario sera usado por el admistrador
+                // consultar documentos por usuarios sera usado por el admistrador
                 async todosLosDocsPorUsuario(_, {usuario}, {db})
                 {
                     const database = db as Db;
                     return await database.collection(COLECCION.DOC_EXTERNA).find({'usuarioDestino': {$elemMatch: {usuario}}}).toArray().then();
                 },
-                // Consultar documento que sera enviado al usuario el subproceso es un array
+                // Consultar documento que sera enviado al usuarios el subproceso es un array
                 async usuarioSubproceso(_: void, {usuario, subprocesos}, {db})
                 {
                     const database = db as Db;

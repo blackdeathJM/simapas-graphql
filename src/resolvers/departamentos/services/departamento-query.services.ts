@@ -1,6 +1,6 @@
-import {COLECCION} from "../../config/global";
-import ResolversOperacionesService from "../resolver-operaciones";
-import {IContextData} from "../../interfaces/context-data-interface";
+import {COLECCION} from "../../../config/global";
+import ResolversOperacionesService from "../../../services/resolver-operaciones";
+import {IContextData} from "../../../interfaces/context-data-interface";
 
 class DepartamentoQueryServices extends ResolversOperacionesService
 {
@@ -15,7 +15,7 @@ class DepartamentoQueryServices extends ResolversOperacionesService
 
     async elementoDetalle()
     {
-        const res = await this.detalleElemento(COLECCION.DEPARTAMENTOS);
+        const res = await this.busquedaElementoPorID(COLECCION.DEPARTAMENTOS);
         return {estatus: res!.estatus, mensaje: res!.mensaje, departamento: res!.elemento}
     }
 }

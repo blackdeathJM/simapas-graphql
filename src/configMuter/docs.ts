@@ -20,7 +20,7 @@ export async function agDocs(req: Request, res: Response): Promise<any> {
 
                 let nvoRuta = path.resolve(__dirname, `../public/uploads/${obPrefijo}/` + req.file.filename);
                 // chear el directorio para saber que los archivos que se esta guardando bienen del los
-                // documentos externos que el usuario sube de manera temporal para su aprobacion del admin
+                // documentos externos que el usuarios sube de manera temporal para su aprobacion del admin
 
                 if (obPrefijo === 'deu' || obPrefijo === 'per') {
 

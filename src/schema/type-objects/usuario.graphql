@@ -10,13 +10,14 @@ type UsuarioType implements IUsuario
     departamento: DeptoType
 }
 
-type UsuarioResType
+type ResUsuario
 {
     estatus: Boolean
     mensaje: String
     usuario: UsuarioType
+    usuarios: [UsuarioType]
 }
-type UsuarioTokenType
+type ResUsuarioToken
 {
     estatus: Boolean!
     mensaje: String!

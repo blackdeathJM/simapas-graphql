@@ -35,11 +35,46 @@ class ResolversOperacionesService
         }
     }
 
-    protected async detalleElemento(coleccion: string)
+    protected async busquedaElementoPorID(coleccion: string)
     {
         try
         {
             return await buscarUnElemento(this.context.db!, coleccion, {_id: new ObjectId(this.variables._id)}).then(
+                (res) =>
+                {
+                    console.log('resolver-operations', res);
+                    if (res)
+                    {
+                        return {
+                            estatus: true,
+                            mensaje: `los ${coleccion} ha sido cargada correctamente`,
+                            elemento: res
+                        };
+                    }
+                }
+            ).catch((e) =>
+            {
+                return {
+                    estatus: false,
+                    mensaje: `Los ${coleccion} no se han obtenido verifica tus parametros de consulta`,
+                    elemento: null
+                }
+            });
+        } catch (e)
+        {
+            return {
+                estatus: false,
+                mensaje: `Ha ocurrido un error inesperado: ${e}`,
+                elemento: null
+            }
+        }
+    }
+
+    protected async buscarElementoPersonalizadoFiltro(coleccion: string, filtro: object)
+    {
+        try
+        {
+            return await buscarUnElemento(this.context.db!, coleccion, filtro).then(
                 (res) =>
                 {
                     if (res)
@@ -134,6 +169,9 @@ class ResolversOperacionesService
             }
         }
     }
+
+    protected async eliminarUnElemento(coleccion: string, filtro: object, eliminiar: object, etiquetas: string)
+    {}
 }
 
 export default ResolversOperacionesService;

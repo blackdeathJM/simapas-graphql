@@ -69,7 +69,7 @@ const mutationUsuarios: IResolvers =
 
                             return {
                                 estatus: true,
-                                mensaje: 'Se ha modificado con exito el rol del usuario',
+                                mensaje: 'Se ha modificado con exito el rol del usuarios',
                                 usuario: respuesta.value
                             }
                         }
@@ -88,7 +88,7 @@ const mutationUsuarios: IResolvers =
                 async actualizarContrasena(_void, {usuario, actualContrasena, nvaContrasena}, {db})
                 {
                     const baseDatos = db as Db;
-                    // buscar el usuario
+                    // buscar el usuarios
                     return await baseDatos.collection(COLECCION.USUARIOS).findOne({usuario}).then(
                         async (respuesta) =>
                         {
@@ -156,7 +156,7 @@ const mutationUsuarios: IResolvers =
                             delete usuarioPerfil.contrasena;
                             return {
                                 estatus: true,
-                                mensaje: 'La imagen del usuario se ha cambiado con exito',
+                                mensaje: 'La imagen del usuarios se ha cambiado con exito',
                                 token: new JWT().firmar(usuarioPerfil)
                             }
                         }
@@ -181,7 +181,7 @@ const mutationUsuarios: IResolvers =
                             await notSessionUsuario(_id, pubsub, db);
                             return {
                                 estatus: true,
-                                mensaje: 'El usuario fue eliminado con exito',
+                                mensaje: 'El usuarios fue eliminado con exito',
                                 usuario: null
                             }
                         }
@@ -190,7 +190,7 @@ const mutationUsuarios: IResolvers =
                         {
                             return {
                                 estatus: false,
-                                mensaje: 'Ocurrio un error al tratar de eliminar el usuario',
+                                mensaje: 'Ocurrio un error al tratar de eliminar el usuarios',
                                 usuario: null
                             }
                         }

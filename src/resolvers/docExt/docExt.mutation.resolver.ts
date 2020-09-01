@@ -100,7 +100,7 @@ const mutationDocExt: IResolvers =
                         }
                     )
                 },
-                // Actualizar el docUrl del usuario donde subira la respuesta que guardaremos de manera temporal
+                // Actualizar el docUrl del usuarios donde subira la respuesta que guardaremos de manera temporal
                 async acDocUrlEnUsuarioDestino(_: void, {id, usuario, docUrl, subproceso}, {pubsub, db})
                 {
                     const baseDatos = db as Db;
@@ -159,7 +159,7 @@ const mutationDocExt: IResolvers =
                         totalNotiAdmin = 0;
                     }
 
-                    // Apagamos la notificacion del usuario
+                    // Apagamos la notificacion del usuarios
                     const notificacionDelUsuario = await basedatos.collection(COLECCION.DOC_EXTERNA).findOneAndUpdate(
                         {_id: new ObjectId(id), usuarioDestino: {$elemMatch: {usuario}}},
                         {$set: {notificarAdministrador: totalNotiAdmin, "usuarioDestino.$.notificarRespDelUsuario": notificarRespDelUsuario}},
@@ -175,7 +175,7 @@ const mutationDocExt: IResolvers =
                         }
                     );
                 },
-                // Rechazar el documento y mandar observaciones cambiamos el subproceso a RECHAZADO y notificamos al usuario y mandamos notificacion
+                // Rechazar el documento y mandar observaciones cambiamos el subproceso a RECHAZADO y notificamos al usuarios y mandamos notificacion
                 async acObservacionesRechazarDocExt(_, {id, usuario, subproceso, notificarRespDelUsuario, observaciones}, {pubsub, db, contexto})
                 {
                     const baseDatos = db as Db;
@@ -229,12 +229,12 @@ const mutationDocExt: IResolvers =
                 }
 // +++++++++++++++++++++++=============================+++++++++++++++++++++++++===================++++++++++++++++++++++++
 
-            /*            async acDocExtUrlUsuario(_, {id, usuario, docUrl}, {pubsub, db})
+            /*            async acDocExtUrlUsuario(_, {id, usuarios, docUrl}, {pubsub, db})
                         {
                             const database = db as Db;
                             return await database.collection(COLECCION.DOC_EXTERNA).findOneAndUpdate({
                                     _id: new ObjectId(id),
-                                    "usuarioDestino.usuario": usuario
+                                    "usuarioDestino.usuarios": usuarios
                                 },
                                 {$set: {"usuarioDestino.$.docUrl": docUrl}}).then(
                                 async (documento: any) =>
@@ -258,13 +258,13 @@ const mutationDocExt: IResolvers =
                             );
                         },*/
             // Actualizamos el campo de observaciones del subdocumento de usuarioDestino y pasamos al proceso de RECHAZADO
-            /*            async acObEstUsuario(_, {_id, noProceso, usuario, observaciones, noSubproceso, estatus}, {pubsub, db})
+            /*            async acObEstUsuario(_, {_id, noProceso, usuarios, observaciones, noSubproceso, estatus}, {pubsub, db})
                         {
                             const database = db as Db;
                             return await database.collection(COLECCION.DOC_EXTERNA).findOneAndUpdate(
                                 {
                                     _id: new ObjectId(_id),
-                                    "usuarioDestino.usuario": usuario
+                                    "usuarioDestino.usuarios": usuarios
                                 },
                                 {
                                     $set: {
@@ -293,10 +293,10 @@ const mutationDocExt: IResolvers =
                         },*/
 
             // Actualizamos el noProceo, noSubproceso y estatus cuando se le asigna el folio
-            /*            async acEstEstGralUsuarioFolio(_, {_id, usuario, noSubproceso, noProceso, folio, estatus}, {pubsub, db})
+            /*            async acEstEstGralUsuarioFolio(_, {_id, usuarios, noSubproceso, noProceso, folio, estatus}, {pubsub, db})
                         {
                             const database = db as Db;
-                            return await database.collection(COLECCION.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(_id), "usuarioDestino.usuario": usuario},
+                            return await database.collection(COLECCION.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(_id), "usuarioDestino.usuarios": usuarios},
                                 {$set: {noProceso, folio, "usuarioDestino.$.noSubproceso": noSubproceso, "usuarioDestino.$.estatus": estatus}}).then(
                                 async (documento: any) =>
                                 {
@@ -315,12 +315,12 @@ const mutationDocExt: IResolvers =
                                 }
                             })
                         },*/
-            // Actualizamos el campo donde se va a guardar el archivo cargado final por el usuario, el cual la busqueda folio al que se dio respuesta que es el id
-            /*            async acDocResUrlNoProceso(_, {folioRespuesta, noProceso, docRespUrl, folio, usuario, noSubproceso, estatus}, {pubsub, db})
+            // Actualizamos el campo donde se va a guardar el archivo cargado final por el usuarios, el cual la busqueda folio al que se dio respuesta que es el id
+            /*            async acDocResUrlNoProceso(_, {folioRespuesta, noProceso, docRespUrl, folio, usuarios, noSubproceso, estatus}, {pubsub, db})
                         {
                             const database = db as Db;
                             return await database.collection(COLECCION.DOC_EXTERNA).findOneAndUpdate(
-                                {_id: new ObjectId(folioRespuesta), "usuarioDestino.usuario": usuario},
+                                {_id: new ObjectId(folioRespuesta), "usuarioDestino.usuarios": usuarios},
                                 {
                                     $set: {
                                         noProceso, docRespUrl, folio, "usuarioDestino.$.noSubproceso": noSubproceso,
@@ -345,7 +345,7 @@ const mutationDocExt: IResolvers =
                                 }
                             })
                         },*/
-            // Actualizamos el estatusGeneral del documento como el estatus del usuario a Terminado para dar por finalizado el proceso
+            // Actualizamos el estatusGeneral del documento como el estatus del usuarios a Terminado para dar por finalizado el proceso
             /*            async acTerminarDoc(_: void, {_id, noProceso, acuseUrl, folio}, {pubsub, db})
                         {
                             const database = db as Db;

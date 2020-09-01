@@ -1,7 +1,7 @@
-import ResolversOperacionesService from "../resolver-operaciones";
-import {IContextData} from "../../interfaces/context-data-interface";
-import ValidacionesService from "../validaciones.service";
-import {COLECCION} from "../../config/global";
+import ResolversOperacionesService from "../../../services/resolver-operaciones";
+import {IContextData} from "../../../interfaces/context-data-interface";
+import ValidacionesService from "../../../services/validaciones.service";
+import {COLECCION} from "../../../config/global";
 import {ObjectId} from 'bson';
 
 class DepartamentoMutationService extends ResolversOperacionesService

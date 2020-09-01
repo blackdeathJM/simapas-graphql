@@ -4,9 +4,9 @@ extend type Mutation
     regDocExt(docExt: DocExtInput!):DocExtResType
     "DOC EXTERNA: Actualizar el campo donde se guardara el nombre del archivo subido"
     acDocExtUrl(id: String!, docUrl: String!, proceso: String!): DocExtResType!
-    "DOC EXTERNA: actualizamos la respuesta del usuario y cambiamos el valor del documento respuesta que esta"
+    "DOC EXTERNA: actualizamos la respuesta del usuarios y cambiamos el valor del documento respuesta que esta"
     acDocUrlEnUsuarioDestino(id: String!, usuario: String!, docUrl: String!, subproceso: String!): DocExtResType
-    "DOC EXTERNA: Apagar la notificacion del usuario cuando envia la respuesta y restamos uno de notificar administrador"
+    "DOC EXTERNA: Apagar la notificacion del usuarios cuando envia la respuesta y restamos uno de notificar administrador"
     acNotificacionPorUsuario(id: ID!, usuario: String!, notificarRespDelUsuario: Boolean!, notificarAdministrador: Int!): Boolean
     "DOC EXTERNA: Mandar observaciones y rechazar el documento"
     acObservacionesRechazarDocExt(id: ID!, usuario: String!, subproceso: String!, notificarRespDelUsuario: Boolean!, observaciones: String!): DocExtResType!
