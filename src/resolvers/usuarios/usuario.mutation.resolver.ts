@@ -1,82 +1,52 @@
 import {IResolvers} from "graphql-tools";
 import bcryptjs from "bcryptjs";
-import {PubSub} from "apollo-server-express";
-import {COLECCION, PUB_SUB} from "../../config/global";
+import {COLECCION} from "../../config/global";
 import {ObjectId} from "bson";
 import {Db} from "mongodb";
 import JWT from "../../lib/jwt";
+import UsuarioMutationService from "./services/usuario-mutation-service";
 
 const mutationUsuarios: IResolvers =
     {
         Mutation:
             {
-                async registroUsuario(_: void, {usuario}, {db})
+                async registroUsuario(_, {usuario}, {db})
                 {
-                    const database = db as Db;
-                    const checharUsuario = await database.collection(COLECCION.USUARIOS).findOne({usuario: usuario.usuario});
-                    if (checharUsuario !== null)
-                    {
-                        return {
-                            estatus: false,
-                            mensaje: `El usuario ${usuario.usuario} ya existe`,
-                            usuario: null
-                        }
-                    }
-                    usuario.contrasena = bcryptjs.hashSync(usuario.contrasena, 10);
-                    return await database.collection(COLECCION.USUARIOS).insertOne(usuario).then(
-                        async () =>
-                        {
-                            // aqui ponemos la subcripcion si se requiere
-                            return {
-                                estatus: true,
-                                mensaje: 'Datos agregados con exito',
-                                usuario
-                            };
-                        }
-                    ).catch(
-                        async () =>
-                        {
-                            return {
-                                estatus: false,
-                                mensaje: 'Usuario no se puede registrar',
-                                usuario: null
-                            }
-                        }
-                    )
+                    return new UsuarioMutationService(_, {usuario}, {db}).agregarUsuario();
                 },
 
-                async actualizarRole(_: void, {_id, role}, {pubsub, db})
+                async actualizarRole(_, {_id, role}, {pubsub, db})
                 {
-                    const database = db as Db;
-                    return await database.collection(COLECCION.USUARIOS).findOneAndUpdate({_id: new ObjectId(_id)},
-                        {$set: {role}}, {returnOriginal: false}).then(
-                        async (respuesta: any) =>
-                        {
-                            console.log('actualizar role', respuesta.value);
 
-                            delete respuesta.value.contrasena;
-                            respuesta.value.contrasena = '*******';
-                            const nvoTokenRole = respuesta.value;
-                            const subscripcion = pubsub as PubSub;
-
-                            await subscripcion.publish(PUB_SUB.NOT_CAMBIO_ROLE, {cambiarRoleUsuario: new JWT().firmar(nvoTokenRole)});
-
-                            return {
-                                estatus: true,
-                                mensaje: 'Se ha modificado con exito el rol del usuarios',
-                                usuario: respuesta.value
-                            }
-                        }
-                    ).catch(
-                        async () =>
-                        {
-                            return {
-                                estatus: false,
-                                mensaje: 'Error al tratar de modificar roles',
-                                usuario: null
-                            }
-                        }
-                    )
+                    return new UsuarioMutationService(_, {_id, role}, {pubsub, db}).actualizarRole();
+                    // const database = db as Db;
+                    // return await database.collection(COLECCION.USUARIOS).findOneAndUpdate({_id: new ObjectId(_id)},
+                    //     {$set: {role}}, {returnOriginal: false}).then(
+                    //     async (respuesta: any) =>
+                    //     {
+                    //         delete respuesta.value.contrasena;
+                    //         respuesta.value.contrasena = '*******';
+                    //         const nvoTokenRole = respuesta.value;
+                    //         const subscripcion = pubsub as PubSub;
+                    //
+                    //         await subscripcion.publish(PUB_SUB.NOT_CAMBIO_ROLE, {cambiarRoleUsuario: new JWT().firmar(nvoTokenRole)});
+                    //
+                    //         return {
+                    //             estatus: true,
+                    //             mensaje: 'Se ha modificado con exito el rol del usuarios',
+                    //             usuario: respuesta.value
+                    //         }
+                    //     }
+                    // ).catch(
+                    //     async () =>
+                    //     {
+                    //         return {
+                    //             estatus: false,
+                    //             mensaje: 'Error al tratar de modificar roles',
+                    //             usuario: null
+                    //         }
+                    //     }
+                    // )
                 },
 
                 async actualizarContrasena(_void, {usuario, actualContrasena, nvaContrasena}, {db})

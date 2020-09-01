@@ -7,7 +7,7 @@ class ResolversOperacionesService
     {
     }
 
-    protected async arregloDeElementos(coleccion: string, mensaje: string, filtro: object)
+    protected async arregloDeElementos(mensaje: string, coleccion: string, filtro: object)
     {
         try
         {
@@ -69,12 +69,12 @@ class ResolversOperacionesService
     {
         try
         {
-            return await this.context.db?.collection(coleccion).insertOne(documento).then(
+            return await this.context.db!.collection(coleccion).insertOne(documento).then(
                 (res) =>
                 {
                     return {
                         estatus: true,
-                        mensaje: ``,
+                        mensaje: `${mensaje}`,
                         elemento: res.ops[0]
                     }
                 }
@@ -105,7 +105,6 @@ class ResolversOperacionesService
             return await this.context.db!.collection(coleccion).findOneAndUpdate(filtro, actualizar, opciones).then(
                 (res) =>
                 {
-                    console.log('respuesta', res);
                     return {
                         estatus: true,
                         mensaje: `${mensaje}`,

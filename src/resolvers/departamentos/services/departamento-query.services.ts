@@ -10,7 +10,8 @@ class DepartamentoQueryServices extends ResolversOperacionesService
 
     async listaElementos()
     {
-        const resultado = await this.arregloDeElementos(COLECCION.DEPARTAMENTOS, 'Departamentos', {});
+        const resMsj = 'Lista de departamentos cargada correctamente';
+        const resultado = await this.arregloDeElementos(resMsj, COLECCION.DEPARTAMENTOS, {});
         return {estatus: resultado.estatus, mensaje: resultado.mensaje, departamentos: resultado.elementos};
     }
 

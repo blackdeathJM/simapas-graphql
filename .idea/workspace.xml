@@ -19,16 +19,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Refactorizando usuarios">
+    <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="quitando el database operations para ahorrar codigo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/operaciones-db.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/context-data-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/context-data-interface.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/departamentos/services/departamento-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/departamentos/services/departamento-mutation.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/departamentos/services/departamento-query.services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/departamentos/services/departamento-query.services.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-mutation-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-mutation-service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-query-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-query-service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.mutation.resolver.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.query.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/usuarios/usuario.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/usuarios/usuario.mutation.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/usuarios/usuario.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/usuarios/usuario.query.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/validaciones.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/validaciones.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +172,8 @@
       <workItem from="1598930759574" duration="6235000" />
       <workItem from="1598940251468" duration="5364000" />
       <workItem from="1598947419078" duration="469000" />
-      <workItem from="1598947923734" duration="4611000" />
+      <workItem from="1598947923734" duration="16184000" />
+      <workItem from="1598974495561" duration="1293000" />
     </task>
     <task id="LOCAL-00001" summary="Creacion del mutate para actualizar los roles de los usuarios">
       <created>1596572391127</created>
@@ -382,7 +385,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598929180196</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="quitando el database operations para ahorrar codigo">
+      <created>1598952629099</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1598952629100</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -407,7 +417,8 @@
     <MESSAGE value="Se creo de nuevo la documentacion" />
     <MESSAGE value="factorizacion de departamentos terminada" />
     <MESSAGE value="Refactorizando usuarios" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactorizando usuarios" />
+    <MESSAGE value="quitando el database operations para ahorrar codigo" />
+    <option name="LAST_COMMIT_MESSAGE" value="quitando el database operations para ahorrar codigo" />
   </component>
   <component name="WindowStateProjectService">
     <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1598584621576">
@@ -438,31 +449,35 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="468" y="165" width="1230" height="710" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598478425542" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1598929182287">
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1598952632372">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598929182287" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598952632372" />
     <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597551696634" />
     <state x="1951" y="24" width="1709" height="922" maximized="true" key="dock-window-1" timestamp="1598951067500">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="1951" y="24" width="1709" height="922" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598951067500" />
-    <state x="2197" y="0" width="1564" height="870" maximized="true" key="dock-window-2" timestamp="1598900134247">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2197" y="0" width="1564" height="870" maximized="true" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598900134247" />
-    <state x="2120" y="36" width="1564" height="909" maximized="true" key="dock-window-3" timestamp="1598901484043">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2120" y="36" width="1564" height="909" maximized="true" key="dock-window-3/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598901484043" />
-    <state x="2013" y="46" width="1564" height="909" maximized="true" key="dock-window-4" timestamp="1598901484043">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2013" y="46" width="1564" height="909" maximized="true" key="dock-window-4/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598901484043" />
-    <state x="621" y="415" width="1564" height="910" key="dock-window-5" timestamp="1598907564892">
+    <state x="241" y="70" width="1709" height="922" maximized="true" key="dock-window-2" timestamp="1598958403048">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="621" y="415" width="1564" height="910" key="dock-window-5/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598907564892" />
+    <state x="241" y="70" width="1709" height="922" maximized="true" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598958403048" />
+    <state x="1939" y="253" width="1709" height="890" maximized="true" key="dock-window-3" timestamp="1598958474270">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1939" y="253" width="1709" height="890" maximized="true" key="dock-window-3/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598958474270" />
+    <state x="2147" y="58" width="1709" height="890" maximized="true" key="dock-window-4" timestamp="1598960967446">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2147" y="58" width="1709" height="890" maximized="true" key="dock-window-4/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598960967446" />
+    <state x="68" y="65" width="1709" height="890" maximized="true" key="dock-window-5" timestamp="1598963349966">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="68" y="65" width="1709" height="890" maximized="true" key="dock-window-5/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598963349966" />
+    <state x="2084" y="146" width="1709" height="890" maximized="true" key="dock-window-6" timestamp="1598975396741">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2084" y="146" width="1709" height="890" maximized="true" key="dock-window-6/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598975396741" />
     <state x="713" y="416" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1597058189343">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

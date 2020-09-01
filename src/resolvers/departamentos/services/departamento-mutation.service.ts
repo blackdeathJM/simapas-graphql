@@ -15,7 +15,7 @@ class DepartamentoMutationService extends ResolversOperacionesService
         if (ValidacionesService.checarDato(this.variables.departamento?.nombre || ''))
         {
             const resultado = await this.agregarUnElemento(respMsj, COLECCION.DEPARTAMENTOS, this.variables.departamento!);
-            return {estatus: resultado!.estatus, mensaje: resultado!.mensaje, departamento: resultado!.elemento}
+            return {estatus: resultado.estatus, mensaje: resultado.mensaje, departamento: resultado.elemento}
         }
     }
 

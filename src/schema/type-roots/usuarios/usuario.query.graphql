@@ -6,6 +6,4 @@ extend type Query
     buscarUsuario(usuario: String!): ResUsuario
     "USUARIO - Inicio de sesion"
     login(usuario: String!,  contrasena: String!): ResUsuarioToken!
-    "USUARIO - Validar token de usuarios"
-    validarTokenG: ResUsuario!
 }
