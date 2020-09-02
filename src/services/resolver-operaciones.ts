@@ -20,6 +20,15 @@ class ResolversOperacionesService
                         elementos: elementos
                     }
                 }
+            ).catch(
+                error =>
+                {
+                    return {
+                        estatus: false,
+                        mensaje: `Ocurrio un error al cargar los documentos: ${error}`,
+                        elemento: null
+                    }
+                }
             )
         } catch (e)
         {
@@ -42,7 +51,7 @@ class ResolversOperacionesService
                     {
                         return {
                             estatus: true,
-                            mensaje: `${mensaje}`,
+                            mensaje: `El documento ya existe`,
                             elemento: res
                         };
                     } else
@@ -81,7 +90,7 @@ class ResolversOperacionesService
                 {
                     return {
                         estatus: true,
-                        mensaje: `${mensaje}`,
+                        mensaje: `Un documento se ha insertado correctamente`,
                         elemento: res.ops[0]
                     }
                 }
@@ -90,7 +99,7 @@ class ResolversOperacionesService
                 {
                     return {
                         estatus: false,
-                        mensaje: `${mensaje}: ${error}`,
+                        mensaje: `Ha ocurrido un error al tratar de insertar el documento: ${error}`,
                         elemento: null
                     }
                 }
@@ -147,7 +156,6 @@ class ResolversOperacionesService
                 {
                     if (res.ok === 1)
                     {
-                        console.log('eliminar usuario', res.value);
                         return {
                             estatus: true,
                             mensaje: `El documento se ha eliminado correctamente`,

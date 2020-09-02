@@ -14,23 +14,22 @@ class UsuarioMutationService extends ResolversOperacionesService
 
     async agregarUsuario()
     {
-
-        return await this.buscarUnElemento('', COLECCION.USUARIOS, {usuario: this.variables.usuario?.usuario}, {}).then(
-            async (res) =>
-            {
-                if (res)
+        const comprobarUsuario = await this.buscarUnElemento('', COLECCION.USUARIOS,
+            {usuario: this.variables.usuario!.usuario},
+            {});
+        if (!comprobarUsuario.estatus)
+        {
+            this.variables.usuario!.contrasena = bcryptjs.hashSync(this.variables.usuario!.contrasena, 10);
+            return await this.agregarUnElemento('', COLECCION.USUARIOS, this.variables.usuario!).then(
+                async respuesta =>
                 {
-                    return {
-                        estatus: false,
-                        mensaje: `El usuario ya existe, no se puede completar el registro`,
-                        usuario: null
-                    }
+                    return {estatus: respuesta.estatus, mensaje: respuesta.mensaje, usuario: respuesta.elemento}
                 }
-                this.variables.usuario!.contrasena = bcryptjs.hashSync(this.variables.usuario!.contrasena, 10);
-                const resultado = await this.agregarUnElemento('', COLECCION.USUARIOS, this.variables.usuario!);
-                return {estatus: resultado.estatus, mensaje: resultado.mensaje, usuario: resultado.elemento}
-            }
-        )
+            )
+        } else
+        {
+            return {estatus: comprobarUsuario.estatus, mensaje: comprobarUsuario.mensaje, elemento: comprobarUsuario.elemento}
+        }
     }
 
     async actualizarRole()
@@ -47,6 +46,7 @@ class UsuarioMutationService extends ResolversOperacionesService
             async res =>
             {
                 delete res.elemento.contrasena;
+                res.elemento.contrasena = '*******';
                 const nvoToken = res.elemento;
                 await this.context.pubsub!.publish(PUB_SUB.NOT_CAMBIO_ROLE, {cambiarRoleUsuario: new JWT().firmar(nvoToken)});
                 return {
@@ -108,7 +108,7 @@ class UsuarioMutationService extends ResolversOperacionesService
         const valores = Object.values(this.variables);
         return await this.buscarUnoYActualizar(resMsj, COLECCION.USUARIOS,
             {usuario: valores[0]},
-            {$set: valores[1]},
+            {$set: {img: valores[1]}},
             {returnOriginal: false}).then(
             async res =>
             {
