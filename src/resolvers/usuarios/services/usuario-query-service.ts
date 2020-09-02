@@ -14,7 +14,7 @@ class UsuarioQueryService extends ResolversOperacionesService
     async listarUsuarios()
     {
         const resMsj = 'Lista de usuarios cargada correctamente';
-        const resultado = await this.arregloDeElementos(resMsj, COLECCION.USUARIOS, {});
+        const resultado = await this.buscar(resMsj, COLECCION.USUARIOS, {});
         return {estatus: resultado.estatus, mensaje: resultado.mensaje, usuarios: resultado.elementos}
     }
 

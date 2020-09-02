@@ -12,7 +12,7 @@ class DepartamentoMutationService extends ResolversOperacionesService
     async registrarElemento()
     {
         const respMsj = 'Departamento agregado correctamente';
-        if (ValidacionesService.checarDato(this.variables.departamento?.nombre || ''))
+        if (ValidacionesService.checarDato(this.variables.departamento!.nombre || ''))
         {
             const resultado = await this.agregarUnElemento(respMsj, COLECCION.DEPARTAMENTOS, this.variables.departamento!);
             return {estatus: resultado.estatus, mensaje: resultado.mensaje, departamento: resultado.elemento}

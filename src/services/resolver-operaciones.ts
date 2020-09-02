@@ -7,7 +7,7 @@ class ResolversOperacionesService
     {
     }
 
-    protected async arregloDeElementos(mensaje: string, coleccion: string, filtro: object)
+    protected async buscar(mensaje: string, coleccion: string, filtro: object)
     {
         try
         {
@@ -45,6 +45,13 @@ class ResolversOperacionesService
                             mensaje: `${mensaje}`,
                             elemento: res
                         };
+                    } else
+                    {
+                        return {
+                            estatus: false,
+                            mensaje: `El documento no existe`,
+                            elemento: null
+                        }
                     }
                 }
             ).catch((e) =>
@@ -131,8 +138,49 @@ class ResolversOperacionesService
         }
     }
 
-    protected async eliminarUnElemento(coleccion: string, filtro: object, eliminiar: object, etiquetas: string)
-    {}
+    protected async buscarUnoYEleminiar(coleccion: string, filtro: object, opciones: object)
+    {
+        try
+        {
+            return await this.context.db!.collection(coleccion).findOneAndDelete(filtro, opciones).then(
+                async res =>
+                {
+                    if (res.ok === 1)
+                    {
+                        console.log('eliminar usuario', res.value);
+                        return {
+                            estatus: true,
+                            mensaje: `El documento se ha eliminado correctamente`,
+                            elemento: res.value
+                        }
+                    } else
+                    {
+                        return {
+                            estatus: false,
+                            mensaje: `Ocurrio un error al momento de tratar un documento`,
+                            elemento: null
+                        }
+                    }
+                }
+            ).catch(
+                async error =>
+                {
+                    return {
+                        estatus: false,
+                        mensaje: `Ocurrio un error insperardo: ${error}`,
+                        elemento: null
+                    }
+                }
+            )
+        } catch (e)
+        {
+            return {
+                estatus: false,
+                mensaje: `Error inesperado: ${e}`,
+                elemento: null
+            }
+        }
+    }
 }
 
 export default ResolversOperacionesService;

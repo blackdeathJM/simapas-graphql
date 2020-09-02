@@ -11,7 +11,7 @@ class DepartamentoQueryServices extends ResolversOperacionesService
     async listaElementos()
     {
         const resMsj = 'Lista de departamentos cargada correctamente';
-        const resultado = await this.arregloDeElementos(resMsj, COLECCION.DEPARTAMENTOS, {});
+        const resultado = await this.buscar(resMsj, COLECCION.DEPARTAMENTOS, {});
         return {estatus: resultado.estatus, mensaje: resultado.mensaje, departamentos: resultado.elementos};
     }
 
