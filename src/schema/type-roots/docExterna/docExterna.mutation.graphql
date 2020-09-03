@@ -9,7 +9,7 @@ extend type Mutation
     "DOC EXTERNA: Apagar la notificacion del usuarios cuando envia la respuesta y restamos uno de notificar administrador"
     acNotificacionPorUsuario(id: ID!, usuario: String!, notificarRespDelUsuario: Boolean!, notificarAdministrador: Int!): Boolean
     "DOC EXTERNA: Mandar observaciones y rechazar el documento"
-    acObservacionesRechazarDocExt(id: ID!, usuario: String!, subproceso: String!, notificarRespDelUsuario: Boolean!, observaciones: String!): ResDocEx!
+    acObservacionesRechazarDocExt(id: ID!, usuario: String!, subproceso: String!, notificarRespDelUsuario: Boolean!, observaciones: String!): ResDocEx
     "DOC EXTERNA: Aprobar documento"
-    acAprobarDocumentoExt(id: ID!, usuario:String!, subproceso: String!, autorizado: Boolean): ResDocEx!
+    acAprobarDocumentoExt(id: ID!, usuario:String!, subproceso: String!, autorizado: Boolean): ResDocEx
 }
