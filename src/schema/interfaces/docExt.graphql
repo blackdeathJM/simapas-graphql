@@ -15,7 +15,6 @@ interface IDocExt
     fechaTerminado: String
     proceso: PROCESOS_DOC
     notificarAdministrador: Int
-    usuarioDestino: [UsuarioDestinoDocExtType]
 }
 
 interface IUsuarioDestinoDocExtType

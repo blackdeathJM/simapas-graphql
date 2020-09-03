@@ -14,15 +14,10 @@ async function notTodosDocsExt(pubsub: PubSub, db: Db)
 
 async function notActUsuarioSubProceso(pubsub: PubSub, db: Db, contexto: any)
 {
-    const database = db as Db;
-    await database.collection(COLECCION.DOC_EXTERNA).find(
-        {usuarioDestino: {$elemMatch: {subproceso: {$in: JSON.parse(contexto)}}}}
-    ).toArray().then(
-        async (documentos) =>
-        {
-            const subscripcion = pubsub as PubSub;
-            await subscripcion.publish(PUB_SUB.DOC_EXT_USUSUBPROCESO, {usuarioSubprocesoSub: documentos});
-        }).catch(error => console.log('Error al ejecutar la subscripcion: ' + error));
+    const resultado = await db.collection(COLECCION.DOC_EXTERNA).find(
+        {usuarioDestino: {$elemMatch: {subproceso: {$in: JSON.parse(contexto)}}}}).toArray();
+
+    return await pubsub.publish(PUB_SUB.DOC_EXT_USUSUBPROCESO, {pubsubSubproceso: resultado});
 }
 
 class DocExtMutationService extends ResolversOperacionesService

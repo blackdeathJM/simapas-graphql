@@ -14,7 +14,7 @@ const docExtSubscription: IResolvers =
                             return subscripcion.asyncIterator([PUB_SUB.DOC_EXT]);
                         }
                     },
-                usuarioSubprocesoSub:
+                pubsubSubproceso:
                     {
                         subscribe: (_, __, {pubsub}) =>
                         {

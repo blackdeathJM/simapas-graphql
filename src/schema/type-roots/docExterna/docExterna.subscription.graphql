@@ -4,5 +4,5 @@ extend type Subscription
     #enviar notificacion de cambio al agregar doc externo, cambiar estatus
     todosDocsExtSub:[DocExtType]
     "DOC EXTERNA: subscripcion para la consulta del usuarios y su subproceso"
-    usuarioSubprocesoSub:[DocExtType]
+    pubsubSubproceso:[DocExtType]
 }
