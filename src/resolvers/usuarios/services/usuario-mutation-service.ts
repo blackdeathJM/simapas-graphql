@@ -14,13 +14,13 @@ class UsuarioMutationService extends ResolversOperacionesService
 
     async agregarUsuario()
     {
-        const comprobarUsuario = await this.buscarUnElemento('', COLECCION.USUARIOS,
+        const comprobarUsuario = await this.buscarUnElemento( COLECCION.USUARIOS,
             {usuario: this.variables.usuario!.usuario},
             {});
         if (!comprobarUsuario.estatus)
         {
             this.variables.usuario!.contrasena = bcryptjs.hashSync(this.variables.usuario!.contrasena, 10);
-            return await this.agregarUnElemento('', COLECCION.USUARIOS, this.variables.usuario!).then(
+            return await this.agregarUnElemento(COLECCION.USUARIOS, this.variables.usuario!, {}).then(
                 async respuesta =>
                 {
                     return {estatus: respuesta.estatus, mensaje: respuesta.mensaje, usuario: respuesta.elemento}
@@ -34,12 +34,11 @@ class UsuarioMutationService extends ResolversOperacionesService
 
     async actualizarRole()
     {
-        const respMsj = 'EL rol se ha actualizado correctamente';
         const valores = Object.values(this.variables);
         const _id = valores[0];
         const role = valores[1];
 
-        return await this.buscarUnoYActualizar(respMsj, COLECCION.USUARIOS,
+        return await this.buscarUnoYActualizar(COLECCION.USUARIOS,
             {_id: new ObjectId(_id)},
             {$set: {role}},
             {returnOrinal: false}).then(
@@ -60,15 +59,14 @@ class UsuarioMutationService extends ResolversOperacionesService
 
     async actializarContrasena()
     {
-        const resMsj = 'El password se actualizo con exito'
         const valores = Object.values(this.variables);
-        const buscarUsuario = await this.buscarUnElemento('', COLECCION.USUARIOS, {usuario: valores[0]}, {});
+        const buscarUsuario = await this.buscarUnElemento(COLECCION.USUARIOS, {usuario: valores[0]}, {});
         if (buscarUsuario.estatus)
         {
             if (bcryptjs.compareSync(valores[1], buscarUsuario.elemento.contrasena))
             {
                 buscarUsuario.elemento.contrasena = bcryptjs.hashSync(valores[2], 10);
-                return await this.buscarUnoYActualizar(resMsj, COLECCION.USUARIOS,
+                return await this.buscarUnoYActualizar(COLECCION.USUARIOS,
                     {usuario: valores[0]},
                     {$set: {contrasena: buscarUsuario.elemento.contrasena}},
                     {returnOriginal: false}).then(
@@ -104,9 +102,8 @@ class UsuarioMutationService extends ResolversOperacionesService
 
     async actualizarImgAvatar()
     {
-        const resMsj = 'Se ha cambiado con exito tu imagen de avatar';
         const valores = Object.values(this.variables);
-        return await this.buscarUnoYActualizar(resMsj, COLECCION.USUARIOS,
+        return await this.buscarUnoYActualizar(COLECCION.USUARIOS,
             {usuario: valores[0]},
             {$set: {img: valores[1]}},
             {returnOriginal: false}).then(

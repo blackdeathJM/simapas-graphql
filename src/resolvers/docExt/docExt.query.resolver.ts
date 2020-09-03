@@ -1,25 +1,5 @@
 import {IResolvers} from "graphql-tools";
-import {COLECCION} from "../../config/global";
-import {Db} from "mongodb";
-import {filtroDocsExt} from "./proyecciones";
-
-export async function todosDocExt(db: Db)
-{
-    return await db.collection(COLECCION.DOC_EXTERNA).find().toArray().then(
-        async (res: any) =>
-        {
-            return res;
-        }).catch(
-        async () =>
-        {
-            return null;
-        }
-    );
-}
-
-export async function usuarioSubproceso(usuario: string, subprocesos: string[], db: Db)
-{
-}
+import DocExtQueryService from "./services/docExt-query-service";
 
 const queryDocExt: IResolvers =
     {
@@ -28,24 +8,17 @@ const queryDocExt: IResolvers =
                 // Obtenermos todos los documentos externos
                 async todosDocsExt(_, __, {db})
                 {
-                    return await todosDocExt(db);
+                    return new DocExtQueryService(_, __, {db}).docExtLista();
                 },
                 // consultar documentos por usuarios sera usado por el admistrador
                 async todosLosDocsPorUsuario(_, {usuario}, {db})
                 {
-                    const database = db as Db;
-                    return await database.collection(COLECCION.DOC_EXTERNA).find({'usuarioDestino': {$elemMatch: {usuario}}}).toArray().then();
+                    return new DocExtQueryService(_, {usuario}, {db}).docExtListaPorUsuario();
                 },
                 // Consultar documento que sera enviado al usuarios el subproceso es un array
-                async usuarioSubproceso(_: void, {usuario, subprocesos}, {db})
+                async usuarioSubproceso(_, {usuario, subprocesos}, {db})
                 {
-                    const database = db as Db;
-                    return await database.collection(COLECCION.DOC_EXTERNA).find(
-                        {usuarioDestino: {$elemMatch: {usuario, subproceso: {$in: subprocesos}}}},
-                        {projection: filtroDocsExt}).toArray().then(async (documentos) =>
-                    {
-                        return documentos;
-                    });
+                    return new DocExtQueryService(_, {usuario, subprocesos}, {db}).doscUsuarioSubproceso();
                     // return await database.collection(ENTIDAD_DB.DOC_EXTERNA).aggregate([
                     //     {
                     //         $project:
@@ -65,9 +38,7 @@ const queryDocExt: IResolvers =
                 },
                 async docsAprobadosPorUsuario(_, {usuario, autorizado}, {db})
                 {
-                    const baseDatos = db as Db;
-                    return await baseDatos.collection(COLECCION.DOC_EXTERNA).find(
-                        {usuarioDestino: {$elemMatch: {usuario, autorizado}}}).toArray();
+                    return new DocExtQueryService(_, {usuario, autorizado}, {db}).docsAprobadosUsuario();
                 }
             }
     };

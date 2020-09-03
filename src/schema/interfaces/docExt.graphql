@@ -1,4 +1,4 @@
-type DocExtType implements IDocExt
+interface IDocExt
 {
     _id: ID
     noSeguimiento: Int
@@ -17,7 +17,8 @@ type DocExtType implements IDocExt
     notificarAdministrador: Int
     usuarioDestino: [UsuarioDestinoDocExtType]
 }
-type UsuarioDestinoDocExtType implements IUsuarioDestinoDocExtType
+
+interface IUsuarioDestinoDocExtType
 {
     usuario: String
     observaciones: String
@@ -28,7 +29,7 @@ type UsuarioDestinoDocExtType implements IUsuarioDestinoDocExtType
     notificarRespDelUsuario: Boolean
     notificarUsuario: Boolean
 }
-type ResDocEx implements IResDocEx
+interface IResDocEx
 {
     estatus: Boolean!
     mensaje: String!

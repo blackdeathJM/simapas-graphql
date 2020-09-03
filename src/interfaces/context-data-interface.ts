@@ -6,5 +6,5 @@ export interface IContextData
     db?: Db;
     pubsub?: PubSub;
     token?: string;
-    contexto?: object
+    contexto?: any;
 }

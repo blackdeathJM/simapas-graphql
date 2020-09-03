@@ -10,16 +10,14 @@ class DepartamentoQueryServices extends ResolversOperacionesService
 
     async listaElementos()
     {
-        const resMsj = 'Lista de departamentos cargada correctamente';
-        const resultado = await this.buscar(resMsj, COLECCION.DEPARTAMENTOS, {});
+        const resultado = await this.buscar(COLECCION.DEPARTAMENTOS, {}, {});
         return {estatus: resultado.estatus, mensaje: resultado.mensaje, departamentos: resultado.elementos};
     }
 
     async elementoDetalle()
     {
         const filtro = {_id: new ObjectId(this.variables._id)};
-        const mensajeRespuesta = 'La consulta fue realizada con exito';
-        const res = await this.buscarUnElemento(mensajeRespuesta, COLECCION.DEPARTAMENTOS, filtro, {});
+        const res = await this.buscarUnElemento(COLECCION.DEPARTAMENTOS, filtro, {});
         return {estatus: res!.estatus, mensaje: res!.mensaje, departamento: res!.elemento}
     }
 }

@@ -7,16 +7,16 @@ class ResolversOperacionesService
     {
     }
 
-    protected async buscar(mensaje: string, coleccion: string, filtro: object)
+    protected async buscar(coleccion: string, filtro: object, opciones: object)
     {
         try
         {
-            return await this.context.db!.collection(coleccion).find(filtro).toArray().then(
+            return await this.context.db!.collection(coleccion).find(filtro, opciones).toArray().then(
                 async (elementos) =>
                 {
                     return {
                         estatus: true,
-                        mensaje: `Lista de ${mensaje} cargada correctamente`,
+                        mensaje: `Lista de ${coleccion} cargada correctamente`,
                         elementos: elementos
                     }
                 }
@@ -26,7 +26,7 @@ class ResolversOperacionesService
                     return {
                         estatus: false,
                         mensaje: `Ocurrio un error al cargar los documentos: ${error}`,
-                        elemento: null
+                        elementos: null
                     }
                 }
             )
@@ -34,13 +34,13 @@ class ResolversOperacionesService
         {
             return {
                 estatus: false,
-                mensaje: `No se pudo cargar la lista de ${mensaje}: ${e}`,
+                mensaje: `No se pudo cargar la lista de ${coleccion}: ${e}`,
                 elementos: null
             }
         }
     }
 
-    protected async buscarUnElemento(mensaje: string, coleccion: string, filtro: object, opciones: object)
+    protected async buscarUnElemento(coleccion: string, filtro: object, opciones: object)
     {
         try
         {
@@ -67,7 +67,7 @@ class ResolversOperacionesService
             {
                 return {
                     estatus: false,
-                    mensaje: `Los ${coleccion} no se han obtenido verifica tus parametros de consulta`,
+                    mensaje: `Error al buscar el documento en la coleccion: ${e}`,
                     elemento: null
                 }
             });
@@ -81,11 +81,11 @@ class ResolversOperacionesService
         }
     }
 
-    protected async agregarUnElemento(mensaje: string, coleccion: string, documento: object)
+    protected async agregarUnElemento(coleccion: string, documento: object, opciones: object)
     {
         try
         {
-            return await this.context.db!.collection(coleccion).insertOne(documento).then(
+            return await this.context.db!.collection(coleccion).insertOne(documento, opciones).then(
                 (res) =>
                 {
                     return {
@@ -114,7 +114,7 @@ class ResolversOperacionesService
         }
     }
 
-    protected async buscarUnoYActualizar(mensaje: string, coleccion: string, filtro: object, actualizar: object, opciones: object)
+    protected async buscarUnoYActualizar(coleccion: string, filtro: object, actualizar: object, opciones: object)
     {
         try
         {
@@ -123,7 +123,7 @@ class ResolversOperacionesService
                 {
                     return {
                         estatus: true,
-                        mensaje: `${mensaje}`,
+                        mensaje: `El documento fue actualizado con exito`,
                         elemento: res.value
                     }
                 }
@@ -132,7 +132,7 @@ class ResolversOperacionesService
                 {
                     return {
                         estatus: false,
-                        mensaje: `${mensaje}: ${error}`,
+                        mensaje: `Error al tratar de actualizar el documento: ${error}`,
                         elemento: null
                     }
                 }
@@ -186,6 +186,39 @@ class ResolversOperacionesService
                 estatus: false,
                 mensaje: `Error inesperado: ${e}`,
                 elemento: null
+            }
+        }
+    }
+
+    protected async contarDocumentos(coleccion: string, opciones: object)
+    {
+        try
+        {
+            return await this.context.db!.collection(coleccion, opciones).countDocuments().then(
+                async respuesta =>
+                {
+                    return {
+                        estatus: true,
+                        mensaje: 'Conteo correcto de documentos',
+                        total: respuesta
+                    }
+                }
+            ).catch(
+                async error =>
+                {
+                    return {
+                        estatus: false,
+                        mensaje: 'Error al contar los doucmentos: ' + error,
+                        total: 0
+                    }
+                }
+            );
+        } catch (e)
+        {
+            return {
+                estatus: false,
+                mensaje: 'Error inesperado: ' + e,
+                total: 0
             }
         }
     }

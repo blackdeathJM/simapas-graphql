@@ -11,18 +11,16 @@ class DepartamentoMutationService extends ResolversOperacionesService
 
     async registrarElemento()
     {
-        const respMsj = 'Departamento agregado correctamente';
         if (ValidacionesService.checarDato(this.variables.departamento!.nombre || ''))
         {
-            const resultado = await this.agregarUnElemento(respMsj, COLECCION.DEPARTAMENTOS, this.variables.departamento!);
+            const resultado = await this.agregarUnElemento(COLECCION.DEPARTAMENTOS, this.variables.departamento!, {});
             return {estatus: resultado.estatus, mensaje: resultado.mensaje, departamento: resultado.elemento}
         }
     }
 
     async actualizarElemento()
     {
-        const respMensaje = 'Los datos fueron actualizados con exito';
-        const resultado = await this.buscarUnoYActualizar(respMensaje, COLECCION.DEPARTAMENTOS,
+        const resultado = await this.buscarUnoYActualizar(COLECCION.DEPARTAMENTOS,
             {_id: new ObjectId(this.variables.departamento!._id)},
             {$set: {nombre: this.variables.departamento!.nombre}},
             {returnOriginal: false});

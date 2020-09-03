@@ -13,15 +13,13 @@ class UsuarioQueryService extends ResolversOperacionesService
 
     async listarUsuarios()
     {
-        const resMsj = 'Lista de usuarios cargada correctamente';
-        const resultado = await this.buscar(resMsj, COLECCION.USUARIOS, {});
+        const resultado = await this.buscar(COLECCION.USUARIOS, {}, {});
         return {estatus: resultado.estatus, mensaje: resultado.mensaje, usuarios: resultado.elementos}
     }
 
     async buscarUno()
     {
-        const respMsj = 'Consulta realizada con exito'
-        const resultado = await this.buscarUnElemento(respMsj, COLECCION.USUARIOS, {usuario: this.variables.usuario}, {});
+        const resultado = await this.buscarUnElemento(COLECCION.USUARIOS, {usuario: this.variables.usuario}, {});
         return {estatus: resultado!.estatus, mensaje: resultado!.mensaje, usuario: resultado!.elemento};
     }
 
@@ -30,9 +28,8 @@ class UsuarioQueryService extends ResolversOperacionesService
         const valores = Object.values(this.variables);
         const usuario = valores[0];
         const contrasena = valores[1];
-        const respMensaje = 'Consulta realizada con exito'
         // en el filtro solo coloco las this.variables ya que tiene la misma estructura que debe llevar elfiltro
-        return await this.buscarUnElemento(respMensaje, COLECCION.USUARIOS, {usuario}, {}).then(
+        return await this.buscarUnElemento(COLECCION.USUARIOS, {usuario}, {}).then(
             async (res: any) =>
             {
                 if (res === null)

@@ -1,15 +1,15 @@
 extend type Mutation
 {
     "DOC EXTERNA: Registro de los documentos externos"
-    regDocExt(docExt: DocExtInput!):DocExtResType
+    regDocExt(docExt: DocExtInput!):ResDocEx
     "DOC EXTERNA: Actualizar el campo donde se guardara el nombre del archivo subido"
-    acDocExtUrl(id: String!, docUrl: String!, proceso: String!): DocExtResType!
+    acDocExtUrl(_id: String!, docUrl: String!, proceso: String!): ResDocEx!
     "DOC EXTERNA: actualizamos la respuesta del usuarios y cambiamos el valor del documento respuesta que esta"
-    acDocUrlEnUsuarioDestino(id: String!, usuario: String!, docUrl: String!, subproceso: String!): DocExtResType
+    acDocUrlEnUsuarioDestino(_id: String!, usuario: String!, docUrl: String!, subproceso: String!): ResDocEx
     "DOC EXTERNA: Apagar la notificacion del usuarios cuando envia la respuesta y restamos uno de notificar administrador"
     acNotificacionPorUsuario(id: ID!, usuario: String!, notificarRespDelUsuario: Boolean!, notificarAdministrador: Int!): Boolean
     "DOC EXTERNA: Mandar observaciones y rechazar el documento"
-    acObservacionesRechazarDocExt(id: ID!, usuario: String!, subproceso: String!, notificarRespDelUsuario: Boolean!, observaciones: String!): DocExtResType!
+    acObservacionesRechazarDocExt(id: ID!, usuario: String!, subproceso: String!, notificarRespDelUsuario: Boolean!, observaciones: String!): ResDocEx!
     "DOC EXTERNA: Aprobar documento"
-    acAprobarDocumentoExt(id: ID!, usuario:String!, subproceso: String!, autorizado: Boolean): DocExtResType!
+    acAprobarDocumentoExt(id: ID!, usuario:String!, subproceso: String!, autorizado: Boolean): ResDocEx!
 }

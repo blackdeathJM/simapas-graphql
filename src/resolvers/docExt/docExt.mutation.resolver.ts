@@ -1,28 +1,8 @@
 import {IResolvers} from "graphql-tools";
-import {COLECCION, PUB_SUB} from "../../config/global";
+import {COLECCION} from "../../config/global";
 import {ObjectId} from "bson";
-import {todosDocExt} from "./docExt.query.resolver";
 import {Db} from "mongodb";
-import {PubSub} from "apollo-server-express";
-
-
-async function notTodosDocsExt(pubSub: PubSub, db: Db)
-{
-    return await pubSub.publish(PUB_SUB.DOC_EXT, {todosDocsExtSub: todosDocExt(db)});
-}
-
-async function notActUsuarioSubProceso(pubsub: PubSub, db: Db, contexto: any)
-{
-    const database = db as Db;
-    await database.collection(COLECCION.DOC_EXTERNA).find(
-        {usuarioDestino: {$elemMatch: {subproceso: {$in: JSON.parse(contexto)}}}}
-    ).toArray().then(
-        async (documentos) =>
-        {
-            const subscripcion = pubsub as PubSub;
-            await subscripcion.publish(PUB_SUB.DOC_EXT_USUSUBPROCESO, {usuarioSubprocesoSub: documentos});
-        }).catch(error => console.log('Error al ejecutar la subscripcion: ' + error));
-}
+import DocExtMutationService from "./services/docExt-mutation-service";
 
 const mutationDocExt: IResolvers =
     {
@@ -31,118 +11,18 @@ const mutationDocExt: IResolvers =
                 // PASO 1: Registrar el documento externo
                 async regDocExt(_, {docExt}, {pubsub, db, contexto})
                 {
-                    const database = db as Db;
-                    // Contamos el total de documentos para asignar el cosecutivo que sera el numero de seguimiento
-                    return await database.collection(COLECCION.DOC_EXTERNA).countDocuments().then(
-                        async (totalDocumentos) =>
-                        {
-                            docExt.noSeguimiento = totalDocumentos + 1;
-
-                            return await database.collection(COLECCION.DOC_EXTERNA).insertOne(docExt).then(
-                                async (doc) =>
-                                {
-                                    await notTodosDocsExt(pubsub, db);
-                                    await notActUsuarioSubProceso(pubsub, db, contexto);
-                                    return {
-                                        estatus: true,
-                                        mensaje: 'El documento fue insertado con exito',
-                                        documento: doc.ops
-                                    }
-                                }
-                            ).catch(
-                                async (error) =>
-                                {
-                                    return {
-                                        estatus: false,
-                                        mensaje: 'Ocurrio un error al tratar de registrar el documento: ' + error,
-                                        documento: null
-                                    }
-                                }
-                            )
-                        }
-                    ).catch(
-                        async (error) =>
-                        {
-                            return {
-                                estatus: false,
-                                mensaje: 'Error al tratar de contar los documentos: ' + error,
-                                documento: null
-                            }
-                        });
+                    return new DocExtMutationService(_, {docExt}, {pubsub, db, contexto}).agregarDocExt();
                 },
                 //PASO: 2 Actualizamos la urldoc donde se guardara el nombre del archivo externo que sera el arhivo en el servidor y el cual podran ver los usuarios a los que se envia el documento
                 // y hara una subscripcion para actualizar la lista de documentos en la tabla principal y activar notificacion
-                async acDocExtUrl(_: void, {id, docUrl, proceso}, {pubsub, db, contexto})
+                async acDocExtUrl(_, {_id, docUrl, proceso}, {pubsub, db, contexto})
                 {
-                    const database = db as Db;
-                    return await database.collection(COLECCION.DOC_EXTERNA).updateOne(
-                        {_id: new ObjectId(id), usuarioDestino: {$elemMatch: {notificarUsuario: false}}},
-                        {$set: {docUrl, proceso, "usuarioDestino.$[].notificarUsuario": true}},
-                        {upsert: true}).then(
-                        async (documento: any) =>
-                        {
-                            await notTodosDocsExt(pubsub, db);
-                            await notActUsuarioSubProceso(pubsub, db, contexto);
-                            return {
-                                estatus: true,
-                                mensaje: 'El documento se ha actualizado con exito',
-                                documento
-                            }
-                        }
-                    ).catch(
-                        async (error: any) =>
-                        {
-                            return {
-                                estatus: false,
-                                mensaje: 'Error al intentar actualizar el documento', error,
-                                documento: null
-                            }
-                        }
-                    )
+                    return new DocExtMutationService(_, {_id, docUrl, proceso}, {pubsub, db, contexto}).actualizarDocExtUrl();
                 },
                 // Actualizar el docUrl del usuarios donde subira la respuesta que guardaremos de manera temporal
-                async acDocUrlEnUsuarioDestino(_: void, {id, usuario, docUrl, subproceso}, {pubsub, db})
+                async acDocUrlEnUsuarioDestino(_, {_id, usuario, docUrl, subproceso}, {pubsub, db})
                 {
-                    const baseDatos = db as Db;
-                    return await baseDatos.collection(COLECCION.DOC_EXTERNA).findOne(
-                        {_id: new ObjectId(id)}).then(
-                        async (documentos) =>
-                        {
-                            let totalNotificaciones = documentos.notificarAdministrador + 1;
-
-                            return await baseDatos.collection(COLECCION.DOC_EXTERNA).findOneAndUpdate(
-                                {_id: new ObjectId(id), usuarioDestino: {$elemMatch: {usuario}}},
-                                // {$set: {"usuarioDestino.$.docUrl": docUrl, "usuarioDestino.$.notificarAdministrador": notificarAdministrador}},
-                                {
-                                    $set: {
-                                        notificarAdministrador: totalNotificaciones, "usuarioDestino.$.docUrl": docUrl,
-                                        "usuarioDestino.$.subproceso": subproceso, "usuarioDestino.$.notificarRespDelUsuario": true
-                                    }
-                                },
-                                {returnOriginal: false}).then(
-                                async (documento: any) =>
-                                {
-                                    await notTodosDocsExt(pubsub, db);
-                                    // await notActUsuarioSubProceso(pubsub, db, contexto);
-                                    return {
-                                        estatus: true,
-                                        mensaje: 'El documento se ha actualizado con exito',
-                                        documento
-                                    }
-                                }
-                            ).catch(
-                                async (error: any) =>
-                                {
-                                    console.log('error', error);
-                                    return {
-                                        estatus: false,
-                                        mensaje: 'Error al intentar actualizar el documento', error,
-                                        documento: null
-                                    }
-                                }
-                            )
-                        }
-                    ).catch();
+                    return new DocExtMutationService(_, {_id, usuario, docUrl, subproceso}, {pubsub, db}).actualizarDocUrlUsuarioDestino();
                 },
                 async acNotificacionPorUsuario(_: void, {id, usuario, notificarRespDelUsuario, notificarAdministrador}, {db})
                 {
@@ -190,7 +70,7 @@ const mutationDocExt: IResolvers =
                         {returnOriginal: false}).then(
                         async (documento) =>
                         {
-                            await notActUsuarioSubProceso(pubsub, db, contexto);
+                            // await notActUsuarioSubProceso(pubsub, db, contexto);
                             return {
                                 estatus: true,
                                 mensaje: 'La coleccion ha sido actualizada con exito',
@@ -209,7 +89,7 @@ const mutationDocExt: IResolvers =
                         {returnOriginal: false}).then(
                         async (documento) =>
                         {
-                            await notActUsuarioSubProceso(pubsub, db, contexto);
+                            // await notActUsuarioSubProceso(pubsub, db, contexto);
                             return {
                                 estatus: true,
                                 mensaje: 'Se ha aprobado el documento con exito y autorizado para la asignacion de folio',
