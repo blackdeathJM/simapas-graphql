@@ -12,11 +12,12 @@ type FolioType
     folioRespuesta: String
 }
 
-type FolioResType
+type ResFolio
 {
     estatus: Boolean!
     mensaje: String!
     folio: FolioType
+    folios: [FolioType]
 }
 type UltimoFolioType
 {

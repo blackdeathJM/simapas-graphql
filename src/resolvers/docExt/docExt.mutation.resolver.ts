@@ -26,14 +26,16 @@ const mutationDocExt: IResolvers =
                     return new DocExtMutationService(_, {id, usuario, notificarRespDelUsuario, notificarAdministrador}, {db}).acNoticiacionPorUsuario();
                 },
                 // Rechazar el documento y mandar observaciones cambiamos el subproceso a RECHAZADO y notificamos al usuarios y mandamos notificacion
-                async acObservacionesRechazarDocExt(_, {id, usuario, subproceso, notificarRespDelUsuario, observaciones}, {db})
+                async acObservacionesRechazarDocExt(_, {id, usuario, subproceso, notificarRespDelUsuario, observaciones}, {pubsub, contexto, db})
                 {
-                    return new DocExtMutationService(_, {id, usuario, subproceso, notificarRespDelUsuario, observaciones}, {db}).observacionesRechazarDocExt();
+                    return new DocExtMutationService(_, {id, usuario, subproceso, notificarRespDelUsuario, observaciones},
+                        {pubsub, contexto, db}).observacionesRechazarDocExt();
                 },
                 // Aprobar el documento
-                async acAprobarDocumentoExt(_, {id, usuario, subproceso, autorizado}, {db})
+                async acAprobarDocumentoExt(_, {id, usuario, subproceso, autorizado}, {pubsub, contexto, db})
                 {
-                    return new DocExtMutationService(_, {id, usuario, subproceso, autorizado}, {db}).aprobarDocumento();
+                    return new DocExtMutationService(_, {id, usuario, subproceso, autorizado},
+                        {pubsub, contexto, db}).aprobarDocumento();
                 }
 // +++++++++++++++++++++++=============================+++++++++++++++++++++++++===================++++++++++++++++++++++++
             // Actualizar docExt por entidad completamente
