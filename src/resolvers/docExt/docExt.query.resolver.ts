@@ -36,9 +36,9 @@ const queryDocExt: IResolvers =
                     //     }
                     // ]).toArray().then(async (resultado) => resultado).catch(error => console.log('Error: ' + error));
                 },
-                async docsAprobadosPorUsuario(_, {usuario, autorizado}, {db})
+                async docsAprobadosPorUsuario(_, {usuario, subproceso}, {db})
                 {
-                    return new DocExtQueryService(_, {usuario, autorizado}, {db}).docsAprobadosUsuario();
+                    return new DocExtQueryService(_, {usuario, subproceso}, {db}).docsAprobadosUsuario();
                 }
             }
     };

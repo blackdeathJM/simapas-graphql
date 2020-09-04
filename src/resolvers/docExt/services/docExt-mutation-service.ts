@@ -1,24 +1,9 @@
 import ResolversOperacionesService from "../../../services/resolver-operaciones";
 import {IContextData} from "../../../interfaces/context-data-interface";
-import {COLECCION, PUB_SUB} from "../../../config/global";
-import {PubSub} from "apollo-server-express";
-import {Db} from "mongodb";
+import {COLECCION} from "../../../config/global";
 import {ObjectId} from 'bson';
+import {notActUsuarioSubProceso, notTodosDocsExt} from "./docExt-subscription";
 
-
-async function notTodosDocsExt(pubsub: PubSub, db: Db)
-{
-    const resultado = db.collection(COLECCION.DOC_EXTERNA).find().toArray();
-    return await pubsub.publish(PUB_SUB.DOC_EXT, {todosDocsExtSub: resultado});
-}
-
-async function notActUsuarioSubProceso(pubsub: PubSub, db: Db, contexto: any)
-{
-    const resultado = await db.collection(COLECCION.DOC_EXTERNA).find(
-        {usuarioDestino: {$elemMatch: {subproceso: {$in: JSON.parse(contexto)}}}}).toArray();
-
-    return await pubsub.publish(PUB_SUB.DOC_EXT_USUSUBPROCESO, {pubsubSubproceso: resultado});
-}
 
 class DocExtMutationService extends ResolversOperacionesService
 {

@@ -7,5 +7,5 @@ type Query
     "DOC EXTERNA: Obtener documentos por usuarios y subproceso para mostrar en el area de usuarios"
     usuarioSubproceso(usuario: String!, subprocesos: [String!]!): ResDocEx,
     "DOC EXTERNA: Obtener todos los documentos que ya han sido autorizados por usuarios destino para asignarles folio"
-    docsAprobadosPorUsuario(usuario: String!, autorizado: Boolean!): ResDocEx
+    docsAprobadosPorUsuario(usuario: String!, subproceso: String!): ResDocEx
 }

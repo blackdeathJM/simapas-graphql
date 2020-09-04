@@ -20,16 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="quitando el database operations para ahorrar codigo">
-      <change afterPath="$PROJECT_DIR$/src/resolvers/folios/models/folio-interface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/folios/services/folio.mutation.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/folios/services/folio.query.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/docExt/services/docExt-subscription.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/docExt.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/docExt.mutation.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/docExt.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/docExt.query.resolver.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/services/docExt-mutation-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/services/docExt-mutation-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/services/docExt-query-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/services/docExt-query-service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/folios/folio.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/folios/folio.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/folio.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/folio.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/folios/folios.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/folios/folios.mutation.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/folios/services/folio.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/folios/services/folio.mutation.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.query.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +196,7 @@
       <workItem from="1599195872705" duration="34000" />
       <workItem from="1599195943263" duration="835000" />
       <workItem from="1599199428870" duration="10074000" />
-      <workItem from="1599213522433" duration="2061000" />
+      <workItem from="1599213522433" duration="12671000" />
     </task>
     <task id="LOCAL-00001" summary="Creacion del mutate para actualizar los roles de los usuarios">
       <created>1596572391127</created>
@@ -464,7 +464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599143228619</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="quitando el database operations para ahorrar codigo">
+      <created>1599217313832</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1599217313832</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -521,24 +528,24 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="468" y="165" width="1230" height="710" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598478425542" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1599143229900">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2472" y="234" key="Vcs.Push.Dialog.v2" timestamp="1599217316417">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599143229900" />
-    <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597551696634" />
-    <state x="1940" y="84" width="1677" height="858" maximized="true" key="dock-window-1" timestamp="1599098164109">
+    <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599217316417" />
+    <state x="1920" y="169" width="1648" height="856" maximized="true" key="dock-window-1" timestamp="1599223220457">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="1940" y="84" width="1677" height="858" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599098164109" />
+    <state x="1920" y="169" width="1648" height="856" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599223220457" />
     <state x="2628" y="497" width="1705" height="801" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599014471819" />
-    <state x="2339" y="204" width="1677" height="858" key="dock-window-2" timestamp="1599108735536">
+    <state x="2022" y="138" width="1648" height="759" maximized="true" key="dock-window-2" timestamp="1599228210770">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2339" y="204" width="1677" height="858" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599108735536" />
-    <state x="2340" y="136" width="1677" height="858" maximized="true" key="dock-window-3" timestamp="1599110728477">
+    <state x="2022" y="138" width="1648" height="759" maximized="true" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599228210770" />
+    <state x="2114" y="302" width="1648" height="759" maximized="true" key="dock-window-3" timestamp="1599228560154">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2340" y="136" width="1677" height="858" maximized="true" key="dock-window-3/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599110728477" />
+    <state x="2114" y="302" width="1648" height="759" maximized="true" key="dock-window-3/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599228560154" />
     <state x="2179" y="213" width="1677" height="858" maximized="true" key="dock-window-4" timestamp="1599116928945">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

@@ -41,7 +41,7 @@ class DocExtQueryService extends ResolversOperacionesService
     {
         const valores = Object.values(this.variables);
         return await this.buscar(COLECCION.DOC_EXTERNA,
-            {usuarioDestino: {$elemMatch: {usuario: valores[0], autorizado: valores[1]}}},
+            {usuarioDestino: {$elemMatch: {usuario: valores[0], subproceso: valores[1]}}},
             {}).then(
             async resultado =>
             {
