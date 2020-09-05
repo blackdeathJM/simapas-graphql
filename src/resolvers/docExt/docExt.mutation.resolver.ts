@@ -36,32 +36,11 @@ const mutationDocExt: IResolvers =
                 {
                     return new DocExtMutationService(_, {id, usuario, subproceso, autorizado},
                         {pubsub, contexto, db}).aprobarDocumento();
-                }
-// +++++++++++++++++++++++=============================+++++++++++++++++++++++++===================++++++++++++++++++++++++
-            // Actualizar docExt por entidad completamente
-            /*            async acEntidadDocExt(_: void, {documentoExternoInput}, {pubsub, db})
-                        {
-                            const database = db as Db;
-                            return await database.collection(COLECCION.DOC_EXTERNA).findOneAndUpdate({_id: new ObjectId(documentoExternoInput._id)},
-                                {$addToSet: documentoExternoInput}).then(
-                                async (docExt: any) =>
-                                {
-                                    await notTodosDocsExt(pubsub, db);
-                                    return {
-                                        estatus: true,
-                                        mensaje: 'Entidad actualizada con exito',
-                                        documento: docExt.value
-                                    }
-                                }).catch(
-                                async (error: any) =>
-                                {
-                                    return {
-                                        estatus: false,
-                                        mensaje: 'Ha ocurrido un error al intentar actualizar la entidad ' + error,
-                                        documento: null
-                                    }
-                                });
-                        },*/
-        }
+                },
+                async acRespuestaConFolio(_, {_id, usuario, docRespUrl, acuseUrl, proceso}, {pubsub, db})
+                {
+                    return new DocExtMutationService(_, {_id, usuario, docRespUrl, acuseUrl, proceso}, {pubsub, db}).respuestaConFolio();
+                },
+            }
     };
 export default mutationDocExt;

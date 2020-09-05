@@ -3,6 +3,7 @@ import environments from "./environments";
 if (process.env.NODE_ENV !== 'production')
 {
     const environment = environments;
+    console.log(environment);
 }
 
 export enum COLECCION
@@ -19,7 +20,6 @@ export enum PUB_SUB
     NOT_DOC_INTERNA = 'todosDocInterna',
     DOC_EXT = 'obDocsExtTodos',
     DOC_EXT_USUSUBPROCESO = 'usuariosSubproceso',
-    NOT_USUARIOS_SESSION = 'usuarioSession',
     NOT_CAMBIO_ROLE = 'usuarioCambioRole'
 }
 

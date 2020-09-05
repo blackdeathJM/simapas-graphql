@@ -30,9 +30,9 @@ class UsuarioQueryService extends ResolversOperacionesService
         const contrasena = valores[1];
         // en el filtro solo coloco las this.variables ya que tiene la misma estructura que debe llevar elfiltro
         return await this.buscarUnElemento(COLECCION.USUARIOS, {usuario}, {}).then(
-            async (res: any) =>
+            async res =>
             {
-                if (res === null)
+                if (!res.estatus)
                 {
                     return {
                         estatus: false,

@@ -20,16 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="quitando el database operations para ahorrar codigo">
-      <change afterPath="$PROJECT_DIR$/src/resolvers/docExt/services/docExt-subscription.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/docExt.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/docExt.query.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/global.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/global.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/docExt.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/docExt.mutation.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/models/docExt.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/models/docExt.interface.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/services/docExt-mutation-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/services/docExt-mutation-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/services/docExt-query-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/services/docExt-query-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/folios/folio.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/folios/folio.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/folios/services/folio.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/folios/services/folio.mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.query.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-query-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-query-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.mutation.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +61,7 @@
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="D:\Documents\Proyectos\Backend\simapas-graphql\node_modules\typescript\lib" />
   </component>
@@ -196,7 +194,9 @@
       <workItem from="1599195872705" duration="34000" />
       <workItem from="1599195943263" duration="835000" />
       <workItem from="1599199428870" duration="10074000" />
-      <workItem from="1599213522433" duration="12671000" />
+      <workItem from="1599213522433" duration="19989000" />
+      <workItem from="1599268166120" duration="5282000" />
+      <workItem from="1599278649879" duration="2854000" />
     </task>
     <task id="LOCAL-00001" summary="Creacion del mutate para actualizar los roles de los usuarios">
       <created>1596572391127</created>
@@ -471,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599217313832</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="quitando el database operations para ahorrar codigo">
+      <created>1599236457014</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1599236457014</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -508,6 +515,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598950150280" />
+    <state x="703" y="369" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1599237955268">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="703" y="369" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599237955268" />
     <state width="1879" height="148" key="GridCell.Tab.0.bottom" timestamp="1598859207843">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -528,28 +539,28 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="468" y="165" width="1230" height="710" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598478425542" />
-    <state x="2472" y="234" key="Vcs.Push.Dialog.v2" timestamp="1599217316417">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1599236458562">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599143229900" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599236458562" />
     <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599217316417" />
-    <state x="1920" y="169" width="1648" height="856" maximized="true" key="dock-window-1" timestamp="1599223220457">
+    <state x="2021" y="84" width="1638" height="875" maximized="true" key="dock-window-1" timestamp="1599280424429">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="1920" y="169" width="1648" height="856" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599223220457" />
+    <state x="2021" y="84" width="1638" height="875" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599280424429" />
     <state x="2628" y="497" width="1705" height="801" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599014471819" />
-    <state x="2022" y="138" width="1648" height="759" maximized="true" key="dock-window-2" timestamp="1599228210770">
+    <state x="2057" y="178" width="1643" height="878" maximized="true" key="dock-window-2" timestamp="1599274178668">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2022" y="138" width="1648" height="759" maximized="true" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599228210770" />
+    <state x="2057" y="178" width="1643" height="878" maximized="true" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599274178668" />
     <state x="2114" y="302" width="1648" height="759" maximized="true" key="dock-window-3" timestamp="1599228560154">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2114" y="302" width="1648" height="759" maximized="true" key="dock-window-3/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599228560154" />
-    <state x="2179" y="213" width="1677" height="858" maximized="true" key="dock-window-4" timestamp="1599116928945">
+    <state x="1920" y="94" width="1648" height="881" maximized="true" key="dock-window-4" timestamp="1599241837254">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2179" y="213" width="1677" height="858" maximized="true" key="dock-window-4/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599116928945" />
+    <state x="1920" y="94" width="1648" height="881" maximized="true" key="dock-window-4/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599241837254" />
     <state x="2059" y="104" width="1677" height="858" maximized="true" key="dock-window-5" timestamp="1599120811979">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

@@ -30,11 +30,3 @@ interface IUsuarioDestinoDocExt
     notificarRespDelUsuario: boolean
     notificarUsuario: boolean
 }
-
-export interface IResDocEx
-{
-    estatus: boolean
-    mensaje: string
-    documento: IDocExt
-    documentos: IDocExt[];
-}
