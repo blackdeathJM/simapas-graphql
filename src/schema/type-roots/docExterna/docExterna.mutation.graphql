@@ -14,4 +14,6 @@ extend type Mutation
     acAprobarDocumentoExt(id: ID!, usuario:String!, subproceso: String!, autorizado: Boolean): ResDocEx
     "DOC EXTERNA: Actualizar el campo donde se guardara el documento respuesta con folio y actualizar el proceso y subproceso a ACUSE"
     acRespuestaConFolio(_id: ID!, usuario: String!,docRespUrl: String, acuseUrl: String, proceso: PROCESOS_DOC!): ResDocEx
+    "DOC: EXTERNA: Dar por terminado el documento anticipado"
+    acDarPorEntregado(_id: ID!): ResDocEx
 }

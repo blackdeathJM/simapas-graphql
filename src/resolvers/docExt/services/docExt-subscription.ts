@@ -13,6 +13,5 @@ export async function notActUsuarioSubProceso(pubsub: PubSub, db: Db, contexto: 
 {
     const resultado = await db.collection(COLECCION.DOC_EXTERNA).find(
         {usuarioDestino: {$elemMatch: {subproceso: {$in: JSON.parse(contexto)}}}}).toArray();
-
     return await pubsub.publish(PUB_SUB.DOC_EXT_USUSUBPROCESO, {pubsubSubproceso: resultado});
 }

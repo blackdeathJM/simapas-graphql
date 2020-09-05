@@ -32,8 +32,7 @@ class DocExtMutationService extends ResolversOperacionesService
         const valores = Object.values(this.variables);
         return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA,
             {_id: new ObjectId(valores[0])},
-            {$set: {docUrl: valores[1], proceso: valores[2], "usuarioDestino.$[].notificarUsuario": true}},
-            {}).then(
+            {$set: {docUrl: valores[1], proceso: valores[2], "usuarioDestino.$[].notificarUsuario": true}}, {}).then(
             async resultado =>
             {
                 await notTodosDocsExt(this.context.pubsub!, this.context.db!);
@@ -48,8 +47,7 @@ class DocExtMutationService extends ResolversOperacionesService
         const valores = Object.values(this.variables);
         // Aumentamos na notificacion del administrador en 1
         const notificacionesAdminitrador = await this.buscarUnElemento(COLECCION.DOC_EXTERNA,
-            {_id: new ObjectId(valores[0])},
-            {});
+            {_id: new ObjectId(valores[0])}, {});
         let totalNotificaciones = notificacionesAdminitrador.elemento.notificarAdministrador + 1;
         return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA,
             {_id: new ObjectId(valores[0]), usuarioDestino: {$elemMatch: {usuario: valores[1]}}},
@@ -116,8 +114,7 @@ class DocExtMutationService extends ResolversOperacionesService
         const valores = Object.values(this.variables);
         return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA,
             {_id: new ObjectId(valores[0]), usuarioDestino: {$elemMatch: {usuario: valores[1]}}},
-            {$set: {"usuarioDestino.$.subproceso": valores[2], "usuarioDestino.$.autorizado": valores[3]}},
-            {returnOriginal: false}).then(
+            {$set: {"usuarioDestino.$.subproceso": valores[2], "usuarioDestino.$.autorizado": valores[3]}}, {returnOriginal: false}).then(
             async resultado =>
             {
                 await notActUsuarioSubProceso(this.context.pubsub!, this.context.db!, this.context.contexto!);
@@ -134,12 +131,24 @@ class DocExtMutationService extends ResolversOperacionesService
             {
                 $set: {
                     docRespUrl: valores[2], acuseUrl: valores[3], proceso: valores[4], fechaTerminado: this.fechaActual,
-                    "usuarioDestino.$.subproceso": valores[4]
+                    "usuarioDestino.$[].subproceso": valores[4]
                 }
             }, {returnOriginal: false}).then(
             async resultado =>
             {
                 await notTodosDocsExt(this.context.pubsub!, this.context.db!);
+                return {estatus: resultado.estatus, mensaje: resultado.mensaje, documento: resultado.elemento}
+            }
+        )
+    }
+
+    async darPorEntregado()
+    {
+        return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(this.variables._id)},
+            {$set: {proceso: "ENTREGADO", "usuarioDestino.$[].subproceso": "ENTREGADO"}}, {}).then(
+            async resultado =>
+            {
+                await notActUsuarioSubProceso(this.context.pubsub!, this.context.db!, this.context.contexto);
                 return {estatus: resultado.estatus, mensaje: resultado.mensaje, documento: resultado.elemento}
             }
         )

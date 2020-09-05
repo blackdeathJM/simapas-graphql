@@ -41,6 +41,10 @@ const mutationDocExt: IResolvers =
                 {
                     return new DocExtMutationService(_, {_id, usuario, docRespUrl, acuseUrl, proceso}, {pubsub, db}).respuestaConFolio();
                 },
+                async acDarPorEntregado(_, {_id}, {pubsub, contexto, db})
+                {
+                    return new DocExtMutationService(_, {_id}, {pubsub, contexto, db}).darPorEntregado();
+                }
             }
     };
 export default mutationDocExt;

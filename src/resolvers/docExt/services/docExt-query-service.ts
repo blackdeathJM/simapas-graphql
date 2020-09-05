@@ -28,8 +28,7 @@ class DocExtQueryService extends ResolversOperacionesService
     {
         const valores = Object.values(this.variables);
         return await this.buscar(COLECCION.DOC_EXTERNA,
-            {usuarioDestino: {$elemMatch: {usuario: valores[0], subproceso: {$in: valores[1]}}}},
-            {projection: filtroDocsExt}).then(
+            {usuarioDestino: {$elemMatch: {usuario: valores[0], subproceso: {$in: valores[1]}}}}, {projection: filtroDocsExt}).then(
             async resultado =>
             {
                 return {estatus: resultado.estatus, mensaje: resultado.mensaje, documentos: resultado.elementos}
@@ -41,8 +40,7 @@ class DocExtQueryService extends ResolversOperacionesService
     {
         const valores = Object.values(this.variables);
         return await this.buscar(COLECCION.DOC_EXTERNA,
-            {usuarioDestino: {$elemMatch: {usuario: valores[0], subproceso: valores[1]}}},
-            {}).then(
+            {usuarioDestino: {$elemMatch: {usuario: valores[0], subproceso: valores[1]}}}, {}).then(
             async resultado =>
             {
                 return {estatus: resultado.estatus, mensaje: resultado.mensaje, documentos: resultado.elementos}

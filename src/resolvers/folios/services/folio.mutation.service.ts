@@ -15,7 +15,6 @@ class FolioMutationService extends ResolversOperacionesService
                 if (resultado.elemento.folioRespuesta !== "Independiente")
                 {
                     let fechaActual = moment().format('DD/MM/YYYY');
-                    console.log('usuario', resultado.elemento.asigUsuario);
                     await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA,
                         {
                             identificadorDoc: resultado.elemento.folioRespuesta,
@@ -30,7 +29,6 @@ class FolioMutationService extends ResolversOperacionesService
                         {}).then(
                         async res =>
                         {
-                            console.log('si entro', res);
                             return {estatus: true, mensaje: 'Se actualizo correctamente DocExt', folio: null}
                         }
                     );
