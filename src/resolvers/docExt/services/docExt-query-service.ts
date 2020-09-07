@@ -2,6 +2,7 @@ import ResolversOperacionesService from "../../../services/resolver-operaciones"
 import {IContextData} from "../../../interfaces/context-data-interface";
 import {COLECCION} from "../../../config/global";
 import {filtroDocsExt} from "../proyecciones";
+import {buscarDocumento, buscarTodos} from "../../../services/respuestas-return";
 
 class DocExtQueryService extends ResolversOperacionesService
 {
@@ -11,21 +12,14 @@ class DocExtQueryService extends ResolversOperacionesService
     async docExtLista()
     {
         const resultado = await this.buscar(COLECCION.DOC_EXTERNA, {}, {});
-        return {
-            info: {
-                pagina: resultado!.info.pagina, paginas: resultado!.info.paginas, elementosPorPagina: resultado!.info.elementosPorPagina,
-                total: resultado!.info.total
-            },
-            estatus: resultado!.estatus, mensaje: resultado!.mensaje, documentos: resultado!.elementos
-        }
+        return buscarTodos(resultado);
     }
-
     async docExtListaPorUsuario()
     {
         return await this.buscar(COLECCION.DOC_EXTERNA, {"usuarioDestino": {$elemMatch: this.variables}}, {}).then(
             async resultado =>
             {
-                return {estatus: resultado!.estatus, mensaje: resultado!.mensaje, documentos: resultado!.elementos}
+                return buscarDocumento(resultado);
             }
         )
     }

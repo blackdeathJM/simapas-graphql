@@ -3,6 +3,7 @@ import {IContextData} from "../../../interfaces/context-data-interface";
 import {COLECCION} from "../../../config/global";
 import bcryptjs from "bcryptjs";
 import JWT from "../../../lib/jwt";
+import {buscarTodos} from "../../../services/respuestas-return";
 
 class UsuarioQueryService extends ResolversOperacionesService
 {
@@ -14,6 +15,7 @@ class UsuarioQueryService extends ResolversOperacionesService
     async listarUsuarios()
     {
         const resultado = await this.buscar(COLECCION.USUARIOS, {}, {});
+        return buscarTodos(resultado);
     }
 
     async buscarUno()

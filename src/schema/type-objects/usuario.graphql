@@ -15,8 +15,8 @@ type ResUsuario
     info: InfoPaginacion
     estatus: Boolean
     mensaje: String
-    usuario: UsuarioType
-    usuarios: [UsuarioType]
+    documento: UsuarioType
+    documentos: [UsuarioType]
 }
 type ResUsuarioToken
 {

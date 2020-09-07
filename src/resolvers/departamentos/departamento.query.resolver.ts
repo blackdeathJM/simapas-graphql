@@ -5,9 +5,9 @@ const queryDeptos: IResolvers =
     {
         Query:
             {
-                async obtenerDeptos(_, __, {db})
+                async obtenerDeptos(_, {pagina, elementosPorPagina}, {db})
                 {
-                    return new DepartamentoQueryServices(_, __, {db}).listaElementos();
+                    return new DepartamentoQueryServices(_, {paginacion: {pagina, elementosPorPagina}}, {db}).listaElementos();
                 },
                 async departamentoID(_, {_id}, {db})
                 {

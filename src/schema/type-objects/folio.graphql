@@ -17,8 +17,8 @@ type ResFolio
     info: InfoPaginacion
     estatus: Boolean!
     mensaje: String!
-    folio: FolioType
-    folios: [FolioType]
+    documento: FolioType
+    documentos: [FolioType]
 }
 type UltimoFolioType
 {

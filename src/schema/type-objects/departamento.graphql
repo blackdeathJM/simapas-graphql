@@ -9,6 +9,6 @@ type RespDepto
     info: InfoPaginacion
     estatus: Boolean!
     mensaje: String!
-    departamento: DeptoType
-    departamentos: [DeptoType]
+    documento: DeptoType
+    documentos: [DeptoType]
 }
