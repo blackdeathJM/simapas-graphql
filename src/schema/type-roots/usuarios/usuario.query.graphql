@@ -1,7 +1,7 @@
 extend type Query
 {
     "USUARIO - Obtener la lista de todos los usuarios"
-    obtenerUsuarios: ResUsuario
+    obtenerUsuarios(pagina: Int =1, elementosPorPagina: Int=20): ResUsuario
     "USUARIO - Buscar usuarios por su nombre de usuarios"
     buscarUsuario(usuario: String!): ResUsuario
     "USUARIO - Inicio de sesion"

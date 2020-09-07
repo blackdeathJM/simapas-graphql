@@ -11,8 +11,6 @@ class DocExtQueryService extends ResolversOperacionesService
     async docExtLista()
     {
         const resultado = await this.buscar(COLECCION.DOC_EXTERNA, {}, {});
-
-        console.log('resultado', resultado);
         return {
             info: {
                 pagina: resultado!.info.pagina, paginas: resultado!.info.paginas, elementosPorPagina: resultado!.info.elementosPorPagina,

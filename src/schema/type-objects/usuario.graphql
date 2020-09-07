@@ -12,6 +12,7 @@ type UsuarioType implements IUsuario
 
 type ResUsuario
 {
+    info: InfoPaginacion
     estatus: Boolean
     mensaje: String
     usuario: UsuarioType

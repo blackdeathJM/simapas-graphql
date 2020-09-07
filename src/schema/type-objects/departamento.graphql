@@ -6,6 +6,7 @@ type DeptoType implements IDepartamento
 
 type RespDepto
 {
+    info: InfoPaginacion
     estatus: Boolean!
     mensaje: String!
     departamento: DeptoType
