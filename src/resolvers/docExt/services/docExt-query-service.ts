@@ -11,7 +11,15 @@ class DocExtQueryService extends ResolversOperacionesService
     async docExtLista()
     {
         const resultado = await this.buscar(COLECCION.DOC_EXTERNA, {}, {});
-        return {estatus: resultado.estatus, mensaje: resultado.mensaje, documentos: resultado.elementos}
+
+        console.log('resultado', resultado);
+        return {
+            info: {
+                pagina: resultado!.info.pagina, paginas: resultado!.info.paginas, elementosPorPagina: resultado!.info.elementosPorPagina,
+                total: resultado!.info.total
+            },
+            estatus: resultado!.estatus, mensaje: resultado!.mensaje, documentos: resultado!.elementos
+        }
     }
 
     async docExtListaPorUsuario()
@@ -19,7 +27,7 @@ class DocExtQueryService extends ResolversOperacionesService
         return await this.buscar(COLECCION.DOC_EXTERNA, {"usuarioDestino": {$elemMatch: this.variables}}, {}).then(
             async resultado =>
             {
-                return {estatus: resultado.estatus, mensaje: resultado.mensaje, documentos: resultado.elementos}
+                return {estatus: resultado!.estatus, mensaje: resultado!.mensaje, documentos: resultado!.elementos}
             }
         )
     }
@@ -31,7 +39,7 @@ class DocExtQueryService extends ResolversOperacionesService
             {usuarioDestino: {$elemMatch: {usuario: valores[0], subproceso: {$in: valores[1]}}}}, {projection: filtroDocsExt}).then(
             async resultado =>
             {
-                return {estatus: resultado.estatus, mensaje: resultado.mensaje, documentos: resultado.elementos}
+                return {estatus: resultado!.estatus, mensaje: resultado!.mensaje, documentos: resultado!.elementos}
             }
         )
     }
@@ -43,7 +51,7 @@ class DocExtQueryService extends ResolversOperacionesService
             {usuarioDestino: {$elemMatch: {usuario: valores[0], subproceso: valores[1]}}}, {}).then(
             async resultado =>
             {
-                return {estatus: resultado.estatus, mensaje: resultado.mensaje, documentos: resultado.elementos}
+                return {estatus: resultado!.estatus, mensaje: resultado!.mensaje, documentos: resultado!.elementos}
             }
         )
     }

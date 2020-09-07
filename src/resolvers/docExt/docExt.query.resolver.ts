@@ -6,9 +6,9 @@ const queryDocExt: IResolvers =
         Query:
             {
                 // Obtenermos todos los documentos externos
-                async todosDocsExt(_, __, {db})
+                async todosDocsExt(_, {pagina, elementosPorPagina}, {db})
                 {
-                    return new DocExtQueryService(_, __, {db}).docExtLista();
+                    return new DocExtQueryService(_, {paginacion: {pagina, elementosPorPagina}}, {db}).docExtLista();
                 },
                 // consultar documentos por usuarios sera usado por el admistrador
                 async todosLosDocsPorUsuario(_, {usuario}, {db})

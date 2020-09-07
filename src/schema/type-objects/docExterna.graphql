@@ -30,6 +30,7 @@ type UsuarioDestinoDocExtType implements IUsuarioDestinoDocExtType
 }
 type ResDocEx implements IResDocEx
 {
+    info: InfoPaginacion
     estatus: Boolean!
     mensaje: String!
     documento: DocExtType

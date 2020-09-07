@@ -11,7 +11,10 @@ class DepartamentoQueryServices extends ResolversOperacionesService
     async listaElementos()
     {
         const resultado = await this.buscar(COLECCION.DEPARTAMENTOS, {}, {});
-        return {estatus: resultado.estatus, mensaje: resultado.mensaje, departamentos: resultado.elementos};
+        return {
+            info: {pagina: resultado!.info.pagina, paginas: resultado!.info.paginas, elementosPorPagina: resultado!.info.elementosPorPagina},
+            estatus: resultado!.estatus, mensaje: resultado!.mensaje, departamentos: resultado!.elementos
+        };
     }
 
     async elementoDetalle()

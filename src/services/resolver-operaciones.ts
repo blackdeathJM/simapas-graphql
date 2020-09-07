@@ -1,5 +1,6 @@
 import {IVariables} from "../interfaces/variables-interface";
 import {IContextData} from "../interfaces/context-data-interface";
+import {paginacion} from "../lib/paginacion";
 
 class ResolversOperacionesService
 {
@@ -11,30 +12,53 @@ class ResolversOperacionesService
     {
         try
         {
-            return await this.context.db!.collection(coleccion).find(filtro, opciones).toArray().then(
-                async (elementos) =>
-                {
-                    return {
-                        estatus: true,
-                        mensaje: `Lista de ${coleccion} cargada correctamente`,
-                        elementos: elementos
+            const datosPaginacion = await paginacion(this.context.db!, coleccion, this.variables.paginacion!.paginas,
+                this.variables.paginacion!.elementosPorPagina);
+            return await this.context.db!.collection(coleccion).find(filtro, opciones).limit(datosPaginacion.elementosPorPagina)
+                .skip(datosPaginacion.saltar).toArray().then(
+                    async resultado =>
+                    {
+                        return {
+                            info: {
+                                pagina: datosPaginacion.pagina,
+                                paginas: datosPaginacion.paginas,
+                                saltar: datosPaginacion.saltar,
+                                elementosPorPagina: datosPaginacion.elementosPorPagina,
+                                total: datosPaginacion.total
+                            },
+                            estatus: true,
+                            mensaje: 'Lista de documentos cargada correctamente',
+                            elementos: resultado
+                        }
                     }
-                }
-            ).catch(
-                error =>
-                {
-                    return {
-                        estatus: false,
-                        mensaje: `Ocurrio un error al cargar los documentos: ${error}`,
-                        elementos: null
+                ).catch(
+                    async error =>
+                    {
+                        return {
+                            info: {
+                                pagina: 0,
+                                paginas: 0,
+                                elementosPorPagina: 0,
+                                total: 0
+                            },
+                            estatus: false,
+                            mensaje: `Error al tratar de cargar los documentos:--> ${error}`,
+                            elementos: null
+                        }
                     }
-                }
-            )
+                )
+
         } catch (e)
         {
             return {
-                estatus: false,
-                mensaje: `No se pudo cargar la lista de ${coleccion}: ${e}`,
+                info: {
+                    pagina: 0,
+                    paginas: 0,
+                    elementosPorPagina: 0,
+                    total: 0
+                },
+                estatus: true,
+                mensaje: `Ha ocurrido un error inseperado: ${e}`,
                 elementos: null
             }
         }
