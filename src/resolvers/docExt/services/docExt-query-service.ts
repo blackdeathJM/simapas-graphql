@@ -2,7 +2,7 @@ import ResolversOperacionesService from "../../../services/resolver-operaciones"
 import {IContextData} from "../../../interfaces/context-data-interface";
 import {COLECCION} from "../../../config/global";
 import {filtroDocsExt} from "../proyecciones";
-import {buscarDocumento, buscarTodos} from "../../../services/respuestas-return";
+import {respArreglosPag} from "../../../services/respuestas-return";
 
 class DocExtQueryService extends ResolversOperacionesService
 {
@@ -12,14 +12,15 @@ class DocExtQueryService extends ResolversOperacionesService
     async docExtLista()
     {
         const resultado = await this.buscar(COLECCION.DOC_EXTERNA, {}, {});
-        return buscarTodos(resultado);
+        return respArreglosPag(resultado);
     }
+
     async docExtListaPorUsuario()
     {
-        return await this.buscar(COLECCION.DOC_EXTERNA, {"usuarioDestino": {$elemMatch: this.variables}}, {}).then(
+        return await this.buscar(COLECCION.DOC_EXTERNA, {"usuarioDestino": {$elemMatch: {usuario: this.variables.usuario}}}, {}).then(
             async resultado =>
             {
-                return buscarDocumento(resultado);
+                return respArreglosPag(resultado);
             }
         )
     }
@@ -31,7 +32,7 @@ class DocExtQueryService extends ResolversOperacionesService
             {usuarioDestino: {$elemMatch: {usuario: valores[0], subproceso: {$in: valores[1]}}}}, {projection: filtroDocsExt}).then(
             async resultado =>
             {
-                return {estatus: resultado!.estatus, mensaje: resultado!.mensaje, documentos: resultado!.elementos}
+                return respArreglosPag(resultado);
             }
         )
     }
@@ -43,7 +44,7 @@ class DocExtQueryService extends ResolversOperacionesService
             {usuarioDestino: {$elemMatch: {usuario: valores[0], subproceso: valores[1]}}}, {}).then(
             async resultado =>
             {
-                return {estatus: resultado!.estatus, mensaje: resultado!.mensaje, documentos: resultado!.elementos}
+                return respArreglosPag(resultado);
             }
         )
     }

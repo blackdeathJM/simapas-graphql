@@ -2,7 +2,7 @@ import {COLECCION} from "../../../config/global";
 import ResolversOperacionesService from "../../../services/resolver-operaciones";
 import {IContextData} from "../../../interfaces/context-data-interface";
 import {ObjectId} from "bson";
-import {buscarTodos} from "../../../services/respuestas-return";
+import {respArreglosPag} from "../../../services/respuestas-return";
 
 class DepartamentoQueryServices extends ResolversOperacionesService
 {
@@ -12,7 +12,7 @@ class DepartamentoQueryServices extends ResolversOperacionesService
     async listaElementos()
     {
         const resultado = await this.buscar(COLECCION.DEPARTAMENTOS, {}, {});
-        return buscarTodos(resultado);
+        return respArreglosPag(resultado);
     }
 
     async elementoDetalle()

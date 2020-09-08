@@ -4,6 +4,7 @@ import {COLECCION} from "../../../config/global";
 import {ObjectId} from 'bson';
 import {notActUsuarioSubProceso, notTodosDocsExt} from "./docExt-subscription";
 import moment from "moment";
+import {respDocumento} from "../../../services/respuestas-return";
 
 
 class DocExtMutationService extends ResolversOperacionesService
@@ -22,7 +23,7 @@ class DocExtMutationService extends ResolversOperacionesService
             {
                 await notTodosDocsExt(this.context.pubsub!, this.context.db!);
                 await notActUsuarioSubProceso(this.context.pubsub!, this.context.db!, this.context.contexto!);
-                return {estatus: resultado.estatus, mensaje: resultado.mensaje, documento: resultado.elemento}
+                return respDocumento(resultado);
             }
         )
     }
@@ -37,7 +38,7 @@ class DocExtMutationService extends ResolversOperacionesService
             {
                 await notTodosDocsExt(this.context.pubsub!, this.context.db!);
                 await notActUsuarioSubProceso(this.context.pubsub!, this.context.db!, this.context.contexto!);
-                return {estatus: resultado.estatus, mensaje: resultado.mensaje, documento: resultado.elemento}
+                return respDocumento(resultado);
             }
         );
     }
@@ -61,7 +62,7 @@ class DocExtMutationService extends ResolversOperacionesService
             async resultado =>
             {
                 await notTodosDocsExt(this.context.pubsub!, this.context.db!);
-                return {estatus: resultado.estatus, mensaje: resultado.mensaje, documento: resultado.elemento}
+                return respDocumento(resultado)
             }
         )
     }
@@ -104,7 +105,7 @@ class DocExtMutationService extends ResolversOperacionesService
             {
                 // await notTodosDocsExt(this.context.pubsub!, this.context.db!);
                 await notActUsuarioSubProceso(this.context.pubsub!, this.context.db!, this.context.contexto!);
-                return {estatus: resultado.estatus, mensaje: resultado.mensaje, documento: resultado.elemento}
+                return respDocumento(resultado);
             }
         )
     }
@@ -118,7 +119,7 @@ class DocExtMutationService extends ResolversOperacionesService
             async resultado =>
             {
                 await notActUsuarioSubProceso(this.context.pubsub!, this.context.db!, this.context.contexto!);
-                return {estatus: resultado.estatus, mensaje: resultado.mensaje, documento: resultado.elemento}
+                return respDocumento(resultado)
             }
         )
     }
@@ -137,7 +138,7 @@ class DocExtMutationService extends ResolversOperacionesService
             async resultado =>
             {
                 await notTodosDocsExt(this.context.pubsub!, this.context.db!);
-                return {estatus: resultado.estatus, mensaje: resultado.mensaje, documento: resultado.elemento}
+                return respDocumento(resultado);
             }
         )
     }
@@ -149,7 +150,7 @@ class DocExtMutationService extends ResolversOperacionesService
             async resultado =>
             {
                 await notActUsuarioSubProceso(this.context.pubsub!, this.context.db!, this.context.contexto);
-                return {estatus: resultado.estatus, mensaje: resultado.mensaje, documento: resultado.elemento}
+                return respDocumento(resultado)
             }
         )
     }

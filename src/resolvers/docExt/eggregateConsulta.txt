@@ -1,0 +1,16 @@
+                    // return await database.collection(ENTIDAD_DB.DOC_EXTERNA).aggregate([
+                    //     {
+                    //         $project:
+                    //             {
+                    //                 usuarioDestino:
+                    //                     {
+                    //                         $filter:
+                    //                             {
+                    //                                 input: "$usuarioDestino",
+                    //                                 as: 'sub',
+                    //                                 cond: {$eq: ["$$sub.subproceso", subproceso]}
+                    //                             }
+                    //                     }
+                    //             }
+                    //     }
+                    // ]).toArray().then(async (resultado) => resultado).catch(error => console.log('Error: ' + error));

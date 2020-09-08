@@ -11,34 +11,21 @@ const queryDocExt: IResolvers =
                     return new DocExtQueryService(_, {paginacion: {pagina, elementosPorPagina}}, {db}).docExtLista();
                 },
                 // consultar documentos por usuarios sera usado por el admistrador
-                async todosLosDocsPorUsuario(_, {usuario}, {db})
+                async todosLosDocsPorUsuario(_, {usuario, pagina, elementosPorPagina}, {db})
                 {
-                    return new DocExtQueryService(_, {usuario}, {db}).docExtListaPorUsuario();
+                    return new DocExtQueryService(_, {paginacion: {pagina, elementosPorPagina}, usuario: usuario},
+                        {db}).docExtListaPorUsuario();
                 },
                 // Consultar documento que sera enviado al usuarios el subproceso es un array
-                async usuarioSubproceso(_, {usuario, subprocesos}, {db})
+                async usuarioSubproceso(_, {usuario, subprocesos, pagina, elementosPorPagina}, {db})
                 {
-                    return new DocExtQueryService(_, {usuario, subprocesos}, {db}).doscUsuarioSubproceso();
-                    // return await database.collection(ENTIDAD_DB.DOC_EXTERNA).aggregate([
-                    //     {
-                    //         $project:
-                    //             {
-                    //                 usuarioDestino:
-                    //                     {
-                    //                         $filter:
-                    //                             {
-                    //                                 input: "$usuarioDestino",
-                    //                                 as: 'sub',
-                    //                                 cond: {$eq: ["$$sub.subproceso", subproceso]}
-                    //                             }
-                    //                     }
-                    //             }
-                    //     }
-                    // ]).toArray().then(async (resultado) => resultado).catch(error => console.log('Error: ' + error));
+                    return new DocExtQueryService(_, {usuario, subprocesos, paginacion: {pagina, elementosPorPagina}},
+                        {db}).doscUsuarioSubproceso();
                 },
-                async docsAprobadosPorUsuario(_, {usuario, subproceso}, {db})
+                async docsAprobadosPorUsuario(_, {usuario, subproceso, pagina, elementosPorPagina}, {db})
                 {
-                    return new DocExtQueryService(_, {usuario, subproceso}, {db}).docsAprobadosUsuario();
+                    return new DocExtQueryService(_, {usuario, subproceso, paginacion: {pagina, elementosPorPagina}},
+                        {db}).docsAprobadosUsuario();
                 }
             }
     };

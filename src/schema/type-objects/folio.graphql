@@ -20,9 +20,3 @@ type ResFolio
     documento: FolioType
     documentos: [FolioType]
 }
-type UltimoFolioType
-{
-    estatus: Boolean!
-    mensaje: String!
-    ultimoFolio: Int!
-}
