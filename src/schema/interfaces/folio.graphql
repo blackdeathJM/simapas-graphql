@@ -1,4 +1,4 @@
-type FolioType implements IFolio
+interface IFolio
 {
     _id: ID
     numFolio: Int
@@ -10,13 +10,4 @@ type FolioType implements IFolio
     asigUsuario: String
     archivoUrl: String
     folioRespuesta: String
-}
-
-type ResFolio
-{
-    info: InfoPaginacion
-    estatus: Boolean!
-    mensaje: String!
-    documento: FolioType
-    documentos: [FolioType]
 }

@@ -19,22 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/resolvers/docExt/eggregateConsulta.txt" afterDir="false" />
+    <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="implementando la paginacion">
+      <change afterPath="$PROJECT_DIR$/src/schema/interfaces/folio.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/configMuter/almacenamientoMulter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/configMuter/almacenamientoMulter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/configMuter/docs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/configMuter/docs.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/departamentos/services/departamento-query.services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/departamentos/services/departamento-query.services.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/docExt.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/docExt.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/services/docExt-mutation-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/services/docExt-mutation-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/services/docExt-query-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/services/docExt-query-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/folios/folio.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/folios/folio.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/folios/services/folio.query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/folios/services/folio.query.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-query-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-query-service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/schema/type-objects/folio.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/folio.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.query.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/folios/folios.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/folios/folios.query.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/respuestas-return.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/respuestas-return.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +58,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="upsource.project.settings" />
     <property name="ts.external.directory.path" value="D:\Documents\Proyectos\Backend\simapas-graphql\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
@@ -215,7 +203,7 @@
       <workItem from="1599470384230" duration="6203000" />
       <workItem from="1599479017447" duration="1920000" />
       <workItem from="1599503289307" duration="608000" />
-      <workItem from="1599505667656" duration="12059000" />
+      <workItem from="1599505667656" duration="15604000" />
     </task>
     <task id="LOCAL-00001" summary="Creacion del mutate para actualizar los roles de los usuarios">
       <created>1596572391127</created>
@@ -532,7 +520,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599475808633</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="implementando la paginacion">
+      <created>1599535525307</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1599535525307</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,14 +589,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="148" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598859207843" />
-    <state x="468" y="165" width="1230" height="710" key="SettingsEditor" timestamp="1598478425542">
+    <state x="540" y="255" key="IDE.errors.dialog" timestamp="1599536859793">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="468" y="165" width="1230" height="710" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598478425542" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1599475810625">
+    <state x="540" y="255" key="IDE.errors.dialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599536859793" />
+    <state x="468" y="165" width="1230" height="710" key="SettingsEditor" timestamp="1599536922527">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599475810625" />
+    <state x="468" y="165" width="1230" height="710" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599536922527" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1599535552893">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599535552893" />
     <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599217316417" />
     <state x="1920" y="159" width="1646" height="896" maximized="true" key="dock-window-1" timestamp="1599534021328">
       <screen x="1920" y="0" width="1920" height="1040" />
