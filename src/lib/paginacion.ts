@@ -1,5 +1,4 @@
 import {Db} from "mongodb";
-import {COLECCION} from "../config/global";
 
 export async function paginacion(db: Db, coleccion: string, pagina: number = 1, elementosPorPagina: number = 20)
 {
@@ -13,7 +12,7 @@ export async function paginacion(db: Db, coleccion: string, pagina: number = 1, 
         pagina = 1;
     }
 
-    const total = await db.collection(COLECCION.DOC_EXTERNA, {}).countDocuments();
+    const total = await db.collection(coleccion, {}).countDocuments();
     const paginas = Math.ceil(total / elementosPorPagina);
     return {
         pagina,

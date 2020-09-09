@@ -20,9 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="implementando la paginacion">
-      <change afterPath="$PROJECT_DIR$/src/schema/interfaces/folio.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/folio.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/folio.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/paginacion.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/paginacion.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +58,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="upsource.project.settings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="D:\Documents\Proyectos\Backend\simapas-graphql\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
@@ -203,7 +203,10 @@
       <workItem from="1599470384230" duration="6203000" />
       <workItem from="1599479017447" duration="1920000" />
       <workItem from="1599503289307" duration="608000" />
-      <workItem from="1599505667656" duration="15604000" />
+      <workItem from="1599505667656" duration="18553000" />
+      <workItem from="1599552880372" duration="1249000" />
+      <workItem from="1599582740870" duration="1594000" />
+      <workItem from="1599629321363" duration="5706000" />
     </task>
     <task id="LOCAL-00001" summary="Creacion del mutate para actualizar los roles de los usuarios">
       <created>1596572391127</created>
@@ -527,7 +530,21 @@
       <option name="project" value="LOCAL" />
       <updated>1599535525307</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="implementando la paginacion">
+      <created>1599542857225</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1599542857225</updated>
+    </task>
+    <task id="LOCAL-00048" summary="implementando la paginacion">
+      <created>1599543174293</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1599543174293</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -593,14 +610,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="540" y="255" key="IDE.errors.dialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599536859793" />
-    <state x="468" y="165" width="1230" height="710" key="SettingsEditor" timestamp="1599536922527">
+    <state x="468" y="165" width="1230" height="710" key="SettingsEditor" timestamp="1599543608833">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="468" y="165" width="1230" height="710" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599536922527" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1599535552893">
+    <state x="468" y="165" width="1230" height="710" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543608833" />
+    <state x="709" y="143" key="VCS.ChangeListViewerDialog" timestamp="1599543036927">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599535552893" />
+    <state x="709" y="143" key="VCS.ChangeListViewerDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543036927" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1599543371134">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543371134" />
     <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599217316417" />
     <state x="1920" y="159" width="1646" height="896" maximized="true" key="dock-window-1" timestamp="1599534021328">
       <screen x="1920" y="0" width="1920" height="1040" />
@@ -631,6 +652,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="713" y="416" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597058189343" />
+    <state x="726" y="358" key="git4idea.ui.GitTagDialog" timestamp="1599543142572">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="726" y="358" key="git4idea.ui.GitTagDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543142572" />
     <state x="2536" y="240" key="run.anything.popup" timestamp="1597480326811">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
