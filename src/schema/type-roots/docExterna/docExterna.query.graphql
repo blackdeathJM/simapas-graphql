@@ -6,6 +6,10 @@ type Query
     todosLosDocsPorUsuario(usuario: String!, pagina: Int =1, elementosPorPagina: Int=20): ResDocEx
     "DOC EXTERNA: Obtener documentos por usuarios y subproceso para mostrar en el area de usuarios"
     usuarioSubproceso(usuario: String!, subprocesos: [String!]!, pagina: Int =1, elementosPorPagina: Int=20): ResDocEx,
+    "DOC EXTERNA: Obtener documentos por proceso"
+    docExtProceso(proceso: PROCESOS_DOC!, pagina: Int =1, elementosPorPagina: Int= 20): ResDocEx
     "DOC EXTERNA: Obtener todos los documentos que ya han sido autorizados por usuarios destino para asignarles folio"
     docsAprobadosPorUsuario(usuario: String!, subproceso: String!, pagina: Int =1, elementosPorPagina: Int=20): ResDocEx
+    "DOC EXTERNA: Obtener todos los documentos que esten entre fechas"
+    docsEntreFechas(fechaRecepcionInicial: String!, fechaRecepcionFinal: String!, pagina: Int=1, elementosPorPagina:Int=20): ResDocEx
 }

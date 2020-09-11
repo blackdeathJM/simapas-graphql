@@ -22,6 +22,10 @@
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="implementando la paginacion">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/paginacion.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/paginacion.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/docExt.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/docExt.query.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/services/docExt-query-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/services/docExt-query-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/folios/services/folio.query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/folios/services/folio.query.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.query.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -206,7 +210,16 @@
       <workItem from="1599505667656" duration="18553000" />
       <workItem from="1599552880372" duration="1249000" />
       <workItem from="1599582740870" duration="1594000" />
-      <workItem from="1599629321363" duration="5706000" />
+      <workItem from="1599629321363" duration="10249000" />
+      <workItem from="1599668472224" duration="971000" />
+      <workItem from="1599688250680" duration="4237000" />
+      <workItem from="1599755572177" duration="13193000" />
+      <workItem from="1599795595497" duration="896000" />
+      <workItem from="1599804351716" duration="428000" />
+      <workItem from="1599805266731" duration="1836000" />
+      <workItem from="1599809297662" duration="170000" />
+      <workItem from="1599811438687" duration="6000" />
+      <workItem from="1599811630573" duration="730000" />
     </task>
     <task id="LOCAL-00001" summary="Creacion del mutate para actualizar los roles de los usuarios">
       <created>1596572391127</created>
@@ -544,7 +557,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599543174293</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="implementando la paginacion">
+      <created>1599643484261</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1599643484261</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -618,20 +638,20 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="709" y="143" key="VCS.ChangeListViewerDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543036927" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1599543371134">
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1599643587052">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543371134" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599643587052" />
     <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599217316417" />
-    <state x="1920" y="159" width="1646" height="896" maximized="true" key="dock-window-1" timestamp="1599534021328">
+    <state x="1967" y="108" width="1677" height="864" maximized="true" key="dock-window-1" timestamp="1599759757034">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="1920" y="159" width="1646" height="896" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599534021328" />
+    <state x="1967" y="108" width="1677" height="864" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599759757034" />
     <state x="2628" y="497" width="1705" height="801" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599014471819" />
-    <state x="1971" y="230" width="1638" height="875" maximized="true" key="dock-window-2" timestamp="1599284641372">
+    <state x="1920" y="0" width="1681" height="867" maximized="true" key="dock-window-2" timestamp="1599705933988">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="1971" y="230" width="1638" height="875" maximized="true" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599284641372" />
+    <state x="1920" y="0" width="1681" height="867" maximized="true" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599705933988" />
     <state x="2114" y="302" width="1648" height="759" maximized="true" key="dock-window-3" timestamp="1599228560154">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

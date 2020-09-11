@@ -9,15 +9,16 @@ class DocExtQueryService extends ResolversOperacionesService
     constructor(root: object, variables: object, context: IContextData)
     {super(root, variables, context);}
 
-    async docExtLista()
+    async _docExtLista()
     {
         const resultado = await this.buscar(COLECCION.DOC_EXTERNA, {}, {});
         return respArreglosPag(resultado);
     }
 
-    async docExtListaPorUsuario()
+    async _todosLosDocsPorUsuario()
     {
-        return await this.buscar(COLECCION.DOC_EXTERNA, {"usuarioDestino": {$elemMatch: {usuario: this.variables.usuario}}}, {}).then(
+        return await this.buscar(COLECCION.DOC_EXTERNA, {"usuarioDestino": {$elemMatch: {usuario: this.variables.usuario}}},
+            {}).then(
             async resultado =>
             {
                 return respArreglosPag(resultado);
@@ -25,7 +26,7 @@ class DocExtQueryService extends ResolversOperacionesService
         )
     }
 
-    async doscUsuarioSubproceso()
+    async _doscUsuarioSubproceso()
     {
         const valores = Object.values(this.variables);
         return await this.buscar(COLECCION.DOC_EXTERNA,
@@ -37,11 +38,35 @@ class DocExtQueryService extends ResolversOperacionesService
         )
     }
 
-    async docsAprobadosUsuario()
+    async _docsAprobadosUsuario()
     {
         const valores = Object.values(this.variables);
         return await this.buscar(COLECCION.DOC_EXTERNA,
             {usuarioDestino: {$elemMatch: {usuario: valores[0], subproceso: valores[1]}}}, {}).then(
+            async resultado =>
+            {
+                return respArreglosPag(resultado);
+            }
+        )
+    }
+
+    async _docExtProceso()
+    {
+        const valores = Object.values(this.variables);
+        return await this.buscar(COLECCION.DOC_EXTERNA, {proceso: valores[0]}, {}).then(
+            async resultado =>
+            {
+                return respArreglosPag(resultado)
+            }
+        )
+    }
+
+    async _busquedaEntreFechas()
+    {
+        const valores = Object(this.variables);
+        console.log(valores);
+        return await this.buscar(COLECCION.DOC_EXTERNA,
+            {$and: [{fechaRecepcion: {$gte: valores[0]}}, {fechaRecepcion: {$lte: valores[1]}}]}, {}).then(
             async resultado =>
             {
                 return respArreglosPag(resultado);

@@ -30,7 +30,8 @@ class FolioQueryService extends ResolversOperacionesService
 
     async folioUsuario()
     {
-        return await this.buscar(COLECCION.FOLIOS, this.variables, {}).then(
+        const valores = Object.values(this.variables)
+        return await this.buscar(COLECCION.FOLIOS, {asigUsuario: valores[0]}, {}).then(
             async resultado =>
             {
                 return respArreglosPag(resultado);
