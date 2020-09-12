@@ -1,9 +1,11 @@
 extend type Query
 {
-    "DOCUMENTO - Obtener todos los folios"
+    "FOLIOS - Obtener todos los folios"
     obtenerFoliosTodos(pagina: Int =1, elementosPorPagina: Int=20): ResFolio
-    "DOCUMENTO - Consultar el ultimo folio registrado"
+    "FOLIOS - Consultar el ultimo folio registrado"
     ultimoFolio: Int
-    "DOCUMENTO - Consultar los folios asignados a un usuarios regreg"
+    "FOLIOS - Consultar los folios asignados a un usuarios regreg"
     folioUsuario(asigUsuario: String!, pagina:Int = 1, elementosPorPagina: Int = 20): ResFolio
+    "FOLIOS consultar folios por proceso"
+    foliosPorProceso(proceso: PROCESOS_DOC): ResFolio
 }

@@ -1,0 +1,5 @@
+extend type Query
+{
+    "Obtener Organismo por id"
+    obtOrganismo(_id: ID!): ResOrganismo
+}

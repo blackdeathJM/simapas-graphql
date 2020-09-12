@@ -20,13 +20,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="implementando la paginacion">
+      <change afterPath="$PROJECT_DIR$/src/resolvers/organismo/models/organismo.interface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/organismo/organismo.query.resolver.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/organismo/organismo.rmutation.resolver.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/organismo/services/organismo.mutation.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/organismo/services/organismo.query.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schema/inputs/organismo.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schema/interfaces/organismo.interface.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schema/type-objects/organismo.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schema/type-roots/organismo/organismo.mutation.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schema/type-roots/organismo/organismo.query.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schema/type-roots/telemetria/instalaciones/instalaciones.mutation.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schema/type-roots/telemetria/instalaciones/instalaciones.query.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/paginacion.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/paginacion.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/docExt.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/docExt.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/services/docExt-query-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/services/docExt-query-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/folios/services/folio.query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/folios/services/folio.query.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.query.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/global.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/global.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/inputs/folio.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/folio.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/folio.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/interfaces/folio.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/folio.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/folio.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/folios/folios.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/folios/folios.query.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,14 +80,15 @@
     <property name="ts.external.directory.path" value="D:\Documents\Proyectos\Backend\simapas-graphql\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src" />
-      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\per" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\resolvers\organismo\models" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\services" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\resolvers\departamentos\services" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\services\departamentos" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src" />
+      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\per" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -219,14 +234,9 @@
       <workItem from="1599805266731" duration="1836000" />
       <workItem from="1599809297662" duration="170000" />
       <workItem from="1599811438687" duration="6000" />
-      <workItem from="1599811630573" duration="730000" />
-    </task>
-    <task id="LOCAL-00001" summary="Creacion del mutate para actualizar los roles de los usuarios">
-      <created>1596572391127</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1596572391127</updated>
+      <workItem from="1599811630573" duration="6023000" />
+      <workItem from="1599842837794" duration="2853000" />
+      <workItem from="1599881385768" duration="3982000" />
     </task>
     <task id="LOCAL-00002" summary="Creacion del mutate para actualizar los roles de los usuarios">
       <created>1596807919739</created>
@@ -564,7 +574,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599643484261</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="implementando la paginacion">
+      <created>1599822053656</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1599822053661</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -638,10 +655,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="709" y="143" key="VCS.ChangeListViewerDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543036927" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1599643587052">
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1599822056889">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599643587052" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599822056889" />
     <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599217316417" />
     <state x="1967" y="108" width="1677" height="864" maximized="true" key="dock-window-1" timestamp="1599759757034">
       <screen x="1920" y="0" width="1920" height="1040" />

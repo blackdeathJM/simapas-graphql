@@ -1,0 +1,6 @@
+extend type Mutation
+{
+    regOrganismo(organismo: OrganismoInput): ResOrganismo
+    "ORGANISMO: Actualizar organismo"
+    actOrganismo(organismo: OrganismoInput): OrganismoType
+}

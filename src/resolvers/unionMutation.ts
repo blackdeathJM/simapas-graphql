@@ -5,7 +5,16 @@ import mutationDocExt from "./docExt/docExt.mutation.resolver";
 import mutationUsuarios from "./usuarios/usuario.mutation.resolver";
 import mutationFolios from "./folios/folio.mutation.resolver";
 import mutationDocInterna from "./docInterna/docInterna.mutation.resolver";
+import mutationOrganismo from "./organismo/organismo.rmutation.resolver";
 
-const unionMutationResolver = GMR.merge([mutationDocExt, mutationDeptos, mutationUsuarios, mutationFolios, mutationDocInterna]);
+const unionMutationResolver = GMR.merge(
+    [
+        mutationDocExt,
+        mutationDeptos,
+        mutationUsuarios,
+        mutationFolios,
+        mutationDocInterna,
+        mutationOrganismo
+    ]);
 
 export default unionMutationResolver;

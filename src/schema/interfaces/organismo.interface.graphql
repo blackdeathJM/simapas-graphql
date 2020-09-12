@@ -1,0 +1,14 @@
+interface IOrganismo
+{
+    _id: ID
+    nombre: String
+    direccion: String
+    ciudad: String
+    Estado: String
+    telefono: [String]
+    fax: [String]
+    correo: String
+    nombrePresidente: String
+    imgLogo: String
+    imgPortada: String
+}

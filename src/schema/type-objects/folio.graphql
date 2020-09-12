@@ -10,6 +10,7 @@ type FolioType implements IFolio
     asigUsuario: String
     archivoUrl: String
     folioRespuesta: String
+    proceso: PROCESOS_DOC
 }
 
 type ResFolio

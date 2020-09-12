@@ -1,0 +1,21 @@
+type OrganismoType implements IOrganismo
+{
+    _id: ID
+    ciudad: String
+    correo: String
+    direccion: String
+    Estado: String
+    fax: [String]
+    imgLogo: String
+    imgPortada: String
+    nombre: String
+    nombrePresidente: String
+    telefono: [String]
+}
+
+type ResOrganismo
+{
+    estatus: Boolean
+    mensaje: String
+    documento: OrganismoType
+}
