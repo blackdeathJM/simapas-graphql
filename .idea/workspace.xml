@@ -19,28 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="implementando la paginacion">
-      <change afterPath="$PROJECT_DIR$/src/resolvers/organismo/models/organismo.interface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/organismo/organismo.query.resolver.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/organismo/organismo.rmutation.resolver.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/organismo/services/organismo.mutation.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/organismo/services/organismo.query.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/inputs/organismo.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/interfaces/organismo.interface.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/type-objects/organismo.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/type-roots/organismo/organismo.mutation.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/type-roots/organismo/organismo.query.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/type-roots/telemetria/instalaciones/instalaciones.mutation.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/type-roots/telemetria/instalaciones/instalaciones.query.graphql" afterDir="false" />
+    <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="quitando el database operations para ahorrar codigo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/global.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/global.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/folio.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/folio.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/folio.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/interfaces/folio.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/folio.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/folio.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/folios/folios.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/folios/folios.query.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="GraphQL File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -81,8 +63,6 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\resolvers\organismo\models" />
-      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\services" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\resolvers\departamentos\services" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\services\departamentos" />
     </key>
@@ -216,27 +196,13 @@
       <workItem from="1599291681094" duration="7628000" />
       <workItem from="1599314256025" duration="1596000" />
       <workItem from="1599320870409" duration="178000" />
-      <workItem from="1599322106503" duration="372000" />
-      <workItem from="1599322497789" duration="24000" />
-      <workItem from="1599410860060" duration="14097000" />
-      <workItem from="1599470384230" duration="6203000" />
-      <workItem from="1599479017447" duration="1920000" />
-      <workItem from="1599503289307" duration="608000" />
-      <workItem from="1599505667656" duration="18553000" />
-      <workItem from="1599552880372" duration="1249000" />
-      <workItem from="1599582740870" duration="1594000" />
-      <workItem from="1599629321363" duration="10249000" />
-      <workItem from="1599668472224" duration="971000" />
-      <workItem from="1599688250680" duration="4237000" />
-      <workItem from="1599755572177" duration="13193000" />
-      <workItem from="1599795595497" duration="896000" />
-      <workItem from="1599804351716" duration="428000" />
-      <workItem from="1599805266731" duration="1836000" />
-      <workItem from="1599809297662" duration="170000" />
-      <workItem from="1599811438687" duration="6000" />
-      <workItem from="1599811630573" duration="6023000" />
-      <workItem from="1599842837794" duration="2853000" />
-      <workItem from="1599881385768" duration="3982000" />
+    </task>
+    <task id="LOCAL-00001" summary="Creacion del mutate para actualizar los roles de los usuarios">
+      <created>1596572391127</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1596572391127</updated>
     </task>
     <task id="LOCAL-00002" summary="Creacion del mutate para actualizar los roles de los usuarios">
       <created>1596807919739</created>
@@ -518,70 +484,7 @@
       <option name="project" value="LOCAL" />
       <updated>1599282591648</updated>
     </task>
-    <task id="LOCAL-00042" summary="quitando el database operations para ahorrar codigo">
-      <created>1599322340410</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1599322340410</updated>
-    </task>
-    <task id="LOCAL-00043" summary="implementando la paginacion">
-      <created>1599471635570</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1599471635570</updated>
-    </task>
-    <task id="LOCAL-00044" summary="implementando la paginacion">
-      <created>1599472316713</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1599472316713</updated>
-    </task>
-    <task id="LOCAL-00045" summary="implementando la paginacion">
-      <created>1599475808633</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1599475808633</updated>
-    </task>
-    <task id="LOCAL-00046" summary="implementando la paginacion">
-      <created>1599535525307</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1599535525307</updated>
-    </task>
-    <task id="LOCAL-00047" summary="implementando la paginacion">
-      <created>1599542857225</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1599542857225</updated>
-    </task>
-    <task id="LOCAL-00048" summary="implementando la paginacion">
-      <created>1599543174293</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1599543174293</updated>
-    </task>
-    <task id="LOCAL-00049" summary="implementando la paginacion">
-      <created>1599643484261</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1599643484261</updated>
-    </task>
-    <task id="LOCAL-00050" summary="implementando la paginacion">
-      <created>1599822053656</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1599822053661</updated>
-    </task>
-    <option name="localTasksCounter" value="51" />
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -607,68 +510,59 @@
     <MESSAGE value="factorizacion de departamentos terminada" />
     <MESSAGE value="Refactorizando usuarios" />
     <MESSAGE value="quitando el database operations para ahorrar codigo" />
-    <MESSAGE value="implementando la paginacion" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementando la paginacion" />
+    <option name="LAST_COMMIT_MESSAGE" value="quitando el database operations para ahorrar codigo" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1599467391664">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599467391664" />
     <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1598584621576">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598584621576" />
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1599462019543">
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598950150280">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599462019543" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598950150280" />
     <state x="703" y="369" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1599237955268">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="703" y="369" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599237955268" />
-    <state width="1879" height="148" key="GridCell.Tab.0.bottom" timestamp="1598859207843">
+    <state width="1876" height="133" key="GridCell.Tab.0.bottom" timestamp="1599950571363">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="148" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598859207843" />
-    <state width="1879" height="148" key="GridCell.Tab.0.center" timestamp="1598859207843">
+    <state width="1876" height="133" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599950571363" />
+    <state width="1876" height="133" key="GridCell.Tab.0.center" timestamp="1599950571363">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="148" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598859207843" />
-    <state width="1879" height="148" key="GridCell.Tab.0.left" timestamp="1598859207843">
+    <state width="1876" height="133" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599950571363" />
+    <state width="1876" height="133" key="GridCell.Tab.0.left" timestamp="1599950571363">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="148" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598859207843" />
-    <state width="1879" height="148" key="GridCell.Tab.0.right" timestamp="1598859207843">
+    <state width="1876" height="133" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599950571363" />
+    <state width="1876" height="133" key="GridCell.Tab.0.right" timestamp="1599950571363">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1879" height="148" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598859207843" />
-    <state x="540" y="255" key="IDE.errors.dialog" timestamp="1599536859793">
+    <state width="1876" height="133" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599950571363" />
+    <state x="468" y="165" width="1230" height="710" key="SettingsEditor" timestamp="1598478425542">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="540" y="255" key="IDE.errors.dialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599536859793" />
-    <state x="468" y="165" width="1230" height="710" key="SettingsEditor" timestamp="1599543608833">
+    <state x="468" y="165" width="1230" height="710" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598478425542" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1599282593419">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="468" y="165" width="1230" height="710" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543608833" />
-    <state x="709" y="143" key="VCS.ChangeListViewerDialog" timestamp="1599543036927">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="709" y="143" key="VCS.ChangeListViewerDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543036927" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1599822056889">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599822056889" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599282593419" />
     <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599217316417" />
-    <state x="1967" y="108" width="1677" height="864" maximized="true" key="dock-window-1" timestamp="1599759757034">
+    <state x="2215" y="102" width="1633" height="872" maximized="true" key="dock-window-1" timestamp="1599294578812">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="1967" y="108" width="1677" height="864" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599759757034" />
+    <state x="2215" y="102" width="1633" height="872" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599294578812" />
     <state x="2628" y="497" width="1705" height="801" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599014471819" />
-    <state x="1920" y="0" width="1681" height="867" maximized="true" key="dock-window-2" timestamp="1599705933988">
+    <state x="1971" y="230" width="1638" height="875" maximized="true" key="dock-window-2" timestamp="1599284641372">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="1920" y="0" width="1681" height="867" maximized="true" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599705933988" />
+    <state x="1971" y="230" width="1638" height="875" maximized="true" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599284641372" />
     <state x="2114" y="302" width="1648" height="759" maximized="true" key="dock-window-3" timestamp="1599228560154">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -689,10 +583,6 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="713" y="416" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597058189343" />
-    <state x="726" y="358" key="git4idea.ui.GitTagDialog" timestamp="1599543142572">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="726" y="358" key="git4idea.ui.GitTagDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543142572" />
     <state x="2536" y="240" key="run.anything.popup" timestamp="1597480326811">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
