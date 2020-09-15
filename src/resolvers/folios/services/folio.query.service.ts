@@ -8,7 +8,7 @@ class FolioQueryService extends ResolversOperacionesService
     constructor(root: object, variables: object, contexto: IContextData)
     {super(root, variables, contexto);}
 
-    async obtenerFolios()
+    async _obtenerFolios()
     {
         return await this.buscar(COLECCION.FOLIOS, {}, {}).then(
             async resultado =>
@@ -18,7 +18,7 @@ class FolioQueryService extends ResolversOperacionesService
         )
     }
 
-    async ultimoFolioRegistrado()
+    async _ultimoFolioRegistrado()
     {
         return await this.contarDocumentos(COLECCION.FOLIOS, {}).then(
             async resultado =>
@@ -28,10 +28,20 @@ class FolioQueryService extends ResolversOperacionesService
         )
     }
 
-    async folioUsuario()
+    async _folioUsuario()
     {
         const valores = Object.values(this.variables)
         return await this.buscar(COLECCION.FOLIOS, {asigUsuario: valores[0]}, {}).then(
+            async resultado =>
+            {
+                return respArreglosPag(resultado);
+            }
+        )
+    }
+    async _folUsuarioProceso()
+    {
+        const valores = Object.values(this.variables);
+        return await this.buscar(COLECCION.FOLIOS, {asigUsuario: valores[0], proceso: valores[1]}, {}).then(
             async resultado =>
             {
                 return respArreglosPag(resultado);

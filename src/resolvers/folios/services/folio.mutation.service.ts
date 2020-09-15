@@ -1,6 +1,8 @@
 import ResolversOperacionesService from "../../../services/resolver-operaciones";
 import {COLECCION} from "../../../config/global";
 import moment from "moment";
+import {respDocumento} from "../../../services/respuestas-return";
+import {ObjectId} from 'bson';
 
 class FolioMutationService extends ResolversOperacionesService
 {
@@ -27,13 +29,27 @@ class FolioMutationService extends ResolversOperacionesService
                             }
                         },
                         {}).then(
-                        async res =>
+                        async () =>
                         {
                             return {estatus: true, mensaje: 'Se actualizo correctamente DocExt', folio: null}
                         }
                     );
                 }
                 return {estatus: resultado.estatus, mensaje: resultado.mensaje, folio: resultado.elemento}
+            }
+        )
+    }
+
+    async _acUrlFolio()
+    {
+        const variables = Object.values(this.variables);
+        return await this.buscarUnoYActualizar(COLECCION.FOLIOS, {_id: new ObjectId(variables[0])},
+            {$set: {archivoUrl: variables[1], proceso: 'TERMINADO'}}, {returnOriginal: false}).then(
+            async resultado =>
+            {
+                // actualizar la url de respuesta en doc externa
+
+                return respDocumento(resultado);
             }
         )
     }

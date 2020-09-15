@@ -5,7 +5,9 @@ extend type Query
     "FOLIOS - Consultar el ultimo folio registrado"
     ultimoFolio: Int
     "FOLIOS - Consultar los folios asignados a un usuarios regreg"
-    folioUsuario(asigUsuario: String!, pagina:Int = 1, elementosPorPagina: Int = 20): ResFolio
+    folioUsuario(asigUsuario: String!, pagina:Int = 1, elementosPorPagina: Int = 30): ResFolio
     "FOLIOS consultar folios por proceso"
     foliosPorProceso(proceso: PROCESOS_DOC): ResFolio
+    "FOLIOS Consultar folios por usuario y por proceso"
+    folUsuarioProceso(asigUsuario: String!, proceso: PROCESOS_DOC!, pagina: Int = 1, elementosPorPagina: Int = 30): ResFolio
 }
