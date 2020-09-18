@@ -3,14 +3,11 @@ import {IContextData} from "../../../interfaces/context-data-interface";
 import {COLECCION} from "../../../config/global";
 import {ObjectId} from 'bson';
 import {notActUsuarioSubProceso, notTodosDocsExt} from "./docExt-subscription";
-import moment from "moment";
 import {respDocumento} from "../../../services/respuestas-return";
 
 
 class DocExtMutationService extends ResolversOperacionesService
 {
-    fechaActual = moment().format("DD/MM/YYYY");
-
     constructor(root: object, variables: object, context: IContextData)
     {super(root, variables, context);}
 
@@ -124,25 +121,6 @@ class DocExtMutationService extends ResolversOperacionesService
         )
     }
 
-    async respuestaConFolio()
-    {
-        const valores = Object.values(this.variables);
-        return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA,
-            {_id: new ObjectId(valores[0]), usuarioDestino: {$elemMatch: {usuario: valores[1]}}},
-            {
-                $set: {
-                    docRespUrl: valores[2], acuseUrl: valores[3], proceso: valores[4], fechaTerminado: this.fechaActual,
-                    "usuarioDestino.$[].subproceso": valores[4]
-                }
-            }, {returnOriginal: false}).then(
-            async resultado =>
-            {
-                await notTodosDocsExt(this.context.pubsub!, this.context.db!);
-                return respDocumento(resultado);
-            }
-        )
-    }
-
     async darPorEntregado()
     {
         return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(this.variables._id)},
@@ -151,6 +129,20 @@ class DocExtMutationService extends ResolversOperacionesService
             {
                 await notActUsuarioSubProceso(this.context.pubsub!, this.context.db!, this.context.contexto);
                 return respDocumento(resultado)
+            }
+        )
+    }
+
+    async _acuse()
+    {
+        const valores = Object.values(this.variables);
+        return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(valores[0])},
+            {$set: {acuseUrl: valores[1], proceso: valores[2], "usuarioDestino.$[].subproceso": valores[2]}},
+            {}).then(
+            async resultado =>
+            {
+                await notTodosDocsExt(this.context.pubsub!, this.context.db!);
+                return respDocumento(resultado);
             }
         )
     }

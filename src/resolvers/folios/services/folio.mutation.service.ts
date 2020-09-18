@@ -1,8 +1,8 @@
 import ResolversOperacionesService from "../../../services/resolver-operaciones";
 import {COLECCION} from "../../../config/global";
-import moment from "moment";
 import {respDocumento} from "../../../services/respuestas-return";
 import {ObjectId} from 'bson';
+import {notTodosDocsExt} from "../../docExt/services/docExt-subscription";
 
 class FolioMutationService extends ResolversOperacionesService
 {
@@ -14,41 +14,35 @@ class FolioMutationService extends ResolversOperacionesService
         return await this.agregarUnElemento(COLECCION.FOLIOS, this.variables.folio!, {}).then(
             async resultado =>
             {
-                if (resultado.elemento.folioRespuesta !== "Independiente")
-                {
-                    let fechaActual = moment().format('DD/MM/YYYY');
-                    await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA,
-                        {
-                            identificadorDoc: resultado.elemento.folioRespuesta,
-                            usuarioDestino: {$elemMatch: {usuario: resultado.elemento.asigUsuario}}
-                        },
-                        {
-                            $set: {
-                                folio: resultado.elemento.folio, proceso: "TERMINADO",
-                                "usuarioDestino.$.subproceso": "TERMINADO", "usuarioDestino.$.fechaEnvio": fechaActual
-                            }
-                        },
-                        {}).then(
-                        async () =>
-                        {
-                            return {estatus: true, mensaje: 'Se actualizo correctamente DocExt', folio: null}
-                        }
-                    );
-                }
-                return {estatus: resultado.estatus, mensaje: resultado.mensaje, folio: resultado.elemento}
+                return respDocumento(resultado)
             }
         )
     }
 
     async _acUrlFolio()
     {
+        // Actualiar el archivo subido en la coleccion de folios y DocsExt
         const variables = Object.values(this.variables);
         return await this.buscarUnoYActualizar(COLECCION.FOLIOS, {_id: new ObjectId(variables[0])},
             {$set: {archivoUrl: variables[1], proceso: 'TERMINADO'}}, {returnOriginal: false}).then(
             async resultado =>
             {
-                // actualizar la url de respuesta en doc externa
-
+                if (resultado.elemento.folioRespuesta !== 'Independiente')
+                {
+                    await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {identificadorDoc: resultado.elemento.folioRespuesta},
+                        {
+                            $set: {
+                                folio: resultado.elemento.folio, docRespUrl: resultado.elemento.archivoUrl,
+                                fechaTerminado: resultado.elemento.fechaTerminado, proceso: 'ACUSE', "usuarioDestino.$[].subproceso": 'ACUSE'
+                            }
+                        },
+                        {}).then(
+                        async () =>
+                        {
+                            await notTodosDocsExt(this.context.pubsub!, this.context.db!);
+                        }
+                    );
+                }
                 return respDocumento(resultado);
             }
         )

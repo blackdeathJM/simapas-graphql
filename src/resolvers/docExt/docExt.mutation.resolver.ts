@@ -37,13 +37,13 @@ const mutationDocExt: IResolvers =
                     return new DocExtMutationService(_, {id, usuario, subproceso, autorizado},
                         {pubsub, contexto, db}).aprobarDocumento();
                 },
-                async acRespuestaConFolio(_, {_id, usuario, docRespUrl, acuseUrl, proceso}, {pubsub, db})
-                {
-                    return new DocExtMutationService(_, {_id, usuario, docRespUrl, acuseUrl, proceso}, {pubsub, db}).respuestaConFolio();
-                },
                 async acDarPorEntregado(_, {_id}, {pubsub, contexto, db})
                 {
                     return new DocExtMutationService(_, {_id}, {pubsub, contexto, db}).darPorEntregado();
+                },
+                async acAcuse(_, {_id, acuseUrl, proceso}, {db, pubsub})
+                {
+                    return new DocExtMutationService(_, {_id, acuseUrl, proceso}, {db, pubsub})._acuse();
                 }
             }
     };
