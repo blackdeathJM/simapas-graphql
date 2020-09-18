@@ -9,11 +9,22 @@ class FolioMutationService extends ResolversOperacionesService
     constructor(root: object, variables: object, context: object)
     {super(root, variables, context);}
 
-    async registrarFolio()
+    async _registrarFolio()
     {
+
         return await this.agregarUnElemento(COLECCION.FOLIOS, this.variables.folio!, {}).then(
             async resultado =>
             {
+                if (resultado.elemento.folioRespuesta !== 'Independiente')
+                {
+                    await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(this.variables._id)},
+                        {
+                            $set: {
+                                proceso: 'TERMINADO', fechaTerminado: resultado.elemento.fechaCreacion, folio: resultado.elemento.folio,
+                                "usuarioDestino.$[].subproceso": 'TERMINADO'
+                            }
+                        }, {});
+                }
                 return respDocumento(resultado)
             }
         )
@@ -29,11 +40,10 @@ class FolioMutationService extends ResolversOperacionesService
             {
                 if (resultado.elemento.folioRespuesta !== 'Independiente')
                 {
-                    await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {identificadorDoc: resultado.elemento.folioRespuesta},
+                    await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {folio: resultado.elemento.folio},
                         {
                             $set: {
-                                folio: resultado.elemento.folio, docRespUrl: resultado.elemento.archivoUrl,
-                                fechaTerminado: resultado.elemento.fechaTerminado, proceso: 'ACUSE', "usuarioDestino.$[].subproceso": 'ACUSE'
+                                docRespUrl: resultado.elemento.archivoUrl, proceso: 'ACUSE', "usuarioDestino.$[].subproceso": 'ACUSE'
                             }
                         },
                         {}).then(

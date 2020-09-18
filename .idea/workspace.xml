@@ -21,11 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="implementando la coleccion de organismo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/docExt.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/docExt.mutation.resolver.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/services/docExt-mutation-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/services/docExt-mutation-service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/folios/folio.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/folios/folio.mutation.resolver.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/folios/services/folio.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/folios/services/folio.mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.mutation.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/folios/folios.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/folios/folios.mutation.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,14 +236,8 @@
       <workItem from="1600297749987" duration="74000" />
       <workItem from="1600297887589" duration="18142000" />
       <workItem from="1600365134900" duration="745000" />
-      <workItem from="1600390121738" duration="1212000" />
-    </task>
-    <task id="LOCAL-00003" summary="Creacion del mutate para actualizar los roles de los usuarios">
-      <created>1597021397126</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1597021397126</updated>
+      <workItem from="1600390121738" duration="3882000" />
+      <workItem from="1600459584884" duration="6580000" />
     </task>
     <task id="LOCAL-00004" summary="se coloco el tipado a la base de datos">
       <created>1597053348891</created>
@@ -582,7 +575,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600162668370</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="implementando la coleccion de organismo">
+      <created>1600396384488</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1600396384489</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -657,10 +657,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="709" y="143" key="VCS.ChangeListViewerDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543036927" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1600162670067">
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1600396386074">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600162670067" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600396386074" />
     <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599217316417" />
     <state x="1954" y="0" width="1634" height="888" maximized="true" key="dock-window-1" timestamp="1600320997271">
       <screen x="1920" y="0" width="1920" height="1040" />
@@ -699,9 +699,9 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2536" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597480326811" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1599303492873">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1600471581920">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599303492873" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600471581920" />
   </component>
 </project>

@@ -5,9 +5,9 @@ const mutationFolios: IResolvers =
     {
         Mutation:
             {
-                async registroFolio(_, {folio}, {db})
+                async registroFolio(_, {folio, _id}, {db})
                 {
-                    return new FolioMutationService(_, {folio}, {db}).registrarFolio();
+                    return new FolioMutationService(_, {folio, _id}, {db})._registrarFolio();
                 },
                 async acUrlFolio(_, {id, archivoUrl}, {db, pubsub})
                 {

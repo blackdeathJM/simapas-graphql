@@ -137,7 +137,12 @@ class DocExtMutationService extends ResolversOperacionesService
     {
         const valores = Object.values(this.variables);
         return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(valores[0])},
-            {$set: {acuseUrl: valores[1], proceso: valores[2], "usuarioDestino.$[].subproceso": valores[2]}},
+            {
+                $set: {
+                    acuseUrl: valores[1], proceso: valores[2], "usuarioDestino.$[].subproceso": valores[2],
+                    "usuarioDestino.$[].notificarRespDelUsuario": false, "usuarioDestino.$[].notificarUsuario": false
+                }
+            },
             {}).then(
             async resultado =>
             {
