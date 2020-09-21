@@ -1,4 +1,4 @@
-extend type Mutation
+type Mutation
 {
     "DOC EXTERNA: Registro de los documentos externos"
     regDocExt(docExt: DocExtInput!):ResDocEx

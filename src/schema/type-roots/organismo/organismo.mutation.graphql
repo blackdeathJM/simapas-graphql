@@ -1,4 +1,4 @@
-extend type Mutation
+type Mutation
 {
     regOrganismo(organismo: OrganismoInput): ResOrganismo
     "ORGANISMO: Actualizar organismo"

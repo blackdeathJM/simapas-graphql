@@ -10,7 +10,7 @@ class FolioQueryService extends ResolversOperacionesService
 
     async _obtenerFolios()
     {
-        return await this.buscar(COLECCION.FOLIOS, {}, {}).then(
+        return await this.buscar(COLECCION.FOLIOS, {}, {}, {}).then(
             async resultado =>
             {
                 return respArreglosPag(resultado);
@@ -31,17 +31,18 @@ class FolioQueryService extends ResolversOperacionesService
     async _folioUsuario()
     {
         const valores = Object.values(this.variables)
-        return await this.buscar(COLECCION.FOLIOS, {asigUsuario: valores[0]}, {}).then(
+        return await this.buscar(COLECCION.FOLIOS, {asigUsuario: valores[0]}, {}, {}).then(
             async resultado =>
             {
                 return respArreglosPag(resultado);
             }
         )
     }
+
     async _folUsuarioProceso()
     {
         const valores = Object.values(this.variables);
-        return await this.buscar(COLECCION.FOLIOS, {asigUsuario: valores[0], proceso: valores[1]}, {}).then(
+        return await this.buscar(COLECCION.FOLIOS, {asigUsuario: valores[0], proceso: valores[1]}, {}, {}).then(
             async resultado =>
             {
                 return respArreglosPag(resultado);

@@ -8,14 +8,15 @@ class ResolversOperacionesService
     {
     }
 
-    protected async buscar(coleccion: string, filtro: object, opciones: object)
+    protected async buscar(coleccion: string, filtro: object, opciones: object, ordenar: object)
     {
         try
         {
             const datosPaginacion = await paginacion(this.context.db!, coleccion, this.variables.paginacion!.pagina,
                 this.variables.paginacion!.elementosPorPagina, filtro);
+
             return await this.context.db!.collection(coleccion).find(filtro, opciones).limit(datosPaginacion.elementosPorPagina)
-                .skip(datosPaginacion.saltar).toArray().then(
+                .skip(datosPaginacion.saltar).sort(ordenar).toArray().then(
                     async resultado =>
                     {
                         return {

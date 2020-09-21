@@ -1,4 +1,4 @@
-extend type Mutation
+type Mutation
 {
     "USUARIO - Registro de usuarios"
     registroUsuario(usuario: UsuarioInput!): ResUsuario

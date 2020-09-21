@@ -12,4 +12,6 @@ type Query
     docsAprobadosPorUsuario(usuario: String!, subproceso: String!, pagina: Int =1, elementosPorPagina: Int=20): ResDocEx
     "DOC EXTERNA: Obtener todos los documentos que esten entre fechas"
     docsEntreFechas(fechaRecepcionInicial: String!, fechaRecepcionFinal: String!, pagina: Int=1, elementosPorPagina:Int=20): ResDocEx
+    "DOC EXTERNA: busqueda en toda la coleccion"
+    busquedaGral(consulta: String!, pagina: Int = 1, elementosPorPagina: Int = 20): ResDocEx
 }

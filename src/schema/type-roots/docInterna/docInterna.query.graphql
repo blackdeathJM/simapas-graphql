@@ -1,9 +1,0 @@
-extend type Query
-{
-    "DOC INTERNA: Obtener todas las notificaciones"
-    obNotiDocInterna:[DocInternaType]
-    "DOC INTERNA: Obtener todas las notificaciones por usuarios"
-    obNotiUsuario(usuario: String!): [DocInternaType]
-    "DOC INTERNA: Obtener todas las notificaciones por usuarios que no se hayan visto"
-    obNotUsuarioVisto(usuario: String!, visto: Boolean): [DocInternaType]
-}

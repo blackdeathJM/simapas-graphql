@@ -35,6 +35,10 @@ const queryDocExt: IResolvers =
                 {
                     return new DocExtQueryService(_, {fechaRecepcionInicial, fechaRecepcionFinal, paginacion: {pagina, elementosPorPagina}},
                         {db})._busquedaEntreFechas();
+                },
+                busquedaGral(_, {consulta, pagina, elementosPorPagina}, {db})
+                {
+                    return new DocExtQueryService(_, {consulta, paginacion: {pagina, elementosPorPagina}}, {db})._consultaGral();
                 }
             }
     };
