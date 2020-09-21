@@ -49,6 +49,64 @@ class FolioQueryService extends ResolversOperacionesService
             }
         )
     }
+
+    async _folEntreFechasUsuario()
+    {
+        const valores = Object.values(this.variables);
+        return await this.buscar(COLECCION.FOLIOS,
+            {$and: [{asigUsuario: valores[2]}, {fechaCreacion: {$gte: valores[0]}}, {fechaCreacion: {$lte: valores[1]}}]},
+            {}, {}).then(
+            resultado =>
+            {
+                return respArreglosPag(resultado);
+            }
+        )
+    }
+
+    async _folEntreFechas()
+    {
+        const valores = Object.values(this.variables);
+        return await this.buscar(COLECCION.FOLIOS,
+            {$and: [{fechaCreacion: {$gte: valores[0]}}, {fechaCreacion: {$lte: valores[1]}}]},
+            {}, {}).then(
+            resultado =>
+            {
+                return respArreglosPag(resultado);
+            }
+        )
+    }
+
+    async _folConsultaGralUsuario()
+    {
+        const valores = Object.values(this.variables);
+        return await this.buscar(COLECCION.FOLIOS,
+            {
+                $and: [{asigUsuario: valores[1]}, {
+                    $or: [{titulo: {$regex: valores[0], $options: "i"}}, {folio: {$regex: valores[0], $options: "i"}},
+                        {tipo: valores[0]}, {descripcion: {$regex: valores[0], $options: "i"}}]
+                }]
+            }, {}, {}).then(
+            resultado =>
+            {
+                return respArreglosPag(resultado);
+            }
+        )
+    }
+
+    async _folConsultaGral()
+    {
+        const valores = Object.values(this.variables);
+        return await this.buscar(COLECCION.FOLIOS,
+            {
+                $or: [{titulo: {$regex: valores[0], $options: "i"}}, {folio: {$regex: valores[0], $options: "i"}},
+                    {tipo: valores[0]}, {descripcion: {$regex: valores[0], $options: "i"}}]
+            }, {}, {}).then(
+            resultado =>
+            {
+                return respArreglosPag(resultado);
+            }
+        )
+    }
 }
 
 export default FolioQueryService;

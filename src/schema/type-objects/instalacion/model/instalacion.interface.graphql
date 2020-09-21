@@ -1,0 +1,30 @@
+interface IInstalacion
+{
+    _id: ID
+    nombre: String
+    direccion: String
+}
+
+interface ITelemetria
+{
+    radio: String,
+    plc: String,
+    switch: String,
+    repetidor: String
+}
+
+interface IBomba
+{
+    descripcion: String
+    marca: String
+    serie: String
+    hp: String
+    fechaInstalacion: String
+    FechaRetiro: String
+    activa: Boolean
+}
+
+interface IArrancador
+{
+    descripcion: String
+}
