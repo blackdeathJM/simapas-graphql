@@ -10,17 +10,4 @@ type UsuarioType implements IUsuario
     departamento: DeptoType
 }
 
-type ResUsuario
-{
-    info: InfoPaginacion
-    estatus: Boolean
-    mensaje: String
-    documento: UsuarioType
-    documentos: [UsuarioType]
-}
-type ResUsuarioToken
-{
-    estatus: Boolean!
-    mensaje: String!
-    token: String
-}
+

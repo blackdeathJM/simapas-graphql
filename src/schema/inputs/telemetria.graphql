@@ -1,0 +1,16 @@
+input InstalacionInput
+{
+    _id: ID
+    nombre: String!
+    direccion: String!
+    noInstalacion: Int!
+    activo: Boolean = true
+    telemetria: TelemetriaInput
+}
+input TelemetriaInput
+{
+    radio: [String]
+    plc: [String]
+    switch: [String]
+    repetidor: [String]
+}

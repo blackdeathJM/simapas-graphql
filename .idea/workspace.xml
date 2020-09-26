@@ -20,18 +20,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
-      <change afterPath="$PROJECT_DIR$/src/resolvers/telemetria/services/instalacion.mutation.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/telemetria/services/instalacion.query.services.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/type-objects/instalacion/equipoEletrico.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/type-objects/instalacion/model/instalacion.interface.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/type-objects/instalacion/telemetria.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/instalacion.mutation.resolver.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.mutation.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/telemetria/models/telemetria.interface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schema/inputs/telemetria.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/folios/folio.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/folios/folio.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/folios/services/folio.query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/folios/services/folio.query.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/instalacion/instalacion-equipo.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/instalacion/instalacion-telemetria.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/model/instalacion.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/instalacion/instalacion.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/instalacion/instalacion.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/folios/folios.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/folios/folios.query.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/global.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/global.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/organismo/organismo.query.resolver.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/organismo/organismo.query.resolver.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/organismo/organismo.rmutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/organismo/organismo.rmutation.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/organismo/services/organismo.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/organismo/services/organismo.mutation.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/organismo/services/organismo.query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/organismo/services/organismo.query.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/instalacion.query.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/model/instalacion.interface.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/services/instalacion.mutation.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/services/instalacion.query.services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.query.services.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/inputs/instalacion/instalacion.graphql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/docExt.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/interfaces/docExt.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/resultados/info-paginacion.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/resultados/resultados.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/departamento.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/departamento.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/docExterna.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/docExterna.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/folio.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/folio.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/instalacion/equipoEletrico.graphql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/instalacion/instalacion.graphql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/instalacion/model/instalacion.interface.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/interfaces/telemetria.interface.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/instalacion/telemetria.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/telemetria.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/organismo.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/organismo.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/usuario.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/usuario.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/organismo/organismo.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/organismo/organismo.mutation.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/organismo/organismo.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/organismo/organismo.query.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/telemetria/instalaciones/instalaciones.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/telemetria/instalaciones/instalaciones.mutation.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/telemetria/instalaciones/instalaciones.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/telemetria/instalaciones/instalaciones.query.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,10 +94,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\resolvers\telemetria\instalacion" />
+      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\schema\interfaces" />
+      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\schema\inputs" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\resolvers\organismo\models" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\services" />
-      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\resolvers\departamentos\services" />
-      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\services\departamentos" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src" />
@@ -252,14 +275,24 @@
       <workItem from="1600548337426" duration="896000" />
       <workItem from="1600621559859" duration="8481000" />
       <workItem from="1600639403768" duration="5439000" />
-      <workItem from="1600654657503" duration="15515000" />
-    </task>
-    <task id="LOCAL-00006" summary="se coloco el tipado a la base de datos">
-      <created>1597060853085</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1597060853086</updated>
+      <workItem from="1600654657503" duration="16190000" />
+      <workItem from="1600711008242" duration="1206000" />
+      <workItem from="1600726385459" duration="610000" />
+      <workItem from="1600735046310" duration="2386000" />
+      <workItem from="1600752177127" duration="6599000" />
+      <workItem from="1600812274371" duration="352000" />
+      <workItem from="1600821119120" duration="741000" />
+      <workItem from="1600826143784" duration="631000" />
+      <workItem from="1600837307580" duration="1791000" />
+      <workItem from="1600850264615" duration="4126000" />
+      <workItem from="1600861754416" duration="2071000" />
+      <workItem from="1600886143369" duration="11213000" />
+      <workItem from="1600979448988" duration="1039000" />
+      <workItem from="1600986822595" duration="2651000" />
+      <workItem from="1601011655137" duration="1792000" />
+      <workItem from="1601067782997" duration="606000" />
+      <workItem from="1601079056089" duration="1496000" />
+      <workItem from="1601100927687" duration="6431000" />
     </task>
     <task id="LOCAL-00007" summary="Se creo de nuevo la documentacion">
       <created>1597276257981</created>
@@ -597,7 +630,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600660273232</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
+      <created>1600691899133</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1600691899133</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -673,20 +713,21 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="709" y="143" key="VCS.ChangeListViewerDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543036927" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1600660275205">
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1600691900697">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600660275205" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600691900697" />
     <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599217316417" />
-    <state x="2229" y="136" width="1582" height="882" maximized="true" key="dock-window-1" timestamp="1600659751902">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="56" y="159" width="1611" height="852" key="dock-window-1" timestamp="1600862447714">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="2229" y="136" width="1582" height="882" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600659751902" />
-    <state x="2113" y="121" width="1681" height="888" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600058932678" />
-    <state x="2222" y="67" width="1634" height="888" maximized="true" key="dock-window-2" timestamp="1600324238212">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="2087" y="80" width="1643" height="870" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600765041175" />
+    <state x="56" y="159" width="1611" height="852" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600862447714" />
+    <state x="0" y="0" width="1611" height="852" maximized="true" key="dock-window-2" timestamp="1600862447714">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="2222" y="67" width="1634" height="888" maximized="true" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600324238212" />
+    <state x="1920" y="0" width="1643" height="870" maximized="true" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600765623238" />
+    <state x="0" y="0" width="1611" height="852" maximized="true" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600862447714" />
     <state x="2114" y="302" width="1648" height="759" maximized="true" key="dock-window-3" timestamp="1599228560154">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

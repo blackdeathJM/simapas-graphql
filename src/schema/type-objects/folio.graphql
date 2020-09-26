@@ -12,12 +12,3 @@ type FolioType implements IFolio
     folioRespuesta: String
     proceso: PROCESOS_DOC
 }
-
-type ResFolio
-{
-    info: InfoPaginacion
-    estatus: Boolean!
-    mensaje: String!
-    documento: FolioType
-    documentos: [FolioType]
-}

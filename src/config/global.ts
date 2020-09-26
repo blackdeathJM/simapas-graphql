@@ -12,7 +12,8 @@ export enum COLECCION
     USUARIOS = 'usuarios',
     DOC_EXTERNA = 'docExterna',
     FOLIOS = 'folios',
-    ORGANISMO = 'organismo'
+    ORGANISMO = 'organismo',
+    TELEMETRIA = 'telemetria'
 }
 
 export enum PUB_SUB

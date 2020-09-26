@@ -3,12 +3,3 @@ type DeptoType implements IDepartamento
     _id: ID
     nombre: String!
 }
-
-type RespDepto
-{
-    info: InfoPaginacion
-    estatus: Boolean!
-    mensaje: String!
-    documento: DeptoType
-    documentos: [DeptoType]
-}

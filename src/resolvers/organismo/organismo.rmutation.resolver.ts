@@ -5,13 +5,9 @@ const mutationOrganismo: IResolvers =
     {
         Mutation:
             {
-                regOrganismo(_, {organismo}, {db})
+                regOrganismo(_, {organismo, _id}, {db})
                 {
-                    return new OrganismoMutationService(_, {organismo}, {db})._regOrganismo();
-                },
-                actOrganismo(_, {organismo}, {db})
-                {
-                    return new OrganismoMutationService(_, {organismo}, {db})._actOrganismo();
+                    return new OrganismoMutationService(_, {organismo, _id}, {db})._regOrganismo();
                 }
             }
     }

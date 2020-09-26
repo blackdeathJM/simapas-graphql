@@ -8,6 +8,59 @@ class ResolversOperacionesService
     {
     }
 
+    protected async buscarSinPaginacion(coleccion: string, filtro: object, opciones: object, ordenar: object)
+    {
+        try
+        {
+            return await this.context.db!.collection(coleccion).find(filtro, opciones).sort(ordenar).toArray().then(
+                async resultado =>
+                {
+                    return {
+                        info: {
+                            pagina: 0,
+                            paginas: 0,
+                            saltar: 0,
+                            elementosPorPagina: 0,
+                            total: 0
+                        },
+                        estatus: true,
+                        mensaje: 'Lista de documentos cargada correctamente',
+                        elementos: resultado
+                    }
+                }
+            ).catch(
+                async error =>
+                {
+                    return {
+                        info: {
+                            pagina: 0,
+                            paginas: 0,
+                            elementosPorPagina: 0,
+                            total: 0
+                        },
+                        estatus: false,
+                        mensaje: `Error al tratar de cargar los documentos:--> ${error}`,
+                        elementos: null
+                    }
+                }
+            )
+
+        } catch (e)
+        {
+            return {
+                info: {
+                    pagina: 0,
+                    paginas: 0,
+                    elementosPorPagina: 0,
+                    total: 0
+                },
+                estatus: true,
+                mensaje: `Ha ocurrido un error inseperado: ${e}`,
+                elementos: null
+            }
+        }
+    }
+
     protected async buscar(coleccion: string, filtro: object, opciones: object, ordenar: object)
     {
         try
@@ -76,7 +129,7 @@ class ResolversOperacionesService
                     {
                         return {
                             estatus: true,
-                            mensaje: `El documento ya existe`,
+                            mensaje: `Documento encontrado correctamentee`,
                             elemento: res
                         };
                     } else

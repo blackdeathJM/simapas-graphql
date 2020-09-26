@@ -1,7 +1,0 @@
-type InfoPaginacion implements IInfoPaginacion
-{
-    pagina: Int!
-    paginas: Int!
-    elementosPorPagina: Int!
-    total: Int!
-}

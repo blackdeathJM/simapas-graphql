@@ -1,6 +1,4 @@
 type Mutation
 {
-    regOrganismo(organismo: OrganismoInput): ResOrganismo
-    "ORGANISMO: Actualizar organismo"
-    actOrganismo(organismo: OrganismoInput): OrganismoType
+    regOrganismo(organismo: OrganismoInput!, _id: ID): ResOrganismo
 }

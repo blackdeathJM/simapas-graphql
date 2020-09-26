@@ -1,0 +1,16 @@
+type InstalacionType implements IInstalacion
+{
+    _id: ID
+    nombre: String
+    direccion: String
+    noInstalacion: Int
+    activo: Boolean
+    telemetria: TelemetriaType
+}
+type TelemetriaType implements ITelemetria
+{
+    plc: [String]
+    radio: [String]
+    repetidor: [String]
+    switch: [String]
+}

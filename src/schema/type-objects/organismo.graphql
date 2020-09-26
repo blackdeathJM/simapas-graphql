@@ -12,10 +12,3 @@ type OrganismoType implements IOrganismo
     nombrePresidente: String
     telefono: [String]
 }
-
-type ResOrganismo
-{
-    estatus: Boolean
-    mensaje: String
-    documento: OrganismoType
-}

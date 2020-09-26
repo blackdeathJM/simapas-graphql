@@ -3,14 +3,16 @@ interface IInstalacion
     _id: ID
     nombre: String
     direccion: String
+    noInstalacion: Int
+    activo: Boolean
 }
 
 interface ITelemetria
 {
-    radio: String,
-    plc: String,
-    switch: String,
-    repetidor: String
+    radio: [String]
+    plc: [String]
+    switch: [String]
+    repetidor: [String]
 }
 
 interface IBomba

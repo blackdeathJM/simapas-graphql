@@ -4,6 +4,7 @@ import {IDocExt} from "../resolvers/docExt/models/docExt.interface";
 import {IFolio} from "../resolvers/folios/models/folio-interface";
 import {IPaginacion} from "./paginacion-interface";
 import {IOrganismo} from "../resolvers/organismo/models/organismo.interface";
+import {IInstalacion, ITelemetria} from "../resolvers/telemetria/models/telemetria.interface";
 
 export interface IVariables
 {
@@ -14,4 +15,6 @@ export interface IVariables
     folio?: IFolio;
     paginacion?: IPaginacion;
     organismo?: IOrganismo;
+    instalacion?: IInstalacion;
+    telemetria?: ITelemetria;
 }

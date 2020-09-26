@@ -1,7 +1,0 @@
-type instalacion implements IInstalacion
-{
-    _id: ID
-    nombre: String
-    direccion: String
-    noInstalacion: Int
-}

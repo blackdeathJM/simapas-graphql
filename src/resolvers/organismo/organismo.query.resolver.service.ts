@@ -5,9 +5,9 @@ const queryOrganismo: IResolvers =
     {
         Query:
             {
-                obtOrganismo(_, {_id}, {db})
+                obtOrganismo(_, {pagina, elementosPorPagina}, {db})
                 {
-                    return new OrganismoQueryService(_, {_id}, {db})._obtenerOrganismo();
+                    return new OrganismoQueryService(_, {paginacion: {pagina, elementosPorPagina}}, {db})._obtenerOrganismo();
                 }
             }
     }

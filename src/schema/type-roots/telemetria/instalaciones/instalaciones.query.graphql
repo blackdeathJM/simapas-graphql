@@ -1,0 +1,5 @@
+type Query
+{
+    "Instalaciones: Consultar todas las instalaciones"
+    todasInstalaciones(pagina: Int = 1, elementosPorPagina: Int = 20): ResInstalacion
+}

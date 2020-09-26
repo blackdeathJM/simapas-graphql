@@ -1,7 +1,6 @@
 import ResolversOperacionesService from "../../../services/resolver-operaciones";
 import {COLECCION} from "../../../config/global";
-import {ObjectId} from 'bson';
-import {respDocumento} from "../../../services/respuestas-return";
+import {respArreglosPag} from "../../../services/respuestas-return";
 
 class OrganismoQueryService extends ResolversOperacionesService
 {
@@ -9,10 +8,10 @@ class OrganismoQueryService extends ResolversOperacionesService
 
     async _obtenerOrganismo()
     {
-        return await this.buscarUnElemento(COLECCION.ORGANISMO, {_id: new ObjectId(this.variables._id)}, {}).then(
+        return await this.buscar(COLECCION.ORGANISMO, {}, {}, {}).then(
             async resultado =>
             {
-                return respDocumento(resultado);
+                return respArreglosPag(resultado);
             }
         )
     }

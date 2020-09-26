@@ -17,7 +17,7 @@ interface IDocExt
     notificarAdministrador: Int
 }
 
-interface IUsuarioDestinoDocExtType
+interface IUsuarioDestinoDocExt
 {
     usuario: String
     observaciones: String

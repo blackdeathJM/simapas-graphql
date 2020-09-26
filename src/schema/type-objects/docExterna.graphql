@@ -17,7 +17,7 @@ type DocExtType implements IDocExt
     notificarAdministrador: Int
     usuarioDestino: [UsuarioDestinoDocExtType]
 }
-type UsuarioDestinoDocExtType implements IUsuarioDestinoDocExtType
+type UsuarioDestinoDocExtType implements IUsuarioDestinoDocExt
 {
     usuario: String
     observaciones: String
@@ -28,11 +28,4 @@ type UsuarioDestinoDocExtType implements IUsuarioDestinoDocExtType
     notificarRespDelUsuario: Boolean
     notificarUsuario: Boolean
 }
-type ResDocEx implements IResDocEx
-{
-    info: InfoPaginacion
-    estatus: Boolean!
-    mensaje: String!
-    documento: DocExtType
-    documentos: [DocExtType]
-}
+

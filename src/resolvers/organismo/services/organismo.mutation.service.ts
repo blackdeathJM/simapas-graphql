@@ -9,23 +9,25 @@ class OrganismoMutationService extends ResolversOperacionesService
 
     async _regOrganismo()
     {
-        return await this.agregarUnElemento(COLECCION.ORGANISMO, {}, {}).then(
-            async resultado =>
-            {
-                return respDocumento(resultado);
-            }
-        )
-    }
-
-    async _actOrganismo()
-    {
-        return await this.buscarUnoYActualizar(COLECCION.ORGANISMO, {_id: new ObjectId(this.variables._id)},
-            this.variables.organismo!, {returnOriginal: false}).then(
-            async resultado =>
-            {
-                return respDocumento(resultado);
-            }
-        )
+        const contarDocumentos = await this.contarDocumentos(COLECCION.ORGANISMO, {});
+        if (contarDocumentos.total >= 1)
+        {
+            return await this.buscarUnoYActualizar(COLECCION.ORGANISMO, {_id: new ObjectId(this.variables._id)},
+                {$set: this.variables.organismo!}, {returnOriginal: false}).then(
+                resultado =>
+                {
+                    return respDocumento(resultado);
+                }
+            )
+        } else
+        {
+            return await this.agregarUnElemento(COLECCION.ORGANISMO, this.variables.organismo!, {}).then(
+                async resultado =>
+                {
+                    return respDocumento(resultado);
+                }
+            )
+        }
     }
 }
 
