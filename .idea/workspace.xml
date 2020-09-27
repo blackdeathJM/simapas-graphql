@@ -20,40 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
-      <change afterPath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/instalacion.mutation.resolver.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.mutation.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/telemetria/models/telemetria.interface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/inputs/telemetria.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/global.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/global.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/organismo/organismo.query.resolver.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/organismo/organismo.query.resolver.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/organismo/organismo.rmutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/organismo/organismo.rmutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/organismo/services/organismo.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/organismo/services/organismo.mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/organismo/services/organismo.query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/organismo/services/organismo.query.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/instalacion.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/model/instalacion.interface.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/services/instalacion.mutation.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/services/instalacion.query.services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.query.services.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/instalacion/instalacion.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/docExt.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/interfaces/docExt.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/resultados/info-paginacion.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/resultados/resultados.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/departamento.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/departamento.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/docExterna.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/docExterna.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/folio.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/folio.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/instalacion/equipoEletrico.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/instalacion/instalacion.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/instalacion/model/instalacion.interface.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/interfaces/telemetria.interface.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/instalacion/telemetria.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/telemetria.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/organismo.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/organismo.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/usuario.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/usuario.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/organismo/organismo.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/organismo/organismo.mutation.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/organismo/organismo.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/organismo/organismo.query.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/telemetria/instalaciones/instalaciones.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/telemetria/instalaciones/instalaciones.mutation.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/telemetria/instalaciones/instalaciones.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/telemetria/instalaciones/instalaciones.query.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.mutation.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,14 +260,10 @@
       <workItem from="1601011655137" duration="1792000" />
       <workItem from="1601067782997" duration="606000" />
       <workItem from="1601079056089" duration="1496000" />
-      <workItem from="1601100927687" duration="6431000" />
-    </task>
-    <task id="LOCAL-00007" summary="Se creo de nuevo la documentacion">
-      <created>1597276257981</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1597276257982</updated>
+      <workItem from="1601100927687" duration="10107000" />
+      <workItem from="1601116804946" duration="173000" />
+      <workItem from="1601117200775" duration="3816000" />
+      <workItem from="1601162794812" duration="5718000" />
     </task>
     <task id="LOCAL-00008" summary="Se creo de nuevo la documentacion">
       <created>1597276577108</created>
@@ -637,7 +601,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600691899133</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
+      <created>1601113212796</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1601113212796</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -713,15 +684,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="709" y="143" key="VCS.ChangeListViewerDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543036927" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1600691900697">
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1601113216090">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600691900697" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601113216090" />
     <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599217316417" />
-    <state x="56" y="159" width="1611" height="852" key="dock-window-1" timestamp="1600862447714">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="1954" y="74" width="1567" height="844" maximized="true" key="dock-window-1" timestamp="1601117393092">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2087" y="80" width="1643" height="870" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600765041175" />
+    <state x="1954" y="74" width="1567" height="844" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601117393092" />
     <state x="56" y="159" width="1611" height="852" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600862447714" />
     <state x="0" y="0" width="1611" height="852" maximized="true" key="dock-window-2" timestamp="1600862447714">
       <screen x="0" y="0" width="1920" height="1040" />

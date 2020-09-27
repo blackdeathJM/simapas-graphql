@@ -43,11 +43,25 @@ class InstalacionMutationService extends ResolversOperacionesService
 
     async _telemetria()
     {
-        const existeRadio = await this.buscarUnElemento(COLECCION.TELEMETRIA, {
-            _id: new ObjectId(this.variables._id), telemetria: {$exists: true, $in: [this.variables.telemetria]}
-        }, {});
+        console.log('telemetria', this.variables.telemetria?.radio);
+        const resul = await this.buscarSinPaginacion(COLECCION.TELEMETRIA,
+            {}, {}, {});
+        console.log('+++>', resul);
+        let tele: any[] = [];
 
-        console.log('resultado', existeRadio);
+        resul.elementos?.forEach(value =>
+        {
+            if (value.telemetria !== undefined)
+            {
+                // tele.push(value.telemetria);
+                tele.push(value.telemetria.radio);
+                tele.push(value.telemetria.plc);
+                tele.push(value.telemetria.switch);
+                tele.push(value.telemetria.repetidor);
+            }
+
+        });
+        console.log("-------", tele.join().split(","));
 
         // return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
         //     {_id: new ObjectId(this.variables._id)},
