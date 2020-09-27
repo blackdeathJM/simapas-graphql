@@ -53,7 +53,6 @@ class InstalacionMutationService extends ResolversOperacionesService
         {
             if (value.telemetria !== undefined)
             {
-                // tele.push(value.telemetria);
                 tele.push(value.telemetria.radio);
                 tele.push(value.telemetria.plc);
                 tele.push(value.telemetria.switch);
@@ -62,25 +61,30 @@ class InstalacionMutationService extends ResolversOperacionesService
 
         });
         const teleConvertido = tele.join().split(",");
-        console.log('Valores de la Db', teleConvertido);
         valoresRecibidos.push(this.variables.telemetria?.radio);
         valoresRecibidos.push(this.variables.telemetria?.plc);
         valoresRecibidos.push(this.variables.telemetria?.repetidor);
         valoresRecibidos.push(this.variables.telemetria?.switch);
 
         const valorConvertidoRecibido = _.compact(valoresRecibidos.join().split(","));
-        // console.log('*********', valoresRecibidos.join().split(","));
 
-        console.log('+++++', _.difference(valorConvertidoRecibido, teleConvertido));
-
-        // return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-        //     {_id: new ObjectId(this.variables._id)},
-        //     {$set: {telemetria: this.variables.telemetria}}, {returnOriginal: false, upsert: true}).then(
-        //     resultado =>
-        //     {
-        //         return respDocumento(resultado);
-        //     }
-        // )
+        if (_.differenceWith(valorConvertidoRecibido, teleConvertido).length === 0)
+        {
+            return {
+                estatus: false,
+                mensaje: 'La direccion ip ya esta registrada y no puede volverse a registrar'
+            }
+        } else
+        {
+            return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
+                {_id: new ObjectId(this.variables._id)},
+                {$set: {telemetria: this.variables.telemetria}}, {returnOriginal: false, upsert: true}).then(
+                resultado =>
+                {
+                    return respDocumento(resultado);
+                }
+            )
+        }
     }
 }
 
