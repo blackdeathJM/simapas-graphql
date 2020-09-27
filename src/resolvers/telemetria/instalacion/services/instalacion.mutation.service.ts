@@ -43,11 +43,10 @@ class InstalacionMutationService extends ResolversOperacionesService
 
     async _telemetria()
     {
-        console.log('telemetria', this.variables.telemetria?.radio);
         const resul = await this.buscarSinPaginacion(COLECCION.TELEMETRIA,
             {}, {}, {});
-        console.log('+++>', resul);
-        let tele: any[] = [];
+        const tele: any[] = [];
+        const valoresRecibidos: any[] = [];
 
         resul.elementos?.forEach(value =>
         {
@@ -62,6 +61,17 @@ class InstalacionMutationService extends ResolversOperacionesService
 
         });
         console.log("-------", tele.join().split(","));
+
+        valoresRecibidos.push(this.variables.telemetria?.radio);
+        valoresRecibidos.push(this.variables.telemetria?.plc);
+        valoresRecibidos.push(this.variables.telemetria?.repetidor);
+        valoresRecibidos.push(this.variables.telemetria?.switch);
+
+
+        console.log('*********', valoresRecibidos.join().split(","));
+
+        const comparacion = tele.includes(valoresRecibidos[0]);
+        console.log('+++++', comparacion);
 
         // return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
         //     {_id: new ObjectId(this.variables._id)},
