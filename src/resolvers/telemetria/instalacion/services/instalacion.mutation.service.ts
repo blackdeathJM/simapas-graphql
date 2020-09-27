@@ -3,6 +3,7 @@ import {IContextData} from "../../../../interfaces/context-data-interface";
 import {COLECCION} from "../../../../config/global";
 import {respDocumento} from "../../../../services/respuestas-return";
 import {ObjectId} from 'bson';
+import * as _ from "lodash";
 
 class InstalacionMutationService extends ResolversOperacionesService
 {
@@ -60,18 +61,17 @@ class InstalacionMutationService extends ResolversOperacionesService
             }
 
         });
-        console.log("-------", tele.join().split(","));
-
+        const teleConvertido = tele.join().split(",");
+        console.log('Valores de la Db', teleConvertido);
         valoresRecibidos.push(this.variables.telemetria?.radio);
         valoresRecibidos.push(this.variables.telemetria?.plc);
         valoresRecibidos.push(this.variables.telemetria?.repetidor);
         valoresRecibidos.push(this.variables.telemetria?.switch);
 
+        const valorConvertidoRecibido = _.compact(valoresRecibidos.join().split(","));
+        // console.log('*********', valoresRecibidos.join().split(","));
 
-        console.log('*********', valoresRecibidos.join().split(","));
-
-        const comparacion = tele.includes(valoresRecibidos[0]);
-        console.log('+++++', comparacion);
+        console.log('+++++', _.difference(valorConvertidoRecibido, teleConvertido));
 
         // return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
         //     {_id: new ObjectId(this.variables._id)},
