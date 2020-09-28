@@ -3,7 +3,6 @@ import {IContextData} from "../../../../interfaces/context-data-interface";
 import {COLECCION} from "../../../../config/global";
 import {respDocumento} from "../../../../services/respuestas-return";
 import {ObjectId} from 'bson';
-import * as _ from "lodash";
 
 class InstalacionMutationService extends ResolversOperacionesService
 {
@@ -44,47 +43,14 @@ class InstalacionMutationService extends ResolversOperacionesService
 
     async _telemetria()
     {
-        const resul = await this.buscarSinPaginacion(COLECCION.TELEMETRIA,
-            {}, {}, {});
-        const tele: any[] = [];
-        const valoresRecibidos: any[] = [];
-
-        resul.elementos?.forEach(value =>
-        {
-            if (value.telemetria !== undefined)
+        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
+            {_id: new ObjectId(this.variables._id)},
+            {$set: {telemetria: this.variables.telemetria}}, {returnOriginal: false, upsert: true}).then(
+            resultado =>
             {
-                tele.push(value.telemetria.radio);
-                tele.push(value.telemetria.plc);
-                tele.push(value.telemetria.switch);
-                tele.push(value.telemetria.repetidor);
+                return respDocumento(resultado);
             }
-
-        });
-        const teleConvertido = tele.join().split(",");
-        valoresRecibidos.push(this.variables.telemetria?.radio);
-        valoresRecibidos.push(this.variables.telemetria?.plc);
-        valoresRecibidos.push(this.variables.telemetria?.repetidor);
-        valoresRecibidos.push(this.variables.telemetria?.switch);
-
-        const valorConvertidoRecibido = _.compact(valoresRecibidos.join().split(","));
-
-        if (_.differenceWith(valorConvertidoRecibido, teleConvertido).length === 0)
-        {
-            return {
-                estatus: false,
-                mensaje: 'La direccion ip ya esta registrada y no puede volverse a registrar'
-            }
-        } else
-        {
-            return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-                {_id: new ObjectId(this.variables._id)},
-                {$set: {telemetria: this.variables.telemetria}}, {returnOriginal: false, upsert: true}).then(
-                resultado =>
-                {
-                    return respDocumento(resultado);
-                }
-            )
-        }
+        )
     }
 }
 
