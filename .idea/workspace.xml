@@ -21,13 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/organismo/organismo.query.resolver.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/organismo/organismo.query.resolver.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/organismo/services/organismo.query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/organismo/services/organismo.query.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.query.services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.query.services.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/organismo.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/organismo.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/organismo.interface.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/interfaces/organismo.interface.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/organismo.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/organismo.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/organismo/organismo.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/organismo/organismo.query.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/telemetria/instalaciones/instalaciones.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/telemetria/instalaciones/instalaciones.mutation.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,6 +269,8 @@
       <workItem from="1601264597674" duration="12000" />
       <workItem from="1601281656888" duration="5032000" />
       <workItem from="1601329516649" duration="5917000" />
+      <workItem from="1601354449505" duration="2795000" />
+      <workItem from="1601366279483" duration="2480000" />
     </task>
     <task id="LOCAL-00013" summary="Se creo de nuevo la documentacion">
       <created>1597921705718</created>
@@ -655,10 +651,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601263570700" />
-    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1600297791528">
+    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1601353917799">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600297791528" />
+    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601353917799" />
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1599462019543">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
