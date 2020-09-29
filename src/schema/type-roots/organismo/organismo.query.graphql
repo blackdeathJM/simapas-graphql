@@ -1,5 +1,5 @@
 extend type Query
 {
     "Obtener Organismo por id"
-    obtOrganismo(pagina: Int, elementosPorPagina: Int): ResOrganismo
+    obtOrganismo: ResOrganismo
 }

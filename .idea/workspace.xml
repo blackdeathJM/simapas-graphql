@@ -21,10 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/instalacion.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/instalacion.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.mutation.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/organismo/organismo.query.resolver.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/organismo/organismo.query.resolver.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/organismo/services/organismo.query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/organismo/services/organismo.query.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.query.services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.query.services.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/telemetria/instalaciones/instalaciones.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/telemetria/instalaciones/instalaciones.query.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/inputs/organismo.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/organismo.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/organismo.interface.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/interfaces/organismo.interface.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/organismo.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/organismo.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/organismo/organismo.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/organismo/organismo.query.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -268,14 +271,10 @@
       <workItem from="1601117200775" duration="3816000" />
       <workItem from="1601162794812" duration="5764000" />
       <workItem from="1601181415698" duration="12153000" />
-      <workItem from="1601243236340" duration="11784000" />
-    </task>
-    <task id="LOCAL-00012" summary="Se creo de nuevo la documentacion">
-      <created>1597895855657</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1597895855657</updated>
+      <workItem from="1601243236340" duration="11870000" />
+      <workItem from="1601264597674" duration="12000" />
+      <workItem from="1601281656888" duration="5032000" />
+      <workItem from="1601329516649" duration="5917000" />
     </task>
     <task id="LOCAL-00013" summary="Se creo de nuevo la documentacion">
       <created>1597921705718</created>
@@ -613,7 +612,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601195416937</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
+      <created>1601264561411</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1601264561411</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -689,10 +695,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="709" y="143" key="VCS.ChangeListViewerDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543036927" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1601195422194">
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1601264563319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601195422194" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601264563319" />
     <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599217316417" />
     <state x="1954" y="74" width="1567" height="844" maximized="true" key="dock-window-1" timestamp="1601117393092">
       <screen x="1920" y="0" width="1920" height="1040" />

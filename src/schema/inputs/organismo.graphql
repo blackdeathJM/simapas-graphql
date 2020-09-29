@@ -10,5 +10,5 @@ input OrganismoInput
     imgPortada: String
     nombre: String
     nombrePresidente: String
-    telefono: [String]
+    telefono: [TelemetriaInput]
 }

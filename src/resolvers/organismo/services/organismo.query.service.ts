@@ -8,7 +8,7 @@ class OrganismoQueryService extends ResolversOperacionesService
 
     async _obtenerOrganismo()
     {
-        return await this.buscar(COLECCION.ORGANISMO, {}, {}, {}).then(
+        return await this.buscarSinPaginacion(COLECCION.ORGANISMO, {}, {}, {}).then(
             async resultado =>
             {
                 return respArreglosPag(resultado);

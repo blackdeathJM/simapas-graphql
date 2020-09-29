@@ -5,10 +5,15 @@ interface IOrganismo
     direccion: String
     ciudad: String
     Estado: String
-    telefono: [String]
+    telefono: [ITelefono]
     fax: [String]
     correo: String
     nombrePresidente: String
     imgLogo: String
     imgPortada: String
+}
+interface ITelefono
+{
+    telefono: String
+    ext: String
 }

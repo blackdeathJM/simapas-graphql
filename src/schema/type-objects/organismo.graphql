@@ -10,5 +10,11 @@ type OrganismoType implements IOrganismo
     imgPortada: String
     nombre: String
     nombrePresidente: String
-    telefono: [String]
+    telefono: [ITelefono]
+}
+
+type TelefonoType implements ITelefono
+{
+    telefono: String,
+    ext: String
 }

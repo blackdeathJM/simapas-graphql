@@ -16,9 +16,8 @@ class InstalacionQueryServices extends ResolversOperacionesService
 
     async _ipDuplicada()
     {
-        let tele: any[] = [];
-        let valoresRecibidos = _.toArray(this.variables.telemetria);
-        console.log('variables', this.variables);
+        let valoresDb: any[] = [];
+        let valoresRecibidos = _.flattenDeep(_.toArray(this.variables.telemetria));
         return await this.buscarSinPaginacion(COLECCION.TELEMETRIA, {}, {}, {}).then(
             resul =>
             {
@@ -26,25 +25,10 @@ class InstalacionQueryServices extends ResolversOperacionesService
                 {
                     if (value.telemetria !== undefined)
                     {
-                        tele.push(value.telemetria);
-                        // tele.push(value.telemetria.plc);
-                        // tele.push(value.telemetria.switch);
-                        // tele.push(value.telemetria.repetidor);
+                        valoresDb.push(_.toArray(value.telemetria));
                     }
                 });
-                // valoresRecibidos.push(this.variables.telemetria?.radio);
-                // valoresRecibidos.push(this.variables.telemetria?.plc);
-                // valoresRecibidos.push(this.variables.telemetria?.repetidor);
-                // valoresRecibidos.push(this.variables.telemetria?.switch);
-                console.log('Valores de la base de datos', _.flattenDeep(tele));
-                console.log('variables recibidas', _.flattenDeep(valoresRecibidos));
-
-                // const valorConvertidoRecibido = _.compact(valoresRecibidos.join().split(","));
-                //
-                // const teleConvertido = _.compact(tele.join().split(","));
-                // console.log('-----', valorConvertidoRecibido);
-                console.log('******', _.differenceWith(tele, valoresRecibidos))
-                // return _.isEqualWith(teleConvertido, valorConvertidoRecibido).valueOf();
+                return _.differenceWith(valoresRecibidos, _.flattenDeep(valoresDb));
             }
         )
     }
