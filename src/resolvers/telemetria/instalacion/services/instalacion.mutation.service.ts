@@ -43,6 +43,7 @@ class InstalacionMutationService extends ResolversOperacionesService
 
     async _telemetria()
     {
+        console.log('Variables', this.variables.telemetria);
         return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
             {_id: new ObjectId(this.variables._id)},
             {$set: {telemetria: this.variables.telemetria}}, {returnOriginal: false, upsert: true}).then(
