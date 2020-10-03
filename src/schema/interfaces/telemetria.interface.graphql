@@ -15,6 +15,36 @@ interface ITelemetria
     repetidor: [String]
 }
 
+interface IParametrosElectricos
+{
+    ano: String
+    mes: String
+    voltajes: IVoltajes
+    amperajes: IAmperajes
+    factorPotencia: IFactorPotencia
+}
+interface IVoltajes
+{
+    v1: Int
+    v2: Int
+    v3: Int
+    totalV: Int
+}
+interface IAmperajes
+{
+    a1: Int
+    a2: Int
+    a3: Int
+    totalA: Int
+}
+interface IFactorPotencia
+{
+    f1: Int
+    f2: Int
+    f3: Int
+    totalF: Int
+}
+
 interface IBomba
 {
     descripcion: String
@@ -24,9 +54,4 @@ interface IBomba
     fechaInstalacion: String
     FechaRetiro: String
     activa: Boolean
-}
-
-interface IArrancador
-{
-    descripcion: String
 }
