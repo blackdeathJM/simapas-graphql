@@ -19,6 +19,7 @@ interface IParametrosElectricos
 {
     ano: String
     mes: String
+    fechaRegistro: String
     voltajes: IVoltajes
     amperajes: IAmperajes
     factorPotencia: IFactorPotencia
@@ -50,8 +51,11 @@ interface IBomba
     descripcion: String
     marca: String
     serie: String
-    hp: String
+    hp: Int
+    eficiencia: Int
     fechaInstalacion: String
     FechaRetiro: String
+    observaciones: String
+    imgEvidencia: [String]
     activa: Boolean
 }

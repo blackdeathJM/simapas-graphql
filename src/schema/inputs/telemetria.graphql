@@ -6,6 +6,8 @@ input InstalacionInput
     noInstalacion: Int!
     activo: Boolean = true
     telemetria: TelemetriaInput
+    parametrosElectricos: [ParametrosElectricosInput]
+    bomba: [BombaInput]
 }
 input TelemetriaInput
 {
@@ -13,4 +15,47 @@ input TelemetriaInput
     plc: [String]
     switch: [String]
     repetidor: [String]
+}
+input ParametrosElectricosInput
+{
+    ano: String
+    mes: String
+    fechaRegistro: String
+    voltajes: VoltajesInput
+    amperajes: AmperajesInput
+    factorPotencia: FactorPotenciaInput
+}
+input VoltajesInput
+{
+    v1: Int
+    v2: Int
+    v3: Int
+    totalV: Int
+}
+input AmperajesInput
+{
+    a1: Int
+    a2: Int
+    a3: Int
+    totalA: Int
+}
+input FactorPotenciaInput
+{
+    f1: Int
+    f2: Int
+    f3: Int
+    totalF: Int
+}
+input BombaInput
+{
+    descripcion: String
+    marca: String
+    serie: String
+    hp: Int
+    eficiencia: Int
+    fechaInstalacion: String
+    FechaRetiro: String
+    observaciones: String
+    imgEvidencia: [String]
+    activa: Boolean
 }

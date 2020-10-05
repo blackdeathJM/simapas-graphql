@@ -6,6 +6,8 @@ type InstalacionType implements IInstalacion
     noInstalacion: Int
     activo: Boolean
     telemetria: TelemetriaType
+    parametrosElectricos: [ParametrosElectricosType]
+    bomba: [BombaType]
 }
 type TelemetriaType implements ITelemetria
 {
@@ -13,4 +15,49 @@ type TelemetriaType implements ITelemetria
     radio: [String]
     repetidor: [String]
     switch: [String]
+}
+
+type ParametrosElectricosType implements IParametrosElectricos
+{
+    ano: String
+    mes: String
+    fechaRegistro: String
+    voltajes: VoltajesType
+    amperajes: AmperajesType
+    factorPotencia: FactorPotenciaType
+}
+
+type VoltajesType implements IVoltajes
+{
+    v1: Int
+    v2: Int
+    v3: Int
+    totalV: Int
+}
+type AmperajesType implements IAmperajes
+{
+    a1: Int
+    a2: Int
+    a3: Int
+    totalA: Int
+}
+type FactorPotenciaType implements IFactorPotencia
+{
+    f1: Int
+    f2: Int
+    f3: Int
+    totalF: Int
+}
+type BombaType implements IBomba
+{
+    descripcion: String
+    marca: String
+    serie: String
+    hp: Int
+    eficiencia: Int
+    fechaInstalacion: String
+    FechaRetiro: String
+    observaciones: String
+    imgEvidencia: [String]
+    activa: Boolean
 }
