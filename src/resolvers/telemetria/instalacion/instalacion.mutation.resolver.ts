@@ -20,6 +20,10 @@ const mutationTelemetria: IResolvers =
                 async agIps(_, {telemetria, _id}, {db})
                 {
                     return new InstalacionMutationService(_, {telemetria, _id}, {db})._telemetria();
+                },
+                async regVoltajes(_, {parametrosElectricos, _id}, {db})
+                {
+                    return new InstalacionMutationService(_, {_id, parametrosElectricos}, {db})._regVoltajes();
                 }
             }
     };

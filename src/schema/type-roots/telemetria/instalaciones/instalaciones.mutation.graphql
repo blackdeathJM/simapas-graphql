@@ -5,4 +5,7 @@ type Mutation
     actInstalacion(instalacion: InstalacionInput!): ResInstalacion
     desIntalacion(activo: Boolean!): ResInstalacion
     agIps(telemetria: TelemetriaInput, _id: ID!): ResInstalacion
+
+    "Registro de voltajes"
+    regVoltajes(_id: ID, parametrosElectricos: ParametrosElectricosInput): ResInstalacion
 }

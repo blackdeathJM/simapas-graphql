@@ -4,9 +4,24 @@ interface IInstalacion
     nombre: String
     direccion: String
     noInstalacion: Int
+    "Profundidad del pozo"
+    profPozo: Float
+    "Diametro de la perforacion"
+    diamPerfo: Float
+    "Diametro ademe"
+    diamAdeme: Float
+    diamColumna: Float
+    LongColumna: Float
     activo: Boolean
 }
-
+interface INiveles
+{
+    ano: Int
+    mes: String
+    dia: Int
+    tipoNivel: String
+    nivel: Float
+}
 interface ITelemetria
 {
     radio: [String]
@@ -17,42 +32,56 @@ interface ITelemetria
 
 interface IParametrosElectricos
 {
-    ano: String
-    mes: String
-    fechaRegistro: String
     voltajes: IVoltajes
     amperajes: IAmperajes
     factorPotencia: IFactorPotencia
 }
 interface IVoltajes
 {
-    v1: Int
-    v2: Int
-    v3: Int
-    totalV: Int
+    ano: Int
+    mes: String
+    dia: Int
+    v1: Float
+    v2: Float
+    v3: Float
+    totalV: Float
 }
 interface IAmperajes
 {
-    a1: Int
-    a2: Int
-    a3: Int
-    totalA: Int
+    ano: Int
+    mes: String
+    dia: Int
+    a1: Float
+    a2: Float
+    a3: Float
+    totalA: Float
 }
 interface IFactorPotencia
 {
-    f1: Int
-    f2: Int
-    f3: Int
-    totalF: Int
+    ano: Int
+    mes: String
+    dia: Int
+    f1: Float
+    f2: Float
+    f3: Float
+    totalF: Float
 }
-
+interface ILecturasMacros
+{
+    ano: Int
+    mes: String
+    dia: Int
+    lectura: Float
+    total: Float
+}
 interface IBomba
 {
     descripcion: String
     marca: String
     serie: String
-    hp: Int
-    eficiencia: Int
+    hp: Float
+    eficiencia: Float
+    lstPorSeg: Float
     fechaInstalacion: String
     FechaRetiro: String
     observaciones: String

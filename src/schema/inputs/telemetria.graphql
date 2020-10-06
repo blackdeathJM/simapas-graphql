@@ -1,12 +1,19 @@
 input InstalacionInput
 {
     _id: ID
-    nombre: String!
-    direccion: String!
-    noInstalacion: Int!
-    activo: Boolean = true
+    nombre: String
+    direccion: String
+    noInstalacion: Int
+    profPozo: Float
+    diamPerfo: Float
+    diamAdeme: Float
+    diamColumna: Float
+    LongColumna: Float
+    activo: Boolean
     telemetria: TelemetriaInput
+    niveles: [NivelesInput]
     parametrosElectricos: [ParametrosElectricosInput]
+    lecturasMacros: [LecturasMacrosInput]
     bomba: [BombaInput]
 }
 input TelemetriaInput
@@ -16,43 +23,66 @@ input TelemetriaInput
     switch: [String]
     repetidor: [String]
 }
+input NivelesInput
+{
+    ano: Int
+    mes: String
+    dia: Int
+    tipoNivel: String
+    nivel: Float
+}
 input ParametrosElectricosInput
 {
-    ano: String
-    mes: String
-    fechaRegistro: String
     voltajes: VoltajesInput
     amperajes: AmperajesInput
     factorPotencia: FactorPotenciaInput
 }
 input VoltajesInput
 {
-    v1: Int
-    v2: Int
-    v3: Int
-    totalV: Int
+    ano: Int
+    mes: String
+    dia: Int
+    v1: Float
+    v2: Float
+    v3: Float
+    totalV: Float
 }
 input AmperajesInput
 {
-    a1: Int
-    a2: Int
-    a3: Int
-    totalA: Int
+    ano: Int
+    mes: String
+    dia: Int
+    a1: Float
+    a2: Float
+    a3: Float
+    totalA: Float
 }
 input FactorPotenciaInput
 {
-    f1: Int
-    f2: Int
-    f3: Int
-    totalF: Int
+    ano: Int
+    mes: String
+    dia: Int
+    f1: Float
+    f2: Float
+    f3: Float
+    totalF: Float
+}
+input LecturasMacrosInput
+{
+    ano: Int
+    mes: String
+    dia: Int
+    lectura: Float
+    total: Float
 }
 input BombaInput
 {
     descripcion: String
     marca: String
     serie: String
-    hp: Int
-    eficiencia: Int
+    hp: Float
+    eficiencia: Float
+    lstPorSeg: Float
     fechaInstalacion: String
     FechaRetiro: String
     observaciones: String

@@ -4,10 +4,17 @@ export interface IInstalacion
     nombre: string;
     direccion: string;
     noInstalacion: number;
+    profPozo: number;
+    diamPerfo: number;
+    diamAdeme: number;
+    diamColumna: number;
+    LongColumna: number;
     activo: boolean;
     telemetria: ITelemetria;
-    parametrosElectricos: IParametrosElectricos;
-    bomba: IBomba[]
+    niveles: INiveles[];
+    parametrosElectricos: IParametrosElectricos[];
+    lecturasMacros: ILecturasMacro[];
+    bomba: IBomba[];
 }
 
 export interface ITelemetria
@@ -18,11 +25,17 @@ export interface ITelemetria
     repetidor: string[];
 }
 
-export interface IParametrosElectricos
+interface INiveles
 {
-    ano: string;
+    ano: number;
     mes: string;
-    fechaRegistro: string;
+    dia: number;
+    tipoNivel: string;
+    nivel: number;
+}
+
+interface IParametrosElectricos
+{
     voltajes: IVoltajes[];
     amperajes: IAmperajes[];
     factorPotencia: IFactorPotencia[];
@@ -30,6 +43,9 @@ export interface IParametrosElectricos
 
 interface IVoltajes
 {
+    ano: number;
+    mes: string;
+    dia: number;
     v1: number;
     v2: number;
     v3: number;
@@ -38,6 +54,9 @@ interface IVoltajes
 
 interface IAmperajes
 {
+    ano: number;
+    mes: string;
+    dia: number;
     a1: number;
     a2: number;
     a3: number;
@@ -46,10 +65,22 @@ interface IAmperajes
 
 interface IFactorPotencia
 {
+    ano: number;
+    mes: string;
+    dia: number;
     f1: number;
     f2: number;
     f3: number;
     totalF: number;
+}
+
+interface ILecturasMacro
+{
+    ano: number;
+    mes: string;
+    dia: number;
+    lectura: number;
+    total: number;
 }
 
 interface IBomba
@@ -59,6 +90,7 @@ interface IBomba
     serie: string;
     hp: number;
     eficiencia: number;
+    lstPorSeg: number;
     fechaInstalacion: string;
     FechaRetiro: string;
     observaciones: string;
