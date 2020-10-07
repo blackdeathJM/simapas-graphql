@@ -26,7 +26,7 @@ input TelemetriaInput
 input NivelesInput
 {
     ano: Int
-    mes: String
+    mes: Int
     dia: Int
     tipoNivel: String
     nivel: Float
@@ -40,37 +40,37 @@ input ParametrosElectricosInput
 input VoltajesInput
 {
     ano: Int
-    mes: String
+    mes: Int
     dia: Int
     v1: Float
     v2: Float
     v3: Float
-    totalV: Float
+    promedioV: Float
 }
 input AmperajesInput
 {
     ano: Int
-    mes: String
+    mes: Int
     dia: Int
     a1: Float
     a2: Float
     a3: Float
-    totalA: Float
+    promedioA: Float
 }
 input FactorPotenciaInput
 {
     ano: Int
-    mes: String
+    mes: Int
     dia: Int
     f1: Float
     f2: Float
     f3: Float
-    totalF: Float
+    promedioF: Float
 }
 input LecturasMacrosInput
 {
     ano: Int
-    mes: String
+    mes: Int
     dia: Int
     lectura: Float
     total: Float

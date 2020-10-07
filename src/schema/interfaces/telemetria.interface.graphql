@@ -17,7 +17,7 @@ interface IInstalacion
 interface INiveles
 {
     ano: Int
-    mes: String
+    mes: Int
     dia: Int
     tipoNivel: String
     nivel: Float
@@ -39,37 +39,37 @@ interface IParametrosElectricos
 interface IVoltajes
 {
     ano: Int
-    mes: String
+    mes: Int
     dia: Int
     v1: Float
     v2: Float
     v3: Float
-    totalV: Float
+    promedioV: Float
 }
 interface IAmperajes
 {
     ano: Int
-    mes: String
+    mes: Int
     dia: Int
     a1: Float
     a2: Float
     a3: Float
-    totalA: Float
+    promedioA: Float
 }
 interface IFactorPotencia
 {
     ano: Int
-    mes: String
+    mes: Int
     dia: Int
     f1: Float
     f2: Float
     f3: Float
-    totalF: Float
+    promedioF: Float
 }
 interface ILecturasMacros
 {
     ano: Int
-    mes: String
+    mes: Int
     dia: Int
     lectura: Float
     total: Float

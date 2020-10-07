@@ -28,7 +28,7 @@ export interface ITelemetria
 interface INiveles
 {
     ano: number;
-    mes: string;
+    mes: number;
     dia: number;
     tipoNivel: string;
     nivel: number;
@@ -44,40 +44,40 @@ interface IParametrosElectricos
 interface IVoltajes
 {
     ano: number;
-    mes: string;
+    mes: number;
     dia: number;
     v1: number;
     v2: number;
     v3: number;
-    totalV: number;
+    promedioV: number;
 }
 
 interface IAmperajes
 {
     ano: number;
-    mes: string;
+    mes: number;
     dia: number;
     a1: number;
     a2: number;
     a3: number;
-    totalA: number;
+    promedioA: number;
 }
 
 interface IFactorPotencia
 {
     ano: number;
-    mes: string;
+    mes: number;
     dia: number;
     f1: number;
     f2: number;
     f3: number;
-    totalF: number;
+    promedioF: number;
 }
 
 interface ILecturasMacro
 {
     ano: number;
-    mes: string;
+    mes: number;
     dia: number;
     lectura: number;
     total: number;
