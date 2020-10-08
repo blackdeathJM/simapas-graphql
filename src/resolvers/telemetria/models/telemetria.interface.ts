@@ -11,7 +11,7 @@ export interface IInstalacion
     LongColumna: number;
     activo: boolean;
     telemetria: ITelemetria;
-    parametrosElectricos: IParametrosElectricos;
+    parametrosElectricos: IParametrosElectricos[];
     niveles: INiveles[];
     lecturasMacros: ILecturasMacro[];
     bomba: IBomba[];

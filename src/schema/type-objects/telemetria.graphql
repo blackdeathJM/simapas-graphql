@@ -11,7 +11,7 @@ type InstalacionType implements IInstalacion
     LongColumna: Float
     activo: Boolean
     telemetria: TelemetriaType
-    parametrosElectricos: ParametrosElectricosType
+    parametrosElectricos: [ParametrosElectricosType]
     niveles: [NivelesType]
     lecturasMacros: [LecturasMacrosType]
     bomba: [BombaType]

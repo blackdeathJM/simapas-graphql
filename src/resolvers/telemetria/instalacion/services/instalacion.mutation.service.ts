@@ -55,6 +55,7 @@ class InstalacionMutationService extends ResolversOperacionesService
 
     async _regParamElectricos()
     {
+        console.log(this.variables.parametrosElectricos)
         return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, {_id: new ObjectId(this.variables._id)},
             {
                 $addToSet: {

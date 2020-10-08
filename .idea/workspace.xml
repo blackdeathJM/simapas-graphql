@@ -19,13 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
+    <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Modificacion de la coleccion de telemetria">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.mutation.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/models/telemetria.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/models/telemetria.interface.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/schema/inputs/telemetria.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/telemetria.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/telemetria.interface.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/interfaces/telemetria.interface.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/schema/type-objects/telemetria.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/telemetria.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -295,14 +293,7 @@
       <workItem from="1602073137654" duration="14000" />
       <workItem from="1602073460836" duration="3777000" />
       <workItem from="1602108051760" duration="2529000" />
-      <workItem from="1602138537056" duration="5709000" />
-    </task>
-    <task id="LOCAL-00018" summary="Se creo de nuevo la documentacion">
-      <created>1598263548681</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1598263548681</updated>
+      <workItem from="1602138537056" duration="7701000" />
     </task>
     <task id="LOCAL-00019" summary="Se creo de nuevo la documentacion">
       <created>1598356956829</created>
@@ -640,7 +631,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602040368557</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Modificacion de la coleccion de telemetria">
+      <created>1602151641593</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1602151641594</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -669,7 +667,8 @@
     <MESSAGE value="implementando la paginacion" />
     <MESSAGE value="implementando la coleccion de organismo" />
     <MESSAGE value="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia" />
+    <MESSAGE value="Modificacion de la coleccion de telemetria" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modificacion de la coleccion de telemetria" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2685" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1602038165338">
@@ -722,12 +721,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="709" y="143" key="VCS.ChangeListViewerDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543036927" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1602040378974">
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1602151646211">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602040378974" />
     <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599217316417" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601552429494" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602151646211" />
     <state x="777" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601886049897">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
