@@ -36,6 +36,7 @@ type ParametrosElectricosType implements IParametrosElectricos
     voltajes: VoltajesType
     amperajes: AmperajesType
     factorPotencia: FactorPotenciaType
+    kilowats: KwType
 }
 
 type VoltajesType implements IVoltajes
@@ -68,6 +69,16 @@ type FactorPotenciaType implements IFactorPotencia
     f3: Float
     promedioF: Float
 }
+type KwType implements IKw
+{
+    ano: Int
+    dia: Int
+    mes: Int
+    k1: Float
+    k2: Float
+    k3: Float
+    promedioK: Float
+}
 type LecturasMacrosType implements ILecturasMacros
 {
     ano: Int
@@ -89,4 +100,5 @@ type BombaType implements IBomba
     observaciones: String
     imgEvidencia: [String]
     activa: Boolean
+
 }

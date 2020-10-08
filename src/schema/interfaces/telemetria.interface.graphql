@@ -66,6 +66,16 @@ interface IFactorPotencia
     f3: Float
     promedioF: Float
 }
+interface IKw
+{
+    ano: Int
+    mes: Int
+    dia: Int
+    k1: Float
+    k2: Float
+    k3: Float
+    promedioK: Float
+}
 interface ILecturasMacros
 {
     ano: Int

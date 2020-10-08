@@ -21,13 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/instalacion.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/instalacion.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.mutation.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/models/telemetria.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/models/telemetria.interface.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/schema/inputs/telemetria.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/telemetria.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/schema/interfaces/telemetria.interface.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/interfaces/telemetria.interface.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/schema/type-objects/telemetria.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/telemetria.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/telemetria/instalaciones/instalaciones.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/telemetria/instalaciones/instalaciones.mutation.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -293,14 +290,10 @@
       <workItem from="1601909807380" duration="12952000" />
       <workItem from="1601987639327" duration="839000" />
       <workItem from="1601994260218" duration="2053000" />
-      <workItem from="1602002572704" duration="12328000" />
-    </task>
-    <task id="LOCAL-00017" summary="Se creo de nuevo la documentacion">
-      <created>1598263427168</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1598263427168</updated>
+      <workItem from="1602002572704" duration="12663000" />
+      <workItem from="1602073137654" duration="14000" />
+      <workItem from="1602073460836" duration="3777000" />
+      <workItem from="1602108051760" duration="2529000" />
     </task>
     <task id="LOCAL-00018" summary="Se creo de nuevo la documentacion">
       <created>1598263548681</created>
@@ -638,7 +631,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601953126387</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
+      <created>1602040368556</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1602040368557</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -712,18 +712,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="540" y="255" key="IDE.errors.dialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599536859793" />
-    <state x="468" y="165" width="1230" height="710" key="SettingsEditor" timestamp="1599543608833">
+    <state x="468" y="165" width="1230" height="710" key="SettingsEditor" timestamp="1602073861512">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="468" y="165" width="1230" height="710" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543608833" />
+    <state x="468" y="165" width="1230" height="710" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602073861512" />
     <state x="709" y="143" key="VCS.ChangeListViewerDialog" timestamp="1599543036927">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="709" y="143" key="VCS.ChangeListViewerDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543036927" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1601953136892">
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1602040378974">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601953136892" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602040378974" />
     <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599217316417" />
     <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601552429494" />
     <state x="777" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601886049897">
@@ -773,9 +773,9 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2536" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597480326811" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1600471581920">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1602075260703">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600471581920" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602075260703" />
   </component>
 </project>

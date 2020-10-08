@@ -36,6 +36,7 @@ input ParametrosElectricosInput
     voltajes: VoltajesInput
     amperajes: AmperajesInput
     factorPotencia: FactorPotenciaInput
+    kilowats: KwInput
 }
 input VoltajesInput
 {
@@ -66,6 +67,16 @@ input FactorPotenciaInput
     f2: Float
     f3: Float
     promedioF: Float
+}
+input KwInput
+{
+    ano: Int
+    dia: Int
+    mes: Int
+    k1: Float
+    k2: Float
+    k3: Float
+    promedioK: Float
 }
 input LecturasMacrosInput
 {

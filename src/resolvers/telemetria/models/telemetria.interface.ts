@@ -36,9 +36,10 @@ interface INiveles
 
 interface IParametrosElectricos
 {
-    voltajes: IVoltajes[];
-    amperajes: IAmperajes[];
-    factorPotencia: IFactorPotencia[];
+    voltajes: IVoltajes;
+    amperajes: IAmperajes;
+    factorPotencia: IFactorPotencia;
+    kilowats: IKw;
 }
 
 interface IVoltajes
@@ -72,6 +73,17 @@ interface IFactorPotencia
     f2: number;
     f3: number;
     promedioF: number;
+}
+
+interface IKw
+{
+    ano: number;
+    mes: number;
+    dia: number;
+    k1: number;
+    k2: number;
+    k3: number;
+    promedioK: number;
 }
 
 interface ILecturasMacro

@@ -300,17 +300,6 @@ class ResolversOperacionesService
             }
         }
     }
-
-    protected async agrupacionSimple(documento: string)
-    {
-        try
-        {
-            return await this.context.db?.collection(documento).aggregate()
-        } catch (e)
-        {
-
-        }
-    }
 }
 
 export default ResolversOperacionesService;
