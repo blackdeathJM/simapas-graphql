@@ -11,8 +11,8 @@ input InstalacionInput
     LongColumna: Float
     activo: Boolean
     telemetria: TelemetriaInput
+    parametrosElectricos: ParametrosElectricosInput
     niveles: [NivelesInput]
-    parametrosElectricos: [ParametrosElectricosInput]
     lecturasMacros: [LecturasMacrosInput]
     bomba: [BombaInput]
 }
@@ -22,14 +22,6 @@ input TelemetriaInput
     plc: [String]
     switch: [String]
     repetidor: [String]
-}
-input NivelesInput
-{
-    ano: Int
-    mes: Int
-    dia: Int
-    tipoNivel: String
-    nivel: Float
 }
 input ParametrosElectricosInput
 {
@@ -78,6 +70,15 @@ input KwInput
     k3: Float
     promedioK: Float
 }
+input NivelesInput
+{
+    ano: Int
+    mes: Int
+    dia: Int
+    tipoNivel: String
+    nivel: Float
+}
+
 input LecturasMacrosInput
 {
     ano: Int

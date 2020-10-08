@@ -22,20 +22,7 @@ interface INiveles
     tipoNivel: String
     nivel: Float
 }
-interface ITelemetria
-{
-    radio: [String]
-    plc: [String]
-    switch: [String]
-    repetidor: [String]
-}
 
-interface IParametrosElectricos
-{
-    voltajes: IVoltajes
-    amperajes: IAmperajes
-    factorPotencia: IFactorPotencia
-}
 interface IVoltajes
 {
     ano: Int

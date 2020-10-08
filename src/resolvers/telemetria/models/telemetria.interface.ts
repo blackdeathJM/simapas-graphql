@@ -11,8 +11,8 @@ export interface IInstalacion
     LongColumna: number;
     activo: boolean;
     telemetria: ITelemetria;
+    parametrosElectricos: IParametrosElectricos;
     niveles: INiveles[];
-    parametrosElectricos: IParametrosElectricos[];
     lecturasMacros: ILecturasMacro[];
     bomba: IBomba[];
 }
@@ -25,16 +25,7 @@ export interface ITelemetria
     repetidor: string[];
 }
 
-interface INiveles
-{
-    ano: number;
-    mes: number;
-    dia: number;
-    tipoNivel: string;
-    nivel: number;
-}
-
-interface IParametrosElectricos
+export interface IParametrosElectricos
 {
     voltajes: IVoltajes;
     amperajes: IAmperajes;
@@ -84,6 +75,15 @@ interface IKw
     k2: number;
     k3: number;
     promedioK: number;
+}
+
+interface INiveles
+{
+    ano: number;
+    mes: number;
+    dia: number;
+    tipoNivel: string;
+    nivel: number;
 }
 
 interface ILecturasMacro
