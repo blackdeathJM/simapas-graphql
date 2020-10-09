@@ -20,12 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_10_2020_11_21_p__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_10_2020_11_21_p__m___Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_10_2020_12_09_a__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_10_2020_12_09_a__m___Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_10_2020_12_11_a__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_10_2020_12_11_a__m___Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/instalacion.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/instalacion.mutation.resolver.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.mutation.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/models/telemetria.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/models/telemetria.interface.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/schema/inputs/telemetria.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/telemetria.graphql" afterDir="false" />
@@ -300,14 +296,8 @@
       <workItem from="1602108051760" duration="2529000" />
       <workItem from="1602138537056" duration="7701000" />
       <workItem from="1602197200941" duration="5130000" />
-      <workItem from="1602208940097" duration="594000" />
-    </task>
-    <task id="LOCAL-00019" summary="Se creo de nuevo la documentacion">
-      <created>1598356956829</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1598356956829</updated>
+      <workItem from="1602208940097" duration="3290000" />
+      <workItem from="1602267786827" duration="1316000" />
     </task>
     <task id="LOCAL-00020" summary="Se creo de nuevo la documentacion">
       <created>1598418811433</created>
@@ -645,7 +635,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602151641594</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
+      <created>1602210139688</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1602210139689</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -673,9 +670,9 @@
     <MESSAGE value="quitando el database operations para ahorrar codigo" />
     <MESSAGE value="implementando la paginacion" />
     <MESSAGE value="implementando la coleccion de organismo" />
-    <MESSAGE value="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia" />
     <MESSAGE value="Modificacion de la coleccion de telemetria" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modificacion de la coleccion de telemetria" />
+    <MESSAGE value="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2685" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1602038165338">
@@ -729,11 +726,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="709" y="143" key="VCS.ChangeListViewerDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543036927" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1602151646211">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2472" y="234" key="Vcs.Push.Dialog.v2" timestamp="1602210146092">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602040378974" />
-    <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599217316417" />
+    <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602210146092" />
     <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602151646211" />
     <state x="777" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601886049897">
       <screen x="0" y="0" width="1920" height="1040" />

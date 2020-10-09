@@ -11,7 +11,7 @@ input InstalacionInput
     LongColumna: Float
     activo: Boolean
     telemetria: TelemetriaInput
-    parametrosElectricos: [ParametrosElectricosInput]
+    parametrosElectricos: ParametrosElectricosInput
     niveles: [NivelesInput]
     lecturasMacros: [LecturasMacrosInput]
     bomba: [BombaInput]

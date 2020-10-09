@@ -17,5 +17,5 @@ export interface IVariables
     organismo?: IOrganismo;
     instalacion?: IInstalacion;
     telemetria?: ITelemetria;
-    parametrosElectricos?: IParametrosElectricos[]
+    parametrosElectricos?: IParametrosElectricos
 }

@@ -60,11 +60,11 @@ class InstalacionMutationService extends ResolversOperacionesService
             {
                 $addToSet:
                     {
-                        "parametrosElectricos.$.voltajes": this.variables.parametrosElectricos![0].voltajes,
-                        "parametrosElectricos.$.amperajes": this.variables.parametrosElectricos![1].amperajes,
-                        "parametrosElectricos.$.factorPotencia": this.variables.parametrosElectricos![2].factorPotencia,
-                        "parametrosElectricos.$.kilowats": this.variables.parametrosElectricos![3].kilowats
-                        // parametrosElectricos: this.variables.parametrosElectricos
+                        "parametrosElectricos.voltajes": this.variables.parametrosElectricos?.voltajes,
+                        "parametrosElectricos.amperajes": this.variables.parametrosElectricos?.amperajes,
+                        "parametrosElectricos.factorPotencia": this.variables.parametrosElectricos?.factorPotencia,
+                        "parametrosElectricos.kilowats": this.variables.parametrosElectricos?.kilowats
+                        // parametrosElectricos: {...this.variables.parametrosElectricos}
                     }
             },
             {returnOriginal: false, upsert: true}).then(
