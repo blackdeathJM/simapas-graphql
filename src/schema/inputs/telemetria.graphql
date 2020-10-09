@@ -25,10 +25,10 @@ input TelemetriaInput
 }
 input ParametrosElectricosInput
 {
-    voltajes: VoltajesInput
-    amperajes: AmperajesInput
-    factorPotencia: FactorPotenciaInput
-    kilowats: KwInput
+    voltajes: [VoltajesInput]
+    amperajes: [AmperajesInput]
+    factorPotencia: [FactorPotenciaInput]
+    kilowats: [KwInput]
 }
 input VoltajesInput
 {

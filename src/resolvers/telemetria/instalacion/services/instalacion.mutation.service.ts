@@ -58,12 +58,14 @@ class InstalacionMutationService extends ResolversOperacionesService
         console.log(this.variables.parametrosElectricos)
         return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, {_id: new ObjectId(this.variables._id)},
             {
-                $addToSet: {
-                    "parametrosElectricos.voltajes": this.variables.parametrosElectricos?.voltajes,
-                    "parametrosElectricos.amperajes": this.variables.parametrosElectricos?.amperajes,
-                    "parametrosElectricos.factorPotencia": this.variables.parametrosElectricos?.factorPotencia,
-                    "parametrosElectricos.kilowats": this.variables.parametrosElectricos?.kilowats
-                }
+                $addToSet:
+                    {
+                        "parametrosElectricos.$.voltajes": this.variables.parametrosElectricos![0].voltajes,
+                        "parametrosElectricos.$.amperajes": this.variables.parametrosElectricos![1].amperajes,
+                        "parametrosElectricos.$.factorPotencia": this.variables.parametrosElectricos![2].factorPotencia,
+                        "parametrosElectricos.$.kilowats": this.variables.parametrosElectricos![3].kilowats
+                        // parametrosElectricos: this.variables.parametrosElectricos
+                    }
             },
             {returnOriginal: false, upsert: true}).then(
             resultado =>

@@ -26,10 +26,10 @@ type TelemetriaType
 
 type ParametrosElectricosType
 {
-    voltajes: VoltajesType
-    amperajes: AmperajesType
-    factorPotencia: FactorPotenciaType
-    kilowats: KwType
+    voltajes: [VoltajesType]
+    amperajes: [AmperajesType]
+    factorPotencia: [FactorPotenciaType]
+    kilowats: [KwType]
 }
 
 type VoltajesType implements IVoltajes
