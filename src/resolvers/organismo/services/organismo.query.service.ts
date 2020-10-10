@@ -1,6 +1,4 @@
 import ResolversOperacionesService from "../../../services/resolver-operaciones";
-import {COLECCION} from "../../../config/global";
-import {respArreglosPag} from "../../../services/respuestas-return";
 
 class OrganismoQueryService extends ResolversOperacionesService
 {
@@ -8,12 +6,12 @@ class OrganismoQueryService extends ResolversOperacionesService
 
     async _obtenerOrganismo()
     {
-        return await this.buscarSinPaginacion(COLECCION.ORGANISMO, {}, {}, {}).then(
-            async resultado =>
-            {
-                return respArreglosPag(resultado);
-            }
-        )
+        // return await this.buscarSinPaginacion(COLECCION.ORGANISMO, {}, {}, {}).then(
+        //     async resultado =>
+        //     {
+        //         return respArreglosPag(resultado);
+        //     }
+        // )
     }
 }
 

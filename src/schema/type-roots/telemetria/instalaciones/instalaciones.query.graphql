@@ -1,7 +1,7 @@
 type Query
 {
     "Instalaciones: Consultar todas las instalaciones"
-    todasInstalaciones(pagina: Int = 1, elementosPorPagina: Int = 20): ResInstalacion
+    todasInstalaciones: ResInstalacionSPag
     "Buscar ip que se encuentre duplicada"
     ipDuplicada(telemetria: TelemetriaInput!): [String]
 }

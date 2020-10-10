@@ -13,6 +13,16 @@ export function respArreglosPag(resultado: {
     }
 }
 
+export function respArreglosSPag(resultado: {
+        estatus: boolean; elementos: object; mensaje: string;
+    }
+    | { estatus: boolean; elementos: null; mensaje: string; })
+{
+    return {
+        estatus: resultado!.estatus, mensaje: resultado!.mensaje, documentos: resultado!.elementos
+    }
+}
+
 export function respDocumento(resultado: { elemento: object; estatus: boolean; mensaje: string } | { elemento: null; estatus: boolean; mensaje: string })
 {
     return {estatus: resultado!.estatus, mensaje: resultado!.mensaje, documento: resultado!.elemento};

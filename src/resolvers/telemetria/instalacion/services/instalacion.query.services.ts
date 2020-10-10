@@ -1,7 +1,7 @@
 import ResolversOperacionesService from "../../../../services/resolver-operaciones";
 import {COLECCION} from "../../../../config/global";
-import {respArreglosPag} from "../../../../services/respuestas-return";
 import * as _ from "lodash";
+import {respArreglosSPag} from "../../../../services/respuestas-return";
 
 class InstalacionQueryServices extends ResolversOperacionesService
 {
@@ -9,8 +9,8 @@ class InstalacionQueryServices extends ResolversOperacionesService
 
     async _todasInstalaciones()
     {
-        return await this.buscar(COLECCION.TELEMETRIA, {}, {}, {}).then(
-            resultado => respArreglosPag(resultado)
+        return await this.buscarSinPaginacion(COLECCION.TELEMETRIA, {}, {}, {}).then(
+            resultado => respArreglosSPag(resultado)
         )
     }
 

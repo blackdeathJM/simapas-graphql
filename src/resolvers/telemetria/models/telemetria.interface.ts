@@ -27,10 +27,10 @@ export interface ITelemetria
 
 export interface IParametrosElectricos
 {
-    voltajes: [IVoltajes];
-    amperajes: [IAmperajes];
-    factorPotencia: [IFactorPotencia];
-    kilowats: [IKw];
+    voltajes: IVoltajes;
+    amperajes: IAmperajes;
+    factorPotencia: IFactorPotencia;
+    kilowats: IKw;
 }
 
 interface IVoltajes

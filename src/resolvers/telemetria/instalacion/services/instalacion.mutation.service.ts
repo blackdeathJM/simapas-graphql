@@ -55,7 +55,6 @@ class InstalacionMutationService extends ResolversOperacionesService
 
     async _regParamElectricos()
     {
-        console.log(this.variables.parametrosElectricos)
         return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, {_id: new ObjectId(this.variables._id)},
             {
                 $addToSet:
@@ -64,7 +63,6 @@ class InstalacionMutationService extends ResolversOperacionesService
                         "parametrosElectricos.amperajes": this.variables.parametrosElectricos?.amperajes,
                         "parametrosElectricos.factorPotencia": this.variables.parametrosElectricos?.factorPotencia,
                         "parametrosElectricos.kilowats": this.variables.parametrosElectricos?.kilowats
-                        // parametrosElectricos: {...this.variables.parametrosElectricos}
                     }
             },
             {returnOriginal: false, upsert: true}).then(

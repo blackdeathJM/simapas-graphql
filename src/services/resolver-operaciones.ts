@@ -16,13 +16,6 @@ class ResolversOperacionesService
                 async resultado =>
                 {
                     return {
-                        info: {
-                            pagina: 0,
-                            paginas: 0,
-                            saltar: 0,
-                            elementosPorPagina: 0,
-                            total: 0
-                        },
                         estatus: true,
                         mensaje: 'Lista de documentos cargada correctamente',
                         elementos: resultado
@@ -32,12 +25,6 @@ class ResolversOperacionesService
                 async error =>
                 {
                     return {
-                        info: {
-                            pagina: 0,
-                            paginas: 0,
-                            elementosPorPagina: 0,
-                            total: 0
-                        },
                         estatus: false,
                         mensaje: `Error al tratar de cargar los documentos:--> ${error}`,
                         elementos: null
@@ -48,12 +35,6 @@ class ResolversOperacionesService
         } catch (e)
         {
             return {
-                info: {
-                    pagina: 0,
-                    paginas: 0,
-                    elementosPorPagina: 0,
-                    total: 0
-                },
                 estatus: true,
                 mensaje: `Ha ocurrido un error inseperado: ${e}`,
                 elementos: null

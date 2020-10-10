@@ -7,7 +7,7 @@ const queryTelemetria: IResolvers =
             {
                 async todasInstalaciones(_, {pagina, elementosPorPagina}, {db})
                 {
-                    return new InstalacionQueryServices(_, {paginacion: {pagina, elementosPorPagina}}, {db})._todasInstalaciones();
+                    return new InstalacionQueryServices(_, {}, {db})._todasInstalaciones();
                 },
                 async ipDuplicada(_, {telemetria}, {db})
                 {
