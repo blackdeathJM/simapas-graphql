@@ -1,3 +1,5 @@
+import {IParametrosElectricos} from "./parametros-electricos.interface";
+
 export interface IInstalacion
 {
     _id: string;
@@ -23,58 +25,6 @@ export interface ITelemetria
     plc: string[];
     switch: string[];
     repetidor: string[];
-}
-
-export interface IParametrosElectricos
-{
-    voltajes: IVoltajes;
-    amperajes: IAmperajes;
-    factorPotencia: IFactorPotencia;
-    kilowats: IKw;
-}
-
-interface IVoltajes
-{
-    ano: number;
-    mes: number;
-    dia: number;
-    v1: number;
-    v2: number;
-    v3: number;
-    promedioV: number;
-}
-
-interface IAmperajes
-{
-    ano: number;
-    mes: number;
-    dia: number;
-    a1: number;
-    a2: number;
-    a3: number;
-    promedioA: number;
-}
-
-interface IFactorPotencia
-{
-    ano: number;
-    mes: number;
-    dia: number;
-    f1: number;
-    f2: number;
-    f3: number;
-    promedioF: number;
-}
-
-interface IKw
-{
-    ano: number;
-    mes: number;
-    dia: number;
-    k1: number;
-    k2: number;
-    k3: number;
-    promedioK: number;
 }
 
 interface INiveles

@@ -24,55 +24,6 @@ type TelemetriaType
     switch: [String]
 }
 
-type ParametrosElectricosType
-{
-    voltajes: [VoltajesType]
-    amperajes: [AmperajesType]
-    factorPotencia: [FactorPotenciaType]
-    kilowats: [KwType]
-}
-
-type VoltajesType implements IVoltajes
-{
-    ano: Int
-    mes: Int
-    dia: Int
-    v1: Float
-    v2: Float
-    v3: Float
-    promedioV: Float
-}
-type AmperajesType implements IAmperajes
-{
-    ano: Int
-    mes: Int
-    dia: Int
-    a1: Float
-    a2: Float
-    a3: Float
-    promedioA: Float
-}
-type FactorPotenciaType implements IFactorPotencia
-{
-    ano: Int
-    mes: Int
-    dia: Int
-    f1: Float
-    f2: Float
-    f3: Float
-    promedioF: Float
-}
-type KwType implements IKw
-{
-    ano: Int
-    dia: Int
-    mes: Int
-    k1: Float
-    k2: Float
-    k3: Float
-    promedioK: Float
-}
-
 type NivelesType implements INiveles
 {
     ano: Int

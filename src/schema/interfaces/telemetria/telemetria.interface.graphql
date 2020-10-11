@@ -22,47 +22,6 @@ interface INiveles
     tipoNivel: String
     nivel: Float
 }
-
-interface IVoltajes
-{
-    ano: Int
-    mes: Int
-    dia: Int
-    v1: Float
-    v2: Float
-    v3: Float
-    promedioV: Float
-}
-interface IAmperajes
-{
-    ano: Int
-    mes: Int
-    dia: Int
-    a1: Float
-    a2: Float
-    a3: Float
-    promedioA: Float
-}
-interface IFactorPotencia
-{
-    ano: Int
-    mes: Int
-    dia: Int
-    f1: Float
-    f2: Float
-    f3: Float
-    promedioF: Float
-}
-interface IKw
-{
-    ano: Int
-    mes: Int
-    dia: Int
-    k1: Float
-    k2: Float
-    k3: Float
-    promedioK: Float
-}
 interface ILecturasMacros
 {
     ano: Int

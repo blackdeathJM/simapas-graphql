@@ -1,0 +1,47 @@
+input ParametrosElectricosInput
+{
+    voltajes: VoltajesInput
+    amperajes: AmperajesInput
+    factorPotencia: FactorPotenciaInput
+    kilowats: KwInput
+}
+input VoltajesInput
+{
+    ano: Int
+    mes: Int
+    dia: Int
+    v1: Float
+    v2: Float
+    v3: Float
+    promedio: Float
+}
+input AmperajesInput
+{
+    ano: Int
+    mes: Int
+    dia: Int
+    v1: Float
+    v2: Float
+    v3: Float
+    promedio: Float
+}
+input FactorPotenciaInput
+{
+    ano: Int
+    mes: Int
+    dia: Int
+    v1: Float
+    v2: Float
+    v3: Float
+    promedio: Float
+}
+input KwInput
+{
+    ano: Int
+    dia: Int
+    mes: Int
+    v1: Float
+    v2: Float
+    v3: Float
+    promedio: Float
+}
