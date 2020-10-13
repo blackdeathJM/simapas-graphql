@@ -1,0 +1,26 @@
+interface IBomba
+{
+    descripcion: String
+    marca: String
+    serie: String
+    hp: Float
+    eficiencia: Float
+    lstPorSeg: Float
+    fechaInstalacion: String
+    FechaRetiro: String
+    observaciones: String
+    imgEvidencia: [String]
+    activa: Boolean
+}
+
+interface IMotor
+{
+    descripcion: String
+    marca: String
+    serie: String
+    fechaInstalacion: String
+    fechaRetiro: String
+    observaciones: String
+    imgEvidencia: [String]
+    activa: Boolean
+}

@@ -4,7 +4,8 @@ import {IDocExt} from "../resolvers/docExt/models/docExt.interface";
 import {IFolio} from "../resolvers/folios/models/folio-interface";
 import {IPaginacion} from "./paginacion-interface";
 import {IOrganismo} from "../resolvers/organismo/models/organismo.interface";
-import {IInstalacion, IParametrosElectricos, ITelemetria} from "../resolvers/telemetria/models/telemetria.interface";
+import {IInstalacion, ITelemetria} from "../resolvers/telemetria/models/telemetria.interface";
+import {IParametrosElectricos} from "../resolvers/telemetria/models/parametros-electricos.interface";
 
 export interface IVariables
 {

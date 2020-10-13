@@ -77,7 +77,6 @@ class DocExtQueryService extends ResolversOperacionesService
     async _consultaGral()
     {
         const valores = Object.values(this.variables);
-        console.log('valores', this.variables);
         return await this.buscar(COLECCION.DOC_EXTERNA,
             {
                 $or: [{noSeguimiento: parseInt(valores[0])}, {identificadorDoc: {$regex: valores[0], $options: "i"}},

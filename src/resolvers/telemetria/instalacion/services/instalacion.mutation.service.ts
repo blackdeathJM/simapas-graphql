@@ -55,22 +55,38 @@ class InstalacionMutationService extends ResolversOperacionesService
 
     async _regParamElectricos()
     {
-        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, {_id: new ObjectId(this.variables._id)},
+        const existe = await this.buscarUnElemento(COLECCION.TELEMETRIA,
             {
-                $addToSet:
-                    {
-                        "parametrosElectricos.voltajes": this.variables.parametrosElectricos?.voltajes,
-                        "parametrosElectricos.amperajes": this.variables.parametrosElectricos?.amperajes,
-                        "parametrosElectricos.factorPotencia": this.variables.parametrosElectricos?.factorPotencia,
-                        "parametrosElectricos.kilowats": this.variables.parametrosElectricos?.kilowats
+                _id: new ObjectId(this.variables._id), "parametrosElectricos.voltajes": {
+                    $elemMatch: {
+                        ano: this.variables.parametrosElectricos?.voltajes.ano,
+                        mes: this.variables.parametrosElectricos?.voltajes.mes
                     }
-            },
-            {returnOriginal: false, upsert: true}).then(
-            resultado =>
-            {
-                return respDocumento(resultado);
-            }
-        )
+                }
+            }, {});
+
+        if (existe.estatus)
+        {
+            return respDocumento(existe);
+        }else
+        {
+            return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, {_id: new ObjectId(this.variables._id)},
+                {
+                    $addToSet:
+                        {
+                            "parametrosElectricos.voltajes": this.variables.parametrosElectricos?.voltajes,
+                            "parametrosElectricos.amperajes": this.variables.parametrosElectricos?.amperajes,
+                            "parametrosElectricos.factorPotencia": this.variables.parametrosElectricos?.factorPotencia,
+                            "parametrosElectricos.kilowats": this.variables.parametrosElectricos?.kilowats
+                        }
+                },
+                {returnOriginal: false, upsert: true}).then(
+                resultado =>
+                {
+                    return respDocumento(resultado);
+                }
+            )
+        }
     }
 }
 

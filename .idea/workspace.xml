@@ -20,15 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
-      <change afterPath="$PROJECT_DIR$/src/resolvers/telemetria/models/parametros-electricos.interface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/inputs/telemetria/parametros-electricos.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/interfaces/telemetria/parametros-electricos.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/type-objects/telemetria/parametros-electricos.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schema/interfaces/telemetria/equipo-electrico.interface.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schema/interfaces/telemetria/niveles.interface.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schema/type-objects/telemetria/equipo-electrico.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schema/type-objects/telemetria/niveles.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_10_2020_12_09_a__m__[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_10_2020_12_09_a__m___Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/models/telemetria.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/models/telemetria.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/telemetria.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/telemetria/telemetria.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/telemetria.interface.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/interfaces/telemetria/telemetria.interface.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/telemetria.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/telemetria/telemetria.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/services/docExt-query-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/docExt/services/docExt-query-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.mutation.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/telemetria/telemetria.interface.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/interfaces/telemetria/telemetria.interface.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/telemetria/telemetria.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/telemetria/telemetria.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -305,14 +308,10 @@
       <workItem from="1602285990064" duration="6806000" />
       <workItem from="1602349203876" duration="3031000" />
       <workItem from="1602359313468" duration="1229000" />
-      <workItem from="1602363285051" duration="1296000" />
-    </task>
-    <task id="LOCAL-00023" summary="Se creo de nuevo la documentacion">
-      <created>1598534869242</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1598534869243</updated>
+      <workItem from="1602363285051" duration="1324000" />
+      <workItem from="1602376901770" duration="1812000" />
+      <workItem from="1602437218353" duration="3134000" />
+      <workItem from="1602525101978" duration="6772000" />
     </task>
     <task id="LOCAL-00024" summary="Se creo de nuevo la documentacion">
       <created>1598616631296</created>
@@ -650,7 +649,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602300364583</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
+      <created>1602374637350</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1602374637351</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -734,10 +740,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="709" y="143" key="VCS.ChangeListViewerDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543036927" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1602300365840">
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1602374644606">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602300365840" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602374644606" />
     <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602269630871" />
     <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602151646211" />
     <state x="777" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602349270205">
@@ -745,10 +751,10 @@
     </state>
     <state x="777" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602349270205" />
     <state x="777" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601528830736" />
-    <state x="1992" y="112" width="1692" height="875" maximized="true" key="dock-window-1" timestamp="1602279214029">
+    <state x="2051" y="163" width="1676" height="890" maximized="true" key="dock-window-1" timestamp="1602529915228">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="1992" y="112" width="1692" height="875" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602279214029" />
+    <state x="2051" y="163" width="1676" height="890" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602529915228" />
     <state x="56" y="159" width="1611" height="852" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600862447714" />
     <state x="2237" y="124" width="1619" height="824" maximized="true" key="dock-window-2" timestamp="1601913916792">
       <screen x="1920" y="0" width="1920" height="1040" />

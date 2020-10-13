@@ -24,33 +24,3 @@ type TelemetriaType
     switch: [String]
 }
 
-type NivelesType implements INiveles
-{
-    ano: Int
-    mes: Int
-    dia: Int
-    tipoNivel: String
-    nivel: Float
-}
-type LecturasMacrosType implements ILecturasMacros
-{
-    ano: Int
-    mes: Int
-    dia: Int
-    lectura: Float
-    total: Float
-}
-type BombaType implements IBomba
-{
-    descripcion: String
-    marca: String
-    serie: String
-    hp: Float
-    eficiencia: Float
-    lstPorSeg: Float
-    fechaInstalacion: String
-    FechaRetiro: String
-    observaciones: String
-    imgEvidencia: [String]
-    activa: Boolean
-}
