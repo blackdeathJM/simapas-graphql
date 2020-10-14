@@ -8,4 +8,7 @@ type Mutation
 
     "Registro de voltajes"
     regParamElectricos(_id: ID, parametrosElectricos: ParametrosElectricosInput): ResInstalacion
+
+    "Registar niveles estaticos y dinamicos"
+    regNivelesEstaticosDinamicos(_id: ID! niveles: NivelesType): ResInstalacionSPag
 }

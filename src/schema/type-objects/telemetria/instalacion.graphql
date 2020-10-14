@@ -12,7 +12,5 @@ type InstalacionType implements IInstalacion
     activo: Boolean
     telemetria: TelemetriaType
     parametrosElectricos: ParametrosElectricosType
-    niveles: NivelesType
-    lecturasMacros: [LecturasMacrosType]
-    bomba: [BombaType]
+    niveles: [NivelesType]
 }
