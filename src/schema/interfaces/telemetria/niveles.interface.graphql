@@ -12,5 +12,4 @@ interface ILecturasMacros
     mes: Int
     dia: Int
     lectura: Float
-    total: Float
 }

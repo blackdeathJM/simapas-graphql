@@ -1,57 +1,7 @@
-input InstalacionInput
-{
-    _id: ID
-    nombre: String
-    direccion: String
-    noInstalacion: Int
-    profPozo: Float
-    diamPerfo: Float
-    diamAdeme: Float
-    diamColumna: Float
-    LongColumna: Float
-    activo: Boolean
-    telemetria: TelemetriaInput
-    parametrosElectricos: ParametrosElectricosInput
-    niveles: [NivelesInput]
-    lecturasMacros: [LecturasMacrosInput]
-    bomba: [BombaInput]
-}
 input TelemetriaInput
 {
     radio: [String]
     plc: [String]
     switch: [String]
     repetidor: [String]
-}
-
-input NivelesInput
-{
-    ano: Int
-    mes: Int
-    dia: Int
-    tipoNivel: String
-    nivel: Float
-}
-
-input LecturasMacrosInput
-{
-    ano: Int
-    mes: Int
-    dia: Int
-    lectura: Float
-    total: Float
-}
-input BombaInput
-{
-    descripcion: String
-    marca: String
-    serie: String
-    hp: Float
-    eficiencia: Float
-    lstPorSeg: Float
-    fechaInstalacion: String
-    FechaRetiro: String
-    observaciones: String
-    imgEvidencia: [String]
-    activa: Boolean
 }

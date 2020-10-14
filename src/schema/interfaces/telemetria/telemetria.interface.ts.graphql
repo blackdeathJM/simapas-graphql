@@ -1,4 +1,4 @@
-type TelemetriaType implements ITelemetria
+interface ITelemetria
 {
     plc: [String]
     radio: [String]

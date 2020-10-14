@@ -1,0 +1,14 @@
+input BombaInput
+{
+    descripcion: String
+    marca: String
+    serie: String
+    hp: Float
+    eficiencia: Float
+    lstPorSeg: Float
+    fechaInstalacion: String
+    FechaRetiro: String
+    observaciones: String
+    imgEvidencia: [String]
+    activa: Boolean
+}

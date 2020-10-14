@@ -1,4 +1,4 @@
-type NivelesType implements INiveles
+input NivelesInput
 {
     ano: Int
     mes: Int
@@ -6,10 +6,12 @@ type NivelesType implements INiveles
     tipoNivel: String
     nivel: Float
 }
-type LecturasMacrosType implements ILecturasMacros
+
+input LecturasMacrosInput
 {
     ano: Int
     mes: Int
     dia: Int
     lectura: Float
+    total: Float
 }

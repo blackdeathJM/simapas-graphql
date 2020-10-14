@@ -1,0 +1,18 @@
+input InstalacionInput
+{
+    _id: ID
+    nombre: String
+    direccion: String
+    noInstalacion: Int
+    profPozo: Float
+    diamPerfo: Float
+    diamAdeme: Float
+    diamColumna: Float
+    LongColumna: Float
+    activo: Boolean
+    telemetria: TelemetriaInput
+    parametrosElectricos: ParametrosElectricosInput
+    niveles: [NivelesInput]
+    lecturasMacros: [LecturasMacrosInput]
+    bomba: [BombaInput]
+}
