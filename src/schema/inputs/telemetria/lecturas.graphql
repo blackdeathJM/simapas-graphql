@@ -1,0 +1,8 @@
+input LecturasMacrosInput
+{
+    ano: Int
+    mes: Int
+    dia: Int
+    lectura: Float
+    total: Float
+}

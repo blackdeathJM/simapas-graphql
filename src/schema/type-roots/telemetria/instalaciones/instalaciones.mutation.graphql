@@ -10,5 +10,5 @@ type Mutation
     regParamElectricos(_id: ID, parametrosElectricos: ParametrosElectricosInput): ResInstalacion
 
     "Registar niveles estaticos y dinamicos"
-    regNivelesEstaticosDinamicos(_id: ID! niveles: NivelesType): ResInstalacionSPag
+    regNivelesEstaticosDinamicos(_id: ID!, niveles: NivelesInput): ResInstalacionSPag
 }

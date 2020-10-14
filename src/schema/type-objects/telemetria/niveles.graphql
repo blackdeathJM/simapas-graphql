@@ -6,10 +6,3 @@ type NivelesType implements INiveles
     tipoNivel: String
     nivel: Float
 }
-type LecturasMacrosType implements ILecturasMacros
-{
-    ano: Int
-    mes: Int
-    dia: Int
-    lectura: Float
-}
