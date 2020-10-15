@@ -57,12 +57,35 @@ class InstalacionMutationService extends ResolversOperacionesService
     {
         const existe = await this.buscarUnElemento(COLECCION.TELEMETRIA,
             {
-                _id: new ObjectId(this.variables._id), "parametrosElectricos.voltajes": {
-                    $elemMatch: {
-                        ano: this.variables.parametrosElectricos?.voltajes.ano,
-                        mes: this.variables.parametrosElectricos?.voltajes.mes
+                _id: new ObjectId(this.variables._id), $or: [{
+                    "parametrosElectricos.voltajes": {
+                        $elemMatch: {
+                            ano: this.variables.parametrosElectricos?.voltajes.ano,
+                            mes: this.variables.parametrosElectricos?.voltajes.mes
+                        }
                     }
-                }
+                }, {
+                    "parametrosElectricos.amperajes": {
+                        $elemMatch: {
+                            ano: this.variables.parametrosElectricos?.amperajes.ano,
+                            mes: this.variables.parametrosElectricos?.amperajes.mes
+                        }
+                    }
+                }, {
+                    "parametrosElectricos.factorPotencia": {
+                        $elemMatch: {
+                            ano: this.variables.parametrosElectricos?.factorPotencia.ano,
+                            mes: this.variables.parametrosElectricos?.factorPotencia.mes
+                        }
+                    }
+                }, {
+                    "parametrosElectricos.kilowats": {
+                        $elemMatch: {
+                            ano: this.variables.parametrosElectricos?.kilowats.ano,
+                            mes: this.variables.parametrosElectricos?.kilowats.mes
+                        }
+                    }
+                }]
             }, {});
 
         if (existe.estatus)
