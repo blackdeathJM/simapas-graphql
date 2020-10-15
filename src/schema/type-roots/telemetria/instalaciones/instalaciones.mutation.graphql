@@ -7,7 +7,7 @@ type Mutation
     agIps(telemetria: TelemetriaInput, _id: ID!): ResInstalacion
 
     "Registro de voltajes"
-    regParamElectricos(_id: ID, parametrosElectricos: ParametrosElectricosInput): ResInstalacion
+    regParamElectricos(_id: ID, parametrosElectricos: ParametrosElectricosInput, parametro: String!): ResInstalacion
 
     "Registar niveles estaticos y dinamicos"
     regNivelesEstaticosDinamicos(_id: ID!, niveles: NivelesInput): ResInstalacionSPag

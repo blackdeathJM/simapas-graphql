@@ -53,7 +53,7 @@ class InstalacionMutationService extends ResolversOperacionesService
         )
     }
 
-    async _regParamElectricos()
+    async _regParamElectricos(parametro: string)
     {
         const existe = await this.buscarUnElemento(COLECCION.TELEMETRIA,
             {
@@ -68,24 +68,67 @@ class InstalacionMutationService extends ResolversOperacionesService
         if (existe.estatus)
         {
             return respDocumento(existe);
-        }else
+        } else
         {
-            return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, {_id: new ObjectId(this.variables._id)},
-                {
-                    $addToSet:
+            switch (parametro)
+            {
+                case 'voltajes':
+                    return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, {_id: new ObjectId(this.variables._id)},
                         {
-                            "parametrosElectricos.voltajes": this.variables.parametrosElectricos?.voltajes,
-                            "parametrosElectricos.amperajes": this.variables.parametrosElectricos?.amperajes,
-                            "parametrosElectricos.factorPotencia": this.variables.parametrosElectricos?.factorPotencia,
-                            "parametrosElectricos.kilowats": this.variables.parametrosElectricos?.kilowats
+                            $addToSet:
+                                {
+                                    "parametrosElectricos.voltajes": this.variables.parametrosElectricos?.voltajes,
+                                }
+                        },
+                        {returnOriginal: false, upsert: true}).then(
+                        resultado =>
+                        {
+                            return respDocumento(resultado);
                         }
-                },
-                {returnOriginal: false, upsert: true}).then(
-                resultado =>
-                {
-                    return respDocumento(resultado);
-                }
-            )
+                    )
+                case 'amperajes':
+                    return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, {_id: new ObjectId(this.variables._id)},
+                        {
+                            $addToSet:
+                                {
+                                    "parametrosElectricos.amperajes": this.variables.parametrosElectricos?.amperajes,
+                                }
+                        },
+                        {returnOriginal: false, upsert: true}).then(
+                        resultado =>
+                        {
+                            return respDocumento(resultado);
+                        }
+                    )
+                case 'factorPotencia':
+                    return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, {_id: new ObjectId(this.variables._id)},
+                        {
+                            $addToSet:
+                                {
+                                    "parametrosElectricos.factorPotencia": this.variables.parametrosElectricos?.factorPotencia,
+                                }
+                        },
+                        {returnOriginal: false, upsert: true}).then(
+                        resultado =>
+                        {
+                            return respDocumento(resultado);
+                        }
+                    )
+                case 'kilowats':
+                    return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, {_id: new ObjectId(this.variables._id)},
+                        {
+                            $addToSet:
+                                {
+                                    "parametrosElectricos.kilowats": this.variables.parametrosElectricos?.kilowats
+                                }
+                        },
+                        {returnOriginal: false, upsert: true}).then(
+                        resultado =>
+                        {
+                            return respDocumento(resultado);
+                        }
+                    )
+            }
         }
     }
 }

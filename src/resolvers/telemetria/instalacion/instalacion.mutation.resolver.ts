@@ -21,9 +21,9 @@ const mutationTelemetria: IResolvers =
                 {
                     return new InstalacionMutationService(_, {telemetria, _id}, {db})._telemetria();
                 },
-                async regParamElectricos(_, {_id, parametrosElectricos}, {db})
+                async regParamElectricos(_, {_id, parametrosElectricos, parametro}, {db})
                 {
-                    return new InstalacionMutationService(_, {_id, parametrosElectricos}, {db})._regParamElectricos();
+                    return new InstalacionMutationService(_, {_id, parametrosElectricos}, {db})._regParamElectricos(parametro);
                 }
             }
     };
