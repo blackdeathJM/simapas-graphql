@@ -1,11 +1,15 @@
 interface IBomba
 {
-    descripcion: String
-    marca: String
     serie: String
-    hp: Float
+    marca: String
+    modelo: String
+    noImpulsores: Int
+    rmp: Float
+    tipo: String
+    diametro: Float
+    lts: Float
+    descripcion: String
     eficiencia: Float
-    lstPorSeg: Float
     fechaInstalacion: String
     FechaRetiro: String
     observaciones: String
@@ -15,9 +19,15 @@ interface IBomba
 
 interface IMotor
 {
-    descripcion: String
-    marca: String
     serie: String
+    marca: String
+    modelo: String
+    hp: Float
+    voltaje: Float
+    amperaje: Float
+    factPotencia: Float
+    eficiencia: Float
+    descripcion: String
     fechaInstalacion: String
     fechaRetiro: String
     observaciones: String

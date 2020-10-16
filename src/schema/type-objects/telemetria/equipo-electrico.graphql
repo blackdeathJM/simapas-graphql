@@ -1,14 +1,36 @@
 type BombaType implements IBomba
 {
-    descripcion: String
-    marca: String
-    serie: String
-    hp: Float
-    eficiencia: Float
-    lstPorSeg: Float
-    fechaInstalacion: String
-    FechaRetiro: String
     observaciones: String
     imgEvidencia: [String]
+    serie: String
+    marca: String
     activa: Boolean
+    FechaRetiro: String
+    fechaInstalacion: String
+    descripcion: String
+    diametro: Float
+    eficiencia: Float
+    lts: Float
+    modelo: String
+    noImpulsores: Int
+    rmp: Float
+    tipo: String
+}
+
+type MotorType implements IMotor
+{
+    modelo: String
+    eficiencia: Float
+    descripcion: String
+    fechaInstalacion: String
+    activa: Boolean
+    marca: String
+    serie: String
+    imgEvidencia: [String]
+    observaciones: String
+    amperaje: Float
+    factPotencia: Float
+    fechaRetiro: String
+    hp: Float
+    voltaje: Float
 }

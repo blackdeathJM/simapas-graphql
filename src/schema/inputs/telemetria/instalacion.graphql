@@ -12,7 +12,7 @@ input InstalacionInput
     activo: Boolean
     telemetria: TelemetriaInput
     parametrosElectricos: ParametrosElectricosInput
-    niveles: [NivelesInput]
-    lecturasMacros: [LecturasMacrosInput]
     bomba: [BombaInput]
+    motor: [MotorInput]
+    niveles: [NivelesInput]
 }
