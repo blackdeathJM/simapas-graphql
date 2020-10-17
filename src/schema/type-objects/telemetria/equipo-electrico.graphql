@@ -1,7 +1,8 @@
 type BombaType implements IBomba
 {
     observaciones: String
-    imgEvidencia: [String]
+    imgEvidenciaInst: [String]
+    imgEvidenciaRet: [String]
     serie: String
     marca: String
     activa: Boolean
@@ -26,7 +27,8 @@ type MotorType implements IMotor
     activa: Boolean
     marca: String
     serie: String
-    imgEvidencia: [String]
+    imgEvidenciaInst: [String]
+    imgEvidenciaRet: [String]
     observaciones: String
     amperaje: Float
     factPotencia: Float

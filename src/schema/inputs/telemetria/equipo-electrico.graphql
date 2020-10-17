@@ -1,7 +1,8 @@
 input BombaInput
 {
     observaciones: String
-    imgEvidencia: [String]
+    imgEvidenciaInst: [String]
+    imgEvidenciaRet: [String]
     serie: String
     marca: String
     activa: Boolean
@@ -26,7 +27,8 @@ input MotorInput
     activa: Boolean
     marca: String
     serie: String
-    imgEvidencia: [String]
+    imgEvidenciaInst: [String]
+    imgEvidenciaRet: [String]
     observaciones: String
     amperaje: Float
     factPotencia: Float

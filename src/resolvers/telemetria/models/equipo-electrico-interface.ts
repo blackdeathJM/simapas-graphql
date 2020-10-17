@@ -13,7 +13,8 @@ export interface IBomba
     fechaInstalacion: string;
     FechaRetiro: string;
     observaciones: string;
-    imgEvidencia: string[];
+    imgEvidenciaInst: string[];
+    imgEvidenciaRet: string[];
     activa: boolean;
 }
 
@@ -31,6 +32,7 @@ export interface IMotor
     fechaInstalacion: string;
     fechaRetiro: string;
     observaciones: string;
-    imgEvidencia: string;
+    imgEvidenciaInst: string[];
+    imgEvidenciaRet: string[];
     activa: boolean;
 }
