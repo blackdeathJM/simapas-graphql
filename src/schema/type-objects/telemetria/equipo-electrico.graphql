@@ -13,7 +13,7 @@ type BombaType implements IBomba
     lts: Float
     modelo: String
     noImpulsores: Int
-    rmp: Float
+    rpm: Float
     tipo: String
 }
 

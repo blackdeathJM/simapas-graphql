@@ -154,6 +154,16 @@ class InstalacionMutationService extends ResolversOperacionesService
             }
         }
     }
+
+    async _regMotor()
+    {
+        console.log(this.variables);
+    }
+
+    async _regBobma()
+    {
+        console.log(this.variables);
+    }
 }
 
 export default InstalacionMutationService;

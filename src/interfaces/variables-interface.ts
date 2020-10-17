@@ -7,6 +7,7 @@ import {IOrganismo} from "../resolvers/organismo/models/organismo.interface";
 import {IInstalacion} from "../resolvers/telemetria/models/instalacion.interface";
 import {IParametrosElectricos} from "../resolvers/telemetria/models/parametros-electricos.interface";
 import {ITelemetria} from "../resolvers/telemetria/models/telemetria-interface";
+import {IBomba, IMotor} from "../resolvers/telemetria/models/equipo-electrico-interface";
 
 export interface IVariables
 {
@@ -19,5 +20,7 @@ export interface IVariables
     organismo?: IOrganismo;
     instalacion?: IInstalacion;
     telemetria?: ITelemetria;
-    parametrosElectricos?: IParametrosElectricos
+    parametrosElectricos?: IParametrosElectricos;
+    motor?: IMotor;
+    bomba?: IBomba;
 }

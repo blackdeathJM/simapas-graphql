@@ -8,8 +8,10 @@ type Mutation
 
     "Registro de voltajes"
     regParamElectricos(_id: ID, parametrosElectricos: ParametrosElectricosInput, parametro: String!): ResInstalacion
+    "Registro de motor"
+    regMotor(_id: ID!, motor: MotorInput!): ResInstalacion
     "Registrar bomba"
-    regBomba(_id: ID, bomba: BombaInput): ResInstalacion
+    regBomba(_id: ID, bomba: BombaInput!): ResInstalacion
     "Registar niveles estaticos y dinamicos"
     regNivelesEstaticosDinamicos(_id: ID!, niveles: NivelesInput): ResInstalacionSPag
 }
