@@ -1,5 +1,6 @@
 interface IBomba
 {
+    id: ID
     serie: String
     marca: String
     modelo: String
@@ -20,6 +21,7 @@ interface IBomba
 
 interface IMotor
 {
+    id: ID
     serie: String
     marca: String
     modelo: String

@@ -1,5 +1,6 @@
 type BombaType implements IBomba
 {
+    id: ID
     observaciones: String
     imgEvidenciaInst: [String]
     imgEvidenciaRet: [String]
@@ -20,6 +21,7 @@ type BombaType implements IBomba
 
 type MotorType implements IMotor
 {
+    id: ID
     modelo: String
     eficiencia: Float
     descripcion: String

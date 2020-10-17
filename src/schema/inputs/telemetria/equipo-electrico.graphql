@@ -1,5 +1,6 @@
 input BombaInput
 {
+    id: ID
     observaciones: String
     imgEvidenciaInst: [String]
     imgEvidenciaRet: [String]
@@ -20,6 +21,7 @@ input BombaInput
 
 input MotorInput
 {
+    id: ID
     modelo: String
     eficiencia: Float
     descripcion: String

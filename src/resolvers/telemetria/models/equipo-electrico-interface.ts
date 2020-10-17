@@ -1,5 +1,6 @@
 export interface IBomba
 {
+    id: string
     serie: string;
     marca: string;
     modelo: string;
@@ -20,6 +21,7 @@ export interface IBomba
 
 export interface IMotor
 {
+    id: string;
     serie: string;
     marca: string;
     modelo: string;

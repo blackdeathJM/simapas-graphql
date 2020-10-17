@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="trabajando con registro de motor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.mutation.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/models/equipo-electrico-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/models/equipo-electrico-interface.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/schema/inputs/telemetria/equipo-electrico.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/telemetria/equipo-electrico.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/schema/interfaces/telemetria/equipo-electrico.interface.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/interfaces/telemetria/equipo-electrico.interface.graphql" afterDir="false" />
@@ -64,16 +65,16 @@
     <property name="ts.external.directory.path" value="D:\Documents\Proyectos\Backend\simapas-graphql\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src" />
+      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\per" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\schema\inputs\telemetria" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\schema\type-objects\telemetria" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\schema\interfaces\telemetria" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\resolvers\telemetria\instalacion" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\schema\interfaces" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src" />
-      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\per" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -317,13 +318,6 @@
       <workItem from="1602886130017" duration="594000" />
       <workItem from="1602891366595" duration="23000" />
       <workItem from="1602891598572" duration="5374000" />
-    </task>
-    <task id="LOCAL-00033" summary="quitando el database operations para ahorrar codigo">
-      <created>1599039933948</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1599039933948</updated>
     </task>
     <task id="LOCAL-00034" summary="quitando el database operations para ahorrar codigo">
       <created>1599090945130</created>
@@ -661,7 +655,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602905231192</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="trabajando con registro de motor">
+      <created>1602915897433</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1602915897433</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -747,12 +748,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="709" y="143" key="VCS.ChangeListViewerDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543036927" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1602905233271">
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1602915899685">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602905233271" />
     <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602819320986" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602151646211" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602915899685" />
     <state x="777" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602349270205">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

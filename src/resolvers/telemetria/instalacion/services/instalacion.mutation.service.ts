@@ -157,7 +157,14 @@ class InstalacionMutationService extends ResolversOperacionesService
 
     async _regMotor()
     {
-        console.log(this.variables);
+        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
+            {_id: new ObjectId(this.variables._id)},
+            {$addToSet: {motor: this.variables.motor}}, {returnOriginal: false, upsert: true}).then(
+            resultado =>
+            {
+                return respDocumento(resultado);
+            }
+        );
     }
 
     async _regBobma()
