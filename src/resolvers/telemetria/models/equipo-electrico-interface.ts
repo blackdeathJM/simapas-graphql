@@ -12,7 +12,7 @@ export interface IBomba
     descripcion: string;
     eficiencia: number;
     fechaInstalacion: string;
-    FechaRetiro: string;
+    fechaRetiro: string;
     observaciones: string;
     imgEvidenciaInst: string[];
     imgEvidenciaRet: string[];

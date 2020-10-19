@@ -7,7 +7,7 @@ type BombaType implements IBomba
     serie: String
     marca: String
     activa: Boolean
-    FechaRetiro: String
+    fechaRetiro: String
     fechaInstalacion: String
     descripcion: String
     diametro: Float

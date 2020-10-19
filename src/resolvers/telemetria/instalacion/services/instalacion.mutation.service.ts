@@ -169,7 +169,14 @@ class InstalacionMutationService extends ResolversOperacionesService
 
     async _regBobma()
     {
-        console.log(this.variables);
+        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
+            {_id: new ObjectId(this.variables._id)},
+            {$addToSet: {bomba: this.variables.bomba}}, {returnOriginal: false, upsert: true}).then(
+            resultado =>
+            {
+                return respDocumento(resultado);
+            }
+        )
     }
 }
 

@@ -12,7 +12,7 @@ interface IBomba
     descripcion: String
     eficiencia: Float
     fechaInstalacion: String
-    FechaRetiro: String
+    fechaRetiro: String
     observaciones: String
     imgEvidenciaInst: [String]
     imgEvidenciaRet: [String]
