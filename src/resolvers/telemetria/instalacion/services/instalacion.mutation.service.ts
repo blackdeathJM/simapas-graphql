@@ -178,6 +178,54 @@ class InstalacionMutationService extends ResolversOperacionesService
             }
         )
     }
+
+    async _bajaMotor(fechaBaja: string, id: string)
+    {
+        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
+            {_id: new ObjectId(this.variables._id), motor: {$elemMatch: {id}}},
+            {$set: {"motor.$.fechaRetiro": fechaBaja}}, {returnOriginal: false}).then(
+            resultado =>
+            {
+                return respDocumento(resultado);
+            }
+        )
+    }
+
+    async _bajaBomba(fechaBaja: string, id: string)
+    {
+        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
+            {_id: new ObjectId(this.variables._id), bomba: {$elemMatch: {id}}},
+            {$set: {"bomba.$.fechaRetiro": fechaBaja}}, {returnOriginal: false}).then(
+            resultado =>
+            {
+                return respDocumento(resultado);
+            }
+        )
+    }
+
+    async _desActMotor(id: string, descAct: boolean)
+    {
+        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
+            {_id: new ObjectId(this.variables._id), motor: {$elemMatch: {id}}},
+            {$set: {"motor.$.activa": descAct}}, {returnOriginal: false}).then(
+            resultado =>
+            {
+                return respDocumento(resultado);
+            }
+        )
+    }
+
+    async _desActBomba(id: string, descAct: boolean)
+    {
+        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
+            {_id: new ObjectId(this.variables._id), bomba: {$elemMatch: {id}}},
+            {$set: {"bomba.$.activa": descAct}}, {returnOriginal: false}).then(
+            resultado =>
+            {
+                return respDocumento(resultado);
+            }
+        )
+    }
 }
 
 export default InstalacionMutationService;
