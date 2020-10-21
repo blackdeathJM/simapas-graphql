@@ -17,7 +17,7 @@ type Mutation
     "Dar de baja Bomba"
     bajaBomba(_id: ID!, id: String!, fechaBaja: String!): ResInstalacion
     "Desactivar o activar motor"
-    desActMotor(_id: ID!, id: String!, descAct: Boolean!): ResInstalacion
+    desActMotor(_id: ID!, id: String!, descAct: Boolean!, valor: String!): ResInstalacion
     "Desactivar o activar bomba"
     desActBomba(_id: ID!, id: String!, descAct: Boolean!): ResInstalacion
     "Registar niveles estaticos y dinamicos"

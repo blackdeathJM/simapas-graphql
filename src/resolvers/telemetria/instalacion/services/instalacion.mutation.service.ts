@@ -203,11 +203,13 @@ class InstalacionMutationService extends ResolversOperacionesService
         )
     }
 
-    async _desActMotor(id: string, descAct: boolean)
+    async _desActMotor(id: string, descAct: boolean, valor: string)
     {
+        const objecto = JSON.parse(JSON.stringify({_id: new ObjectId(this.variables._id), valor: {$elemMatch: {id}}}).replace('valor', valor));
+        console.log('conversion', objecto);
         return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
             {_id: new ObjectId(this.variables._id), motor: {$elemMatch: {id}}},
-            {$set: {"motor.$.activa": descAct}}, {returnOriginal: false}).then(
+            {$set: {'motor.$.activa': descAct}}, {returnOriginal: false}).then(
             resultado =>
             {
                 return respDocumento(resultado);
