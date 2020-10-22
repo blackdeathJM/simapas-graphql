@@ -1,4 +1,4 @@
-type LecturasMacrosType implements ILecturasMacros
+interface ILecturasMacros
 {
     id: ID
     ano: Int

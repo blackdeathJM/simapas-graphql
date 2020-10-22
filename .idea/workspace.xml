@@ -20,9 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="trabajando con registro de motor">
+      <change afterPath="$PROJECT_DIR$/src/schema/interfaces/telemetria/lecturas-interface.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_10_2020_04_06_a__m__[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_10_2020_04_06_a__m___Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2020_11_16_p__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2020_11_16_p__m___Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2020_12_11_a__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2020_12_11_a__m___Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_10_2020_09_19_a__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_10_2020_09_19_a__m___Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/instalacion.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/instalacion.mutation.resolver.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.mutation.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/models/lecturas-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/models/lecturas-interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/inputs/telemetria/instalacion.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/telemetria/instalacion.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/inputs/telemetria/lecturas.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/telemetria/lecturas.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/telemetria/niveles.interface.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/interfaces/telemetria/niveles.interface.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/telemetria/instalacion.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/telemetria/instalacion.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/telemetria/lecturas.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/telemetria/lecturas.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/schema/type-roots/telemetria/instalaciones/instalaciones.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/telemetria/instalaciones/instalaciones.mutation.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +59,11 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
+  </component>
   <component name="ProjectId" id="1fbgO3IKwxE363ZdoOsgddKGjjC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -57,10 +74,16 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
-    <property name="ts.external.directory.path" value="D:\Documents\Proyectos\Backend\simapas-graphql\node_modules\typescript\lib" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="C:\proyectos\backend\simapas-graphql\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -321,15 +344,33 @@
       <workItem from="1602993139388" duration="4485000" />
       <workItem from="1603042232801" duration="988000" />
       <workItem from="1603054898999" duration="844000" />
-      <workItem from="1603060843256" duration="851000" />
-      <workItem from="1603095515967" duration="1204000" />
-      <workItem from="1603133438569" duration="1810000" />
-      <workItem from="1603149027145" duration="4506000" />
-      <workItem from="1603240793032" duration="385000" />
-      <workItem from="1603241201144" duration="6314000" />
-      <workItem from="1603282610935" duration="1280000" />
-      <workItem from="1603287305555" duration="5199000" />
-      <workItem from="1603320898619" duration="3093000" />
+      <workItem from="1603060843256" duration="757000" />
+      <workItem from="1603084219366" duration="307000" />
+      <workItem from="1603089920854" duration="692000" />
+      <workItem from="1603169668554" duration="1228000" />
+      <workItem from="1603348162294" duration="5270000" />
+      <workItem from="1603364379002" duration="963000" />
+    </task>
+    <task id="LOCAL-00034" summary="quitando el database operations para ahorrar codigo">
+      <created>1599090945130</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1599090945130</updated>
+    </task>
+    <task id="LOCAL-00035" summary="quitando el database operations para ahorrar codigo">
+      <created>1599120344599</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1599120344599</updated>
+    </task>
+    <task id="LOCAL-00036" summary="quitando el database operations para ahorrar codigo">
+      <created>1599124708417</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1599124708417</updated>
     </task>
     <task id="LOCAL-00037" summary="quitando el database operations para ahorrar codigo">
       <created>1599143199598</created>
@@ -653,28 +694,7 @@
       <option name="project" value="LOCAL" />
       <updated>1602915897433</updated>
     </task>
-    <task id="LOCAL-00083" summary="trabajando con registro de motor">
-      <created>1603076181322</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1603076181322</updated>
-    </task>
-    <task id="LOCAL-00084" summary="trabajando con registro de motor">
-      <created>1603163314491</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1603163314492</updated>
-    </task>
-    <task id="LOCAL-00085" summary="trabajando con registro de motor">
-      <created>1603248588174</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1603248588175</updated>
-    </task>
-    <option name="localTasksCounter" value="86" />
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -708,10 +728,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="trabajando con registro de motor" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2606" y="359" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1603163434786">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2606" y="359" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603163434786" />
     <state x="2685" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1602038165338">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -731,55 +747,60 @@
     </state>
     <state x="703" y="369" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600659968615" />
     <state x="2623" y="369" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602600326320" />
-    <state width="1879" height="180" key="GridCell.Tab.0.bottom" timestamp="1603241181127">
+    <state width="1875" height="202" key="GridCell.Tab.0.bottom" timestamp="1603091097545">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1879" height="180" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603241181127" />
-    <state width="1877" height="76" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601442579049" />
-    <state width="1879" height="180" key="GridCell.Tab.0.center" timestamp="1603241181127">
+    <state width="1879" height="180" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601421842346" />
+    <state width="1875" height="202" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603091097545" />
+    <state width="1875" height="202" key="GridCell.Tab.0.center" timestamp="1603091097544">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1879" height="180" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603241181127" />
-    <state width="1877" height="76" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601442579049" />
-    <state width="1879" height="180" key="GridCell.Tab.0.left" timestamp="1603241181127">
+    <state width="1879" height="180" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601421842346" />
+    <state width="1875" height="202" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603091097544" />
+    <state width="1875" height="202" key="GridCell.Tab.0.left" timestamp="1603091097544">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1879" height="180" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603241181127" />
-    <state width="1877" height="76" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601442579049" />
-    <state width="1879" height="180" key="GridCell.Tab.0.right" timestamp="1603241181127">
+    <state width="1879" height="180" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601421842346" />
+    <state width="1875" height="202" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603091097544" />
+    <state width="1875" height="202" key="GridCell.Tab.0.right" timestamp="1603091097545">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1879" height="180" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603241181127" />
-    <state width="1877" height="76" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601442579049" />
+    <state width="1879" height="180" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601421842346" />
+    <state width="1875" height="202" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603091097545" />
     <state x="540" y="255" key="IDE.errors.dialog" timestamp="1599536859793">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="540" y="255" key="IDE.errors.dialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599536859793" />
-    <state x="2388" y="165" width="1230" height="710" key="SettingsEditor" timestamp="1603163404861">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="184" y="85" key="MergeDialog" timestamp="1603348340157">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="184" y="85" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603348340157" />
+    <state x="468" y="165" width="1230" height="710" key="SettingsEditor" timestamp="1603084531699">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="468" y="165" width="1230" height="710" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602073861512" />
-    <state x="2388" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603163404861" />
+    <state x="2388" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602199539431" />
+    <state x="468" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603084531699" />
     <state x="709" y="143" key="VCS.ChangeListViewerDialog" timestamp="1599543036927">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="709" y="143" key="VCS.ChangeListViewerDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543036927" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1603248590150">
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1602915899685">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603248590150" />
-    <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603163316368" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602905233271" />
+    <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602819320986" />
     <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602915899685" />
-    <state x="777" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602349270205">
+    <state x="777" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603348328486">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="777" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602349270205" />
-    <state x="777" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601528830736" />
-    <state x="8" y="62" width="1676" height="890" maximized="true" key="dock-window-1" timestamp="1603245835343">
+    <state x="777" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603348328486" />
+    <state x="0" y="59" width="1679" height="910" maximized="true" key="dock-window-1" timestamp="1602786030986">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="8" y="62" width="1676" height="890" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603245835343" />
-    <state x="0" y="0" width="1646" height="1026" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603162700248" />
+    <state x="2051" y="163" width="1676" height="890" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602529915228" />
+    <state x="0" y="59" width="1679" height="910" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602786030986" />
     <state x="2237" y="124" width="1619" height="824" maximized="true" key="dock-window-2" timestamp="1601913916792">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

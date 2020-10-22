@@ -6,10 +6,4 @@ interface INiveles
     tipoNivel: String
     nivel: Float
 }
-interface ILecturasMacros
-{
-    ano: Int
-    mes: Int
-    dia: Int
-    lectura: Float
-}
+

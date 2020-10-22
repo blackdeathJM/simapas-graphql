@@ -1,4 +1,4 @@
-type Mutation
+extend type Mutation
 {
     "Instalacion: Registro de tanques y pozos de agua"
     regInstalacion(instalacion: InstalacionInput!):ResInstalacion
@@ -16,5 +16,7 @@ type Mutation
     bajaMotor(_id: ID!, id: String!, fechaBaja: String!): ResInstalacion
     "Dar de baja Bomba"
     bajaBomba(_id: ID!, id: String!, fechaBaja: String!): ResInstalacion
+    "Registro de lecturas del macromedidor"
+    regLecturasMacro(_id: ID!, lecturas: LecturasMacrosInput!): ResInstalacion
     regNivelesEstaticosDinamicos(_id: ID!, niveles: NivelesInput): ResInstalacionSPag
 }

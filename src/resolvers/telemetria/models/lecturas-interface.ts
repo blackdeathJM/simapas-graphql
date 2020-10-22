@@ -1,8 +1,6 @@
-export interface ILecturasMacro
-{
-    ano: number;
+export interface ILecturasMacro {
+    id: string;
     mes: number;
     dia: number;
     lectura: number;
-    total: number;
 }
