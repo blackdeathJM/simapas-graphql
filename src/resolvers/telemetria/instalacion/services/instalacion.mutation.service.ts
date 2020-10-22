@@ -183,7 +183,7 @@ class InstalacionMutationService extends ResolversOperacionesService
     {
         return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
             {_id: new ObjectId(this.variables._id), motor: {$elemMatch: {id}}},
-            {$set: {"motor.$.fechaRetiro": fechaBaja}}, {returnOriginal: false}).then(
+            {$set: {"motor.$.fechaRetiro": fechaBaja, "motor.$.activa": false}}, {returnOriginal: false}).then(
             resultado =>
             {
                 return respDocumento(resultado);
@@ -195,33 +195,7 @@ class InstalacionMutationService extends ResolversOperacionesService
     {
         return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
             {_id: new ObjectId(this.variables._id), bomba: {$elemMatch: {id}}},
-            {$set: {"bomba.$.fechaRetiro": fechaBaja}}, {returnOriginal: false}).then(
-            resultado =>
-            {
-                return respDocumento(resultado);
-            }
-        )
-    }
-
-    async _desActMotor(id: string, descAct: boolean, valor: string)
-    {
-        const objecto = JSON.parse(JSON.stringify({_id: new ObjectId(this.variables._id), valor: {$elemMatch: {id}}}).replace('valor', valor));
-        console.log('conversion', objecto);
-        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-            {_id: new ObjectId(this.variables._id), motor: {$elemMatch: {id}}},
-            {$set: {'motor.$.activa': descAct}}, {returnOriginal: false}).then(
-            resultado =>
-            {
-                return respDocumento(resultado);
-            }
-        )
-    }
-
-    async _desActBomba(id: string, descAct: boolean)
-    {
-        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-            {_id: new ObjectId(this.variables._id), bomba: {$elemMatch: {id}}},
-            {$set: {"bomba.$.activa": descAct}}, {returnOriginal: false}).then(
+            {$set: {"bomba.$.fechaRetiro": fechaBaja, "bomba.$.activa": false}}, {returnOriginal: false}).then(
             resultado =>
             {
                 return respDocumento(resultado);
