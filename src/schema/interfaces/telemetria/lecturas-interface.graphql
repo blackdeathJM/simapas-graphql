@@ -1,4 +1,4 @@
-interface ILecturasMacros
+interface ILecturas
 {
     id: ID
     ano: Int

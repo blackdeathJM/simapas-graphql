@@ -1,4 +1,4 @@
-export interface ILecturasMacro {
+export interface ILecturas {
     id: string;
     mes: number;
     dia: number;

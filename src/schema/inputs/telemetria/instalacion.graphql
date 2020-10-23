@@ -14,6 +14,6 @@ input InstalacionInput
     parametrosElectricos: ParametrosElectricosInput
     bomba: [BombaInput]
     motor: [MotorInput]
-    lecturas: [LecturasMacrosInput]
+    lecturas: [LecturasInput]
     niveles: [NivelesInput]
 }

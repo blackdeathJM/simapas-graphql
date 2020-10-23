@@ -1,4 +1,4 @@
-input LecturasMacrosInput
+input LecturasInput
 {
     id: ID
     ano: Int

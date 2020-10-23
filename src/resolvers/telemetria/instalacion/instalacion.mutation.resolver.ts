@@ -32,8 +32,8 @@ const mutationTelemetria: IResolvers =
                 async bajaBomba(_, {_id, id, fechaBaja}, {db}) {
                     return new InstalacionMutationService(_, {_id}, {db})._bajaBomba(fechaBaja, id);
                 },
-                async regLecturasMacro(_, {_id, lecturas}, {db}) {
-                    return new InstalacionMutationService(_, {_id}, {db})._regLecturasMacro(lecturas);
+                async regLecturas(_, {_id,tipo, lecturas}, {db}) {
+                    return new InstalacionMutationService(_, {_id}, {db})._regLecturas(lecturas, tipo);
                 }
             }
     };

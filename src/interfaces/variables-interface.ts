@@ -8,7 +8,7 @@ import {IInstalacion} from "../resolvers/telemetria/models/instalacion.interface
 import {IParametrosElectricos} from "../resolvers/telemetria/models/parametros-electricos.interface";
 import {ITelemetria} from "../resolvers/telemetria/models/telemetria-interface";
 import {IBomba, IMotor} from "../resolvers/telemetria/models/equipo-electrico-interface";
-import {ILecturasMacro} from "../resolvers/telemetria/models/lecturas-interface";
+import {ILecturas} from "../resolvers/telemetria/models/lecturas-interface";
 
 export interface IVariables
 {
@@ -24,5 +24,5 @@ export interface IVariables
     parametrosElectricos?: IParametrosElectricos;
     motor?: IMotor;
     bomba?: IBomba;
-    lecturas?: ILecturasMacro
+    lecturas?: ILecturas
 }
