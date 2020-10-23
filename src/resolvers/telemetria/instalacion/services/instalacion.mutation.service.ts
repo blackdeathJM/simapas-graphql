@@ -210,15 +210,23 @@ class InstalacionMutationService extends ResolversOperacionesService
     async _regLecturas(lecturas: ILecturas, tipo: string)
     {
         let lect: object = {};
-        if (tipo === 'macro')
+        switch (tipo)
         {
-            lect = {$addToSet: {lecturasMacro: lecturas}};
-        } else if (tipo === 'cfe')
-        {
-            lect = {$addToSet: {lecturasCfe: lecturas}};
+            case 'macro':
+                lect = {$addToSet: {lecturasMacro: lecturas}};
+                break;
+            case 'cfe':
+                lect = {$addToSet: {lecturasCfe: lecturas}};
+                break;
+            case 'nivelD':
+                lect = {$addToSet: {"niveles.nivelD": lecturas}};
+                break;
+            case 'nivelE':
+                lect = {$addToSet: {"niveles.nivelE": lecturas}};
+                break;
         }
         return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-            {_id: new ObjectId(this.variables._id)}, lect, {ReturnOriginal: false}).then(
+            {_id: new ObjectId(this.variables._id)}, lect, {ReturnOriginal: false, upsert: true}).then(
             resultado =>
             {
                 return respDocumento(resultado);

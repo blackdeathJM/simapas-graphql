@@ -15,5 +15,5 @@ type InstalacionType implements IInstalacion
     bomba: [BombaType]
     motor: [MotorType]
     lecturas: [LecturasType]
-    niveles: [NivelesType]
+    niveles: [NivelesEDType]
 }

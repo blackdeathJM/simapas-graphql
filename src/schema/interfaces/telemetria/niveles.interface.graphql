@@ -1,9 +1,8 @@
 interface INiveles
 {
+    id: ID
     ano: Int
     mes: Int
     dia: Int
-    tipoNivel: String
-    nivel: Float
+    lectura: Float
 }
-

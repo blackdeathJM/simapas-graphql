@@ -1,8 +1,13 @@
+type NivelesEDType
+{
+    nivelE: [NivelesType]
+    NivelD: [NivelesType]
+}
 type NivelesType implements INiveles
 {
+    id: ID
     ano: Int
     mes: Int
     dia: Int
-    tipoNivel: String
-    nivel: Float
+    lectura: Float
 }

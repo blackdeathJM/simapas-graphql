@@ -15,5 +15,5 @@ input InstalacionInput
     bomba: [BombaInput]
     motor: [MotorInput]
     lecturas: [LecturasInput]
-    niveles: [NivelesInput]
+    niveles: LecturasInput
 }

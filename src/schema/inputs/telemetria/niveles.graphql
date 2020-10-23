@@ -1,8 +1,13 @@
+input NiveslEDInput
+{
+    nivelEstatico: [NivelesInput]
+    nivelDinamico: [NivelesInput]
+}
 input NivelesInput
 {
+    id: ID
     ano: Int
     mes: Int
     dia: Int
-    tipoNivel: String
     nivel: Float
 }

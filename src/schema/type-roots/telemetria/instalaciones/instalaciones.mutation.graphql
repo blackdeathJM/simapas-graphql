@@ -18,6 +18,4 @@ extend type Mutation
     bajaBomba(_id: ID!, id: String!, fechaBaja: String!): ResInstalacion
     "Registro de lecturas del macromedidor y CFE"
     regLecturas(_id: ID!,tipo: String!, lecturas: LecturasInput!): ResInstalacion
-
-    regNivelesEstaticosDinamicos(_id: ID!, niveles: NivelesInput): ResInstalacionSPag
 }
