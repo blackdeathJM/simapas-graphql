@@ -213,16 +213,16 @@ class InstalacionMutationService extends ResolversOperacionesService
         switch (tipo)
         {
             case 'macro':
-                lect = {$addToSet: {lecturasMacro: lecturas}};
+                lect = {$addToSet: {"lectura.macro": lecturas}};
                 break;
             case 'cfe':
-                lect = {$addToSet: {lecturasCfe: lecturas}};
+                lect = {$addToSet: {"lectura.cfe": lecturas}};
                 break;
             case 'nivelD':
-                lect = {$addToSet: {"niveles.nivelD": lecturas}};
+                lect = {$addToSet: {"lectura.nivelD": lecturas}};
                 break;
             case 'nivelE':
-                lect = {$addToSet: {"niveles.nivelE": lecturas}};
+                lect = {$addToSet: {"lectura.nivelE": lecturas}};
                 break;
         }
         return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,

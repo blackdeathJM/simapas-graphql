@@ -1,3 +1,11 @@
+type LecturasTType
+{
+    macro: [LecturasType]
+    nivelD: [LecturasType]
+    nivelE: [LecturasType]
+    cfe: [LecturasType]
+}
+
 type LecturasType implements ILecturas
 {
     id: ID

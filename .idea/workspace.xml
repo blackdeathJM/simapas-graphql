@@ -19,17 +19,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="trabajando con registro de motor">
+    <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Registro de lecturas del macromedido">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2020_11_16_p__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2020_11_16_p__m___Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2020_12_11_a__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2020_12_11_a__m___Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_10_2020_09_19_a__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_10_2020_09_19_a__m___Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_10_2020_11_54_p__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_10_2020_11_54_p__m___Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_10_2020_01_32_a__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_10_2020_01_32_a__m___Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_10_2020_07_16_a__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_10_2020_07_16_a__m___Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/models/niveles-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/models/niveles-interface.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/schema/inputs/telemetria/instalacion.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/telemetria/instalacion.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/telemetria/niveles.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/telemetria/niveles.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/telemetria/niveles.interface.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/interfaces/telemetria/niveles.interface.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/schema/type-objects/telemetria/instalacion.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/telemetria/instalacion.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/telemetria/niveles.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/telemetria/niveles.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/telemetria/instalaciones/instalaciones.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/telemetria/instalaciones/instalaciones.mutation.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/telemetria/lecturas.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/telemetria/lecturas.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +47,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="BLACKDEATH &lt;blackdeath166@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="documentacion" />
@@ -75,8 +82,8 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="D:\Documents\Proyectos\Backend\simapas-graphql\node_modules\typescript\lib" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="ts.external.directory.path" value="C:\proyectos\backend\simapas-graphql\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -342,9 +349,10 @@
       <workItem from="1603089920854" duration="692000" />
       <workItem from="1603169668554" duration="1228000" />
       <workItem from="1603348162294" duration="5270000" />
-      <workItem from="1603364379002" duration="963000" />
-      <workItem from="1603403457930" duration="3356000" />
-      <workItem from="1603411573586" duration="10149000" />
+      <workItem from="1603364379002" duration="1316000" />
+      <workItem from="1603426429546" duration="232000" />
+      <workItem from="1603426685306" duration="284000" />
+      <workItem from="1603427022973" duration="3281000" />
     </task>
     <task id="LOCAL-00035" summary="quitando el database operations para ahorrar codigo">
       <created>1599120344599</created>
@@ -682,12 +690,12 @@
       <option name="project" value="LOCAL" />
       <updated>1602915897433</updated>
     </task>
-    <task id="LOCAL-00083" summary="trabajando con registro de motor">
-      <created>1603414218617</created>
+    <task id="LOCAL-00083" summary="Registro de lecturas del macromedido">
+      <created>1603365536463</created>
       <option name="number" value="00083" />
       <option name="presentableId" value="LOCAL-00083" />
       <option name="project" value="LOCAL" />
-      <updated>1603414218617</updated>
+      <updated>1603365536464</updated>
     </task>
     <option name="localTasksCounter" value="84" />
     <servers />
@@ -708,6 +716,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="modificacion de los types utilizando extend para que no marque error, solo se utilizo en los que marcaba error" />
     <MESSAGE value="Creacion del mutate para actualizar los roles de los usuarios" />
     <MESSAGE value="se coloco el tipado a la base de datos" />
@@ -720,9 +729,17 @@
     <MESSAGE value="Modificacion de la coleccion de telemetria" />
     <MESSAGE value="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia" />
     <MESSAGE value="trabajando con registro de motor" />
-    <option name="LAST_COMMIT_MESSAGE" value="trabajando con registro de motor" />
+    <MESSAGE value="Registro de lecturas del macromedido" />
+    <option name="LAST_COMMIT_MESSAGE" value="Registro de lecturas del macromedido" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="678" y="388" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1603426661098">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="678" y="388" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603426661098" />
     <state x="2685" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1602038165338">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -742,6 +759,14 @@
     </state>
     <state x="703" y="369" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600659968615" />
     <state x="2623" y="369" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602600326320" />
+    <state x="378" y="0" key="CommitChangelistDialog2" timestamp="1603365693050">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="378" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1603365693050" />
+    <state x="679" y="260" key="FileChooserDialogImpl" timestamp="1603426657857">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="679" y="260" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1603426657857" />
     <state width="1875" height="202" key="GridCell.Tab.0.bottom" timestamp="1603091097545">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -766,31 +791,31 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="540" y="255" key="IDE.errors.dialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599536859793" />
-    <state x="184" y="85" key="MergeDialog" timestamp="1603348340157">
+    <state x="184" y="85" key="MergeDialog" timestamp="1603426458351">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="184" y="85" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603348340157" />
-    <state x="468" y="165" width="1230" height="710" key="SettingsEditor" timestamp="1603084531699">
+    <state x="184" y="85" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603426458351" />
+    <state x="841" y="294" width="1230" height="710" key="SettingsEditor" timestamp="1603427216833">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="468" y="165" width="1230" height="710" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602073861512" />
     <state x="2388" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602199539431" />
-    <state x="468" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603084531699" />
+    <state x="841" y="294" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603427216833" />
     <state x="709" y="143" key="VCS.ChangeListViewerDialog" timestamp="1599543036927">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="709" y="143" key="VCS.ChangeListViewerDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543036927" />
-    <state x="2472" y="234" key="Vcs.Push.Dialog.v2" timestamp="1603414221808">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1603365538260">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602905233271" />
-    <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603414221808" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602915899685" />
-    <state x="777" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603348328486">
+    <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602819320986" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603365538260" />
+    <state x="777" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603426450655">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="777" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602349270205" />
-    <state x="777" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603348328486" />
+    <state x="777" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603426450655" />
     <state x="0" y="59" width="1679" height="910" maximized="true" key="dock-window-1" timestamp="1602786030986">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
