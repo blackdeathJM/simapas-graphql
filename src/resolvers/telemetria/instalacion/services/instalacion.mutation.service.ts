@@ -213,7 +213,7 @@ class InstalacionMutationService extends ResolversOperacionesService
         switch (tipo)
         {
             case 'macro':
-                lect = {$addToSet: {"lectura.macro": lecturas}};
+                lect = {$set: {"lectura.macro": lecturas}};
                 break;
             case 'cfe':
                 lect = {$addToSet: {"lectura.cfe": lecturas}};
@@ -225,13 +225,23 @@ class InstalacionMutationService extends ResolversOperacionesService
                 lect = {$addToSet: {"lectura.nivelE": lecturas}};
                 break;
         }
-        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-            {_id: new ObjectId(this.variables._id)}, lect, {ReturnOriginal: false, upsert: true}).then(
+
+        return await this.actualizar(COLECCION.TELEMETRIA,
+            {_id: new ObjectId(this.variables._id), "lectura.macro": {$elemMatch: {ano: lecturas.ano}}},
+            {}, {upsert: false, multi: true}).then(
             resultado =>
             {
-                return respDocumento(resultado);
+                console.log(resultado);
             }
         )
+        // return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
+        //     {_id: new ObjectId(this.variables._id), "lectura.macro": {$elemMatch: {ano: lecturas.ano}}},
+        //     lect, {ReturnOriginal: false, upsert: true}).then(
+        //     resultado =>
+        //     {
+        //         return respDocumento(resultado);
+        //     }
+        // )
     }
 }
 

@@ -178,7 +178,7 @@ class ResolversOperacionesService
         try
         {
             return await this.context.db!.collection(coleccion).findOneAndUpdate(filtro, actualizar, opciones).then(
-                (res) =>
+                res =>
                 {
                     return {
                         estatus: true,
@@ -278,6 +278,39 @@ class ResolversOperacionesService
                 estatus: false,
                 mensaje: 'Error inesperado: ' + e,
                 total: 0
+            }
+        }
+    }
+
+    protected async actualizar(coleccion: string, filtro: object, actualizar: object, opciones: object)
+    {
+        try
+        {
+            return await this.context.db?.collection(coleccion).update(filtro, actualizar, opciones).then(
+                res =>
+                {
+                    return {
+                        estatus: true,
+                        mensaje: `El documento fue actualizado con exito`,
+                        elemento: res
+                    }
+                }
+            ).catch(
+                (error) =>
+                {
+                    return {
+                        estatus: false,
+                        mensaje: `Error al tratar de actualizar el documento: ${error}`,
+                        elemento: null
+                    }
+                }
+            )
+        } catch (e)
+        {
+            return {
+                estatus: false,
+                mensaje: `Ha ocurrido un error inesperado: ${e}`,
+                elemento: null
             }
         }
     }

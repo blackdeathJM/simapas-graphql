@@ -1,8 +1,17 @@
 interface ILecturas
 {
-    id: ID
     ano: Int
-    mes: Int
-    dia: Int
-    lectura: Float
+    ene: Float
+    feb: Float
+    mar: Float
+    abr: Float
+    may: Float
+    jun: Float
+    jul: Float
+    ago: Float
+    sep: Float
+    oct: Float
+    nov: Float
+    dic: Float
+    total: Float
 }
