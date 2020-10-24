@@ -209,34 +209,37 @@ class InstalacionMutationService extends ResolversOperacionesService
 
     async _regLecturas(lecturas: ILecturas, tipo: string)
     {
-        let lect: object = {};
-        switch (tipo)
-        {
-            case 'macro':
-                lect = {$set: {"lectura.macro": lecturas}};
-                break;
-            case 'cfe':
-                lect = {$addToSet: {"lectura.cfe": lecturas}};
-                break;
-            case 'nivelD':
-                lect = {$addToSet: {"lectura.nivelD": lecturas}};
-                break;
-            case 'nivelE':
-                lect = {$addToSet: {"lectura.nivelE": lecturas}};
-                break;
-        }
+        let propiedad: string = "lectura." + tipo;
+        let filtro: object = {_id: new ObjectId(this.variables._id)};
 
-        return await this.actualizar(COLECCION.TELEMETRIA,
-            {_id: new ObjectId(this.variables._id), "lectura.macro": {$elemMatch: {ano: lecturas.ano}}},
-            {}, {upsert: false, multi: true}).then(
-            resultado =>
+        Object.defineProperty(filtro, propiedad, {
+            value: {$elemMatch: {ano: lecturas.ano}},
+            writable: true,
+            configurable: true,
+            enumerable: true
+        });
+
+        await this.buscarUnElemento(COLECCION.TELEMETRIA, filtro, {}).then(
+            async resultado =>
             {
-                console.log(resultado);
+                if (resultado.estatus)
+                {
+                    let re = resultado.elemento.lectura[tipo];
+
+                    lecturas = {...lecturas, ...re};
+                    console.log('existe?', lecturas);
+                    // remValor = {...remValor, ...re, ...lecturas};
+
+                } else
+                {
+                    console.log('documento no existe');
+                }
             }
         )
+
         // return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-        //     {_id: new ObjectId(this.variables._id), "lectura.macro": {$elemMatch: {ano: lecturas.ano}}},
-        //     lect, {ReturnOriginal: false, upsert: true}).then(
+        //     {_id: new ObjectId(this.variables._id)},
+        //     {$addToSet: {"lectura.macro": lecturas}}, {ReturnOriginal: false, upsert: true}).then(
         //     resultado =>
         //     {
         //         return respDocumento(resultado);
