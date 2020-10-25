@@ -209,42 +209,65 @@ class InstalacionMutationService extends ResolversOperacionesService
 
     async _regLecturas(lecturas: ILecturas, tipo: string)
     {
-        let propiedad: string = "lectura." + tipo;
+        let agregarOActualizar: object = {};
+        Object.defineProperty(agregarOActualizar, "lectura." + tipo, {
+            value: lecturas,
+            configurable: true,
+            enumerable: true,
+            writable: true
+        });
         let filtro: object = {_id: new ObjectId(this.variables._id)};
-
-        Object.defineProperty(filtro, propiedad, {
+        Object.defineProperty(filtro, "lectura." + tipo, {
             value: {$elemMatch: {ano: lecturas.ano}},
             writable: true,
             configurable: true,
             enumerable: true
         });
 
-        await this.buscarUnElemento(COLECCION.TELEMETRIA, filtro, {}).then(
+        return await this.buscarUnElemento(COLECCION.TELEMETRIA,
+            filtro, {}).then(
             async resultado =>
             {
                 if (resultado.estatus)
                 {
-                    let re = resultado.elemento.lectura[tipo];
+                    // Object.assign(lecturas, ...resultado.elemento.lectura[tipo]);
+                    resultado.elemento.lectura[tipo].filter((v: ILecturas) =>
+                    {
+                        if (v.ano === lecturas.ano)
+                        {
+                            Object.assign(lecturas, v);
+                        }
+                    });
 
-                    lecturas = {...lecturas, ...re};
-                    console.log('existe?', lecturas);
-                    // remValor = {...remValor, ...re, ...lecturas};
+                    let actualizarValor: object = {};
+                    Object.defineProperty(actualizarValor, "lectura." + tipo + ".$", {
+                        value: lecturas,
+                        writable: true,
+                        enumerable: true,
+                        configurable: true
+                    });
+                    return this.buscarUnoYActualizar(COLECCION.TELEMETRIA, filtro,
+                        {$set: actualizarValor}, {returnOriginal: false, upsert: true}).then(
+                        res =>
+                        {
+                            return respDocumento(res);
+                        }
+                    )
 
                 } else
                 {
-                    console.log('documento no existe');
+                    console.log('no existe');
+                    return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
+                        {_id: new ObjectId(this.variables._id)},
+                        {$addToSet: agregarOActualizar}, {ReturnOriginal: false, upsert: true}).then(
+                        resultado =>
+                        {
+                            return respDocumento(resultado);
+                        }
+                    )
                 }
             }
         )
-
-        // return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-        //     {_id: new ObjectId(this.variables._id)},
-        //     {$addToSet: {"lectura.macro": lecturas}}, {ReturnOriginal: false, upsert: true}).then(
-        //     resultado =>
-        //     {
-        //         return respDocumento(resultado);
-        //     }
-        // )
     }
 }
 
