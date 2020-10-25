@@ -4,6 +4,7 @@ import {COLECCION} from "../../../../config/global";
 import {respDocumento} from "../../../../services/respuestas-return";
 import {ObjectId} from 'bson';
 import {ILecturas} from "../../models/lecturas-interface";
+import _ from "lodash";
 
 class InstalacionMutationService extends ResolversOperacionesService
 {
@@ -210,14 +211,14 @@ class InstalacionMutationService extends ResolversOperacionesService
     async _regLecturas(lecturas: ILecturas, tipo: string)
     {
         let agregarOActualizar: object = {};
-        Object.defineProperty(agregarOActualizar, "lectura." + tipo, {
+        Object.defineProperty(agregarOActualizar, "lecturas." + tipo, {
             value: lecturas,
             configurable: true,
             enumerable: true,
             writable: true
         });
         let filtro: object = {_id: new ObjectId(this.variables._id)};
-        Object.defineProperty(filtro, "lectura." + tipo, {
+        Object.defineProperty(filtro, "lecturas." + tipo, {
             value: {$elemMatch: {ano: lecturas.ano}},
             writable: true,
             configurable: true,
@@ -230,18 +231,26 @@ class InstalacionMutationService extends ResolversOperacionesService
             {
                 if (resultado.estatus)
                 {
-                    // Object.assign(lecturas, ...resultado.elemento.lectura[tipo]);
-                    resultado.elemento.lectura[tipo].filter((v: ILecturas) =>
+                    console.log('existe');
+                    let x: object = {};
+                    resultado.elemento.lecturas[tipo].filter((v: ILecturas) =>
                     {
                         if (v.ano === lecturas.ano)
                         {
-                            Object.assign(lecturas, v);
+                            const clonConsu = {...v};
+                            delete clonConsu.total;
+                            delete clonConsu.ano;
+                            const clonLect = {...lecturas};
+                            delete clonLect.total;
+                            delete clonLect.ano;
+                            lecturas.total = _.sum(_.toArray(clonConsu)) + _.sum(_.toArray(clonLect));
+                            x = Object.assign(v, lecturas);
                         }
                     });
 
                     let actualizarValor: object = {};
-                    Object.defineProperty(actualizarValor, "lectura." + tipo + ".$", {
-                        value: lecturas,
+                    Object.defineProperty(actualizarValor, "lecturas." + tipo + ".$", {
+                        value: x,
                         writable: true,
                         enumerable: true,
                         configurable: true
