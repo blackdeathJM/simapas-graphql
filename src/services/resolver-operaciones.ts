@@ -314,39 +314,6 @@ class ResolversOperacionesService
             }
         }
     }
-
-    protected async actualizar(coleccion: string, filtro: object, actualizar: object, opciones: object)
-    {
-        try
-        {
-            return await this.context.db?.collection(coleccion).updateOne(filtro, actualizar, opciones).then(
-                res =>
-                {
-                    return {
-                        estatus: true,
-                        mensaje: `El documento fue actualizado con exito`,
-                        elemento: res
-                    }
-                }
-            ).catch(
-                (error) =>
-                {
-                    return {
-                        estatus: false,
-                        mensaje: `Error al tratar de actualizar el documento: ${error}`,
-                        elemento: null
-                    }
-                }
-            )
-        } catch (e)
-        {
-            return {
-                estatus: false,
-                mensaje: `Ha ocurrido un error inesperado: ${e}`,
-                elemento: null
-            }
-        }
-    }
 }
 
 export default ResolversOperacionesService;
