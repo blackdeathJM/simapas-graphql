@@ -1,0 +1,31 @@
+interface IOrdeTrabajo
+{
+    _id: ID
+    deptoID: ID
+    noOrden: Int
+    fechaReporte: String
+    fechaTermino: String
+    estatus: ESTATUS_ORDEN_TRABAJO
+    nombreEmpRealizo: String
+    desProblema: String
+    observaciones: String
+    material: [String]
+    evidencia: [String]
+}
+
+interface INota
+{
+    _id: ID
+    fechaSalida: String
+    noNota: Int
+    emitio: String
+    recibio: String
+}
+interface IELementosNota
+{
+    elemento: String
+    cantidad: Float
+    descripcion: String
+    emitio: String
+    recibio: String
+}

@@ -1,0 +1,13 @@
+interface IResguardos
+{
+    _id: ID
+    deptoAsigId: ID
+    fechaAlta: String
+    fechaResguardo: String
+    fechaBaja: String
+    encargado: String
+    adminRes: String
+    descripcion: String
+    observaciones: String
+    activo: Boolean
+}
