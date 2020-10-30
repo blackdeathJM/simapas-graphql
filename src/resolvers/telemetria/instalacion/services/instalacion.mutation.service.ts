@@ -231,7 +231,6 @@ class InstalacionMutationService extends ResolversOperacionesService
             {
                 if (resultado.estatus)
                 {
-                    console.log('existe');
                     let x: object = {};
                     resultado.elemento.lecturas[tipo].filter((v: ILecturas) =>
                     {
@@ -262,10 +261,8 @@ class InstalacionMutationService extends ResolversOperacionesService
                             return respDocumento(res);
                         }
                     )
-
                 } else
                 {
-                    console.log('no existe');
                     return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
                         {_id: new ObjectId(this.variables._id)},
                         {$addToSet: agregarOActualizar}, {ReturnOriginal: false, upsert: true}).then(

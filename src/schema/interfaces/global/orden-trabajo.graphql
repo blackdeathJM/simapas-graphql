@@ -9,6 +9,7 @@ interface IOrdeTrabajo
     nombreEmpRealizo: String
     desProblema: String
     observaciones: String
+    creadaPor: String
     material: [String]
     evidencia: [String]
 }
