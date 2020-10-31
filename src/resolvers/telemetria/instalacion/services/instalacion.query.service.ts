@@ -3,7 +3,7 @@ import {COLECCION} from "../../../../config/global";
 import * as _ from "lodash";
 import {respArreglosSPag} from "../../../../services/respuestas-return";
 
-class InstalacionQueryServices extends ResolversOperacionesService
+class InstalacionQueryService extends ResolversOperacionesService
 {
     constructor(root: object, variables: object, context: object) {super(root, variables, context);}
 
@@ -34,4 +34,4 @@ class InstalacionQueryServices extends ResolversOperacionesService
     }
 }
 
-export default InstalacionQueryServices
+export default InstalacionQueryService

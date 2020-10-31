@@ -1,5 +1,5 @@
 import {IResolvers} from "graphql-tools";
-import {COLECCION} from "../../config/global";
+import {COLECCION} from "../../../config/global";
 import {ObjectId} from "bson";
 
 const typeDepto: IResolvers =

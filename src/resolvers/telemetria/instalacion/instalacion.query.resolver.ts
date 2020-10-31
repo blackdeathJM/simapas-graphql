@@ -1,5 +1,5 @@
 import {IResolvers} from "graphql-tools";
-import InstalacionQueryServices from "./services/instalacion.query.services";
+import InstalacionQueryService from "./services/instalacion.query.service";
 
 const queryTelemetria: IResolvers =
     {
@@ -7,11 +7,11 @@ const queryTelemetria: IResolvers =
             {
                 async todasInstalaciones(_, {pagina, elementosPorPagina}, {db})
                 {
-                    return new InstalacionQueryServices(_, {}, {db})._todasInstalaciones();
+                    return new InstalacionQueryService(_, {}, {db})._todasInstalaciones();
                 },
                 async ipDuplicada(_, {telemetria}, {db})
                 {
-                    return new InstalacionQueryServices(_, {telemetria}, {db})._ipDuplicada();
+                    return new InstalacionQueryService(_, {telemetria}, {db})._ipDuplicada();
                 }
             }
     }

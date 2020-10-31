@@ -13,7 +13,8 @@ export enum COLECCION
     DOC_EXTERNA = 'docExterna',
     FOLIOS = 'folios',
     ORGANISMO = 'organismo',
-    TELEMETRIA = 'telemetria'
+    TELEMETRIA = 'telemetria',
+    ORDEN_TRAB = 'ordenTrabajo'
 }
 
 export enum PUB_SUB
@@ -22,4 +23,5 @@ export enum PUB_SUB
     DOC_EXT_USUSUBPROCESO = 'usuariosSubproceso',
     NOT_CAMBIO_ROLE = 'usuarioCambioRole'
 }
+
 export const SECRET_KEY = process.env.SECRET_KEY || 'blackdeath';

@@ -1,0 +1,4 @@
+type Query
+{
+    todasOrdenes(pagina: Int=1, elementosPorPagina: Int=20): ResOrdenTrabajo
+}

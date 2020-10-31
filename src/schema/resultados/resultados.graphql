@@ -69,3 +69,11 @@ type ResOrganismo
     documento: OrganismoType
     documentos: [OrganismoType]
 }
+type ResOrdenTrabajo
+{
+    info: IInfoPaginacion
+    estatus: Boolean!
+    mensaje: String!
+    documento: OrdenTrabajoType
+    documentos: [OrdenTrabajoType]
+}

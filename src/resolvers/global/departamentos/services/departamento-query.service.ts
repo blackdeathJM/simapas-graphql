@@ -1,10 +1,10 @@
-import {COLECCION} from "../../../config/global";
-import ResolversOperacionesService from "../../../services/resolver-operaciones";
-import {IContextData} from "../../../interfaces/context-data-interface";
+import {COLECCION} from "../../../../config/global";
+import ResolversOperacionesService from "../../../../services/resolver-operaciones";
+import {IContextData} from "../../../../interfaces/context-data-interface";
 import {ObjectId} from "bson";
-import {respArreglosPag} from "../../../services/respuestas-return";
+import {respArreglosPag} from "../../../../services/respuestas-return";
 
-class DepartamentoQueryServices extends ResolversOperacionesService
+class DepartamentoQueryService extends ResolversOperacionesService
 {
     constructor(root: object, variables: object, context: IContextData)
     {super(root, variables, context);}
@@ -23,4 +23,4 @@ class DepartamentoQueryServices extends ResolversOperacionesService
     }
 }
 
-export default DepartamentoQueryServices;
+export default DepartamentoQueryService;

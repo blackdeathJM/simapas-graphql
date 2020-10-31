@@ -1,4 +1,4 @@
-interface IOrdeTrabajo
+input OrdenTrabajoInput
 {
     _id: ID
     noOrden: Int
@@ -16,21 +16,4 @@ interface IOrdeTrabajo
     creadaPor: String
     material: [String]
     evidencia: [String]
-}
-
-interface INota
-{
-    _id: ID
-    fechaSalida: String
-    noNota: Int
-    emitio: String
-    recibio: String
-}
-interface IELementosNota
-{
-    elemento: String
-    cantidad: Float
-    descripcion: String
-    emitio: String
-    recibio: String
 }

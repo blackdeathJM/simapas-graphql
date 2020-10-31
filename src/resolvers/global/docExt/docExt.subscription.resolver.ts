@@ -1,5 +1,5 @@
 import {IResolvers} from "graphql-tools";
-import {PUB_SUB} from "../../config/global";
+import {PUB_SUB} from "../../../config/global";
 import {PubSub} from "apollo-server-express";
 
 const docExtSubscription: IResolvers =

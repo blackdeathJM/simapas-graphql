@@ -1,6 +1,6 @@
-import ResolversOperacionesService from "../../../services/resolver-operaciones";
-import {COLECCION} from "../../../config/global";
-import {respDocumento} from "../../../services/respuestas-return";
+import ResolversOperacionesService from "../../../../services/resolver-operaciones";
+import {COLECCION} from "../../../../config/global";
+import {respDocumento} from "../../../../services/respuestas-return";
 import {ObjectId} from 'bson';
 import {notTodosDocsExt} from "../../docExt/services/docExt-subscription";
 
