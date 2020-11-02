@@ -1,5 +1,4 @@
 import {IParametrosElectricos} from "./parametros-electricos.interface";
-import {INiveles} from "./niveles-interface";
 import {ITelemetria} from "./telemetria-interface";
 
 export interface IInstalacion
@@ -16,5 +15,4 @@ export interface IInstalacion
     activo: boolean;
     telemetria: ITelemetria;
     parametrosElectricos: IParametrosElectricos;
-    niveles: INiveles[]
 }

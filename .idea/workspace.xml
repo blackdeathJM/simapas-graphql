@@ -20,25 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Trabajando en las ordenes de trabajo">
-      <change afterPath="$PROJECT_DIR$/src/resolvers/clientes/cliente-mutation-resolver.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/clientes/cliente-query-resolver.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/clientes/models/cliente-interface-interface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/clientes/services/cliente-mutation-service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/clientes/services/cliente-query-service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/inputs/clientes/cliente.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/interfaces/clientes/clientes-interface.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/type-objects/clientes/cliente.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/type-roots/clientes/cliente-mutation.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/type-roots/clientes/cliente-query.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_10_2020_04_14_p__m__[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_10_2020_04_14_p__m___Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_10_2020_11_15_p__m__[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_10_2020_11_15_p__m___Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/global.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/global.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/enums/enums.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/enums/enums.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/resultados/resultados.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/resultados/resultados.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/global/ordenTrabajo/orden-trabajo.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/global/ordenTrabajo/orden-trabajo.mutation.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -388,14 +374,10 @@
       <workItem from="1604258706232" duration="594000" />
       <workItem from="1604259722593" duration="1205000" />
       <workItem from="1604269846350" duration="1368000" />
-      <workItem from="1604274057343" duration="741000" />
-    </task>
-    <task id="LOCAL-00039" summary="quitando el database operations para ahorrar codigo">
-      <created>1599217313832</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1599217313832</updated>
+      <workItem from="1604274057343" duration="773000" />
+      <workItem from="1604308942097" duration="1127000" />
+      <workItem from="1604341925564" duration="933000" />
+      <workItem from="1604346581572" duration="1093000" />
     </task>
     <task id="LOCAL-00040" summary="quitando el database operations para ahorrar codigo">
       <created>1599236457014</created>
@@ -733,7 +715,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604187035412</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="Trabajando en las ordenes de trabajo">
+      <created>1604291900725</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1604291900726</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -842,17 +831,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="709" y="143" key="VCS.ChangeListViewerDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543036927" />
-    <state x="2472" y="234" key="Vcs.Push.Dialog.v2" timestamp="1604187044303">
+    <state x="2472" y="234" key="Vcs.Push.Dialog.v2" timestamp="1604291902545">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602905233271" />
-    <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604187044303" />
+    <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604291902545" />
     <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603893984937" />
-    <state x="2697" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603894886262">
+    <state x="2697" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604309428996">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="777" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602349270205" />
-    <state x="2697" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603894886262" />
+    <state x="2697" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604309428996" />
     <state x="777" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603949338992" />
     <state x="265" y="0" width="1651" height="888" maximized="true" key="dock-window-1" timestamp="1604184645536">
       <screen x="0" y="0" width="1920" height="1040" />
