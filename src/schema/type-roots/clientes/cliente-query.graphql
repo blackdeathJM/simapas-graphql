@@ -1,0 +1,5 @@
+type Query
+{
+    "Consultar todos Los clientes"
+    todosClientes(pagina: Int = 1, elementosPorPagina: Int = 20): ResClientes
+}

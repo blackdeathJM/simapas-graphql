@@ -19,71 +19,26 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Registro de lecturas del macromedido">
-      <change afterPath="$PROJECT_DIR$/src/resolvers/global/ordenTrabajo/models/orden-trabajo-interface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/global/ordenTrabajo/orden-trabajo-mutation.resolver.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/global/ordenTrabajo/orden-trabajo-query.resolver.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/global/ordenTrabajo/service/orden-trabajo-mutation-service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/global/ordenTrabajo/service/orden-trabajo-query-service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/inputs/global/orden-trabajo.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/type-objects/global/orden-trabajo.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/type-roots/global/ordenTrabajo/orden-trabajo.mutation.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/type-roots/global/ordenTrabajo/orden-trabajo.query.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_10_2020_11_14_p__m__[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_10_2020_11_14_p__m___Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_2020_07_38_a__m__[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_2020_07_38_a__m___Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_2020_11_19_p__m__[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_10_2020_11_19_p__m___Default_Changelist_.xml" beforeDir="false" />
+    <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Trabajando en las ordenes de trabajo">
+      <change afterPath="$PROJECT_DIR$/src/resolvers/clientes/cliente-mutation-resolver.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/clientes/cliente-query-resolver.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/clientes/models/cliente-interface-interface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/clientes/services/cliente-mutation-service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/clientes/services/cliente-query-service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schema/inputs/clientes/cliente.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schema/interfaces/clientes/clientes-interface.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schema/type-objects/clientes/cliente.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schema/type-roots/clientes/cliente-mutation.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schema/type-roots/clientes/cliente-query.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_10_2020_04_14_p__m__[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_10_2020_04_14_p__m___Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config/global.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/global.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/departamentos/departamento.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/departamentos/departamento.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/departamentos/departamento.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/departamentos/departamento.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/departamentos/departamento.type.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/departamentos/departamento.type.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/departamentos/model/departamento.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/departamentos/model/departamento.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/departamentos/services/departamento-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/departamentos/services/departamento-mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/departamentos/services/departamento-query.services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/departamentos/services/departamento-query.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/docExt.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/docExt/docExt.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/docExt.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/docExt/docExt.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/docExt.subscription.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/docExt/docExt.subscription.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/eggregateConsulta.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/docExt/eggregateConsulta.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/models/docExt.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/docExt/models/docExt.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/proyecciones.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/docExt/proyecciones.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/services/docExt-mutation-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/docExt/services/docExt-mutation-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/services/docExt-query-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/docExt/services/docExt-query-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/docExt/services/docExt-subscription.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/docExt/services/docExt-subscription.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/folios/folio.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/folios/folio.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/folios/folio.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/folios/folio.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/folios/folio.type.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/folios/folio.type.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/folios/models/folio-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/folios/models/folio-interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/folios/services/folio.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/folios/services/folio.mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/folios/services/folio.query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/folios/services/folio.query.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/instalacion.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/instalacion.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.query.services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.query.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/unionSubscription.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionSubscription.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/unionTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/departamento.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/global/departamento.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/docExterna.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/documentacion/docExterna.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/folio.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/documentacion/folio.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/global/orden-trabajo.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/interfaces/global/orden-trabajo.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/enums/enums.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/enums/enums.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/schema/resultados/resultados.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/resultados/resultados.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/departamento.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/global/departamento.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/docExterna.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/documentacion/docExterna.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/folio.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/documentacion/folio.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/departamentos/departamento.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/global/departamentos/departamento.mutation.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/departamentos/departamento.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/global/departamentos/departamento.query.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/departamentos/departamento.subscription.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/global/departamentos/departamento.subscription.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/documentacion/docExterna/docExterna.mutation.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/documentacion/docExterna/docExterna.query.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/docExterna/docExterna.subscription.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/documentacion/docExterna/docExterna.subscription.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/folios/folios.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/documentacion/folios/folios.mutation.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/folios/folios.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/documentacion/folios/folios.query.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/organismo/organismo.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/global/organismo/organismo.mutation.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/organismo/organismo.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/global/organismo/organismo.query.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/global/ordenTrabajo/orden-trabajo.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/global/ordenTrabajo/orden-trabajo.mutation.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -426,14 +381,14 @@
       <workItem from="1604106541754" duration="1120000" />
       <workItem from="1604158727192" duration="1957000" />
       <workItem from="1604162479452" duration="594000" />
-      <workItem from="1604164859854" duration="4733000" />
-    </task>
-    <task id="LOCAL-00038" summary="quitando el database operations para ahorrar codigo">
-      <created>1599143228618</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1599143228619</updated>
+      <workItem from="1604164859854" duration="14084000" />
+      <workItem from="1604223966275" duration="1922000" />
+      <workItem from="1604255718222" duration="2000" />
+      <workItem from="1604257318472" duration="609000" />
+      <workItem from="1604258706232" duration="594000" />
+      <workItem from="1604259722593" duration="1205000" />
+      <workItem from="1604269846350" duration="1368000" />
+      <workItem from="1604274057343" duration="741000" />
     </task>
     <task id="LOCAL-00039" summary="quitando el database operations para ahorrar codigo">
       <created>1599217313832</created>
@@ -771,7 +726,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603893983161</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="Trabajando en las ordenes de trabajo">
+      <created>1604187035411</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1604187035412</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -804,7 +766,8 @@
     <MESSAGE value="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia" />
     <MESSAGE value="trabajando con registro de motor" />
     <MESSAGE value="Registro de lecturas del macromedido" />
-    <option name="LAST_COMMIT_MESSAGE" value="Registro de lecturas del macromedido" />
+    <MESSAGE value="Trabajando en las ordenes de trabajo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Trabajando en las ordenes de trabajo" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -879,11 +842,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="709" y="143" key="VCS.ChangeListViewerDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543036927" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1603893984937">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2472" y="234" key="Vcs.Push.Dialog.v2" timestamp="1604187044303">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602905233271" />
-    <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602819320986" />
+    <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604187044303" />
     <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603893984937" />
     <state x="2697" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603894886262">
       <screen x="1920" y="0" width="1920" height="1040" />
@@ -896,11 +859,11 @@
     </state>
     <state x="2051" y="163" width="1676" height="890" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602529915228" />
     <state x="265" y="0" width="1651" height="888" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604184645536" />
-    <state x="2237" y="124" width="1619" height="824" maximized="true" key="dock-window-2" timestamp="1601913916792">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="0" y="0" width="1651" height="917" maximized="true" key="dock-window-2" timestamp="1604196064448">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="2237" y="124" width="1619" height="824" maximized="true" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601913916792" />
-    <state x="0" y="0" width="1611" height="852" maximized="true" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600862447714" />
+    <state x="0" y="0" width="1651" height="917" maximized="true" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604196064448" />
     <state x="2114" y="302" width="1648" height="759" maximized="true" key="dock-window-3" timestamp="1599228560154">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -933,10 +896,11 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2536" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597480326811" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1603881212261">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604195264462">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602075260703" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604195264462" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1603881212261" />
   </component>
 </project>

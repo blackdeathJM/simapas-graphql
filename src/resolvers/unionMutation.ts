@@ -7,6 +7,7 @@ import mutationFolios from "./global/folios/folio.mutation.resolver";
 import mutationOrganismo from "./organismo/organismo.rmutation.resolver";
 import mutationTelemetria from "./telemetria/instalacion/instalacion.mutation.resolver";
 import mutationOrdenTrabajo from "./global/ordenTrabajo/orden-trabajo-mutation.resolver";
+import mutationClientes from "./clientes/cliente-mutation-resolver";
 
 const unionMutationResolver = GMR.merge(
     [
@@ -16,7 +17,8 @@ const unionMutationResolver = GMR.merge(
             mutationFolios,
             mutationOrganismo,
             mutationTelemetria,
-            mutationOrdenTrabajo
+            mutationOrdenTrabajo,
+            mutationClientes
     ]);
 
 export default unionMutationResolver;

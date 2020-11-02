@@ -77,3 +77,11 @@ type ResOrdenTrabajo
     documento: OrdenTrabajoType
     documentos: [OrdenTrabajoType]
 }
+type ResClientes
+{
+    info: IInfoPaginacion
+    estatus: Boolean!,
+    mensaje: String!
+    documento: ClienteType
+    documentos: [ClienteType]
+}

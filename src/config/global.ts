@@ -14,7 +14,8 @@ export enum COLECCION
     FOLIOS = 'folios',
     ORGANISMO = 'organismo',
     TELEMETRIA = 'telemetria',
-    ORDEN_TRAB = 'ordenTrabajo'
+    ORDEN_TRAB = 'ordenTrabajo',
+    CLIENTES = 'clientes'
 }
 
 export enum PUB_SUB

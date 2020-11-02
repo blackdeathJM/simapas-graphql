@@ -1,0 +1,29 @@
+type ClienteType implements ICliente
+{
+    _id: ID
+    codigoBarras: String
+    toma: Float
+    rpu: String
+    contrato: Int
+    nombre: String
+    direccion: [IDireccion]
+    telefono: String
+    celular: String
+    correo: String
+    email: String
+    tarifa: TARIFA
+    giro: String
+    imgPerfil: String
+}
+
+type DireccionType
+{
+    id: String
+    calle: String
+    colonia: String
+    ciudad: String
+    numero: Int
+    medidor: String
+    locMedidor: String
+    caratulas: Int
+}
