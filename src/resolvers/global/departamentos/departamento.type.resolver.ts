@@ -6,7 +6,8 @@ const typeDepto: IResolvers =
     {
         UsuarioType:
             {
-                departamento: async (parent: any, __: any, {db}) => {
+                departamento: async (parent: any, __: any, {db}) =>
+                {
                     return await db.collection(COLECCION.DEPARTAMENTOS).findOne({_id: new ObjectId(parent.departamentoID)});
                 }
             },

@@ -9,5 +9,3 @@ type UsuarioType implements IUsuario
     img: String!
     departamento: DeptoType
 }
-
-

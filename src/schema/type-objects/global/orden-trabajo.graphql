@@ -16,4 +16,5 @@ type OrdenTrabajoType implements IOrdeTrabajo
     creadaPor: String
     material: [String]
     evidencia: [String]
+    departamento: DeptoType
 }

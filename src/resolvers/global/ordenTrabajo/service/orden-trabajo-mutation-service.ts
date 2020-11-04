@@ -10,6 +10,9 @@ class OrdenTrabajoMutationService extends ResolversOperacionesService
 
     async _regOrdenTrabajo(ordenTrabajo: IOrdenTrabajo)
     {
+        const totalOrdenesReg = await this.contarDocumentos(COLECCION.ORDEN_TRAB, {});
+        ordenTrabajo.noOrden = totalOrdenesReg.total + 1;
+
         return await this.agregarUnElemento(COLECCION.ORDEN_TRAB, ordenTrabajo, {}).then(
             resultado =>
             {

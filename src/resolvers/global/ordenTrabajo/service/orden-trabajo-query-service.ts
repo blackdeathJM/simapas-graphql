@@ -1,7 +1,7 @@
 import ResolversOperacionesService from "../../../../services/resolver-operaciones";
 import {IContextData} from "../../../../interfaces/context-data-interface";
 import {COLECCION} from "../../../../config/global";
-import {respArreglosPag} from "../../../../services/respuestas-return";
+import {respArreglosSPag} from "../../../../services/respuestas-return";
 
 class OrdenTrabajoQueryService extends ResolversOperacionesService
 {
@@ -9,10 +9,21 @@ class OrdenTrabajoQueryService extends ResolversOperacionesService
 
     async _todasOrdenes()
     {
-        return await this.buscar(COLECCION.ORDEN_TRAB, {}, {}, {}).then(
+        return await this.buscarSinPaginacion(COLECCION.ORDEN_TRAB, {}, {}, {}).then(
             resultado =>
             {
-                return respArreglosPag(resultado);
+                return respArreglosSPag(resultado);
+            }
+        )
+    }
+
+    async _ordenesPenTerm(estatus: string, deptoID: string)
+    {
+        return await this.buscarSinPaginacion(COLECCION.ORDEN_TRAB,
+            {deptoID, estatus}, {}, {}).then(
+            resultado =>
+            {
+                return respArreglosSPag(resultado);
             }
         )
     }

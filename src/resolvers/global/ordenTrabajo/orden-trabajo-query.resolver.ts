@@ -5,9 +5,13 @@ const queryOrdenTrabajo: IResolvers =
     {
         Query:
             {
-                async todasOrdenes(_, {pagina, elemetosPorPagina}, {db})
+                async todasOrdenes(_, {}, {db})
                 {
-                    return new OrdenTrabajoQueryService(_, {paginacion: {pagina, elemetosPorPagina}}, {db})._todasOrdenes();
+                    return new OrdenTrabajoQueryService(_, {}, {db})._todasOrdenes();
+                },
+                async ordenesPenTerm(_, {estatus, deptoID}, {db})
+                {
+                    return new OrdenTrabajoQueryService(_, {}, {db})._ordenesPenTerm(estatus, deptoID);
                 }
             }
     };
