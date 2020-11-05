@@ -20,19 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Actualizacion de dependencias">
-      <change afterPath="$PROJECT_DIR$/src/resolvers/global/ordenTrabajo/orden-trabajo-type-resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_10_2020_09_47_a__m__[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_10_2020_09_47_a__m___Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/departamentos/departamento.type.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/departamentos/departamento.type.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/ordenTrabajo/orden-trabajo-query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/ordenTrabajo/orden-trabajo-query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/ordenTrabajo/service/orden-trabajo-mutation-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/ordenTrabajo/service/orden-trabajo-mutation-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/ordenTrabajo/service/orden-trabajo-query-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/ordenTrabajo/service/orden-trabajo-query-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/unionTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.type.resolver.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/global/orden-trabajo.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/global/orden-trabajo.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/usuario.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/usuario.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/global/ordenTrabajo/orden-trabajo.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/global/ordenTrabajo/orden-trabajo.query.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -389,13 +377,8 @@
       <workItem from="1604354851387" duration="10623000" />
       <workItem from="1604432617873" duration="4582000" />
       <workItem from="1604462744711" duration="723000" />
-    </task>
-    <task id="LOCAL-00041" summary="quitando el database operations para ahorrar codigo">
-      <created>1599282591647</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1599282591648</updated>
+      <workItem from="1604512327557" duration="713000" />
+      <workItem from="1604544369826" duration="2443000" />
     </task>
     <task id="LOCAL-00042" summary="quitando el database operations para ahorrar codigo">
       <created>1599322340410</created>
@@ -733,7 +716,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604348142328</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="Actualizacion de dependencias">
+      <created>1604512385752</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1604512385755</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -852,11 +842,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="709" y="143" key="VCS.ChangeListViewerDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543036927" />
-    <state x="2472" y="234" key="Vcs.Push.Dialog.v2" timestamp="1604348144219">
+    <state x="2472" y="234" key="Vcs.Push.Dialog.v2" timestamp="1604512388671">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602905233271" />
-    <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604348144219" />
+    <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604512388671" />
     <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603893984937" />
     <state x="2697" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604309428996">
       <screen x="1920" y="0" width="1920" height="1040" />
