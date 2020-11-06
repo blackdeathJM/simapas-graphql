@@ -1,4 +1,4 @@
-interface IOrdeTrabajo
+interface IOrdenTrabajo
 {
     _id: ID
     noOrden: Int
@@ -14,23 +14,17 @@ interface IOrdeTrabajo
     descripcionProblema: String
     observaciones: String
     creadaPor: String
-    material: [String]
     evidencia: [String]
 }
 
-interface INota
+interface INotaOrden
 {
-    _id: ID
-    fechaSalida: String
+    id: ID
     noNota: Int
-    emitio: String
-    recibio: String
-}
-interface IELementosNota
-{
-    elemento: String
+    fechaSalida: String
     cantidad: Float
     descripcion: String
+    unidadMedida: Float
     emitio: String
     recibio: String
 }

@@ -14,6 +14,17 @@ input OrdenTrabajoInput
     descripcionProblema: String
     observaciones: String
     creadaPor: String
-    material: [String]
+    material: [NotaOrdenInput]
     evidencia: [String]
+}
+input NotaOrdenInput
+{
+    id: ID
+    noNota: Int
+    fechaSalida: String
+    cantidad: Float
+    descripcion: String
+    unidadMedida: Float
+    emitio: String
+    recibio: String
 }

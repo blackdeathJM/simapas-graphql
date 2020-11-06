@@ -21,6 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Actualizacion de dependencias">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/ordenTrabajo/models/orden-trabajo-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/ordenTrabajo/models/orden-trabajo-interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/enums/enums.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/enums/enums.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/inputs/global/orden-trabajo.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/global/orden-trabajo.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/global/orden-trabajo.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/interfaces/global/orden-trabajo.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/global/orden-trabajo.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/global/orden-trabajo.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -378,14 +383,13 @@
       <workItem from="1604432617873" duration="4582000" />
       <workItem from="1604462744711" duration="723000" />
       <workItem from="1604512327557" duration="713000" />
-      <workItem from="1604544369826" duration="2443000" />
-    </task>
-    <task id="LOCAL-00042" summary="quitando el database operations para ahorrar codigo">
-      <created>1599322340410</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1599322340410</updated>
+      <workItem from="1604544369826" duration="2569000" />
+      <workItem from="1604588586633" duration="440000" />
+      <workItem from="1604591853864" duration="600000" />
+      <workItem from="1604594757045" duration="1230000" />
+      <workItem from="1604610993988" duration="3432000" />
+      <workItem from="1604623829772" duration="1000" />
+      <workItem from="1604623874276" duration="2279000" />
     </task>
     <task id="LOCAL-00043" summary="implementando la paginacion">
       <created>1599471635570</created>
@@ -723,7 +727,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604512385755</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="Actualizacion de dependencias">
+      <created>1604550669173</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1604550669174</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -842,11 +853,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="709" y="143" key="VCS.ChangeListViewerDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543036927" />
-    <state x="2472" y="234" key="Vcs.Push.Dialog.v2" timestamp="1604512388671">
+    <state x="2472" y="234" key="Vcs.Push.Dialog.v2" timestamp="1604550671460">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602905233271" />
-    <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604512388671" />
+    <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604550671460" />
     <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603893984937" />
     <state x="2697" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604309428996">
       <screen x="1920" y="0" width="1920" height="1040" />

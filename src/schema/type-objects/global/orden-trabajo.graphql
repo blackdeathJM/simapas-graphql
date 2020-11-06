@@ -1,4 +1,4 @@
-type OrdenTrabajoType implements IOrdeTrabajo
+type OrdenTrabajoType implements IOrdenTrabajo
 {
     _id: ID
     noOrden: Int
@@ -14,7 +14,19 @@ type OrdenTrabajoType implements IOrdeTrabajo
     descripcionProblema: String
     observaciones: String
     creadaPor: String
-    material: [String]
+    material: [NotaOrden]
     evidencia: [String]
     departamento: DeptoType
+}
+
+type NotaOrden implements INotaOrden
+{
+    id: ID
+    noNota: Int
+    fechaSalida: String
+    cantidad: Float
+    descripcion: String
+    unidadMedida: Float
+    emitio: String
+    recibio: String
 }
