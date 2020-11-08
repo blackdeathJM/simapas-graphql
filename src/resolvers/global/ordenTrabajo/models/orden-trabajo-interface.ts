@@ -1,3 +1,5 @@
+import {INotaAlmcen} from "../../../almacen/models/almacen-interface";
+
 export interface IOrdenTrabajo
 {
     _id: string;
@@ -14,20 +16,8 @@ export interface IOrdenTrabajo
     descripcionProblema: string;
     observaciones: string;
     creadaPor: string;
-    material: INotaOrden[];
+    material: INotaAlmcen[];
     evidencia: string[];
-}
-
-export interface INotaOrden
-{
-    id: string;
-    noNota: number;
-    fechaSalida: string;
-    cantidad: number;
-    descripcion: string;
-    unidadMedida: number;
-    emitio: string;
-    recibio: string;
 }
 
 enum ESTATUS_ORDEN_TRABAJO

@@ -11,3 +11,8 @@ interface IResguardos
     observaciones: String
     activo: Boolean
 }
+interface ICategoria
+{
+    _id: ID
+    nombre: String
+}

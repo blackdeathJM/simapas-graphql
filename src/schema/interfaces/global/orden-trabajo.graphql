@@ -16,15 +16,3 @@ interface IOrdenTrabajo
     creadaPor: String
     evidencia: [String]
 }
-
-interface INotaOrden
-{
-    id: ID
-    noNota: Int
-    fechaSalida: String
-    cantidad: Float
-    descripcion: String
-    unidadMedida: Float
-    emitio: String
-    recibio: String
-}

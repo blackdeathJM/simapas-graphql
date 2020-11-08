@@ -1,0 +1,13 @@
+type NotaAlmacenType implements INotaAlmacen
+{
+    _id: ID
+    departamentoId: ID
+    ordenID: ID
+    noNota: Int
+    fechaSalida: String
+    cantidad: Float
+    descripcion: String
+    unidadMedida: Float
+    emitio: String
+    recibio: String
+}

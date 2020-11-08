@@ -19,7 +19,8 @@ input OrdenTrabajoInput
 }
 input NotaOrdenInput
 {
-    id: ID
+    _id: ID
+    departamentoId: ID
     noNota: Int
     fechaSalida: String
     cantidad: Float

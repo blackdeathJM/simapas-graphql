@@ -1,0 +1,37 @@
+interface IInventario
+{
+    _id: ID
+    clave: String
+    existencia: Float
+    descripcion: String
+    precioU: Float
+    total: Float
+}
+interface IInventarioEntradas
+{
+    _id: ID
+    fechaReg: String
+    cantidad: Float
+    precioU: Float
+    total: Float
+}
+interface IInventarioSalidas
+{
+    _id: ID
+    fechaSalida: String
+    cantidad: Float
+    total: Float
+}
+interface INotaAlmacen
+{
+    _id: ID
+    departamentoId: ID
+    ordenID: ID
+    noNota: Int
+    fechaSalida: String
+    cantidad: Float
+    descripcion: String
+    unidadMedida: Float
+    emitio: String
+    recibio: String
+}
