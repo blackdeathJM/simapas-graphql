@@ -5,6 +5,7 @@ import {respDocumento} from "../../../../services/respuestas-return";
 import {ObjectId} from 'bson';
 import {ILecturas} from "../../models/lecturas-interface";
 import _ from "lodash";
+import {IMedidor} from "../../models/medidor-interface";
 
 class InstalacionMutationService extends ResolversOperacionesService
 {
@@ -274,6 +275,12 @@ class InstalacionMutationService extends ResolversOperacionesService
                 }
             }
         )
+    }
+
+    async _regMedidor(medidor: IMedidor)
+    {
+        console.log('medidor', this.variables._id, medidor);
+        // return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, {})
     }
 }
 

@@ -1,0 +1,10 @@
+type RecibosCfeType implements IRecibosCfe
+{
+    _id: ID
+    dia: Int
+    mes: Int
+    ano: Int
+    medidor: Float
+    lectura: Float
+    imgRecibo: String
+}

@@ -1,0 +1,7 @@
+type MedidorType implements IMedidor
+{
+    fechaInstalacion: String
+    fechaRetiro: String
+    medidor: String
+    activa: Boolean
+}

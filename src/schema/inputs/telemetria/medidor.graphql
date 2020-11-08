@@ -1,0 +1,7 @@
+input MedidorInput
+{
+    fechaInstalacion: String
+    fechaRetiro: String
+    medidor: String
+    activa: Boolean
+}

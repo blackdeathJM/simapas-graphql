@@ -15,4 +15,6 @@ type InstalacionType implements IInstalacion
     bomba: [BombaType]
     motor: [MotorType]
     lecturas: LecturasTType
+    medidores: [MedidorType]
+    recibosCfe: [RecibosCfeType]
 }
