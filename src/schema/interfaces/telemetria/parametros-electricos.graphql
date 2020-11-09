@@ -1,34 +1,4 @@
-interface IVoltajes
-{
-    ano: Int
-    mes: Int
-    dia: Int
-    v1: Float
-    v2: Float
-    v3: Float
-    promedio: Float
-}
-interface IAmperajes
-{
-    ano: Int
-    mes: Int
-    dia: Int
-    v1: Float
-    v2: Float
-    v3: Float
-    promedio: Float
-}
-interface IFactorPotencia
-{
-    ano: Int
-    mes: Int
-    dia: Int
-    v1: Float
-    v2: Float
-    v3: Float
-    promedio: Float
-}
-interface IKw
+interface IParametros
 {
     ano: Int
     mes: Int

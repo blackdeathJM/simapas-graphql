@@ -20,4 +20,8 @@ extend type Mutation
     regLecturas(_id: ID!,tipo: String!, lecturas: LecturasInput!): ResInstalacion
     "Registro de los medidores"
     regMedidor(_id: ID!, medidor: MedidorInput!): ResInstalacion
+    "Dar de baja medidor"
+    bajaMedidor(_id: ID!, medidor: String!, fechaBaja: String!): ResInstalacion
+    "Registro de recibos de luz"
+    regReciboCfe(_id: ID!, reciboCfe: RecibosCfeInput!): ResInstalacion
 }

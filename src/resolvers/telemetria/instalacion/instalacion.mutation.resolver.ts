@@ -48,7 +48,16 @@ const mutationTelemetria: IResolvers =
                 async regMedidor(_, {_id, medidor}, {db})
                 {
                     return new InstalacionMutationService(_, {_id}, {db})._regMedidor(medidor);
+                },
+                async bajaMedidor(_, {_id, medidor, fechaBaja}, {db})
+                {
+                    return new InstalacionMutationService(_, {_id}, {db})._bajaMedidor(medidor, fechaBaja)
+                },
+                async regReciboCfe(_, {_id, reciboCfe}, {db})
+                {
+                    return new InstalacionMutationService(_, {_id}, {db})._regReciboCfe(reciboCfe);
                 }
+
             }
     };
 

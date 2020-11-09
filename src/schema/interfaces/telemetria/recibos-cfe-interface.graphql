@@ -1,6 +1,5 @@
 interface IRecibosCfe
 {
-    _id: ID
     dia: Int
     mes: Int
     ano: Int

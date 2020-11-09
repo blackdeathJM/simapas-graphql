@@ -6,6 +6,7 @@ import {ObjectId} from 'bson';
 import {ILecturas} from "../../models/lecturas-interface";
 import _ from "lodash";
 import {IMedidor} from "../../models/medidor-interface";
+import {IRecibosCfe} from "../../models/recibos-cfe-interface";
 
 class InstalacionMutationService extends ResolversOperacionesService
 {
@@ -279,8 +280,31 @@ class InstalacionMutationService extends ResolversOperacionesService
 
     async _regMedidor(medidor: IMedidor)
     {
-        console.log('medidor', this.variables._id, medidor);
-        // return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, {})
+        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
+            {_id: new ObjectId(this.variables._id)},
+            {$addToSet: {medidores: medidor}}, {returnOriginal: false, upsert: true}).then(
+            resultado =>
+            {
+                return respDocumento(resultado);
+            }
+        )
+    }
+
+    async _bajaMedidor(medidor: string, fechaBaja: string)
+    {
+        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
+            {_id: new ObjectId(this.variables._id), medidores: {$elemMatch: {medidor}}},
+            {$set: {"medidores.$.fechaRetiro": fechaBaja, "medidores.$.activa": false}}, {returnOriginal: false}).then(
+            resultado =>
+            {
+                return respDocumento(resultado);
+            }
+        )
+    }
+
+    _regReciboCfe(reciboCfe: IRecibosCfe)
+    {
+        console.log('datos', this.variables._id, reciboCfe);
     }
 }
 

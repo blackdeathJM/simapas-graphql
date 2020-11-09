@@ -1,46 +1,16 @@
 type ParametrosElectricosType
 {
-    voltajes: [VoltajesType]
-    amperajes: [AmperajesType]
-    factorPotencia: [FactorPotenciaType]
-    kilowats: [KwType]
+    voltajes: [ParametrosType]
+    amperajes: [ParametrosType]
+    factorPotencia: [ParametrosType]
+    kilowats: [ParametrosType]
 }
 
-type VoltajesType implements IVoltajes
+type ParametrosType implements IParametros
 {
     ano: Int
     mes: Int
     dia: Int
-    v1: Float
-    v2: Float
-    v3: Float
-    promedio: Float
-}
-type AmperajesType implements IAmperajes
-{
-    ano: Int
-    mes: Int
-    dia: Int
-    v1: Float
-    v2: Float
-    v3: Float
-    promedio: Float
-}
-type FactorPotenciaType implements IFactorPotencia
-{
-    ano: Int
-    mes: Int
-    dia: Int
-    v1: Float
-    v2: Float
-    v3: Float
-    promedio: Float
-}
-type KwType implements IKw
-{
-    ano: Int
-    dia: Int
-    mes: Int
     v1: Float
     v2: Float
     v3: Float

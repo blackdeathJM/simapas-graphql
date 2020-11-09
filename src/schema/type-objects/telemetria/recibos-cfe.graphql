@@ -1,6 +1,5 @@
 type RecibosCfeType implements IRecibosCfe
 {
-    _id: ID
     dia: Int
     mes: Int
     ano: Int

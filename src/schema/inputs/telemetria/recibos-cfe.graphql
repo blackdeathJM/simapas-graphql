@@ -1,6 +1,5 @@
-input recibosCfe
+input RecibosCfeInput
 {
-    _id: ID
     dia: Int
     mes: Int
     ano: Int
