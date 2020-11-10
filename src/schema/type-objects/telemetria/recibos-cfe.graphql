@@ -3,7 +3,9 @@ type RecibosCfeType implements IRecibosCfe
     dia: Int
     mes: Int
     ano: Int
-    medidor: Float
+    medidor: String
+    costoKw: Float
+    pago: Float
     lectura: Float
     imgRecibo: String
 }

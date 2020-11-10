@@ -302,9 +302,16 @@ class InstalacionMutationService extends ResolversOperacionesService
         )
     }
 
-    _regReciboCfe(reciboCfe: IRecibosCfe)
+    async _regReciboCfe(reciboCfe: IRecibosCfe)
     {
-        console.log('datos', this.variables._id, reciboCfe);
+        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
+            {_id: new ObjectId(this.variables._id)},
+            {$addToSet: {recibosCfe: reciboCfe}}, {returnOriginal: false, uptosert: true}).then(
+            resultado =>
+            {
+                return respDocumento(resultado);
+            }
+        )
     }
 }
 

@@ -2,6 +2,7 @@ import ResolversOperacionesService from "../../../../services/resolver-operacion
 import {COLECCION} from "../../../../config/global";
 import * as _ from "lodash";
 import {respArreglosSPag} from "../../../../services/respuestas-return";
+import {ObjectId} from 'bson';
 
 class InstalacionQueryService extends ResolversOperacionesService
 {
@@ -29,6 +30,17 @@ class InstalacionQueryService extends ResolversOperacionesService
                     }
                 });
                 return _.differenceWith(valoresRecibidos, _.flattenDeep(valoresDb));
+            }
+        )
+    }
+
+    async _reciboCfeDuplicado(ano: number, mes: number, medidor: string)
+    {
+        return await this.buscarUnElemento(COLECCION.TELEMETRIA,
+            {_id: new ObjectId(this.variables._id), recibosCfe: {$elemMatch: {ano, mes, medidor}}}, {}).then(
+            resulado =>
+            {
+                return resulado.estatus
             }
         )
     }
