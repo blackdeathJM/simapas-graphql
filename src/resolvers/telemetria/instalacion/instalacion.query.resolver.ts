@@ -16,6 +16,10 @@ const queryTelemetria: IResolvers =
                 async reciboCfeDuplicado(_, {_id, ano, mes, medidor}, {db})
                 {
                     return new InstalacionQueryService(_, {_id}, {db})._reciboCfeDuplicado(ano, mes, medidor);
+                },
+                async todosRecibosCfe(_, {_id, medidor}, {db})
+                {
+                    return new InstalacionQueryService(_, {_id}, {db})._todosRecibosCfe(medidor);
                 }
             }
     }

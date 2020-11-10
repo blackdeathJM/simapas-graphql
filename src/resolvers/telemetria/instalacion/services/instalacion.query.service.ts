@@ -44,6 +44,17 @@ class InstalacionQueryService extends ResolversOperacionesService
             }
         )
     }
+
+    async _todosRecibosCfe(medidor: String)
+    {
+        return await this.buscarSinPaginacion(COLECCION.TELEMETRIA,
+            {_id: new ObjectId(this.variables._id)}, {}, {}).then(
+            resultado =>
+            {
+                return respArreglosSPag(resultado);
+            }
+        )
+    }
 }
 
 export default InstalacionQueryService

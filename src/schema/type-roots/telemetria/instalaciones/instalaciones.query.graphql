@@ -6,4 +6,6 @@ type Query
     ipDuplicada(telemetria: TelemetriaInput!): [String]
     "Buscar recibo registrado con anterioridad"
     reciboCfeDuplicado(_id: ID!, ano: Int!, mes: Int!, medidor: String!): Boolean!
+    "Consultar todos los recibos cfe"
+    todosRecibosCfe(_id: ID!, medidor: String!): ResInstalacion
 }
