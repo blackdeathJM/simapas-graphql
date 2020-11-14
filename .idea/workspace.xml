@@ -404,13 +404,8 @@
       <workItem from="1605188705886" duration="628000" />
       <workItem from="1605212028687" duration="730000" />
       <workItem from="1605216307903" duration="675000" />
-    </task>
-    <task id="LOCAL-00049" summary="implementando la paginacion">
-      <created>1599643484261</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1599643484261</updated>
+      <workItem from="1605297817071" duration="1288000" />
+      <workItem from="1605322453797" duration="1241000" />
     </task>
     <task id="LOCAL-00050" summary="implementando la paginacion">
       <created>1599822053656</created>
@@ -748,7 +743,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604980824293</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="Actualizacion de dependencias">
+      <created>1605297899889</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1605297899889</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -867,11 +869,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="709" y="143" key="VCS.ChangeListViewerDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543036927" />
-    <state x="2472" y="234" key="Vcs.Push.Dialog.v2" timestamp="1604980826410">
+    <state x="2472" y="234" key="Vcs.Push.Dialog.v2" timestamp="1605297902206">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602905233271" />
-    <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604980826410" />
+    <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605297902206" />
     <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603893984937" />
     <state x="2697" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604309428996">
       <screen x="1920" y="0" width="1920" height="1040" />
