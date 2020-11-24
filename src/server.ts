@@ -42,23 +42,18 @@ async function init()
     const pubsub = new PubSub();
     const database = new Database();
     const db = await database.init();
-
     const context: any = async ({req, connection}: IContext) =>
     {
         const token = (req) ? req.headers.authorization : connection.authorization;
         const contexto = (req) ? req.headers.context : connection.context;
         return {db, token, pubsub, contexto};
     };
-
     const server = new ApolloServer({
         schema,
         context,
         introspection: true,
-
     });
-
     server.applyMiddleware({app});
-
     app.use('/file', router);
     /*    app.use('/', expressPlayground({
             endpoint: '/graphql',
