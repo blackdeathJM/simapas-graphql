@@ -42,3 +42,8 @@ enum TARIFA
     DOMESTICA
     COMERCIAL
 }
+enum TRANSMISION
+{
+    MANUAL
+    AUTOMATICA
+}

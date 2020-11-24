@@ -20,7 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Actualizacion de dependencias">
+      <change afterPath="$PROJECT_DIR$/src/schema/interfaces/admon-finanzas/contabilidad/ctrl-patrimonial/activos/activos.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schema/interfaces/admon-finanzas/contabilidad/ctrl-patrimonial/activos/categoriaActivos.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schema/interfaces/admon-finanzas/contabilidad/ctrl-patrimonial/activos/vehiculos.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/enums/enums.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/enums/enums.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +34,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="GraphQL File" />
         <option value="TypeScript File" />
+        <option value="GraphQL File" />
       </list>
     </option>
   </component>
@@ -75,16 +79,16 @@
     <property name="ts.external.directory.path" value="D:\Documents\Proyectos\Backend\simapas-graphql\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src" />
-      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\per" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\schema\interfaces\admon-finanzas\contabilidad" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\schema\type-roots\global" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\schema\type-roots\documentacion" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\resolvers\global\ordenTrabajo" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\resolvers\global" />
-      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\schema\inputs\documentacion" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src" />
+      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\per" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -405,14 +409,24 @@
       <workItem from="1605212028687" duration="730000" />
       <workItem from="1605216307903" duration="675000" />
       <workItem from="1605297817071" duration="1288000" />
-      <workItem from="1605322453797" duration="1241000" />
-    </task>
-    <task id="LOCAL-00050" summary="implementando la paginacion">
-      <created>1599822053656</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1599822053661</updated>
+      <workItem from="1605322453797" duration="1311000" />
+      <workItem from="1605389633502" duration="1254000" />
+      <workItem from="1605403920723" duration="201000" />
+      <workItem from="1605405381238" duration="1397000" />
+      <workItem from="1605475375561" duration="1187000" />
+      <workItem from="1605482704999" duration="723000" />
+      <workItem from="1605522093954" duration="1253000" />
+      <workItem from="1605601761720" duration="1499000" />
+      <workItem from="1605655943105" duration="670000" />
+      <workItem from="1605719464180" duration="646000" />
+      <workItem from="1605748230825" duration="1256000" />
+      <workItem from="1605845478467" duration="969000" />
+      <workItem from="1606006760370" duration="688000" />
+      <workItem from="1606008311476" duration="807000" />
+      <workItem from="1606030565410" duration="1263000" />
+      <workItem from="1606146430140" duration="49000" />
+      <workItem from="1606149679366" duration="11626000" />
+      <workItem from="1606174868828" duration="963000" />
     </task>
     <task id="LOCAL-00051" summary="implementando la coleccion de organismo">
       <created>1600162668369</created>
@@ -750,7 +764,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605297899889</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="Actualizacion de dependencias">
+      <created>1605324692262</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1605324692263</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -869,11 +890,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="709" y="143" key="VCS.ChangeListViewerDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543036927" />
-    <state x="2472" y="234" key="Vcs.Push.Dialog.v2" timestamp="1605297902206">
+    <state x="2472" y="234" key="Vcs.Push.Dialog.v2" timestamp="1605324695678">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602905233271" />
-    <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605297902206" />
+    <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605324695678" />
     <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603893984937" />
     <state x="2697" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604309428996">
       <screen x="1920" y="0" width="1920" height="1040" />
@@ -907,10 +928,6 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-8" y="53" width="1709" height="890" maximized="true" key="dock-window-6/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599010190023" />
-    <state x="713" y="416" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1597058189343">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="713" y="416" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597058189343" />
     <state x="726" y="358" key="git4idea.ui.GitTagDialog" timestamp="1599543142572">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -919,14 +936,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="678" y="265" key="refactoring.ChangeSignatureDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601951215247" />
-    <state x="2536" y="240" key="run.anything.popup" timestamp="1597480326811">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606158770667">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="2536" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1597480326811" />
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604195264462">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602075260703" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606158770667" />
     <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604195264462" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1603881212261" />
   </component>

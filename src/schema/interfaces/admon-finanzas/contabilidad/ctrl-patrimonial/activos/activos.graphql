@@ -1,0 +1,99 @@
+interface IActivo
+{
+    _id: ID
+    descripcion: String
+    cog: String
+    observaciones: String
+    noSerie: String
+    marca: String
+    modelo: String
+    codigoSap: String
+    fechaAlta: String
+    fechaBaja: String
+    activo: Boolean
+    resguardante: String
+    creadoPor: String
+}
+interface IVehiculo
+{
+    id: ID
+    noActivo: String
+    noEconomico: Float
+    tipo: String
+    modelo: Int
+    color: String
+    transmision: TRANSMISION
+    cilindros: Int
+    noPoliza: String
+    inciso: Int
+    placas: String
+    tarjetaCirculacion: String
+    noUnidad: Int
+    consecutivo: Int
+    noInvInterno: Int
+    linea: String
+    fechaAdquifactura: String
+    factura: String
+    folioPoliza: String
+}
+interface IVehiculoExt
+{
+    id: ID
+    antena: Boolean
+    manijaPuertas: Boolean
+    defensaFaciaTrasera: Boolean
+    espejoLatDer: Boolean
+    espejoLatIzq: Boolean
+    farosDelanteros: Boolean
+    calaverasTras: Boolean
+    limpiadoresDel: Boolean
+    parabrisas: Boolean
+    rinesTipo: String
+    llantas: String
+    tapoGasolina: Boolean
+    cristalesPuLa: Boolean
+    medallon: Boolean
+    molduras: Boolean
+    polveras: Boolean
+    direccionales: Boolean
+    freno: Boolean
+    lucesAltas: Boolean
+    lucesBajas: Boolean
+}
+interface IVehiculoInt
+{
+    aireAcondicionado: Boolean
+    cinturonesSeg: Boolean
+    cenicero: Boolean
+    encendedor: Boolean
+    retrovisor: Boolean
+    radioReprod: Boolean
+    cabecerasResp: Boolean
+    tapetes: Boolean
+    tapiceria: Boolean
+    viseraDer: Boolean
+    viseraIzq: Boolean
+    manijasPuertas: Boolean
+}
+interface IHerrAccesorios
+{
+    cablesPasaCorr: Boolean
+    trianguloSeg: Boolean
+    destornillador: Boolean
+    extintor: Boolean
+    gatoTipo:String
+    pinzasMecanicas: Boolean
+    llantaRef: Boolean
+    manualUsuario: Boolean
+    llaveBirlos: Boolean
+    kilometraje: Int
+}
+interface licencia
+{
+    numero: String
+    vigencia: String
+    tipoLicencia: String
+    imgFrontal: String
+    imgTrasera: String
+    activa: Boolean
+}
