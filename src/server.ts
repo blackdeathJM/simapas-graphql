@@ -8,15 +8,8 @@ import Database from "./config/database";
 import path from "path";
 import expressPlayground from 'graphql-playground-middleware-express';
 // import graphqlHTTP from "express-graphql";
-import environments from "./config/environments";
 import {router} from "./configMuter/docs.routes";
 import {IContext} from "./interfaces/context-interface";
-
-if (process.env.NODE_ENV !== 'production')
-{
-    const env = environments;
-    console.log(env);
-}
 
 async function init()
 {
@@ -33,12 +26,17 @@ async function init()
     {
         res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");
         // res.header("Access-Control-Allow-Origin", '*');
-        res.header("Access-Control-Allow-Origin", "http://localhost:4200");
+        if (process.env.NODE_ENV !== 'production')
+        {
+            res.header("Access-Control-Allow-Origin", "http://localhost:4200");
+        } else
+        {
+            res.header("Access-Control-Allow-Origin", "http://localhost:4200");
+        }
         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Cache-Control");
         res.header("Access-Control-Allow-Credentials", "true");
         next();
     });
-
     const pubsub = new PubSub();
     const database = new Database();
     const db = await database.init();
