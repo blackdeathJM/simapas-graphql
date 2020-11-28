@@ -3,6 +3,7 @@ import {IContextData} from "../../../../interfaces/context-data-interface";
 import ValidacionesService from "../../../../services/validaciones.service";
 import {COLECCION} from "../../../../config/global";
 import {ObjectId} from 'bson';
+import {respDocumento} from "../../../../services/respuestas-return";
 
 class DepartamentoMutationService extends ResolversOperacionesService
 {
@@ -14,7 +15,7 @@ class DepartamentoMutationService extends ResolversOperacionesService
         if (ValidacionesService.checarDato(this.variables.departamento!.nombre || ''))
         {
             const resultado = await this.agregarUnElemento(COLECCION.DEPARTAMENTOS, this.variables.departamento!, {});
-            return {estatus: resultado.estatus, mensaje: resultado.mensaje, departamento: resultado.elemento}
+            return respDocumento(resultado);
         }
     }
 

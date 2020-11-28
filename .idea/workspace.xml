@@ -19,11 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Resguardos">
+    <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Actualizacion de dependencias">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_11_2020_11_47_p__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_11_2020_11_47_p__m___Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_11_2020_04_36_a__m__[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_11_2020_04_36_a__m___Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.env" beforeDir="false" afterPath="$PROJECT_DIR$/src/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/departamentos/services/departamento-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/departamentos/services/departamento-mutation.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.mutation.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/global/departamentos/departamento.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/global/departamentos/departamento.mutation.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +55,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="2" />
@@ -74,7 +80,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
     <property name="ts.external.directory.path" value="D:\Documents\Proyectos\Backend\simapas-graphql\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
@@ -432,14 +438,8 @@
       <workItem from="1606484306142" duration="231000" />
       <workItem from="1606486165894" duration="585000" />
       <workItem from="1606486786549" duration="1374000" />
-      <workItem from="1606499410124" duration="1998000" />
-    </task>
-    <task id="LOCAL-00052" summary="implementando la coleccion de organismo">
-      <created>1600396384488</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1600396384489</updated>
+      <workItem from="1606499410124" duration="4480000" />
+      <workItem from="1606524932535" duration="2651000" />
     </task>
     <task id="LOCAL-00053" summary="implementando la coleccion de organismo">
       <created>1600471835348</created>
@@ -777,7 +777,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606186031202</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="Actualizacion de dependencias">
+      <created>1606507860372</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1606507860372</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -816,9 +823,9 @@
     <MESSAGE value="trabajando con registro de motor" />
     <MESSAGE value="Registro de lecturas del macromedido" />
     <MESSAGE value="Trabajando en las ordenes de trabajo" />
-    <MESSAGE value="Actualizacion de dependencias" />
     <MESSAGE value="Resguardos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Resguardos" />
+    <MESSAGE value="Actualizacion de dependencias" />
+    <option name="LAST_COMMIT_MESSAGE" value="Actualizacion de dependencias" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -859,28 +866,28 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="679" y="260" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1603949539088" />
-    <state width="1879" height="118" key="GridCell.Tab.0.bottom" timestamp="1604354563417">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1879" height="118" key="GridCell.Tab.0.bottom" timestamp="1606519079733">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1879" height="180" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601421842346" />
+    <state width="1879" height="118" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606519079733" />
     <state width="1879" height="118" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604354563417" />
     <state width="1875" height="202" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603091097545" />
-    <state width="1879" height="118" key="GridCell.Tab.0.center" timestamp="1604354563416">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1879" height="118" key="GridCell.Tab.0.center" timestamp="1606519079732">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1879" height="180" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601421842346" />
+    <state width="1879" height="118" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606519079732" />
     <state width="1879" height="118" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604354563416" />
     <state width="1875" height="202" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603091097544" />
-    <state width="1879" height="118" key="GridCell.Tab.0.left" timestamp="1604354563416">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1879" height="118" key="GridCell.Tab.0.left" timestamp="1606519079729">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1879" height="180" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601421842346" />
+    <state width="1879" height="118" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606519079729" />
     <state width="1879" height="118" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604354563416" />
     <state width="1875" height="202" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603091097544" />
-    <state width="1879" height="118" key="GridCell.Tab.0.right" timestamp="1604354563416">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1879" height="118" key="GridCell.Tab.0.right" timestamp="1606519079732">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1879" height="180" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601421842346" />
+    <state width="1879" height="118" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606519079732" />
     <state width="1879" height="118" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604354563416" />
     <state width="1875" height="202" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603091097545" />
     <state x="540" y="255" key="IDE.errors.dialog" timestamp="1599536859793">
@@ -891,20 +898,24 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="184" y="85" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603689334955" />
-    <state x="154" y="114" width="1230" height="710" key="SettingsEditor" timestamp="1606486741544">
+    <state x="587" y="274" key="MultipleFileMergeDialog" timestamp="1606507889482">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="154" y="114" width="1230" height="710" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606486741544" />
+    <state x="587" y="274" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606507889482" />
+    <state x="154" y="114" width="1230" height="710" key="SettingsEditor" timestamp="1606508226584">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="154" y="114" width="1230" height="710" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606508226584" />
     <state x="2388" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604184284568" />
     <state x="841" y="294" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603427216833" />
     <state x="709" y="143" key="VCS.ChangeListViewerDialog" timestamp="1599543036927">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="709" y="143" key="VCS.ChangeListViewerDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543036927" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1606196819863">
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1606507956164">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606196819863" />
+    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606507956164" />
     <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606186035995" />
     <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603893984937" />
     <state x="2697" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604309428996">
