@@ -18,21 +18,13 @@ async function init()
     // app.use(bodyParser.json()).use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.urlencoded({extended: false}));
     app.use(bodyParser.json());
-
-
     app.use(express.static(path.join(__dirname, 'public')));
-
     app.use(function (req, res, next)
     {
         res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");
-        // res.header("Access-Control-Allow-Origin", '*');
-        if (process.env.NODE_ENV !== 'production')
-        {
-            res.header("Access-Control-Allow-Origin", "http://localhost:4200");
-        } else
-        {
-            res.header("Access-Control-Allow-Origin", "http://localhost:4200");
-        }
+        res.header("Access-Control-Allow-Origin", '*');
+        res.header("Access-Control-Allow-Origin", "http://localhost:4200");
+        // res.header("Access-Control-Allow-Origin", ['http://192.168.1.79:5642', 'http://localhost:4200']);/
         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Cache-Control");
         res.header("Access-Control-Allow-Credentials", "true");
         next();
