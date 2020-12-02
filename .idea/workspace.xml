@@ -20,8 +20,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Actualizacion de dependencias">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_11_2020_11_47_p__m__[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_11_2020_11_47_p__m___Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.env" beforeDir="false" afterPath="$PROJECT_DIR$/src/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/docExt/docExt.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/docExt.mutation.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/docExt/docExt.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/docExt.query.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/docExt/docExt.subscription.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/docExt.subscription.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/docExt/eggregateConsulta.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/eggregateConsulta.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/docExt/models/docExt.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/models/docExt.interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/docExt/proyecciones.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/proyecciones.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/docExt/services/docExt-mutation-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/services/docExt-mutation-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/docExt/services/docExt-query-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/services/docExt-query-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/docExt/services/docExt-subscription.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/services/docExt-subscription.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/folios/folio.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/folios/folio.mutation.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/folios/folio.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/folios/folio.query.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/folios/folio.type.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/folios/folio.type.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/folios/models/folio-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/folios/models/folio-interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/folios/services/folio.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/folios/services/folio.mutation.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/folios/services/folio.query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/folios/services/folio.query.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/unionSubscription.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionSubscription.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/inputs/documentacion/folio.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/documentacion/folio.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/documentacion/folio.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/interfaces/documentacion/folio.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/documentacion/folio.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/documentacion/folio.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,6 +85,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
@@ -74,7 +98,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="D:\Documents\Proyectos\Backend\simapas-graphql\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
@@ -84,11 +108,11 @@
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\per" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\resolvers\usuarios\documentos" />
+      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\resolvers\direccion\documentacion" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\schema\interfaces\admon-finanzas\contabilidad" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\schema\type-roots\global" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\schema\type-roots\documentacion" />
-      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\resolvers\global\ordenTrabajo" />
-      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\resolvers\global" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -436,14 +460,19 @@
       <workItem from="1606499410124" duration="4480000" />
       <workItem from="1606524932535" duration="2689000" />
       <workItem from="1606678431138" duration="148000" />
-      <workItem from="1606678659229" duration="4293000" />
-    </task>
-    <task id="LOCAL-00054" summary="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
-      <created>1600660273231</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1600660273232</updated>
+      <workItem from="1606678659229" duration="5803000" />
+      <workItem from="1606727506988" duration="15000" />
+      <workItem from="1606727644145" duration="1475000" />
+      <workItem from="1606758005956" duration="1698000" />
+      <workItem from="1606777860864" duration="684000" />
+      <workItem from="1606788125326" duration="805000" />
+      <workItem from="1606861074174" duration="257000" />
+      <workItem from="1606861464847" duration="168000" />
+      <workItem from="1606861652561" duration="104000" />
+      <workItem from="1606861774124" duration="105000" />
+      <workItem from="1606861897133" duration="800000" />
+      <workItem from="1606914676817" duration="987000" />
+      <workItem from="1606937096874" duration="5316000" />
     </task>
     <task id="LOCAL-00055" summary="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
       <created>1600691899133</created>
@@ -781,7 +810,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606538726837</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="Actualizacion de dependencias">
+      <created>1606695577983</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1606695577983</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -826,141 +862,5 @@
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="709" y="339" key="#Notifications" timestamp="1606486684304">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="709" y="339" key="#Notifications/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606486684304" />
-    <state x="678" y="388" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1603949542146">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="678" y="388" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603949542146" />
-    <state x="2685" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1602038165338">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601263570700" />
-    <state x="2685" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602038165338" />
-    <state x="2560" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1606678538474">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606484365113" />
-    <state x="2560" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606678538474" />
-    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601353917799" />
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1599462019543">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599462019543" />
-    <state x="2623" y="369" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1602600326320">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="703" y="369" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600659968615" />
-    <state x="2623" y="369" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1602600326320" />
-    <state x="378" y="0" key="CommitChangelistDialog2" timestamp="1603365693050">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="378" y="0" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1603365693050" />
-    <state x="679" y="260" key="FileChooserDialogImpl" timestamp="1603949539088">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="679" y="260" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1603949539088" />
-    <state width="1879" height="118" key="GridCell.Tab.0.bottom" timestamp="1606519079733">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1879" height="118" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606519079733" />
-    <state width="1879" height="118" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604354563417" />
-    <state width="1875" height="202" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603091097545" />
-    <state width="1879" height="118" key="GridCell.Tab.0.center" timestamp="1606519079732">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1879" height="118" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606519079732" />
-    <state width="1879" height="118" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604354563416" />
-    <state width="1875" height="202" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603091097544" />
-    <state width="1879" height="118" key="GridCell.Tab.0.left" timestamp="1606519079729">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1879" height="118" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606519079729" />
-    <state width="1879" height="118" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604354563416" />
-    <state width="1875" height="202" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603091097544" />
-    <state width="1879" height="118" key="GridCell.Tab.0.right" timestamp="1606519079732">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1879" height="118" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606519079732" />
-    <state width="1879" height="118" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604354563416" />
-    <state width="1875" height="202" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603091097545" />
-    <state x="540" y="255" key="IDE.errors.dialog" timestamp="1599536859793">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="540" y="255" key="IDE.errors.dialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599536859793" />
-    <state x="184" y="85" key="MergeDialog" timestamp="1603689334955">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="184" y="85" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603689334955" />
-    <state x="587" y="274" key="MultipleFileMergeDialog" timestamp="1606507889482">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="587" y="274" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606507889482" />
-    <state x="154" y="114" width="1230" height="710" key="SettingsEditor" timestamp="1606508226584">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="154" y="114" width="1230" height="710" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606508226584" />
-    <state x="2388" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604184284568" />
-    <state x="841" y="294" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603427216833" />
-    <state x="709" y="143" key="VCS.ChangeListViewerDialog" timestamp="1599543036927">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="709" y="143" key="VCS.ChangeListViewerDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543036927" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2" timestamp="1606538731109">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606538731109" />
-    <state x="2472" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1606186035995" />
-    <state x="552" y="234" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603893984937" />
-    <state x="2697" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604309428996">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="777" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602349270205" />
-    <state x="2697" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604309428996" />
-    <state x="777" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1603949338992" />
-    <state x="0" y="0" width="1607" height="841" maximized="true" key="dock-window-1" timestamp="1604892475291">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2051" y="163" width="1676" height="890" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602529915228" />
-    <state x="0" y="0" width="1607" height="841" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604892475291" />
-    <state x="0" y="0" width="1651" height="917" maximized="true" key="dock-window-2" timestamp="1604196064448">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2237" y="124" width="1619" height="824" maximized="true" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601913916792" />
-    <state x="0" y="0" width="1651" height="917" maximized="true" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604196064448" />
-    <state x="2114" y="302" width="1648" height="759" maximized="true" key="dock-window-3" timestamp="1599228560154">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2114" y="302" width="1648" height="759" maximized="true" key="dock-window-3/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599228560154" />
-    <state x="1920" y="94" width="1648" height="881" maximized="true" key="dock-window-4" timestamp="1599241837254">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1920" y="94" width="1648" height="881" maximized="true" key="dock-window-4/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599241837254" />
-    <state x="2059" y="104" width="1677" height="858" maximized="true" key="dock-window-5" timestamp="1599120811979">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2059" y="104" width="1677" height="858" maximized="true" key="dock-window-5/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599120811979" />
-    <state x="-8" y="53" width="1709" height="890" maximized="true" key="dock-window-6" timestamp="1599010190023">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-8" y="53" width="1709" height="890" maximized="true" key="dock-window-6/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599010190023" />
-    <state x="726" y="358" key="git4idea.ui.GitTagDialog" timestamp="1599543142572">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="726" y="358" key="git4idea.ui.GitTagDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599543142572" />
-    <state x="678" y="265" key="refactoring.ChangeSignatureDialog" timestamp="1601951215247">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="678" y="265" key="refactoring.ChangeSignatureDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601951215247" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606158770667">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606158770667" />
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604195264462" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1603881212261" />
   </component>
 </project>

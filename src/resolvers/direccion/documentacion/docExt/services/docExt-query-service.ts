@@ -1,8 +1,8 @@
-import ResolversOperacionesService from "../../../../services/resolver-operaciones";
-import {IContextData} from "../../../../interfaces/context-data-interface";
-import {COLECCION} from "../../../../config/global";
+import ResolversOperacionesService from "../../../../../services/resolver-operaciones";
+import {IContextData} from "../../../../../interfaces/context-data-interface";
+import {COLECCION} from "../../../../../config/global";
 import {filtroDocsExt} from "../proyecciones";
-import {respArreglosPag} from "../../../../services/respuestas-return";
+import {respArreglosPag} from "../../../../../services/respuestas-return";
 
 class DocExtQueryService extends ResolversOperacionesService
 {

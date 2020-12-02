@@ -1,9 +1,9 @@
-import ResolversOperacionesService from "../../../../services/resolver-operaciones";
-import {IContextData} from "../../../../interfaces/context-data-interface";
-import {COLECCION} from "../../../../config/global";
+import ResolversOperacionesService from "../../../../../services/resolver-operaciones";
+import {IContextData} from "../../../../../interfaces/context-data-interface";
+import {COLECCION} from "../../../../../config/global";
 import {ObjectId} from 'bson';
 import {notActUsuarioSubProceso, notTodosDocsExt} from "./docExt-subscription";
-import {respDocumento} from "../../../../services/respuestas-return";
+import {respDocumento} from "../../../../../services/respuestas-return";
 
 
 class DocExtMutationService extends ResolversOperacionesService

@@ -1,7 +1,7 @@
-import ResolversOperacionesService from "../../../../services/resolver-operaciones";
-import {IContextData} from "../../../../interfaces/context-data-interface";
-import {COLECCION} from "../../../../config/global";
-import {respArreglosPag} from "../../../../services/respuestas-return";
+import ResolversOperacionesService from "../../../../../services/resolver-operaciones";
+import {IContextData} from "../../../../../interfaces/context-data-interface";
+import {COLECCION} from "../../../../../config/global";
+import {respArreglosPag} from "../../../../../services/respuestas-return";
 
 class FolioQueryService extends ResolversOperacionesService
 {

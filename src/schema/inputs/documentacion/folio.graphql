@@ -5,6 +5,7 @@ input FolioInput
     titulo: String!
     folio: String!
     tipo: TIPO!
+    institucion: String!
     descripcion: String!
     fechaCreacion: String!
     asigUsuario: String!

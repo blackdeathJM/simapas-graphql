@@ -5,6 +5,7 @@ export interface IFolio
     titulo: string;
     folio: string;
     tipo: string;
+    institucion: string;
     descripcion: string;
     fechaCreacion: string;
     asigUsuario: string;

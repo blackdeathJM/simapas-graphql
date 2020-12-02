@@ -1,8 +1,8 @@
-import ResolversOperacionesService from "../../../../services/resolver-operaciones";
-import {COLECCION} from "../../../../config/global";
-import {respDocumento} from "../../../../services/respuestas-return";
+import ResolversOperacionesService from "../../../../../services/resolver-operaciones";
+import {COLECCION} from "../../../../../config/global";
+import {respDocumento} from "../../../../../services/respuestas-return";
 import {ObjectId} from 'bson';
-import {notTodosDocsExt} from "../../docExt/services/docExt-subscription";
+import {notTodosDocsExt} from "../../../../direccion/documentacion/docExt/services/docExt-subscription";
 
 class FolioMutationService extends ResolversOperacionesService
 {
@@ -11,7 +11,6 @@ class FolioMutationService extends ResolversOperacionesService
 
     async _registrarFolio()
     {
-
         return await this.agregarUnElemento(COLECCION.FOLIOS, this.variables.folio!, {}).then(
             async resultado =>
             {

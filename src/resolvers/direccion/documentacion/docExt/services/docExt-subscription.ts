@@ -1,5 +1,5 @@
 import {Db} from "mongodb";
-import {COLECCION, PUB_SUB} from "../../../../config/global";
+import {COLECCION, PUB_SUB} from "../../../../../config/global";
 import {PubSub} from 'apollo-server-express'
 
 
