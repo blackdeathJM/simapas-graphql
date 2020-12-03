@@ -1,6 +1,6 @@
 export interface IDocExt
 {
-    id: string;
+    _id: string;
     noSeguimiento: number;
     identificadorDoc: string;
     folio: string;

@@ -4,6 +4,7 @@ import {COLECCION} from "../../../../../config/global";
 import {ObjectId} from 'bson';
 import {notActUsuarioSubProceso, notTodosDocsExt} from "./docExt-subscription";
 import {respDocumento} from "../../../../../services/respuestas-return";
+import {IDocExt} from "../models/docExt.interface";
 
 
 class DocExtMutationService extends ResolversOperacionesService
@@ -150,6 +151,29 @@ class DocExtMutationService extends ResolversOperacionesService
                 return respDocumento(resultado);
             }
         )
+    }
+
+    async _acInfoDoc(documento: IDocExt)
+    {
+        return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(documento._id)},
+            {
+                $set: {
+                    identificadorDoc: documento.identificadorDoc, asunto: documento.asunto, dependencia: documento.dependencia,
+                    comentario: documento.comentario, fechaRecepcion: documento.fechaRecepcion, fechaLimiteEntrega: documento.fechaLimiteEntrega
+                }
+            },
+            {returnOriginal: false}).then(async (respusta) =>
+        {
+            console.log('respuesat', respusta.elemento);
+            return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(documento._id)},
+                {$addToSet: {usuarioDestino: {$each: documento.usuarioDestino}}},
+                {returnOriginal: false}).then(
+                async resultado =>
+                {
+                    await notTodosDocsExt(this.context.pubsub!, this.context.db!);
+                    return respDocumento(resultado);
+                })
+        })
     }
 }
 

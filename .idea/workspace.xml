@@ -19,33 +19,21 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Actualizacion de dependencias">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_11_2020_11_47_p__m__[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_11_2020_11_47_p__m___Default_Changelist_.xml" beforeDir="false" />
+    <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="documentacion">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/docExt/docExt.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/docExt.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/docExt/docExt.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/docExt.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/docExt/docExt.subscription.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/docExt.subscription.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/docExt/eggregateConsulta.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/eggregateConsulta.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/docExt/models/docExt.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/models/docExt.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/docExt/proyecciones.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/proyecciones.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/docExt/services/docExt-mutation-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/services/docExt-mutation-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/docExt/services/docExt-query-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/services/docExt-query-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/docExt/services/docExt-subscription.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/services/docExt-subscription.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/folios/folio.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/folios/folio.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/folios/folio.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/folios/folio.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/folios/folio.type.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/folios/folio.type.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/folios/models/folio-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/folios/models/folio-interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/folios/services/folio.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/folios/services/folio.mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/folios/services/folio.query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/folios/services/folio.query.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/unionSubscription.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionSubscription.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/documentacion/folio.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/documentacion/folio.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/documentacion/folio.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/interfaces/documentacion/folio.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/documentacion/folio.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/documentacion/folio.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/docExt.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/docExt.mutation.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/models/docExt.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/models/docExt.interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/services/docExt-mutation-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/services/docExt-mutation-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/inputs/documentacion/docExterna.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/direccion/docExterna.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/inputs/documentacion/folio.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/usuarios/documentacion/folio.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/inputs/usuario.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/usuarios/usuario.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/documentacion/docExterna.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/direccion/docExterna.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/usuario.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/usuario/usuario.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/documentacion/docExterna/docExterna.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/direccion/docExterna/docExterna.mutation.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/documentacion/docExterna/docExterna.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/direccion/docExterna/docExterna.query.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/documentacion/docExterna/docExterna.subscription.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/direccion/docExterna/docExterna.subscription.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/documentacion/folios/folios.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/usuarios/documentacion/folios/folios.mutation.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/documentacion/folios/folios.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/usuarios/documentacion/folios/folios.query.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,11 +96,11 @@
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\per" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\resolvers\usuarios\documentos" />
-      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\resolvers\direccion\documentacion" />
-      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\schema\interfaces\admon-finanzas\contabilidad" />
-      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\schema\type-roots\global" />
-      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\schema\type-roots\documentacion" />
+      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\schema\type-roots\usuarios\documentacion" />
+      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\schema\type-roots\usuarios" />
+      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\schema\type-roots\direccion" />
+      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\schema\type-objects\usuario" />
+      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\schema\type-objects\direccion" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -472,14 +460,8 @@
       <workItem from="1606861774124" duration="105000" />
       <workItem from="1606861897133" duration="800000" />
       <workItem from="1606914676817" duration="987000" />
-      <workItem from="1606937096874" duration="5316000" />
-    </task>
-    <task id="LOCAL-00055" summary="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
-      <created>1600691899133</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1600691899133</updated>
+      <workItem from="1606937096874" duration="7044000" />
+      <workItem from="1606957495977" duration="7631000" />
     </task>
     <task id="LOCAL-00056" summary="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
       <created>1601113212796</created>
@@ -817,7 +799,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606695577983</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="organiazacion de archivos">
+      <created>1606952304562</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1606952304563</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -858,7 +847,9 @@
     <MESSAGE value="Trabajando en las ordenes de trabajo" />
     <MESSAGE value="Resguardos" />
     <MESSAGE value="Actualizacion de dependencias" />
-    <option name="LAST_COMMIT_MESSAGE" value="Actualizacion de dependencias" />
+    <MESSAGE value="organiazacion de archivos" />
+    <MESSAGE value="documentacion" />
+    <option name="LAST_COMMIT_MESSAGE" value="documentacion" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

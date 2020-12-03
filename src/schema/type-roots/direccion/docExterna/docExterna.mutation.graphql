@@ -16,4 +16,6 @@ type Mutation
     acAcuse(_id: ID!, acuseUrl: String, proceso: PROCESOS_DOC!): ResDocEx
     "DOC: EXTERNA: Dar por terminado el documento anticipado"
     acDarPorEntregado(_id: ID!): ResDocEx
+    "Editar informacion del documento"
+    acInfoDoc(documento: DocExtInput): ResDocEx
 }

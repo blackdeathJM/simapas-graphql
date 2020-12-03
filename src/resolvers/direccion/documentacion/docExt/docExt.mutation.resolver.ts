@@ -44,6 +44,10 @@ const mutationDocExt: IResolvers =
                 async acAcuse(_, {_id, acuseUrl, proceso}, {db, pubsub})
                 {
                     return new DocExtMutationService(_, {_id, acuseUrl, proceso}, {db, pubsub})._acuse();
+                },
+                async acInfoDoc(_, {documento}, {db, pubsub})
+                {
+                    return new DocExtMutationService(_, {}, {db, pubsub})._acInfoDoc(documento);
                 }
             }
     };
