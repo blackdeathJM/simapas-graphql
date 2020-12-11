@@ -19,21 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="documentacion">
+    <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Actualizacion dependencias">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/docExt.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/docExt.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/models/docExt.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/models/docExt.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/services/docExt-mutation-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/services/docExt-mutation-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/documentacion/docExterna.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/direccion/docExterna.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/documentacion/folio.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/usuarios/documentacion/folio.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/usuario.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/usuarios/usuario.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/documentacion/docExterna.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/direccion/docExterna.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/usuario.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/usuario/usuario.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/documentacion/docExterna/docExterna.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/direccion/docExterna/docExterna.mutation.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/documentacion/docExterna/docExterna.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/direccion/docExterna/docExterna.query.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/documentacion/docExterna/docExterna.subscription.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/direccion/docExterna/docExterna.subscription.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/documentacion/folios/folios.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/usuarios/documentacion/folios/folios.mutation.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/documentacion/folios/folios.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/usuarios/documentacion/folios/folios.query.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/departamentos/services/departamento-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/departamentos/services/departamento-mutation.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -462,13 +452,15 @@
       <workItem from="1606914676817" duration="987000" />
       <workItem from="1606937096874" duration="7044000" />
       <workItem from="1606957495977" duration="7631000" />
-    </task>
-    <task id="LOCAL-00056" summary="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
-      <created>1601113212796</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1601113212796</updated>
+      <workItem from="1606970096399" duration="121000" />
+      <workItem from="1607042464845" duration="1535000" />
+      <workItem from="1607087490646" duration="598000" />
+      <workItem from="1607118253650" duration="1850000" />
+      <workItem from="1607196869643" duration="1205000" />
+      <workItem from="1607286599301" duration="2245000" />
+      <workItem from="1607333100081" duration="1430000" />
+      <workItem from="1607380306536" duration="3573000" />
+      <workItem from="1607651097302" duration="832000" />
     </task>
     <task id="LOCAL-00057" summary="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
       <created>1601168884936</created>
@@ -806,7 +798,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606952304563</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="Modificacion documentacion">
+      <created>1606970147397</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1606970147399</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -848,8 +847,10 @@
     <MESSAGE value="Resguardos" />
     <MESSAGE value="Actualizacion de dependencias" />
     <MESSAGE value="organiazacion de archivos" />
+    <MESSAGE value="Modificacion documentacion" />
     <MESSAGE value="documentacion" />
-    <option name="LAST_COMMIT_MESSAGE" value="documentacion" />
+    <MESSAGE value="Actualizacion dependencias" />
+    <option name="LAST_COMMIT_MESSAGE" value="Actualizacion dependencias" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

@@ -25,7 +25,7 @@ class DepartamentoMutationService extends ResolversOperacionesService
             {_id: new ObjectId(this.variables.departamento!._id)},
             {$set: {nombre: this.variables.departamento!.nombre}},
             {returnOriginal: false});
-        return {estatus: resultado.estatus, mensaje: resultado.mensaje, departamento: resultado.elemento}
+        return respDocumento(resultado);
     }
 }
 
