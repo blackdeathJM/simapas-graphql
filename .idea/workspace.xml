@@ -22,7 +22,7 @@
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Actualizacion dependencias">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/departamentos/services/departamento-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/departamentos/services/departamento-mutation.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -461,13 +461,11 @@
       <workItem from="1607333100081" duration="1430000" />
       <workItem from="1607380306536" duration="3573000" />
       <workItem from="1607651097302" duration="832000" />
-    </task>
-    <task id="LOCAL-00057" summary="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
-      <created>1601168884936</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1601168884937</updated>
+      <workItem from="1607651957592" duration="1334000" />
+      <workItem from="1607655583977" duration="591000" />
+      <workItem from="1607697377568" duration="1401000" />
+      <workItem from="1607728200140" duration="597000" />
+      <workItem from="1607730128198" duration="3854000" />
     </task>
     <task id="LOCAL-00058" summary="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
       <created>1601183385249</created>
@@ -805,7 +803,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606970147399</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="documenacion y actualizacion de dependencias">
+      <created>1607652018517</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1607652018520</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -850,7 +855,8 @@
     <MESSAGE value="Modificacion documentacion" />
     <MESSAGE value="documentacion" />
     <MESSAGE value="Actualizacion dependencias" />
-    <option name="LAST_COMMIT_MESSAGE" value="Actualizacion dependencias" />
+    <MESSAGE value="documenacion y actualizacion de dependencias" />
+    <option name="LAST_COMMIT_MESSAGE" value="documenacion y actualizacion de dependencias" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

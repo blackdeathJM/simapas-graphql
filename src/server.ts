@@ -22,10 +22,10 @@ async function init()
     app.use(function (req, res, next)
     {
         res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");
-        res.header("Access-Control-Allow-Origin", '*');
-        res.header("Access-Control-Allow-Origin", "http://localhost:4200");
+        // res.header("Access-Control-Allow-Origin", "http://localhost:4200");
         // res.header("Access-Control-Allow-Origin", 'http://192.168.1.79:5642');
-        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Cache-Control");
+        res.header("Access-Control-Allow-Origin", 'http://192.168.0.189:5642');
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Authorization, Accept, Cache-Control");
         res.header("Access-Control-Allow-Credentials", "true");
         next();
     });
@@ -63,6 +63,7 @@ async function init()
         {
             console.log('==============================SERVIDOR============================');
             console.log(`Sistema comercial Graphql http://localhost:${PORT}${server.graphqlPath}`);
+            console.log('==============================SOCKET============================');
             console.log(`Sistema comercial susbcripciones con Graphql ws://localhost:${PORT}${server.subscriptionsPath}`);
         }
     );
