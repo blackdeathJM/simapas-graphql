@@ -19,16 +19,19 @@ async function init()
     app.use(bodyParser.urlencoded({extended: false}));
     app.use(bodyParser.json());
     app.use(express.static(path.join(__dirname, 'public')));
+
     app.use(function (req, res, next)
     {
         res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");
         // res.header("Access-Control-Allow-Origin", "http://localhost:4200");
         // res.header("Access-Control-Allow-Origin", 'http://192.168.1.79:5642');
-        res.header("Access-Control-Allow-Origin", 'http://192.168.0.189:5642');
-        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Authorization, Accept, Cache-Control");
+        res.header("Access-Control-Allow-Origin", "http://192.168.0.189:5642");
+        res.header("Access-Control-Allow-Headers", "Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method");
         res.header("Access-Control-Allow-Credentials", "true");
         next();
     });
+
+
     const pubsub = new PubSub();
     const database = new Database();
     const db = await database.init();

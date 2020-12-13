@@ -76,7 +76,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Language Defaults" />
     <property name="ts.external.directory.path" value="D:\Documents\Proyectos\Backend\simapas-graphql\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
@@ -465,14 +465,9 @@
       <workItem from="1607655583977" duration="591000" />
       <workItem from="1607697377568" duration="1401000" />
       <workItem from="1607728200140" duration="597000" />
-      <workItem from="1607730128198" duration="3854000" />
-    </task>
-    <task id="LOCAL-00058" summary="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
-      <created>1601183385249</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1601183385250</updated>
+      <workItem from="1607730128198" duration="7089000" />
+      <workItem from="1607779743791" duration="4388000" />
+      <workItem from="1607812785633" duration="8258000" />
     </task>
     <task id="LOCAL-00059" summary="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
       <created>1601188744215</created>
@@ -810,7 +805,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607652018520</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="Actualizacion dependencias">
+      <created>1607735260234</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1607735260236</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -854,9 +856,9 @@
     <MESSAGE value="organiazacion de archivos" />
     <MESSAGE value="Modificacion documentacion" />
     <MESSAGE value="documentacion" />
-    <MESSAGE value="Actualizacion dependencias" />
     <MESSAGE value="documenacion y actualizacion de dependencias" />
-    <option name="LAST_COMMIT_MESSAGE" value="documenacion y actualizacion de dependencias" />
+    <MESSAGE value="Actualizacion dependencias" />
+    <option name="LAST_COMMIT_MESSAGE" value="Actualizacion dependencias" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
