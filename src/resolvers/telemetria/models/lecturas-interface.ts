@@ -1,6 +1,6 @@
 export interface ILecturas
 {
-    ano: number;
+    ano?: number;
     ene: number;
     feb: number;
     mar: number;
@@ -13,5 +13,5 @@ export interface ILecturas
     oct: number;
     nov: number;
     dic: number;
-    total: number;
+    total?: number;
 }

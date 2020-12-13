@@ -3,7 +3,7 @@ import {ITelemetria} from "./telemetria-interface";
 
 export interface IInstalacion
 {
-    _id: string;
+    _id?: string;
     nombre: string;
     direccion: string;
     noInstalacion: number;

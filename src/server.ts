@@ -7,34 +7,34 @@ import schema from './schema/schema';
 import Database from "./config/database";
 import path from "path";
 import expressPlayground from 'graphql-playground-middleware-express';
-// import graphqlHTTP from "express-graphql";
 import {router} from "./configMuter/docs.routes";
 import {IContext} from "./interfaces/context-interface";
 
+// import cors from 'cors';
 async function init()
 {
     const app = express();
+    const pubsub = new PubSub();
+    const database = new Database();
+    const db = await database.init();
+
+    // app.use('*', cors());
     app.use(compression());
-    // app.use(bodyParser.json()).use(bodyParser.urlencoded({extended: true}));
-    app.use(bodyParser.urlencoded({extended: false}));
-    app.use(bodyParser.json());
+    app.use(bodyParser.json()).use(bodyParser.urlencoded({extended: true}));
     app.use(express.static(path.join(__dirname, 'public')));
 
     app.use(function (req, res, next)
     {
-        res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");
-        // res.header("Access-Control-Allow-Origin", "http://localhost:4200");
-        // res.header("Access-Control-Allow-Origin", 'http://192.168.1.79:5642');
-        res.header("Access-Control-Allow-Origin", "http://192.168.0.189:5642");
+        res.setHeader("Access-Control-Allow-Origin", "http://192.168.0.189:5642");
         res.header("Access-Control-Allow-Headers", "Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method");
+        res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS,');
+        res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS, GET");
+        res.header('Allow', 'GET, POST, OPTIONS');
         res.header("Access-Control-Allow-Credentials", "true");
         next();
     });
 
 
-    const pubsub = new PubSub();
-    const database = new Database();
-    const db = await database.init();
     const context: any = async ({req, connection}: IContext) =>
     {
         const token = (req) ? req.headers.authorization : connection.authorization;
@@ -44,13 +44,15 @@ async function init()
     const server = new ApolloServer({
         schema,
         context,
-        introspection: true,
+        introspection: true
     });
     server.applyMiddleware({app});
+
     app.use('/file', router);
-    /*    app.use('/', expressPlayground({
-            endpoint: '/graphql',
-        }));*/
+
+    // app.use('/', expressPlayground({
+    //     endpoint: '/graphql',
+    // }));
 
     // app.use('/graphql', graphqlHTTP({schema}));
     app.get('/', expressPlayground({endpoint: '/graphql'}));
