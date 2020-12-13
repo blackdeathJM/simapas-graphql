@@ -9,23 +9,24 @@ import path from "path";
 import expressPlayground from 'graphql-playground-middleware-express';
 import {router} from "./configMuter/docs.routes";
 import {IContext} from "./interfaces/context-interface";
+// import {graphqlHTTP} from "express-graphql";
 
 // import cors from 'cors';
+
 async function init()
 {
     const app = express();
     const pubsub = new PubSub();
     const database = new Database();
     const db = await database.init();
-
-    // app.use('*', cors());
+    // app.use(cors());
     app.use(compression());
     app.use(bodyParser.json()).use(bodyParser.urlencoded({extended: true}));
     app.use(express.static(path.join(__dirname, 'public')));
 
     app.use(function (req, res, next)
     {
-        res.setHeader("Access-Control-Allow-Origin", "http://192.168.0.189:5642");
+        res.setHeader("Access-Control-Allow-Origin", "https://192.168.0.189:5642");
         res.header("Access-Control-Allow-Headers", "Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method");
         res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS,');
         res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS, GET");
@@ -47,22 +48,17 @@ async function init()
         introspection: true
     });
     server.applyMiddleware({app});
+    app.get('/', expressPlayground({endpoint: '/graphql'}));
+    // app.use('/', expressPlayground({endpoint: '/graphql',}));
+    // app.use('/graphql', graphqlHTTP({schema}));
 
     app.use('/file', router);
-
-    // app.use('/', expressPlayground({
-    //     endpoint: '/graphql',
-    // }));
-
-    // app.use('/graphql', graphqlHTTP({schema}));
-    app.get('/', expressPlayground({endpoint: '/graphql'}));
-
     const httpServer = createServer(app);
-    const PORT = process.env.PORT || 5300;
+    const PORT = process.env.PORT || 5003;
     server.installSubscriptionHandlers(httpServer);
     httpServer.listen(
         {
-            port: PORT
+            port: 5002
         },
         () =>
         {
