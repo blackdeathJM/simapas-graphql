@@ -62,6 +62,7 @@ async function init()
         },
         () =>
         {
+            console.log('env', process.env.BASEDATOS);
             console.log('==============================SERVIDOR============================');
             console.log(`Sistema comercial Graphql http://localhost:${PORT}${server.graphqlPath}`);
             console.log('==============================SOCKET============================');

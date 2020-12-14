@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
+import path from 'path';
 
-const environments = dotenv.config({path: './src/.env'});
+const environments = dotenv.config({path: path.join(__dirname, '.env')});
 
 if (process.env.NODE_ENV !== 'production')
 {
