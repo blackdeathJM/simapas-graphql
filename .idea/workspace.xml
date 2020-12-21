@@ -20,16 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Actualizacion dependencias">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_12_2020_06_40_p__m__[Default_Changelist]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_12_2020_06_40_p__m___Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_12_2020_06_40_p__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_12_2020_06_40_p__m___Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_10_2020_08_21_a__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_10_2020_08_21_a__m___Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.env" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/environments.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/environments.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/.env" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +78,7 @@
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
-    <property name="ts.external.directory.path" value="D:\Documents\Proyectos\Backend\simapas-graphql\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\proyecto\simapas-graphql\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -482,6 +477,8 @@
       <workItem from="1607890922475" duration="636000" />
       <workItem from="1607893890613" duration="3744000" />
       <workItem from="1607897689256" duration="2776000" />
+      <workItem from="1607960505399" duration="1678000" />
+      <workItem from="1607964305231" duration="45000" />
     </task>
     <task id="LOCAL-00059" summary="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
       <created>1601188744215</created>
