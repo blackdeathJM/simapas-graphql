@@ -19,13 +19,22 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Actualizacion dependencias">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_10_2020_08_21_a__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_10_2020_08_21_a__m___Default_Changelist_.xml" afterDir="false" />
+    <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="Renovando documentacion">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/.env" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/configMuter/docs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/configMuter/docs.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/docExt.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/docExt.mutation.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/docExt.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/docExt.query.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/docExt.subscription.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/docExt.subscription.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/services/docExt-mutation-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/services/docExt-mutation.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/services/docExt-query-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/services/docExt-query.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/services/docExt-subscription.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/services/docExt-subscription.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/folios/services/folio.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/folios/services/folio.mutation.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/enums/enums.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/enums/enums.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/inputs/usuarios/usuario.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/inputs/usuarios/usuario.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/usuario.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/interfaces/usuario.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/usuario/usuario.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-objects/usuario/usuario.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/usuarios/usuario.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/type-roots/usuarios/usuario.mutation.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +44,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="GraphQL File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -69,7 +78,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/public/uploads" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/public/uploads/per" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -78,14 +87,14 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="D:\Documents\Proyectos\Backend\simapas-graphql\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\per" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src" />
-      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\per" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\config" />
@@ -480,13 +489,15 @@
       <workItem from="1607897689256" duration="2776000" />
       <workItem from="1607960505399" duration="1678000" />
       <workItem from="1607964305231" duration="45000" />
-    </task>
-    <task id="LOCAL-00059" summary="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
-      <created>1601188744215</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1601188744215</updated>
+      <workItem from="1608616932261" duration="4601000" />
+      <workItem from="1608664066800" duration="1201000" />
+      <workItem from="1608670418274" duration="591000" />
+      <workItem from="1608676938705" duration="5269000" />
+      <workItem from="1608691578416" duration="610000" />
+      <workItem from="1608761314712" duration="1311000" />
+      <workItem from="1608805880213" duration="1437000" />
+      <workItem from="1608867005816" duration="7616000" />
+      <workItem from="1608917971817" duration="3500000" />
     </task>
     <task id="LOCAL-00060" summary="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
       <created>1601195416937</created>
@@ -824,7 +835,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607735260236</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="Actualizacion dependencias">
+      <created>1608577863756</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1608577863757</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -870,7 +888,9 @@
     <MESSAGE value="documentacion" />
     <MESSAGE value="documenacion y actualizacion de dependencias" />
     <MESSAGE value="Actualizacion dependencias" />
-    <option name="LAST_COMMIT_MESSAGE" value="Actualizacion dependencias" />
+    <MESSAGE value="Correccion del error al obtener el avatar del usuario" />
+    <MESSAGE value="Renovando documentacion" />
+    <option name="LAST_COMMIT_MESSAGE" value="Renovando documentacion" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

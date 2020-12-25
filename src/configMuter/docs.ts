@@ -53,14 +53,28 @@ export async function agDocs(req: Request, res: Response): Promise<any>
 
 export async function obDocs(req: Request, res: Response): Promise<any>
 {
-    //req.params.archivoUrl
     try
     {
         let archivoUrl = req.query.archivoUrl;
         let carpeta = req.params.archivoUrl;
-        return res.sendFile(path.resolve(__dirname, `../public/uploads/${carpeta}/${archivoUrl}`));
+        const archivo = path.resolve(__dirname, `../public/uploads/${carpeta}/${archivoUrl}`);
+
+        if (carpeta === 'per')
+        {
+            if (fs.existsSync(archivo))
+            {
+                return res.sendFile(archivo);
+            } else
+            {
+                await fs.copyFile(path.resolve(__dirname, `../public/uploads/${carpeta}/perfil.png`), archivo);
+                return res.sendFile(archivo);
+            }
+        } else
+        {
+            return res.sendFile(archivo);
+        }
     } catch (e)
     {
-        console.log('Ocurrio un error al tratar de recuperar la imagen del usuario: ' + e);
+        console.log('error al tratar de enviar documento', e);
     }
 }

@@ -5,7 +5,7 @@ type Mutation
     "USUARIO - Eliminar usuarios"
     eliminarUsuario(_id: ID!): ResUsuario
     "USUARIO - Actualizar role"
-    actualizarRole(_id: ID! role: [ROLE!]): ResUsuario!
+    actualizarRole(_id: ID! role: [String!]): ResUsuario!
     "USUARIO - Actualizar imagen de perfil"
     actualizarImgPerfil(usuario: String!, img: String): ResUsuarioToken!
     "USUARIO - Actualizar contrasena"

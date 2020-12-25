@@ -26,7 +26,7 @@ async function init()
 
     app.use(function (req, res, next)
     {
-        res.setHeader("Access-Control-Allow-Origin", "http://localhost:5002");
+        res.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
         res.header("Access-Control-Allow-Headers", "Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method");
         res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS,');
         res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS, GET");

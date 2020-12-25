@@ -5,7 +5,7 @@ type UsuarioType implements IUsuario
     nombre: String!
     usuario: String!
     contrasena: String!
-    role: [ROLE]!
+    role: [String]
     img: String!
     departamento: DeptoType
 }

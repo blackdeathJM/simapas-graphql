@@ -4,7 +4,7 @@ input UsuarioInput
     nombre: String!
     usuario: String!
     contrasena: String!
-    role: [ROLE]!
+    role: [String]
     img: String
     departamentoID: ID!
 }

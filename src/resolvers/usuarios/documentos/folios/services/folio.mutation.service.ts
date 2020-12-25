@@ -2,7 +2,7 @@ import ResolversOperacionesService from "../../../../../services/resolver-operac
 import {COLECCION} from "../../../../../config/global";
 import {respDocumento} from "../../../../../services/respuestas-return";
 import {ObjectId} from 'bson';
-import {notTodosDocsExt} from "../../../../direccion/documentacion/docExt/services/docExt-subscription";
+import {notTodosDocsExt} from "../../../../direccion/documentacion/docExt/services/docExt-subscription.service";
 
 class FolioMutationService extends ResolversOperacionesService
 {

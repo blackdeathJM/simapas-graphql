@@ -1,12 +1,16 @@
 import {Db} from "mongodb";
 import {COLECCION, PUB_SUB} from "../../../../../config/global";
 import {PubSub} from 'apollo-server-express'
+import DocExtQueryService from "./docExt-query.service";
 
 
 export async function notTodosDocsExt(pubsub: PubSub, db: Db)
 {
-    const resultado = await db.collection(COLECCION.DOC_EXTERNA).find().toArray();
-    return await pubsub.publish(PUB_SUB.DOC_EXT, {todosDocsExtSub: resultado});
+    // const resultado = await db.collection(COLECCION.DOC_EXTERNA).find().toArray();
+    return await new DocExtQueryService({}, {paginacion: {pagina: 1, elementosPorPagina: 10}}, {db})._docExtLista().then(async res =>
+    {
+        return await pubsub.publish(PUB_SUB.DOC_EXT, {todosDocsExtSub: res.documentos});
+    });
 }
 
 export async function notActUsuarioSubProceso(pubsub: PubSub, db: Db, contexto: any)

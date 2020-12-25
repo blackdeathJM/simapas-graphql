@@ -21,7 +21,15 @@ const docExtSubscription: IResolvers =
                             const subscripcion = pubsub as PubSub;
                             return subscripcion.asyncIterator([PUB_SUB.DOC_EXT_USUSUBPROCESO]);
                         }
-                    }
+                    },
+                // docSubProceso:
+                //     {
+                //         subscribe: withFilter((_: void, __: any, {pubsub}) => pubsub.asyncIterator(PUB_SUB.DOC_EXT_USUSUBPROCESO),
+                //             (payload, variables) =>
+                //         {
+                //             return payload.docSubProceso._id === variables._id;
+                //         })
+                //     }
             }
     };
 export default docExtSubscription;

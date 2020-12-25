@@ -2,7 +2,7 @@ import ResolversOperacionesService from "../../../../../services/resolver-operac
 import {IContextData} from "../../../../../interfaces/context-data-interface";
 import {COLECCION} from "../../../../../config/global";
 import {ObjectId} from 'bson';
-import {notActUsuarioSubProceso, notTodosDocsExt} from "./docExt-subscription";
+import {notActUsuarioSubProceso, notTodosDocsExt} from "./docExt-subscription.service";
 import {respDocumento} from "../../../../../services/respuestas-return";
 import {IDocExt} from "../models/docExt.interface";
 
@@ -45,11 +45,9 @@ class DocExtMutationService extends ResolversOperacionesService
     {
         const valores = Object.values(this.variables);
         // Aumentamos na notificacion del administrador en 1
-        const notificacionesAdminitrador = await this.buscarUnElemento(COLECCION.DOC_EXTERNA,
-            {_id: new ObjectId(valores[0])}, {});
+        const notificacionesAdminitrador = await this.buscarUnElemento(COLECCION.DOC_EXTERNA, {_id: new ObjectId(valores[0])}, {});
         let totalNotificaciones = notificacionesAdminitrador.elemento.notificarAdministrador + 1;
-        return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA,
-            {_id: new ObjectId(valores[0]), usuarioDestino: {$elemMatch: {usuario: valores[1]}}},
+        return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(valores[0]), usuarioDestino: {$elemMatch: {usuario: valores[1]}}},
             {
                 $set: {
                     notificarAdministrador: totalNotificaciones, "usuarioDestino.$.docUrl": valores[2],

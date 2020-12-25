@@ -1,5 +1,5 @@
 import {IResolvers} from "graphql-tools";
-import DocExtMutationService from "./services/docExt-mutation-service";
+import DocExtMutationService from "./services/docExt-mutation.service";
 
 const mutationDocExt: IResolvers =
     {
