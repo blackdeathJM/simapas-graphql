@@ -205,39 +205,6 @@ class ResolversOperacionesService
         }
     }
 
-    protected async buscarUnoYReemplazar(coleccion: string, filtro: object, reemplazar: object, opciones: object)
-    {
-        try
-        {
-            return await this.context.db!.collection(coleccion).findOneAndReplace(filtro, reemplazar, opciones).then(
-                res =>
-                {
-                    return {
-                        estatus: true,
-                        mensaje: `El documento fue actualizado con exito`,
-                        elemento: res.value
-                    }
-                }
-            ).catch(
-                (error) =>
-                {
-                    return {
-                        estatus: false,
-                        mensaje: `Error al tratar de actualizar el documento: ${error}`,
-                        elemento: null
-                    }
-                }
-            )
-        } catch (e)
-        {
-            return {
-                estatus: false,
-                mensaje: `Ha ocurrido un error inesperado: ${e}`,
-                elemento: null
-            }
-        }
-    }
-
     protected async buscarUnoYEleminiar(coleccion: string, filtro: object, opciones: object)
     {
         try

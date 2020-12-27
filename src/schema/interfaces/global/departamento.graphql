@@ -1,5 +1,0 @@
-interface IDepartamento
-{
-    _id: ID
-    nombre: String!
-}

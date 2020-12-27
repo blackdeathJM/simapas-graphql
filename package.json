@@ -70,6 +70,7 @@
     "@types/multer": "^1.4.5",
     "@types/node": "^14.14.14",
     "@types/shortid": "^0.0.29",
+    "bson": "^4.2.2",
     "class-validator": "^0.12.2",
     "nodemon": "^2.0.6",
     "ts-node": "^9.1.1",

@@ -1,0 +1,20 @@
+type InstalacionType
+{
+    _id: ID
+    nombre: String
+    direccion: String
+    noInstalacion: Int
+    profPozo: Float
+    diamPerfo: Float
+    diamAdeme: Float
+    diamColumna: Float
+    LongColumna: Float
+    activo: Boolean
+    telemetria: TelemetriaType
+    parametrosElectricos: ParametrosElectricosType
+    bomba: [BombaType]
+    motor: [MotorType]
+    lecturas: LecturasTType
+    medidores: [MedidorType]
+    recibosCfe: [RecibosCfeType]
+}

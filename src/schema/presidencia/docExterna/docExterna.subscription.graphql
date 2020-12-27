@@ -1,0 +1,8 @@
+type Subscription
+{
+    "DOC EXTERNA: detectar cambio en la documentacion externa"
+    #enviar notificacion de cambio al agregar doc externo, cambiar estatus
+    todosDocsExtSub:[DocExtType]
+    "DOC EXTERNA: subscripcion para la consulta del usuarios y su subproceso"
+    pubsubSubproceso:[DocExtType]
+}

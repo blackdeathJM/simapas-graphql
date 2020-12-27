@@ -1,7 +1,6 @@
 import {IDepartamento} from "../resolvers/global/departamentos/model/departamento.interface";
 import {IUsuario} from "../resolvers/usuarios/models/usuario-interface";
-import {IDocExt} from "../resolvers/direccion/documentacion/docExt/models/docExt.interface";
-import {IFolio} from "../resolvers/usuarios/documentos/folios/models/folio-interface";
+import {IDocExt} from "../resolvers/presidencia/documentacion/docExt/models/docExt.interface";
 import {IPaginacion} from "./paginacion-interface";
 import {IOrganismo} from "../resolvers/organismo/models/organismo.interface";
 import {IInstalacion} from "../resolvers/telemetria/models/instalacion.interface";
@@ -15,7 +14,6 @@ export interface IVariables
     departamento?: IDepartamento;
     usuario?: IUsuario;
     docExt?: IDocExt;
-    folio?: IFolio;
     paginacion?: IPaginacion;
     organismo?: IOrganismo;
     instalacion?: IInstalacion;

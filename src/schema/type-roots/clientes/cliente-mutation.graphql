@@ -1,5 +1,0 @@
-type Mutation
-{
-    "Registrar Usuario"
-    regCliente(cliente: ClienteInput!): ResClientes
-}

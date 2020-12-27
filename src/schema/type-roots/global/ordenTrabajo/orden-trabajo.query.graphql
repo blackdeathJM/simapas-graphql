@@ -1,7 +1,0 @@
-type Query
-{
-    "Todas las ordenes de trabajo"
-    todasOrdenes: ResOrdenTrabajo
-    "Ordenes pendientes y terminadas"
-    ordenesPenTerm(estatus: ESTATUS_ORDEN_TRABAJO!, deptoID: ID!): ResOrdenTrabajo
-}

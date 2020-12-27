@@ -1,4 +1,4 @@
-type InfoPaginacion implements IInfoPaginacion
+type InfoPaginacion
 {
     pagina: Int!
     paginas: Int!
@@ -29,22 +29,13 @@ type RespDepto
     documento: DeptoType
     documentos: [DeptoType]
 }
-type ResDocEx implements IResDocEx
+type ResDocEx
 {
     info: InfoPaginacion
     estatus: Boolean!
     mensaje: String!
     documento: DocExtType
     documentos: [DocExtType]
-}
-
-type ResFolio
-{
-    info: InfoPaginacion
-    estatus: Boolean!
-    mensaje: String!
-    documento: FolioType
-    documentos: [FolioType]
 }
 
 type ResUsuario
@@ -60,28 +51,4 @@ type ResUsuarioToken
     estatus: Boolean!
     mensaje: String!
     token: String
-}
-type ResOrganismo
-{
-    info: IInfoPaginacion
-    estatus: Boolean!
-    mensaje: String!
-    documento: OrganismoType
-    documentos: [OrganismoType]
-}
-type ResOrdenTrabajo
-{
-    info: IInfoPaginacion
-    estatus: Boolean!
-    mensaje: String!
-    documento: OrdenTrabajoType
-    documentos: [OrdenTrabajoType]
-}
-type ResClientes
-{
-    info: IInfoPaginacion
-    estatus: Boolean!,
-    mensaje: String!
-    documento: ClienteType
-    documentos: [ClienteType]
 }

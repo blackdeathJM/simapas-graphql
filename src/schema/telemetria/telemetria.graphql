@@ -1,0 +1,7 @@
+type TelemetriaType
+{
+    plc: [String]
+    radio: [String]
+    repetidor: [String]
+    switch: [String]
+}

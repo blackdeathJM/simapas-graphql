@@ -1,5 +1,0 @@
-extend type Query
-{
-    "Obtener Organismo por id"
-    obtOrganismo: ResOrganismo
-}

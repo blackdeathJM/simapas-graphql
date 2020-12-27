@@ -11,11 +11,9 @@ export enum COLECCION
     DEPARTAMENTOS = 'departamentos',
     USUARIOS = 'usuarios',
     DOC_EXTERNA = 'docExterna',
-    FOLIOS = 'folios',
     ORGANISMO = 'organismo',
     TELEMETRIA = 'telemetria',
-    ORDEN_TRAB = 'ordenTrabajo',
-    CLIENTES = 'clientes'
+    ORDEN_TRAB = 'ordenTrabajo'
 }
 
 export enum PUB_SUB

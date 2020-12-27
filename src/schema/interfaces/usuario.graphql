@@ -1,9 +1,0 @@
-interface IUsuario
-{
-    _id: ID!
-    nombre: String!
-    usuario: String!
-    contrasena: String!
-    role: [String]
-    img: String!
-}

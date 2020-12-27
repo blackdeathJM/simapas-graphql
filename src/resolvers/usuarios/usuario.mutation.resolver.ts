@@ -1,5 +1,5 @@
 import {IResolvers} from "graphql-tools";
-import UsuarioMutationService from "./services/usuario-mutation-service";
+import UsuarioMutationService from "./services/usuario-mutation.service";
 
 const mutationUsuarios: IResolvers =
     {

@@ -1,5 +1,5 @@
 import {IResolvers} from "graphql-tools";
-import UsuarioQueryService from "./services/usuario-query-service";
+import UsuarioQueryService from "./services/usuario-query.service";
 
 const queryUsuarios: IResolvers =
     {

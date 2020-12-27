@@ -1,7 +1,0 @@
-interface IInfoPaginacion
-{
-    pagina: Int!
-    total: Int!
-    elementosPorPagina: Int!
-    paginas: Int!
-}

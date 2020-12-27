@@ -1,0 +1,5 @@
+type DeptoType
+{
+    _id: ID
+    nombre: String!
+}

@@ -1,0 +1,11 @@
+type UsuarioType
+{
+    _id: ID!
+    departamentoID: ID!
+    nombre: String!
+    usuario: String!
+    contrasena: String!
+    role: [String]
+    img: String!
+    departamento: DeptoType
+}

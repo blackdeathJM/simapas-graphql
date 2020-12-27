@@ -1,5 +1,0 @@
-type Mutation
-{
-    "Registro de ordenes de trabajo"
-    regOrdenTrabajo(ordenTrabajo: OrdenTrabajoInput!): ResOrdenTrabajo
-}

@@ -3,12 +3,12 @@ import compression from 'compression';
 import bodyParser from 'body-parser';
 import {ApolloServer, PubSub} from "apollo-server-express";
 import {createServer} from 'http';
-import schema from './schema/schema';
 import Database from "./config/database";
 import path from "path";
 import expressPlayground from 'graphql-playground-middleware-express';
 import {router} from "./configMuter/docs.routes";
 import {IContext} from "./interfaces/context-interface";
+import schema from "./schema";
 // import {graphqlHTTP} from "express-graphql";
 
 // import cors from 'cors';
@@ -48,10 +48,10 @@ async function init()
         introspection: true
     });
     server.applyMiddleware({app});
+
     app.get('/', expressPlayground({endpoint: '/graphql'}));
     // app.use('/', expressPlayground({endpoint: '/graphql',}));
     // app.use('/graphql', graphqlHTTP({schema}));
-
     app.use('/file', router);
     const httpServer = createServer(app);
     const PORT = process.env.PORT || 5003;

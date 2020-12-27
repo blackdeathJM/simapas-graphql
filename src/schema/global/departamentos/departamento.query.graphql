@@ -1,0 +1,7 @@
+type Query
+{
+    "DEPARTAMENTO - Obtenemos la lista de todos los departamentos"
+    obtenerDeptos(pagina: Int =1, elementosPorPagina: Int=20): RespDepto
+    "DEPARTAMENTO - Obterner departamento por ID"
+    departamentoID(_id: ID!): RespDepto
+}
