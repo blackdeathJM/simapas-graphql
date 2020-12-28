@@ -28,4 +28,3 @@ type UsuaroDestinoDocExtType
     notificarRespDelUsuario: Boolean
     notificarUsuario: Boolean
 }
-

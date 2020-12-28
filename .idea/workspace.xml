@@ -21,123 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="renovando api sistema comercial">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/global.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/global.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/almacen/models/almacen-interface.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/clientes/cliente-mutation-resolver.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/clientes/cliente-query-resolver.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/clientes/models/cliente-interface-interface.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/clientes/services/cliente-mutation-service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/clientes/services/cliente-query-service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/docExt.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/docExt.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/docExt.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/docExt.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/docExt.subscription.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/docExt.subscription.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/eggregateConsulta.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/eggregateConsulta.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/models/docExt.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/models/docExt.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/proyecciones.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/proyecciones.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/services/docExt-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/services/docExt-mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/services/docExt-query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/services/docExt-query.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/direccion/documentacion/docExt/services/docExt-subscription.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/services/docExt-subscription.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/ordenTrabajo/models/orden-trabajo-interface.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/ordenTrabajo/orden-trabajo-mutation.resolver.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/ordenTrabajo/orden-trabajo-query.resolver.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/ordenTrabajo/orden-trabajo-type-resolver.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/ordenTrabajo/service/orden-trabajo-mutation-service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/ordenTrabajo/service/orden-trabajo-query-service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/organismo/models/organismo.interface.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/organismo/organismo.query.resolver.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/organismo/organismo.rmutation.resolver.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/organismo/services/organismo.mutation.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/organismo/services/organismo.query.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/unionSubscription.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionSubscription.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/unionTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/folios/folio.mutation.resolver.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/folios/folio.query.resolver.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/folios/folio.type.resolver.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/folios/models/folio-interface.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/folios/services/folio.mutation.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/folios/services/folio.query.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-mutation-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-query-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-query.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/almacen/almacen.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/clientes/cliente.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/direccion/docExterna.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.input.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/global/departamento.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/global/departamentos/departamento.input.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/global/orden-trabajo.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/organismo.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/telemetria/equipo-electrico.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/telemetria/inputs/equipo-electrico.input.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/telemetria/instalacion.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/telemetria/inputs/instalacion.input.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/telemetria/lecturas.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/telemetria/inputs/lecturas.input.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/telemetria/medidor.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/telemetria/inputs/medidor.input.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/telemetria/parametros-electricos.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/telemetria/inputs/parametros-electricos.input.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/telemetria/recibos-cfe.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/telemetria/inputs/recibos-cfe.input.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/telemetria/telemetria.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/telemetria/inputs/telemetria.input.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/usuarios/documentacion/folio.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/inputs/usuarios/usuario.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/usuarios/usuario.input.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/admon-finanzas/contabilidad/ctrl-patrimonial/activos/activos.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/admon-finanzas/contabilidad/ctrl-patrimonial/activos/categoriaActivos.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/admon-finanzas/contabilidad/ctrl-patrimonial/activos/vehiculos.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/almacen/almacen-interface.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/clientes/clientes-interface.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/documentacion/docExt.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/documentacion/folio.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/global/departamento.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/global/orden-trabajo.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/global/organismo.interface.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/global/resguardos.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/info-paginacion.interface.ts.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/telemetria/equipo-electrico.interface.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/telemetria/instalacion.interface.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/telemetria/lecturas-interface.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/telemetria/medidor-interface.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/telemetria/parametros-electricos.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/telemetria/recibos-cfe-interface.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/telemetria/telemetria.interface.ts.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/interfaces/usuario.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/resultados/resultados.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/resultados/resultados.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/almacen/almacen.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/clientes/cliente.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/direccion/docExterna.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/documentacion/folio.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/global/departamento.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/global/departamentos/departamento.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/global/orden-trabajo.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/organismo.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/telemetria/equipo-electrico.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/telemetria/equipo-electrico.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/telemetria/instalacion.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/telemetria/instalacion.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/telemetria/lecturas.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/telemetria/lecturas.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/telemetria/medidor.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/telemetria/medidor.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/telemetria/parametros-electricos.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/telemetria/parametros-electricos.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/telemetria/recibos-cfe.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/telemetria/recibos-cfe.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/telemetria/telemetria.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/telemetria/telemetria.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-objects/usuario/usuario.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/usuarios/usuario.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/clientes/cliente-mutation.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/clientes/cliente-query.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/direccion/docExterna/docExterna.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.mutation.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/direccion/docExterna/docExterna.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.query.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/direccion/docExterna/docExterna.subscription.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.subscription.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/global/departamentos/departamento.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/global/departamentos/departamento.mutation.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/global/departamentos/departamento.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/global/departamentos/departamento.query.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/global/departamentos/departamento.subscription.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/global/departamentos/departamento.subscription.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/global/ordenTrabajo/orden-trabajo.mutation.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/global/ordenTrabajo/orden-trabajo.query.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/global/organismo/organismo.mutation.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/global/organismo/organismo.query.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/telemetria/instalaciones/instalaciones.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/telemetria/instalaciones/instalaciones.mutation.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/telemetria/instalaciones/instalaciones.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/telemetria/instalaciones/instalaciones.query.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/usuarios/documentacion/folios/folios.mutation.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/usuarios/documentacion/folios/folios.query.graphql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/usuarios/usuario.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/usuarios/usuario.mutation.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/usuarios/usuario.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/usuarios/usuario.query.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/type-roots/usuarios/usuario.subscription.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/usuarios/usuario.subscription.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -610,7 +494,8 @@
       <workItem from="1609003433322" duration="1495000" />
       <workItem from="1609086372153" duration="2122000" />
       <workItem from="1609092004499" duration="653000" />
-      <workItem from="1609100872328" duration="953000" />
+      <workItem from="1609100872328" duration="1913000" />
+      <workItem from="1609116793719" duration="2600000" />
     </task>
     <task id="LOCAL-00061" summary="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
       <created>1601264561411</created>
