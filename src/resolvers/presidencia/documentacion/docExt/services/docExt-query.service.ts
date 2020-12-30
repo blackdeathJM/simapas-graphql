@@ -2,17 +2,21 @@ import ResolversOperacionesService from "../../../../../services/resolver-operac
 import {IContextData} from "../../../../../interfaces/context-data-interface";
 import {COLECCION} from "../../../../../config/global";
 import {filtroDocsExt} from "../proyecciones";
-import {respArreglosPag} from "../../../../../services/respuestas-return";
+import {respArreglosPag, respArreglosSPag} from "../../../../../services/respuestas-return";
 
 class DocExtQueryService extends ResolversOperacionesService
 {
     constructor(root: object, variables: object, context: IContextData)
     {super(root, variables, context);}
 
-    async _docExtLista()
+    async _docExtLista(proceso: string)
     {
-        const resultado = await this.buscar(COLECCION.DOC_EXTERNA, {}, {}, {});
-        return respArreglosPag(resultado);
+        // Filtrar todos los documentos filtrados por Proceso
+        return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA,
+            {proceso}, {}, {noSeguimiento: -1}).then(resultado =>
+        {
+            return respArreglosSPag(resultado);
+        });
     }
 
     async _todosLosDocsPorUsuario()

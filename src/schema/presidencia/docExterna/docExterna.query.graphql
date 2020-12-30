@@ -1,7 +1,7 @@
 type Query
 {
-    "DOC EXTERNA: Consultar todos los registros para el administrador"
-    todosDocsExt(pagina: Int =1, elementosPorPagina: Int=20): ResDocEx
+    "DOC EXTERNA: Consultar todos los documentos pro proceso"
+    todosDocsExt(proceso: String!): ResDocExSinPag
     "DOC EXTERNA: Obtiene todos los documentos por usuarios"
     todosLosDocsPorUsuario(usuario: String!, pagina: Int =1, elementosPorPagina: Int=20): ResDocEx
     "DOC EXTERNA: Obtener documentos por usuarios y subproceso para mostrar en el area de usuarios"

@@ -47,6 +47,7 @@ class InstalacionQueryService extends ResolversOperacionesService
 
     async _todosRecibosCfe(medidor: String)
     {
+        console.log('medidor verificar si se esta usuando', medidor);
         return await this.buscarSinPaginacion(COLECCION.TELEMETRIA,
             {_id: new ObjectId(this.variables._id)}, {}, {}).then(
             resultado =>

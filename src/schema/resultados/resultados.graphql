@@ -29,9 +29,17 @@ type RespDepto
     documento: DeptoType
     documentos: [DeptoType]
 }
+
 type ResDocEx
 {
     info: InfoPaginacion
+    estatus: Boolean!
+    mensaje: String!
+    documento: DocExtType
+    documentos: [DocExtType]
+}
+type ResDocExSinPag
+{
     estatus: Boolean!
     mensaje: String!
     documento: DocExtType
