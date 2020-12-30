@@ -21,7 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8b071af1-079c-4e49-b028-ca3c4704b0dd" name="Default Changelist" comment="renovando api sistema comercial">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -495,14 +494,11 @@
       <workItem from="1609086372153" duration="2122000" />
       <workItem from="1609092004499" duration="653000" />
       <workItem from="1609100872328" duration="1913000" />
-      <workItem from="1609116793719" duration="2600000" />
-    </task>
-    <task id="LOCAL-00061" summary="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
-      <created>1601264561411</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1601264561411</updated>
+      <workItem from="1609116793719" duration="2634000" />
+      <workItem from="1609182618630" duration="594000" />
+      <workItem from="1609197050290" duration="2820000" />
+      <workItem from="1609276104387" duration="666000" />
+      <workItem from="1609283768859" duration="1834000" />
     </task>
     <task id="LOCAL-00062" summary="Se quito schema de docInterna, y se implemetaron las consultas entre fechas y por coicidencia">
       <created>1601465554321</created>
@@ -840,7 +836,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608932950039</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="renovando api sistema comercial">
+      <created>1609128435229</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1609128435230</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
