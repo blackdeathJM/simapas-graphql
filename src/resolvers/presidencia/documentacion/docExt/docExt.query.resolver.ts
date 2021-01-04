@@ -5,18 +5,9 @@ const queryDocExt: IResolvers =
     {
         Query:
             {
-                // Obtenermos todos los documentos externos
-                // async todosDocsExt(_, {pagina, elementosPorPagina}, {db})
-                // {
-                //     return new DocExtQueryService(_, {paginacion: {pagina, elementosPorPagina}}, {db})._docExtLista().then((res) =>
-                //     {
-                //         return res;
-                //     });
-                // },
-                // Consultar toda la documentacion filtrando solo los documentos que tengan un Proceso de PENDIENTE
                 async todosDocsExt(_, {proceso}, {db})
                 {
-                    return new DocExtQueryService(_, {}, {db})._docExtLista(proceso);
+                    return new DocExtQueryService(_, {}, {db})._todosDocsExt(proceso);
                 },
                 // consultar documentos por usuarios sera usado por el admistrador
                 async todosLosDocsPorUsuario(_, {usuario, pagina, elementosPorPagina}, {db})

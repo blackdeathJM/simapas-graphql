@@ -2,7 +2,6 @@ import {IDepartamento} from "../resolvers/global/departamentos/model/departament
 import {IUsuario} from "../resolvers/usuarios/models/usuario-interface";
 import {IDocExt} from "../resolvers/presidencia/documentacion/docExt/models/docExt.interface";
 import {IPaginacion} from "./paginacion-interface";
-import {IOrganismo} from "../resolvers/organismo/models/organismo.interface";
 import {IInstalacion} from "../resolvers/telemetria/models/instalacion.interface";
 import {IParametrosElectricos} from "../resolvers/telemetria/models/parametros-electricos.interface";
 import {ITelemetria} from "../resolvers/telemetria/models/telemetria-interface";
@@ -15,7 +14,6 @@ export interface IVariables
     usuario?: IUsuario;
     docExt?: IDocExt;
     paginacion?: IPaginacion;
-    organismo?: IOrganismo;
     instalacion?: IInstalacion;
     telemetria?: ITelemetria;
     parametrosElectricos?: IParametrosElectricos;

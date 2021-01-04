@@ -12,32 +12,17 @@ class DocExtMutationService extends ResolversOperacionesService
     constructor(root: object, variables: object, context: IContextData)
     {super(root, variables, context);}
 
-    async agregarDocExt()
+    async _regDocExt(documento: IDocExt)
     {
         const totalDocs = await this.contarDocumentos(COLECCION.DOC_EXTERNA, {});
-        this.variables.docExt!.noSeguimiento = totalDocs.total + 1;
-        return await this.agregarUnElemento(COLECCION.DOC_EXTERNA, this.variables.docExt!, {}).then(
+        documento.noSeguimiento = totalDocs.total + 1;
+        return await this.agregarUnElemento(COLECCION.DOC_EXTERNA, documento, {}).then(
             async resultado =>
             {
                 await notActUsuarioSubProceso(this.context.pubsub!, this.context.db!, this.context.contexto!);
                 return respDocumento(resultado);
             }
         )
-    }
-
-    async actualizarDocExtUrl()
-    {
-        const valores = Object.values(this.variables);
-        return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA,
-            {_id: new ObjectId(valores[0])},
-            {$set: {docUrl: valores[1], proceso: valores[2], "usuarioDestino.$[].notificarUsuario": true}}, {}).then(
-            async resultado =>
-            {
-                await notTodosDocsExt(this.context.pubsub!, this.context.db!);
-                await notActUsuarioSubProceso(this.context.pubsub!, this.context.db!, this.context.contexto!);
-                return respDocumento(resultado);
-            }
-        );
     }
 
     async actualizarDocUrlUsuarioDestino()
@@ -49,8 +34,8 @@ class DocExtMutationService extends ResolversOperacionesService
         return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(valores[0]), usuarioDestino: {$elemMatch: {usuario: valores[1]}}},
             {
                 $set: {
-                    notificarAdministrador: totalNotificaciones, "usuarioDestino.$.docUrl": valores[2],
-                    "usuarioDestino.$.subproceso": valores[3], "usuarioDestino.$.notificarRespDelUsuario": true
+                    notificarAdministrador: totalNotificaciones, "usuarioDestino.$.docUrl": valores[2], "usuarioDestino.$.subproceso": valores[3],
+                    "usuarioDestino.$.notificarRespDelUsuario": true
                 }
             },
             {returnOriginal: false}).then(
@@ -167,7 +152,7 @@ class DocExtMutationService extends ResolversOperacionesService
                 {returnOriginal: false}).then(
                 async resultado =>
                 {
-                    await notTodosDocsExt(this.context.pubsub!, this.context.db!);
+                    // await notTodosDocsExt(this.context.pubsub!, this.context.db!);
                     return respDocumento(resultado);
                 })
         })

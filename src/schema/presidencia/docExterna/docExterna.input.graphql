@@ -15,6 +15,7 @@ input DocExtInput
     fechaTerminado: String
     proceso: PROCESOS_DOC!
     notificarAdministrador: Int
+    usuarioFolio: String
     usuarioDestino: [UsuarioDestinoDocExtInput!]!
 }
 input UsuarioDestinoDocExtInput

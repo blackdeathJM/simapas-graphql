@@ -9,11 +9,11 @@ class DocExtQueryService extends ResolversOperacionesService
     constructor(root: object, variables: object, context: IContextData)
     {super(root, variables, context);}
 
-    async _docExtLista(proceso: string)
+    async _todosDocsExt(proceso: string)
     {
         // Filtrar todos los documentos filtrados por Proceso
         return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA,
-            {proceso}, {}, {noSeguimiento: -1}).then(resultado =>
+            {proceso: {$ne: proceso}}, {}, {noSeguimiento: -1}).then(resultado =>
         {
             return respArreglosSPag(resultado);
         });

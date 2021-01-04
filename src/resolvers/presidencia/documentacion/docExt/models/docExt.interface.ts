@@ -15,7 +15,8 @@ export interface IDocExt
     fechaTerminado: string;
     proceso: string
     notificarAdministrador: number;
-    usuarioDestino: IUsuarioDestinoDocExt[]
+    usuarioFolio: string;
+    usuarioDestino: IUsuarioDestinoDocExt[];
 }
 
 
@@ -27,6 +28,6 @@ interface IUsuarioDestinoDocExt
     fechaEnvio: string;
     autorizado: boolean;
     subproceso: string;
-    notificarRespDelUsuario: boolean
-    notificarUsuario: boolean
+    notificarRespDelUsuario: boolean;
+    notificarUsuario: boolean;
 }

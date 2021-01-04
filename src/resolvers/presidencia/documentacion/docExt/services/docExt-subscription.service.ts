@@ -7,7 +7,7 @@ import DocExtQueryService from "./docExt-query.service";
 export async function notTodosDocsExt(pubsub: PubSub, db: Db)
 {
     // const resultado = await db.collection(COLECCION.DOC_EXTERNA).find().toArray();
-    return await new DocExtQueryService({}, {}, {db})._docExtLista('PENDIENTE').then(async res =>
+    return await new DocExtQueryService({}, {}, {db})._todosDocsExt('ENTREGADO').then(async res =>
     {
         return await pubsub.publish(PUB_SUB.DOC_EXT, {todosDocsExtSub: res.documentos});
     });

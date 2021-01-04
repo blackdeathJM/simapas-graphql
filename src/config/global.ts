@@ -10,8 +10,7 @@ export enum COLECCION
 {
     DEPARTAMENTOS = 'departamentos',
     USUARIOS = 'usuarios',
-    DOC_EXTERNA = 'docExterna',
-    ORGANISMO = 'organismo',
+    DOC_EXTERNA = 'documentos',
     TELEMETRIA = 'telemetria',
     ORDEN_TRAB = 'ordenTrabajo'
 }
