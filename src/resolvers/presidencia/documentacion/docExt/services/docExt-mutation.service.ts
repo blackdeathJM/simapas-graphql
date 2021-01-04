@@ -2,7 +2,6 @@ import ResolversOperacionesService from "../../../../../services/resolver-operac
 import {IContextData} from "../../../../../interfaces/context-data-interface";
 import {COLECCION} from "../../../../../config/global";
 import {ObjectId} from 'bson';
-import {notActUsuarioSubProceso, notTodosDocsExt} from "./docExt-subscription.service";
 import {respDocumento} from "../../../../../services/respuestas-return";
 import {IDocExt} from "../models/docExt.interface";
 
@@ -19,7 +18,6 @@ class DocExtMutationService extends ResolversOperacionesService
         return await this.agregarUnElemento(COLECCION.DOC_EXTERNA, documento, {}).then(
             async resultado =>
             {
-                await notActUsuarioSubProceso(this.context.pubsub!, this.context.db!, this.context.contexto!);
                 return respDocumento(resultado);
             }
         )
@@ -41,7 +39,6 @@ class DocExtMutationService extends ResolversOperacionesService
             {returnOriginal: false}).then(
             async resultado =>
             {
-                await notTodosDocsExt(this.context.pubsub!, this.context.db!);
                 return respDocumento(resultado)
             }
         )
@@ -83,8 +80,6 @@ class DocExtMutationService extends ResolversOperacionesService
             {returnOriginal: false}).then(
             async resultado =>
             {
-                // await notTodosDocsExt(this.context.pubsub!, this.context.db!);
-                await notActUsuarioSubProceso(this.context.pubsub!, this.context.db!, this.context.contexto!);
                 return respDocumento(resultado);
             }
         )
@@ -98,7 +93,6 @@ class DocExtMutationService extends ResolversOperacionesService
             {$set: {"usuarioDestino.$.subproceso": valores[2], "usuarioDestino.$.autorizado": valores[3]}}, {returnOriginal: false}).then(
             async resultado =>
             {
-                await notActUsuarioSubProceso(this.context.pubsub!, this.context.db!, this.context.contexto!);
                 return respDocumento(resultado)
             }
         )
@@ -107,10 +101,9 @@ class DocExtMutationService extends ResolversOperacionesService
     async darPorEntregado()
     {
         return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(this.variables._id)},
-            {$set: {proceso: "ENTREGADO", "usuarioDestino.$[].subproceso": "ENTREGADO"}}, {}).then(
+            {$set: {proceso: "ENTREGADO", "usuarioDestino.$[].subproceso": "ENTREGADO"}}, {returnOriginal: false}).then(
             async resultado =>
             {
-                await notActUsuarioSubProceso(this.context.pubsub!, this.context.db!, this.context.contexto);
                 return respDocumento(resultado)
             }
         )
@@ -129,7 +122,6 @@ class DocExtMutationService extends ResolversOperacionesService
             {}).then(
             async resultado =>
             {
-                await notTodosDocsExt(this.context.pubsub!, this.context.db!);
                 return respDocumento(resultado);
             }
         )
@@ -152,7 +144,6 @@ class DocExtMutationService extends ResolversOperacionesService
                 {returnOriginal: false}).then(
                 async resultado =>
                 {
-                    // await notTodosDocsExt(this.context.pubsub!, this.context.db!);
                     return respDocumento(resultado);
                 })
         })
