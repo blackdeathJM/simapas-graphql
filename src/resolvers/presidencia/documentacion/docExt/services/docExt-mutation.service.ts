@@ -4,6 +4,7 @@ import {COLECCION} from "../../../../../config/global";
 import {ObjectId} from 'bson';
 import {respDocumento} from "../../../../../services/respuestas-return";
 import {IDocExt} from "../models/docExt.interface";
+import {notUsuarioSubProceso} from "./docExt-subscription.service";
 
 
 class DocExtMutationService extends ResolversOperacionesService
@@ -11,13 +12,19 @@ class DocExtMutationService extends ResolversOperacionesService
     constructor(root: object, variables: object, context: IContextData)
     {super(root, variables, context);}
 
-    async _regDocExt(documento: IDocExt)
+    async _regDocExt(documento: IDocExt, procesos: string[])
     {
         const totalDocs = await this.contarDocumentos(COLECCION.DOC_EXTERNA, {});
         documento.noSeguimiento = totalDocs.total + 1;
         return await this.agregarUnElemento(COLECCION.DOC_EXTERNA, documento, {}).then(
             async resultado =>
             {
+                documento.usuarioDestino.filter(async value =>
+                {
+
+                    await notUsuarioSubProceso(this.context.pubsub!, this.context.db!, value.usuario, procesos);
+                });
+
                 return respDocumento(resultado);
             }
         )

@@ -2,6 +2,7 @@ import {Db} from "mongodb";
 import {COLECCION, PUB_SUB} from "../../../../../config/global";
 import {PubSub} from 'apollo-server-express'
 import DocExtQueryService from "./docExt-query.service";
+import {IUsuarioDestinoDocExt} from "../models/docExt.interface";
 
 
 export async function notTodosDocsExt(pubsub: PubSub, db: Db)
@@ -25,7 +26,7 @@ export async function notUsuarioSubProceso(pubsub: PubSub, db: Db, usuario: stri
     return await new DocExtQueryService({}, {}, {db})._doscUsuarioSubproceso(usuario, subProcesos).then(
         async res =>
         {
-            return await pubsub.publish(PUB_SUB.DOC_EXT_USUSUBPROCESO, {docSubProceso: res});
+            return await pubsub.publish(PUB_SUB.DOC_EXT_USUSUBPROCESO, {docSubProceso: res.documentos});
         }
     )
 }

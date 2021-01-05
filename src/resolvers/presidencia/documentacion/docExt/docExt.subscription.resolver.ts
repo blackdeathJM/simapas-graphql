@@ -27,8 +27,7 @@ const docExtSubscription: IResolvers =
                         subscribe: withFilter((_: void, __: any, {pubsub}) => pubsub.asyncIterator(PUB_SUB.DOC_EXT_USUSUBPROCESO),
                             (payload, variables) =>
                             {
-                                console.log('payload', payload);
-                                console.log('variables', variables);
+                                console.log('payload', payload.docSubProceso._id);
                                 return payload.docSubProceso.usuario === variables.usuario;
                             })
                     }

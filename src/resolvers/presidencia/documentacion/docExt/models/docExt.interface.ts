@@ -1,3 +1,5 @@
+import exp from "constants";
+
 export interface IDocExt
 {
     _id: string;
@@ -20,7 +22,7 @@ export interface IDocExt
 }
 
 
-interface IUsuarioDestinoDocExt
+export interface IUsuarioDestinoDocExt
 {
     usuario: string;
     observaciones: string;

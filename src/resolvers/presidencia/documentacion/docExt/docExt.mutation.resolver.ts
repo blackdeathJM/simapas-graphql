@@ -6,9 +6,9 @@ const mutationDocExt: IResolvers =
         Mutation:
             {
                 // PASO 1: Registrar el documento externo
-                async regDocExt(_, {docExt}, {pubsub, db, contexto})
+                async regDocExt(_, {docExt, procesos}, {pubsub, db})
                 {
-                    return new DocExtMutationService(_, {}, {pubsub, db, contexto})._regDocExt(docExt);
+                    return new DocExtMutationService(_, {}, {pubsub, db})._regDocExt(docExt, procesos);
                 },
                 // Actualizar el docUrl del usuarios donde subira la respuesta que guardaremos de manera temporal
                 async acDocUrlEnUsuarioDestino(_, {_id, usuario, docUrl, subproceso}, {pubsub, db})
