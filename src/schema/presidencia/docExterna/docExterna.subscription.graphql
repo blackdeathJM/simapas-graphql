@@ -5,4 +5,6 @@ extend type Subscription
     todosDocsExtSub:[DocExtType]
     "DOC EXTERNA: subscripcion para la consulta del usuarios y su subproceso"
     pubsubSubproceso:[DocExtType]
+    "DOC EXTERNA: subscripcion para filtrar los documentos para el usuario por subproceso utilizando withfilter"
+    docSubProceso(usuario: String!): [DocExtType]
 }

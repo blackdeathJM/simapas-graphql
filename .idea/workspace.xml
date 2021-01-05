@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5223b5f-ba6e-4787-9396-b5a5b8d48bac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_12_2020_02_16_a__m__[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_10_2020_08_21_a__m__[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_12_2020_11_15_a__m__[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/simapas-graphql.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/simapas-graphql.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webResources.xml" beforeDir="false" />
+    <list default="true" id="b5223b5f-ba6e-4787-9396-b5a5b8d48bac" name="Default Changelist" comment="Modificando documentacion">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/services/docExt-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/services/docExt-mutation.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/docExt.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/docExt.query.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/docExt.subscription.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/docExt.subscription.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/services/docExt-query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/services/docExt-query.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/services/docExt-subscription.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/services/docExt-subscription.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.query.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.subscription.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.subscription.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,8 +50,17 @@
       <workItem from="1609745566714" duration="50000" />
       <workItem from="1609745623745" duration="272000" />
       <workItem from="1609745922645" duration="1707000" />
-      <workItem from="1609755303001" duration="4284000" />
+      <workItem from="1609755303001" duration="5229000" />
+      <workItem from="1609798314113" duration="11394000" />
     </task>
+    <task id="LOCAL-00001" summary="Modificando documentacion">
+      <created>1609764126565</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1609764126565</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -70,5 +77,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Modificando documentacion" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modificando documentacion" />
   </component>
 </project>

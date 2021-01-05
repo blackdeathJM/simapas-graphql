@@ -19,26 +19,57 @@ class DocExtQueryService extends ResolversOperacionesService
         });
     }
 
-    async _todosLosDocsPorUsuario()
+    async _docExtProceso(proceso: string)
     {
-        return await this.buscar(COLECCION.DOC_EXTERNA, {"usuarioDestino": {$elemMatch: {usuario: this.variables.usuario}}},
-            {}, {}).then(
+        return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {proceso}, {noSeguimiento: -1}, {}).then(
             async resultado =>
             {
-                return respArreglosPag(resultado);
+                return respArreglosSPag(resultado)
             }
         )
     }
 
-    async _doscUsuarioSubproceso()
+    async _busquedaGral(consulta: string)
     {
-        const valores = Object.values(this.variables);
-        return await this.buscar(COLECCION.DOC_EXTERNA,
-            {usuarioDestino: {$elemMatch: {usuario: valores[0], subproceso: {$in: valores[1]}}}},
-            {projection: filtroDocsExt}, {}).then(
+        return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA,
+            {
+                $or: [{noSeguimiento: parseInt(consulta)}, {identificadorDoc: {$regex: consulta, $options: "i"}},
+                    {dependencia: {$regex: consulta, $options: "i"}}, {asunto: {$regex: consulta, $options: "i"}},
+                    {fechaRecepcion: {$regex: consulta}}, {fechaLimiteEntrega: {$regex: consulta, $options: "i"}},
+                    {fechaTerminado: {$regex: consulta, $options: "i"}}]
+            },
+            {noSeguimiento: -1}, {}).then(
+            resultado =>
+            {
+                return respArreglosSPag(resultado);
+            })
+        // return await this.buscar(COLECCION.DOC_EXTERNA, {$text: {$search: valores[0], $caseSensitive: false, $diacriticSensitive : false}},
+        // {}, {}).then(
+        //     resultado =>
+        //     {
+        //         return respArreglosPag(resultado);
+        //     }
+        // )
+    }
+
+    async _todosLosDocsPorUsuario(usuario: string)
+    {
+        return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {"usuarioDestino": {$elemMatch: {usuario}}}, {noSeguimiento: -1}, {}).then(
             async resultado =>
             {
-                return respArreglosPag(resultado);
+                return respArreglosSPag(resultado);
+            }
+        )
+    }
+
+    async _doscUsuarioSubproceso(usuario: string, subprocesos: string[])
+    {
+        return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA,
+            {usuarioDestino: {$elemMatch: {usuario: usuario, subproceso: {$in: subprocesos}}}}, {projection: filtroDocsExt},
+            {noSeguimiento: -1}).then(
+            async resultado =>
+            {
+                return respArreglosSPag(resultado);
             }
         )
     }
@@ -55,52 +86,15 @@ class DocExtQueryService extends ResolversOperacionesService
         )
     }
 
-    async _docExtProceso()
+    async _busquedaEntreFechas(fechaRecepcionInicial: string, fechaRecepcionFinal: string)
     {
-        const valores = Object.values(this.variables);
-        return await this.buscar(COLECCION.DOC_EXTERNA, {proceso: valores[0]}, {}, {}).then(
+        return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA,
+            {$and: [{fechaRecepcion: {$gte: fechaRecepcionInicial}}, {fechaRecepcion: {$lte: fechaRecepcionFinal}}]}, {noSeguimiento: -1}, {}).then(
             async resultado =>
             {
-                return respArreglosPag(resultado)
+                return respArreglosSPag(resultado);
             }
         )
-    }
-
-    async _busquedaEntreFechas()
-    {
-        const valores = Object.values(this.variables);
-        return await this.buscar(COLECCION.DOC_EXTERNA,
-            {$and: [{fechaRecepcion: {$gte: valores[0]}}, {fechaRecepcion: {$lte: valores[1]}}]}, {}, {}).then(
-            async resultado =>
-            {
-                return respArreglosPag(resultado);
-            }
-        )
-    }
-
-    async _consultaGral()
-    {
-        const valores = Object.values(this.variables);
-        return await this.buscar(COLECCION.DOC_EXTERNA,
-            {
-                $or: [{noSeguimiento: parseInt(valores[0])}, {identificadorDoc: {$regex: valores[0], $options: "i"}},
-                    {dependencia: {$regex: valores[0], $options: "i"}}, {asunto: {$regex: valores[0], $options: "i"}},
-                    {fechaRecepcion: {$regex: valores[0]}}, {fechaLimiteEntrega: {$regex: valores[0], $options: "i"}},
-                    {fechaTerminado: {$regex: valores[0], $options: "i"}}]
-            },
-            {}, {}).then(
-            resultado =>
-            {
-                return respArreglosPag(resultado);
-            }
-        )
-        // return await this.buscar(COLECCION.DOC_EXTERNA, {$text: {$search: valores[0], $caseSensitive: false, $diacriticSensitive : false}},
-        // {}, {}).then(
-        //     resultado =>
-        //     {
-        //         return respArreglosPag(resultado);
-        //     }
-        // )
     }
 }
 

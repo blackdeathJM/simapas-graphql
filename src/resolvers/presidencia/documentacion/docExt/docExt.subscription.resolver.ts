@@ -1,6 +1,6 @@
 import {IResolvers} from "graphql-tools";
 import {PUB_SUB} from "../../../../config/global";
-import {PubSub} from "apollo-server-express";
+import {PubSub, withFilter} from "apollo-server-express";
 
 const docExtSubscription: IResolvers =
     {
@@ -22,14 +22,16 @@ const docExtSubscription: IResolvers =
                             return subscripcion.asyncIterator([PUB_SUB.DOC_EXT_USUSUBPROCESO]);
                         }
                     },
-                // docSubProceso:
-                //     {
-                //         subscribe: withFilter((_: void, __: any, {pubsub}) => pubsub.asyncIterator(PUB_SUB.DOC_EXT_USUSUBPROCESO),
-                //             (payload, variables) =>
-                //         {
-                //             return payload.docSubProceso._id === variables._id;
-                //         })
-                //     }
+                docSubProceso:
+                    {
+                        subscribe: withFilter((_: void, __: any, {pubsub}) => pubsub.asyncIterator(PUB_SUB.DOC_EXT_USUSUBPROCESO),
+                            (payload, variables) =>
+                            {
+                                console.log('payload', payload);
+                                console.log('variables', variables);
+                                return payload.docSubProceso.usuario === variables.usuario;
+                            })
+                    }
             }
     };
 export default docExtSubscription;

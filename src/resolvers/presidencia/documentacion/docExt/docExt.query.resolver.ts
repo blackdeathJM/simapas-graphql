@@ -10,31 +10,30 @@ const queryDocExt: IResolvers =
                     return new DocExtQueryService(_, {}, {db})._todosDocsExt(proceso);
                 },
                 // consultar documentos por usuarios sera usado por el admistrador
-                async todosLosDocsPorUsuario(_, {usuario, pagina, elementosPorPagina}, {db})
+                async todosLosDocsPorUsuario(_, {usuario}, {db})
                 {
-                    return new DocExtQueryService(_, {paginacion: {pagina, elementosPorPagina}, usuario: usuario}, {db})._todosLosDocsPorUsuario();
+                    return new DocExtQueryService(_, {}, {db})._todosLosDocsPorUsuario(usuario);
                 },
                 // Consultar documento que sera enviado al usuarios el subproceso es un array
-                async usuarioSubproceso(_, {usuario, subprocesos, pagina, elementosPorPagina}, {db})
+                async usuarioSubproceso(_, {usuario, subprocesos}, {db})
                 {
-                    return new DocExtQueryService(_, {usuario, subprocesos, paginacion: {pagina, elementosPorPagina}}, {db})._doscUsuarioSubproceso();
+                    return new DocExtQueryService(_, {}, {db})._doscUsuarioSubproceso(usuario, subprocesos);
                 },
                 async docsAprobadosPorUsuario(_, {usuario, subproceso, pagina, elementosPorPagina}, {db})
                 {
                     return new DocExtQueryService(_, {usuario, subproceso, paginacion: {pagina, elementosPorPagina}}, {db})._docsAprobadosUsuario();
                 },
-                async docExtProceso(_, {proceso, pagina, elementosPorPagina}, {db})
+                async docExtProceso(_, {proceso}, {db})
                 {
-                    return new DocExtQueryService(_, {proceso, paginacion: {pagina, elementosPorPagina}}, {db})._docExtProceso();
+                    return new DocExtQueryService(_, {}, {db})._docExtProceso(proceso);
                 },
-                docsEntreFechas(_, {fechaRecepcionInicial, fechaRecepcionFinal, pagina, elementosPorPagina}, {db})
+                docsEntreFechas(_, {fechaRecepcionInicial, fechaRecepcionFinal}, {db})
                 {
-                    return new DocExtQueryService(_, {fechaRecepcionInicial, fechaRecepcionFinal, paginacion: {pagina, elementosPorPagina}},
-                        {db})._busquedaEntreFechas();
+                    return new DocExtQueryService(_, {}, {db})._busquedaEntreFechas(fechaRecepcionInicial, fechaRecepcionFinal);
                 },
-                busquedaGral(_, {consulta, pagina, elementosPorPagina}, {db})
+                busquedaGral(_, {consulta}, {db})
                 {
-                    return new DocExtQueryService(_, {consulta, paginacion: {pagina, elementosPorPagina}}, {db})._consultaGral();
+                    return new DocExtQueryService(_, {}, {db})._busquedaGral(consulta);
                 }
             }
     };
