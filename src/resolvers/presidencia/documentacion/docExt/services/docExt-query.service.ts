@@ -62,30 +62,6 @@ class DocExtQueryService extends ResolversOperacionesService
         )
     }
 
-    async _doscUsuarioSubproceso(usuario: string, subprocesos: string[])
-    {
-        return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA,
-            {usuarioDestino: {$elemMatch: {usuario: usuario, subproceso: {$in: subprocesos}}}}, {projection: filtroDocsExt},
-            {noSeguimiento: -1}).then(
-            async resultado =>
-            {
-                return respArreglosSPag(resultado);
-            }
-        )
-    }
-
-    async _docsAprobadosUsuario()
-    {
-        const valores = Object.values(this.variables);
-        return await this.buscar(COLECCION.DOC_EXTERNA,
-            {usuarioDestino: {$elemMatch: {usuario: valores[0], subproceso: valores[1]}}}, {}, {}).then(
-            async resultado =>
-            {
-                return respArreglosPag(resultado);
-            }
-        )
-    }
-
     async _busquedaEntreFechas(fechaRecepcionInicial: string, fechaRecepcionFinal: string)
     {
         return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA,

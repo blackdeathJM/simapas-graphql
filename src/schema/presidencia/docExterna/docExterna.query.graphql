@@ -10,8 +10,4 @@ type Query
     docsEntreFechas(fechaRecepcionInicial: String!, fechaRecepcionFinal: String!): ResDocExSinPag
     "DOC EXTERNA: Obtiene todos los documentos por usuarios"
     todosLosDocsPorUsuario(usuario: String!): ResDocExSinPag
-    "DOC EXTERNA: Obtener documentos por usuarios y subproceso para mostrar en el area de usuarios"
-    usuarioSubproceso(usuario: String!, subprocesos: [String!]!): ResDocExSinPag,
-    "DOC EXTERNA: Obtener todos los documentos que ya han sido autorizados por usuarios destino para asignarles folio"
-    docsAprobadosPorUsuario(usuario: String!, subproceso: String!, pagina: Int =1, elementosPorPagina: Int=20): ResDocEx
 }
