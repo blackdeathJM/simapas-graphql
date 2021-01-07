@@ -1,0 +1,12 @@
+type NotificacionType
+{
+    _id: ID
+    no: Int,
+    descripcion: String
+    emisor: String
+    receptor: String
+    img: String
+    fechaEnvio: String
+    visto: Boolean
+    prioridad: String
+}

@@ -3,8 +3,6 @@ extend type Subscription
     "DOC EXTERNA: detectar cambio en la documentacion externa"
     #enviar notificacion de cambio al agregar doc externo, cambiar estatus
     todosDocsExtSub:[DocExtType]
-    "DOC EXTERNA: subscripcion para la consulta del usuarios y su subproceso"
-    pubsubSubproceso:[DocExtType]
     "DOC EXTERNA: subscripcion para filtrar los documentos para el usuario por subproceso utilizando withfilter"
     docSubProceso(usuario: String!): [DocExtType]
 }

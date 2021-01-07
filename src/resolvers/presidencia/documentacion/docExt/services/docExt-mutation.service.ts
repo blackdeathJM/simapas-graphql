@@ -19,12 +19,7 @@ class DocExtMutationService extends ResolversOperacionesService
         return await this.agregarUnElemento(COLECCION.DOC_EXTERNA, documento, {}).then(
             async resultado =>
             {
-                documento.usuarioDestino.filter(async value =>
-                {
-
-                    await notUsuarioSubProceso(this.context.pubsub!, this.context.db!, value.usuario, procesos);
-                });
-
+                await notUsuarioSubProceso(this.context.pubsub!, this.context.db!, documento.usuarioDestino, procesos);
                 return respDocumento(resultado);
             }
         )
@@ -143,9 +138,8 @@ class DocExtMutationService extends ResolversOperacionesService
                     comentario: documento.comentario, fechaRecepcion: documento.fechaRecepcion, fechaLimiteEntrega: documento.fechaLimiteEntrega
                 }
             },
-            {returnOriginal: false}).then(async (respusta) =>
+            {returnOriginal: false}).then(async () =>
         {
-            console.log('respuesat', respusta.elemento);
             return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(documento._id)},
                 {$addToSet: {usuarioDestino: {$each: documento.usuarioDestino}}},
                 {returnOriginal: false}).then(

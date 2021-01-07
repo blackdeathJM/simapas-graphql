@@ -19,8 +19,7 @@ class DocQueryService extends ResolversOperacionesService
             async resultado =>
             {
                 return respArreglosSPag(resultado);
-            }
-        )
+            })
     }
 
     async _docsAprobadosUsuario(usuario: string, subproceso: string)

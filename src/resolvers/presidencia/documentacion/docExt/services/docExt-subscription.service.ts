@@ -1,8 +1,9 @@
 import {Db} from "mongodb";
-import {COLECCION, PUB_SUB} from "../../../../../config/global";
+import {PUB_SUB} from "../../../../../config/global";
 import {PubSub} from 'apollo-server-express'
 import DocExtQueryService from "./docExt-query.service";
 import {IUsuarioDestinoDocExt} from "../models/docExt.interface";
+import DocQueryService from "../../../../usuarios/services/doc.query.service";
 
 
 export async function notTodosDocsExt(pubsub: PubSub, db: Db)
@@ -14,19 +15,15 @@ export async function notTodosDocsExt(pubsub: PubSub, db: Db)
     });
 }
 
-export async function notActUsuarioSubProceso(pubsub: PubSub, db: Db, contexto: any)
+export async function notUsuarioSubProceso(pubsub: PubSub, db: Db, usuario: IUsuarioDestinoDocExt[], subProcesos: string[])
 {
-    const resultado = await db.collection(COLECCION.DOC_EXTERNA).find(
-        {usuarioDestino: {$elemMatch: {subproceso: {$in: JSON.parse(contexto)}}}}).toArray();
-    return await pubsub.publish(PUB_SUB.DOC_EXT_USUSUBPROCESO, {pubsubSubproceso: resultado});
-}
-
-export async function notUsuarioSubProceso(pubsub: PubSub, db: Db, usuario: string, subProcesos: string[])
-{
-    return await new DocExtQueryService({}, {}, {db})._doscUsuarioSubproceso(usuario, subProcesos).then(
-        async res =>
-        {
-            return await pubsub.publish(PUB_SUB.DOC_EXT_USUSUBPROCESO, {docSubProceso: res.documentos});
-        }
-    )
+    usuario.filter(async u =>
+    {
+        return await new DocQueryService({}, {}, {db})._doscUsuarioSubproceso(u.usuario, subProcesos).then(
+            async res =>
+            {
+                return await pubsub.publish(PUB_SUB.DOC_EXT_USUSUBPROCESO, {docSubProceso: res.documentos});
+            }
+        )
+    });
 }

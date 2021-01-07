@@ -1,0 +1,11 @@
+input NotificacionInput
+{
+    _id: ID
+    no: Int,
+    descripcion: String
+    emisor: String
+    img: String
+    fechaEnvio: String
+    visto: Boolean
+    prioridad: String
+}
