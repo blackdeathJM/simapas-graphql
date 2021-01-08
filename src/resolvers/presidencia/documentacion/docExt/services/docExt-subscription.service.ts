@@ -3,7 +3,7 @@ import {PUB_SUB} from "../../../../../config/global";
 import {PubSub} from 'apollo-server-express'
 import DocExtQueryService from "./docExt-query.service";
 import DocQueryService from "../../../../usuarios/services/doc.query.service";
-
+import {IUsuarioDestinoDocExt} from "../models/docExt.interface";
 
 export async function notTodosDocsExt(pubsub: PubSub, db: Db)
 {
@@ -14,12 +14,14 @@ export async function notTodosDocsExt(pubsub: PubSub, db: Db)
     });
 }
 
-export async function notUsuarioSubProceso(pubsub: PubSub, db: Db, usuario: string, subProcesos: string[])
+export async function notUsuarioSubProceso(pubsub: PubSub, db: Db, usuario: IUsuarioDestinoDocExt[], subProcesos: string[])
 {
-    return await new DocQueryService({}, {}, {db})._doscUsuarioSubproceso(usuario, subProcesos).then(
-        async res =>
-        {
-            console.log('usu', usuario);
-            return await pubsub.publish(PUB_SUB.DOC_EXT_USUSUBPROCESO, {docSubProceso: res.documentos});
-        })
+    return usuario.filter(async u =>
+    {
+        return await new DocQueryService({}, {}, {db})._doscUsuarioSubproceso(u.usuario, subProcesos).then(
+            async res =>
+            {
+                return await pubsub.publish(PUB_SUB.DOC_EXT_USUSUBPROCESO, {docSubProceso: res.documentos});
+            })
+    });
 }

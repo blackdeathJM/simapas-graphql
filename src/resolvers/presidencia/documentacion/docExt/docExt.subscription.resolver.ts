@@ -1,8 +1,9 @@
 import {IResolvers} from "graphql-tools";
 import {PUB_SUB} from "../../../../config/global";
 import {PubSub, withFilter} from "apollo-server-express";
-import {IUsuarioDestinoDocExt} from "./models/docExt.interface";
+import {IDocExt} from "./models/docExt.interface";
 
+let filtro: boolean = false;
 const docExtSubscription: IResolvers =
     {
         Subscription:
@@ -20,8 +21,14 @@ const docExtSubscription: IResolvers =
                         subscribe: withFilter((_: void, __: void, {pubsub}) => pubsub.asyncIterator(PUB_SUB.DOC_EXT_USUSUBPROCESO),
                             (payload, variables) =>
                             {
-                                console.log('payload', payload, variables);
-                                return true
+                                payload.docSubProceso.forEach((d: IDocExt) =>
+                                {
+                                    d.usuarioDestino.forEach(value =>
+                                    {
+                                        filtro = value.usuario === variables.usuario;
+                                    })
+                                });
+                                return filtro;
                             })
                     }
             }

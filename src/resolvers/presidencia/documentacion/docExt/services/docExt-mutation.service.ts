@@ -19,8 +19,7 @@ class DocExtMutationService extends ResolversOperacionesService
         return await this.agregarUnElemento(COLECCION.DOC_EXTERNA, documento, {}).then(
             async resultado =>
             {
-                console.log('mutation', usuarioSub);
-                await notUsuarioSubProceso(this.context.pubsub!, this.context.db!, usuarioSub, procesos);
+                await notUsuarioSubProceso(this.context.pubsub!, this.context.db!, documento.usuarioDestino, procesos);
                 return respDocumento(resultado);
             }
         )

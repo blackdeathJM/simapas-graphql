@@ -14,7 +14,7 @@ class DocQueryService extends ResolversOperacionesService
     async _doscUsuarioSubproceso(usuario: string, subprocesos: string[])
     {
         return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA,
-            {usuarioDestino: {$elemMatch: {usuario: usuario, subproceso: {$in: subprocesos}}}}, {projection: filtroDocsExt},
+            {usuarioDestino: {$elemMatch: {usuario, subproceso: {$in: subprocesos}}}}, {projection: filtroDocsExt},
             {noSeguimiento: -1}).then(
             async resultado =>
             {
