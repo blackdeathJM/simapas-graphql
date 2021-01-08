@@ -1,8 +1,8 @@
 type Mutation
 {
     "DOC EXTERNA: Registro de los documentos externos"
-    regDocExt(docExt: DocExtInput!, procesos: [String!]!, usuarioSub: String!):ResDocEx
-    "DOC EXTERNA: actualizamos la respuesta del usuarios y cambiamos el valor del documento respuesta que esta"
+    regDocExt(docExt: DocExtInput!):ResDocEx
+    "DOC EXTERNA: Actualizamos el documento en el usuario destino en lo que se aprueba por el administrador"
     acDocUrlEnUsuarioDestino(_id: String!, usuario: String!, docUrl: String!, subproceso: String!): ResDocEx
     "DOC EXTERNA: Apagar la notificacion del usuarios cuando envia la respuesta y restamos uno de notificar administrador"
     acNotificacionPorUsuario(id: ID!, usuario: String!, notificarRespDelUsuario: Boolean!, notificarAdministrador: Int!): Boolean
