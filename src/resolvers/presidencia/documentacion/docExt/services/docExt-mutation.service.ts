@@ -12,14 +12,15 @@ class DocExtMutationService extends ResolversOperacionesService
     constructor(root: object, variables: object, context: IContextData)
     {super(root, variables, context);}
 
-    async _regDocExt(documento: IDocExt, procesos: string[])
+    async _regDocExt(documento: IDocExt, procesos: string[], usuarioSub: string)
     {
         const totalDocs = await this.contarDocumentos(COLECCION.DOC_EXTERNA, {});
         documento.noSeguimiento = totalDocs.total + 1;
         return await this.agregarUnElemento(COLECCION.DOC_EXTERNA, documento, {}).then(
             async resultado =>
             {
-                await notUsuarioSubProceso(this.context.pubsub!, this.context.db!, documento.usuarioDestino, procesos);
+                console.log('mutation', usuarioSub);
+                await notUsuarioSubProceso(this.context.pubsub!, this.context.db!, usuarioSub, procesos);
                 return respDocumento(resultado);
             }
         )

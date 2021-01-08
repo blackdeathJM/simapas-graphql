@@ -7,5 +7,4 @@ const unionSubscriptionResolver = GMR.merge(
         docExtSubscription,
         usuarioSubscriptionResolver
     ]);
-
 export default unionSubscriptionResolver;
