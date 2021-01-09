@@ -25,27 +25,6 @@ class DocExtMutationService extends ResolversOperacionesService
         )
     }
 
-    async actualizarDocUrlUsuarioDestino()
-    {
-        const valores = Object.values(this.variables);
-        // Aumentamos na notificacion del administrador en 1
-        const notificacionesAdminitrador = await this.buscarUnElemento(COLECCION.DOC_EXTERNA, {_id: new ObjectId(valores[0])}, {});
-        let totalNotificaciones = notificacionesAdminitrador.elemento.notificarAdministrador + 1;
-        return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(valores[0]), usuarioDestino: {$elemMatch: {usuario: valores[1]}}},
-            {
-                $set: {
-                    notificarAdministrador: totalNotificaciones, "usuarioDestino.$.docUrl": valores[2], "usuarioDestino.$.subproceso": valores[3],
-                    "usuarioDestino.$.notificarRespDelUsuario": true
-                }
-            },
-            {returnOriginal: false}).then(
-            async resultado =>
-            {
-                return respDocumento(resultado)
-            }
-        )
-    }
-
     async acNoticiacionPorUsuario()
     {
         const valores = Object.values(this.variables);

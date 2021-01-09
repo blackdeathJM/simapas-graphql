@@ -10,11 +10,6 @@ const mutationDocExt: IResolvers =
                 {
                     return new DocExtMutationService(_, {}, {pubsub, db})._regDocExt(docExt);
                 },
-                // Actualizar el docUrl del usuarios donde subira la respuesta que guardaremos de manera temporal
-                async acDocUrlEnUsuarioDestino(_, {_id, usuario, docUrl, subproceso}, {pubsub, db})
-                {
-                    return new DocExtMutationService(_, {_id, usuario, docUrl, subproceso}, {pubsub, db}).actualizarDocUrlUsuarioDestino();
-                },
                 async acNotificacionPorUsuario(_, {id, usuario, notificarRespDelUsuario, notificarAdministrador}, {db})
                 {
                     return new DocExtMutationService(_, {id, usuario, notificarRespDelUsuario, notificarAdministrador}, {db}).acNoticiacionPorUsuario();

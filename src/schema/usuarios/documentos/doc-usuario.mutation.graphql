@@ -1,0 +1,5 @@
+type Mutation
+{
+    "DOC EXTERNA: Actualizamos el documento en el usuario destino en lo que se aprueba por el administrador"
+    acDocUrlEnUsuarioDestino(_id: String!, usuario: String!, docUrl: String!, subproceso: String!): ResDocExSinPag
+}

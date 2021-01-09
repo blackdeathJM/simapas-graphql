@@ -4,7 +4,7 @@ import {COLECCION} from "../../../config/global";
 import {filtroDocsExt} from "../../presidencia/documentacion/docExt/proyecciones";
 import {respArreglosSPag} from "../../../services/respuestas-return";
 
-class DocQueryService extends ResolversOperacionesService
+class DocUsuarioQueryService extends ResolversOperacionesService
 {
     constructor(root: object, variables: object, context: IContextData)
     {
@@ -34,4 +34,4 @@ class DocQueryService extends ResolversOperacionesService
     }
 }
 
-export default DocQueryService;
+export default DocUsuarioQueryService;

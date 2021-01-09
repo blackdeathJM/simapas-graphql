@@ -1,5 +1,5 @@
 import {IResolvers} from "graphql-tools";
-import DocQueryService from "../services/doc.query.service";
+import DocUsuarioQueryService from "../services/doc-usuario-query.service";
 
 const queryDocUsuario: IResolvers =
     {
@@ -8,11 +8,11 @@ const queryDocUsuario: IResolvers =
                 // Consultar documento que sera enviado al usuarios el subproceso es un array
                 async usuarioSubproceso(_, {usuario, subprocesos}, {db})
                 {
-                    return new DocQueryService(_, {}, {db})._doscUsuarioSubproceso(usuario, subprocesos);
+                    return new DocUsuarioQueryService(_, {}, {db})._doscUsuarioSubproceso(usuario, subprocesos);
                 },
                 async docsAprobadosPorUsuario(_, {usuario, subproceso}, {db})
                 {
-                    return new DocQueryService(_, {}, {db})._docsAprobadosUsuario(usuario, subproceso);
+                    return new DocUsuarioQueryService(_, {}, {db})._docsAprobadosUsuario(usuario, subproceso);
                 },
             }
     }
