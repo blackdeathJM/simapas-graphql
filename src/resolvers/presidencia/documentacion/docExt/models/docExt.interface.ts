@@ -1,5 +1,3 @@
-import exp from "constants";
-
 export interface IDocExt
 {
     _id: string;
@@ -16,7 +14,7 @@ export interface IDocExt
     fechaLimiteEntrega: string;
     fechaTerminado: string;
     proceso: string
-    notificarAdministrador: number;
+    notificarAdministrador: boolean;
     usuarioFolio: string;
     usuarioDestino: IUsuarioDestinoDocExt[];
 }

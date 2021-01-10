@@ -11,12 +11,6 @@ class ValidacionesService
     {
         return (objecto === null || objecto === undefined);
     }
-
-    // async checarEnBaseDatosQueNoExiste(valor: object, coleccion: string)
-    // {
-    //     const database: Db;
-    //     return await database.collection(coleccion).findOne(valor);
-    // }
 }
 
 export default ValidacionesService

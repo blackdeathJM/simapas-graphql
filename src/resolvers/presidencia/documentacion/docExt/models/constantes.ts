@@ -1,1 +1,1 @@
-export const subprocesos = ['PENDIENTE', 'RECHAZADO', 'APROBADO', 'TERMINADO', 'ACUSE'];
+export const subprocesos = ['PENDIENTE', 'RECHAZADO', 'APROBADO', 'TERMINADO', 'ACUSE', 'ENVIADO'];

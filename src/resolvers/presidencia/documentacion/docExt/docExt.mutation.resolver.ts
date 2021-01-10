@@ -10,21 +10,14 @@ const mutationDocExt: IResolvers =
                 {
                     return new DocExtMutationService(_, {}, {pubsub, db})._regDocExt(docExt);
                 },
-                async acNotificacionPorUsuario(_, {id, usuario, notificarRespDelUsuario, notificarAdministrador}, {db})
+                async desactivarNot(_, {_id, usuario}, {db})
                 {
-                    return new DocExtMutationService(_, {id, usuario, notificarRespDelUsuario, notificarAdministrador}, {db}).acNoticiacionPorUsuario();
+                    return new DocExtMutationService(_, {}, {db})._desactivarNot(_id, usuario);
                 },
                 // Rechazar el documento y mandar observaciones cambiamos el subproceso a RECHAZADO y notificamos al usuarios y mandamos notificacion
-                async acObservacionesRechazarDocExt(_, {id, usuario, subproceso, notificarRespDelUsuario, observaciones}, {pubsub, contexto, db})
+                async aprobarRechazarDoc(_, {_id, usuario, subproceso, observaciones}, {pubsub, db})
                 {
-                    return new DocExtMutationService(_, {id, usuario, subproceso, notificarRespDelUsuario, observaciones},
-                        {pubsub, contexto, db}).observacionesRechazarDocExt();
-                },
-                // Aprobar el documento
-                async acAprobarDocumentoExt(_, {id, usuario, subproceso, autorizado}, {pubsub, contexto, db})
-                {
-                    return new DocExtMutationService(_, {id, usuario, subproceso, autorizado},
-                        {pubsub, contexto, db}).aprobarDocumento();
+                    return new DocExtMutationService(_, {}, {pubsub, db})._aprobarRechazarDoc(_id, usuario, subproceso, observaciones);
                 },
                 async acDarPorEntregado(_, {_id}, {pubsub, contexto, db})
                 {
