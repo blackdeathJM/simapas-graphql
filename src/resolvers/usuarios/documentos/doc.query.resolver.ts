@@ -1,5 +1,5 @@
 import {IResolvers} from "graphql-tools";
-import DocUsuarioQueryService from "../services/doc-usuario-query.service";
+import DocUsuarioQueryService from "./services/doc-usuario-query.service";
 
 const queryDocUsuario: IResolvers =
     {
@@ -10,10 +10,10 @@ const queryDocUsuario: IResolvers =
                 {
                     return new DocUsuarioQueryService(_, {}, {db})._doscUsuarioSubproceso(usuario, subprocesos);
                 },
-                async docsAprobadosPorUsuario(_, {usuario, subproceso}, {db})
+                async docsPendFolIntExt(_, {usuarioFolio}, {db})
                 {
-                    return new DocUsuarioQueryService(_, {}, {db})._docsAprobadosUsuario(usuario, subproceso);
-                },
+                    return new DocUsuarioQueryService(_, {}, {db})._docsPendFolIntExt(usuarioFolio);
+                }
             }
     }
 export default queryDocUsuario;

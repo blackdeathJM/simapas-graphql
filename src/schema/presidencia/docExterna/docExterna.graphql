@@ -4,6 +4,8 @@ type DocExtType
     noSeguimiento: Int
     identificadorDoc: String
     folio: String
+    tipoDoc: String
+    esInterno: Boolean
     dependencia: String
     comentario: String
     asunto: String

@@ -12,7 +12,7 @@ class DocExtQueryService extends ResolversOperacionesService
     {
         // Filtrar todos los documentos filtrados por Proceso
         return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA,
-            {proceso: {$ne: proceso}}, {}, {noSeguimiento: -1}).then(resultado =>
+            {proceso: {$ne: proceso}, esInterno: false}, {}, {noSeguimiento: -1}).then(resultado =>
         {
             return respArreglosSPag(resultado);
         });

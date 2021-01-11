@@ -1,8 +1,8 @@
-import ResolversOperacionesService from "../../../services/resolver-operaciones";
-import {IContextData} from "../../../interfaces/context-data-interface";
-import {COLECCION} from "../../../config/global";
-import {filtroDocsExt} from "../../presidencia/documentacion/docExt/proyecciones";
-import {respArreglosSPag} from "../../../services/respuestas-return";
+import ResolversOperacionesService from "../../../../services/resolver-operaciones";
+import {IContextData} from "../../../../interfaces/context-data-interface";
+import {COLECCION} from "../../../../config/global";
+import {filtroDocsExt} from "../../../presidencia/documentacion/docExt/proyecciones";
+import {respArreglosSPag} from "../../../../services/respuestas-return";
 
 class DocUsuarioQueryService extends ResolversOperacionesService
 {
@@ -22,11 +22,10 @@ class DocUsuarioQueryService extends ResolversOperacionesService
             })
     }
 
-    async _docsAprobadosUsuario(usuario: string, subproceso: string)
+    async _docsPendFolIntExt(usuarioFolio: string)
     {
-        return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA,
-            {usuarioDestino: {$elemMatch: {usuario, subproceso}}}, {}, {}).then(
-            async resultado =>
+        return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {usuarioFolio, docRespUrl: {$eq: null}}, {}, {}).then(
+            resultado =>
             {
                 return respArreglosSPag(resultado);
             }

@@ -1,5 +1,5 @@
 import {IResolvers} from "graphql-tools";
-import DocUsuarioMutationService from "../services/doc-usuario-mutation.service";
+import DocUsuarioMutationService from "./services/doc-usuario-mutation.service";
 
 const mutationDocUsuario: IResolvers =
     {
@@ -10,6 +10,14 @@ const mutationDocUsuario: IResolvers =
                 {
                     return new DocUsuarioMutationService(_, {}, {pubsub, db})._acDocUrlEnUsuarioDestino(_id, usuario, docUrl, subproceso);
                 },
+                async regFolio(_, {documento}, {pubsub, db})
+                {
+                    return new DocUsuarioMutationService(_, {}, {pubsub, db})._regFolio(documento);
+                },
+                async genFolioRespDoc(_, {_id, usuario, centroGestor}, {pubsub, db})
+                {
+                    return new DocUsuarioMutationService(_, {}, {pubsub, db})._genFolioRespDoc(_id, usuario, centroGestor);
+                }
             }
     }
 export default mutationDocUsuario;

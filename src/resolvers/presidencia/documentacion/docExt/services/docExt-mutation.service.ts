@@ -6,7 +6,6 @@ import {respDocumento} from "../../../../../services/respuestas-return";
 import {IDocExt} from "../models/docExt.interface";
 import {notUsuarioSubProceso} from "./docExt-subscription.service";
 
-
 class DocExtMutationService extends ResolversOperacionesService
 {
     constructor(root: object, variables: object, context: IContextData)
@@ -14,7 +13,7 @@ class DocExtMutationService extends ResolversOperacionesService
 
     async _regDocExt(documento: IDocExt)
     {
-        const totalDocs = await this.contarDocumentos(COLECCION.DOC_EXTERNA, {});
+        const totalDocs = await this.contarDocumentos(COLECCION.DOC_EXTERNA, {}, {});
         documento.noSeguimiento = totalDocs.total + 1;
         return await this.agregarUnElemento(COLECCION.DOC_EXTERNA, documento, {}).then(
             async resultado =>

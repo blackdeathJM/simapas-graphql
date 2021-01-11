@@ -4,6 +4,8 @@ export interface IDocExt
     noSeguimiento: number;
     identificadorDoc: string;
     folio: string;
+    tipoDoc: string;
+    esInterno: boolean;
     dependencia: string;
     comentario: string;
     asunto: string;

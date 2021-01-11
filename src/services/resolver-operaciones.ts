@@ -248,11 +248,11 @@ class ResolversOperacionesService
         }
     }
 
-    protected async contarDocumentos(coleccion: string, opciones: object)
+    protected async contarDocumentos(coleccion: string, consulta: object, opciones: object)
     {
         try
         {
-            return await this.context.db!.collection(coleccion, opciones).countDocuments().then(
+            return await this.context.db!.collection(coleccion).countDocuments(consulta, opciones).then(
                 async respuesta =>
                 {
                     return {
