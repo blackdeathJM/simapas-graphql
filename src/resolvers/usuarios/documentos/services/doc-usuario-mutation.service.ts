@@ -6,6 +6,7 @@ import {IContextData} from "../../../../interfaces/context-data-interface";
 import {notTodosDocsExt} from "../../../presidencia/documentacion/docExt/services/docExt-subscription.service";
 import {IDocExt} from "../../../presidencia/documentacion/docExt/models/docExt.interface";
 
+
 class DocUsuarioMutationService extends ResolversOperacionesService
 {
     constructor(root: object, variables: object, context: IContextData)
@@ -68,6 +69,19 @@ class DocUsuarioMutationService extends ResolversOperacionesService
                 return `SIMAPAS/${centroGestor.toUpperCase()}/${res.total + 1}/${mes}-${ano}`;
             }
         );
+    }
+
+    async _docResUrlAcuse(_id: string, documento: string, proceso: string, usuario: string)
+    {
+        return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(_id), usuarioDestino: {$elemMatch: {usuario}}},
+            {$set: {docRespUrl: documento, proceso, "usuarioDestino.$.subproceso": proceso}},
+            {returnOriginal: false}).then(
+            async resultado =>
+            {
+                await notTodosDocsExt(this.context.pubsub!, this.context.db!)
+                return respDocumento(resultado);
+            }
+        )
     }
 }
 

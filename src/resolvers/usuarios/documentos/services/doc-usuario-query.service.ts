@@ -24,7 +24,8 @@ class DocUsuarioQueryService extends ResolversOperacionesService
 
     async _docsPendFolIntExt(usuarioFolio: string)
     {
-        return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {usuarioFolio, docRespUrl: {$eq: null}}, {}, {}).then(
+        // {usuarioFolio, $or: [{docRespUrl: null}, {acuseUrl: null}]}
+        return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {usuarioFolio}, {}, {noSeguimiento: -1}).then(
             resultado =>
             {
                 return respArreglosSPag(resultado);
