@@ -53,7 +53,9 @@ class DocExtQueryService extends ResolversOperacionesService
 
     async _todosLosDocsPorUsuario(usuario: string)
     {
-        return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {"usuarioDestino": {$elemMatch: {usuario}}}, {noSeguimiento: -1}, {}).then(
+        // {"usuarioDestino": {$elemMatch: {usuario}}}
+        return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {$or: [{usuarioFolio: usuario}, {usuarioDestino: {$elemMatch: {usuario}}}]},
+            {noSeguimiento: -1}, {}).then(
             async resultado =>
             {
                 return respArreglosSPag(resultado);

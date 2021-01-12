@@ -5,6 +5,7 @@ import {respDocumento} from "../../../../services/respuestas-return";
 import {IContextData} from "../../../../interfaces/context-data-interface";
 import {notTodosDocsExt} from "../../../presidencia/documentacion/docExt/services/docExt-subscription.service";
 import {IDocExt} from "../../../presidencia/documentacion/docExt/models/docExt.interface";
+import moment from "moment";
 
 
 class DocUsuarioMutationService extends ResolversOperacionesService
@@ -71,17 +72,42 @@ class DocUsuarioMutationService extends ResolversOperacionesService
         );
     }
 
-    async _docResUrlAcuse(_id: string, documento: string, proceso: string, usuario: string)
+    async _docRespUrlAcuseUrl(_id: string, documento: string, proceso: string, usuario: string, esInterno: boolean, esDocRespUrl: boolean)
     {
-        return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(_id), usuarioDestino: {$elemMatch: {usuario}}},
-            {$set: {docRespUrl: documento, proceso, "usuarioDestino.$.subproceso": proceso}},
-            {returnOriginal: false}).then(
+        let filtro: {};
+        let actualizar: {};
+        const fechaTerminado = moment().toISOString();
+        if (esDocRespUrl)
+        {
+            if (esInterno)
+            {
+                filtro = {_id: new ObjectId(_id)};
+                actualizar = {$set: {docRespUrl: documento, proceso, fechaTerminado}};
+            } else
+            {
+                filtro = {_id: new ObjectId(_id), usuarioDestino: {$elemMatch: {usuario}}};
+                actualizar = {$set: {docRespUrl: documento, proceso, fechaTerminado, "usuarioDestino.$.subproceso": proceso}};
+            }
+        }
+        else
+        {
+            if (esInterno)
+            {
+                filtro = {_id: new ObjectId(_id)};
+                actualizar = {$set: {acuseUrl: documento, proceso, fechaTerminado}};
+            } else
+            {
+                filtro = {_id: new ObjectId(_id), usuarioDestino: {$elemMatch: {usuario}}};
+                actualizar = {$set: {acuseUrl: documento, proceso, fechaTerminado, "usuarioDestino.$.subproceso": proceso}};
+            }
+        }
+
+        return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, filtro, actualizar, {returnOriginal: false}).then(
             async resultado =>
             {
                 await notTodosDocsExt(this.context.pubsub!, this.context.db!)
                 return respDocumento(resultado);
-            }
-        )
+            })
     }
 }
 

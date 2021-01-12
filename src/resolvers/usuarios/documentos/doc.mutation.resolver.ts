@@ -18,9 +18,10 @@ const mutationDocUsuario: IResolvers =
                 {
                     return new DocUsuarioMutationService(_, {}, {pubsub, db})._genFolioRespDoc(_id, usuario, centroGestor);
                 },
-                docResUrlAcuse(_, {_id, documento, proceso, usuario}, {pubsub, db})
+                docRespUrlAcuseUrl(_, {_id, documento, proceso, usuario, esInterno, esDocRespUrl}, {pubsub, db})
                 {
-                    return new DocUsuarioMutationService(_, {}, {pubsub, db})._docResUrlAcuse(_id, documento, proceso, usuario);
+                    return new DocUsuarioMutationService(_, {}, {pubsub, db})._docRespUrlAcuseUrl(_id, documento, proceso, usuario, esInterno,
+                        esDocRespUrl);
                 }
             }
     }

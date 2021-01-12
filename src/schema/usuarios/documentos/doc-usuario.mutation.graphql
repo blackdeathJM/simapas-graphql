@@ -9,5 +9,5 @@ type Mutation
     "Generar folio para respuesta de documento"
     genFolioRespDoc(_id: ID!, usuario: String!, centroGestor: String!): ResDocExSinPag
     "Actualizar el campo donde se va a guardar el documento de respuesta que es el mismo que el documento foliado ya sea interno o externo"
-    docResUrlAcuse(_id: ID!, documento: String!, proceso: String!, usuario: String!): ResDocExSinPag
+    docRespUrlAcuseUrl(_id: ID!, documento: String!, proceso: String!, usuario: String!, esInterno: Boolean!, esDocRespUrl: Boolean!): ResDocExSinPag
 }
