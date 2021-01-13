@@ -59,12 +59,18 @@ class DocExtMutationService extends ResolversOperacionesService
         )
     }
 
-    async darPorEntregado()
+    async _darPorEntregado(documento: IDocExt)
     {
-        return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(this.variables._id)},
+        return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(documento._id)},
             {$set: {proceso: "ENTREGADO", "usuarioDestino.$[].subproceso": "ENTREGADO"}}, {returnOriginal: false}).then(
             async resultado =>
             {
+                const usuarios: string[] = [];
+                documento.usuarioDestino.forEach(u =>
+                {
+                    usuarios.push(u.usuario);
+                });
+                await notUsuarioSubProceso(this.context.pubsub!, this.context.db!, usuarios);
                 return respDocumento(resultado)
             }
         )

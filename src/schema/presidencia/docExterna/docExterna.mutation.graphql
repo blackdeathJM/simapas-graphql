@@ -9,7 +9,7 @@ type Mutation
     "DOC EXTERNA: Actualizar el campo donde se guardara el documento respuesta con folio y actualizar el proceso y subproceso a ACUSE"
     acAcuse(_id: ID!, acuseUrl: String, proceso: PROCESOS_DOC!): ResDocEx
     "DOC: EXTERNA: Dar por terminado el documento anticipado"
-    acDarPorEntregado(_id: ID!): ResDocEx
+    acDarPorEntregado(documento: DocExtInput!): ResDocEx
     "Editar informacion del documento"
     acInfoDoc(documento: DocExtInput): ResDocEx
 }

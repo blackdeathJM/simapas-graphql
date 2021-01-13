@@ -19,9 +19,9 @@ const mutationDocExt: IResolvers =
                 {
                     return new DocExtMutationService(_, {}, {pubsub, db})._aprobarRechazarDoc(_id, usuario, subproceso, observaciones);
                 },
-                async acDarPorEntregado(_, {_id}, {pubsub, contexto, db})
+                async acDarPorEntregado(_, {documento}, {pubsub, db})
                 {
-                    return new DocExtMutationService(_, {_id}, {pubsub, contexto, db}).darPorEntregado();
+                    return new DocExtMutationService(_, {}, {pubsub, db})._darPorEntregado(documento);
                 },
                 async acAcuse(_, {_id, acuseUrl, proceso}, {db, pubsub})
                 {
