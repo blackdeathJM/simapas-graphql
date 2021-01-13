@@ -56,11 +56,7 @@ async function init()
     const httpServer = createServer(app);
     const PORT = process.env.PORT || 5003;
     server.installSubscriptionHandlers(httpServer);
-    httpServer.listen(
-        {
-            port: 5002
-        },
-        () =>
+    httpServer.listen({port: 5002}, () =>
         {
             console.log('env', process.env.BASEDATOS);
             console.log('==============================SERVIDOR============================');

@@ -1,4 +1,4 @@
-type Mutation
+extend type Mutation
 {
     "DOC EXTERNA: Registro de los documentos externos"
     regDocExt(docExt: DocExtInput!):ResDocEx
@@ -6,8 +6,6 @@ type Mutation
     desactivarNot(_id: ID!, usuario: String!): ResDocExSinPag
     "DOC EXTERNA: Mandar observaciones y rechazar el documento"
     aprobarRechazarDoc(_id: ID!, usuario: String!, subproceso: String!, observaciones: String!): ResDocEx
-    "DOC EXTERNA: Actualizar el campo donde se guardara el documento respuesta con folio y actualizar el proceso y subproceso a ACUSE"
-    acAcuse(_id: ID!, acuseUrl: String, proceso: PROCESOS_DOC!): ResDocEx
     "DOC: EXTERNA: Dar por terminado el documento anticipado"
     acDarPorEntregado(documento: DocExtInput!): ResDocEx
     "Editar informacion del documento"

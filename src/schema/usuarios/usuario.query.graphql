@@ -1,4 +1,4 @@
-type Query
+extend type Query
 {
     "USUARIO - Obtener la lista de todos los usuarios"
     obtenerUsuarios(pagina: Int =1, elementosPorPagina: Int=20): ResUsuario
