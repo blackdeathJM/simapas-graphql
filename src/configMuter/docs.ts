@@ -30,7 +30,6 @@ export async function agDocs(req: Request, res: Response): Promise<any>
 
                 if (obPrefijo === 'deu' || obPrefijo === 'per')
                 {
-
                     if (fs.existsSync(nvoRuta))
                     {
                         fs.removeSync(nvoRuta)
