@@ -28,12 +28,9 @@ export async function agDocs(req: Request, res: Response): Promise<any>
                 // chear el directorio para saber que los archivos que se esta guardando bienen del los
                 // documentos externos que el usuarios sube de manera temporal para su aprobacion del admin
 
-                if (obPrefijo === 'deu' || obPrefijo === 'per')
+                if (fs.existsSync(nvoRuta))
                 {
-                    if (fs.existsSync(nvoRuta))
-                    {
-                        fs.removeSync(nvoRuta)
-                    }
+                    fs.removeSync(nvoRuta)
                 }
 
                 fs.moveSync(req.file.path, nvoRuta);
