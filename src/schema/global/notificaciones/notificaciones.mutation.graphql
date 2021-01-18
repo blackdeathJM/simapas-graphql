@@ -1,7 +1,7 @@
 type Mutation
 {
     "Registrar notificacion"
-    regNotificion(notificacion: NotificacionInput!): ResNotificacion
+    regNotificacion(notificacion: NotificacionInput!): ResNotificacion
     "Eliminar notificacion"
     eliminarNotificacion(_id: ID!): ResNotificacion
 }

@@ -18,6 +18,7 @@ type DocExtType
     proceso: PROCESOS_DOC
     notificarAdministrador: Boolean
     usuarioFolio: String
+    enviadoPor: String
     usuarioDestino: [UsuaroDestinoDocExtType]
 }
 type UsuaroDestinoDocExtType

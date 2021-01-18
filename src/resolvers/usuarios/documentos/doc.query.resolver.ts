@@ -13,6 +13,10 @@ const queryDocUsuario: IResolvers =
                 async docsPendFolIntExt(_, {usuarioFolio}, {db})
                 {
                     return new DocUsuarioQueryService(_, {}, {db})._docsPendFolIntExt(usuarioFolio);
+                },
+                async busquedaGralUsuario(_, {usuario, consulta}, {db})
+                {
+                    return new DocUsuarioQueryService(_, {}, {db})._busquedaGralUsuario(usuario, consulta);
                 }
             }
     }

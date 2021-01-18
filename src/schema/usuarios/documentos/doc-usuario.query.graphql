@@ -4,4 +4,6 @@ type Query
     usuarioSubproceso(usuario: String!, subprocesos: [String!]!): ResDocExSinPag,
     "Consultar documentos pendientes los cuales se les ha asignado un folio ya sea interno o externo"
     docsPendFolIntExt(usuarioFolio: String!): ResDocExSinPag
+    "DOC EXTERNA: busqueda en toda la coleccion"
+    busquedaGralUsuario(usuario: String!, consulta: String!): ResDocExSinPag
 }

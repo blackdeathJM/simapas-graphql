@@ -19,12 +19,10 @@ class DocExtMutationService extends ResolversOperacionesService
             async resultado =>
             {
                 const usuarios: string[] = [];
-
                 await documento.usuarioDestino.forEach(value =>
                 {
                     usuarios.push(value.usuario);
                 });
-
                 await notUsuarioSubProceso(this.context.pubsub!, this.context.db!, usuarios);
                 return respDocumento(resultado);
             }

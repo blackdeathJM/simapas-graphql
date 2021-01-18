@@ -1,10 +1,9 @@
 input NotificacionInput
 {
     _id: ID
-    no: Int,
     descripcion: String
     emisor: String
-    img: String
+    receptor: [String]
     fechaEnvio: String
     visto: Boolean
     prioridad: String

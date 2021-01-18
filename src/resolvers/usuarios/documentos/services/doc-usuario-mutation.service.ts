@@ -88,8 +88,7 @@ class DocUsuarioMutationService extends ResolversOperacionesService
                 filtro = {_id: new ObjectId(_id), usuarioDestino: {$elemMatch: {usuario}}};
                 actualizar = {$set: {docRespUrl: documento, proceso, fechaTerminado, "usuarioDestino.$.subproceso": proceso}};
             }
-        }
-        else
+        } else
         {
             if (esInterno)
             {

@@ -18,6 +18,7 @@ input DocExtInput
     proceso: PROCESOS_DOC!
     notificarAdministrador: Boolean
     usuarioFolio: String
+    enviadoPor: String
     usuarioDestino: [UsuarioDestinoDocExtInput]
 }
 input UsuarioDestinoDocExtInput
