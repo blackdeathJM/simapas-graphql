@@ -643,10 +643,10 @@
     is-promise "4.0.0"
     tslib "~2.0.1"
 
-"@graphql-tools/delegate@^7.0.8":
-  version "7.0.8"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/delegate/-/delegate-7.0.8.tgz#72254c92d4254c4f8477a36f7e6c61b48265dcd5"
-  integrity sha512-pS1wci7ZxzdCITRrMI66UA+6/E0Z1Yczd3QxJBDb4Kp0nTGy1xy7enGa0+i55EmCvKvuwyx+tzXzwA1fNGRJzg==
+"@graphql-tools/delegate@^7.0.9":
+  version "7.0.9"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/delegate/-/delegate-7.0.9.tgz#9afbffce378cdcbe72e9f4339a1c03b92c0e496e"
+  integrity sha512-nlelOb354cyweV+SpTXkoGZHKgJ1PwPkHWq/0RXM5LllQsR3OrSQKKWMrd1g9dyawEZbadCF3fDJJWSQ4HOg2g==
   dependencies:
     "@ardatan/aggregate-error" "0.0.6"
     "@graphql-tools/batch-execute" "^7.0.0"
@@ -654,7 +654,7 @@
     "@graphql-tools/utils" "^7.1.6"
     dataloader "2.0.0"
     is-promise "4.0.0"
-    tslib "~2.0.1"
+    tslib "~2.1.0"
 
 "@graphql-tools/git-loader@^6.2.5":
   version "6.2.5"
@@ -750,14 +750,14 @@
     unixify "1.0.0"
     valid-url "1.0.9"
 
-"@graphql-tools/merge@6.2.6":
-  version "6.2.6"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/merge/-/merge-6.2.6.tgz#f10b8958523687440536ecf166f2959d2f094d0f"
-  integrity sha512-G6x0QlIzFHoJ3dyF9a4gxmBtaEYJ+EoAAGqXHsE/drRr58K1jscQdfKZdF1wZWZgxkgakHqgt1+oFMeQg/O6ug==
+"@graphql-tools/merge@6.2.7":
+  version "6.2.7"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/merge/-/merge-6.2.7.tgz#c389bfa405d8d7562a05f794ede4254875e67f75"
+  integrity sha512-9acgDkkYeAHpuqhOa3E63NZPCX/iWo819Q320sCCMkydF1xgx0qCRYz/V03xPdpQETKRqBG2i2N2csneeEYYig==
   dependencies:
     "@graphql-tools/schema" "^7.0.0"
     "@graphql-tools/utils" "^7.0.0"
-    tslib "~2.0.1"
+    tslib "~2.1.0"
 
 "@graphql-tools/merge@^6.2.5":
   version "6.2.5"
@@ -1116,16 +1116,6 @@
     "@types/qs" "*"
     "@types/serve-static" "*"
 
-"@types/express@4.17.11":
-  version "4.17.11"
-  resolved "https://registry.yarnpkg.com/@types/express/-/express-4.17.11.tgz#debe3caa6f8e5fcda96b47bd54e2f40c4ee59545"
-  integrity sha512-no+R6rW60JEc59977wIxreQVsIEOAYwgCqldrA/vkpCnbD7MqTefO97lmoBe4WE0F156bC4uLSP1XHDOySnChg==
-  dependencies:
-    "@types/body-parser" "*"
-    "@types/express-serve-static-core" "^4.17.18"
-    "@types/qs" "*"
-    "@types/serve-static" "*"
-
 "@types/express@4.17.7":
   version "4.17.7"
   resolved "https://registry.yarnpkg.com/@types/express/-/express-4.17.7.tgz#42045be6475636d9801369cd4418ef65cdb0dd59"
@@ -1223,10 +1213,10 @@
     "@types/koa-compose" "*"
     "@types/node" "*"
 
-"@types/lodash@^4.14.167":
-  version "4.14.167"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.167.tgz#ce7d78553e3c886d4ea643c37ec7edc20f16765e"
-  integrity sha512-w7tQPjARrvdeBkX/Rwg95S592JwxqOjmms3zWQ0XZgSyxSLdzWaYH3vErBhdVS/lRBX7F8aBYcYJYTr5TMGOzw==
+"@types/lodash@^4.14.168":
+  version "4.14.168"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.168.tgz#fe24632e79b7ade3f132891afff86caa5e5ce008"
+  integrity sha512-oVfRvqHV/V6D1yifJbVRU3TMp8OT6o6BG+U9MkwuJ3U8/CsDHvalRpsxBqivn71ztOFZBTfJMvETbqHiaNSj7Q==
 
 "@types/long@^4.0.0":
   version "4.0.1"
@@ -2801,12 +2791,12 @@ graphql-merge-resolvers@^1.1.16:
   resolved "https://registry.yarnpkg.com/graphql-merge-resolvers/-/graphql-merge-resolvers-1.1.16.tgz#3247fa085fb1826ed43234e17e08b8e53a24c051"
   integrity sha512-8173WP78XYkeZ3PsAHzFIySNeRZhcvvXUelBLJ15bp81ia0tlEWdFbnhrt6YWp4W58qFlUDkcTeqSuB9ULSSNg==
 
-graphql-middleware@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/graphql-middleware/-/graphql-middleware-6.0.1.tgz#c0a220e738624e2271a979ccb4f9c3edd95621df"
-  integrity sha512-T5hOFlijgfMacNRR83rvY9W5x5QqLNUBPSvr56b34+WPgLl4tbtzrDdArnZ2NbEAywzxuQY+lNTMWqbFbtmuQA==
+graphql-middleware@^6.0.2:
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/graphql-middleware/-/graphql-middleware-6.0.2.tgz#9a95f05d8b17a04dcb7e119184cf9eca431a33d8"
+  integrity sha512-lC310BIJ1vxcG3OM8nhlbZE7ykRDpqMv3LkH72VLvy5Vj2c8ngPISli78iRGbjIlceUw5KeNpXTgqPoOBimk0Q==
   dependencies:
-    "@graphql-tools/delegate" "^7.0.8"
+    "@graphql-tools/delegate" "^7.0.9"
     "@graphql-tools/schema" "^7.1.2"
 
 graphql-playground-html@^1.6.29:
@@ -3300,11 +3290,6 @@ latest-version@^5.0.0:
   integrity sha512-weT+r0kTkRQdCdYCNtkMwWXQTMEswKrFBkm4ckQOMVhhqhIMI1UT2hMj+1iigIhgSZm5gTmrRXBNoGUgaTY1xA==
   dependencies:
     package-json "^6.3.0"
-
-libphonenumber-js@^1.9.7:
-  version "1.9.8"
-  resolved "https://registry.yarnpkg.com/libphonenumber-js/-/libphonenumber-js-1.9.8.tgz#82f88ea473c2214667709c24220bade4b85e0752"
-  integrity sha512-gXzuhvlqdH20MlKAy1jXOVouCYByz43ZGCAeNnNuKQXUM+Wl36gbql0M27QQI3ahYCHJErd2W8ciqWweoQdbrQ==
 
 libphonenumber-js@^1.9.7:
   version "1.9.7"
