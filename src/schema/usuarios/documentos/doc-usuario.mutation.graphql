@@ -3,7 +3,7 @@ extend type Mutation
     "DOC EXTERNA: Actualizamos el documento en el usuario destino en lo que se aprueba por el administrador"
     acDocUrlEnUsuarioDestino(_id: String!, usuario: String!, docUrl: String!, subproceso: String!): ResDocExSinPag
     "Asignacion de folios a oficios, circulares, memorandums de manera individual"
-    regDocPorTipo(documento: DocExtInput!): ResDocExSinPag
+    asigElfolioPorTipoDoc(documento: DocExtInput!): ResDocExSinPag
     "Actualizar folio en documento existente"
     acDocAsigFolio(_id: String!, usuario: String!): ResDocExSinPag
     "Generar folio para respuesta de documento"

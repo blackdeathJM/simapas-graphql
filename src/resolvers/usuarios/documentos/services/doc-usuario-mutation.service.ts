@@ -6,6 +6,7 @@ import {IContextData} from "../../../../interfaces/context-data-interface";
 import {notTodosDocsExt} from "../../../presidencia/documentacion/docExt/services/docExt-subscription.service";
 import {IDocExt} from "../../../presidencia/documentacion/docExt/models/docExt.interface";
 import moment from "moment";
+import {formatoFolio} from "./funcionesDocs";
 
 
 class DocUsuarioMutationService extends ResolversOperacionesService
@@ -33,11 +34,13 @@ class DocUsuarioMutationService extends ResolversOperacionesService
         )
     }
 
-    async _regFolio(documento: IDocExt)
+    async _asigElfolioPorTipoDoc(documento: IDocExt)
     {
         const totalDocs = await this.contarDocumentos(COLECCION.DOC_EXTERNA, {}, {});
         documento.noSeguimiento = totalDocs.total + 1;
-        documento.folio = await this.formatoFolio(documento.folio);
+
+
+        // documento.oficio = await this.formatoFolio(documento.oficio);
         return await this.agregarUnElemento(COLECCION.DOC_EXTERNA, documento, {}).then(
             async resultado =>
             {
@@ -48,28 +51,17 @@ class DocUsuarioMutationService extends ResolversOperacionesService
 
     async _genFolioRespDoc(_id: string, usuario: string, centroGestor: string)
     {
-        const folio = await this.formatoFolio(centroGestor);
+        const folio = await formatoFolio(centroGestor, 'oficio', this.context.db!);
+
         return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA,
             {_id: new ObjectId(_id), usuarioDestino: {$elemMatch: {usuario, subproceso: 'APROBADO'}}},
-            {$set: {folio, usuarioFolio: usuario, proceso: 'TERMINADO', "usuarioDestino.$.subproceso": 'TERMINADO'}},
+            {$set: {oficio: folio, usuarioFolio: usuario, proceso: 'TERMINADO', "usuarioDestino.$.subproceso": 'TERMINADO'}},
             {returnOriginal: false}).then(
             async resultado =>
             {
                 await notTodosDocsExt(this.context.pubsub!, this.context.db!);
                 return respDocumento(resultado);
-            })
-    }
-
-    private async formatoFolio(centroGestor: string): Promise<string>
-    {
-        const mes = new Date().getMonth() + 1;
-        const ano = new Date().getFullYear();
-        return await this.contarDocumentos(COLECCION.DOC_EXTERNA, {folio: {$ne: null}}, {}).then(
-            res =>
-            {
-                return `SIMAPAS/${centroGestor.toUpperCase()}/${res.total + 1}/${mes}-${ano}`;
-            }
-        );
+            });
     }
 
     async _docRespUrlAcuseUrl(_id: string, documento: string, proceso: string, usuario: string, esInterno: boolean, esDocRespUrl: boolean)
