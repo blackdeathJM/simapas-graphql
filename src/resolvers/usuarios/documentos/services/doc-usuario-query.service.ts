@@ -25,7 +25,8 @@ class DocUsuarioQueryService extends ResolversOperacionesService
     async _docsPendFolIntExt(usuarioFolio: string)
     {
         // {usuarioFolio, $or: [{docRespUrl: null}, {acuseUrl: null}]}
-        return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {usuarioFolio}, {}, {noSeguimiento: -1}).then(
+        return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {usuarioFolio, $or: [{docRespUrl: null}, {acuseUrl: null}]}, {},
+            {noSeguimiento: -1}).then(
             resultado =>
             {
                 return respArreglosSPag(resultado);
@@ -44,6 +45,16 @@ class DocUsuarioQueryService extends ResolversOperacionesService
                     {fechaTerminado: {$regex: consulta, $options: "i"}}]
             },
             {noSeguimiento: -1}, {}).then(
+            resultado =>
+            {
+                return respArreglosSPag(resultado);
+            })
+    }
+
+    async _docUsuarioTipoDoc(usuarioFolio: string, tipoDoc: string)
+    {
+        return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {usuarioFolio, tipoDoc, proceso: 'ENTREGADO'},
+            {}, {}).then(
             resultado =>
             {
                 return respArreglosSPag(resultado);

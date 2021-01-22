@@ -3,9 +3,7 @@ export interface IDocExt
     _id: string;
     noSeguimiento: number;
     identificadorDoc: string;
-    oficio: string;
-    circular: string;
-    memorandum: string;
+    folio: string;
     tipoDoc: string;
     esInterno: boolean;
     dependencia: string;

@@ -10,4 +10,6 @@ extend type Mutation
     genFolioRespDoc(_id: ID!, usuario: String!, centroGestor: String!): ResDocExSinPag
     "Actualizar el campo donde se va a guardar el documento de respuesta que es el mismo que el documento foliado ya sea interno o externo"
     docRespUrlAcuseUrl(_id: ID!, documento: String!, proceso: String!, usuario: String!, esInterno: Boolean!, esDocRespUrl: Boolean!): ResDocExSinPag
+    "Dar por terminado el documento registrado solo por el usuario"
+    terminarDocUsuario(_id: ID!): ResDocExSinPag
 }

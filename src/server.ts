@@ -8,6 +8,7 @@ import path from "path";
 import expressPlayground from 'graphql-playground-middleware-express';
 import {router} from "./configMuter/docs.routes";
 import {IContext} from "./interfaces/context-interface";
+import {EventEmitter} from "events";
 import schema from "./schema";
 // import {graphqlHTTP} from "express-graphql";
 
@@ -16,7 +17,9 @@ import schema from "./schema";
 async function init()
 {
     const app = express();
-    const pubsub = new PubSub();
+    const emitirEvento = new EventEmitter();
+    emitirEvento.setMaxListeners(100);
+    const pubsub = new PubSub({eventEmitter: emitirEvento});
     const database = new Database();
     const db = await database.init();
     // app.use(cors());

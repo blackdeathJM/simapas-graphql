@@ -17,6 +17,10 @@ const queryDocUsuario: IResolvers =
                 async busquedaGralUsuario(_, {usuario, consulta}, {db})
                 {
                     return new DocUsuarioQueryService(_, {}, {db})._busquedaGralUsuario(usuario, consulta);
+                },
+                async docUsuarioTipoDoc(_, {usuarioFolio, tipoDoc}, {db})
+                {
+                    return new DocUsuarioQueryService(_, {}, {db})._docUsuarioTipoDoc(usuarioFolio, tipoDoc);
                 }
             }
     }

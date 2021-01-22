@@ -22,6 +22,10 @@ const mutationDocUsuario: IResolvers =
                 {
                     return new DocUsuarioMutationService(_, {}, {pubsub, db})._docRespUrlAcuseUrl(_id, documento, proceso, usuario, esInterno,
                         esDocRespUrl);
+                },
+                terminarDocUsuario(_, {_id}, {db})
+                {
+                    return new DocUsuarioMutationService(_, {}, {db})._terminarDocUsuario(_id);
                 }
             }
     }

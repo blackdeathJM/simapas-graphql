@@ -3,9 +3,7 @@ type DocExtType
     _id: ID
     noSeguimiento: Int
     identificadorDoc: String
-    oficio: String
-    circular: String
-    memorandum: String
+    folio: String
     tipoDoc: String
     esInterno: Boolean
     dependencia: String

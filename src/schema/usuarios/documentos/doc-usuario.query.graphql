@@ -6,4 +6,6 @@ type Query
     docsPendFolIntExt(usuarioFolio: String!): ResDocExSinPag
     "DOC EXTERNA: busqueda en toda la coleccion"
     busquedaGralUsuario(usuario: String!, consulta: String!): ResDocExSinPag
+    "Buscar documentos por usuario folio y por el tipo de documento"
+    docUsuarioTipoDoc(usuarioFolio: String!, tipoDoc: String!): ResDocExSinPag
 }
