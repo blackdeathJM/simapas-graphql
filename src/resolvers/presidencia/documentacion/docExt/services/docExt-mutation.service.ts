@@ -94,6 +94,17 @@ class DocExtMutationService extends ResolversOperacionesService
                 })
         })
     }
+
+    async _quitarUsuario(_id: string, usuario: string)
+    {
+        return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(_id)},
+            {$pull: {"usuarioDestino": {usuario}}}, {returnOriginal: false, sort: {noSeguimiento: -1}}).then(
+            resultado =>
+            {
+                console.log('resultado', resultado);
+                return respDocumento(resultado);
+            })
+    }
 }
 
 export default DocExtMutationService;

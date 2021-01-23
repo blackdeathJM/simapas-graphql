@@ -8,4 +8,6 @@ type Query
     busquedaGralUsuario(usuario: String!, consulta: String!): ResDocExSinPag
     "Buscar documentos por usuario folio y por el tipo de documento"
     docUsuarioTipoDoc(usuarioFolio: String!, tipoDoc: String!): ResDocExSinPag
+    "consultar documentos externos por usuario y estatus sea entregado"
+    docUsuarioExtEntregado(usuarioFolio: String!): ResDocExSinPag
 }

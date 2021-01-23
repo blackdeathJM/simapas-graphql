@@ -21,6 +21,10 @@ const queryDocUsuario: IResolvers =
                 async docUsuarioTipoDoc(_, {usuarioFolio, tipoDoc}, {db})
                 {
                     return new DocUsuarioQueryService(_, {}, {db})._docUsuarioTipoDoc(usuarioFolio, tipoDoc);
+                },
+                async docUsuarioExtEntregado(_, {usuarioFolio}, {db})
+                {
+                    return new DocUsuarioQueryService(_, {}, {db})._docUsuarioExtEntregado(usuarioFolio);
                 }
             }
     }

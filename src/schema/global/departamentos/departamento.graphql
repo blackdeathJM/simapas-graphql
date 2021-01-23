@@ -2,4 +2,5 @@ type DeptoType
 {
     _id: ID
     nombre: String!
+    centroGestor: String!
 }

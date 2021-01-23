@@ -10,4 +10,6 @@ extend type Mutation
     acDarPorEntregado(documento: DocExtInput!): ResDocEx
     "Editar informacion del documento"
     acInfoDoc(documento: DocExtInput): ResDocEx
+    "Eliminar usuario al que le llega la documentacion"
+    quitarUsuario(_id: ID!, usuarioDestino: String!): ResDocEx
 }

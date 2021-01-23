@@ -104,7 +104,8 @@ class DocUsuarioMutationService extends ResolversOperacionesService
 
     async _terminarDocUsuario(_id: string)
     {
-        return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(_id)}, {proceso: 'ENTREGADO'}, {returnOriginal: false}).then(
+        return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(_id)}, {$set: {proceso: 'ENTREGADO'}},
+            {returnOriginal: false}).then(
             resultado =>
             {
                 return respDocumento(resultado);

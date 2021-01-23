@@ -2,4 +2,5 @@ input DepartamentoInput
 {
     _id: ID
     nombre: String!
+    centroGestor: String!
 }

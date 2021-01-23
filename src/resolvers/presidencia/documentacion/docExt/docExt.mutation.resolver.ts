@@ -26,6 +26,10 @@ const mutationDocExt: IResolvers =
                 async acInfoDoc(_, {documento}, {db, pubsub})
                 {
                     return new DocExtMutationService(_, {}, {db, pubsub})._acInfoDoc(documento);
+                },
+                async quitarUsuario(_, {_id, usuarioDestino}, {db})
+                {
+                    return new DocExtMutationService(_, {}, {db})._quitarUsuario(_id, usuarioDestino)
                 }
             }
     };
