@@ -1,30 +1,28 @@
 import ResolversOperacionesService from "../../../../services/resolver-operaciones";
 import {IContextData} from "../../../../interfaces/context-data-interface";
-import ValidacionesService from "../../../../services/validaciones.service";
 import {COLECCION} from "../../../../config/global";
 import {ObjectId} from 'bson';
 import {respDocumento} from "../../../../services/respuestas-return";
+import {IDepartamento} from "../model/departamento.interface";
 
 class DepartamentoMutationService extends ResolversOperacionesService
 {
     constructor(root: object, variables: object, context: IContextData)
     {super(root, variables, context);}
 
-    async registrarElemento()
+    async _registrarElemento(departamento: IDepartamento)
     {
-        if (ValidacionesService.checarDato(this.variables.departamento!.nombre || ''))
-        {
-            const resultado = await this.agregarUnElemento(COLECCION.DEPARTAMENTOS, this.variables.departamento!, {});
-            return respDocumento(resultado);
-        }
+        return await this.agregarUnElemento(COLECCION.DEPARTAMENTOS, departamento, {}).then(
+            resultado =>
+            {
+                return respDocumento(resultado);
+            })
     }
 
-    async actualizarElemento()
+    async _actualizarElemento(departamento: IDepartamento)
     {
-        const resultado = await this.buscarUnoYActualizar(COLECCION.DEPARTAMENTOS,
-            {_id: new ObjectId(this.variables.departamento!._id)},
-            {$set: {nombre: this.variables.departamento!.nombre}},
-            {returnOriginal: false});
+        const resultado = await this.buscarUnoYActualizar(COLECCION.DEPARTAMENTOS, {_id: new ObjectId(departamento._id)},
+            {$set: {nombre: departamento.nombre, centroGestor: departamento.centroGestor}}, {returnOriginal: false});
         return respDocumento(resultado);
     }
 }

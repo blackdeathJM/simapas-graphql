@@ -7,11 +7,11 @@ const mutationDeptos: IResolvers =
             {
                 async registroDepto(_, {departamento}, {db})
                 {
-                    return new DepartamentoMutationService(_, {departamento}, {db}).registrarElemento();
+                    return new DepartamentoMutationService(_, {}, {db})._registrarElemento(departamento);
                 },
                 async actualizarDepto(_, {departamento}, {db})
                 {
-                    return new DepartamentoMutationService(_, {departamento}, {db}).actualizarElemento();
+                    return new DepartamentoMutationService(_, {}, {db})._actualizarElemento(departamento);
                 },
             }
     };

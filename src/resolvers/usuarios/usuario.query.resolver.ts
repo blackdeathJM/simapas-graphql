@@ -15,7 +15,7 @@ const queryUsuarios: IResolvers =
                 },
                 async login(_, {usuario, contrasena}, {db})
                 {
-                    return new UsuarioQueryService(_, {usuario: usuario, contrasena: contrasena}, {db}).loginUsuario();
+                    return new UsuarioQueryService(_, {}, {db})._login(usuario, contrasena);
                 },
             }
     };

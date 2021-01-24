@@ -25,6 +25,10 @@ const queryDocExt: IResolvers =
                 busquedaGral(_, {consulta}, {db})
                 {
                     return new DocExtQueryService(_, {}, {db})._busquedaGral(consulta);
+                },
+                docPorTipo(_, {tipoDoc}, {db})
+                {
+                    return new DocExtQueryService(_, {}, {db})._docPorTipo(tipoDoc)
                 }
             }
     };

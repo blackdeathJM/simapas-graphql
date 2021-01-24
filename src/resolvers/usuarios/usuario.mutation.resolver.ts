@@ -7,17 +7,17 @@ const mutationUsuarios: IResolvers =
             {
                 async registroUsuario(_, {usuario}, {db})
                 {
-                    return new UsuarioMutationService(_, {usuario}, {db}).agregarUsuario();
+                    return new UsuarioMutationService(_, {}, {db})._registroUsuario(usuario);
                 },
 
                 async actualizarRole(_, {_id, role}, {pubsub, db})
                 {
-                    return new UsuarioMutationService(_, {_id, role}, {pubsub, db}).actualizarRole();
+                    return new UsuarioMutationService(_, {}, {pubsub, db})._actualizarRole(_id, role);
                 },
 
                 async actualizarContrasena(_, {usuario, actualContrasena, nvaContrasena}, {db})
                 {
-                    return new UsuarioMutationService(_, {usuario, actualContrasena, nvaContrasena}, {db}).actializarContrasena();
+                    return new UsuarioMutationService(_, {}, {db})._actializarContrasena(usuario, actualContrasena, nvaContrasena);
                 },
 
                 async actualizarImgPerfil(_, {usuario, img}, {db})

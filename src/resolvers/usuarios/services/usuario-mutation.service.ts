@@ -4,6 +4,8 @@ import {COLECCION, PUB_SUB} from "../../../config/global";
 import bcryptjs from 'bcryptjs';
 import {ObjectId} from 'bson';
 import JWT from "../../../lib/jwt";
+import {IUsuario} from "../models/usuario-interface";
+import {respDocumento} from "../../../services/respuestas-return";
 
 class UsuarioMutationService extends ResolversOperacionesService
 {
@@ -12,64 +14,51 @@ class UsuarioMutationService extends ResolversOperacionesService
         super(root, varibles, context);
     }
 
-    async agregarUsuario()
+    async _registroUsuario(usuario: IUsuario)
     {
-        const comprobarUsuario = await this.buscarUnElemento( COLECCION.USUARIOS,
-            {usuario: this.variables.usuario!.usuario},
-            {});
+        const comprobarUsuario = await this.buscarUnElemento(COLECCION.USUARIOS, {usuario: usuario.usuario}, {});
         if (!comprobarUsuario.estatus)
         {
-            this.variables.usuario!.contrasena = bcryptjs.hashSync(this.variables.usuario!.contrasena, 10);
-            return await this.agregarUnElemento(COLECCION.USUARIOS, this.variables.usuario!, {}).then(
+            usuario.contrasena = bcryptjs.hashSync(usuario.contrasena, 10);
+            return await this.agregarUnElemento(COLECCION.USUARIOS, usuario, {}).then(
                 async respuesta =>
                 {
-                    return {estatus: respuesta.estatus, mensaje: respuesta.mensaje, usuario: respuesta.elemento}
-                }
-            )
+                    return respDocumento(respuesta);
+                })
         } else
         {
             return {estatus: comprobarUsuario.estatus, mensaje: comprobarUsuario.mensaje, elemento: comprobarUsuario.elemento}
         }
     }
 
-    async actualizarRole()
+    async _actualizarRole(_id: string, role: string[])
     {
-        const valores = Object.values(this.variables);
-        const _id = valores[0];
-        const role = valores[1];
-
-        return await this.buscarUnoYActualizar(COLECCION.USUARIOS,
-            {_id: new ObjectId(_id)},
-            {$set: {role}},
-            {returnOrinal: false}).then(
-            async res =>
-            {
-                delete res.elemento.contrasena;
-                res.elemento.contrasena = '*******';
-                const nvoToken = res.elemento;
-                await this.context.pubsub!.publish(PUB_SUB.NOT_CAMBIO_ROLE, {cambiarRoleUsuario: new JWT().firmar(nvoToken)});
-                return {
-                    estatus: true,
-                    mensaje: 'Se ha actualizado role del usuario',
-                    usuario: res.elemento
+        return await this.buscarUnoYActualizar(COLECCION.USUARIOS, {_id: new ObjectId(_id)}, {$set: {role}}, {returnOrinal: false})
+            .then(async res =>
+                {
+                    delete res.elemento.contrasena;
+                    res.elemento.contrasena = '*******';
+                    const nvoToken = res.elemento;
+                    await this.context.pubsub!.publish(PUB_SUB.NOT_CAMBIO_ROLE, {cambiarRoleUsuario: new JWT().firmar(nvoToken)});
+                    return {
+                        estatus: true,
+                        mensaje: 'Se ha actualizado role del usuario',
+                        usuario: res.elemento
+                    }
                 }
-            }
-        );
+            );
     }
 
-    async actializarContrasena()
+    async _actializarContrasena(usuario: string, actualContrasena: string, nvaContrasena: string)
     {
-        const valores = Object.values(this.variables);
-        const buscarUsuario = await this.buscarUnElemento(COLECCION.USUARIOS, {usuario: valores[0]}, {});
+        const buscarUsuario = await this.buscarUnElemento(COLECCION.USUARIOS, {usuario}, {});
         if (buscarUsuario.estatus)
         {
-            if (bcryptjs.compareSync(valores[1], buscarUsuario.elemento.contrasena))
+            if (bcryptjs.compareSync(actualContrasena, buscarUsuario.elemento.contrasena))
             {
-                buscarUsuario.elemento.contrasena = bcryptjs.hashSync(valores[2], 10);
+                buscarUsuario.elemento.contrasena = bcryptjs.hashSync(nvaContrasena, 10);
                 return await this.buscarUnoYActualizar(COLECCION.USUARIOS,
-                    {usuario: valores[0]},
-                    {$set: {contrasena: buscarUsuario.elemento.contrasena}},
-                    {returnOriginal: false}).then(
+                    {usuario}, {$set: {contrasena: buscarUsuario.elemento.contrasena}}, {returnOriginal: false}).then(
                     async respuesta =>
                     {
                         delete respuesta.elemento.contrasena;
@@ -103,9 +92,7 @@ class UsuarioMutationService extends ResolversOperacionesService
     async actualizarImgAvatar()
     {
         const valores = Object.values(this.variables);
-        return await this.buscarUnoYActualizar(COLECCION.USUARIOS,
-            {usuario: valores[0]},
-            {$set: {img: valores[1]}},
+        return await this.buscarUnoYActualizar(COLECCION.USUARIOS, {usuario: valores[0]}, {$set: {img: valores[1]}},
             {returnOriginal: false}).then(
             async res =>
             {
@@ -118,8 +105,7 @@ class UsuarioMutationService extends ResolversOperacionesService
 
     async EliminarUsuario()
     {
-        const resultado = await this.buscarUnoYEleminiar(COLECCION.USUARIOS,
-            {_id: new ObjectId(this.variables._id)}, {});
+        const resultado = await this.buscarUnoYEleminiar(COLECCION.USUARIOS, {_id: new ObjectId(this.variables._id)}, {});
         return {estatus: resultado.estatus, mensaje: resultado.mensaje, usuario: resultado.elemento}
     }
 }

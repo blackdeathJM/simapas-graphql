@@ -25,12 +25,8 @@ class UsuarioQueryService extends ResolversOperacionesService
         return respDocumento(resultado);
     }
 
-    async loginUsuario()
-    {
-        const valores = Object.values(this.variables);
-        const usuario = valores[0];
-        const contrasena = valores[1];
-        // en el filtro solo coloco las this.variables ya que tiene la misma estructura que debe llevar elfiltro
+    async _login(usuario: string, contrasena: string)
+    {// en el filtro solo coloco las this.variables ya que tiene la misma estructura que debe llevar elfiltro
         return await this.buscarUnElemento(COLECCION.USUARIOS, {usuario}, {}).then(
             async res =>
             {
@@ -42,7 +38,7 @@ class UsuarioQueryService extends ResolversOperacionesService
                         token: null
                     }
                 }
-                if (!bcryptjs.compareSync(contrasena, res!.elemento.contrasena))
+                if (!bcryptjs.compareSync(contrasena, res.elemento.contrasena))
                 {
                     return {
                         estatus: false,
@@ -50,14 +46,15 @@ class UsuarioQueryService extends ResolversOperacionesService
                         token: null
                     }
                 }
-                delete res!.elemento.contrasena
+                delete res.elemento.contrasena
+                console.log('respuesta', res);
                 return {
                     estatus: true,
                     mensaje: `Login correcto`,
                     token: new JWT().firmar({res})
                 }
             }
-        ).catch();
+        )
     }
 }
 

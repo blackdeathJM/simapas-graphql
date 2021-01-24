@@ -10,4 +10,6 @@ extend type Query
     docsEntreFechas(fechaRecepcionInicial: String!, fechaRecepcionFinal: String!): ResDocExSinPag
     "DOC EXTERNA: Obtiene todos los documentos por usuarios"
     todosLosDocsPorUsuario(usuario: String!): ResDocExSinPag
+    "Consultar documentos por tipo de documento"
+    docPorTipo(tipoDoc: String!): ResDocExSinPag
 }

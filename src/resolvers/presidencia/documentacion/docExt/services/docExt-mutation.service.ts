@@ -19,7 +19,7 @@ class DocExtMutationService extends ResolversOperacionesService
             async resultado =>
             {
                 const usuarios: string[] = [];
-                await documento.usuarioDestino.forEach(value =>
+                documento.usuarioDestino.forEach(value =>
                 {
                     usuarios.push(value.usuario);
                 });
@@ -101,7 +101,6 @@ class DocExtMutationService extends ResolversOperacionesService
             {$pull: {"usuarioDestino": {usuario}}}, {returnOriginal: false, sort: {noSeguimiento: -1}}).then(
             resultado =>
             {
-                console.log('resultado', resultado);
                 return respDocumento(resultado);
             })
     }
