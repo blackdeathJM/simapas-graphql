@@ -3,8 +3,8 @@ import {COLECCION} from "../../../../config/global";
 import {ObjectId} from "bson";
 import {respDocumento} from "../../../../services/respuestas-return";
 import {IContextData} from "../../../../interfaces/context-data-interface";
-import {notTodosDocsExt} from "../../../presidencia/documentacion/docExt/services/docExt-subscription.service";
-import {IDocExt} from "../../../presidencia/documentacion/docExt/models/docExt.interface";
+import {notTodosDocsExt, notUsuarioSubProceso} from "../../../presidencia/documentacion/docExt/services/docExt-subscription.service";
+import {IDocExt, IUsuarioDestinoDocExt} from "../../../presidencia/documentacion/docExt/models/docExt.interface";
 import moment from "moment";
 import {formatoFolio} from "./funcionesDocs";
 
@@ -52,6 +52,11 @@ class DocUsuarioMutationService extends ResolversOperacionesService
 
     async _genFolioRespDoc(_id: string, usuario: string, centroGestor: string)
     {
+        const usuarios: string[] = [];
+        const resultado = await this.buscarUnElemento(COLECCION.DOC_EXTERNA, {_id: new ObjectId(_id)}, {});
+
+        resultado.elemento.usuarioDestino.forEach((u: IUsuarioDestinoDocExt) => usuarios.push(u.usuario));
+
         const folio = await formatoFolio(centroGestor, 'OFICIO', this.context.db!);
 
         return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA,
@@ -61,6 +66,7 @@ class DocUsuarioMutationService extends ResolversOperacionesService
             async resultado =>
             {
                 await notTodosDocsExt(this.context.pubsub!, this.context.db!);
+                await notUsuarioSubProceso(this.context.pubsub!, this.context.db!, usuarios);
                 return respDocumento(resultado);
             });
     }

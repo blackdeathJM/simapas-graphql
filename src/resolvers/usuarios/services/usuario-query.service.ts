@@ -47,7 +47,6 @@ class UsuarioQueryService extends ResolversOperacionesService
                     }
                 }
                 delete res.elemento.contrasena
-                console.log('respuesta', res);
                 return {
                     estatus: true,
                     mensaje: `Login correcto`,
