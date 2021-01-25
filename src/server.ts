@@ -18,7 +18,7 @@ async function init()
 {
     const app = express();
     const emitirEvento = new EventEmitter();
-    emitirEvento.setMaxListeners(100);
+    emitirEvento.setMaxListeners(1000);
     const pubsub = new PubSub({eventEmitter: emitirEvento});
     const database = new Database();
     const db = await database.init();
