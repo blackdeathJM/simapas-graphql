@@ -26,7 +26,7 @@ class UsuarioQueryService extends ResolversOperacionesService
     }
 
     async _login(usuario: string, contrasena: string)
-    {// en el filtro solo coloco las this.variables ya que tiene la misma estructura que debe llevar elfiltro
+    {
         return await this.buscarUnElemento(COLECCION.USUARIOS, {usuario}, {}).then(
             async res =>
             {
