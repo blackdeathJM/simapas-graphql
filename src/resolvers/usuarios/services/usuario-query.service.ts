@@ -42,7 +42,7 @@ class UsuarioQueryService extends ResolversOperacionesService
                 {
                     return {
                         estatus: false,
-                        mensaje: `Login incorrecto`,
+                        mensaje: `Login incorrecto intentalo nuevamente`,
                         token: null
                     }
                 }
