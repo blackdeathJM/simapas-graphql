@@ -3,7 +3,7 @@ import {IContextData} from "../../../../../interfaces/context-data-interface";
 import {COLECCION} from "../../../../../config/global";
 import {ObjectId} from 'bson';
 import {respDocumento} from "../../../../../services/respuestas-return";
-import {IDocExt} from "../models/docExt.interface";
+import {IDocExt, IUsuarioDestinoDocExt} from "../models/docExt.interface";
 import {notUsuarioSubProceso} from "./docExt-subscription.service";
 
 class DocExtMutationService extends ResolversOperacionesService
@@ -90,6 +90,9 @@ class DocExtMutationService extends ResolversOperacionesService
                 {returnOriginal: false}).then(
                 async resultado =>
                 {
+                    const usuarios: string[] = [];
+                    documento.usuarioDestino.forEach(u => usuarios.push(u.usuario));
+                    await notUsuarioSubProceso(this.context.pubsub!, this.context.db!, usuarios);
                     return respDocumento(resultado);
                 })
         })
@@ -99,8 +102,11 @@ class DocExtMutationService extends ResolversOperacionesService
     {
         return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(_id)},
             {$pull: {"usuarioDestino": {usuario}}}, {returnOriginal: false, sort: {noSeguimiento: -1}}).then(
-            resultado =>
+            async resultado =>
             {
+                const nvosUsuarios: string[] = [];
+                nvosUsuarios.push(usuario);
+                await notUsuarioSubProceso(this.context.pubsub!, this.context.db!, nvosUsuarios);
                 return respDocumento(resultado);
             })
     }

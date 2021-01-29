@@ -23,13 +23,13 @@ const mutationDocExt: IResolvers =
                 {
                     return new DocExtMutationService(_, {}, {pubsub, db})._darPorEntregado(documento);
                 },
-                async acInfoDoc(_, {documento}, {db, pubsub})
+                async acInfoDoc(_, {documento}, {pubsub, db})
                 {
-                    return new DocExtMutationService(_, {}, {db, pubsub})._acInfoDoc(documento);
+                    return new DocExtMutationService(_, {}, {pubsub, db})._acInfoDoc(documento);
                 },
-                async quitarUsuario(_, {_id, usuarioDestino}, {db})
+                async quitarUsuario(_, {_id, usuarioDestino}, {pubsub, db})
                 {
-                    return new DocExtMutationService(_, {}, {db})._quitarUsuario(_id, usuarioDestino)
+                    return new DocExtMutationService(_, {}, {pubsub, db})._quitarUsuario(_id, usuarioDestino)
                 }
             }
     };
