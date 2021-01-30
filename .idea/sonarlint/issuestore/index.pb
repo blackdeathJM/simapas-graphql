@@ -1,17 +1,29 @@
 
 =
 src/server.ts,b\c\bcc09dcb20cae54f483679309f0403fdcbd98121
-ï
-e.idea/shelf/Uncommitted_changes_before_Update_at_26_01_2021_09_23_p__m__[Default_Changelist]/index.pb,a\a\aa872767e266151b5eeaadaa1d6ae598f356b093
+`
+0src/resolvers/usuarios/usuario.query.resolver.ts,9\b\9b418ebd62357ad34dd63866204d11881cd5381a
 ö
-j.idea/shelf/Uncommitted_changes_before_Update_at_26_01_2021_09_23_p__m__[Default_Changelist]/shelved.patch,3\5\35d4daeda9b4e626f21edac9efe672b168606832
+j.idea/shelf/Uncommitted_changes_before_Update_at_26_01_2021_11_35_p__m__[Default_Changelist]/shelved.patch,c\c\cc0e9365c535feac003b3c2d2d5eaadffc1d5c08
 í
 b.idea/shelf/Uncommitted_changes_before_Checkout_at_25_01_2021_11_41_p__m___Default_Changelist_.xml,1\a\1a957d52600e2597c441ddc8182de5043cdc0baf
 ê
 `.idea/shelf/Uncommitted_changes_before_Update_at_26_01_2021_09_23_p__m___Default_Changelist_.xml,5\3\53932b04ac2271b1117bae11a5ac842a059e5a9f
-ö
-j.idea/shelf/Uncommitted_changes_before_Update_at_28_01_2021_08_05_a__m__[Default_Changelist]/shelved.patch,d\4\d4409b87e4b4480f5b8b0de57bf79ce372b412c0
 ê
 `.idea/shelf/Uncommitted_changes_before_Update_at_26_01_2021_11_35_p__m___Default_Changelist_.xml,9\6\965b449ae9e5f5418d9c36f75d64718419c77b82
+h
+8src/resolvers/usuarios/services/usuario-query.service.ts,b\7\b7890fe468caf78df37a62a27b93bd90b59e39e2
+z
+Jsrc/resolvers/usuarios/documentos/services/doc-usuario-mutation.service.ts,7\f\7fce98f41ab4ed2613fa71c4af03076183fe0fe9
+Ü
+Vsrc/resolvers/presidencia/documentacion/docExt/services/docExt-subscription.service.ts,2\2\22818d141089bec32b2fca21358c7c13b001ef18
+s
+Csrc/resolvers/presidencia/documentacion/docExt/models/constantes.ts,b\4\b437a478eb6865d78673bc8c958e5280e952ecac
+z
+Jsrc/resolvers/presidencia/documentacion/docExt/docExt.mutation.resolver.ts,e\b\eb8705218816f7ab158d56c4f96d4a5b9db39d65
+Ç
+Rsrc/resolvers/presidencia/documentacion/docExt/services/docExt-mutation.service.ts,6\6\662d3859093a3dd0eb36397677f83e8feea4b6da
 ê
 `.idea/shelf/Uncommitted_changes_before_Update_at_28_01_2021_08_05_a__m___Default_Changelist_.xml,6\3\63c8bbc77c005560a43ee9076cfd5336aa86418f
+~
+Nsrc/resolvers/presidencia/documentacion/docExt/docExt.subscription.resolver.ts,2\f\2f5b5ec758a4708d92b56843518f5e60ac6a5dd6

@@ -6,10 +6,26 @@
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_01_2021_09_23_p__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_01_2021_09_23_p__m___Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_01_2021_11_35_p__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_01_2021_11_35_p__m___Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_01_2021_08_05_a__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_01_2021_08_05_a__m___Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_01_2021_07_21_a__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_01_2021_07_21_a__m___Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/6/662d3859093a3dd0eb36397677f83e8feea4b6da" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/6/662d3859093a3dd0eb36397677f83e8feea4b6da" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/telemetria/equipo-electrico.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/equipo-electrico.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/telemetria/inputs/equipo-electrico.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/inputs/equipo-electrico.input.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/telemetria/inputs/instalacion.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/inputs/instalacion.input.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/telemetria/inputs/lecturas.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/inputs/lecturas.input.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/telemetria/inputs/medidor.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/inputs/medidor.input.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/telemetria/inputs/parametros-electricos.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/inputs/parametros-electricos.input.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/telemetria/inputs/recibos-cfe.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/inputs/recibos-cfe.input.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/telemetria/inputs/telemetria.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/inputs/telemetria.input.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/telemetria/instalacion.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/instalacion.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/telemetria/instalaciones/instalaciones.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/instalaciones/instalaciones.mutation.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/telemetria/instalaciones/instalaciones.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/instalaciones/instalaciones.query.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/telemetria/lecturas.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/lecturas.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/telemetria/medidor.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/medidor.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/telemetria/parametros-electricos.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/parametros-electricos.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/telemetria/recibos-cfe.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/recibos-cfe.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/telemetria/telemetria.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/telemetria.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +81,7 @@
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\per" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\proyectos\backend\simapas-graphql\src\schema\presidencia" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\resolvers\global\notificaciones" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\resolvers\usuarios\documentos\services" />
     </key>
