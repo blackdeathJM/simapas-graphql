@@ -19,6 +19,7 @@ export interface IDocExt
     notificarAdministrador: boolean;
     usuarioFolio: string;
     enviadoPor: string;
+    ano: string;
     usuarioDestino: IUsuarioDestinoDocExt[];
 }
 

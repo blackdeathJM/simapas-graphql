@@ -39,7 +39,7 @@ class DocUsuarioMutationService extends ResolversOperacionesService
         const totalDocs = await this.contarDocumentos(COLECCION.DOC_EXTERNA, {}, {});
         documento.noSeguimiento = totalDocs.total + 1;
 
-
+        documento.ano = String(new Date().getFullYear());
         documento.folio = await formatoFolio(documento.folio, documento.tipoDoc, this.context.db!);
 
         return await this.agregarUnElemento(COLECCION.DOC_EXTERNA, documento, {}).then(
@@ -59,9 +59,11 @@ class DocUsuarioMutationService extends ResolversOperacionesService
 
         const folio = await formatoFolio(centroGestor, 'OFICIO', this.context.db!);
 
+        const ano = String(new Date().getFullYear());
+
         return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA,
             {_id: new ObjectId(_id), usuarioDestino: {$elemMatch: {usuario, subproceso: 'APROBADO'}}},
-            {$set: {folio, usuarioFolio: usuario, proceso: 'TERMINADO', "usuarioDestino.$.subproceso": 'TERMINADO'}},
+            {$set: {folio, usuarioFolio: usuario, ano, proceso: 'TERMINADO', "usuarioDestino.$.subproceso": 'TERMINADO'}},
             {returnOriginal: false}).then(
             async resultado =>
             {
