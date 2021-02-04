@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="trabajando en folios">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/6/662d3859093a3dd0eb36397677f83e8feea4b6da" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/6/662d3859093a3dd0eb36397677f83e8feea4b6da" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="Telemetria">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -148,7 +146,7 @@
       <workItem from="1611957355741" duration="2637000" />
       <workItem from="1612332525302" duration="205000" />
       <workItem from="1612332758904" duration="7624000" />
-      <workItem from="1612415450621" duration="2627000" />
+      <workItem from="1612415450621" duration="4931000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -255,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612356539433</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Telemetria">
+      <created>1612430833064</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1612430833064</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,6 +280,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="trabajando en folios" />
-    <option name="LAST_COMMIT_MESSAGE" value="trabajando en folios" />
+    <MESSAGE value="Telemetria" />
+    <option name="LAST_COMMIT_MESSAGE" value="Telemetria" />
   </component>
 </project>
