@@ -38,11 +38,11 @@ class DocUsuarioQueryService extends ResolversOperacionesService
     {
         return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA,
             {
-                usuarioDestino: {$elemMatch: {usuario}},
+                usuarioFolio: usuario,
                 $or: [{noSeguimiento: parseInt(consulta)}, {identificadorDoc: {$regex: consulta, $options: "i"}},
                     {dependencia: {$regex: consulta, $options: "i"}}, {asunto: {$regex: consulta, $options: "i"}},
                     {fechaRecepcion: {$regex: consulta}}, {fechaLimiteEntrega: {$regex: consulta, $options: "i"}},
-                    {fechaTerminado: {$regex: consulta, $options: "i"}}]
+                    {tipoDoc: {$regex: consulta, $options: "i"}}, {fechaTerminado: {$regex: consulta, $options: "i"}}]
             },
             {noSeguimiento: -1}, {}).then(
             resultado =>

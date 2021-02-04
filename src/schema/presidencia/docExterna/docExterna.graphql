@@ -19,6 +19,7 @@ type DocExtType
     notificarAdministrador: Boolean
     usuarioFolio: String
     enviadoPor: String
+    ano: String
     usuarioDestino: [UsuaroDestinoDocExtType]
 }
 type UsuaroDestinoDocExtType
