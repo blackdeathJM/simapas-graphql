@@ -53,3 +53,15 @@ q
 Asrc/schema/presidencia/telemetria/inputs/telemetria.input.graphql,5\a\5a19ed973b0c60239cfeb32c62f69a21dbe98aaa
 ê
 `.idea/shelf/Uncommitted_changes_before_Update_at_29_01_2021_07_21_a__m___Default_Changelist_.xml,d\a\dad333f01eb3dc1f42c5a893b611cc1974093cb4
+g
+7src/resolvers/usuarios/documentos/doc.query.resolver.ts,5\c\5c3afbbdd82df90cd87bdb00d429b186aafd84c8
+w
+Gsrc/resolvers/usuarios/documentos/services/doc-usuario-query.service.ts,0\7\07ca9267defe50f874418f249e354bf54b702f43
+y
+Isrc/resolvers/presidencia/documentacion/docExt/models/docExt.interface.ts,6\5\65c492ebac37a34db2b78eb38c7cc7927588bff9
+d
+4src/schema/presidencia/docExterna/docExterna.graphql,f\2\f247d4d773b94b2ca22490c46d62638d4cd04d9b
+j
+:src/schema/presidencia/docExterna/docExterna.input.graphql,0\0\0090d36a4d70d057054a59cf366a05dc23e00b2a
+k
+;src/resolvers/usuarios/documentos/services/funcionesDocs.ts,0\0\00dfef5d5bbfedc90036f902fffaab87056e76f8
