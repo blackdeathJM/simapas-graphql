@@ -15,8 +15,6 @@ z
 Jsrc/resolvers/presidencia/documentacion/docExt/docExt.mutation.resolver.ts,e\b\eb8705218816f7ab158d56c4f96d4a5b9db39d65
 Ç
 Rsrc/resolvers/presidencia/documentacion/docExt/services/docExt-mutation.service.ts,6\6\662d3859093a3dd0eb36397677f83e8feea4b6da
-ê
-`.idea/shelf/Uncommitted_changes_before_Update_at_28_01_2021_08_05_a__m___Default_Changelist_.xml,6\3\63c8bbc77c005560a43ee9076cfd5336aa86418f
 ~
 Nsrc/resolvers/presidencia/documentacion/docExt/docExt.subscription.resolver.ts,2\f\2f5b5ec758a4708d92b56843518f5e60ac6a5dd6
 j
@@ -51,8 +49,6 @@ d
 4src/schema/presidencia/telemetria/telemetria.graphql,1\b\1b161543c63d7ac1e265c550f6be9b08c8cd6c65
 q
 Asrc/schema/presidencia/telemetria/inputs/telemetria.input.graphql,5\a\5a19ed973b0c60239cfeb32c62f69a21dbe98aaa
-ê
-`.idea/shelf/Uncommitted_changes_before_Update_at_29_01_2021_07_21_a__m___Default_Changelist_.xml,d\a\dad333f01eb3dc1f42c5a893b611cc1974093cb4
 g
 7src/resolvers/usuarios/documentos/doc.query.resolver.ts,5\c\5c3afbbdd82df90cd87bdb00d429b186aafd84c8
 w

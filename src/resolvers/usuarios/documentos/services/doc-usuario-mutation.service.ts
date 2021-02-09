@@ -62,14 +62,14 @@ class DocUsuarioMutationService extends ResolversOperacionesService
         const ano = String(new Date().getFullYear());
 
         return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA,
-            {_id: new ObjectId(_id), usuarioDestino: {$elemMatch: {usuario, subproceso: 'APROBADO'}}},
+            {_id: new ObjectId(_id), usuarioDestino: {$elemMatch: {usuario}}},
             {$set: {folio, usuarioFolio: usuario, ano, proceso: 'TERMINADO', "usuarioDestino.$.subproceso": 'TERMINADO'}},
             {returnOriginal: false}).then(
-            async resultado =>
+            async res =>
             {
                 await notTodosDocsExt(this.context.pubsub!, this.context.db!);
                 await notUsuarioSubProceso(this.context.pubsub!, this.context.db!, usuarios);
-                return respDocumento(resultado);
+                return respDocumento(res);
             });
     }
 
