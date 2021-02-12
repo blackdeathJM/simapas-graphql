@@ -3,7 +3,7 @@ import {IContextData} from "../../../../../interfaces/context-data-interface";
 import {COLECCION} from "../../../../../config/global";
 import {ObjectId} from 'bson';
 import {respDocumento} from "../../../../../services/respuestas-return";
-import {IDocExt, IUsuarioDestinoDocExt} from "../models/docExt.interface";
+import {IDocExt} from "../models/docExt.interface";
 import {notUsuarioSubProceso} from "./docExt-subscription.service";
 
 class DocExtMutationService extends ResolversOperacionesService
@@ -13,7 +13,8 @@ class DocExtMutationService extends ResolversOperacionesService
 
     async _regDocExt(documento: IDocExt)
     {
-        const totalDocs = await this.contarDocumentos(COLECCION.DOC_EXTERNA, {}, {});
+
+        const totalDocs = await this.contarDocumentos(COLECCION.DOC_EXTERNA, {tipoDoc: documento.tipoDoc, ano: documento.ano}, {});
         documento.noSeguimiento = totalDocs.total + 1;
         return await this.agregarUnElemento(COLECCION.DOC_EXTERNA, documento, {}).then(
             async resultado =>

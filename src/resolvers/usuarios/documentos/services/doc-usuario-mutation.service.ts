@@ -36,7 +36,7 @@ class DocUsuarioMutationService extends ResolversOperacionesService
 
     async _asigElfolioPorTipoDoc(documento: IDocExt)
     {
-        const totalDocs = await this.contarDocumentos(COLECCION.DOC_EXTERNA, {}, {});
+        const totalDocs = await this.contarDocumentos(COLECCION.DOC_EXTERNA, {tipoDoc: documento.tipoDoc, ano: documento.ano}, {});
         documento.noSeguimiento = totalDocs.total + 1;
 
         documento.ano = String(new Date().getFullYear());

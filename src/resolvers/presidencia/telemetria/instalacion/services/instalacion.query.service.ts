@@ -1,7 +1,7 @@
-import ResolversOperacionesService from "../../../../services/resolver-operaciones";
-import {COLECCION} from "../../../../config/global";
+import ResolversOperacionesService from "../../../../../services/resolver-operaciones";
+import {COLECCION} from "../../../../../config/global";
 import * as _ from "lodash";
-import {respArreglosSPag} from "../../../../services/respuestas-return";
+import {respArreglosSPag} from "../../../../../services/respuestas-return";
 import {ObjectId} from 'bson';
 
 class InstalacionQueryService extends ResolversOperacionesService

@@ -61,3 +61,7 @@ j
 :src/schema/presidencia/docExterna/docExterna.input.graphql,0\0\0090d36a4d70d057054a59cf366a05dc23e00b2a
 k
 ;src/resolvers/usuarios/documentos/services/funcionesDocs.ts,0\0\00dfef5d5bbfedc90036f902fffaab87056e76f8
+<
+package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
+9
+	yarn.lock,5\3\53585a096fe3a3b96321113856ae62602995a33b
