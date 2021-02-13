@@ -2,25 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="Telemetria">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/models/docExt.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/models/docExt.interface.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/services/docExt-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/services/docExt-mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/instalacion.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/instalacion.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/instalacion.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/instalacion.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/instalacion.mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/instalacion/services/instalacion.query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/instalacion.query.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/models/equipo-electrico-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/models/equipo-electrico-interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/models/instalacion.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/models/instalacion.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/models/lecturas-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/models/lecturas-interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/models/medidor-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/models/medidor-interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/models/parametros-electricos.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/models/parametros-electricos.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/models/recibos-cfe-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/models/recibos-cfe-interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/telemetria/models/telemetria-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/models/telemetria-interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/instalacion.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/instalacion.mutation.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/instalacion.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/instalacion.mutation.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/services/doc-usuario-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/services/doc-usuario-mutation.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/services/funcionesDocs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/services/funcionesDocs.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.input.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +168,11 @@
       <workItem from="1612886444211" duration="1237000" />
       <workItem from="1613027245326" duration="2099000" />
       <workItem from="1613036425538" duration="2660000" />
-      <workItem from="1613110670030" duration="2767000" />
+      <workItem from="1613110670030" duration="3423000" />
+      <workItem from="1613199816273" duration="694000" />
+      <workItem from="1613200562067" duration="108000" />
+      <workItem from="1613203375888" duration="4373000" />
+      <workItem from="1613209771519" duration="5892000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -317,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613050532135</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Telemetria">
+      <created>1613135081656</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1613135081656</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

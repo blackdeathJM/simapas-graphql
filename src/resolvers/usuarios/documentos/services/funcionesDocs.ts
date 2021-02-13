@@ -3,9 +3,8 @@ import {Db} from "mongodb";
 
 export async function formatoFolio(centroGestor: string, tipoDoc: string, db: Db): Promise<string>
 {
-
     const mes = new Date().getMonth() + 1;
-    const ano = String(new Date().getFullYear());
+    const ano = new Date().getFullYear();
 
     return await db.collection(COLECCION.DOC_EXTERNA).countDocuments({folio: {$ne: null}, tipoDoc, ano}, {}).then(
         res =>

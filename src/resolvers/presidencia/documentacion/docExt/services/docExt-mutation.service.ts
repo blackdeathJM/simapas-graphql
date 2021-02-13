@@ -13,9 +13,10 @@ class DocExtMutationService extends ResolversOperacionesService
 
     async _regDocExt(documento: IDocExt)
     {
-
+        documento.ano = new Date().getFullYear();
         const totalDocs = await this.contarDocumentos(COLECCION.DOC_EXTERNA, {tipoDoc: documento.tipoDoc, ano: documento.ano}, {});
         documento.noSeguimiento = totalDocs.total + 1;
+
         return await this.agregarUnElemento(COLECCION.DOC_EXTERNA, documento, {}).then(
             async resultado =>
             {

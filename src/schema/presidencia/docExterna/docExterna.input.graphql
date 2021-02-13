@@ -19,7 +19,7 @@ input DocExtInput
     notificarAdministrador: Boolean
     usuarioFolio: String
     enviadoPor: String
-    ano: String
+    ano: Int
     usuarioDestino: [UsuarioDestinoDocExtInput]
 }
 input UsuarioDestinoDocExtInput

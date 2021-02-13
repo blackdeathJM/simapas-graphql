@@ -7,6 +7,7 @@ import {ILecturas} from "../../models/lecturas-interface";
 import _ from "lodash";
 import {IMedidor} from "../../models/medidor-interface";
 import {IRecibosCfe} from "../../models/recibos-cfe-interface";
+import {IInstalacion} from "../../models/instalacion.interface";
 
 class InstalacionMutationService extends ResolversOperacionesService
 {
@@ -15,9 +16,9 @@ class InstalacionMutationService extends ResolversOperacionesService
         super(root, variables, context);
     }
 
-    async _registroInstalacion()
+    async _registroInstalacion(instalacion: IInstalacion)
     {
-        return await this.agregarUnElemento(COLECCION.TELEMETRIA, this.variables, {}).then(
+        return await this.agregarUnElemento(COLECCION.TELEMETRIA, instalacion, {}).then(
             resultado =>
             {
                 return respDocumento(resultado);
@@ -25,10 +26,10 @@ class InstalacionMutationService extends ResolversOperacionesService
         )
     }
 
-    async _actInstalacion()
+    async _actInstalacion(instalacion: IInstalacion)
     {
-        const _id = this.variables.instalacion?._id;
-        delete this.variables.instalacion?._id;
+        const _id = instalacion._id
+        delete instalacion._id;
         return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, {_id: new ObjectId(_id)},
             {$set: this.variables.instalacion}, {returnOriginal: false}).then(
             resultado =>
@@ -268,9 +269,9 @@ class InstalacionMutationService extends ResolversOperacionesService
                     return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
                         {_id: new ObjectId(this.variables._id)},
                         {$addToSet: agregarOActualizar}, {ReturnOriginal: false, upsert: true}).then(
-                        resultado =>
+                        r =>
                         {
-                            return respDocumento(resultado);
+                            return respDocumento(r);
                         }
                     )
                 }

@@ -7,11 +7,11 @@ const mutationTelemetria: IResolvers =
             {
                 async regInstalacion(_, {instalacion}, {db})
                 {
-                    return new InstalacionMutationService(_, instalacion, {db})._registroInstalacion();
+                    return new InstalacionMutationService(_, {}, {db})._registroInstalacion(instalacion);
                 },
                 async actInstalacion(_, instalacion, {db})
                 {
-                    return new InstalacionMutationService(_, instalacion, {db})._actInstalacion();
+                    return new InstalacionMutationService(_, {}, {db})._actInstalacion(instalacion);
                 },
                 async desIntalacion(_, {activo}, {db})
                 {
