@@ -5,8 +5,8 @@ import {respDocumento} from "../../../../services/respuestas-return";
 import {IContextData} from "../../../../interfaces/context-data-interface";
 import {notTodosDocsExt, notUsuarioSubProceso} from "../../../presidencia/documentacion/docExt/services/docExt-subscription.service";
 import {IDocExt, IUsuarioDestinoDocExt} from "../../../presidencia/documentacion/docExt/models/docExt.interface";
-import moment from "moment";
 import {formatoFolio} from "./funcionesDocs";
+import moment from "moment";
 
 
 class DocUsuarioMutationService extends ResolversOperacionesService
@@ -35,9 +35,9 @@ class DocUsuarioMutationService extends ResolversOperacionesService
 
     async _asigElfolioPorTipoDoc(documento: IDocExt)
     {
+        documento.ano = new Date().getFullYear();
         const totalDocs = await this.contarDocumentos(COLECCION.DOC_EXTERNA, {tipoDoc: documento.tipoDoc, ano: documento.ano}, {});
         documento.noSeguimiento = totalDocs.total + 1;
-
         documento.folio = await formatoFolio(documento.folio, documento.tipoDoc, this.context.db!);
 
         return await this.agregarUnElemento(COLECCION.DOC_EXTERNA, documento, {}).then(
@@ -56,12 +56,11 @@ class DocUsuarioMutationService extends ResolversOperacionesService
         resultado.elemento.usuarioDestino.forEach((u: IUsuarioDestinoDocExt) => usuarios.push(u.usuario));
 
         const folio = await formatoFolio(centroGestor, 'OFICIO', this.context.db!);
-
-        const ano = String(new Date().getFullYear());
+        console.log('folio generado', folio);
 
         return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA,
             {_id: new ObjectId(_id), usuarioDestino: {$elemMatch: {usuario}}},
-            {$set: {folio, usuarioFolio: usuario, ano, proceso: 'TERMINADO', "usuarioDestino.$.subproceso": 'TERMINADO'}},
+            {$set: {folio, usuarioFolio: usuario, proceso: 'TERMINADO', "usuarioDestino.$.subproceso": 'TERMINADO'}},
             {returnOriginal: false}).then(
             async res =>
             {
