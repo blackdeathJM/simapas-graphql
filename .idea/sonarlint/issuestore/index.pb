@@ -105,3 +105,9 @@ U
 Ysrc/resolvers/presidencia/telemetria/instalacion/services/instalacion.mutation.service.ts,0\4\04138bad908722a08c0707d0ab142a5c2e281e42
 j
 :src/resolvers/usuarios/documentos/doc.mutation.resolver.ts,6\0\604ba01d05e0a22688861465a1030a8aef565612
+q
+Asrc/schema/presidencia/docExterna/docExterna.subscription.graphql,8\0\80cc62d8ce17eb9b50e1fd9228d5ec989539c340
+j
+:src/schema/presidencia/docExterna/docExterna.query.graphql,9\a\9a256af7e47c2396502db406a351a501b8d080e3
+m
+=src/schema/presidencia/docExterna/docExterna.mutation.graphql,4\2\420b29279506a10327d5354f9ff0bac810473cb6
