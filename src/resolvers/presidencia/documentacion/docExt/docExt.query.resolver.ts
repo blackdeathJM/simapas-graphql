@@ -29,6 +29,10 @@ const queryDocExt: IResolvers =
                 docPorTipo(_, {tipoDoc}, {db})
                 {
                     return new DocExtQueryService(_, {}, {db})._docPorTipo(tipoDoc)
+                },
+                todosLosDocs(_, __, {db})
+                {
+                    return new DocExtQueryService(_, {}, {db})._todosLosDocs();
                 }
             }
     };

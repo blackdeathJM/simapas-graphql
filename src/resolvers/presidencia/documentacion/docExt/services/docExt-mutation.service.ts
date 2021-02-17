@@ -3,7 +3,7 @@ import {IContextData} from "../../../../../interfaces/context-data-interface";
 import {COLECCION} from "../../../../../config/global";
 import {ObjectId} from 'bson';
 import {respDocumento} from "../../../../../services/respuestas-return";
-import {IDocExt} from "../models/docExt.interface";
+import {IDocExt, IUsuarioDestinoDocExt} from "../models/docExt.interface";
 import {notUsuarioSubProceso} from "./docExt-subscription.service";
 
 class DocExtMutationService extends ResolversOperacionesService
@@ -59,14 +59,14 @@ class DocExtMutationService extends ResolversOperacionesService
         )
     }
 
-    async _darPorEntregado(documento: IDocExt)
+    async _darPorEntregado(_id: string)
     {
-        return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(documento._id)},
+        return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(_id)},
             {$set: {proceso: "ENTREGADO", "usuarioDestino.$[].subproceso": "ENTREGADO"}}, {returnOriginal: false}).then(
             async resultado =>
             {
                 const usuarios: string[] = [];
-                documento.usuarioDestino.forEach(u =>
+                resultado.elemento.usuarioDestino.forEach((u: IUsuarioDestinoDocExt) =>
                 {
                     usuarios.push(u.usuario);
                 });

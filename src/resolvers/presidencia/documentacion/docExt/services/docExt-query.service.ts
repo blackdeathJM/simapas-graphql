@@ -3,6 +3,7 @@ import {IContextData} from "../../../../../interfaces/context-data-interface";
 import {COLECCION} from "../../../../../config/global";
 import {respArreglosSPag} from "../../../../../services/respuestas-return";
 
+
 class DocExtQueryService extends ResolversOperacionesService
 {
     constructor(root: object, variables: object, context: IContextData)
@@ -82,6 +83,16 @@ class DocExtQueryService extends ResolversOperacionesService
             {
                 return respArreglosSPag(resultado);
             })
+    }
+
+    async _todosLosDocs()
+    {
+        return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {ano: new Date().getFullYear()}, {}, {noSeguimiento: -1}).then(
+            resultado =>
+            {
+                return respArreglosSPag(resultado);
+            }
+        )
     }
 }
 

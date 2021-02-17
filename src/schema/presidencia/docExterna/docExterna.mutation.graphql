@@ -7,7 +7,7 @@ extend type Mutation
     "DOC EXTERNA: Mandar observaciones y rechazar el documento"
     aprobarRechazarDoc(_id: ID!, usuario: String!, subproceso: String!, observaciones: String!): ResDocEx
     "DOC: EXTERNA: Dar por terminado el documento anticipado"
-    acDarPorEntregado(documento: DocExtInput!): ResDocEx
+    acDarPorEntregado(_id: ID!): ResDocEx
     "Editar informacion del documento"
     acInfoDoc(documento: DocExtInput): ResDocEx
     "Eliminar usuario al que le llega la documentacion"
