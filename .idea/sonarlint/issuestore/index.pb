@@ -115,3 +115,7 @@ w
 Gsrc/resolvers/presidencia/documentacion/docExt/docExt.query.resolver.ts,4\c\4ca750145e41cd28e2e47f2f1367f28af8de10ce
 
 Osrc/resolvers/presidencia/documentacion/docExt/services/docExt-query.service.ts,5\2\52c3b57b20146d48739eef6162b77b92c5269ab7
+l
+<build/resolvers/usuarios/documentos/doc.mutation.resolver.js,6\b\6b0bf101558956172af8c0fc8fb1e3ecd7c23179
+k
+;src/schema/usuarios/documentos/doc-usuario.mutation.graphql,7\8\7862df7a33ee4eab069bbfd3f6b54f66a059214d

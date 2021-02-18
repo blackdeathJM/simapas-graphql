@@ -21,7 +21,8 @@ class DocUsuarioMutationService extends ResolversOperacionesService
         return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(_id), usuarioDestino: {$elemMatch: {usuario}}},
             {
                 $set: {
-                    notificarAdministrador: true, "usuarioDestino.$.docUrl": docUrl, "usuarioDestino.$.subproceso": subproceso, "usuarioDestino.$.notificarRespDelUsuario": true
+                    notificarAdministrador: true, "usuarioDestino.$.docUrl": docUrl, "usuarioDestino.$.subproceso": subproceso,
+                    "usuarioDestino.$.notificarRespDelUsuario": true
                 }
             },
             {returnOriginal: false}).then(
@@ -33,8 +34,21 @@ class DocUsuarioMutationService extends ResolversOperacionesService
         )
     }
 
-    async _asigElfolioPorTipoDoc(documento: IDocExt)
+    async _asigElfolioPorTipoDoc(documento: IDocExt, refDoc: number)
     {
+        let buscarElemento: any;
+        if (refDoc)
+        {
+            buscarElemento = await this.buscarUnElemento(COLECCION.DOC_EXTERNA, {
+                noSeguimiento: refDoc, tipoDoc: documento.tipoDoc,
+                usuarioDestino: {$elemMatch: {usuario: documento.usuarioFolio}}
+            }, {});
+            if (!buscarElemento.estatus)
+            {
+                return respDocumento(buscarElemento);
+            }
+        }
+
         documento.ano = new Date().getFullYear();
         const totalDocs = await this.contarDocumentos(COLECCION.DOC_EXTERNA, {tipoDoc: documento.tipoDoc, ano: documento.ano}, {});
         documento.noSeguimiento = totalDocs.total + 1;
@@ -43,6 +57,19 @@ class DocUsuarioMutationService extends ResolversOperacionesService
         return await this.agregarUnElemento(COLECCION.DOC_EXTERNA, documento, {}).then(
             async resultado =>
             {
+                if (refDoc)
+                {
+                    await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(resultado.elemento._id)},
+                        {$set: {docUrl: buscarElemento.elemento.docUrl}}, {returnOriginal: false}).then(
+                        async () =>
+                        {
+                            await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {
+                                    _id: new ObjectId(buscarElemento.elemento._id),
+                                    usuarioDestino: {$elemMatch: {usuario: documento.usuarioFolio}}
+                                },
+                                {$set: {proceso: "ENTREGADO", "usuarioDestino.$.subproceso": "ENTREGADO"}}, {});
+                        });
+                }
                 return respDocumento(resultado);
             }
         )
@@ -54,10 +81,7 @@ class DocUsuarioMutationService extends ResolversOperacionesService
         const resultado = await this.buscarUnElemento(COLECCION.DOC_EXTERNA, {_id: new ObjectId(_id)}, {});
 
         resultado.elemento.usuarioDestino.forEach((u: IUsuarioDestinoDocExt) => usuarios.push(u.usuario));
-
         const folio = await formatoFolio(centroGestor, 'OFICIO', this.context.db!);
-        console.log('folio generado', folio);
-
         return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA,
             {_id: new ObjectId(_id), usuarioDestino: {$elemMatch: {usuario}}},
             {$set: {folio, usuarioFolio: usuario, proceso: 'TERMINADO', "usuarioDestino.$.subproceso": 'TERMINADO'}},

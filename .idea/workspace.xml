@@ -3,11 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="Telemetria">
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2021_05_05_a__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2021_05_05_a__m___Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_02_2021_07_22_a__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_02_2021_07_22_a__m___Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/docExt.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/docExt.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/services/docExt-query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/services/docExt-query.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.query.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/doc.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/doc.mutation.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/services/doc-usuario-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/services/doc-usuario-mutation.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/services/funcionesDocs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/services/funcionesDocs.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/usuarios/documentos/doc-usuario.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/usuarios/documentos/doc-usuario.mutation.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,8 +55,8 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="D:\Documents\Proyectos\Backend\simapas-graphql\node_modules\typescript\lib" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="ts.external.directory.path" value="D:\Documents\proyectos\backend\simapas-graphql\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -181,6 +183,8 @@
       <workItem from="1613559870223" duration="3166000" />
       <workItem from="1613592707481" duration="1328000" />
       <workItem from="1613631122176" duration="668000" />
+      <workItem from="1613646541574" duration="400000" />
+      <workItem from="1613647065289" duration="6441000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>

@@ -10,9 +10,9 @@ const mutationDocUsuario: IResolvers =
                 {
                     return new DocUsuarioMutationService(_, {}, {pubsub, db})._acDocUrlEnUsuarioDestino(_id, usuario, docUrl, subproceso);
                 },
-                async asigElfolioPorTipoDoc(_, {documento}, {pubsub, db})
+                async asigElfolioPorTipoDoc(_, {documento, refDoc}, {pubsub, db})
                 {
-                    return new DocUsuarioMutationService(_, {}, {pubsub, db})._asigElfolioPorTipoDoc(documento);
+                    return new DocUsuarioMutationService(_, {}, {pubsub, db})._asigElfolioPorTipoDoc(documento, refDoc);
                 },
                 async genFolioRespDoc(_, {_id, usuario, centroGestor}, {pubsub, db})
                 {
