@@ -34,6 +34,7 @@ class DocExtQueryService extends ResolversOperacionesService
         return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA,
             {
                 $or: [{noSeguimiento: parseInt(consulta)}, {identificadorDoc: {$regex: consulta, $options: "i"}},
+                    {folio: {$regex: consulta, $options: "i"}},
                     {dependencia: {$regex: consulta, $options: "i"}}, {asunto: {$regex: consulta, $options: "i"}},
                     {tipoDoc: {$regex: consulta, $options: "i"}},
                     {fechaRecepcion: {$regex: consulta}}, {fechaLimiteEntrega: {$regex: consulta, $options: "i"}},
@@ -93,6 +94,16 @@ class DocExtQueryService extends ResolversOperacionesService
                 return respArreglosSPag(resultado);
             }
         )
+    }
+
+    async _intOExt(esInterno: any)
+    {
+        return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {esInterno, ano: new Date().getFullYear()}, {},
+            {fechaRecepcion: -1}).then(
+            resultado =>
+            {
+                return respArreglosSPag(resultado);
+            })
     }
 }
 

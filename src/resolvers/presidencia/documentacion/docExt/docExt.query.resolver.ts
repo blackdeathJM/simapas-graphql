@@ -33,6 +33,10 @@ const queryDocExt: IResolvers =
                 todosLosDocs(_, __, {db})
                 {
                     return new DocExtQueryService(_, {}, {db})._todosLosDocs();
+                },
+                intOExt(_, {esInterno}, {db})
+                {
+                    return new DocExtQueryService(_, {}, {db})._intOExt(esInterno);
                 }
             }
     };

@@ -14,4 +14,6 @@ type Query
     docPorTipo(tipoDoc: String!): ResDocExSinPag,
     "Todos los documentos"
     todosLosDocs: ResDocExSinPag
+    "Filtar los documentos si es interno o externo"
+    intOExt(esInterno: Boolean!): ResDocEx
 }

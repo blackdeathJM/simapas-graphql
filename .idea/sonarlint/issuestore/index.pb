@@ -111,3 +111,7 @@ j
 :src/schema/presidencia/docExterna/docExterna.query.graphql,9\a\9a256af7e47c2396502db406a351a501b8d080e3
 m
 =src/schema/presidencia/docExterna/docExterna.mutation.graphql,4\2\420b29279506a10327d5354f9ff0bac810473cb6
+w
+Gsrc/resolvers/presidencia/documentacion/docExt/docExt.query.resolver.ts,4\c\4ca750145e41cd28e2e47f2f1367f28af8de10ce
+
+Osrc/resolvers/presidencia/documentacion/docExt/services/docExt-query.service.ts,5\2\52c3b57b20146d48739eef6162b77b92c5269ab7
