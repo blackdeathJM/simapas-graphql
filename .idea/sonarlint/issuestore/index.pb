@@ -115,10 +115,6 @@ w
 Gsrc/resolvers/presidencia/documentacion/docExt/docExt.query.resolver.ts,4\c\4ca750145e41cd28e2e47f2f1367f28af8de10ce
 
 Osrc/resolvers/presidencia/documentacion/docExt/services/docExt-query.service.ts,5\2\52c3b57b20146d48739eef6162b77b92c5269ab7
-l
-<build/resolvers/usuarios/documentos/doc.mutation.resolver.js,6\b\6b0bf101558956172af8c0fc8fb1e3ecd7c23179
-k
-;src/schema/usuarios/documentos/doc-usuario.mutation.graphql,7\8\7862df7a33ee4eab069bbfd3f6b54f66a059214d
 
 `.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2021_05_05_a__m___Default_Changelist_.xml,f\0\f09700ae7159303a294f5daeeb5a7d57c0261648
 
@@ -127,13 +123,5 @@ C
 src/schema/index.ts,0\8\081b7144792b0a7a771bf17f874ff5ba1c3f26bb
 I
 src/schema/.graphqlconfig,e\0\e0f1660f7f9d9c83d61e84c187da2fb8e076015b
-`
-0src/schema/usuarios/usuario.subscription.graphql,1\7\1750f0c6f61b5a527d1a2d5f5760887411f9ef2e
-Y
-)src/schema/usuarios/usuario.query.graphql,0\a\0a514ed708466f8012d562973c3bdd66a5c20840
-Y
-)src/schema/usuarios/usuario.input.graphql,5\9\597e4a357b65a719a4cd7b2b5a79b38c456a7248
-\
-,src/schema/usuarios/usuario.mutation.graphql,5\2\5261f0d633dc3450663ba8007caf35b189e55041
 S
 #src/schema/usuarios/usuario.graphql,4\d\4dad87d85b56a7eccd392f34317e707571cb6ec3
