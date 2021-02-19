@@ -1,4 +1,4 @@
-extend type Mutation
+type Mutation
 {
     "DEPARTAMENTO - Registro de los departamentos"
     registroDepto(departamento: DepartamentoInput!): RespDepto

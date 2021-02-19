@@ -20,6 +20,7 @@ export interface IDocExt
     usuarioFolio: string;
     enviadoPor: string;
     ano: number;
+    ref: boolean;
     usuarioDestino: IUsuarioDestinoDocExt[];
 }
 

@@ -2,8 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="Telemetria">
+      <change afterPath="$PROJECT_DIR$/src/schema/.graphqlconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/services/funcionesDocs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/services/funcionesDocs.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/models/docExt.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/models/docExt.interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/global/departamentos/departamento.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/global/departamentos/departamentoMutation.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/global/departamentos/departamento.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/global/departamentos/departamentoQuery.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/global/departamentos/departamento.subscription.graphql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/global/notificaciones/notificacion.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/global/notificaciones/notificacion.query.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.input.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.mutation.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.subscription.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.subscription.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/presidencia/telemetria/instalaciones/instalaciones.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/instalaciones/instalaciones.mutation.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/presidencia/telemetria/instalaciones/instalaciones.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/instalaciones/instalaciones.query.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/usuarios/documentos/doc-usuario.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/usuarios/documentos/docUsuarioMutation.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/usuarios/documentos/doc-usuario.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/usuarios/documentos/docUsuarioQuery.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/usuarios/usuario.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/usuarios/usuarioInput.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/usuarios/usuario.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/usuarios/usuarioMutation.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/usuarios/usuario.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/usuarios/usuarioQuery.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/usuarios/usuario.subscription.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/usuarios/usuarioSubscription.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +67,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="D:\Documents\proyectos\backend\simapas-graphql\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -178,7 +196,9 @@
       <workItem from="1613592707481" duration="1328000" />
       <workItem from="1613631122176" duration="668000" />
       <workItem from="1613646541574" duration="400000" />
-      <workItem from="1613647065289" duration="10532000" />
+      <workItem from="1613647065289" duration="10578000" />
+      <workItem from="1613735408879" duration="1372000" />
+      <workItem from="1613736879253" duration="959000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -348,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613653924269</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Telemetria">
+      <created>1613665887566</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1613665887566</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -20,6 +20,7 @@ input DocExtInput
     usuarioFolio: String
     enviadoPor: String
     ano: Int
+    ref: Boolean
     usuarioDestino: [UsuarioDestinoDocExtInput]
 }
 input UsuarioDestinoDocExtInput

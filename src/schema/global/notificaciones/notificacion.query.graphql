@@ -1,4 +1,4 @@
-extend type Query
+type Query
 {
     listarNotificaciones(receptor: String): ResNotificacion
 }

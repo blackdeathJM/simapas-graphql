@@ -1,5 +1,0 @@
-extend type Subscription
-{
-    "DEPARTAMENTO - Detectar cambios"
-    cambioDepartamento: [DeptoType]
-}

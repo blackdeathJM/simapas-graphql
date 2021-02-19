@@ -1,4 +1,4 @@
-extend type Query
+type Query
 {
     "Instalaciones: Consultar todas las instalaciones"
     todasInstalaciones: ResInstalacionSPag

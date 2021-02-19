@@ -20,6 +20,7 @@ type DocExtType
     usuarioFolio: String
     enviadoPor: String
     ano: Int
+    ref: Boolean
     usuarioDestino: [UsuaroDestinoDocExtType]
 }
 type UsuaroDestinoDocExtType

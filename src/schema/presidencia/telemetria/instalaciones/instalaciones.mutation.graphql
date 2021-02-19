@@ -1,4 +1,4 @@
-extend type Mutation
+type Mutation
 {
     "Instalacion: Registro de tanques y pozos de agua"
     regInstalacion(instalacion: InstalacionInput!):ResInstalacion
