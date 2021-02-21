@@ -1,18 +1,20 @@
 {
-  "name": "sistema comercial GraphQL Schema",
   "schemaPath": "./schema.graphql",
+    "includes": ["*.graphql"],
   "extensions": {
     "endpoints": {
-      "Default GraphQL Endpoint": {
+      "prod": {
+        "url": "http://26.62.148.73:5642/graphql",
+        "subscription": {
+          "url": "wss://26.62.148.73:5642/graphql"
+        }
+      },
+      "dev": {
         "url": "http://localhost:5002/graphql",
-        "headers": {
-          "user-agent": "JS GraphQL"
-        },
-        "introspect": true
+        "subscription": {
+          "url": "ws://localhost:5002/graphql"
+        }
       }
     }
-  },
-  "includes": [
-    "*.graphql"
-  ]
+  }
 }

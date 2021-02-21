@@ -125,3 +125,11 @@ I
 src/schema/.graphqlconfig,e\0\e0f1660f7f9d9c83d61e84c187da2fb8e076015b
 S
 #src/schema/usuarios/usuario.graphql,4\d\4dad87d85b56a7eccd392f34317e707571cb6ec3
+X
+(src/schema/usuarios/usuarioQuery.graphql,9\8\98a26daba20125faeea61796a98ae663be387da2
+X
+(src/schema/usuarios/usuarioInput.graphql,b\c\bc03ecf35ebe55cf75e82ddc271d1be63985cf35
+[
++src/schema/usuarios/usuarioMutation.graphql,2\3\239832688072a36067b8862c2fd36b8578ef1eba
+_
+/src/schema/usuarios/usuarioSubscription.graphql,5\9\59598f9852af8c6e3830c3f72786eca814d6856d

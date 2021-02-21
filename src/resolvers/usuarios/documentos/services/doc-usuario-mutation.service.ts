@@ -63,11 +63,15 @@ class DocUsuarioMutationService extends ResolversOperacionesService
                         {$set: {docUrl: buscarElemento.elemento.docUrl}}, {returnOriginal: false}).then(
                         async () =>
                         {
+                            const extrerFolio = resultado.elemento.folio.split("/");
+                            let nvoFolioRef = buscarElemento.elemento.folio + "R " + extrerFolio[3] + " ";
+                            let folioGuardar = nvoFolioRef.replace("null", "");
+
                             await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {
                                     _id: new ObjectId(buscarElemento.elemento._id),
                                     usuarioDestino: {$elemMatch: {usuario: documento.usuarioFolio}}
                                 },
-                                {$set: {proceso: "ENTREGADO", "usuarioDestino.$.subproceso": "ENTREGADO"}}, {});
+                                {$set: {folio: folioGuardar, ref: true}}, {});
                         });
                 }
                 return respDocumento(resultado);
