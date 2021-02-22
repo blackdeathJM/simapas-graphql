@@ -4,11 +4,7 @@
     <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="Actualizacion de dependencias">
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/services/doc-usuario-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/services/doc-usuario-mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/services/funcionesDocs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/services/funcionesDocs.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/.graphqlconfig" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/.graphqlconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/services/docExt-query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/services/docExt-query.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +186,11 @@
       <workItem from="1613736879253" duration="959000" />
       <workItem from="1613850845066" duration="2741000" />
       <workItem from="1613854290475" duration="1939000" />
-      <workItem from="1613887545579" duration="6494000" />
+      <workItem from="1613887545579" duration="6579000" />
+      <workItem from="1613903978002" duration="715000" />
+      <workItem from="1613936318050" duration="20000" />
+      <workItem from="1613936500931" duration="1270000" />
+      <workItem from="1613957599625" duration="901000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -374,7 +374,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613761733179</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Actualizacion de dependencias">
+      <created>1613903841584</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1613903841584</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

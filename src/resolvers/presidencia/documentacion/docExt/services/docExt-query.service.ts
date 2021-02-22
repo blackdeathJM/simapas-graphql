@@ -79,7 +79,7 @@ class DocExtQueryService extends ResolversOperacionesService
 
     async _docPorTipo(tipoDoc: string)
     {
-        return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {tipoDoc, proceso: 'ENTREGADO'}, {}, {noSeguimiento: -1}).then(
+        return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {tipoDoc, ano: new Date().getFullYear()}, {}, {noSeguimiento: -1}).then(
             resultado =>
             {
                 return respArreglosSPag(resultado);
@@ -98,7 +98,7 @@ class DocExtQueryService extends ResolversOperacionesService
 
     async _intOExt(esInterno: any)
     {
-        return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {esInterno, ano: new Date().getFullYear()}, {},
+        return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {esInterno, ano: new Date().getFullYear(), tipoDoc: 'OFICIO'}, {},
             {fechaRecepcion: -1}).then(
             resultado =>
             {

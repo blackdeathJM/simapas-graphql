@@ -133,3 +133,5 @@ X
 +src/schema/usuarios/usuarioMutation.graphql,2\3\239832688072a36067b8862c2fd36b8578ef1eba
 _
 /src/schema/usuarios/usuarioSubscription.graphql,5\9\59598f9852af8c6e3830c3f72786eca814d6856d
+k
+;src/resolvers/usuarios/services/usuario-mutation.service.ts,2\8\286f2e62363ddd5d3bf86cb86ed6b6b0ae39c875
