@@ -18,6 +18,7 @@ class InstalacionMutationService extends ResolversOperacionesService
 
     async _registroInstalacion(instalacion: IInstalacion)
     {
+        delete instalacion._id;
         return await this.agregarUnElemento(COLECCION.TELEMETRIA, instalacion, {}).then(
             resultado =>
             {
@@ -28,10 +29,11 @@ class InstalacionMutationService extends ResolversOperacionesService
 
     async _actInstalacion(instalacion: IInstalacion)
     {
-        const _id = instalacion._id
+        const _id = instalacion._id;
         delete instalacion._id;
+
         return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, {_id: new ObjectId(_id)},
-            {$set: this.variables.instalacion}, {returnOriginal: false}).then(
+            {$set: {...instalacion}}, {returnOriginal: false}).then(
             resultado =>
             {
                 return respDocumento(resultado);
