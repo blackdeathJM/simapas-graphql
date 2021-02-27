@@ -8,6 +8,7 @@ import _ from "lodash";
 import {IMedidor} from "../../models/medidor-interface";
 import {IRecibosCfe} from "../../models/recibos-cfe-interface";
 import {IInstalacion} from "../../models/instalacion.interface";
+import {IBomba, IMotor} from "../../models/equipo-electrico-interface";
 
 class InstalacionMutationService extends ResolversOperacionesService
 {
@@ -165,11 +166,11 @@ class InstalacionMutationService extends ResolversOperacionesService
         }
     }
 
-    async _regMotor()
+    async _regMotor(_id: string, motor: IMotor)
     {
         return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-            {_id: new ObjectId(this.variables._id)},
-            {$addToSet: {motor: this.variables.motor}}, {returnOriginal: false, upsert: true}).then(
+            {_id: new ObjectId(_id)},
+            {$addToSet: {motor}}, {returnOriginal: false, upsert: true}).then(
             resultado =>
             {
                 return respDocumento(resultado);
@@ -177,11 +178,11 @@ class InstalacionMutationService extends ResolversOperacionesService
         );
     }
 
-    async _regBobma()
+    async _regBobma(_id: string, bomba: IBomba)
     {
         return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-            {_id: new ObjectId(this.variables._id)},
-            {$addToSet: {bomba: this.variables.bomba}}, {returnOriginal: false, upsert: true}).then(
+            {_id: new ObjectId(_id)},
+            {$addToSet: {bomba}}, {returnOriginal: false, upsert: true}).then(
             resultado =>
             {
                 return respDocumento(resultado);

@@ -157,3 +157,7 @@ X
 (src/schema/usuarios/usuarioQuery.graphql,9\8\98a26daba20125faeea61796a98ae663be387da2
 _
 /src/schema/usuarios/usuarioSubscription.graphql,5\9\59598f9852af8c6e3830c3f72786eca814d6856d
+|
+Lsrc/resolvers/global/departamentos/services/departamento-mutation.service.ts,f\6\f6c5759c384660be517e67ec6e2930fe54df5ada
+k
+;src/resolvers/usuarios/services/usuario-mutation.service.ts,2\8\286f2e62363ddd5d3bf86cb86ed6b6b0ae39c875
