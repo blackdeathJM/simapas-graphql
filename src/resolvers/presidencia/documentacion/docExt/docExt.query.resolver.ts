@@ -18,25 +18,29 @@ const queryDocExt: IResolvers =
                 {
                     return new DocExtQueryService(_, {}, {db})._docExtProceso(proceso);
                 },
-                docsEntreFechas(_, {fechaRecepcionInicial, fechaRecepcionFinal}, {db})
+                async docsEntreFechas(_, {fechaRecepcionInicial, fechaRecepcionFinal}, {db})
                 {
                     return new DocExtQueryService(_, {}, {db})._busquedaEntreFechas(fechaRecepcionInicial, fechaRecepcionFinal);
                 },
-                busquedaGral(_, {consulta}, {db})
+                async busquedaGral(_, {consulta}, {db})
                 {
                     return new DocExtQueryService(_, {}, {db})._busquedaGral(consulta);
                 },
-                docPorTipo(_, {tipoDoc}, {db})
+                async docPorTipo(_, {tipoDoc}, {db})
                 {
                     return new DocExtQueryService(_, {}, {db})._docPorTipo(tipoDoc)
                 },
-                todosLosDocs(_, __, {db})
+                async todosLosDocs(_, __, {db})
                 {
                     return new DocExtQueryService(_, {}, {db})._todosLosDocs();
                 },
-                intOExt(_, {esInterno}, {db})
+                async intOExt(_, {esInterno}, {db})
                 {
                     return new DocExtQueryService(_, {}, {db})._intOExt(esInterno);
+                },
+                async ultimoFolio(_, __, {db})
+                {
+                    return new DocExtQueryService(_,{}, {db})._ultimoFolio();
                 }
             }
     };

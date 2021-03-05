@@ -16,4 +16,6 @@ type Query
     todosLosDocs: ResDocExSinPag
     "Filtar los documentos si es interno o externo"
     intOExt(esInterno: Boolean!): ResDocEx
+    "Obtener el ultimoFolio"
+    ultimoFolio: ResDocExSinPag
 }
