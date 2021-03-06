@@ -115,8 +115,6 @@ w
 Gsrc/resolvers/presidencia/documentacion/docExt/docExt.query.resolver.ts,4\c\4ca750145e41cd28e2e47f2f1367f28af8de10ce
 
 Osrc/resolvers/presidencia/documentacion/docExt/services/docExt-query.service.ts,5\2\52c3b57b20146d48739eef6162b77b92c5269ab7
-l
-<build/resolvers/usuarios/documentos/doc.mutation.resolver.js,6\b\6b0bf101558956172af8c0fc8fb1e3ecd7c23179
 
 `.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2021_05_05_a__m___Default_Changelist_.xml,f\0\f09700ae7159303a294f5daeeb5a7d57c0261648
 C
