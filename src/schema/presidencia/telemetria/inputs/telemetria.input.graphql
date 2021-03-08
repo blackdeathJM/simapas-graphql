@@ -4,4 +4,5 @@ input TelemetriaInput
     plc: [String]
     switch: [String]
     repetidor: [String]
+    camara: [String]
 }

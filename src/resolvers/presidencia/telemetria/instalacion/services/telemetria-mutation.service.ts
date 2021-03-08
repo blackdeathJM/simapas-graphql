@@ -3,7 +3,6 @@ import {IContextData} from "../../../../../interfaces/context-data-interface";
 import {COLECCION} from "../../../../../config/global";
 import {ObjectId} from "bson";
 import {respDocumento} from "../../../../../services/respuestas-return";
-import {ITelemetria} from "../../models/telemetria-interface";
 
 export class TelemetriaMutationService extends ResolversOperacionesService
 {
@@ -12,24 +11,39 @@ export class TelemetriaMutationService extends ResolversOperacionesService
         super(root, variables, context);
     }
 
-    async _agIps(_id: string, tipo: string, ip: string[])
+    async _agIps(_id: string, tipo: string, ip: string)
     {
-        // let crearPropiedad: object = {};
-        // Object.defineProperty(crearPropiedad, "telemetria.")
-        //
-        //
         const ipEncontrada = await this.buscarSinPaginacion(COLECCION.TELEMETRIA,
-            {telemetria: {$all: ip}}, {}, {});
-        console.log('buscar ips', ipEncontrada);
+            {
+                $or: [{"telemetria.radio": ip}, {"telemetria.plc": ip}, {"telemetria.switch": ip}, {"telemetria.repetidor": ip},
+                    {"telemetria.camara": ip}]
+            }, {}, {});
 
-        // return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-        //     {_id: new ObjectId(_id)},
-        //     {$set: {telemetria}}, {returnOriginal: false, upsert: true}).then(
-        //     resultado =>
-        //     {
-        //         return respDocumento(resultado);
-        //     }
-        // )
+        if (ipEncontrada.elementos?.length !== 0)
+        {
+            return {
+                estatus: false,
+                mensaje: 'No puedes registrar esa direccion ip porque ya se encuentra en uso trata con otra diferente',
+                elemento: []
+            }
+        } else
+        {
+            const crearPropiedad: object = {};
+            Object.defineProperty(crearPropiedad, "telemetria." + tipo,
+                {
+                    enumerable: true,
+                    configurable: true,
+                    writable: true,
+                    value: ip
+                });
+            return this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
+                {_id: new ObjectId(_id)},
+                {$push: crearPropiedad}, {}).then(
+                res =>
+                {
+                    return respDocumento(res);
+                })
+        }
     }
 
 }

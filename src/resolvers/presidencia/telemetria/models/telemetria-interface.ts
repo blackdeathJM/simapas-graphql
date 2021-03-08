@@ -4,4 +4,5 @@ export interface ITelemetria
     plc: string[];
     switch: string[];
     repetidor: string[];
+    camara: string[];
 }

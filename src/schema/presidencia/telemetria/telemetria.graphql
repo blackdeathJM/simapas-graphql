@@ -4,4 +4,5 @@ type TelemetriaType
     radio: [String]
     repetidor: [String]
     switch: [String]
+    camara: [String]
 }
