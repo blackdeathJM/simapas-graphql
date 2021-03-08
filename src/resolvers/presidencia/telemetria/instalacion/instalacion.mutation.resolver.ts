@@ -19,9 +19,9 @@ const mutationTelemetria: IResolvers =
                 {
                     return new InstalacionMutationService(_, {instalacion: {activo}}, {db})._desInstalacion();
                 },
-                async agIps(_, {_id, telemetria}, {db})
+                async agIps(_, {_id, tipo, ip}, {db})
                 {
-                    return new TelemetriaMutationService(_, {}, {db})._agIps(_id, telemetria);
+                    return new TelemetriaMutationService(_, {}, {db})._agIps(_id, tipo, ip);
                 },
                 async regParamElectricos(_, {_id, parametrosElectricos, parametro}, {db})
                 {

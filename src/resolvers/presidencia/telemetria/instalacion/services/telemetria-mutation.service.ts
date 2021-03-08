@@ -3,6 +3,7 @@ import {IContextData} from "../../../../../interfaces/context-data-interface";
 import {COLECCION} from "../../../../../config/global";
 import {ObjectId} from "bson";
 import {respDocumento} from "../../../../../services/respuestas-return";
+import {ITelemetria} from "../../models/telemetria-interface";
 
 export class TelemetriaMutationService extends ResolversOperacionesService
 {
@@ -11,16 +12,24 @@ export class TelemetriaMutationService extends ResolversOperacionesService
         super(root, variables, context);
     }
 
-    async _agIps(_id: string, telemetria: any)
+    async _agIps(_id: string, tipo: string, ip: string[])
     {
-        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-            {_id: new ObjectId(_id)},
-            {$set: {telemetria: this.variables.telemetria}}, {returnOriginal: false, upsert: true}).then(
-            resultado =>
-            {
-                return respDocumento(resultado);
-            }
-        )
+        // let crearPropiedad: object = {};
+        // Object.defineProperty(crearPropiedad, "telemetria.")
+        //
+        //
+        const ipEncontrada = await this.buscarSinPaginacion(COLECCION.TELEMETRIA,
+            {telemetria: {$all: ip}}, {}, {});
+        console.log('buscar ips', ipEncontrada);
+
+        // return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
+        //     {_id: new ObjectId(_id)},
+        //     {$set: {telemetria}}, {returnOriginal: false, upsert: true}).then(
+        //     resultado =>
+        //     {
+        //         return respDocumento(resultado);
+        //     }
+        // )
     }
 
 }

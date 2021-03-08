@@ -4,7 +4,9 @@ type Mutation
     regInstalacion(instalacion: InstalacionInput!):ResInstalacion
     actInstalacion(instalacion: InstalacionInput!): ResInstalacion
     desIntalacion(activo: Boolean!): ResInstalacion
-    agIps(telemetria: TelemetriaInput, _id: ID!): ResInstalacion
+
+    "Agregar ip dependiendo del tipo como son RADIOS, PLC, SWITCH, REPETIDORES, CAMARAS"
+    agIps(_id: ID!, tipo: String!, ip: [String!]): ResInstalacion
 
     "Registro de voltajes"
     regParamElectricos(_id: ID, parametrosElectricos: ParametrosElectricosInput, parametro: String!): ResInstalacion
