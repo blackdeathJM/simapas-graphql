@@ -157,3 +157,11 @@ X
 (src/schema/usuarios/usuarioQuery.graphql,9\8\98a26daba20125faeea61796a98ae663be387da2
 _
 /src/schema/usuarios/usuarioSubscription.graphql,5\9\59598f9852af8c6e3830c3f72786eca814d6856d
+†
+Vsrc/resolvers/presidencia/telemetria/instalacion/services/motor-bomba-query.service.ts,1\b\1b81748451b029c607bf1595a3a387e1c64c3133
+…
+Usrc/resolvers/presidencia/telemetria/instalacion/services/telemetria-query.service.ts,8\9\8938b29d650af85596d3f555c6c5423d5ee28c39
+‰
+Ysrc/resolvers/presidencia/telemetria/instalacion/services/motor-bomba-mutation.service.ts,3\4\34055426f71f3fd3954cd9250cedf0155a381b40
+ˆ
+Xsrc/resolvers/presidencia/telemetria/instalacion/services/telemetria-mutation.service.ts,f\1\f1affb726ff6a92b5164da1c66bacfcc44b27af8

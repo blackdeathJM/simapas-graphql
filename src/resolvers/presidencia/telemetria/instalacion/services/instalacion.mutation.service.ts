@@ -8,7 +8,6 @@ import _ from "lodash";
 import {IMedidor} from "../../models/medidor-interface";
 import {IRecibosCfe} from "../../models/recibos-cfe-interface";
 import {IInstalacion} from "../../models/instalacion.interface";
-import {IBomba, IMotor} from "../../models/equipo-electrico-interface";
 
 class InstalacionMutationService extends ResolversOperacionesService
 {
@@ -20,6 +19,8 @@ class InstalacionMutationService extends ResolversOperacionesService
     async _registroInstalacion(instalacion: IInstalacion)
     {
         delete instalacion._id;
+        instalacion.fechaRet = '';
+
         return await this.agregarUnElemento(COLECCION.TELEMETRIA, instalacion, {}).then(
             resultado =>
             {
@@ -52,17 +53,6 @@ class InstalacionMutationService extends ResolversOperacionesService
         )
     }
 
-    async _telemetria()
-    {
-        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-            {_id: new ObjectId(this.variables._id)},
-            {$set: {telemetria: this.variables.telemetria}}, {returnOriginal: false, upsert: true}).then(
-            resultado =>
-            {
-                return respDocumento(resultado);
-            }
-        )
-    }
 
     async _regParamElectricos(parametro: string)
     {
@@ -164,54 +154,6 @@ class InstalacionMutationService extends ResolversOperacionesService
                     )
             }
         }
-    }
-
-    async _regMotor(_id: string, motor: IMotor)
-    {
-        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-            {_id: new ObjectId(_id)},
-            {$addToSet: {motor}}, {returnOriginal: false, upsert: true}).then(
-            resultado =>
-            {
-                return respDocumento(resultado);
-            }
-        );
-    }
-
-    async _regBobma(_id: string, bomba: IBomba)
-    {
-        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-            {_id: new ObjectId(_id)},
-            {$addToSet: {bomba}}, {returnOriginal: false, upsert: true}).then(
-            resultado =>
-            {
-                return respDocumento(resultado);
-            }
-        )
-    }
-
-    async _bajaMotor(fechaBaja: string, id: string)
-    {
-        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-            {_id: new ObjectId(this.variables._id), motor: {$elemMatch: {id}}},
-            {$set: {"motor.$.fechaRetiro": fechaBaja, "motor.$.activa": false}}, {returnOriginal: false}).then(
-            resultado =>
-            {
-                return respDocumento(resultado);
-            }
-        )
-    }
-
-    async _bajaBomba(fechaBaja: string, id: string)
-    {
-        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-            {_id: new ObjectId(this.variables._id), bomba: {$elemMatch: {id}}},
-            {$set: {"bomba.$.fechaRetiro": fechaBaja, "bomba.$.activa": false}}, {returnOriginal: false}).then(
-            resultado =>
-            {
-                return respDocumento(resultado);
-            }
-        )
     }
 
     async _regLecturas(lecturas: ILecturas, tipo: string)

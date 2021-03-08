@@ -8,7 +8,9 @@ input InstalacionInput
     diamPerfo: Float
     diamAdeme: Float
     diamColumna: Float
-    LongColumna: Float
+    longColumna: Float
+    fechaReg: String
+    fechaRet: String
     activo: Boolean
     telemetria: TelemetriaInput
     parametrosElectricos: ParametrosElectricosInput

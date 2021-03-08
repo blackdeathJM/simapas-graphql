@@ -2,8 +2,6 @@ type Query
 {
     "Instalaciones: Consultar todas las instalaciones"
     todasInstalaciones: ResInstalacionSPag
-    "Buscar ip que se encuentre duplicada"
-    ipDuplicada(telemetria: TelemetriaInput!): [String]
     "Buscar recibo registrado con anterioridad"
     reciboCfeDuplicado(_id: ID!, ano: Int!, mes: Int!, medidor: String!): Boolean!
     "Consultar todos los recibos cfe"

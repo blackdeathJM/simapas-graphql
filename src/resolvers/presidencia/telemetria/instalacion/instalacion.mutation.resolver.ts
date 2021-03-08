@@ -1,5 +1,7 @@
 import {IResolvers} from "graphql-tools";
 import InstalacionMutationService from "./services/instalacion.mutation.service";
+import {TelemetriaMutationService} from "./services/telemetria-mutation.service";
+import {MotorBombaMutationService} from "./services/motor-bomba-mutation.service";
 
 const mutationTelemetria: IResolvers =
     {
@@ -17,9 +19,9 @@ const mutationTelemetria: IResolvers =
                 {
                     return new InstalacionMutationService(_, {instalacion: {activo}}, {db})._desInstalacion();
                 },
-                async agIps(_, {telemetria, _id}, {db})
+                async agIps(_, {_id, telemetria}, {db})
                 {
-                    return new InstalacionMutationService(_, {telemetria, _id}, {db})._telemetria();
+                    return new TelemetriaMutationService(_, {}, {db})._agIps(_id, telemetria);
                 },
                 async regParamElectricos(_, {_id, parametrosElectricos, parametro}, {db})
                 {
@@ -27,19 +29,19 @@ const mutationTelemetria: IResolvers =
                 },
                 async regMotor(_, {_id, motor}, {db})
                 {
-                    return new InstalacionMutationService(_, {}, {db})._regMotor(_id, motor);
+                    return new MotorBombaMutationService(_, {}, {db})._regMotor(_id, motor);
                 },
                 async regBomba(_, {_id, bomba}, {db})
                 {
-                    return new InstalacionMutationService(_, {}, {db})._regBobma(_id, bomba);
+                    return new MotorBombaMutationService(_, {}, {db})._regBobma(_id, bomba);
                 },
                 async bajaMotor(_, {_id, id, fechaBaja}, {db})
                 {
-                    return new InstalacionMutationService(_, {_id}, {db})._bajaMotor(fechaBaja, id);
+                    return new MotorBombaMutationService(_, {_id}, {db})._bajaMotor(fechaBaja, id);
                 },
                 async bajaBomba(_, {_id, id, fechaBaja}, {db})
                 {
-                    return new InstalacionMutationService(_, {_id}, {db})._bajaBomba(fechaBaja, id);
+                    return new MotorBombaMutationService(_, {_id}, {db})._bajaBomba(fechaBaja, id);
                 },
                 async regLecturas(_, {_id, tipo, lecturas}, {db})
                 {
@@ -57,7 +59,6 @@ const mutationTelemetria: IResolvers =
                 {
                     return new InstalacionMutationService(_, {_id}, {db})._regReciboCfe(reciboCfe);
                 }
-
             }
     };
 

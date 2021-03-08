@@ -1,6 +1,5 @@
 import ResolversOperacionesService from "../../../../../services/resolver-operaciones";
 import {COLECCION} from "../../../../../config/global";
-import * as _ from "lodash";
 import {respArreglosSPag} from "../../../../../services/respuestas-return";
 import {ObjectId} from 'bson';
 
@@ -15,25 +14,6 @@ class InstalacionQueryService extends ResolversOperacionesService
         )
     }
 
-    async _ipDuplicada()
-    {
-        let valoresDb: any[] = [];
-        let valoresRecibidos = _.flattenDeep(_.toArray(this.variables.telemetria));
-        return await this.buscarSinPaginacion(COLECCION.TELEMETRIA, {}, {}, {}).then(
-            resul =>
-            {
-                resul.elementos?.forEach(value =>
-                {
-                    if (value.telemetria !== undefined)
-                    {
-                        valoresDb.push(_.toArray(value.telemetria));
-                    }
-                });
-                return _.differenceWith(valoresRecibidos, _.flattenDeep(valoresDb));
-            }
-        )
-    }
-
     async _reciboCfeDuplicado(ano: number, mes: number, medidor: string)
     {
         return await this.buscarUnElemento(COLECCION.TELEMETRIA,
@@ -45,9 +25,8 @@ class InstalacionQueryService extends ResolversOperacionesService
         )
     }
 
-    async _todosRecibosCfe(medidor: String)
+    async _todosRecibosCfe(medidor: string)
     {
-        console.log('medidor verificar si se esta usuando', medidor);
         return await this.buscarSinPaginacion(COLECCION.TELEMETRIA,
             {_id: new ObjectId(this.variables._id)}, {}, {}).then(
             resultado =>

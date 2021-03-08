@@ -11,7 +11,9 @@ export interface IInstalacion
     diamPerfo: number;
     diamAdeme: number;
     diamColumna: number;
-    LongColumna: number;
+    longColumna: number;
+    fechaReg: string;
+    fechaRet: string;
     activo: boolean;
     telemetria: ITelemetria;
     parametrosElectricos: IParametrosElectricos;

@@ -8,7 +8,9 @@ type InstalacionType
     diamPerfo: Float
     diamAdeme: Float
     diamColumna: Float
-    LongColumna: Float
+    longColumna: Float
+    fechaReg: String
+    fechaRet: String
     activo: Boolean
     telemetria: TelemetriaType
     parametrosElectricos: ParametrosElectricosType
