@@ -23,6 +23,10 @@ const mutationTelemetria: IResolvers =
                 {
                     return new TelemetriaMutationService(_, {}, {db})._agIps(_id, tipo, ip);
                 },
+                async actElimIp(_, {_id, tipo, ipAnterior, ipNva}, {db})
+                {
+                    return new TelemetriaMutationService(_, {}, {db})._actElimIp(_id, tipo, ipAnterior, ipNva);
+                },
                 async regParamElectricos(_, {_id, parametrosElectricos, parametro}, {db})
                 {
                     return new InstalacionMutationService(_, {_id, parametrosElectricos}, {db})._regParamElectricos(parametro);
