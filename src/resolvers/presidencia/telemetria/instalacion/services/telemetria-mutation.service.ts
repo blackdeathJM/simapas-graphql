@@ -24,7 +24,7 @@ export class TelemetriaMutationService extends ResolversOperacionesService
             }
         } else
         {
-            const crearPropiedad: object = this.defProp('telemetria.', tipo, ip);
+            const crearPropiedad: object = TelemetriaMutationService.defProp('telemetria.', tipo, ip);
             return this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
                 {_id: new ObjectId(_id)},
                 {$push: crearPropiedad}, {returnOriginal: false}).then(
@@ -41,7 +41,7 @@ export class TelemetriaMutationService extends ResolversOperacionesService
 
         if (ipNva === '000.000.000.000')
         {
-            const ipAQuitar = this.defProp("telemetria.", tipo, ipAnterior);
+            const ipAQuitar = TelemetriaMutationService.defProp("telemetria.", tipo, ipAnterior);
             return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
                 {_id: new ObjectId(_id)},
                 {$pull: ipAQuitar}, {returnOriginal: false}).then(
@@ -60,9 +60,9 @@ export class TelemetriaMutationService extends ResolversOperacionesService
                 }
             } else
             {
-                const ipNueva = this.defProp("telemetria.", tipo, ipNva);
+                const ipNueva = TelemetriaMutationService.defProp("telemetria.", tipo, ipNva);
 
-                const ipConsulta = this.defProp("telemetria.", tipo, ipAnterior);
+                const ipConsulta = TelemetriaMutationService.defProp("telemetria.", tipo, ipAnterior);
 
                 await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
                     {_id: new ObjectId(_id)},
@@ -80,7 +80,7 @@ export class TelemetriaMutationService extends ResolversOperacionesService
         }
     }
 
-    defProp(texto: string | object, tipo: string, ip: string | object): object
+    private static defProp(texto: string | object, tipo: string, ip: string | object): object
     {
         const crearPropiedad: object = {};
         Object.defineProperty(crearPropiedad, texto + tipo,
@@ -93,7 +93,7 @@ export class TelemetriaMutationService extends ResolversOperacionesService
         return crearPropiedad;
     }
 
-    async buscarIpDuplicadas(ip: string)
+    private async buscarIpDuplicadas(ip: string)
     {
         return await this.buscarSinPaginacion(COLECCION.TELEMETRIA,
             {
