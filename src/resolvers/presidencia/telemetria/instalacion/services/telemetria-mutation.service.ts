@@ -60,17 +60,12 @@ export class TelemetriaMutationService extends ResolversOperacionesService
                 }
             } else
             {
-                const ipNueva = TelemetriaMutationService.defProp("telemetria.", tipo, ipNva);
-
+                const identificador = {_id: new ObjectId(_id)};
                 const ipConsulta = TelemetriaMutationService.defProp("telemetria.", tipo, ipAnterior);
+                const ipNueva = TelemetriaMutationService.defProp(`telemetria.${tipo}.$`, '', ipNva);
 
-                await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-                    {_id: new ObjectId(_id)},
-                    {$pull: ipConsulta}, {returnOriginal: false});
-
-                return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-                    {_id: new ObjectId(_id)},
-                    {$push: ipNueva}, {returnOriginal: false}).then(
+                return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, Object.assign(identificador, ipConsulta),
+                    {$set: ipNueva}, {returnOriginal: false}).then(
                     res =>
                     {
                         return respDocumento(res);
@@ -80,7 +75,7 @@ export class TelemetriaMutationService extends ResolversOperacionesService
         }
     }
 
-    private static defProp(texto: string | object, tipo: string, ip: string | object): object
+    private static defProp(texto: string, tipo: string, ip: string): object
     {
         const crearPropiedad: object = {};
         Object.defineProperty(crearPropiedad, texto + tipo,
@@ -97,8 +92,7 @@ export class TelemetriaMutationService extends ResolversOperacionesService
     {
         return await this.buscarSinPaginacion(COLECCION.TELEMETRIA,
             {
-                $or: [{"telemetria.radio": ip}, {"telemetria.plc": ip}, {"telemetria.switch": ip}, {"telemetria.repetidor": ip},
-                    {"telemetria.camara": ip}]
+                $or: [{"telemetria.radio": ip}, {"telemetria.plc": ip}, {"telemetria.switch": ip}, {"telemetria.repetidor": ip}, {"telemetria.camara": ip}]
             }, {}, {});
     }
 }
