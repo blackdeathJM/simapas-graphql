@@ -161,7 +161,5 @@ n
 >src/resolvers/presidencia/documentacion/docExt/proyecciones.ts,f\d\fd2a43af16914502c6558eed5cd9c4bcb2d905bf
 c
 3src/resolvers/usuarios/usuario.mutation.resolver.ts,2\a\2a2e6461130a092f06c6c8d00b1a88cbcb91fb88
-‰
-Ysrc/resolvers/presidencia/telemetria/instalacion/services/motor-bomba-mutation.service.ts,3\4\34055426f71f3fd3954cd9250cedf0155a381b40
 ˆ
 Xsrc/resolvers/presidencia/telemetria/instalacion/services/telemetria-mutation.service.ts,f\1\f1affb726ff6a92b5164da1c66bacfcc44b27af8

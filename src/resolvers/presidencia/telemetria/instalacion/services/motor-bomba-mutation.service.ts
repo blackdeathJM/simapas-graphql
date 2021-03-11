@@ -4,6 +4,7 @@ import {IBomba, IMotor} from "../../models/equipo-electrico-interface";
 import {COLECCION} from "../../../../../config/global";
 import {ObjectId} from "bson";
 import {respDocumento} from "../../../../../services/respuestas-return";
+import {nvaProp} from "../../../../../services/definirPropiedades";
 
 export class MotorBombaMutationService extends ResolversOperacionesService
 {
@@ -59,27 +60,19 @@ export class MotorBombaMutationService extends ResolversOperacionesService
         );
     }
 
-    async _bajaMotor(fechaBaja: string, id: string)
+    async _bajaEquipo(_id: string, id: string, fechaBaja: string, equipo: string)
     {
-        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-            {_id: new ObjectId(this.variables._id), motor: {$elemMatch: {id}}},
-            {$set: {"motor.$.fechaRetiro": fechaBaja, "motor.$.activa": false}}, {returnOriginal: false}).then(
-            resultado =>
-            {
-                return respDocumento(resultado);
-            }
-        )
-    }
+        const idPrincipal = {_id: new ObjectId(_id)};
+        const filtro = nvaProp(equipo, {$elemMatch: {id}});
 
-    async _bajaBomba(fechaBaja: string, id: string)
-    {
+        const actualizarFecha = nvaProp(`${equipo}.$.fechaRetiro`, fechaBaja);
+        const activa = nvaProp(`${equipo}.$.activa`, false)
+
         return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-            {_id: new ObjectId(this.variables._id), bomba: {$elemMatch: {id}}},
-            {$set: {"bomba.$.fechaRetiro": fechaBaja, "bomba.$.activa": false}}, {returnOriginal: false}).then(
+            Object.assign(idPrincipal, filtro), {$set: Object.assign(actualizarFecha, activa)}, {returnOriginal: false}).then(
             resultado =>
             {
                 return respDocumento(resultado);
-            }
-        )
+            });
     }
 }
