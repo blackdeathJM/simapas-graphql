@@ -16,8 +16,19 @@ export class MotorBombaMutationService extends ResolversOperacionesService
     async _regMotor(_id: string, motor: IMotor)
     {
         return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-            {_id: new ObjectId(_id)},
-            {$addToSet: {motor}}, {returnOriginal: false, upsert: true}).then(
+            {_id: new ObjectId(_id)}, {$addToSet: {motor}}, {returnOriginal: false, upsert: true}).then(
+            resultado =>
+            {
+                return respDocumento(resultado);
+            }
+        );
+    }
+
+    async _actMotor(_id: string, motor: IMotor)
+    {
+
+        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
+            {_id: new ObjectId(_id), motor: {$elemMatch: {id: motor.id}}}, {$set: {"motor.$": {...motor}}}, {returnOriginal: false}).then(
             resultado =>
             {
                 return respDocumento(resultado);
@@ -35,6 +46,17 @@ export class MotorBombaMutationService extends ResolversOperacionesService
                 return respDocumento(resultado);
             }
         )
+    }
+
+    async _actBobma(_id: string, bomba: IBomba)
+    {
+        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
+            {_id: new ObjectId(_id), bomba: {$elemMatch: {id: bomba.id}}}, {$set: {"bomba.$": {...bomba}}}, {returnOriginal: false}).then(
+            resultado =>
+            {
+                return respDocumento(resultado);
+            }
+        );
     }
 
     async _bajaMotor(fechaBaja: string, id: string)
