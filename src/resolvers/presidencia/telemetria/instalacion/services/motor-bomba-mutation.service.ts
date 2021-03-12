@@ -66,7 +66,7 @@ export class MotorBombaMutationService extends ResolversOperacionesService
         const filtro = nvaProp(equipo, {$elemMatch: {id}});
 
         const actualizarFecha = nvaProp(`${equipo}.$.fechaRetiro`, fechaBaja);
-        const activa = nvaProp(`${equipo}.$.activa`, false)
+        const activa = nvaProp(`${equipo}.$.activa`, false);
 
         return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
             Object.assign(idPrincipal, filtro), {$set: Object.assign(actualizarFecha, activa)}, {returnOriginal: false}).then(
