@@ -62,7 +62,7 @@ export class MotorBombaMutationService extends ResolversOperacionesService
 
     async _bajaEquipo(_id: string, id: string, fechaBaja: string, equipo: string)
     {
-        const idPrincipal = {_id: new ObjectId(_id)};
+        const idPrincipal = MotorBombaMutationService.idPrincipal(_id);
         const filtro = nvaProp(equipo, {$elemMatch: {id}});
 
         const actualizarFecha = nvaProp(`${equipo}.$.fechaRetiro`, fechaBaja);
@@ -74,5 +74,23 @@ export class MotorBombaMutationService extends ResolversOperacionesService
             {
                 return respDocumento(resultado);
             });
+    }
+
+    async _evidencia(_id: string, id: string, evidencia: string, esInstalacion: string, equipo: string)
+    {
+        const idPrincipal = MotorBombaMutationService.idPrincipal(_id);
+        const filtro = nvaProp(equipo, {$elemMatch: {id}});
+
+        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, Object.assign(idPrincipal, filtro),
+            {}, {}).then(
+            resultado =>
+            {
+                return respDocumento(resultado);
+            })
+    }
+
+    private static idPrincipal(_id: string): object
+    {
+        return {_id: new ObjectId(_id)}
     }
 }

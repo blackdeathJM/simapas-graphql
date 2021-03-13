@@ -51,6 +51,10 @@ const mutationTelemetria: IResolvers =
                 {
                     return new MotorBombaMutationService(_, {}, {db})._bajaEquipo(_id, id, fechaBaja, equipo);
                 },
+                async evidencia(_, {_id, id, evidencia, esInstalacion, equipo}, {db})
+                {
+                  return new MotorBombaMutationService(_, {}, {db})._evidencia(_id, id, evidencia, esInstalacion, equipo);
+                },
                 async regLecturas(_, {_id, tipo, lecturas}, {db})
                 {
                     return new InstalacionMutationService(_, {_id}, {db})._regLecturas(lecturas, tipo);

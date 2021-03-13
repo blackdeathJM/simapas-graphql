@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="se agrego consulta para obtener el ultimo folio">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2021_05_05_a__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2021_05_05_a__m___Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/instalacion.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/instalacion.mutation.resolver.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/motor-bomba-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/motor-bomba-mutation.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/presidencia/telemetria/instalaciones/instalaciones.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/instalaciones/instalaciones.mutation.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,6 +224,8 @@
       <workItem from="1615476455244" duration="1000" />
       <workItem from="1615476935396" duration="592000" />
       <workItem from="1615502972818" duration="3210000" />
+      <workItem from="1615529152615" duration="91000" />
+      <workItem from="1615556385305" duration="5376000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -476,7 +479,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615432537509</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Telemetria">
+      <created>1615529199375</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1615529199375</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,10 +507,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="trabajando en folios" />
     <MESSAGE value="telemetria" />
-    <MESSAGE value="Telemetria" />
     <MESSAGE value="Actualizacion de dependencias" />
     <MESSAGE value="mostrar informacion de instalacion asi como registrar y actualizar realizados correctamente" />
     <MESSAGE value="se agrego consulta para obtener el ultimo folio" />
-    <option name="LAST_COMMIT_MESSAGE" value="se agrego consulta para obtener el ultimo folio" />
+    <MESSAGE value="Telemetria" />
+    <option name="LAST_COMMIT_MESSAGE" value="Telemetria" />
   </component>
 </project>
