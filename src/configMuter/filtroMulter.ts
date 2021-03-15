@@ -1,18 +1,18 @@
 import multer from "multer";
-import path from "path";
 import {almacenamiento} from "./almacenamientoMulter";
 
 export const subiArchivo = multer({
     storage: almacenamiento,
     limits: {fileSize: 200000000},
-    fileFilter: (req, file, cb) => {
-        const filetypes = /jpeg|jpg|png|pdf/;
-        const mimetype = filetypes.test(file.mimetype);
-        const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
-
-        if (mimetype && extname) {
-            return cb(null, true);
+    fileFilter: (req, file, cb) =>
+    {
+        if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg" || file.mimetype === "application/pdf")
+        {
+            cb(null, true);
+        } else
+        {
+            cb(null, false);
+            return cb(new Error('Only .png, .jpg and .jpeg format allowed!'));
         }
-        cb(null, false);
     }
 }).single('file');
