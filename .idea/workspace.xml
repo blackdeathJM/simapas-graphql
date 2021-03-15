@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="se agrego consulta para obtener el ultimo folio">
+    <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="Creando modoulo de evidencia">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/instalacion.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/instalacion.mutation.resolver.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/motor-bomba-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/motor-bomba-mutation.service.ts" afterDir="false" />
@@ -226,6 +226,12 @@
       <workItem from="1615502972818" duration="3210000" />
       <workItem from="1615529152615" duration="91000" />
       <workItem from="1615556385305" duration="5376000" />
+      <workItem from="1615607284604" duration="816000" />
+      <workItem from="1615642669349" duration="2282000" />
+      <workItem from="1615647161695" duration="786000" />
+      <workItem from="1615658465871" duration="1623000" />
+      <workItem from="1615685400243" duration="771000" />
+      <workItem from="1615759552414" duration="1405000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -486,7 +492,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615529199375</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Creando modoulo de evidencia">
+      <created>1615607472834</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1615607472834</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,6 +524,7 @@
     <MESSAGE value="mostrar informacion de instalacion asi como registrar y actualizar realizados correctamente" />
     <MESSAGE value="se agrego consulta para obtener el ultimo folio" />
     <MESSAGE value="Telemetria" />
-    <option name="LAST_COMMIT_MESSAGE" value="Telemetria" />
+    <MESSAGE value="Creando modoulo de evidencia" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creando modoulo de evidencia" />
   </component>
 </project>

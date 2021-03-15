@@ -76,17 +76,20 @@ export class MotorBombaMutationService extends ResolversOperacionesService
             });
     }
 
-    async _evidencia(_id: string, id: string, evidencia: string, esInstalacion: string, equipo: string)
+    async _evidencia(_id: string, id: string, coleccionImg: Array<string>, esInstalacion: string, equipo: string)
     {
         const idPrincipal = MotorBombaMutationService.idPrincipal(_id);
         const filtro = nvaProp(equipo, {$elemMatch: {id}});
 
-        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, Object.assign(idPrincipal, filtro),
-            {}, {}).then(
-            resultado =>
-            {
-                return respDocumento(resultado);
-            })
+        const coleccion: string = esInstalacion ? "imgEvidenciaInst" : "imgEvidenciaRet";
+        const actualizacion = nvaProp(`${equipo}.${coleccion}.$`, {$push: {$each: {coleccionImg}}});
+
+        // return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, Object.assign(idPrincipal, filtro),
+        //     actualizacion, {}).then(
+        //     resultado =>
+        //     {
+        //         return respDocumento(resultado);
+        //     })
     }
 
     private static idPrincipal(_id: string): object

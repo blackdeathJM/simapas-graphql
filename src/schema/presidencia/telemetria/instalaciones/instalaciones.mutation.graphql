@@ -23,7 +23,7 @@ type Mutation
     "Dar de baja Motor"
     bajaEquipo(_id: ID!, id: String!, fechaBaja: String!, equipo: String!): ResInstalacion
     "Registrar arreglo de imagenes para evidencia de instalacion y retiro de equipo"
-    evidencia(_id: ID!, id: String, evidencia: [String!], esInstalacion: Boolean!, equipo: String!): ResInstalacion
+    evidencia(_id: ID!, id: String, coleccionImg: [String!], esInstalacion: Boolean!, equipo: String!): ResInstalacion
     "Registro de lecturas del macromedidor y CFE"
     regLecturas(_id: ID!,tipo: String!, lecturas: LecturasInput!): ResInstalacion
     "Registro de los medidores"
