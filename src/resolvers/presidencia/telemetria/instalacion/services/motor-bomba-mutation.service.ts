@@ -82,14 +82,14 @@ export class MotorBombaMutationService extends ResolversOperacionesService
         const filtro = nvaProp(equipo, {$elemMatch: {id}});
 
         const coleccion: string = esInstalacion ? "imgEvidenciaInst" : "imgEvidenciaRet";
-        const actualizacion = nvaProp(`${equipo}.${coleccion}.$`, {$push: {$each: {coleccionImg}}});
+        const actualizacion = nvaProp(`${equipo}.$.${coleccion}`, {$each: coleccionImg});
 
-        // return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, Object.assign(idPrincipal, filtro),
-        //     actualizacion, {}).then(
-        //     resultado =>
-        //     {
-        //         return respDocumento(resultado);
-        //     })
+        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, Object.assign(idPrincipal, filtro),
+            {$addToSet: actualizacion}, {returnOriginal: false}).then(
+            resultado =>
+            {
+                return respDocumento(resultado);
+            });
     }
 
     private static idPrincipal(_id: string): object
