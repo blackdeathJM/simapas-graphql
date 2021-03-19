@@ -13,7 +13,7 @@ input InstalacionInput
     fechaRet: String
     activo: Boolean
     telemetria: TelemetriaInput
-    parametrosElectricos: ParametrosElectricosInput
+    parametrosElectricos: ParametrosInput
     bomba: [BombaInput]
     motor: [MotorInput]
 }

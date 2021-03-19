@@ -1,13 +1,14 @@
 export interface IParametrosElectricos
 {
-    voltajes: IParametros;
-    amperajes: IParametros;
-    factorPotencia: IParametros;
-    kilowats: IParametros;
+    voltajes: Array<IParametros>;
+    amperajes: Array<IParametros>;
+    factorPotencia: Array<IParametros>;
+    kilowats: Array<IParametros>;
 }
 
-interface IParametros
+export interface IParametros
 {
+    id: string;
     ano: number;
     mes: number;
     dia: number;

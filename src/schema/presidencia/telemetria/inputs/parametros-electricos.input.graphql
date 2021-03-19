@@ -8,6 +8,7 @@ input ParametrosElectricosInput
 
 input ParametrosInput
 {
+    id: String
     ano: Int
     mes: Int
     dia: Int

@@ -11,7 +11,7 @@ type Mutation
     actElimIp(_id: ID!, tipo: String!, ipAnterior: String!, ipNva: String): ResInstalacion
 
     "Registro de voltajes"
-    regParamElectricos(_id: ID, parametrosElectricos: ParametrosElectricosInput, parametro: String!): ResInstalacion
+    regParamElectricos(_id: ID, parametrosElectricos: ParametrosInput, parametro: String!): ResInstalacion
     "Registro de motor"
     regMotor(_id: ID!, motor: MotorInput!): ResInstalacion
     "Actualizar informacion de motor"

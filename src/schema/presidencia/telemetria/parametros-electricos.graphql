@@ -8,6 +8,7 @@ type ParametrosElectricosType
 
 type ParametrosType
 {
+    id: String
     ano: Int
     mes: Int
     dia: Int
