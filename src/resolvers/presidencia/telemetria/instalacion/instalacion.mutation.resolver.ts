@@ -2,6 +2,7 @@ import {IResolvers} from "graphql-tools";
 import InstalacionMutationService from "./services/instalacion.mutation.service";
 import {TelemetriaMutationService} from "./services/telemetria-mutation.service";
 import {MotorBombaMutationService} from "./services/motor-bomba-mutation.service";
+import {LecturasParametrosMutationService} from "./services/lecturas-parametros.mutation.service";
 
 const mutationTelemetria: IResolvers =
     {
@@ -29,7 +30,7 @@ const mutationTelemetria: IResolvers =
                 },
                 async regParamElectricos(_, {_id, parametrosElectricos, parametro}, {db})
                 {
-                    return new InstalacionMutationService(_, {_id, parametrosElectricos}, {db})._regParamElectricos(parametro);
+                    return new LecturasParametrosMutationService(_, {}, {db})._regParamElectricos(_id, parametrosElectricos, parametro);
                 },
                 async regMotor(_, {_id, motor}, {db})
                 {
@@ -53,7 +54,7 @@ const mutationTelemetria: IResolvers =
                 },
                 async evidencia(_, {_id, id, coleccionImg, esInstalacion, equipo}, {db})
                 {
-                  return new MotorBombaMutationService(_, {}, {db})._evidencia(_id, id, coleccionImg, esInstalacion, equipo);
+                    return new MotorBombaMutationService(_, {}, {db})._evidencia(_id, id, coleccionImg, esInstalacion, equipo);
                 },
                 async regLecturas(_, {_id, tipo, lecturas}, {db})
                 {
@@ -65,7 +66,7 @@ const mutationTelemetria: IResolvers =
                 },
                 async bajaMedidor(_, {_id, medidor, fechaBaja}, {db})
                 {
-                    return new InstalacionMutationService(_, {_id}, {db})._bajaMedidor(medidor, fechaBaja)
+                    return new InstalacionMutationService(_, {_id}, {db})._bajaMedidor(medidor, fechaBaja);
                 },
                 async regReciboCfe(_, {_id, reciboCfe}, {db})
                 {

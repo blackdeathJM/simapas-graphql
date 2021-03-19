@@ -3,7 +3,7 @@ type ParametrosElectricosType
     voltajes: [ParametrosType]
     amperajes: [ParametrosType]
     factorPotencia: [ParametrosType]
-    kilowats: [ParametrosType]
+    kilowatts: [ParametrosType]
 }
 
 type ParametrosType

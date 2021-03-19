@@ -3,8 +3,9 @@ input ParametrosElectricosInput
     voltajes: ParametrosInput
     amperajes: ParametrosInput
     factorPotencia: ParametrosInput
-    kilowats: ParametrosInput
+    kilowatts: ParametrosInput
 }
+
 input ParametrosInput
 {
     ano: Int

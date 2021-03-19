@@ -21,20 +21,17 @@ export class MotorBombaMutationService extends ResolversOperacionesService
             resultado =>
             {
                 return respDocumento(resultado);
-            }
-        );
+            });
     }
 
     async _actMotor(_id: string, motor: IMotor)
     {
-
         return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
             {_id: new ObjectId(_id), motor: {$elemMatch: {id: motor.id}}}, {$set: {"motor.$": {...motor}}}, {returnOriginal: false}).then(
             resultado =>
             {
                 return respDocumento(resultado);
-            }
-        );
+            });
     }
 
     async _regBobma(_id: string, bomba: IBomba)
@@ -45,8 +42,7 @@ export class MotorBombaMutationService extends ResolversOperacionesService
             resultado =>
             {
                 return respDocumento(resultado);
-            }
-        )
+            });
     }
 
     async _actBobma(_id: string, bomba: IBomba)
@@ -56,8 +52,7 @@ export class MotorBombaMutationService extends ResolversOperacionesService
             resultado =>
             {
                 return respDocumento(resultado);
-            }
-        );
+            });
     }
 
     async _bajaEquipo(_id: string, id: string, fechaBaja: string, equipo: string)

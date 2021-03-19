@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="Creando modoulo de evidencia">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2021_05_05_a__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2021_05_05_a__m___Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/lecturas-parametros.mutation.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/lecturas-parametros.query.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/instalacion.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/instalacion.mutation.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/instalacion.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/instalacion.mutation.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/motor-bomba-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/motor-bomba-mutation.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/models/parametros-electricos.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/models/parametros-electricos.interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/presidencia/telemetria/inputs/parametros-electricos.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/inputs/parametros-electricos.input.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/presidencia/telemetria/parametros-electricos.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/parametros-electricos.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,6 +249,14 @@
       <workItem from="1615759552414" duration="1405000" />
       <workItem from="1615838123880" duration="4847000" />
       <workItem from="1615883479037" duration="3784000" />
+      <workItem from="1615956457380" duration="84000" />
+      <workItem from="1615989176325" duration="595000" />
+      <workItem from="1615996797321" duration="2786000" />
+      <workItem from="1616003501163" duration="2249000" />
+      <workItem from="1616085598595" duration="3000" />
+      <workItem from="1616085883949" duration="235000" />
+      <workItem from="1616104454342" duration="2071000" />
+      <workItem from="1616111466186" duration="3114000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -508,7 +524,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615607472834</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Creando modoulo de evidencia">
+      <created>1615956530019</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1615956530019</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
