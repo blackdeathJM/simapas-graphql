@@ -2,7 +2,6 @@ import ResolversOperacionesService from "../../../../../services/resolver-operac
 import {IContextData} from "../../../../../interfaces/context-data-interface";
 import {COLECCION} from "../../../../../config/global";
 import {ObjectId} from "bson";
-import {IParametrosElectricos} from "../../models/parametros-electricos.interface";
 import {nvaProp} from "../../../../../services/definirPropiedades";
 
 export class LecturasParametrosMutationService extends ResolversOperacionesService
@@ -12,17 +11,17 @@ export class LecturasParametrosMutationService extends ResolversOperacionesServi
         super(root, variables, context);
     }
 
-    async _regParamElectricos(parametrosElectricos: IParametrosElectricos, _id: string, parametro: string)
+    async _regParamElectricos(parametrosElectricos: any, _id: string, parametro: string)
     {
         // Buscar si existe el parametro electrico
         const idDocumento = {_id: new ObjectId(_id)}
 
         const consulta = nvaProp(`parametrosElectricos.${parametro}`, {
             $elemMatch: {
-                ano: `parametrosElectricos.${parametro}.ano`,
-                mes: `parametrosElectricos.${parametro}.mes`
-            }
-        });
+                ano: parametrosElectricos[parametro]['ano'],
+                mes: parametrosElectricos[parametro]['mes']
+
+        }});
 
         const existe = await this.buscarUnElemento(COLECCION.TELEMETRIA, Object.assign(idDocumento, consulta), {});
 
