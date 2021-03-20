@@ -8,6 +8,7 @@ type LecturasTType
 
 type LecturasType
 {
+    id: String
     ano: Int
     ene: Float
     feb: Float

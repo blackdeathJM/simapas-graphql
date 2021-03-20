@@ -3,6 +3,7 @@ import InstalacionMutationService from "./services/instalacion.mutation.service"
 import {TelemetriaMutationService} from "./services/telemetria-mutation.service";
 import {MotorBombaMutationService} from "./services/motor-bomba-mutation.service";
 import {LecturasParametrosMutationService} from "./services/lecturas-parametros.mutation.service";
+import {LectMedMutationService} from "./services/lect-med.mutation.service";
 
 const mutationTelemetria: IResolvers =
     {
@@ -58,7 +59,7 @@ const mutationTelemetria: IResolvers =
                 },
                 async regLecturas(_, {_id, tipo, lecturas}, {db})
                 {
-                    return new InstalacionMutationService(_, {_id}, {db})._regLecturas(lecturas, tipo);
+                    return new LectMedMutationService(_, {}, {db})._regLecturas(_id, tipo, lecturas);
                 },
                 async regMedidor(_, {_id, medidor}, {db})
                 {
