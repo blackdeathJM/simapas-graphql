@@ -204,6 +204,10 @@ class ResolversOperacionesService
             }
         }
     }
+    protected async agregacion(coleccion: string, agregacion:object[])
+    {
+        return await this.context.db?.collection(coleccion).aggregate(agregacion);
+    }
 
     protected async buscarUnoYEleminiar(coleccion: string, filtro: object, opciones: object)
     {

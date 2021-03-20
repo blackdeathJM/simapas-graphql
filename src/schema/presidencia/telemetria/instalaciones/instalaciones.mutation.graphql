@@ -25,7 +25,7 @@ type Mutation
     "Registrar arreglo de imagenes para evidencia de instalacion y retiro de equipo"
     evidencia(_id: ID!, id: String, coleccionImg: [String!], esInstalacion: Boolean!, equipo: String!): ResInstalacion
     "Registro de lecturas del macromedidor y CFE"
-    regLecturas(_id: ID!,tipo: String!, lecturas: LecturasInput!): ResInstalacion
+    regLecturas(_id: ID!,tipo: String!, lecturas: LecturasInput!, mes: String!): ResInstalacion
     "Registro de los medidores"
     regMedidor(_id: ID!, medidor: MedidorInput!): ResInstalacion
     "Dar de baja medidor"

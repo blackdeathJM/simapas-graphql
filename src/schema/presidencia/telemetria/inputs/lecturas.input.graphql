@@ -2,17 +2,6 @@ input LecturasInput
 {
     id: String
     ano: Int
-    ene: Float
-    feb: Float
-    mar: Float
-    abr: Float
-    may: Float
-    jun: Float
-    jul: Float
-    ago: Float
-    sep: Float
-    oct: Float
-    nov: Float
-    dic: Float
+    valorMensual: Float
     total: Float
 }
