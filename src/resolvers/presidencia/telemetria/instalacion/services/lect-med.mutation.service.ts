@@ -13,53 +13,33 @@ export class LectMedMutationService extends ResolversOperacionesService
         super(root, variables, context);
     }
 
-    async _regLecturas(_id: string, tipo: string, lecturas: ILecturas, mes: string)
+    async _regLecturas(_id: string, tipo: string, lecturas: ILecturas)
     {
         const idDoc = {_id: new ObjectId(_id)};
-        const l = 'lecturas';
+        const lect = 'lecturas';
+        const consultaAno = nvaProp(`${lect}.${tipo}.ano`, lecturas.ano);
+        const agregarSubDoc = nvaProp(`${lect}.${tipo}`, lecturas);
 
-        const agregarSubDoc = nvaProp(`${l}.${tipo}`, lecturas);
-        const consultaAno = nvaProp(`${l}.${tipo}.ano`, lecturas.ano);
-        const consultaMes = nvaProp(`${l}.${tipo}.${mes.toLowerCase()}`, {$exists: true});
 
-        const result = await this.context.db?.collection(COLECCION.TELEMETRIA).aggregate(
-            [
-                {
-                    $match: {_id: new ObjectId(_id)}
-                },
-                {
-                    $match: consultaAno
-                },
-                {
-                    $project: {_id}
-                }
-            ]
-        ).toArray();
-        console.log('resrs', result);
-        // // Buscar que existe el subDocumento
-        // const subDocExiste = await this.buscarUnElemento(COLECCION.TELEMETRIA, Object.assign(idDoc, consultaAno), {});
-        //
-        // if (subDocExiste.estatus)
-        // {
-        //     const resultado = await this.buscarUnElemento(COLECCION.TELEMETRIA, Object.assign(idDoc, consultaAno, consultaMes), {});
-        //
-        //     if (resultado.estatus)
-        //     {
-        //         return respDocumento(resultado);
-        //     } else
-        //     {
-        //         const filtro = nvaProp(`${l}.${tipo}.ano`, lecturas.ano);
-        //         const actualizar = nvaProp(`${l}.${tipo}.${mes}`, lecturas)
-        //
-        //         const respuesta = await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, Object.assign(idDoc, filtro),
-        //             {}, {});
-        //     }
-        // } else
-        // {
-        //     const nvoReg = await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, {_id: new ObjectId(_id)}, agregarSubDoc, {returnNew: false, upsert: true});
-        //
-        //     const renombrar = await this.buscarUnoYActualizar()
-        //     return respDocumento(nvoReg);
-        // }
+        const existeDocumento = await this.buscarUnElemento(COLECCION.TELEMETRIA, Object.assign(idDoc, consultaAno), {});
+
+        // Verificamos que la lectura exista tomando el ano como id principal del subdocumento
+        if (existeDocumento.estatus)
+        {
+            return respDocumento(existeDocumento);
+        } else
+        {
+            // Registramos las lecturas con valores iniciales de cero
+            const agregar = await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, {_id: new ObjectId(_id)},
+                {$addToSet: agregarSubDoc}, {returnOriginal: false, upsert: true});
+            return respDocumento(agregar);
+        }
+    }
+
+    async _editarLectura(_id: string, ano: number, mes: string, tipoLect: string, valorMes: number, total: number)
+    {
+        const lect = 'lecturas';
+        const consultaAno = nvaProp(`${lect}.${tipoLect}.${ano}`, {ano});
+        const consultaMes = nvaProp(`${lect}.${tipoLect}.${mes.toLowerCase()}`, {$exists: true});
     }
 }
