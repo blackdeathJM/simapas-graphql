@@ -1,6 +1,5 @@
 input LecturasInput
 {
-    id: String
     ano: Int
     ene: Float
     feb: Float

@@ -61,9 +61,9 @@ const mutationTelemetria: IResolvers =
                 {
                     return new LectMedMutationService(_, {}, {db})._regLecturas(_id, tipo, lecturas);
                 },
-                async editarLectura(_, {_id, ano, mes, tipoLect, valorMes, total }, {db})
+                async editarLectura(_, {_id, ano, mes, tipoLect, valorMes }, {db})
                 {
-                    return new LectMedMutationService(_, {}, {db})._editarLectura(_id, ano, mes, tipoLect, valorMes, total);
+                    return new LectMedMutationService(_, {}, {db})._editarLectura(_id, ano, mes, tipoLect, valorMes);
                 },
                 async regMedidor(_, {_id, medidor}, {db})
                 {

@@ -1,6 +1,5 @@
 export interface ILecturas
 {
-    id: string;
     ano: number;
     ene: number;
     feb: number;
