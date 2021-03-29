@@ -52,42 +52,6 @@ class InstalacionMutationService extends ResolversOperacionesService
             }
         )
     }
-
-    async _regMedidor(medidor: IMedidor)
-    {
-        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-            {_id: new ObjectId(this.variables._id)},
-            {$addToSet: {medidores: medidor}}, {returnOriginal: false, upsert: true}).then(
-            resultado =>
-            {
-                return respDocumento(resultado);
-            }
-        )
-    }
-
-    async _bajaMedidor(medidor: string, fechaBaja: string)
-    {
-        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-            {_id: new ObjectId(this.variables._id), medidores: {$elemMatch: {medidor}}},
-            {$set: {"medidores.$.fechaRetiro": fechaBaja, "medidores.$.activa": false}}, {returnOriginal: false}).then(
-            resultado =>
-            {
-                return respDocumento(resultado);
-            }
-        )
-    }
-
-    async _regReciboCfe(reciboCfe: IRecibosCfe)
-    {
-        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-            {_id: new ObjectId(this.variables._id)},
-            {$addToSet: {recibosCfe: reciboCfe}}, {returnOriginal: false, uptosert: true}).then(
-            resultado =>
-            {
-                return respDocumento(resultado);
-            }
-        )
-    }
 }
 
 export default InstalacionMutationService;

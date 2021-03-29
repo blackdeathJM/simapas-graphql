@@ -4,4 +4,5 @@ input MedidorInput
     fechaRetiro: String
     medidor: String
     activa: Boolean
+    recibos: [RecibosCfeInput]
 }

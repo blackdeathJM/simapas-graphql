@@ -27,11 +27,11 @@ type Mutation
     "Registro de lecturas del macromedidor y CFE"
     regLecturas(_id: ID!, tipo: String!, lecturas: LecturasInput!): ResInstalacion
     "Editar la lectura y el total"
-    editarLectura(_id: ID!, ano: Int!, mes: String!, tipoLect: String!, valorMes: Float!): ResInstalacion
+    editarLectura(_id: ID!, ano: Int!, mes: String!, tipoLect: String!, valorMes: Float!, totalMes: Float!): ResInstalacion
     "Registro de los medidores"
     regMedidor(_id: ID!, medidor: MedidorInput!): ResInstalacion
     "Dar de baja medidor"
     bajaMedidor(_id: ID!, medidor: String!, fechaBaja: String!): ResInstalacion
     "Registro de recibos de luz"
-    regReciboCfe(_id: ID!, reciboCfe: RecibosCfeInput!): ResInstalacion
+    regReciboCfe(_id: ID!,medidor: String!, reciboCfe: RecibosCfeInput!): ResInstalacion
 }

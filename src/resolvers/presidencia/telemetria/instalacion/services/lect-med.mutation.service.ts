@@ -36,15 +36,18 @@ export class LectMedMutationService extends ResolversOperacionesService
         }
     }
 
-    async _editarLectura(_id: string, ano: number, mes: string, tipoLect: string, valorMes: number)
+    async _editarLectura(_id: string, ano: number, mes: string, tipoLect: string, valorMes: number, totalMes: number)
     {
 
         const id = {_id: new ObjectId(_id)}
         const consulta = nvaProp(`lecturas.${tipoLect}.ano`, ano);
+
         const actualizar = nvaProp(`lecturas.${tipoLect}.$.${mes}`, valorMes);
+        const actualizarTotal = nvaProp(`lecturas.${tipoLect}.$.total`, totalMes);
+
         const resultado = await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
             Object.assign(id, consulta),
-            {$set: actualizar}, {returnOriginal: false});
+            {$set: Object.assign(actualizar, actualizarTotal)}, {returnOriginal: false});
         return respDocumento(resultado);
     }
 }

@@ -3,7 +3,6 @@ type RecibosCfeType
     dia: Int
     mes: Int
     ano: Int
-    medidor: String
     costoKw: Float
     pago: Float
     lectura: Float

@@ -4,6 +4,7 @@ import {TelemetriaMutationService} from "./services/telemetria-mutation.service"
 import {MotorBombaMutationService} from "./services/motor-bomba-mutation.service";
 import {LecturasParametrosMutationService} from "./services/lecturas-parametros.mutation.service";
 import {LectMedMutationService} from "./services/lect-med.mutation.service";
+import {CfeMutationService} from "./services/cfe.mutation.service";
 
 const mutationTelemetria: IResolvers =
     {
@@ -61,21 +62,21 @@ const mutationTelemetria: IResolvers =
                 {
                     return new LectMedMutationService(_, {}, {db})._regLecturas(_id, tipo, lecturas);
                 },
-                async editarLectura(_, {_id, ano, mes, tipoLect, valorMes }, {db})
+                async editarLectura(_, {_id, ano, mes, tipoLect, valorMes, totalMes}, {db})
                 {
-                    return new LectMedMutationService(_, {}, {db})._editarLectura(_id, ano, mes, tipoLect, valorMes);
+                    return new LectMedMutationService(_, {}, {db})._editarLectura(_id, ano, mes, tipoLect, valorMes, totalMes);
                 },
                 async regMedidor(_, {_id, medidor}, {db})
                 {
-                    return new InstalacionMutationService(_, {_id}, {db})._regMedidor(medidor);
+                    return new CfeMutationService(_, {}, {db})._regMedidor(_id, medidor);
                 },
                 async bajaMedidor(_, {_id, medidor, fechaBaja}, {db})
                 {
-                    return new InstalacionMutationService(_, {_id}, {db})._bajaMedidor(medidor, fechaBaja);
+                    return new CfeMutationService(_, {}, {db})._bajaMedidor(_id, medidor, fechaBaja);
                 },
-                async regReciboCfe(_, {_id, reciboCfe}, {db})
+                async regReciboCfe(_, {_id, medidor, reciboCfe}, {db})
                 {
-                    return new InstalacionMutationService(_, {_id}, {db})._regReciboCfe(reciboCfe);
+                    return new CfeMutationService(_, {}, {db})._regReciboCfe(_id, medidor, reciboCfe);
                 }
             }
     };

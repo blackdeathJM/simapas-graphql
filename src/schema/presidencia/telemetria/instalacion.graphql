@@ -18,5 +18,4 @@ type InstalacionType
     motor: [MotorType]
     lecturas: LecturasTType
     medidores: [MedidorType]
-    recibosCfe: [RecibosCfeType]
 }
