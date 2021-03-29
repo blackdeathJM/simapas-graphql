@@ -44,11 +44,9 @@ export class CfeMutationService extends ResolversOperacionesService
 
         if (buscarRecibo.estatus)
         {
-            console.log('buscqued', buscarRecibo);
             return respDocumento(buscarRecibo);
         } else
         {
-            console.log('documento no econtrado')
             const resultado = await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
                 {_id: new ObjectId(_id), medidores: {$elemMatch: {medidor}}},
                 {$addToSet: {"medidores.$.recibos": reciboCfe}}, {returnOriginal: false, uptosert: true});

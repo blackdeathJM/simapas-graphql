@@ -46,7 +46,7 @@
     "multer": "^1.4.2",
     "ncp": "^2.0.0",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^6.6.6",
+    "rxjs": "^6.6.7",
     "subscriptions-transport-ws": "^0.9.18",
     "type-graphql": "^1.1.1",
     "uuidv4": "^6.2.7",

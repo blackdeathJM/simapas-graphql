@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="parametros electricos">
-      <change afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/cfe.mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/instalacion.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/instalacion.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/instalacion.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/instalacion.mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/lect-med.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/lect-med.mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/models/recibos-cfe-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/models/recibos-cfe-interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/presidencia/telemetria/inputs/medidor.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/inputs/medidor.input.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/presidencia/telemetria/instalacion.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/instalacion.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/presidencia/telemetria/instalaciones/instalaciones.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/instalaciones/instalaciones.mutation.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/presidencia/telemetria/medidor.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/medidor.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/presidencia/telemetria/recibos-cfe.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/recibos-cfe.graphql" afterDir="false" />
-    </list>
+    <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="recibos de cfe" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -270,7 +258,7 @@
       <workItem from="1616871926298" duration="65000" />
       <workItem from="1616872296256" duration="13653000" />
       <workItem from="1616912472147" duration="2752000" />
-      <workItem from="1616971776446" duration="12108000" />
+      <workItem from="1616971776446" duration="12199000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -580,7 +568,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616890597771</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="recibos de cfe">
+      <created>1616989375367</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1616989375367</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -608,6 +603,7 @@
     <MESSAGE value="Creando modoulo de evidencia" />
     <MESSAGE value="Parametros electricos" />
     <MESSAGE value="parametros electricos" />
-    <option name="LAST_COMMIT_MESSAGE" value="parametros electricos" />
+    <MESSAGE value="recibos de cfe" />
+    <option name="LAST_COMMIT_MESSAGE" value="recibos de cfe" />
   </component>
 </project>
