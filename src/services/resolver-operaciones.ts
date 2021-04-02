@@ -206,7 +206,7 @@ class ResolversOperacionesService
     }
     protected async agregacion(coleccion: string, agregacion:object[])
     {
-        return await this.context.db?.collection(coleccion).aggregate(agregacion);
+        return await this.context.db?.collection(coleccion).aggregate(agregacion).toArray();
     }
 
     protected async buscarUnoYEleminiar(coleccion: string, filtro: object, opciones: object)

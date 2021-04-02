@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="recibos de cfe" />
+    <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="recibos de cfe">
+      <change afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/cfe.query.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/instalacion.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/instalacion.query.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/instalacion.query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/instalacion.query.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/presidencia/telemetria/instalaciones/instalaciones.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/instalaciones/instalaciones.query.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -258,7 +267,22 @@
       <workItem from="1616871926298" duration="65000" />
       <workItem from="1616872296256" duration="13653000" />
       <workItem from="1616912472147" duration="2752000" />
-      <workItem from="1616971776446" duration="12199000" />
+      <workItem from="1616971776446" duration="13406000" />
+      <workItem from="1617041497090" duration="2123000" />
+      <workItem from="1617048292028" duration="5455000" />
+      <workItem from="1617065143791" duration="10693000" />
+      <workItem from="1617083771763" duration="766000" />
+      <workItem from="1617094345440" duration="1354000" />
+      <workItem from="1617132265031" duration="1218000" />
+      <workItem from="1617168107170" duration="1199000" />
+      <workItem from="1617182838532" duration="1200000" />
+      <workItem from="1617218630785" duration="1928000" />
+      <workItem from="1617240601851" duration="804000" />
+      <workItem from="1617272881715" duration="597000" />
+      <workItem from="1617305532991" duration="1229000" />
+      <workItem from="1617319974727" duration="1212000" />
+      <workItem from="1617326294980" duration="1199000" />
+      <workItem from="1617344415629" duration="734000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -575,7 +599,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616989375367</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="recibos de cfe">
+      <created>1616990576679</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1616990576679</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

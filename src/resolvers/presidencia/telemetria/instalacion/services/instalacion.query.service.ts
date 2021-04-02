@@ -1,7 +1,6 @@
 import ResolversOperacionesService from "../../../../../services/resolver-operaciones";
 import {COLECCION} from "../../../../../config/global";
 import {respArreglosSPag} from "../../../../../services/respuestas-return";
-import {ObjectId} from 'bson';
 
 class InstalacionQueryService extends ResolversOperacionesService
 {
@@ -11,28 +10,6 @@ class InstalacionQueryService extends ResolversOperacionesService
     {
         return await this.buscarSinPaginacion(COLECCION.TELEMETRIA, {}, {}, {}).then(
             resultado => respArreglosSPag(resultado)
-        )
-    }
-
-    async _reciboCfeDuplicado(ano: number, mes: number, medidor: string)
-    {
-        return await this.buscarUnElemento(COLECCION.TELEMETRIA,
-            {_id: new ObjectId(this.variables._id), recibosCfe: {$elemMatch: {ano, mes, medidor}}}, {}).then(
-            resulado =>
-            {
-                return resulado.estatus
-            }
-        )
-    }
-
-    async _todosRecibosCfe(medidor: string)
-    {
-        return await this.buscarSinPaginacion(COLECCION.TELEMETRIA,
-            {_id: new ObjectId(this.variables._id)}, {}, {}).then(
-            resultado =>
-            {
-                return respArreglosSPag(resultado);
-            }
         )
     }
 }

@@ -1,5 +1,6 @@
 import {IResolvers} from "graphql-tools";
 import InstalacionQueryService from "./services/instalacion.query.service";
+import {CfeQueryService} from "./services/cfe.query.service";
 
 const queryTelemetria: IResolvers =
     {
@@ -9,13 +10,9 @@ const queryTelemetria: IResolvers =
                 {
                     return new InstalacionQueryService(_, {}, {db})._todasInstalaciones();
                 },
-                async reciboCfeDuplicado(_, {_id, ano, mes, medidor}, {db})
+                async recibosCfePorAno(_, {_id, medidor, ano}, {db})
                 {
-                    return new InstalacionQueryService(_, {_id}, {db})._reciboCfeDuplicado(ano, mes, medidor);
-                },
-                async todosRecibosCfe(_, {_id, medidor}, {db})
-                {
-                    return new InstalacionQueryService(_, {_id}, {db})._todosRecibosCfe(medidor);
+                    return new CfeQueryService(_, {}, {db})._recibosCfePorAno(_id, medidor, ano);
                 }
             }
     }

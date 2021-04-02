@@ -2,8 +2,6 @@ type Query
 {
     "Instalaciones: Consultar todas las instalaciones"
     todasInstalaciones: ResInstalacionSPag
-    "Buscar recibo registrado con anterioridad"
-    reciboCfeDuplicado(_id: ID!, ano: Int!, mes: Int!, medidor: String!): Boolean!
-    "Consultar todos los recibos cfe"
-    todosRecibosCfe(_id: ID!, medidor: String!): ResInstalacion
+    "Agrupar recibos de cfe por ano"
+    recibosCfePorAno(_id: ID!, medidor: String!, ano: Int!): ResInstalacion
 }
