@@ -21,10 +21,10 @@
     tslib "^1.10.0"
     zen-observable "^0.8.14"
 
-"@apollo/client@^3.3.13":
-  version "3.3.13"
-  resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.3.13.tgz#0aadde13b80ce129d1261161413a9de2b0dec70e"
-  integrity sha512-usiVmXiOq0J/GpyIOIhlF8ItHpiPJObC7zoxLYPoOYj3G3OB0hCIcUKs3aTJ3ATW7u8QxvYgRaJg72NN7E1WOg==
+"@apollo/client@^3.3.14":
+  version "3.3.14"
+  resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.3.14.tgz#b077f42e17941dbf4c62c4f41bf83c0828872d09"
+  integrity sha512-z7YwMvF9grmpWUG+26e3gPcBAOA/r/Ci5gwK7JVm3bGYG9kKqG8MF6sMXEbuwTsFseE4duSp0icJ6tdzxJhhlA==
   dependencies:
     "@graphql-typed-document-node/core" "^3.0.0"
     "@types/zen-observable" "^0.8.0"
@@ -1315,10 +1315,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/mongodb@^3.6.11":
-  version "3.6.11"
-  resolved "https://registry.yarnpkg.com/@types/mongodb/-/mongodb-3.6.11.tgz#918ecc4cbe6fa15d26c4fe12c00cf0d4c3cf421d"
-  integrity sha512-j0WPV+MQArOYULfCcBALomTXsDMt3iQl8dHa99jrf4U9ENgTQC3LKJbeXYL7TiClofzFOwwICkxEdlB5XhihGw==
+"@types/mongodb@^3.6.12":
+  version "3.6.12"
+  resolved "https://registry.yarnpkg.com/@types/mongodb/-/mongodb-3.6.12.tgz#727960d34f35054d2f2ce68909e16094f742d935"
+  integrity sha512-49aEzQD5VdHPxyd5dRyQdqEveAg9LanwrH8RQipnMuulwzKmODXIZRp0umtxi1eBUfEusRkoy8AVOMr+kVuFog==
   dependencies:
     "@types/bson" "*"
     "@types/node" "*"
@@ -2893,10 +2893,10 @@ graphql-merge-resolvers@^1.1.16:
   resolved "https://registry.yarnpkg.com/graphql-merge-resolvers/-/graphql-merge-resolvers-1.1.16.tgz#3247fa085fb1826ed43234e17e08b8e53a24c051"
   integrity sha512-8173WP78XYkeZ3PsAHzFIySNeRZhcvvXUelBLJ15bp81ia0tlEWdFbnhrt6YWp4W58qFlUDkcTeqSuB9ULSSNg==
 
-graphql-middleware@^6.0.5:
-  version "6.0.5"
-  resolved "https://registry.yarnpkg.com/graphql-middleware/-/graphql-middleware-6.0.5.tgz#93f10919667d4232835241eaca70f3781872fd40"
-  integrity sha512-wd1WO3ngF4ERUqN4uVAxynhHzfrNAJcfIXbp1BlIHZOTKCKE7OohyPhjyNXnsouaMUUYBAiUvLZMNunbJ2d7sA==
+graphql-middleware@^6.0.6:
+  version "6.0.6"
+  resolved "https://registry.yarnpkg.com/graphql-middleware/-/graphql-middleware-6.0.6.tgz#9bc0a50d087a88c6d5c2f944870102835fafca9e"
+  integrity sha512-XdcLKohmwHwVWVkiKmPyA6nxYzckx4ZiBbrQxkhEQb2wRo8TP9FWCJb1vLQrh+7astWPAzjQX91/1iSdIZkO/Q==
   dependencies:
     "@graphql-tools/delegate" "^7.1.1"
     "@graphql-tools/schema" "^7.1.3"
