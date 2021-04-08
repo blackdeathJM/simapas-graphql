@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="recibos de cfe">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2021_05_05_a__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2021_05_05_a__m___Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/instalacion.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/instalacion.mutation.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/motor-bomba-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/motor-bomba-mutation.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/models/equipo-electrico-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/models/equipo-electrico-interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/presidencia/telemetria/equipo-electrico.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/equipo-electrico.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/presidencia/telemetria/inputs/equipo-electrico.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/inputs/equipo-electrico.input.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/presidencia/telemetria/instalaciones/instalaciones.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/instalaciones/instalaciones.mutation.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -286,6 +289,13 @@
       <workItem from="1617694229585" duration="165000" />
       <workItem from="1617694422539" duration="810000" />
       <workItem from="1617695446011" duration="1564000" />
+      <workItem from="1617737250577" duration="49000" />
+      <workItem from="1617777223992" duration="50000" />
+      <workItem from="1617777286009" duration="3078000" />
+      <workItem from="1617855909305" duration="1002000" />
+      <workItem from="1617859707049" duration="690000" />
+      <workItem from="1617866524179" duration="4164000" />
+      <workItem from="1617880679541" duration="583000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -623,7 +633,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617491658333</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="recibos de cfe">
+      <created>1617737286805</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1617737286805</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -651,8 +668,8 @@
     <MESSAGE value="Creando modoulo de evidencia" />
     <MESSAGE value="Parametros electricos" />
     <MESSAGE value="parametros electricos" />
-    <MESSAGE value="recibos de cfe" />
     <MESSAGE value="comparativas" />
-    <option name="LAST_COMMIT_MESSAGE" value="comparativas" />
+    <MESSAGE value="recibos de cfe" />
+    <option name="LAST_COMMIT_MESSAGE" value="recibos de cfe" />
   </component>
 </project>

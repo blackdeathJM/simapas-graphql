@@ -17,6 +17,7 @@ export interface IBomba
     imgEvidenciaInst: string[];
     imgEvidenciaRet: string[];
     activa: boolean;
+    motivoRetiro: string;
 }
 
 export interface IMotor
@@ -37,4 +38,5 @@ export interface IMotor
     imgEvidenciaInst: string[];
     imgEvidenciaRet: string[];
     activa: boolean;
+    motivoRetiro: string;
 }

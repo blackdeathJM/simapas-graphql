@@ -17,6 +17,7 @@ input BombaInput
     noImpulsores: Int
     rpm: Float
     tipo: String
+    motivoRetiro: String
 }
 
 input MotorInput
@@ -37,4 +38,5 @@ input MotorInput
     fechaRetiro: String
     hp: Float
     voltaje: Float
+    motivoRetiro: String
 }

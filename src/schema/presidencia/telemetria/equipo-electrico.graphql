@@ -17,6 +17,7 @@ type BombaType
     noImpulsores: Int
     rpm: Float
     tipo: String
+    motivoRetiro: String
 }
 
 type MotorType
@@ -37,4 +38,5 @@ type MotorType
     fechaRetiro: String
     hp: Float
     voltaje: Float
+    motivoRetiro: String
 }

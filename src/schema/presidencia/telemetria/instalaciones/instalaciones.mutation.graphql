@@ -21,7 +21,7 @@ type Mutation
     "Actualizar informacion de la bomba"
     actBomba(_id: ID!, bomba: BombaInput!): ResInstalacion
     "Dar de baja Motor"
-    bajaEquipo(_id: ID!, id: String!, fechaBaja: String!, equipo: String!): ResInstalacion
+    bajaEquipo(_id: ID!, id: String!, fechaBaja: String!, equipo: String!, motivoRetiro: String!): ResInstalacion
     "Registrar arreglo de imagenes para evidencia de instalacion y retiro de equipo"
     evidencia(_id: ID!, id: String, coleccionImg: [String!], esInstalacion: Boolean!, equipo: String!): ResInstalacion
     "Registro de lecturas del macromedidor y CFE"
