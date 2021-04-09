@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="recibos de cfe">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/instalacion.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/instalacion.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/motor-bomba-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/motor-bomba-mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/models/equipo-electrico-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/models/equipo-electrico-interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/presidencia/telemetria/equipo-electrico.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/equipo-electrico.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/presidencia/telemetria/inputs/equipo-electrico.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/inputs/equipo-electrico.input.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/presidencia/telemetria/instalaciones/instalaciones.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/telemetria/instalaciones/instalaciones.mutation.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -295,14 +291,8 @@
       <workItem from="1617855909305" duration="1002000" />
       <workItem from="1617859707049" duration="690000" />
       <workItem from="1617866524179" duration="4164000" />
-      <workItem from="1617880679541" duration="583000" />
-    </task>
-    <task id="LOCAL-00001" summary="trabajando en folios">
-      <created>1610338266195</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1610338266195</updated>
+      <workItem from="1617880679541" duration="692000" />
+      <workItem from="1617948344683" duration="2405000" />
     </task>
     <task id="LOCAL-00002" summary="trabajando en folios">
       <created>1610541128034</created>
@@ -640,7 +630,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617737286805</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="recibos de cfe">
+      <created>1617881274962</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1617881274963</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

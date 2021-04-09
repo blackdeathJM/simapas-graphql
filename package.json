@@ -33,7 +33,7 @@
     "graphql-compose-pagination": "^8.0.2",
     "graphql-import-node": "^0.0.4",
     "graphql-merge-resolvers": "^1.1.16",
-    "graphql-middleware": "^6.0.6",
+    "graphql-middleware": "^6.0.7",
     "graphql-playground-middleware-express": "^1.7.22",
     "graphql-tools": "^7.0.4",
     "graphql-upload": "^11.0.0",
@@ -42,7 +42,7 @@
     "lodash": "^4.17.21",
     "merge-graphql-schemas": "^1.7.8",
     "moment": "^2.29.1",
-    "mongodb": "^3.6.5",
+    "mongodb": "^3.6.6",
     "multer": "^1.4.2",
     "ncp": "^2.0.0",
     "reflect-metadata": "^0.1.13",
@@ -70,11 +70,11 @@
     "@types/multer": "^1.4.5",
     "@types/node": "^14.14.37",
     "@types/shortid": "^0.0.29",
-    "bson": "^4.2.3",
+    "bson": "^4.3.0",
     "class-validator": "^0.13.1",
     "nodemon": "^2.0.7",
     "ts-node": "^9.1.1",
-    "typescript": "4.2.3",
+    "typescript": "4.2.4",
     "yarn-upgrade-all": "^0.5.4"
   }
 }
