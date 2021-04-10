@@ -1,0 +1,16 @@
+input OrdenesTrabajoInput
+{
+    _id: ID,
+    noOrden: Int
+    departamentoId: ID
+    fechaOrden: String
+    fechaEjecucion: String
+    tipoOrden: String
+    comentarios: String
+    observaciones: String
+    ordenAtencion: String
+    notasAlmacen: [String]
+    estatus: String
+    creadaPor: String
+    ejecutadaPor: String
+}

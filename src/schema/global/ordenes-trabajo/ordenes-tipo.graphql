@@ -1,9 +1,21 @@
-type tipoAType
+type OrdenipoAType
 {
     instalacion: String
+    desProblema: String
 }
 
-type tipoBType
+type OrdentipoBType
 {
     rpu: String
+    contrato: String
+    noMedidor: String
+    ultimaLectura: Int
+    lecturaAnterior: Int
+    edoMedidor: String
+    instMedidor: String
+    locMedidor: String
+    nombre: String
+    calle: String
+    colonia: String
+    contacto: [String]
 }

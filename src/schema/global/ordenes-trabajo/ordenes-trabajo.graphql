@@ -6,9 +6,14 @@ type OrdenesTrabajoType
     fechaOrden: String
     fechaEjecucion: String
     tipoOrden: String
+    comentarios: String
+    observaciones: String
     ordenAtencion: String
-    notaAlmacen: [String]
+    notasAlmacen: [String]
     estatus: String
     creadaPor: String
     ejecutadaPor: String
+    departamento: DeptoType
+    ordenesTipoA: OrdenipoAType
+    ordenesTipoB: OrdentipoBType
 }
