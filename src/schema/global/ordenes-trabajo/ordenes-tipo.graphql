@@ -1,0 +1,9 @@
+type tipoAType
+{
+    instalacion: String
+}
+
+type tipoBType
+{
+    rpu: String
+}

@@ -1,0 +1,14 @@
+type OrdenesTrabajoType
+{
+    _id: ID,
+    noOrden: Int
+    departamentoId: ID
+    fechaOrden: String
+    fechaEjecucion: String
+    tipoOrden: String
+    ordenAtencion: String
+    notaAlmacen: [String]
+    estatus: String
+    creadaPor: String
+    ejecutadaPor: String
+}
