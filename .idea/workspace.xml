@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="recibos de cfe">
-      <change afterPath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-tipo.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-tipo.input.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-trabajo.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-trabajo.input.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-trabajo.mutation.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-trabajo.query.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2021_05_05_a__m___Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_02_2021_05_05_a__m___Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/models/ordenes-trabajo.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-tipo.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-tipo.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-tipo.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-tipo.input.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-trabajo.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-trabajo.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-trabajo.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-trabajo.input.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="GraphQL File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>

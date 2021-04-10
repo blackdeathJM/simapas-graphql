@@ -1,0 +1,21 @@
+input OrdenipoAInput
+{
+    instalacion: String
+    desProblema: String
+}
+
+input OrdentipoBInput
+{
+    rpu: String
+    contrato: String
+    noMedidor: String
+    ultimaLectura: Int
+    lecturaAnterior: Int
+    edoMedidor: String
+    instMedidor: String
+    locMedidor: String
+    nombre: String
+    calle: String
+    colonia: String
+    contacto: [String]
+}
