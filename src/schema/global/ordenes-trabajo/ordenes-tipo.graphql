@@ -1,10 +1,9 @@
-type OrdenipoAType
+type OrdenTelemetriaType
 {
     instalacion: String
-    desProblema: String
 }
 
-type OrdentipoBType
+type OrdenAreaTecnicaType
 {
     rpu: String
     contrato: String
@@ -18,4 +17,14 @@ type OrdentipoBType
     calle: String
     colonia: String
     contacto: [String]
+}
+type OrdenContratosType
+{
+    rpu: String
+    nombre: String
+    calle: String
+    colonia: String
+    contacto: [String]
+    noMedidor: String
+    tipoMedidor: String
 }

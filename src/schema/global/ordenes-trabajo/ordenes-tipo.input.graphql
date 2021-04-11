@@ -1,10 +1,9 @@
-input OrdenipoAInput
+input OrdenTelemetriaInput
 {
     instalacion: String
-    desProblema: String
 }
 
-input OrdentipoBInput
+input OrdenAreaTecnicaInput
 {
     rpu: String
     contrato: String
@@ -18,4 +17,14 @@ input OrdentipoBInput
     calle: String
     colonia: String
     contacto: [String]
+}
+input OrdenContratosInput
+{
+    rpu: String
+    nombre: String
+    calle: String
+    colonia: String
+    contacto: [String]
+    noMedidor: String
+    tipoMedidor: String
 }

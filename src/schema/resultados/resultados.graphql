@@ -54,6 +54,14 @@ type ResUsuario
     documento: UsuarioType
     documentos: [UsuarioType]
 }
+type ResOrdenTrabajo
+{
+    estatus: Boolean
+    mensaje: String
+    documento: OrdenesTrabajoType
+    documentos: [OrdenesTrabajoType]
+}
+
 type ResNotificacion
 {
     estatus: Boolean!

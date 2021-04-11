@@ -2,31 +2,31 @@ import {IDepartamento} from "../../departamentos/model/departamento.interface";
 
 export interface IOrdenesTrabajo
 {
-    _id?: string;
-    noOrden: string;
+    _id: string;
+    noOrden: number;
     departamentoId: string;
     fechaOrden: string;
     fechaEjecucion: string;
     tipoOrden: string;
     comentarios: string;
+    descProblema: string;
     observaciones: string;
     ordenAtencion: string;
     notasAlmacen: Array<string>;
     estatus: string;
     creadaPor: string;
     ejecutadaPor: string;
+    ordenTelemetria: IOrdenTelemetria;
+    ordenAreaTecnica: IOrdenAreaTecnica;
     departamento: IDepartamento;
-    ordenesTipoA: IOrdenTipoA;
-    ordenesTipoB: IOrdenTipoB;
 }
 
-export interface IOrdenTipoA
+export interface IOrdenTelemetria
 {
     instalacion: string;
-    desProblema: string;
 }
 
-export interface IOrdenTipoB
+export interface IOrdenAreaTecnica
 {
     rpu: string;
     contrato: string;
@@ -40,4 +40,15 @@ export interface IOrdenTipoB
     calle: string;
     colonia: string;
     contacto: Array<string>;
+}
+
+export interface OrdenContratos
+{
+    rpu: string;
+    nombre: string;
+    calle: string;
+    colonia: string;
+    contacto: Array<string>;
+    noMedidor: string;
+    tipoMedidor: string;
 }

@@ -7,6 +7,7 @@ input OrdenesTrabajoInput
     fechaEjecucion: String
     tipoOrden: String
     comentarios: String
+    descProblema: String
     observaciones: String
     ordenAtencion: String
     notasAlmacen: [String]
