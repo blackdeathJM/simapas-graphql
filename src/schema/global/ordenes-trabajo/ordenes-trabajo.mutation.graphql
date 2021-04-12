@@ -1,4 +1,4 @@
 type Mutation
 {
-    regOrdenTele():
+    regOrdenTele(ordenTele: OrdenTelemetriaInput): ResOrdenTrabajo
 }
