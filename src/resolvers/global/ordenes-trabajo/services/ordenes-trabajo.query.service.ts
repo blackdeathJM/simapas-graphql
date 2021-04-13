@@ -13,7 +13,6 @@ export class OrdenesTrabajoQueryService extends ResolversOperacionesService
     async todasOrdenes()
     {
         const todasOrdnes = await this.buscarSinPaginacion(COLECCION.ORDENES_TRAB, {}, {}, {noOrden: -1});
-        console.log('respuesta', todasOrdnes);
         return respArreglosSPag(todasOrdnes);
     }
 }
