@@ -13,6 +13,10 @@ export class OrdenesTrabajoMutationService extends ResolversOperacionesService
 
     async _regOrdenTele(ordenTele: IOrdenesTrabajo)
     {
+        const ultimoNoOrden = await this.contarDocumentos(COLECCION.ORDENES_TRAB, {noOrden: ordenTele.noOrden}, {});
+
+        ordenTele.noOrden = ultimoNoOrden.total + 1;
+
         const registro = await this.agregarUnElemento(COLECCION.ORDENES_TRAB, ordenTele, {});
 
         return respDocumento(registro);

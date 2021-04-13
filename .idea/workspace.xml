@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="13b930f1-1310-4e8a-bd2d-c7407bede3c0" name="Default Changelist" comment="Ordenes de trabajo">
+    <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="Orden trabajo telemetria">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/services/ordenes-trabajo.query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/services/ordenes-trabajo.query.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/services/ordenes-trabajo.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/services/ordenes-trabajo.mutation.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-trabajo.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-trabajo.input.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,12 +22,10 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="documentacion" />
         <entry key="$PROJECT_DIR$" value="api" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1mra8Gwz8gIhIHNHYbmVkoe3qfB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -42,7 +41,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/build/schema/presidencia/docExterna/docExterna.graphql" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/public/uploads/perfil" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/public/uploads/temp" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -52,15 +51,18 @@
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="D:\Documents\Proyectos\Backend\simapas-graphql\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="D:\Documents\proyectos\backend\simapas-graphql\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\proyectos\backend\simapas-graphql\src\public\uploads\temp" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\perfil" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\per" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\proyectos\backend\simapas-graphql\src\public\uploads\per" />
+      <recent name="D:\Documents\proyectos\backend\simapas-graphql\src\public\uploads" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\resolvers\global\notificaciones" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\resolvers\usuarios\documentos\services" />
     </key>
@@ -68,7 +70,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="13b930f1-1310-4e8a-bd2d-c7407bede3c0" name="Default Changelist" comment="" />
+      <changelist id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="" />
       <created>1610254007620</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -140,9 +142,8 @@
       <workItem from="1611533941788" duration="3265000" />
       <workItem from="1611540307165" duration="214000" />
       <workItem from="1611540829331" duration="571000" />
-      <workItem from="1618209464263" duration="410000" />
-      <workItem from="1618258912631" duration="5000" />
-      <workItem from="1618259247186" duration="7519000" />
+      <workItem from="1618209464263" duration="1074000" />
+      <workItem from="1618304803526" duration="4313000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -228,21 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611536215627</updated>
     </task>
-    <task id="LOCAL-00013" summary="Ordenes de trabajo">
-      <created>1618273943184</created>
+    <task id="LOCAL-00013" summary="Orden trabajo telemetria">
+      <created>1618209955751</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1618273943185</updated>
+      <updated>1618209955751</updated>
     </task>
-    <task id="LOCAL-00014" summary="Ordenes de trabajo">
-      <created>1618274035948</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1618274035948</updated>
-    </task>
-    <option name="localTasksCounter" value="15" />
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,7 +256,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="trabajando en folios" />
-    <MESSAGE value="Ordenes de trabajo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ordenes de trabajo" />
+    <MESSAGE value="Orden trabajo telemetria" />
+    <option name="LAST_COMMIT_MESSAGE" value="Orden trabajo telemetria" />
   </component>
 </project>
