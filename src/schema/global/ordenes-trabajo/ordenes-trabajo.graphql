@@ -1,6 +1,6 @@
 type OrdenesTrabajoType
 {
-    _id: ID,
+    _id: ID
     noOrden: Int
     departamentoId: ID
     fechaOrden: String

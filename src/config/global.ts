@@ -12,7 +12,8 @@ export enum COLECCION
     USUARIOS = 'usuarios',
     DOC_EXTERNA = 'documentos',
     TELEMETRIA = 'telemetria',
-    NOT = 'notificaciones'
+    NOT = 'notificaciones',
+    ORDENES_TRAB = 'ordenesTrabajo'
 }
 
 export enum PUB_SUB
