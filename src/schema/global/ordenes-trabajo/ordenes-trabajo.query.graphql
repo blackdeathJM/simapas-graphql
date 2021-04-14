@@ -1,4 +1,5 @@
 type Query
 {
     todasOrdenes: ResOrdenTrabajo
+    ordenesTrabEstatus(departamentoId: String!, estatus: String!): ResOrdenTrabajo
 }

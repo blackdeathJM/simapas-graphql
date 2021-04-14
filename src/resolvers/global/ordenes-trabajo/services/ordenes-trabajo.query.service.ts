@@ -15,4 +15,11 @@ export class OrdenesTrabajoQueryService extends ResolversOperacionesService
         const todasOrdnes = await this.buscarSinPaginacion(COLECCION.ORDENES_TRAB, {}, {}, {noOrden: -1});
         return respArreglosSPag(todasOrdnes);
     }
+
+    async _ordenesTrabEstatus(departamentoId: string, estatus: string)
+    {
+        const ordenesTrab = await this.buscarSinPaginacion(COLECCION.ORDENES_TRAB,
+            {departamentoId, estatus}, {}, {fechaOrden: -1});
+        return respArreglosSPag(ordenesTrab);
+    }
 }
