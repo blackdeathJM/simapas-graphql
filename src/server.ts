@@ -41,7 +41,7 @@ async function init()
     });
 
 
-    const context: any = async ({req, connection}: IContext) =>
+    const context = async ({req, connection}: IContext) =>
     {
         const token = (req) ? req.headers.authorization : connection.authorization;
         const contexto = (req) ? req.headers.context : connection.context;

@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="Orden trabajo telemetria">
+      <change afterPath="$PROJECT_DIR$/tslint.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/ordenes-trabajo.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/ordenes-trabajo.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/services/ordenes-trabajo.query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/services/ordenes-trabajo.query.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-trabajo.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-trabajo.query.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/.env" beforeDir="false" afterPath="$PROJECT_DIR$/src/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +55,7 @@
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="D:\Documents\Proyectos\Backend\simapas-graphql\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="D:\Documents\proyectos\backend\simapas-graphql\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -62,10 +65,11 @@
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\per" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\proyectos\backend\simapas-graphql" />
+      <recent name="D:\Documents\proyectos\backend\simapas-graphql\src" />
       <recent name="D:\Documents\proyectos\backend\simapas-graphql\src\public\uploads\per" />
       <recent name="D:\Documents\proyectos\backend\simapas-graphql\src\public\uploads" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\resolvers\global\notificaciones" />
-      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\resolvers\usuarios\documentos\services" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -144,8 +148,13 @@
       <workItem from="1611540307165" duration="214000" />
       <workItem from="1611540829331" duration="571000" />
       <workItem from="1618209464263" duration="1074000" />
-      <workItem from="1618304803526" duration="4313000" />
-      <workItem from="1618344006261" duration="8230000" />
+      <workItem from="1618304803526" duration="5078000" />
+      <workItem from="1618321524411" duration="601000" />
+      <workItem from="1618399186525" duration="898000" />
+      <workItem from="1618461695917" duration="531000" />
+      <workItem from="1618463877763" duration="1980000" />
+      <workItem from="1618488900475" duration="2339000" />
+      <workItem from="1618491364427" duration="724000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -238,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618209955751</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Orden trabajo telemetria">
+      <created>1618314558903</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1618314558903</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
