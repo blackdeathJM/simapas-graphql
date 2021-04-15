@@ -8,7 +8,6 @@ import path from "path";
 import {router} from "./configMuter/docs.routes";
 import {IContext} from "./interfaces/context-interface";
 import schema from "./schema";
-import expressPlayground from 'graphql-playground-middleware-express';
 import {graphqlHTTP} from "express-graphql";
 
 async function init()
@@ -32,7 +31,7 @@ async function init()
     {
         res.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
         // res.setHeader("Access-Control-Allow-Origin", "https://26.62.148.73:5642");
-        // res.setHeader("Access-Control-Allow-Origin", "https://192.168.1.189:5642");
+        // res.setHeader("Access-Control-Allow-Origin", "http://26.84.127.13:5642");
         res.header("Access-Control-Allow-Headers", "Authorization, X-API-KEY, " +
             "Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method");
         res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS,');
