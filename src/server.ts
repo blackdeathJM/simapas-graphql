@@ -5,24 +5,25 @@ import {ApolloServer, PubSub} from "apollo-server-express";
 import {createServer} from 'http';
 import Database from "./config/database";
 import path from "path";
-import expressPlayground from 'graphql-playground-middleware-express';
 import {router} from "./configMuter/docs.routes";
 import {IContext} from "./interfaces/context-interface";
-import {EventEmitter} from "events";
 import schema from "./schema";
-// import {graphqlHTTP} from "express-graphql";
-
-// import cors from 'cors';
+import expressPlayground from 'graphql-playground-middleware-express';
+import {graphqlHTTP} from "express-graphql";
 
 async function init()
 {
     const app = express();
-    const emitirEvento = new EventEmitter();
-    emitirEvento.setMaxListeners(1000);
-    const pubsub = new PubSub({eventEmitter: emitirEvento});
+    // const emitirEvento = new EventEmitter();
+    // emitirEvento.setMaxListeners(1000);
+    // const pubsub = new PubSub({eventEmitter: emitirEvento});
+
+    const pubsub = new PubSub();
     const database = new Database();
     const db = await database.init();
-    // app.use(cors());
+    // const corsOpts = cors({origin: '*', credentials: false});
+    //
+    // app.use(corsOpts);
     app.use(compression());
     app.use(bodyParser.json()).use(bodyParser.urlencoded({extended: true}));
     app.use(express.static(path.join(__dirname, 'public')));
@@ -32,7 +33,8 @@ async function init()
         res.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
         // res.setHeader("Access-Control-Allow-Origin", "https://26.62.148.73:5642");
         // res.setHeader("Access-Control-Allow-Origin", "https://192.168.1.189:5642");
-        res.header("Access-Control-Allow-Headers", "Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method");
+        res.header("Access-Control-Allow-Headers", "Authorization, X-API-KEY, " +
+            "Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method");
         res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS,');
         res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS, GET");
         res.header('Allow', 'GET, POST, OPTIONS');
@@ -50,14 +52,17 @@ async function init()
     const server = new ApolloServer({
         schema,
         context,
+        playground: true,
         introspection: true
     });
+
     server.applyMiddleware({app});
 
-    app.get('/', expressPlayground({endpoint: '/graphql'}));
+    // app.get('/', expressPlayground({endpoint: '/graphql'}));
     // app.use('/', expressPlayground({endpoint: '/graphql',}));
-    // app.use('/graphql', graphqlHTTP({schema}));
+    app.use('/graphql', graphqlHTTP({schema}));
     app.use('/file', router);
+
     const httpServer = createServer(app);
     const PORT = process.env.PORT || 5003;
     server.installSubscriptionHandlers(httpServer);
