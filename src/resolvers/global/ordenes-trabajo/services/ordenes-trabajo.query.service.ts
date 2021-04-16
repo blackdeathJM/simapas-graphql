@@ -18,10 +18,15 @@ export class OrdenesTrabajoQueryService extends ResolversOperacionesService
 
     async _ordenesTrabEstatus(departamentoId: string, estatus: string)
     {
-        console.log('+++', departamentoId, estatus);
         const ordenesTrab = await this.buscarSinPaginacion(COLECCION.ORDENES_TRAB,
             {departamentoId, estatus}, {}, {fechaOrden: -1});
-        console.log('ordenes estatus', ordenesTrab);
         return respArreglosSPag(ordenesTrab);
+    }
+
+    async _ordenesPorDepto(departamentoId: string)
+    {
+        const ordenesPorDepto = await this.buscarSinPaginacion(COLECCION.ORDENES_TRAB, {departamentoId}, {},
+            {fechaOrden: -1});
+        return respArreglosSPag(ordenesPorDepto);
     }
 }

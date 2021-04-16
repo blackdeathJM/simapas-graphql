@@ -12,6 +12,10 @@ export const queryOrdenesTrabajo: IResolvers =
                 async ordenesTrabEstatus(_, {departamentoId, estatus}, {db})
                 {
                     return new OrdenesTrabajoQueryService(_, {}, {db})._ordenesTrabEstatus(departamentoId, estatus)
+                },
+                async ordenesPorDepto(_, {departamentoId}, {db})
+                {
+                    return new OrdenesTrabajoQueryService(_, {}, {})._ordenesPorDepto(departamentoId)
                 }
             }
     }
