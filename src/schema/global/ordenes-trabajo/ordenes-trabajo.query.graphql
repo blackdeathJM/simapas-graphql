@@ -1,6 +1,8 @@
 type Query
 {
     todasOrdenes: ResOrdenTrabajo
-    ordenesTrabEstatus(departamentoId: String!, estatus: String!): ResOrdenTrabajo
+    ordenesTrabEstatus(departamentoId: String!, estatus: String!, esAdmin: Boolean!): ResOrdenTrabajo
     ordenesPorDepto(departamentoId: String!): ResOrdenTrabajo
+    porCriterio(consulta: String): ResOrdenTrabajo
+    porFechas(fechaInicial: String!, fechaFinal: String!): ResOrdenTrabajo
 }

@@ -12,14 +12,17 @@ export class OrdenesTrabajoQueryService extends ResolversOperacionesService
 
     async todasOrdenes()
     {
-        const todasOrdnes = await this.buscarSinPaginacion(COLECCION.ORDENES_TRAB, {}, {}, {noOrden: -1});
+        const todasOrdnes = await this.buscarSinPaginacion(COLECCION.ORDENES_TRAB, {}, {}, {fechaOrden: -1});
         return respArreglosSPag(todasOrdnes);
     }
 
-    async _ordenesTrabEstatus(departamentoId: string, estatus: string)
+    async _ordenesTrabEstatus(departamentoId: string, estatus: string, esAdmin: boolean)
     {
+        const filtro = esAdmin ? {estatus} : {departamentoId, estatus};
+
         const ordenesTrab = await this.buscarSinPaginacion(COLECCION.ORDENES_TRAB,
-            {departamentoId, estatus}, {}, {fechaOrden: -1});
+            filtro, {}, {fechaOrden: -1});
+
         return respArreglosSPag(ordenesTrab);
     }
 
@@ -28,5 +31,15 @@ export class OrdenesTrabajoQueryService extends ResolversOperacionesService
         const ordenesPorDepto = await this.buscarSinPaginacion(COLECCION.ORDENES_TRAB, {departamentoId}, {},
             {fechaOrden: -1});
         return respArreglosSPag(ordenesPorDepto);
+    }
+
+    _porCriterio(consulta: string)
+    {
+        return Promise.resolve(undefined);
+    }
+
+    _porFechas(fechaInicial: string, echaFinal: string)
+    {
+        return Promise.resolve(undefined);
     }
 }

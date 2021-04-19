@@ -1,8 +1,8 @@
 input OrdenesTrabajoInput
 {
-    _id: ID,
+    _id: ID
     noOrden: Int
-    departamentoId: ID
+    departamentoId: ID!
     fechaOrden: String
     fechaEjecucion: String
     tipoOrden: String
@@ -14,6 +14,7 @@ input OrdenesTrabajoInput
     estatus: String
     creadaPor: String
     ejecutadaPor: String
+    prioridad: String
     ordenTelemetria: OrdenTelemetriaInput
     ordenAreaTecnica: OrdenAreaTecnicaInput
 }

@@ -14,6 +14,7 @@ type OrdenesTrabajoType
     estatus: String
     creadaPor: String
     ejecutadaPor: String
+    prioridad: String
     ordenTelemetria: OrdenTelemetriaType
     ordenAreaTecnica: OrdenAreaTecnicaType
     departamento: DeptoType

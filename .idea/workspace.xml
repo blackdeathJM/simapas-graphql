@@ -3,9 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="Orden trabajo telemetria">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/models/ordenes-trabajo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/models/ordenes-trabajo.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/ordenes-trabajo.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/ordenes-trabajo.query.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/services/ordenes-trabajo.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/services/ordenes-trabajo.mutation.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/services/ordenes-trabajo.query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/services/ordenes-trabajo.query.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-trabajo.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-trabajo.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-trabajo.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-trabajo.input.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-trabajo.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-trabajo.query.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +160,17 @@
       <workItem from="1618491364427" duration="724000" />
       <workItem from="1618522550169" duration="107000" />
       <workItem from="1618525147261" duration="832000" />
-      <workItem from="1618527335552" duration="1706000" />
+      <workItem from="1618527335552" duration="1754000" />
+      <workItem from="1618575567920" duration="2221000" />
+      <workItem from="1618581339502" duration="4026000" />
+      <workItem from="1618589879752" duration="816000" />
+      <workItem from="1618601020812" duration="1758000" />
+      <workItem from="1618611678708" duration="1028000" />
+      <workItem from="1618617044364" duration="960000" />
+      <workItem from="1618662146096" duration="832000" />
+      <workItem from="1618771303455" duration="5579000" />
+      <workItem from="1618794568357" duration="2160000" />
+      <workItem from="1618801487256" duration="610000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -268,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618522599373</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Orden trabajo telemetria">
+      <created>1618532972967</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1618532972967</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

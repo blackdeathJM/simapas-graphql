@@ -16,6 +16,7 @@ export interface IOrdenesTrabajo
     estatus: string;
     creadaPor: string;
     ejecutadaPor: string;
+    prioridad: string;
     ordenTelemetria: IOrdenTelemetria;
     ordenAreaTecnica: IOrdenAreaTecnica;
     departamento: IDepartamento;
