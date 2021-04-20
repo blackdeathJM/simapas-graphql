@@ -1,0 +1,16 @@
+type CarteraVendidaType
+{
+    noMedidor: String
+    adeudoActual: Float
+    fechaVencAdeActual: Float
+    adeudoPorCobrar: Float
+    fechaLiquidacionAdeudo: String
+    adeudoTotal: Float
+    pagadoHasta: String
+    facturadoHasta: String
+    meses: Int
+    reactivarDia: String
+    cpd: Int
+    abonos: Float
+    anticipos: Float
+}

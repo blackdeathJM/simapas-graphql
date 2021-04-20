@@ -1,0 +1,4 @@
+type Facturacion
+{
+    noMedidor: String
+}

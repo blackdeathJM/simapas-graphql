@@ -1,0 +1,7 @@
+type LecturasType
+{
+    noMedidor: String
+    fechaLectura: String
+    lectura: Float
+    lecturaAnterior: Float
+}

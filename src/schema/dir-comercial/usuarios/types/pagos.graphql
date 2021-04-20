@@ -1,0 +1,8 @@
+type PagosClienteType
+{
+    noMedidor: String
+    redondearPesos: Float
+    cobroFijo: Float
+    cobroTemp: Float
+    modificaImporteEnCaja: Int
+}

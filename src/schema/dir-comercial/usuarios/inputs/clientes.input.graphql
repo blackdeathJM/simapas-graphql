@@ -1,0 +1,61 @@
+input ClientesInput
+{
+    "Checar a que se refiere el folio"
+    folio: Int
+    codigoQr: String
+    rpu: String
+    noCta: Int
+    nombre: String
+    apellidos: String
+    telefonos: [String]
+    email: String
+    rfc: String
+    iva: Float
+    estatusUsuario: String
+    colorEstatusUsuario: String
+    grupoFact: Int
+    "Checar"
+    deposito: Float
+    "Checar"
+    envio: String
+    "Checar"
+    prorroga: String
+    hyperlink: String
+    activoEnInternet: Boolean
+    usuarioActivo: Boolean
+    obs: String
+    contrato: [ContratoInput]
+}
+
+
+input ContratoInput
+{
+    noMedidor: String
+    noContrato: String
+    fechaAlta: String
+    calle: String
+    entreCalles: String
+    referencia: String
+    colonia: String
+    codigoPostal: String
+    ciudad: String
+    municipio: String
+    pais: String
+    estado: String
+    sector: Int
+    ruta: Int
+    tarifa: String
+    giro: String
+    zona: String
+    noFamiliasEnToma: Int
+    documentacion: DocumentacionInput
+    activo: Boolean
+}
+
+
+input DocumentacionInput
+{
+    identificacion: [String]
+    predial: [String]
+    curp: String
+}
