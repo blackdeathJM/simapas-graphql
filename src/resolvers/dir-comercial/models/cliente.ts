@@ -1,4 +1,4 @@
-export interface IClientes
+export interface ICliente
 {
 
     folio: number;
@@ -7,7 +7,7 @@ export interface IClientes
     noCta: number;
     nombre: string;
     apellidos: string;
-    telefonos: [String]
+    telefonos: string[];
     email: string;
     rfc: string;
     iva: number;
@@ -44,8 +44,8 @@ export interface IContrato
     giro: string;
     zona: string;
     noFamiliasEnToma: number;
-    documentacion: IDocumentacion
-    activo: Boolean
+    documentacion: IDocumentacion;
+    activo: boolean;
 }
 
 export interface IDocumentacion

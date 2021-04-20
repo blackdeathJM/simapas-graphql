@@ -1,4 +1,4 @@
-type ClientesType
+input ClienteInput
 {
     "Checar a que se refiere el folio"
     folio: Int
@@ -24,24 +24,11 @@ type ClientesType
     activoEnInternet: Boolean
     usuarioActivo: Boolean
     obs: String
-    contratos: [ContratoType]
-
-#    noVecesFacturacion: Int
-#    obsProrroga: String
-#    idCff: Int
-#    idCffIVaPorcentaje: Float
-#    cffImporte: Float
-#    emailPago: String
-#    satCFormaPago: String
-#    satcMetodoPago: String
-#    satUsoCfdi: String
-#    anioMes: String
-#    noRequirimiento: Int
-#    fechaNotRequerimiento: String
-#    refBColIndividual: String
+    contrato: [ContratoInput]
 }
 
-type ContratoType
+
+input ContratoInput
 {
     noMedidor: String
     noContrato: String
@@ -61,11 +48,12 @@ type ContratoType
     giro: String
     zona: String
     noFamiliasEnToma: Int
-    documentosImg: DocumentacionType
+    documentacion: DocumentacionInput
     activo: Boolean
 }
 
-type DocumentacionType
+
+input DocumentacionInput
 {
     identificacion: [String]
     predial: [String]

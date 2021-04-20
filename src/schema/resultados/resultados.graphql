@@ -69,6 +69,14 @@ type ResNotificacion
     documento: NotificacionType
     documentos: [NotificacionType]
 }
+
+type ResCliente
+{
+    estatus: Boolean!
+    mensaje: String!
+    documento: ClienteType
+    documentos: [ClienteType]
+}
 type ResUsuarioToken
 {
     estatus: Boolean!
