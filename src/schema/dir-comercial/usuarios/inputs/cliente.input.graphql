@@ -1,6 +1,5 @@
 input ClienteInput
 {
-    "Checar a que se refiere el folio"
     folio: Int
     codigoQr: String
     rpu: String
@@ -10,23 +9,18 @@ input ClienteInput
     telefonos: [String]
     email: String
     rfc: String
-    iva: Float
+    iva: Int
     estatusUsuario: String
     colorEstatusUsuario: String
     grupoFact: Int
-    "Checar"
-    deposito: Float
-    "Checar"
-    envio: String
-    "Checar"
-    prorroga: String
     hyperlink: String
     activoEnInternet: Boolean
     usuarioActivo: Boolean
     obs: String
-    contrato: [ContratoInput]
+    creadaPor: String
+    modificadaPor: [String]
+    contratos: [ContratoInput]
 }
-
 
 input ContratoInput
 {

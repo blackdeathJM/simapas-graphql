@@ -1,6 +1,5 @@
 type ClienteType
 {
-    "Checar a que se refiere el folio"
     folio: Int
     codigoQr: String
     rpu: String
@@ -10,35 +9,17 @@ type ClienteType
     telefonos: [String]
     email: String
     rfc: String
-    iva: Float
+    iva: Int
     estatusUsuario: String
     colorEstatusUsuario: String
     grupoFact: Int
-    "Checar"
-    deposito: Float
-    "Checar"
-    envio: String
-    "Checar"
-    prorroga: String
     hyperlink: String
     activoEnInternet: Boolean
     usuarioActivo: Boolean
     obs: String
+    creadaPor: String
+    modificadaPor: [String]
     contratos: [ContratoType]
-
-#    noVecesFacturacion: Int
-#    obsProrroga: String
-#    idCff: Int
-#    idCffIVaPorcentaje: Float
-#    cffImporte: Float
-#    emailPago: String
-#    satCFormaPago: String
-#    satcMetodoPago: String
-#    satUsoCfdi: String
-#    anioMes: String
-#    noRequirimiento: Int
-#    fechaNotRequerimiento: String
-#    refBColIndividual: String
 }
 
 type ContratoType

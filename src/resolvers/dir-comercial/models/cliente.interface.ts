@@ -1,6 +1,5 @@
 export interface ICliente
 {
-
     folio: number;
     codigoQr: string;
     rpu: string;
@@ -14,13 +13,12 @@ export interface ICliente
     estatusUsuario: string;
     colorEstatusUsuario: string;
     grupoFact: number;
-    deposito: number;
-    envio: string;
-    prorroga: string;
     hyperlink: string;
     activoEnInternet: boolean;
     usuarioActivo: boolean;
     obs: string;
+    creadaPor: string;
+    modificadaPor: string[];
     contratos: IContrato[];
 }
 
