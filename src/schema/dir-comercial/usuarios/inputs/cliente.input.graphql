@@ -19,7 +19,6 @@ input ClienteInput
     obs: String
     creadaPor: String
     modificadaPor: [String]
-    contratos: [ContratoInput]
 }
 
 input ContratoInput

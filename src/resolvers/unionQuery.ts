@@ -6,6 +6,7 @@ import queryTelemetria from "./presidencia/telemetria/instalacion/instalacion.qu
 import queryDocUsuario from "./usuarios/documentos/doc.query.resolver";
 import queryNotificacion from "./global/notificaciones/notificacion.query.resolver";
 import {queryOrdenesTrabajo} from "./global/ordenes-trabajo/ordenes-trabajo.query.resolver";
+import {queryCliente} from "./dir-comercial/resolvers/cliente.query.resolver";
 
 const unionQueryResolver = GMR.merge(
     [
@@ -15,7 +16,8 @@ const unionQueryResolver = GMR.merge(
         queryUsuarios,
         queryNotificacion,
         queryTelemetria,
-        queryOrdenesTrabajo
+        queryOrdenesTrabajo,
+        queryCliente
     ]);
 
 export default unionQueryResolver;
