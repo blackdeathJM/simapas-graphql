@@ -3,7 +3,7 @@ input ClienteInput
     folio: Int
     codigoQr: String
     rpu: String
-    noCta: Int
+    noCta: String
     nombre: String
     apellidos: String
     telefonos: [String]
@@ -48,7 +48,8 @@ input ContratoInput
 
 input DocumentacionInput
 {
-    identificacion: [String]
-    predial: [String]
+    ineFrente: String
+    ineTrasera: String
+    predial: String
     curp: String
 }

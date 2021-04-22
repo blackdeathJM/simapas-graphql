@@ -16,14 +16,16 @@ export class ClienteMutationService extends ResolversOperacionesService
     async _regCliente(cliente: ICliente)
     {
         const buscarDoc = await this.buscarUnElemento(COLECCION.CLIENTES,
-            {or$: [{rpu: cliente.rpu}, {folio: cliente.folio}]}, {});
+            {$or: [{rpu: cliente.rpu}, {folio: cliente.folio}]}, {});
 
-        console.log('existe el documento', buscarDoc);
+        if (buscarDoc.estatus)
+        {
+            return respDocumento(buscarDoc);
+        } else
+        {
+            const registroCliente = await this.agregarUnElemento(COLECCION.CLIENTES, cliente, {});
+            return respDocumento(registroCliente);
+        }
 
-        console.log('--------', cliente);
-
-        // const registroCliente = await this.agregarUnElemento(COLECCION.CLIENTES, {cliente}, {});
-        //
-        // return respDocumento(registroCliente);
     }
 }

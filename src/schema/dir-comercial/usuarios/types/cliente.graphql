@@ -3,7 +3,7 @@ type ClienteType
     folio: Int
     codigoQr: String
     rpu: String
-    noCta: Int
+    noCta: String
     nombre: String
     apellidos: String
     telefonos: [String]
@@ -48,7 +48,8 @@ type ContratoType
 
 type DocumentacionType
 {
-    identificacion: [String]
-    predial: [String]
+    ineFrente: String
+    ineTrasera: String
+    predial: String
     curp: String
 }

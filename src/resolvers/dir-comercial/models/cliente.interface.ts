@@ -1,25 +1,9 @@
-export interface ICliente
+export interface IDocumentacion
 {
-    folio: number;
-    codigoQr: string;
-    rpu: string;
-    noCta: number;
-    nombre: string;
-    apellidos: string;
-    telefonos: string[];
-    email: string;
-    rfc: string;
-    iva: number;
-    estatusUsuario: string;
-    colorEstatusUsuario: string;
-    grupoFact: number;
-    hyperlink: string;
-    activoEnInternet: boolean;
-    usuarioActivo: boolean;
-    obs: string;
-    creadaPor: string;
-    modificadaPor: string[];
-    contratos: IContrato[];
+    ineFrente: string;
+    ineTrasera: string;
+    predial: string;
+    curp: string;
 }
 
 export interface IContrato
@@ -46,9 +30,27 @@ export interface IContrato
     activo: boolean;
 }
 
-export interface IDocumentacion
+export interface ICliente
 {
-    identificacion: string[];
-    predial: string[];
-    curp: string;
+    folio: number;
+    codigoQr: string;
+    rpu: string;
+    noCta: string;
+    nombre: string;
+    apellidos: string;
+    telefonos: string[];
+    email: string;
+    rfc: string;
+    iva: number;
+    estatusUsuario: string;
+    colorEstatusUsuario: string;
+    grupoFact: number;
+    hyperlink: string;
+    activoEnInternet: boolean;
+    usuarioActivo: boolean;
+    obs: string;
+    creadaPor: string;
+    modificadaPor: string[];
 }
+
+
