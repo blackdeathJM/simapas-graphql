@@ -8,6 +8,10 @@ export const mutationCliente: IResolvers =
                 regCliente(_, {cliente}, {db})
                 {
                     return new ClienteMutationService(_, {}, {db})._regCliente(cliente);
+                },
+                regContrato(_, {idCliente, contrato}, {db})
+                {
+                    return new ClienteMutationService(_, {}, {db})._regContrato(idCliente, contrato);
                 }
             }
     }

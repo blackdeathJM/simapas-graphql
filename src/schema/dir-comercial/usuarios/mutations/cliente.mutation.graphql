@@ -1,4 +1,5 @@
 type Mutation
 {
     regCliente(cliente: ClienteInput): ResCliente
+    regContrato(idCliente: ID!, contrato: ContratoInput):ResCliente
 }
