@@ -1,17 +1,20 @@
 import {IResolvers} from "graphql-tools";
 import {ClienteMutationService} from "../services/cliente.mutation.service";
+import {ContratoMutationService} from "../services/contrato.mutation.service";
 
 export const mutationCliente: IResolvers =
     {
         Mutation:
             {
+                // ================ CLIENTES ================================
                 regCliente(_, {cliente}, {db})
                 {
                     return new ClienteMutationService(_, {}, {db})._regCliente(cliente);
                 },
+                // ==============CONTRATOS=====================================
                 regContrato(_, {idCliente, contrato}, {db})
                 {
-                    return new ClienteMutationService(_, {}, {db})._regContrato(idCliente, contrato);
+                    return new ContratoMutationService(_, {}, {db})._regContrato(idCliente, contrato);
                 }
             }
     }

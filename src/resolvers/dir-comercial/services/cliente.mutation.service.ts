@@ -3,7 +3,6 @@ import {IContextData} from "../../../interfaces/context-data-interface";
 import {ICliente, IContrato} from "../models/cliente.interface";
 import {COLECCION} from "../../../config/global";
 import {respDocumento} from "../../../services/respuestas-return";
-import {ObjectId} from "bson";
 
 export class ClienteMutationService extends ResolversOperacionesService
 {
@@ -28,13 +27,5 @@ export class ClienteMutationService extends ResolversOperacionesService
             return respDocumento(registroCliente);
         }
 
-    }
-
-    async _regContrato(idCliente: string, contrato: IContrato)
-    {
-        const regContrato = await this.buscarUnoYActualizar(COLECCION.CLIENTES, {_id: new ObjectId(idCliente)},
-            {$addToSet: {contratos: contrato}}, {returnOriginal: false});
-
-        return respDocumento(regContrato);
     }
 }

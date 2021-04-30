@@ -23,6 +23,7 @@ input ClienteInput
 
 input ContratoInput
 {
+    _id: ID
     noMedidor: String
     noContrato: String
     fechaAlta: String
@@ -44,7 +45,6 @@ input ContratoInput
     documentacion: DocumentacionInput
     activo: Boolean
 }
-
 
 input DocumentacionInput
 {

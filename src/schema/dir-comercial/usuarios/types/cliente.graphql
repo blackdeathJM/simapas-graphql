@@ -1,5 +1,6 @@
 type ClienteType
 {
+    _id: ID
     folio: Int
     codigoQr: String
     rpu: String
