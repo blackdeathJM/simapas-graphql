@@ -44,8 +44,9 @@ type ContratoType
     giro: String
     zona: String
     noFamiliasEnToma: Int
-    documentosImg: DocumentacionType
     activo: Boolean
+    documentosImg: DocumentacionType
+    #Agregar modificadaPor, booleano para checar si la documentacion ya esta subida o ver si nada mas comparamos el arreglo vacio
 }
 
 type DocumentacionType

@@ -1,9 +1,9 @@
 import GMR from 'graphql-merge-resolvers';
-import typeDepto from "./global/departamentos/departamento.type.resolver";
+import typesRelacionar from "./tipos.type.resolver";
 
 const unionTypeResolver = GMR.merge(
     [
-        typeDepto,
+        typesRelacionar,
     ]);
 
 export default unionTypeResolver;

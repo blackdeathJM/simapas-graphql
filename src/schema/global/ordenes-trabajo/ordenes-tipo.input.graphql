@@ -5,15 +5,19 @@ input OrdenTelemetriaInput
 
 input OrdenAreaTecnicaInput
 {
+    _id: ID
     rpu: String
+    contrato: String
     noMedidor: String
     nombre: String
+    apellidos: String
     calle: String
     colonia: String
-    ref: String,
     entreCalles: String
+    referencia: String
     contacto: [String]
 }
+
 input OrdenContratosInput
 {
     rpu: String
@@ -23,4 +27,17 @@ input OrdenContratosInput
     contacto: [String]
     noMedidor: String
     tipoMedidor: String
+}
+
+input NotasInput
+{
+    nota: String
+    material: [MaterialInput]
+}
+
+input MaterialInput
+{
+    cantidad: Float
+    descripcion: String
+    uMedida: String
 }

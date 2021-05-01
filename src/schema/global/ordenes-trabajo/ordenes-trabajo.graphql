@@ -7,15 +7,15 @@ type OrdenesTrabajoType
     fechaEjecucion: String
     tipoOrden: String
     comentarios: String
-    descProblema: String
+    anomalia: String
     observaciones: String
     ordenAtencion: String
-    notasAlmacen: [String]
     estatus: String
     creadaPor: String
     ejecutadaPor: String
     prioridad: String
     ordenTelemetria: OrdenTelemetriaType
     ordenAreaTecnica: OrdenAreaTecnicaType
+    notasAlmacen: [NotasType]
     departamento: DeptoType
 }

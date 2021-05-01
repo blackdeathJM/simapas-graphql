@@ -11,14 +11,12 @@ export class OrdenesTrabajoMutationService extends ResolversOperacionesService
         super(root, variables, context);
     }
 
-    async _regOrdenTele(ordenTele: IOrdenesTrabajo)
+    async _regOrdenTrabajo(ordenTrabajo: IOrdenesTrabajo)
     {
         const ultimoNoOrden = await this.contarDocumentos(COLECCION.ORDENES_TRAB, {}, {});
+        ordenTrabajo.noOrden = ultimoNoOrden.total + 1;
 
-        ordenTele.noOrden = ultimoNoOrden.total + 1;
-
-        const registro = await this.agregarUnElemento(COLECCION.ORDENES_TRAB, ordenTele, {});
-
+        const registro = await this.agregarUnElemento(COLECCION.ORDENES_TRAB, ordenTrabajo, {});
         return respDocumento(registro);
     }
 }

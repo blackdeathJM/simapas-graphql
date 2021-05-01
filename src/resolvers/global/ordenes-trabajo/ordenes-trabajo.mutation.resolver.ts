@@ -5,9 +5,9 @@ export const mutationOrdenTrabajo: IResolvers =
     {
         Mutation:
             {
-                async regOrdenTele(_, {ordenTele}, {db})
+                async regOrdenTrabajo(_, {ordenTrabajo}, {db})
                 {
-                    return new OrdenesTrabajoMutationService(_, {}, {db})._regOrdenTele(ordenTele)
+                    return new OrdenesTrabajoMutationService(_, {}, {db})._regOrdenTrabajo(ordenTrabajo)
                 }
             }
     }

@@ -5,19 +5,19 @@ type OrdenTelemetriaType
 
 type OrdenAreaTecnicaType
 {
+    _id: ID
     rpu: String
     contrato: String
     noMedidor: String
-    ultimaLectura: Int
-    lecturaAnterior: Int
-    edoMedidor: String
-    instMedidor: String
-    locMedidor: String
     nombre: String
+    apellidos: String
     calle: String
     colonia: String
+    entreCalles: String
+    referencia: String
     contacto: [String]
 }
+
 type OrdenContratosType
 {
     rpu: String
@@ -27,4 +27,17 @@ type OrdenContratosType
     contacto: [String]
     noMedidor: String
     tipoMedidor: String
+}
+
+type NotasType
+{
+    nota: String
+    material: [MaterialType]
+}
+
+type MaterialType
+{
+    cantidad: Float
+    descripcion: String
+    uMedida: String
 }

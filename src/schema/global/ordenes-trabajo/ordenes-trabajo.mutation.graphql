@@ -1,4 +1,4 @@
 type Mutation
 {
-    regOrdenTele(ordenTele: OrdenesTrabajoInput): ResOrdenTrabajo
+    regOrdenTrabajo(ordenTrabajo: OrdenesTrabajoInput): ResOrdenTrabajo
 }

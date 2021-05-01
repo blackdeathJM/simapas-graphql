@@ -9,17 +9,17 @@ export interface IOrdenesTrabajo
     fechaEjecucion: string;
     tipoOrden: string;
     comentarios: string;
-    descProblema: string;
+    anomalia: string;
     observaciones: string;
     ordenAtencion: string;
-    notasAlmacen: Array<string>;
     estatus: string;
     creadaPor: string;
     ejecutadaPor: string;
     prioridad: string;
-    ordenTelemetria: IOrdenTelemetria;
-    ordenAreaTecnica: IOrdenAreaTecnica;
-    departamento: IDepartamento;
+    ordenTelemetria: IOrdenTelemetria
+    ordenAreaTecnica: IOrdenAreaTecnica
+    notasAlmacen: Array<INotas>
+    departamento: IDepartamento
 }
 
 export interface IOrdenTelemetria
@@ -27,23 +27,22 @@ export interface IOrdenTelemetria
     instalacion: string;
 }
 
-export interface IOrdenAreaTecnica
+interface IOrdenAreaTecnica
 {
+    _id: string;
     rpu: string;
     contrato: string;
     noMedidor: string;
-    ultimaLectura: number;
-    lecturaAnterior: number;
-    edoMedidor: string;
-    instMedidor: string;
-    locMedidor: string;
     nombre: string;
+    apellidos: string;
     calle: string;
     colonia: string;
+    entreCalles: string;
+    referencia: string;
     contacto: Array<string>;
 }
 
-export interface OrdenContratos
+interface OrdenContratos
 {
     rpu: string;
     nombre: string;
@@ -52,4 +51,17 @@ export interface OrdenContratos
     contacto: Array<string>;
     noMedidor: string;
     tipoMedidor: string;
+}
+
+interface INotas
+{
+    nota: string;
+    material: Array<IMaterial>
+}
+
+interface IMaterial
+{
+    cantidad: number;
+    descripcion: string;
+    uMedida: string;
 }
