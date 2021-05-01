@@ -10,6 +10,7 @@ export interface IContrato
 {
     noMedidor: string;
     noContrato: string;
+    noCuenta: string;
     fechaAlta: string;
     calle: string;
     entreCalles: string;

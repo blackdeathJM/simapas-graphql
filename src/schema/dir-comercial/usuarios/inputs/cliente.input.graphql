@@ -26,6 +26,7 @@ input ContratoInput
     _id: ID
     noMedidor: String
     noContrato: String
+    noCuenta: String
     fechaAlta: String
     calle: String
     entreCalles: String
