@@ -15,7 +15,7 @@ const typesRelacionar: IResolvers =
             {
                 departamento: async (parent: any, __: any, {db}) =>
                 {
-                    return await db.collection(COLECCION.DEPARTAMENTOS).findOne({_id: new ObjectId(parent.departamentoID)});
+                    return await db.collection(COLECCION.DEPARTAMENTOS).findOne({_id: new ObjectId(parent.departamentoId)});
                 }
             }
     };
