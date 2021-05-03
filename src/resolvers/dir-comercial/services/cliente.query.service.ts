@@ -12,7 +12,6 @@ export class ClienteQueryService extends ResolversOperacionesService
 
     async _clientesPorCriterio(criterio: string)
     {
-        console.log('Criterio', criterio);
         const busquedaCriterio = await this.buscarSinPaginacion(COLECCION.CLIENTES,
             {
                 $or: [{rpu: {$regex: criterio, $options: "i"}}, {nombre: {$regex: criterio, $options: "i"}},

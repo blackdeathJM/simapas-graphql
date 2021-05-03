@@ -29,7 +29,6 @@ export interface IOrdenTelemetria
 
 interface IOrdenAreaTecnica
 {
-    _id: string;
     rpu: string;
     contrato: string;
     noMedidor: string;

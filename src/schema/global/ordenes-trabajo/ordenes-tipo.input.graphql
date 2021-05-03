@@ -5,7 +5,6 @@ input OrdenTelemetriaInput
 
 input OrdenAreaTecnicaInput
 {
-    _id: ID
     rpu: String
     contrato: String
     noMedidor: String

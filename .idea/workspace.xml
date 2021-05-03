@@ -4,7 +4,9 @@
     <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="Registro temporal de clientes para generar ordenes de atencion">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/cliente.query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/cliente.query.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/tipos.type.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/tipos.type.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/models/ordenes-trabajo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/models/ordenes-trabajo.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-tipo.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-tipo.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-tipo.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-tipo.input.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +192,10 @@
       <workItem from="1619920190920" duration="113000" />
       <workItem from="1619920336913" duration="2381000" />
       <workItem from="1619927266180" duration="2454000" />
-      <workItem from="1619938350984" duration="1763000" />
+      <workItem from="1619938350984" duration="1894000" />
+      <workItem from="1619957792077" duration="4281000" />
+      <workItem from="1619973100631" duration="3379000" />
+      <workItem from="1620008619306" duration="655000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -311,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619781717335</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Registro temporal de clientes para generar ordenes de atencion">
+      <created>1619954172589</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1619954172589</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,6 +345,7 @@
     <MESSAGE value="trabajando en folios" />
     <MESSAGE value="Orden trabajo telemetria" />
     <MESSAGE value="Registro de clientes y contratos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Registro de clientes y contratos" />
+    <MESSAGE value="Registro temporal de clientes para generar ordenes de atencion" />
+    <option name="LAST_COMMIT_MESSAGE" value="Registro temporal de clientes para generar ordenes de atencion" />
   </component>
 </project>
