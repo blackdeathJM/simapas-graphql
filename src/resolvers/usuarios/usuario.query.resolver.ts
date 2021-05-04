@@ -5,9 +5,9 @@ const queryUsuarios: IResolvers =
     {
         Query:
             {
-                async obtenerUsuarios(_, {pagina, elementosPorPagina}, {db})
+                async obtenerUsuarios(_, {}, {db})
                 {
-                    return new UsuarioQueryService(_, {paginacion: {pagina, elementosPorPagina}}, {db}).listarUsuarios();
+                    return new UsuarioQueryService(_, {}, {db})._listarUsuarios();
                 },
                 async buscarUsuario(_, {usuario}, {db})
                 {

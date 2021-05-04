@@ -3,7 +3,7 @@ import {IContextData} from "../../../interfaces/context-data-interface";
 import {COLECCION} from "../../../config/global";
 import bcryptjs from "bcryptjs";
 import JWT from "../../../lib/jwt";
-import {respArreglosPag, respDocumento} from "../../../services/respuestas-return";
+import {respArreglosPag, respArreglosSPag, respDocumento} from "../../../services/respuestas-return";
 
 
 class UsuarioQueryService extends ResolversOperacionesService
@@ -13,10 +13,10 @@ class UsuarioQueryService extends ResolversOperacionesService
         super(root, variables, context);
     }
 
-    async listarUsuarios()
+    async _listarUsuarios()
     {
-        const resultado = await this.buscar(COLECCION.USUARIOS, {}, {}, {});
-        return respArreglosPag(resultado);
+        const resultado = await this.buscarSinPaginacion(COLECCION.USUARIOS, {}, {}, {});
+        return respArreglosSPag(resultado);
     }
 
     async buscarUno()

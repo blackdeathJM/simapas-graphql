@@ -6,7 +6,7 @@ type OrdenTelemetriaType
 type OrdenAreaTecnicaType
 {
     rpu: String
-    contrato: String
+    noContrato: String
     noMedidor: String
     nombre: String
     apellidos: String
@@ -14,7 +14,7 @@ type OrdenAreaTecnicaType
     colonia: String
     entreCalles: String
     referencia: String
-    contacto: [String]
+    telefonos: [String]
 }
 
 type OrdenContratosType

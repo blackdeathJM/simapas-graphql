@@ -48,7 +48,6 @@ type ResDocExSinPag
 
 type ResUsuario
 {
-    info: InfoPaginacion
     estatus: Boolean
     mensaje: String
     documento: UsuarioType

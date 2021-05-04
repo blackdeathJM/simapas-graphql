@@ -6,7 +6,7 @@ input OrdenTelemetriaInput
 input OrdenAreaTecnicaInput
 {
     rpu: String
-    contrato: String
+    noContrato: String
     noMedidor: String
     nombre: String
     apellidos: String
@@ -14,7 +14,7 @@ input OrdenAreaTecnicaInput
     colonia: String
     entreCalles: String
     referencia: String
-    contacto: [String]
+    telefonos: [String]
 }
 
 input OrdenContratosInput

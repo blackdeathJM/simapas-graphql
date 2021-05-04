@@ -30,7 +30,7 @@ export interface IOrdenTelemetria
 interface IOrdenAreaTecnica
 {
     rpu: string;
-    contrato: string;
+    noContrato: string;
     noMedidor: string;
     nombre: string;
     apellidos: string;
@@ -38,7 +38,7 @@ interface IOrdenAreaTecnica
     colonia: string;
     entreCalles: string;
     referencia: string;
-    contacto: Array<string>;
+    telefonos: Array<string>;
 }
 
 interface OrdenContratos

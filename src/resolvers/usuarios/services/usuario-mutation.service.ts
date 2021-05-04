@@ -31,32 +31,48 @@ class UsuarioMutationService extends ResolversOperacionesService
         }
     }
 
-    async _actualizarRole(_id: string, role: string[])
+    async _actualizarRole(_id: string, role: string, esActualizar: boolean)
     {
-        return await this.buscarUnoYActualizar(COLECCION.USUARIOS, {_id: new ObjectId(_id)}, {$set: {role}}, {returnOrinal: false})
-            .then(async res =>
-                {
-                    delete res.elemento.contrasena;
-                    res.elemento.contrasena = '*******';
-                    const nvoToken = res.elemento;
-                    await this.context.pubsub!.publish(PUB_SUB.NOT_CAMBIO_ROLE, {cambiarRoleUsuario: new JWT().firmar(nvoToken)});
-                    return {
-                        estatus: true,
-                        mensaje: 'Se ha actualizado role del usuario',
-                        usuario: res.elemento
-                    }
-                }
-            );
+        // cuando es verdadero se quiera el rol cuando es false se agrega
+        const filtro = {_id: new ObjectId(_id)};
+        if (esActualizar)
+        {
+            const res = await this.buscarUnoYActualizar(COLECCION.USUARIOS,
+                filtro,
+                {$pull: {role}}, {returnOriginal: false});
+            await this.nvoRole(res.elemento);
+            return respDocumento(res);
+        } else
+        {
+            const res = await this.buscarUnoYActualizar(COLECCION.USUARIOS, filtro,
+                {$addToSet: {role}}, {returnOriginal: false});
+            await this.nvoRole(res.elemento);
+            return respDocumento(res);
+        }
     }
 
-    async _actializarContrasena(usuario: string, actualContrasena: string, nvaContrasena: string)
+    async nvoRole(usuario: IUsuario)
+    {
+        usuario.contrasena = '******';
+
+        await this.context.pubsub!.publish(PUB_SUB.NOT_CAMBIO_ROLE, {cambiarRoleUsuario: new JWT().firmar(usuario)});
+        return {
+            estatus: true,
+            mensaje: 'Se ha actualizado role del usuario',
+            usuario: usuario
+        }
+    }
+
+    async _actializarContrasena(usuario: string, actualContrasena: string, nvaContrasena: string, esAdmin: boolean)
     {
         const buscarUsuario = await this.buscarUnElemento(COLECCION.USUARIOS, {usuario}, {});
-        if (buscarUsuario.estatus)
+
+        if (buscarUsuario.elemento)
         {
-            if (bcryptjs.compareSync(actualContrasena, buscarUsuario.elemento.contrasena))
+            if (bcryptjs.compareSync(actualContrasena, buscarUsuario.elemento.contrasena) || esAdmin)
             {
                 buscarUsuario.elemento.contrasena = bcryptjs.hashSync(nvaContrasena, 10);
+
                 return await this.buscarUnoYActualizar(COLECCION.USUARIOS,
                     {usuario}, {$set: {contrasena: buscarUsuario.elemento.contrasena}}, {returnOriginal: false}).then(
                     async respuesta =>
@@ -86,21 +102,6 @@ class UsuarioMutationService extends ResolversOperacionesService
                 token: null
             }
         }
-
-    }
-
-    async actualizarImgAvatar()
-    {
-        const valores = Object.values(this.variables);
-        return await this.buscarUnoYActualizar(COLECCION.USUARIOS, {usuario: valores[0]}, {$set: {img: valores[1]}},
-            {returnOriginal: false}).then(
-            async res =>
-            {
-                const usuarioPerfil = res.elemento;
-                delete usuarioPerfil.contrasena;
-                return {estatus: res.estatus, mensaje: res.mensaje, token: new JWT().firmar(usuarioPerfil)}
-            }
-        )
     }
 
     async EliminarUsuario()
