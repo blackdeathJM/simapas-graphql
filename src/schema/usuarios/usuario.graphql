@@ -9,3 +9,9 @@ type UsuarioType
     img: String!
     departamento: DeptoType
 }
+
+type CambioRolType
+{
+    usuario: String!
+    token: String!
+}

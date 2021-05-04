@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="Registro temporal de clientes para generar ordenes de atencion">
+    <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="Modulo de usuarios">
+      <change afterPath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario.subscription.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/models/ordenes-trabajo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/models/ordenes-trabajo.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-query.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-tipo.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-tipo.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-tipo.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/global/ordenes-trabajo/ordenes-tipo.input.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/resultados/resultados.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/resultados/resultados.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/usuarios/usuarioMutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/usuarios/usuarioMutation.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/usuarios/usuarioQuery.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/usuarios/usuarioQuery.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.subscription.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.subscription.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/usuarios/usuario.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/usuarios/usuario.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/usuarios/usuarioSubscription.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/usuarios/usuarioSubscription.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +198,8 @@
       <workItem from="1620090596134" duration="1853000" />
       <workItem from="1620101161558" duration="567000" />
       <workItem from="1620105123087" duration="6969000" />
-      <workItem from="1620141075267" duration="6445000" />
+      <workItem from="1620141075267" duration="6607000" />
+      <workItem from="1620153644379" duration="9190000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -329,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619868278769</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Modulo de usuarios">
+      <created>1620149974731</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1620149974731</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,6 +356,7 @@
     <MESSAGE value="trabajando en folios" />
     <MESSAGE value="Orden trabajo telemetria" />
     <MESSAGE value="Registro de clientes y contratos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Registro de clientes y contratos" />
+    <MESSAGE value="Modulo de usuarios" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modulo de usuarios" />
   </component>
 </project>

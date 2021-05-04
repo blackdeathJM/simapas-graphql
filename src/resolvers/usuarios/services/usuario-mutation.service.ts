@@ -55,12 +55,11 @@ class UsuarioMutationService extends ResolversOperacionesService
     {
         usuario.contrasena = '******';
 
-        await this.context.pubsub!.publish(PUB_SUB.NOT_CAMBIO_ROLE, {cambiarRoleUsuario: new JWT().firmar(usuario)});
-        return {
-            estatus: true,
-            mensaje: 'Se ha actualizado role del usuario',
-            usuario: usuario
-        }
+        const nvoRol = {usuario: usuario.usuario, token: new JWT().firmar(usuario)};
+        return await this.context.pubsub!.publish(PUB_SUB.NOT_CAMBIO_ROLE,
+            {
+                cambiarRoleUsuario: nvoRol
+            });
     }
 
     async _actializarContrasena(usuario: string, actualContrasena: string, nvaContrasena: string, esAdmin: boolean)

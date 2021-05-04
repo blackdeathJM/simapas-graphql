@@ -1,5 +1,5 @@
 type Subscription
 {
     "Cambios en roles"
-    cambiarRoleUsuario: String!
+    cambiarRoleUsuario(usuario: String!): CambioRolType
 }

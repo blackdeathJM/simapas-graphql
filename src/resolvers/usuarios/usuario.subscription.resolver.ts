@@ -1,6 +1,6 @@
 import {IResolvers} from "graphql-tools";
-import {PubSub} from 'apollo-server'
 import {PUB_SUB} from "../../config/global";
+import {withFilter} from "apollo-server-express";
 
 const usuarioSubscriptionResolver: IResolvers =
     {
@@ -8,11 +8,11 @@ const usuarioSubscriptionResolver: IResolvers =
             {
                 cambiarRoleUsuario:
                     {
-                        subscribe: (_, __, {pubsub}) =>
-                        {
-                            const subscripcion = pubsub as PubSub;
-                            return subscripcion.asyncIterator([PUB_SUB.NOT_CAMBIO_ROLE])
-                        }
+                        subscribe: withFilter((_: void, __: void, {pubsub}) => pubsub.asyncIterator(PUB_SUB.NOT_CAMBIO_ROLE),
+                            (payload, variables) =>
+                            {
+                                return payload.cambiarRoleUsuario.usuario === variables.usuario;
+                            })
                     }
             }
     };
