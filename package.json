@@ -22,7 +22,7 @@
     "chalk": "^4.1.1",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
-    "dotenv": "^9.0.1",
+    "dotenv": "^9.0.2",
     "express": "4.17.1",
     "express-graphql": "0.12.0",
     "fs-extra": "^10.0.0",
@@ -45,7 +45,7 @@
     "ncp": "^2.0.0",
     "reflect-metadata": "^0.1.13",
     "subscriptions-transport-ws": "^0.9.18",
-    "uuidv4": "^6.2.7"
+    "uuidv4": "^6.2.8"
   },
   "devDependencies": {
     "@graphql-codegen/typescript-graphql-files-modules": "^1.18.1",
