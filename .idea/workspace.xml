@@ -189,7 +189,14 @@
       <workItem from="1619844578911" duration="11870000" />
       <workItem from="1620016019706" duration="2785000" />
       <workItem from="1620187774667" duration="2390000" />
-      <workItem from="1620250575920" duration="1822000" />
+      <workItem from="1620250575920" duration="1851000" />
+      <workItem from="1620303221325" duration="2229000" />
+      <workItem from="1620321734008" duration="642000" />
+      <workItem from="1620340164045" duration="35000" />
+      <workItem from="1620340335420" duration="1975000" />
+      <workItem from="1620390163230" duration="3396000" />
+      <workItem from="1620425046564" duration="668000" />
+      <workItem from="1620608433727" duration="69000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -324,7 +331,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620026660993</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Modulo de usuarios">
+      <created>1620254430839</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1620254430839</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,6 +360,7 @@
     <MESSAGE value="trabajando en folios" />
     <MESSAGE value="Orden trabajo telemetria" />
     <MESSAGE value="Registro de clientes y contratos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Registro de clientes y contratos" />
+    <MESSAGE value="Modulo de usuarios" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modulo de usuarios" />
   </component>
 </project>
