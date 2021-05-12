@@ -17,8 +17,7 @@ input ClienteInput
     activoEnInternet: Boolean
     usuarioActivo: Boolean
     obs: String
-    creadaPor: String
-    modificadaPor: [String]
+    creadoPor: String
 }
 
 input ContratoInput
@@ -45,6 +44,7 @@ input ContratoInput
     noFamiliasEnToma: Int
     documentacion: DocumentacionInput
     activo: Boolean
+    creadoPor: String
 }
 
 input DocumentacionInput
@@ -53,4 +53,11 @@ input DocumentacionInput
     ineTrasera: String
     predial: String
     curp: String
+}
+
+input ModificadaPorInput
+{
+    usuario: String
+    fechaHora: String
+    comentario: String
 }

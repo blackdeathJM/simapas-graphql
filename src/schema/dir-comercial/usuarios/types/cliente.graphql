@@ -18,8 +18,8 @@ type ClienteType
     activoEnInternet: Boolean
     usuarioActivo: Boolean
     obs: String
-    creadaPor: String
-    modificadaPor: [String]
+    creadoPor: String
+    modificadoPor: [ModificadaPorType]
     contratos: [ContratoType]
 }
 
@@ -46,7 +46,8 @@ type ContratoType
     noFamiliasEnToma: Int
     activo: Boolean
     documentosImg: DocumentacionType
-    #Agregar modificadaPor, booleano para checar si la documentacion ya esta subida o ver si nada mas comparamos el arreglo vacio
+    creadoPor: String
+    modificadoPor: [ModificadaPorType]
 }
 
 type DocumentacionType
@@ -55,4 +56,11 @@ type DocumentacionType
     ineTrasera: String
     predial: String
     curp: String
+}
+
+type ModificadaPorType
+{
+    usuario: String
+    fechaHora: String
+    comentario: String
 }

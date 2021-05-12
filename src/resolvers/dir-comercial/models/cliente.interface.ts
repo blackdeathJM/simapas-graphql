@@ -50,8 +50,13 @@ export interface ICliente
     activoEnInternet: boolean;
     usuarioActivo: boolean;
     obs: string;
-    creadaPor: string;
-    modificadaPor: string[];
+    creadoPor: string;
+    modificadoPor: IModificadaPor[];
 }
 
-
+export interface IModificadaPor
+{
+    usuario: string;
+    fechaHora: string;
+    comentario: string;
+}

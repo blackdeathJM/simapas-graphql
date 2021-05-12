@@ -172,6 +172,36 @@ class ResolversOperacionesService
         }
     }
 
+    protected async agregarVarios(coleccion: string, documento: object[], opciones: object)
+    {
+        try
+        {
+            return await this.context.db!.collection(coleccion).insertMany(documento, opciones).then((res) =>
+            {
+                console.log('insertar muchos', res);
+                return {
+                    estatus: true,
+                    mensaje: 'Documentos insertados correctamente',
+                    elemento: res.ops
+                }
+            }).catch((e) =>
+            {
+                return {
+                    estatus: false,
+                    mensaje: 'Ocurrio un error al tratar de registrar los documentos',
+                    elemento: null
+                }
+            })
+        } catch (e)
+        {
+            return {
+                estatus: false,
+                mensaje: 'Ocurrio un error inesperado al tratar de registrar los multiples documentos',
+                elemento: null
+            }
+        }
+    }
+
     protected async buscarUnoYActualizar(coleccion: string, filtro: object, actualizar: object, opciones: object)
     {
         try
@@ -204,7 +234,8 @@ class ResolversOperacionesService
             }
         }
     }
-    protected async agregacion(coleccion: string, agregacion:object[])
+
+    protected async agregacion(coleccion: string, agregacion: object[])
     {
         return await this.context.db?.collection(coleccion).aggregate(agregacion).toArray();
     }

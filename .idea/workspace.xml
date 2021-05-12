@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="Modulo de usuarios">
+    <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="Actualizacion de dependencias">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/models/cliente.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/models/cliente.interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/inputs/cliente.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/inputs/cliente.input.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/types/cliente.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/types/cliente.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,6 +201,10 @@
       <workItem from="1620390163230" duration="3396000" />
       <workItem from="1620425046564" duration="668000" />
       <workItem from="1620608433727" duration="567000" />
+      <workItem from="1620688352485" duration="421000" />
+      <workItem from="1620745583713" duration="4948000" />
+      <workItem from="1620774061844" duration="802000" />
+      <workItem from="1620785502622" duration="333000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -343,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620608761537</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Actualizacion de dependencias">
+      <created>1620688728437</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1620688728437</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,6 +383,7 @@
     <MESSAGE value="Orden trabajo telemetria" />
     <MESSAGE value="Registro de clientes y contratos" />
     <MESSAGE value="Modulo de usuarios" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modulo de usuarios" />
+    <MESSAGE value="Actualizacion de dependencias" />
+    <option name="LAST_COMMIT_MESSAGE" value="Actualizacion de dependencias" />
   </component>
 </project>
