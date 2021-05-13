@@ -1,28 +1,15 @@
 input ClienteInput
 {
-    folio: Int
-    codigoQr: String
-    rpu: String
-    noCta: String
-    nombre: String
-    apellidos: String
+    _id: ID
+    nombreCompleto: String
     telefonos: [String]
-    email: String
-    rfc: String
-    iva: Int
-    estatusUsuario: String
-    colorEstatusUsuario: String
-    grupoFact: Int
-    hyperlink: String
-    activoEnInternet: Boolean
-    usuarioActivo: Boolean
-    obs: String
-    creadoPor: String
+    contratos: [ContratoInput]
+    datosDeFacturacion: [DatosFacturacionInput]
 }
 
 input ContratoInput
 {
-    _id: ID
+    rpu: String
     noMedidor: String
     noContrato: String
     noCuenta: String
@@ -30,21 +17,22 @@ input ContratoInput
     calle: String
     entreCalles: String
     referencia: String
-    colonia: String
-    codigoPostal: String
+    estado: String
     ciudad: String
     municipio: String
-    pais: String
-    estado: String
+    colonia: String
+    codigoPostal: String
     sector: Int
     ruta: Int
     tarifa: String
     giro: String
     zona: String
-    noFamiliasEnToma: Int
-    documentacion: DocumentacionInput
+    noPersonas: Int
     activo: Boolean
+    documentosImg: DepartamentoInput
     creadoPor: String
+    modificadoPor: [ModificadaPorInput]
+    convenio: ConvenioContratoInput
 }
 
 input DocumentacionInput
@@ -54,10 +42,30 @@ input DocumentacionInput
     predial: String
     curp: String
 }
+input DatosFacturacionInput
+{
+    nombre: String
+    calle: String
+    colonia: String
+    rfc: String
+    correo: String
+    rpuAFacturar: [String]
+}
 
 input ModificadaPorInput
 {
     usuario: String
     fechaHora: String
     comentario: String
+}
+
+input ConvenioContratoInput
+{
+    folioConvenio: String
+    calle: String
+    colonia: String
+    cp: String
+    fechaConvenio: String
+    fechaTerminoConvenio: String
+    comentarios: String
 }

@@ -15,17 +15,7 @@ export class ClienteMutationService extends ResolversOperacionesService
 
     async _regCliente(cliente: ICliente)
     {
-        const buscarDoc = await this.buscarUnElemento(COLECCION.CLIENTES,
-            {$or: [{rpu: cliente.rpu}, {folio: cliente.folio}]}, {});
-
-        if (buscarDoc.estatus)
-        {
-            return respDocumento(buscarDoc);
-        } else
-        {
-            const registroCliente = await this.agregarUnElemento(COLECCION.CLIENTES, cliente, {});
-            return respDocumento(registroCliente);
-        }
-
+        const registroCliente = await this.agregarUnElemento(COLECCION.CLIENTES, cliente, {});
+        return respDocumento(registroCliente);
     }
 }

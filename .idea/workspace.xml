@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="Actualizacion de dependencias">
+    <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="informacion general de clientes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/models/cliente.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/models/cliente.interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/cliente.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/cliente.mutation.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/inputs/cliente.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/inputs/cliente.input.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/types/cliente.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/types/cliente.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -204,7 +204,10 @@
       <workItem from="1620688352485" duration="421000" />
       <workItem from="1620745583713" duration="4948000" />
       <workItem from="1620774061844" duration="802000" />
-      <workItem from="1620785502622" duration="333000" />
+      <workItem from="1620785502622" duration="465000" />
+      <workItem from="1620833417516" duration="2476000" />
+      <workItem from="1620864408432" duration="924000" />
+      <workItem from="1620866946836" duration="5290000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -360,7 +363,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620688728437</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="informacion general de clientes">
+      <created>1620785929987</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1620785929987</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -384,6 +394,7 @@
     <MESSAGE value="Registro de clientes y contratos" />
     <MESSAGE value="Modulo de usuarios" />
     <MESSAGE value="Actualizacion de dependencias" />
-    <option name="LAST_COMMIT_MESSAGE" value="Actualizacion de dependencias" />
+    <MESSAGE value="informacion general de clientes" />
+    <option name="LAST_COMMIT_MESSAGE" value="informacion general de clientes" />
   </component>
 </project>

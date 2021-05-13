@@ -6,8 +6,37 @@ export interface IDocumentacion
     curp: string;
 }
 
+export interface IModificadaPor
+{
+    usuario: string;
+    fechaHora: string;
+    comentario: string;
+}
+
+export interface IDatosFacturacion
+{
+    nombre: string;
+    calle: string;
+    colonia: string;
+    rfc: string;
+    correo: string;
+    rpuAFacturar: string[];
+}
+
+export interface IConvenioContrato
+{
+    folioConvenio: string;
+    calle: string;
+    colonia: string;
+    cp: string;
+    fechaConvenio: string;
+    fechaTerminoConvenio: string;
+    comentarios: string;
+}
+
 export interface IContrato
 {
+    rpu: string;
     noMedidor: string;
     noContrato: string;
     noCuenta: string;
@@ -15,48 +44,30 @@ export interface IContrato
     calle: string;
     entreCalles: string;
     referencia: string;
-    colonia: string;
-    codigoPostal: string;
+    estado: string;
     ciudad: string;
     municipio: string;
-    pais: string;
-    estado: string;
+    colonia: string;
+    codigoPostal: string;
     sector: number;
     ruta: number;
     tarifa: string;
     giro: string;
     zona: string;
-    noFamiliasEnToma: number;
-    documentacion: IDocumentacion;
+    noPersonas: number;
     activo: boolean;
+    documentosImg: IDocumentacion;
+    creadoPor: string;
+    modificadoPor: IModificadaPor[];
+    convenio: IConvenioContrato;
 }
 
 export interface ICliente
 {
-    folio: number;
-    codigoQr: string;
-    rpu: string;
-    noCta: string;
-    nombre: string;
-    apellidos: string;
+    _id: string;
+    nombreCompleto: string;
     telefonos: string[];
-    email: string;
-    rfc: string;
-    iva: number;
-    estatusUsuario: string;
-    colorEstatusUsuario: string;
-    grupoFact: number;
-    hyperlink: string;
-    activoEnInternet: boolean;
-    usuarioActivo: boolean;
-    obs: string;
-    creadoPor: string;
-    modificadoPor: IModificadaPor[];
+    contratos: IContrato[];
+    datosDeFacturacion: IDatosFacturacion[];
 }
 
-export interface IModificadaPor
-{
-    usuario: string;
-    fechaHora: string;
-    comentario: string;
-}
