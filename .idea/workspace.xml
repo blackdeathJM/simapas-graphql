@@ -4,10 +4,6 @@
     <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="informacion general de clientes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/models/cliente.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/models/cliente.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/cliente.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/cliente.mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/inputs/cliente.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/inputs/cliente.input.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/types/cliente.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/types/cliente.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -207,7 +203,14 @@
       <workItem from="1620785502622" duration="465000" />
       <workItem from="1620833417516" duration="2476000" />
       <workItem from="1620864408432" duration="924000" />
-      <workItem from="1620866946836" duration="5290000" />
+      <workItem from="1620866946836" duration="5372000" />
+      <workItem from="1620908697388" duration="592000" />
+      <workItem from="1620947501973" duration="1853000" />
+      <workItem from="1620957938503" duration="602000" />
+      <workItem from="1621013801454" duration="595000" />
+      <workItem from="1621606029127" duration="31000" />
+      <workItem from="1621606112962" duration="2338000" />
+      <workItem from="1621632142704" duration="1219000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -370,7 +373,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620785929987</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="informacion general de clientes">
+      <created>1620876139593</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1620876139593</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
