@@ -4,6 +4,7 @@ input ClienteInput
     nombreCompleto: String
     telefonos: [String]
     contratos: [ContratoInput]
+    solicitudServ: [SolicitudServInput]
     datosDeFacturacion: [DatosFacturacionInput]
 }
 
@@ -29,6 +30,7 @@ input ContratoInput
     zona: String
     noPersonas: Int
     activo: Boolean
+    esPrincipal: Boolean
     documentosImg: DepartamentoInput
     creadoPor: String
     modificadoPor: [ModificadaPorInput]
@@ -40,7 +42,36 @@ input DocumentacionInput
     ineFrente: String
     ineTrasera: String
     predial: String
+    cartaPoder: String
+    constanciaNoOficial: String
+    orginalPagoRedAgua: String
+    permisoRomperPav: String
+    pagoVerfServ: String
+    nichoMed: String
     curp: String
+}
+
+input SolicitudServInput
+{
+    calle: String
+    colonia: String
+    entreCalles: String
+    referencia: String
+    noCuentaRef: String
+    "Baldio construccion casa habitacion provisional deshabilitada"
+    tipoPredio: String
+    areaPredio: Float
+    "Tipo de almacenamieto para el agua"
+    almacenamiento: String
+    "Domestico comercial industrial o mixto"
+    tipoDeUso: String
+    MaterialArroyoDeCalle: String
+    MaterialAcera: String
+    comentarios:String
+    aprovado: Boolean
+    latitud: Float
+    longitud: Float
+    creadoPor: String
 }
 input DatosFacturacionInput
 {

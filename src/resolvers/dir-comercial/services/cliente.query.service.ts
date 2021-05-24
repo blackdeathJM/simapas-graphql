@@ -12,12 +12,16 @@ export class ClienteQueryService extends ResolversOperacionesService
 
     async _clientesPorCriterio(criterio: string)
     {
-        const busquedaCriterio = await this.buscarSinPaginacion(COLECCION.CLIENTES,
-            {
-                $or: [{rpu: {$regex: criterio, $options: "i"}}, {nombre: {$regex: criterio, $options: "i"}},
-                    {apellidos: {$regex: criterio, $options: "i"}}]
-            }, {}, {});
-
-        return respArreglosSPag(busquedaCriterio);
+        if (criterio)
+        {
+            const busquedaCriterio = await this.buscarSinPaginacion(COLECCION.CLIENTES,
+                {
+                    $or: [{nombreCompleto: {$regex: criterio, $options: "i"}}]
+                }, {}, {});
+            return respArreglosSPag(busquedaCriterio);
+        } else
+        {
+            return {estatus: false, mensaje: 'no hay datos', elementos: null}
+        }
     }
 }

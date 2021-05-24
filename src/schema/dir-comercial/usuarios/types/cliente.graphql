@@ -3,6 +3,7 @@ type ClienteType
     _id: ID
     nombreCompleto: String
     telefonos: [String]
+    solicitudServ: [SolicitudServType]
     contratos: [ContratoType]
     datosDeFacturacion: [DatosFacturacionType]
 }
@@ -29,6 +30,7 @@ type ContratoType
     zona: String
     noPersonas: Int
     activo: Boolean
+    esPrincipal: Boolean
     documentosImg: DocumentacionType
     creadoPor: String
     modificadoPor: [ModificadaPorType]
@@ -40,8 +42,45 @@ type DocumentacionType
     ineFrente: String
     ineTrasera: String
     predial: String
+    cartaPoder: String
+    constanciaNoOficial: String
+    orginalPagoRedAgua: String
+    permisoRomperPav: String
+    pagoVerfServ: String
+    nichoMed: String
     curp: String
 }
+
+type SolicitudServType
+{
+    calle: String
+    colonia: String
+    entreCalles: String
+    referencia: String
+    noCuentaRef: String
+    "Baldio construccion casa habitacion provisional deshabilitada"
+    tipoPredio: String
+    areaPredio: Float
+    "Tipo de almacenamieto para el agua"
+    almacenamiento: String
+    "Domestico comercial industrial o mixto"
+    tipoDeUso: String
+    MaterialArroyoDeCalle: String
+    MaterialAcera: String
+    comentarios:String
+    aprovado: Boolean
+    latitud: Float
+    longitud: Float
+    creadoPor: String
+}
+
+type ModificadaPorType
+{
+    usuario: String
+    fechaHora: String
+    comentario: String
+}
+
 type DatosFacturacionType
 {
     nombre: String
@@ -50,13 +89,6 @@ type DatosFacturacionType
     rfc: String
     correo: String
     rpuAFacturar: [String]
-}
-
-type ModificadaPorType
-{
-    usuario: String
-    fechaHora: String
-    comentario: String
 }
 
 type ConvenioContratoType

@@ -3,6 +3,12 @@ export interface IDocumentacion
     ineFrente: string;
     ineTrasera: string;
     predial: string;
+    cartaPoder: string;
+    constanciaNoOficial: string;
+    orginalPagoRedAgua: string;
+    permisoRomperPav: string;
+    pagoVerfServ: string;
+    nichoMed: string;
     curp: string;
 }
 
@@ -34,6 +40,26 @@ export interface IConvenioContrato
     comentarios: string;
 }
 
+export interface ISolicitudServ
+{
+    calle: string;
+    colonia: string;
+    entreCalles: string;
+    referencia: string;
+    noCuentaRef: string;
+    tipoPredio: string;
+    areaPredio: number;
+    almacenamiento: string;
+    tipoDeUso: string;
+    MaterialArroyoDeCalle: string;
+    MaterialAcera: string;
+    comentarios: string;
+    aprovado: boolean;
+    latitud: number;
+    longitud: number;
+    creadoPor: string;
+}
+
 export interface IContrato
 {
     rpu: string;
@@ -56,6 +82,7 @@ export interface IContrato
     zona: string;
     noPersonas: number;
     activo: boolean;
+    esPrincipal: boolean;
     documentosImg: IDocumentacion;
     creadoPor: string;
     modificadoPor: IModificadaPor[];
