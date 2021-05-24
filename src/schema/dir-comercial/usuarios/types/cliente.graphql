@@ -61,6 +61,7 @@ type SolicitudServType
     "Baldio construccion casa habitacion provisional deshabilitada"
     tipoPredio: String
     areaPredio: Float
+    areaConstruida: Float
     "Tipo de almacenamieto para el agua"
     almacenamiento: String
     "Domestico comercial industrial o mixto"
