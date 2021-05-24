@@ -3,35 +3,48 @@ input ClienteInput
     _id: ID
     nombreCompleto: String
     telefonos: [String]
-    contratos: [ContratoInput]
-    solicitudServ: [SolicitudServInput]
     datosDeFacturacion: [DatosFacturacionInput]
 }
 
 input ContratoInput
 {
+    calle: String
+    colonia: String
+    entreCalles: String
+    referencia: String
+    servSolicitado: String
+    medidorRef: String
+    tipoPredio: String
+    areaPredio: Float
+    areaConstruida: Float
+    almacenamiento: String
+    tarifa: String
+    MaterialArroyoDeCalle: String
+    MaterialAcera: String
+    comentarios: String
+    aprobadoServ: Boolean
+    matArroyoCalle: String
+    matAcera: String
+    latitud: Float
+    longitud: Float
+
+    estado: String
+    ciudad: String
+    municipio: String
+    codigoPostal: String
     rpu: String
     noMedidor: String
     noContrato: String
     noCuenta: String
     fechaAlta: String
-    calle: String
-    entreCalles: String
-    referencia: String
-    estado: String
-    ciudad: String
-    municipio: String
-    colonia: String
-    codigoPostal: String
     sector: Int
     ruta: Int
-    tarifa: String
     giro: String
     zona: String
     noPersonas: Int
     activo: Boolean
     esPrincipal: Boolean
-    documentosImg: DepartamentoInput
+    documentosImg: DocumentacionInput
     creadoPor: String
     modificadoPor: [ModificadaPorInput]
     convenio: ConvenioContratoInput
@@ -51,29 +64,6 @@ input DocumentacionInput
     curp: String
 }
 
-input SolicitudServInput
-{
-    calle: String
-    colonia: String
-    entreCalles: String
-    referencia: String
-    noCuentaRef: String
-    "Baldio construccion casa habitacion provisional deshabilitada"
-    tipoPredio: String
-    areaPredio: Float
-    areaConstruida: Float
-    "Tipo de almacenamieto para el agua"
-    almacenamiento: String
-    "Domestico comercial industrial o mixto"
-    tipoDeUso: String
-    MaterialArroyoDeCalle: String
-    MaterialAcera: String
-    comentarios:String
-    aprovado: Boolean
-    latitud: Float
-    longitud: Float
-    creadoPor: String
-}
 input DatosFacturacionInput
 {
     nombre: String

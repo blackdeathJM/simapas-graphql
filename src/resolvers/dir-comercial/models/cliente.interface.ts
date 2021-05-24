@@ -40,45 +40,39 @@ export interface IConvenioContrato
     comentarios: string;
 }
 
-export interface ISolicitudServ
+export interface IContrato
 {
     calle: string;
     colonia: string;
     entreCalles: string;
     referencia: string;
-    noCuentaRef: string;
+    servSolicitado: string;
+    medidorRef: string;
     tipoPredio: string;
     areaPredio: number;
     areaConstruida: number;
     almacenamiento: string;
-    tipoDeUso: string;
+    tarifa: string;
     MaterialArroyoDeCalle: string;
     MaterialAcera: string;
     comentarios: string;
-    aprovado: boolean;
+    aprobadoServ: boolean;
+    matArroyoCalle: string;
+    matAcera: string;
     latitud: number;
     longitud: number;
-    creadoPor: string;
-}
 
-export interface IContrato
-{
+    estado: string;
+    ciudad: string;
+    municipio: string;
+    codigoPostal: string;
     rpu: string;
     noMedidor: string;
     noContrato: string;
     noCuenta: string;
     fechaAlta: string;
-    calle: string;
-    entreCalles: string;
-    referencia: string;
-    estado: string;
-    ciudad: string;
-    municipio: string;
-    colonia: string;
-    codigoPostal: string;
     sector: number;
     ruta: number;
-    tarifa: string;
     giro: string;
     zona: string;
     noPersonas: number;
