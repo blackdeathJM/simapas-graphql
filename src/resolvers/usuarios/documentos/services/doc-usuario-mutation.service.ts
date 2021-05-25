@@ -25,7 +25,7 @@ class DocUsuarioMutationService extends ResolversOperacionesService
                     "usuarioDestino.$.notificarRespDelUsuario": true
                 }
             },
-            {returnOriginal: false}).then(
+            {returnDocument: "after"}).then(
             async resultado =>
             {
                 await notTodosDocsExt(this.context.pubsub!, this.context.db!);
@@ -60,7 +60,7 @@ class DocUsuarioMutationService extends ResolversOperacionesService
                 if (refDoc)
                 {
                     await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(resultado.elemento._id)},
-                        {$set: {docUrl: buscarElemento.elemento.docUrl}}, {returnOriginal: false}).then(
+                        {$set: {docUrl: buscarElemento.elemento.docUrl}}, {returnDocument: "after"}).then(
                         async () =>
                         {
                             const extrerFolio = resultado.elemento.folio.split("/");
@@ -89,7 +89,7 @@ class DocUsuarioMutationService extends ResolversOperacionesService
         return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA,
             {_id: new ObjectId(_id), usuarioDestino: {$elemMatch: {usuario}}},
             {$set: {folio, usuarioFolio: usuario, proceso: 'TERMINADO', "usuarioDestino.$.subproceso": 'TERMINADO'}},
-            {returnOriginal: false}).then(
+            {returnDocument: "after"}).then(
             async res =>
             {
                 await notTodosDocsExt(this.context.pubsub!, this.context.db!);
@@ -127,7 +127,7 @@ class DocUsuarioMutationService extends ResolversOperacionesService
             }
         }
 
-        return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, filtro, actualizar, {returnOriginal: false}).then(
+        return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, filtro, actualizar, {returnDocument: "after"}).then(
             async resultado =>
             {
                 await notTodosDocsExt(this.context.pubsub!, this.context.db!)
@@ -138,7 +138,7 @@ class DocUsuarioMutationService extends ResolversOperacionesService
     async _terminarDocUsuario(_id: string)
     {
         return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(_id)}, {$set: {proceso: 'ENTREGADO'}},
-            {returnOriginal: false}).then(
+            {returnDocument: "after"}).then(
             resultado =>
             {
                 return respDocumento(resultado);

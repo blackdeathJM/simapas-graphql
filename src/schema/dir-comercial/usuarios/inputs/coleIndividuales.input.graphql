@@ -1,0 +1,26 @@
+input SolicitudServInput
+{
+    idCliente: ID
+    fechaSolicitud: String
+
+    noPersonas: Int
+    calle: String
+    colonia: String
+    entreCalles: String
+    referencia: String
+    servSolicitado: String
+    medidorRef: String
+    tipoPredio: String
+    areaPredio: Float
+    areaConstruida: Float
+    almacenamiento: String
+    tarifa: String
+    MaterialArroyoDeCalle: String
+    MaterialAcera: String
+    comentarios: String
+    aprobadoServ: Boolean
+    matArroyoCalle: String
+    matAcera: String
+    latitud: Float
+    longitud: Float
+}

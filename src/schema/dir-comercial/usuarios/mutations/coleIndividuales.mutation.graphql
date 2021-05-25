@@ -1,0 +1,4 @@
+type Mutation
+{
+    regSolicitudServ(solicitudServ: SolicitudServInput): ResSolicitudServ
+}

@@ -76,6 +76,15 @@ type ResCliente
     documento: ClienteType
     documentos: [ClienteType]
 }
+
+type ResSolicitudServ
+{
+    estatus: Boolean!
+    mensaje: String!
+    documento: SolicitudServType
+    documentos: [SolicitudServType]
+}
+
 type ResUsuarioToken
 {
     estatus: Boolean!

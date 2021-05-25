@@ -22,7 +22,7 @@ class DepartamentoMutationService extends ResolversOperacionesService
     async _actualizarElemento(departamento: IDepartamento)
     {
         const resultado = await this.buscarUnoYActualizar(COLECCION.DEPARTAMENTOS, {_id: new ObjectId(departamento._id)},
-            {$set: {nombre: departamento.nombre, centroGestor: departamento.centroGestor}}, {returnOriginal: false});
+            {$set: {nombre: departamento.nombre, centroGestor: departamento.centroGestor}}, {returnDocument: "after"});
         return respDocumento(resultado);
     }
 }

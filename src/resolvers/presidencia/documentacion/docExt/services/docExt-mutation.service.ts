@@ -34,7 +34,7 @@ class DocExtMutationService extends ResolversOperacionesService
     async _desactivarNot(_id: string, usuario: string)
     {
         return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(_id), usuarioDestino: {$elemMatch: {usuario}}},
-            {$set: {notificarAdministrador: false, "usuarioDestino.$.notificarRespDelUsuario": false}}, {returnOriginal: false}).then(
+            {$set: {notificarAdministrador: false, "usuarioDestino.$.notificarRespDelUsuario": false}}, {returnDocument: "after"}).then(
             resultado =>
             {
                 return respDocumento(resultado);
@@ -50,7 +50,7 @@ class DocExtMutationService extends ResolversOperacionesService
                     "usuarioDestino.$.subproceso": subproceso, "usuarioDestino.$.observaciones": observaciones
                 }
             },
-            {returnOriginal: false}).then(
+            {returnDocument: "after"}).then(
             async resultado =>
             {
                 await notUsuarioSubProceso(this.context.pubsub!, this.context.db!, [usuario]);
@@ -62,7 +62,7 @@ class DocExtMutationService extends ResolversOperacionesService
     async _darPorEntregado(_id: string)
     {
         return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(_id)},
-            {$set: {proceso: "ENTREGADO", "usuarioDestino.$[].subproceso": "ENTREGADO"}}, {returnOriginal: false}).then(
+            {$set: {proceso: "ENTREGADO", "usuarioDestino.$[].subproceso": "ENTREGADO"}}, {returnDocument: "after"}).then(
             async resultado =>
             {
                 const usuarios: string[] = [];
@@ -85,11 +85,11 @@ class DocExtMutationService extends ResolversOperacionesService
                     comentario: documento.comentario, fechaRecepcion: documento.fechaRecepcion, fechaLimiteEntrega: documento.fechaLimiteEntrega
                 }
             },
-            {returnOriginal: false}).then(async () =>
+            {returnDocument: "after"}).then(async () =>
         {
             return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(documento._id)},
                 {$addToSet: {usuarioDestino: {$each: documento.usuarioDestino}}},
-                {returnOriginal: false}).then(
+                {returnDocument: "after"}).then(
                 async resultado =>
                 {
                     const usuarios: string[] = [];
@@ -103,7 +103,7 @@ class DocExtMutationService extends ResolversOperacionesService
     async _quitarUsuario(_id: string, usuario: string)
     {
         return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(_id)},
-            {$pull: {"usuarioDestino": {usuario}}}, {returnOriginal: false, sort: {noSeguimiento: -1}}).then(
+            {$pull: {"usuarioDestino": {usuario}}}, {returnDocument: "after", sort: {noSeguimiento: -1}}).then(
             async resultado =>
             {
                 const nvosUsuarios: string[] = [];

@@ -27,7 +27,7 @@ export class TelemetriaMutationService extends ResolversOperacionesService
             const crearPropiedad: object = TelemetriaMutationService.defProp('telemetria.', tipo, ip);
             return this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
                 {_id: new ObjectId(_id)},
-                {$push: crearPropiedad}, {returnOriginal: false}).then(
+                {$push: crearPropiedad}, {returnDocument: "after"}).then(
                 res =>
                 {
                     return respDocumento(res);
@@ -44,7 +44,7 @@ export class TelemetriaMutationService extends ResolversOperacionesService
             const ipAQuitar = TelemetriaMutationService.defProp("telemetria.", tipo, ipAnterior);
             return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
                 {_id: new ObjectId(_id)},
-                {$pull: ipAQuitar}, {returnOriginal: false}).then(
+                {$pull: ipAQuitar}, {returnDocument: "after"}).then(
                 res =>
                 {
                     return respDocumento(res);
@@ -65,7 +65,7 @@ export class TelemetriaMutationService extends ResolversOperacionesService
                 const ipNueva = TelemetriaMutationService.defProp(`telemetria.${tipo}.$`, '', ipNva);
 
                 return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, Object.assign(identificador, ipConsulta),
-                    {$set: ipNueva}, {returnOriginal: false}).then(
+                    {$set: ipNueva}, {returnDocument: "after"}).then(
                     res =>
                     {
                         return respDocumento(res);

@@ -17,7 +17,7 @@ export class MotorBombaMutationService extends ResolversOperacionesService
     async _regMotor(_id: string, motor: IMotor)
     {
         return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-            {_id: new ObjectId(_id)}, {$addToSet: {motor}}, {returnOriginal: false, upsert: true}).then(
+            {_id: new ObjectId(_id)}, {$addToSet: {motor}}, {returnDocument: "after", upsert: true}).then(
             resultado =>
             {
                 return respDocumento(resultado);
@@ -27,7 +27,7 @@ export class MotorBombaMutationService extends ResolversOperacionesService
     async _actMotor(_id: string, motor: IMotor)
     {
         return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-            {_id: new ObjectId(_id), motor: {$elemMatch: {id: motor.id}}}, {$set: {"motor.$": {...motor}}}, {returnOriginal: false}).then(
+            {_id: new ObjectId(_id), motor: {$elemMatch: {id: motor.id}}}, {$set: {"motor.$": {...motor}}}, {returnDocument: "after"}).then(
             resultado =>
             {
                 return respDocumento(resultado);
@@ -38,7 +38,7 @@ export class MotorBombaMutationService extends ResolversOperacionesService
     {
         return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
             {_id: new ObjectId(_id)},
-            {$addToSet: {bomba}}, {returnOriginal: false, upsert: true}).then(
+            {$addToSet: {bomba}}, {returnDocument: "after", upsert: true}).then(
             resultado =>
             {
                 return respDocumento(resultado);
@@ -48,7 +48,7 @@ export class MotorBombaMutationService extends ResolversOperacionesService
     async _actBobma(_id: string, bomba: IBomba)
     {
         return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-            {_id: new ObjectId(_id), bomba: {$elemMatch: {id: bomba.id}}}, {$set: {"bomba.$": {...bomba}}}, {returnOriginal: false}).then(
+            {_id: new ObjectId(_id), bomba: {$elemMatch: {id: bomba.id}}}, {$set: {"bomba.$": {...bomba}}}, {returnDocument: "after"}).then(
             resultado =>
             {
                 return respDocumento(resultado);
@@ -65,7 +65,7 @@ export class MotorBombaMutationService extends ResolversOperacionesService
         const motivoRet = nvaProp(`${equipo}.$.motivoRetiro`, motivoRetiro);
 
         return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
-            Object.assign(idPrincipal, filtro), {$set: Object.assign(actualizarFecha, activa, motivoRet)}, {returnOriginal: false}).then(
+            Object.assign(idPrincipal, filtro), {$set: Object.assign(actualizarFecha, activa, motivoRet)}, {returnDocument: "after"}).then(
             resultado =>
             {
                 return respDocumento(resultado);
@@ -81,7 +81,7 @@ export class MotorBombaMutationService extends ResolversOperacionesService
         const actualizacion = nvaProp(`${equipo}.$.${coleccion}`, {$each: coleccionImg});
 
         return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, Object.assign(idPrincipal, filtro),
-            {$addToSet: actualizacion}, {returnOriginal: false}).then(
+            {$addToSet: actualizacion}, {returnDocument: "after"}).then(
             resultado =>
             {
                 return respDocumento(resultado);

@@ -34,7 +34,7 @@ export class LecturasParametrosMutationService extends ResolversOperacionesServi
         } else
         {
             const resultado = await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, {_id: new ObjectId(_id)},
-                {$addToSet: actualizar}, {returnOriginal: false, upsert: true});
+                {$addToSet: actualizar}, {returnDocument: "after", upsert: true});
 
             return respDocumento(resultado);
 

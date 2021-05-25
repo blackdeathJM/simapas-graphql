@@ -17,7 +17,7 @@ export class CfeMutationService extends ResolversOperacionesService
     {
         return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
             {_id: new ObjectId(_id)},
-            {$addToSet: {medidores: medidor}}, {returnOriginal: false, upsert: true}).then(
+            {$addToSet: {medidores: medidor}}, {returnDocument: "after", upsert: true}).then(
             resultado =>
             {
                 return respDocumento(resultado);
@@ -29,7 +29,7 @@ export class CfeMutationService extends ResolversOperacionesService
     {
         return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
             {_id: new ObjectId(_id), medidores: {$elemMatch: {medidor}}},
-            {$set: {"medidores.$.fechaRetiro": fechaBaja, "medidores.$.activa": false}}, {returnOriginal: false}).then(
+            {$set: {"medidores.$.fechaRetiro": fechaBaja, "medidores.$.activa": false}}, {returnDocument: "after"}).then(
             resultado =>
             {
                 return respDocumento(resultado);
@@ -49,7 +49,7 @@ export class CfeMutationService extends ResolversOperacionesService
         {
             const resultado = await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
                 {_id: new ObjectId(_id), medidores: {$elemMatch: {medidor}}},
-                {$addToSet: {"medidores.$.recibos": reciboCfe}}, {returnOriginal: false, uptosert: true});
+                {$addToSet: {"medidores.$.recibos": reciboCfe}}, {returnDocument: "after", uptosert: true});
             return respDocumento(resultado);
         }
     }

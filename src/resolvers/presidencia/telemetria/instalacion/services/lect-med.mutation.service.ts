@@ -31,7 +31,7 @@ export class LectMedMutationService extends ResolversOperacionesService
         {
             // Registramos las lecturas con valores iniciales de cero
             const agregar = await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, {_id: new ObjectId(_id)},
-                {$addToSet: agregarSubDoc}, {returnOriginal: false, upsert: true});
+                {$addToSet: agregarSubDoc}, {returnDocument: "after", upsert: true});
             return respDocumento(agregar);
         }
     }
@@ -47,7 +47,7 @@ export class LectMedMutationService extends ResolversOperacionesService
 
         const resultado = await this.buscarUnoYActualizar(COLECCION.TELEMETRIA,
             Object.assign(id, consulta),
-            {$set: Object.assign(actualizar, actualizarTotal)}, {returnOriginal: false});
+            {$set: Object.assign(actualizar, actualizarTotal)}, {returnDocument: "after"});
         return respDocumento(resultado);
     }
 }

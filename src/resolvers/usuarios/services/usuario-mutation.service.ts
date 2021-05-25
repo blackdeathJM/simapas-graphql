@@ -39,13 +39,13 @@ class UsuarioMutationService extends ResolversOperacionesService
         {
             const res = await this.buscarUnoYActualizar(COLECCION.USUARIOS,
                 filtro,
-                {$pull: {role}}, {returnOriginal: false});
+                {$pull: {role}}, {returnDocument: "after"});
             await this.nvoRole(res.elemento);
             return respDocumento(res);
         } else
         {
             const res = await this.buscarUnoYActualizar(COLECCION.USUARIOS, filtro,
-                {$addToSet: {role}}, {returnOriginal: false});
+                {$addToSet: {role}}, {returnDocument: "after"});
             await this.nvoRole(res.elemento);
             return respDocumento(res);
         }
@@ -73,7 +73,7 @@ class UsuarioMutationService extends ResolversOperacionesService
                 buscarUsuario.elemento.contrasena = bcryptjs.hashSync(nvaContrasena, 10);
 
                 return await this.buscarUnoYActualizar(COLECCION.USUARIOS,
-                    {usuario}, {$set: {contrasena: buscarUsuario.elemento.contrasena}}, {returnOriginal: false}).then(
+                    {usuario}, {$set: {contrasena: buscarUsuario.elemento.contrasena}}, {returnDocument: "after"}).then(
                     async respuesta =>
                     {
                         delete respuesta.elemento.contrasena;

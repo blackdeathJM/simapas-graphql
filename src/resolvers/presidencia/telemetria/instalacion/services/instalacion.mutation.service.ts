@@ -3,10 +3,6 @@ import {IContextData} from "../../../../../interfaces/context-data-interface";
 import {COLECCION} from "../../../../../config/global";
 import {respDocumento} from "../../../../../services/respuestas-return";
 import {ObjectId} from 'bson';
-import {ILecturas} from "../../models/lecturas-interface";
-import _ from "lodash";
-import {IMedidor} from "../../models/medidor-interface";
-import {IRecibosCfe} from "../../models/recibos-cfe-interface";
 import {IInstalacion} from "../../models/instalacion.interface";
 
 class InstalacionMutationService extends ResolversOperacionesService
@@ -35,7 +31,7 @@ class InstalacionMutationService extends ResolversOperacionesService
         delete instalacion._id;
 
         return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, {_id: new ObjectId(_id)},
-            {$set: {...instalacion}}, {returnOriginal: false}).then(
+            {$set: {...instalacion}}, {returnDocument: "after"}).then(
             resultado =>
             {
                 return respDocumento(resultado);
