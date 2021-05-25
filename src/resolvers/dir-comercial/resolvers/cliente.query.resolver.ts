@@ -7,7 +7,7 @@ export const queryCliente: IResolvers =
             {
                 clientesPorCriterio(_, {criterio}, {db})
                 {
-                    return new ClienteQueryService(_, {}, {db})._clientesPorCriterio(criterio);
+                    return new ClienteQueryService(_, {db})._clientesPorCriterio(criterio);
                 }
             }
     }

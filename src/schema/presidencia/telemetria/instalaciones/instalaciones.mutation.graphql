@@ -3,8 +3,6 @@ type Mutation
     "Instalacion: Registro de tanques y pozos de agua"
     regInstalacion(instalacion: InstalacionInput!):ResInstalacion
     actInstalacion(instalacion: InstalacionInput!): ResInstalacion
-    desIntalacion(activo: Boolean!): ResInstalacion
-
     "Agregar ip dependiendo del tipo como son RADIOS, PLC, SWITCH, REPETIDORES, CAMARAS"
     agIps(_id: ID!, tipo: String!, ip: String!): ResInstalacion
     "Editar o eliminar direccion IP"

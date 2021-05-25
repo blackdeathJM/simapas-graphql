@@ -4,7 +4,7 @@ import {respArreglosSPag} from "../../../../../services/respuestas-return";
 
 class InstalacionQueryService extends ResolversOperacionesService
 {
-    constructor(root: object, variables: object, context: object) {super(root, variables, context);}
+    constructor(root: object, context: object) {super(root, context);}
 
     async _todasInstalaciones()
     {

@@ -11,9 +11,9 @@ import moment from "moment";
 
 class DocUsuarioMutationService extends ResolversOperacionesService
 {
-    constructor(root: object, variables: object, context: IContextData)
+    constructor(root: object, context: IContextData)
     {
-        super(root, variables, context);
+        super(root, context);
     }
 
     async _acDocUrlEnUsuarioDestino(_id: string, usuario: string, docUrl: string, subproceso: string)

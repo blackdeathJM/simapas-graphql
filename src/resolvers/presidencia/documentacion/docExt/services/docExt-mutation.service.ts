@@ -8,8 +8,8 @@ import {notUsuarioSubProceso} from "./docExt-subscription.service";
 
 class DocExtMutationService extends ResolversOperacionesService
 {
-    constructor(root: object, variables: object, context: IContextData)
-    {super(root, variables, context);}
+    constructor(root: object, context: IContextData)
+    {super(root, context);}
 
     async _regDocExt(documento: IDocExt)
     {

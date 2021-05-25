@@ -7,7 +7,7 @@ export async function notNotificacion(pubsub: PubSub, db: Db, usuarios: string[]
 {
     return usuarios.filter(async receptor =>
     {
-        return await new NotificacionQueryService({}, {}, {db})._listarNotificaciones(receptor).then(
+        return await new NotificacionQueryService({}, {db})._listarNotificaciones(receptor).then(
             async resultado =>
             {
                 return await pubsub.publish(PUB_SUB.NOT_NOTIFICACION, {notificar: resultado.documentos})

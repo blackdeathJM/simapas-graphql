@@ -7,8 +7,8 @@ import {IDepartamento} from "../model/departamento.interface";
 
 class DepartamentoMutationService extends ResolversOperacionesService
 {
-    constructor(root: object, variables: object, context: IContextData)
-    {super(root, variables, context);}
+    constructor(root: object, context: IContextData)
+    {super(root, context);}
 
     async _registrarElemento(departamento: IDepartamento)
     {

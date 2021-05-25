@@ -7,15 +7,15 @@ const queryUsuarios: IResolvers =
             {
                 async obtenerUsuarios(_, {}, {db})
                 {
-                    return new UsuarioQueryService(_, {}, {db})._listarUsuarios();
+                    return new UsuarioQueryService(_, {db})._listarUsuarios();
                 },
                 async buscarUsuario(_, {usuario}, {db})
                 {
-                    return new UsuarioQueryService(_, {usuario}, {db}).buscarUno();
+                    return new UsuarioQueryService(_, {db})._buscarUsuario(usuario);
                 },
                 async login(_, {usuario, contrasena}, {db})
                 {
-                    return new UsuarioQueryService(_, {}, {db})._login(usuario, contrasena);
+                    return new UsuarioQueryService(_, {db})._login(usuario, contrasena);
                 },
             }
     };

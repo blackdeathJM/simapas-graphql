@@ -6,8 +6,8 @@ import {respArreglosPag} from "../../../../services/respuestas-return";
 
 class DepartamentoQueryService extends ResolversOperacionesService
 {
-    constructor(root: object, variables: object, context: IContextData)
-    {super(root, variables, context);}
+    constructor(root: object, context: IContextData)
+    {super(root, context);}
 
     async listaElementos()
     {
@@ -15,9 +15,9 @@ class DepartamentoQueryService extends ResolversOperacionesService
         return respArreglosPag(resultado);
     }
 
-    async elementoDetalle()
+    async elementoDetalle(_id: string)
     {
-        const filtro = {_id: new ObjectId(this.variables._id)};
+        const filtro = {_id: new ObjectId(_id)};
         const res = await this.buscarUnElemento(COLECCION.DEPARTAMENTOS, filtro, {});
         return {estatus: res!.estatus, mensaje: res!.mensaje, departamento: res!.elemento}
     }

@@ -7,21 +7,21 @@ const mutationUsuarios: IResolvers =
             {
                 async registroUsuario(_, {usuario}, {db})
                 {
-                    return new UsuarioMutationService(_, {}, {db})._registroUsuario(usuario);
+                    return new UsuarioMutationService(_, {db})._registroUsuario(usuario);
                 },
 
                 async actualizarRole(_, {_id, role, esActualizar}, {pubsub, db})
                 {
-                    return new UsuarioMutationService(_, {}, {pubsub, db})._actualizarRole(_id, role, esActualizar);
+                    return new UsuarioMutationService(_, {pubsub, db})._actualizarRole(_id, role, esActualizar);
                 },
 
                 async actualizarContrasena(_, {usuario, actualContrasena, nvaContrasena, esAdmin}, {db})
                 {
-                    return new UsuarioMutationService(_, {}, {db})._actializarContrasena(usuario, actualContrasena, nvaContrasena, esAdmin);
+                    return new UsuarioMutationService(_, {db})._actializarContrasena(usuario, actualContrasena, nvaContrasena, esAdmin);
                 },
                 async eliminarUsuario(_, {_id}, {db})
                 {
-                    return new UsuarioMutationService(_, {_id}, {db}).EliminarUsuario();
+                    return new UsuarioMutationService(_, {db})._eliminarUsuario(_id);
                 }
             }
     };

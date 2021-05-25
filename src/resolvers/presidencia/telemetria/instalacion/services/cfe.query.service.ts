@@ -5,9 +5,9 @@ import {ObjectId} from "bson";
 
 export class CfeQueryService extends ResolversOperacionesService
 {
-    constructor(root: object, variables: object, context: IContextData)
+    constructor(root: object, context: IContextData)
     {
-        super(root, variables, context);
+        super(root, context);
     }
 
     async _recibosCfePorAno(_id: string, medidor: string, ano: number)

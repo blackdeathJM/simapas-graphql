@@ -6,8 +6,8 @@ import {respArreglosSPag} from "../../../../../services/respuestas-return";
 
 class DocExtQueryService extends ResolversOperacionesService
 {
-    constructor(root: object, variables: object, context: IContextData)
-    {super(root, variables, context);}
+    constructor(root: object, context: IContextData)
+    {super(root, context);}
 
     async _todosDocsExt(proceso: string)
     {

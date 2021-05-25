@@ -8,9 +8,9 @@ import {respDocumento} from "../../../../../services/respuestas-return";
 
 export class LectMedMutationService extends ResolversOperacionesService
 {
-    constructor(root: object, variables: object, context: IContextData)
+    constructor(root: object, context: IContextData)
     {
-        super(root, variables, context);
+        super(root, context);
     }
 
     async _regLecturas(_id: string, tipo: string, lecturas: ILecturas)

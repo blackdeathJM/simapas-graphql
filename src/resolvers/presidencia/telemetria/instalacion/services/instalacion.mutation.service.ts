@@ -7,9 +7,9 @@ import {IInstalacion} from "../../models/instalacion.interface";
 
 class InstalacionMutationService extends ResolversOperacionesService
 {
-    constructor(root: object, variables: object, context: IContextData)
+    constructor(root: object, context: IContextData)
     {
-        super(root, variables, context);
+        super(root, context);
     }
 
     async _registroInstalacion(instalacion: IInstalacion)
@@ -32,16 +32,6 @@ class InstalacionMutationService extends ResolversOperacionesService
 
         return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, {_id: new ObjectId(_id)},
             {$set: {...instalacion}}, {returnDocument: "after"}).then(
-            resultado =>
-            {
-                return respDocumento(resultado);
-            }
-        )
-    }
-
-    async _desInstalacion()
-    {
-        return await this.buscarUnoYActualizar(COLECCION.TELEMETRIA, {}, {}, {}).then(
             resultado =>
             {
                 return respDocumento(resultado);

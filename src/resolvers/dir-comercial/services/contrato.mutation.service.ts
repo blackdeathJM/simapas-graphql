@@ -8,12 +8,12 @@ import {randomUUID} from "crypto";
 
 export class ContratoMutationService extends ResolversOperacionesService
 {
-    constructor(root: object, variables: object, context: IContextData)
+    constructor(root: object, context: IContextData)
     {
-        super(root, variables, context);
+        super(root, context);
     }
 
-    async _regSolicitudServ(idCliente: string, contrato: IContrato)
+    async _regContrato(idCliente: string, contrato: IContrato)
     {
         contrato.rpu = randomUUID().toUpperCase();
 

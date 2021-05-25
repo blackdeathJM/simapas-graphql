@@ -8,9 +8,9 @@ import {IRecibosCfe} from "../../models/recibos-cfe-interface";
 
 export class CfeMutationService extends ResolversOperacionesService
 {
-    constructor(root: object, variables: object, context: IContextData)
+    constructor(root: object, context: IContextData)
     {
-        super(root, variables, context);
+        super(root, context);
     }
 
     async _regMedidor(_id: string, medidor: IMedidor)

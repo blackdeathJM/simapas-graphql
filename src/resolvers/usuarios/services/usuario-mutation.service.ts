@@ -9,9 +9,9 @@ import {respDocumento} from "../../../services/respuestas-return";
 
 class UsuarioMutationService extends ResolversOperacionesService
 {
-    constructor(root: object, varibles: object, context: IContextData)
+    constructor(root: object, context: IContextData)
     {
-        super(root, varibles, context);
+        super(root, context);
     }
 
     async _registroUsuario(usuario: IUsuario)
@@ -103,9 +103,9 @@ class UsuarioMutationService extends ResolversOperacionesService
         }
     }
 
-    async EliminarUsuario()
+    async _eliminarUsuario(_id: string)
     {
-        const resultado = await this.buscarUnoYEleminiar(COLECCION.USUARIOS, {_id: new ObjectId(this.variables._id)}, {});
+        const resultado = await this.buscarUnoYEleminiar(COLECCION.USUARIOS, {_id: new ObjectId(_id)}, {});
         return {estatus: resultado.estatus, mensaje: resultado.mensaje, usuario: resultado.elemento}
     }
 }

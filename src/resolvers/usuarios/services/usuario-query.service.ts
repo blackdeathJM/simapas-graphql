@@ -3,14 +3,14 @@ import {IContextData} from "../../../interfaces/context-data-interface";
 import {COLECCION} from "../../../config/global";
 import bcryptjs from "bcryptjs";
 import JWT from "../../../lib/jwt";
-import {respArreglosPag, respArreglosSPag, respDocumento} from "../../../services/respuestas-return";
+import {respArreglosSPag, respDocumento} from "../../../services/respuestas-return";
 
 
 class UsuarioQueryService extends ResolversOperacionesService
 {
-    constructor(root: object, variables: object, context: IContextData)
+    constructor(root: object, context: IContextData)
     {
-        super(root, variables, context);
+        super(root, context);
     }
 
     async _listarUsuarios()
@@ -19,9 +19,9 @@ class UsuarioQueryService extends ResolversOperacionesService
         return respArreglosSPag(resultado);
     }
 
-    async buscarUno()
+    async _buscarUsuario(usuario: string)
     {
-        const resultado = await this.buscarUnElemento(COLECCION.USUARIOS, {usuario: this.variables.usuario}, {});
+        const resultado = await this.buscarUnElemento(COLECCION.USUARIOS, {usuario}, {});
         return respDocumento(resultado);
     }
 

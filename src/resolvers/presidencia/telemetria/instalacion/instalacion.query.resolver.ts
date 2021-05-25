@@ -8,11 +8,11 @@ const queryTelemetria: IResolvers =
             {
                 async todasInstalaciones(_, {pagina, elementosPorPagina}, {db})
                 {
-                    return new InstalacionQueryService(_, {}, {db})._todasInstalaciones();
+                    return new InstalacionQueryService(_, {db})._todasInstalaciones();
                 },
                 async recibosCfePorAno(_, {_id, medidor, ano}, {db})
                 {
-                    return new CfeQueryService(_, {}, {db})._recibosCfePorAno(_id, medidor, ano);
+                    return new CfeQueryService(_, {db})._recibosCfePorAno(_id, medidor, ano);
                 }
             }
     }

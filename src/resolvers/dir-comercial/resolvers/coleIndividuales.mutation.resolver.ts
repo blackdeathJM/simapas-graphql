@@ -5,9 +5,9 @@ export const mutationColeIndividuales: IResolvers =
     {
         Mutation:
             {
-                regSolicitudServ(_, {solicitudServ}, {db})
+                async regSolicitudServ(_, {solicitudServ}, {db})
                 {
-                    return new ColeIndividualesMutationService(_, {}, {db})._regSolicitudServ(solicitudServ);
+                    return new ColeIndividualesMutationService(_, {db})._regSolicitudServ(solicitudServ);
                 }
             }
     }

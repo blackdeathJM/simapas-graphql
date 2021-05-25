@@ -7,14 +7,14 @@ export const mutationCliente: IResolvers =
         Mutation:
             {
                 // ================ CLIENTES ================================
-                regCliente(_, {cliente}, {db})
+                async regCliente(_, {cliente}, {db})
                 {
-                    return new ClienteMutationService(_, {}, {db})._regCliente(cliente);
+                    return new ClienteMutationService(_,  {db})._regCliente(cliente);
                 },
                 // ==============CONTRATOS=====================================
-                regSolicitudServ(_, {idCliente, contrato}, {db})
+                async regContrato(_, {idCliente, contrato}, {db})
                 {
-                    return new ContratoMutationService(_, {}, {db})._regSolicitudServ(idCliente, contrato);
+                    return new ContratoMutationService(_,  {db})._regContrato(idCliente, contrato);
                 }
             }
     }

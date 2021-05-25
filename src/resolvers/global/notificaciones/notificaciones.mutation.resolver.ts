@@ -7,11 +7,11 @@ const mutationNotificacion: IResolvers =
             {
                 async regNotificacion(_, {notificacion}, {pubsub, db})
                 {
-                    return new NotificacionMutationService(_, {}, {pubsub, db})._regNotificacion(notificacion);
+                    return new NotificacionMutationService(_,  {pubsub, db})._regNotificacion(notificacion);
                 },
                 async eliminarNotificacion(_, {_id}, {db})
                 {
-                    return new NotificacionMutationService(_, {}, {db})._eliminarNotificacion(_id);
+                    return new NotificacionMutationService(_,  {db})._eliminarNotificacion(_id);
                 }
             }
     }

@@ -4,12 +4,12 @@ import {ISolicitudServ} from "../models/coleIndividuales.interface";
 
 export class ColeIndividualesMutationService extends ResolversOperacionesService
 {
-    constructor(root: object, varibles: object, context: IContextData)
+    constructor(root: object, context: IContextData)
     {
-        super(root, varibles, context);
+        super(root, context);
     }
 
-    _regSolicitudServ(solicitudServ: ISolicitudServ)
+    async _regSolicitudServ(solicitudServ: ISolicitudServ)
     {
 
     }

@@ -1,10 +1,12 @@
-import {IVariables} from "../interfaces/variables-interface";
 import {IContextData} from "../interfaces/context-data-interface";
 import {paginacion} from "../lib/paginacion";
+import {IPaginacion} from "../interfaces/paginacion-interface";
 
 class ResolversOperacionesService
 {
-    constructor(public root: object, public variables: IVariables, public context: IContextData)
+    paginacion: IPaginacion | undefined;
+
+    constructor(public root: object, public context: IContextData)
     {
     }
 
@@ -46,8 +48,8 @@ class ResolversOperacionesService
     {
         try
         {
-            const datosPaginacion = await paginacion(this.context.db!, coleccion, this.variables.paginacion!.pagina,
-                this.variables.paginacion!.elementosPorPagina, filtro);
+            const datosPaginacion = await paginacion(this.context.db!, coleccion, this.paginacion!.pagina,
+                this.paginacion!.elementosPorPagina, filtro);
             return await this.context.db!.collection(coleccion).find(filtro, opciones).limit(datosPaginacion.elementosPorPagina)
                 .skip(datosPaginacion.saltar).sort(ordenar).toArray().then(
                     async resultado =>
@@ -188,7 +190,7 @@ class ResolversOperacionesService
             {
                 return {
                     estatus: false,
-                    mensaje: 'Ocurrio un error al tratar de registrar los documentos',
+                    mensaje: e,
                     elemento: null
                 }
             })

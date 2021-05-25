@@ -8,24 +8,24 @@ const mutationDocUsuario: IResolvers =
                 // Actualizar el docUrl del usuarios donde subira la respuesta que guardaremos de manera temporal
                 async acDocUrlEnUsuarioDestino(_, {_id, usuario, docUrl, subproceso}, {pubsub, db})
                 {
-                    return new DocUsuarioMutationService(_, {}, {pubsub, db})._acDocUrlEnUsuarioDestino(_id, usuario, docUrl, subproceso);
+                    return new DocUsuarioMutationService(_, {pubsub, db})._acDocUrlEnUsuarioDestino(_id, usuario, docUrl, subproceso);
                 },
                 async asigElfolioPorTipoDoc(_, {documento, refDoc}, {pubsub, db})
                 {
-                    return new DocUsuarioMutationService(_, {}, {pubsub, db})._asigElfolioPorTipoDoc(documento, refDoc);
+                    return new DocUsuarioMutationService(_, {pubsub, db})._asigElfolioPorTipoDoc(documento, refDoc);
                 },
                 async genFolioRespDoc(_, {_id, usuario, centroGestor}, {pubsub, db})
                 {
-                    return new DocUsuarioMutationService(_, {}, {pubsub, db})._genFolioRespDoc(_id, usuario, centroGestor);
+                    return new DocUsuarioMutationService(_, {pubsub, db})._genFolioRespDoc(_id, usuario, centroGestor);
                 },
                 docRespUrlAcuseUrl(_, {_id, documento, proceso, usuario, esInterno, esDocRespUrl}, {pubsub, db})
                 {
-                    return new DocUsuarioMutationService(_, {}, {pubsub, db})._docRespUrlAcuseUrl(_id, documento, proceso, usuario, esInterno,
+                    return new DocUsuarioMutationService(_, {pubsub, db})._docRespUrlAcuseUrl(_id, documento, proceso, usuario, esInterno,
                         esDocRespUrl);
                 },
                 terminarDocUsuario(_, {_id}, {db})
                 {
-                    return new DocUsuarioMutationService(_, {}, {db})._terminarDocUsuario(_id);
+                    return new DocUsuarioMutationService(_, {db})._terminarDocUsuario(_id);
                 }
             }
     }

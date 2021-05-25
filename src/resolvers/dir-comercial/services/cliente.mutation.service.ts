@@ -6,10 +6,10 @@ import {respDocumento} from "../../../services/respuestas-return";
 
 export class ClienteMutationService extends ResolversOperacionesService
 {
-    constructor(root: object, variables: object, context: IContextData)
+    constructor(root: object, context: IContextData)
     {
         {
-            super(root, variables, context)
+            super(root, context)
         }
     }
 

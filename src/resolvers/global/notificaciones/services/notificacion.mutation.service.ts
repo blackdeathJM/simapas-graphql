@@ -8,9 +8,9 @@ import {notNotificacion} from "./notificacion.subscription.service";
 
 export class NotificacionMutationService extends ResolversOperacionesService
 {
-    constructor(root: object, variables: object, context: IContextData)
+    constructor(root: object, context: IContextData)
     {
-        super(root, variables, context);
+        super(root, context);
     }
 
     async _regNotificacion(notificacion: INotificacion)

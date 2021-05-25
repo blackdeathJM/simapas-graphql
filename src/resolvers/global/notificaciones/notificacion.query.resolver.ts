@@ -7,7 +7,7 @@ const queryNotificacion: IResolvers =
             {
                 async listarNotificaciones(_, {receptor}, {db})
                 {
-                    return new NotificacionQueryService(_, {}, {db})._listarNotificaciones(receptor);
+                    return new NotificacionQueryService(_, {db})._listarNotificaciones(receptor);
                 }
             }
     }
