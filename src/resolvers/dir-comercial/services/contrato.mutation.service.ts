@@ -13,11 +13,8 @@ export class ContratoMutationService extends ResolversOperacionesService
         super(root, variables, context);
     }
 
-    async _regContrato(idCliente: string, contrato: IContrato)
+    async _regSolicitudServ(idCliente: string, contrato: IContrato)
     {
-        // el contrato se registrara en dos pasos
-        // Paso 1. Generar la solicitud de servicio
-        // Paso 2. Generar el contrato
         contrato.rpu = randomUUID().toUpperCase();
 
         const regContrato = await this.buscarUnoYActualizar(COLECCION.CLIENTES, {_id: new ObjectId(idCliente)},

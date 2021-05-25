@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="informacion general de clientes">
+    <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="Solicitud de servicio">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/models/cliente.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/models/cliente.interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/resolvers/cliente.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/resolvers/cliente.mutation.resolver.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/contrato.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/contrato.mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/inputs/cliente.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/inputs/cliente.input.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/types/cliente.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/types/cliente.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/mutations/cliente.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/mutations/cliente.mutation.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +219,9 @@
       <workItem from="1621731864761" duration="4078000" />
       <workItem from="1621797485671" duration="6007000" />
       <workItem from="1621816575477" duration="1374000" />
-      <workItem from="1621845160397" duration="15208000" />
+      <workItem from="1621845160397" duration="15494000" />
+      <workItem from="1621898757935" duration="184000" />
+      <workItem from="1621899862638" duration="2044000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -409,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621818084480</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Solicitud de servicio">
+      <created>1621878214757</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1621878214757</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -434,6 +444,7 @@
     <MESSAGE value="Modulo de usuarios" />
     <MESSAGE value="Actualizacion de dependencias" />
     <MESSAGE value="informacion general de clientes" />
-    <option name="LAST_COMMIT_MESSAGE" value="informacion general de clientes" />
+    <MESSAGE value="Solicitud de servicio" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solicitud de servicio" />
   </component>
 </project>
