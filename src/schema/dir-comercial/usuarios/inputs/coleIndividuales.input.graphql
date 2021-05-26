@@ -1,6 +1,6 @@
 input SolicitudServInput
 {
-    _id: ID
+    idCliente: String
     noPersonas: Int
     calle: String
     colonia: String

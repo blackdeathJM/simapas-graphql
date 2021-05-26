@@ -1,6 +1,7 @@
 type SolicitudServType
 {
     _id: ID
+    idCliente: String
     noPersonas: Int
     calle: String
     colonia: String

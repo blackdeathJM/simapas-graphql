@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="Solicitud de servicio">
+    <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="Registro de clientes y contratos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/global.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/global.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/models/cliente.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/models/cliente.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/models/coleIndividuales.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/models/solicitudServ.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/coleIndividuales.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/coleIndividuales.mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/inputs/cliente.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/inputs/cliente.input.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/models/solicitudServ.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/models/solicitudServ.interface.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/inputs/coleIndividuales.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/inputs/coleIndividuales.input.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/types/cliente.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/types/cliente.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/types/coleIndividuales.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/types/coleIndividuales.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
+        <entry key="$PROJECT_DIR$" value="api" />
         <entry key="$PROJECT_DIR$" value="Telemetria-nvo" />
       </map>
     </option>
@@ -66,7 +62,7 @@
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
-    <property name="ts.external.directory.path" value="D:\Documents\Proyectos\Backend\simapas-graphql\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="D:\Documents\proyectos\backend\simapas-graphql\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -194,39 +190,22 @@
       <workItem from="1619762265294" duration="6941000" />
       <workItem from="1619844578911" duration="11870000" />
       <workItem from="1620016019706" duration="2785000" />
-      <workItem from="1620187774667" duration="2390000" />
-      <workItem from="1620250575920" duration="1851000" />
-      <workItem from="1620303221325" duration="2229000" />
-      <workItem from="1620321734008" duration="642000" />
-      <workItem from="1620340164045" duration="35000" />
-      <workItem from="1620340335420" duration="1975000" />
-      <workItem from="1620390163230" duration="3396000" />
-      <workItem from="1620425046564" duration="668000" />
-      <workItem from="1620608433727" duration="567000" />
-      <workItem from="1620688352485" duration="421000" />
-      <workItem from="1620745583713" duration="4948000" />
-      <workItem from="1620774061844" duration="802000" />
-      <workItem from="1620785502622" duration="465000" />
-      <workItem from="1620833417516" duration="2476000" />
-      <workItem from="1620864408432" duration="924000" />
-      <workItem from="1620866946836" duration="5372000" />
-      <workItem from="1620908697388" duration="592000" />
-      <workItem from="1620947501973" duration="1853000" />
-      <workItem from="1620957938503" duration="602000" />
-      <workItem from="1621013801454" duration="595000" />
-      <workItem from="1621606029127" duration="31000" />
-      <workItem from="1621606112962" duration="2338000" />
-      <workItem from="1621632142704" duration="1237000" />
-      <workItem from="1621642912795" duration="1090000" />
-      <workItem from="1621715670321" duration="3896000" />
-      <workItem from="1621731864761" duration="4078000" />
-      <workItem from="1621797485671" duration="6007000" />
-      <workItem from="1621816575477" duration="1374000" />
-      <workItem from="1621845160397" duration="15494000" />
-      <workItem from="1621898757935" duration="184000" />
-      <workItem from="1621899862638" duration="2079000" />
-      <workItem from="1621957808766" duration="547000" />
-      <workItem from="1621974846552" duration="14747000" />
+      <workItem from="1620187774667" duration="3199000" />
+      <workItem from="1620208213248" duration="23000" />
+      <workItem from="1620208402566" duration="275000" />
+      <workItem from="1620208728294" duration="2363000" />
+      <workItem from="1620365126910" duration="31000" />
+      <workItem from="1620365170337" duration="9096000" />
+      <workItem from="1620449242278" duration="717000" />
+      <workItem from="1620737822005" duration="474000" />
+      <workItem from="1620964937606" duration="970000" />
+      <workItem from="1620988865146" duration="1350000" />
+      <workItem from="1621062465270" duration="23000" />
+      <workItem from="1621062498572" duration="1135000" />
+      <workItem from="1621656676450" duration="153000" />
+      <workItem from="1621656845364" duration="2740000" />
+      <workItem from="1621922638008" duration="1265000" />
+      <workItem from="1622002424350" duration="2625000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -361,91 +340,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620026660993</updated>
     </task>
-    <task id="LOCAL-00020" summary="Modulo de usuarios">
-      <created>1620254430839</created>
+    <task id="LOCAL-00020" summary="Registro de clientes y contratos">
+      <created>1620204915336</created>
       <option name="number" value="00020" />
       <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
-      <updated>1620254430839</updated>
+      <updated>1620204915336</updated>
     </task>
-    <task id="LOCAL-00021" summary="Modulo de usuarios">
-      <created>1620608761537</created>
+    <task id="LOCAL-00021" summary="Registro de clientes y contratos">
+      <created>1620387459278</created>
       <option name="number" value="00021" />
       <option name="presentableId" value="LOCAL-00021" />
       <option name="project" value="LOCAL" />
-      <updated>1620608761537</updated>
+      <updated>1620387459278</updated>
     </task>
-    <task id="LOCAL-00022" summary="Actualizacion de dependencias">
-      <created>1620688728437</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1620688728437</updated>
-    </task>
-    <task id="LOCAL-00023" summary="informacion general de clientes">
-      <created>1620785929987</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1620785929987</updated>
-    </task>
-    <task id="LOCAL-00024" summary="informacion general de clientes">
-      <created>1620876139593</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1620876139593</updated>
-    </task>
-    <task id="LOCAL-00025" summary="informacion general de clientes">
-      <created>1621635553927</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1621635553927</updated>
-    </task>
-    <task id="LOCAL-00026" summary="informacion general de clientes">
-      <created>1621816621058</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1621816621058</updated>
-    </task>
-    <task id="LOCAL-00027" summary="informacion general de clientes">
-      <created>1621818084480</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1621818084480</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Solicitud de servicio">
-      <created>1621878214757</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1621878214757</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Solicitud de servicio">
-      <created>1621906224212</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1621906224212</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Solicitud de servicio">
-      <created>1621978867512</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1621978867512</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Solicitud de servicio">
-      <created>1621983279185</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1621983279185</updated>
-    </task>
-    <option name="localTasksCounter" value="32" />
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,10 +376,6 @@
     <MESSAGE value="trabajando en folios" />
     <MESSAGE value="Orden trabajo telemetria" />
     <MESSAGE value="Registro de clientes y contratos" />
-    <MESSAGE value="Modulo de usuarios" />
-    <MESSAGE value="Actualizacion de dependencias" />
-    <MESSAGE value="informacion general de clientes" />
-    <MESSAGE value="Solicitud de servicio" />
-    <option name="LAST_COMMIT_MESSAGE" value="Solicitud de servicio" />
+    <option name="LAST_COMMIT_MESSAGE" value="Registro de clientes y contratos" />
   </component>
 </project>

@@ -1,6 +1,7 @@
 export interface ISolicitudServ
 {
     _id: string;
+    idCliente: string;
     noPersonas: number;
     calle: string;
     colonia: string;
