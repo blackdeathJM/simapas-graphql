@@ -3,31 +3,11 @@ input ClienteInput
     _id: ID
     nombreCompleto: String
     telefonos: [String]
-    datosDeFacturacion: [DatosFacturacionInput]
 }
 
 input ContratoInput
 {
-    calle: String
-    colonia: String
-    entreCalles: String
-    referencia: String
-    servSolicitado: String
-    medidorRef: String
-    tipoPredio: String
-    areaPredio: Float
-    areaConstruida: Float
-    almacenamiento: String
-    tarifa: String
-    MaterialArroyoDeCalle: String
-    MaterialAcera: String
-    comentarios: String
-    aprobadoServ: Boolean
-    matArroyoCalle: String
-    matAcera: String
-    latitud: Float
-    longitud: Float
-
+    datosSolicitud: SolicitudServInput
     estado: String
     ciudad: String
     municipio: String
@@ -41,11 +21,12 @@ input ContratoInput
     ruta: Int
     giro: String
     zona: String
-    noPersonas: Int
     activo: Boolean
     esPrincipal: Boolean
-    documentosImg: DocumentacionInput
     creadoPor: String
+    latitud: Float
+    longitud: Float
+    documentosImg: DocumentacionInput
     modificadoPor: [ModificadaPorInput]
     convenio: ConvenioContratoInput
 }

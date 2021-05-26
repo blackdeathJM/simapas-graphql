@@ -9,26 +9,7 @@ type ClienteType
 
 type ContratoType
 {
-    calle: String
-    colonia: String
-    entreCalles: String
-    referencia: String
-    servSolicitado: String
-    medidorRef: String
-    tipoPredio: String
-    areaPredio: Float
-    areaConstruida: Float
-    almacenamiento: String
-    tarifa: String
-    MaterialArroyoDeCalle: String
-    MaterialAcera: String
-    comentarios: String
-    aprobadoServ: Boolean
-    matArroyoCalle: String
-    matAcera: String
-    latitud: Float
-    longitud: Float
-
+    datosSolicitud: SolicitudServType
     estado: String
     ciudad: String
     municipio: String
@@ -42,11 +23,12 @@ type ContratoType
     ruta: Int
     giro: String
     zona: String
-    noPersonas: Int
     activo: Boolean
     esPrincipal: Boolean
-    documentosImg: DocumentacionType
     creadoPor: String
+    latitud: Float
+    longitud: Float
+    documentosImg: DocumentacionType
     modificadoPor: [ModificadaPorType]
     convenio: ConvenioContratoType
 }

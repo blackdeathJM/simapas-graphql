@@ -1,8 +1,6 @@
 input SolicitudServInput
 {
-    idCliente: ID
-    fechaSolicitud: String
-
+    _id: ID
     noPersonas: Int
     calle: String
     colonia: String
@@ -21,6 +19,4 @@ input SolicitudServInput
     aprobadoServ: Boolean
     matArroyoCalle: String
     matAcera: String
-    latitud: Float
-    longitud: Float
 }

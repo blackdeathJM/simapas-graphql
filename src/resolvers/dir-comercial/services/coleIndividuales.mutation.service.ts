@@ -1,6 +1,8 @@
 import ResolversOperacionesService from "../../../services/resolver-operaciones";
 import {IContextData} from "../../../interfaces/context-data-interface";
-import {ISolicitudServ} from "../models/coleIndividuales.interface";
+import {COLECCION} from "../../../config/global";
+import {respDocumento} from "../../../services/respuestas-return";
+import {ISolicitudServ} from "../models/solicitudServ.interface";
 
 export class ColeIndividualesMutationService extends ResolversOperacionesService
 {
@@ -11,6 +13,7 @@ export class ColeIndividualesMutationService extends ResolversOperacionesService
 
     async _regSolicitudServ(solicitudServ: ISolicitudServ)
     {
-
+        const regSolicitud = await this.agregarUnElemento(COLECCION.SOLICITUDES, solicitudServ, {});
+        return respDocumento(regSolicitud);
     }
 }

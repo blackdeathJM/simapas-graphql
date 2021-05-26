@@ -1,3 +1,5 @@
+import {ISolicitudServ} from "./solicitudServ.interface";
+
 export interface IDocumentacion
 {
     ineFrente: string;
@@ -39,29 +41,10 @@ export interface IConvenioContrato
     fechaTerminoConvenio: string;
     comentarios: string;
 }
-
+// ====================
 export interface IContrato
 {
-    calle: string;
-    colonia: string;
-    entreCalles: string;
-    referencia: string;
-    servSolicitado: string;
-    medidorRef: string;
-    tipoPredio: string;
-    areaPredio: number;
-    areaConstruida: number;
-    almacenamiento: string;
-    tarifa: string;
-    MaterialArroyoDeCalle: string;
-    MaterialAcera: string;
-    comentarios: string;
-    aprobadoServ: boolean;
-    matArroyoCalle: string;
-    matAcera: string;
-    latitud: number;
-    longitud: number;
-
+    datosSolicitud: ISolicitudServ;
     estado: string;
     ciudad: string;
     municipio: string;
@@ -75,11 +58,12 @@ export interface IContrato
     ruta: number;
     giro: string;
     zona: string;
-    noPersonas: number;
     activo: boolean;
     esPrincipal: boolean;
-    documentosImg: IDocumentacion;
     creadoPor: string;
+    latitud: number;
+    longitud: number;
+    documentosImg: IDocumentacion;
     modificadoPor: IModificadaPor[];
     convenio: IConvenioContrato;
 }

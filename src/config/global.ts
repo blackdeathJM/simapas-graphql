@@ -14,7 +14,8 @@ export enum COLECCION
     TELEMETRIA = 'telemetria',
     NOT = 'notificaciones',
     ORDENES_TRAB = 'ordenesTrabajo',
-    CLIENTES = 'clientes'
+    CLIENTES = 'clientes',
+    SOLICITUDES = 'solicitudes'
 }
 
 export enum PUB_SUB

@@ -1,8 +1,6 @@
 type SolicitudServType
 {
-    idCliente: ID
-    fechaSolicitud: String
-
+    _id: ID
     noPersonas: Int
     calle: String
     colonia: String
@@ -21,6 +19,4 @@ type SolicitudServType
     aprobadoServ: Boolean
     matArroyoCalle: String
     matAcera: String
-    latitud: Float
-    longitud: Float
 }

@@ -1,8 +1,6 @@
 export interface ISolicitudServ
 {
-    idCliente: string;
-    fechaSolicitud: string;
-
+    _id: string;
     noPersonas: number;
     calle: string;
     colonia: string;
@@ -21,6 +19,4 @@ export interface ISolicitudServ
     aprobadoServ: boolean;
     matArroyoCalle: string;
     matAcera: string;
-    latitud: number;
-    longitud: number;
 }
