@@ -1,0 +1,4 @@
+type Query
+{
+    solPorCliente(idCliente: ID!): ResSolicitudServ
+}

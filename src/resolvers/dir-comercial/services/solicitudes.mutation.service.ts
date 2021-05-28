@@ -4,7 +4,7 @@ import {COLECCION} from "../../../config/global";
 import {respDocumento} from "../../../services/respuestas-return";
 import {ISolicitudServ} from "../models/solicitudServ.interface";
 
-export class ColeIndividualesMutationService extends ResolversOperacionesService
+export class SolicitudesMutationService extends ResolversOperacionesService
 {
     constructor(root: object, context: IContextData)
     {

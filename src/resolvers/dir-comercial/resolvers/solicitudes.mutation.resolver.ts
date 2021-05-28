@@ -1,5 +1,5 @@
 import {IResolvers} from "graphql-tools";
-import {ColeIndividualesMutationService} from "../services/coleIndividuales.mutation.service";
+import {SolicitudesMutationService} from "../services/solicitudes.mutation.service";
 
 export const mutationColeIndividuales: IResolvers =
     {
@@ -7,7 +7,7 @@ export const mutationColeIndividuales: IResolvers =
             {
                 async regSolicitudServ(_, {solicitudServ}, {db})
                 {
-                    return new ColeIndividualesMutationService(_, {db})._regSolicitudServ(solicitudServ);
+                    return new SolicitudesMutationService(_, {db})._regSolicitudServ(solicitudServ);
                 }
             }
     }
