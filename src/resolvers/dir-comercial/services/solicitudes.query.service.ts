@@ -15,7 +15,6 @@ export class SolicitudesQueryService extends ResolversOperacionesService
         const solicitudesRealizadas = await this.buscarSinPaginacion(COLECCION.SOLICITUDES,
             {idCliente}, {}, {});
 
-        console.log('res', solicitudesRealizadas);
         return respArreglosSPag(solicitudesRealizadas);
     }
 }

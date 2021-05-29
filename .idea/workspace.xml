@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="Solicitud de servicio">
-      <change afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/resolvers/solicitudes.query.resolver.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/solicitudes.query.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/query/solicitudes.query.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/resolvers/coleIndividuales.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/resolvers/solicitudes.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/coleIndividuales.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/solicitudes.mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/mutations/coleIndividuales.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/mutations/solicitudes.mutation.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/solicitudes.query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/solicitudes.query.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +206,9 @@
       <workItem from="1622002424350" duration="2625000" />
       <workItem from="1622134512657" duration="3962000" />
       <workItem from="1622157909566" duration="1772000" />
-      <workItem from="1622167372649" duration="2273000" />
+      <workItem from="1622167372649" duration="2362000" />
+      <workItem from="1622206382813" duration="1190000" />
+      <workItem from="1622245575488" duration="1629000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -362,7 +357,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620387459278</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Solicitud de servicio">
+      <created>1622172234419</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1622172234420</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -384,6 +386,7 @@
     <MESSAGE value="trabajando en folios" />
     <MESSAGE value="Orden trabajo telemetria" />
     <MESSAGE value="Registro de clientes y contratos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Registro de clientes y contratos" />
+    <MESSAGE value="Solicitud de servicio" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solicitud de servicio" />
   </component>
 </project>
