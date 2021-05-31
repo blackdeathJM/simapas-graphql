@@ -14,10 +14,9 @@ type SolicitudServType
     areaConstruida: Float
     almacenamiento: String
     tarifa: String
-    MaterialArroyoDeCalle: String
-    MaterialAcera: String
     comentarios: String
     aprobadoServ: Boolean
     matArroyoCalle: String
     matAcera: String
+    pagoServRealizado: Boolean
 }

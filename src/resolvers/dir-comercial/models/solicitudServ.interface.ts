@@ -14,10 +14,9 @@ export interface ISolicitudServ
     areaConstruida: number;
     almacenamiento: string;
     tarifa: string;
-    MaterialArroyoDeCalle: string;
-    MaterialAcera: string;
     comentarios: string;
     aprobadoServ: boolean;
     matArroyoCalle: string;
     matAcera: string;
+    pagoServRealizado: boolean;
 }

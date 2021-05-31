@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="Solicitud de servicio">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/models/solicitudServ.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/models/solicitudServ.interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/resolvers/cliente.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/resolvers/cliente.query.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/cliente.query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/cliente.query.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/inputs/coleIndividuales.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/inputs/solicitudServ.input.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/query/cliente.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/query/cliente.query.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/types/coleIndividuales.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/types/solicitudServ.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +216,15 @@
       <workItem from="1622245575488" duration="1913000" />
       <workItem from="1622250707870" duration="640000" />
       <workItem from="1622251384622" duration="1353000" />
-      <workItem from="1622257488862" duration="602000" />
+      <workItem from="1622257488862" duration="859000" />
+      <workItem from="1622290766221" duration="2030000" />
+      <workItem from="1622296342634" duration="3520000" />
+      <workItem from="1622344119142" duration="1333000" />
+      <workItem from="1622363008149" duration="2842000" />
+      <workItem from="1622377954082" duration="1622000" />
+      <workItem from="1622388522593" duration="1073000" />
+      <workItem from="1622467573295" duration="5000" />
+      <workItem from="1622467662136" duration="4194000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -375,7 +387,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622247465978</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Solicitud de servicio">
+      <created>1622259397433</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1622259397433</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

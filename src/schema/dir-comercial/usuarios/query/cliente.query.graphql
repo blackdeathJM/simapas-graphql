@@ -1,4 +1,5 @@
 type Query
 {
     clientesPorCriterio(criterio: String): ResCliente
+    datosRef(noMedidor: String!): ResCliente
 }

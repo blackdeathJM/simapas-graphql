@@ -1,7 +1,7 @@
 import ResolversOperacionesService from "../../../services/resolver-operaciones";
 import {IContextData} from "../../../interfaces/context-data-interface";
 import {COLECCION} from "../../../config/global";
-import {respArreglosSPag} from "../../../services/respuestas-return";
+import {respArreglosSPag, respDocumento} from "../../../services/respuestas-return";
 
 export class ClienteQueryService extends ResolversOperacionesService
 {
@@ -23,5 +23,12 @@ export class ClienteQueryService extends ResolversOperacionesService
         {
             return {estatus: false, mensaje: 'no hay datos', elementos: null}
         }
+    }
+
+    async _datosRef(noMedidor: string)
+    {
+        const buscarRef = await this.buscarUnElemento(COLECCION.CLIENTES,
+            {contratos: {$elemMatch: {noMedidor}}}, {});
+        return respDocumento(buscarRef);
     }
 }

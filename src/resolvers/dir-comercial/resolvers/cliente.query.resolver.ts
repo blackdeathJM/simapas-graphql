@@ -5,9 +5,13 @@ export const queryCliente: IResolvers =
     {
         Query:
             {
-                clientesPorCriterio(_, {criterio}, {db})
+                async clientesPorCriterio(_, {criterio}, {db})
                 {
                     return new ClienteQueryService(_, {db})._clientesPorCriterio(criterio);
+                },
+                async datosRef(_, {noMedidor}, {db})
+                {
+                    return new ClienteQueryService(_, {db})._datosRef(noMedidor);
                 }
             }
     }
