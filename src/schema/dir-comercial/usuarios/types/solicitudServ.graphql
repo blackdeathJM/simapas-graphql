@@ -2,6 +2,7 @@ type SolicitudServType
 {
     _id: ID
     idCliente: String
+    cliente: ClienteType
     noPersonas: Int
     calle: String
     colonia: String
@@ -15,6 +16,8 @@ type SolicitudServType
     almacenamiento: String
     tarifa: String
     comentarios: String
+    observaciones: String
+    ejecutadaPor: String
     aprobadoServ: Boolean
     matArroyoCalle: String
     matAcera: String

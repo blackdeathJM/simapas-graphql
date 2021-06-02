@@ -14,6 +14,8 @@ input SolicitudServInput
     almacenamiento: String
     tarifa: String
     comentarios: String
+    observaciones: String
+    ejecutadaPor: String
     aprobadoServ: Boolean
     matArroyoCalle: String
     matAcera: String

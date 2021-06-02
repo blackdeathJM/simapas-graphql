@@ -8,6 +8,11 @@ export const mutationColeIndividuales: IResolvers =
                 async regSolicitudServ(_, {solicitudServ}, {db})
                 {
                     return new SolicitudesMutationService(_, {db})._regSolicitudServ(solicitudServ);
+                },
+                async aprovRechSolicitud(_, {_id, valor}, {db})
+                {
+                    return new SolicitudesMutationService(_, {db})._aprovRechSolicitud(_id, valor);
                 }
+
             }
     }

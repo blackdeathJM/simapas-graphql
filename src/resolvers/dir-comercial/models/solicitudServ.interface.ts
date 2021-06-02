@@ -15,6 +15,8 @@ export interface ISolicitudServ
     almacenamiento: string;
     tarifa: string;
     comentarios: string;
+    observaciones: string;
+    ejecutadaPor: string;
     aprobadoServ: boolean;
     matArroyoCalle: string;
     matAcera: string;

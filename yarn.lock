@@ -1407,10 +1407,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.17.47.tgz#cc88a242a835789456cfcf374928400d9f4b291c"
   integrity sha512-YZ1mMAdUPouBZCdeugjV8y1tqqr28OyL8DYbH5ePCfe9zcXtvbh1wDBy7uzlHkXo3Qi07kpzXfvycvrkby/jXw==
 
-"@types/node@^15.6.1":
-  version "15.6.1"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-15.6.1.tgz#32d43390d5c62c5b6ec486a9bc9c59544de39a08"
-  integrity sha512-7EIraBEyRHEe7CH+Fm1XvgqU6uwZN8Q7jppJGcqjROMT29qhAuuOxYB1uEY5UMYQKEmA5D+5tBnhdaPXSsLONA==
+"@types/node@^15.6.2":
+  version "15.6.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-15.6.2.tgz#c61d49f38af70da32424b5322eee21f97e627175"
+  integrity sha512-dxcOx8801kMo3KlU+C+/ctWrzREAH7YvoF3aoVpRdqgs+Kf7flp+PJDN/EX5bME3suDUZHsxes9hpvBmzYlWbA==
 
 "@types/object-path@^0.11.0":
   version "0.11.0"
@@ -2921,20 +2921,20 @@ graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0:
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
   integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
 
-graphql-compose-connection@^8.1.1:
-  version "8.1.1"
-  resolved "https://registry.yarnpkg.com/graphql-compose-connection/-/graphql-compose-connection-8.1.1.tgz#73030eb20180a49bc5985b299ba8f1c56c934440"
-  integrity sha512-j9fxsRFhepBP32JtyFrudNl/3bc1IVf8+ZWolQWTy8+wZ1YcZGHu2gU1hyCUt2rNYTcUAQ285aYOR9T6/rOSCQ==
+graphql-compose-connection@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/graphql-compose-connection/-/graphql-compose-connection-8.2.0.tgz#0046c4b161823b549efdd99a208d665624edb086"
+  integrity sha512-41tMBvYruKsGFiR9e3JuLLplq5EoB6Y8CbVPx2KA4rfKAG5MLnY3kl64QPZALK9yzOxPVfN3AFPK1whWgm20CQ==
 
-graphql-compose-pagination@^8.1.0:
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/graphql-compose-pagination/-/graphql-compose-pagination-8.1.0.tgz#f2d5d65b945122acee872db5827535eee8358e59"
-  integrity sha512-JfxjRXO/TfE7qMJJePzI+dMuJ60EQkeOclkOYdImwJ9k74PIdkawC53jnMpUyEqnYur1qcM/lIFoCMwm3CD9Ow==
+graphql-compose-pagination@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/graphql-compose-pagination/-/graphql-compose-pagination-8.2.0.tgz#8fb28b54c794a9ed541c810791323c95dddc3288"
+  integrity sha512-qKJr+zeTgU1LASL3+LzKAk4Wu9PNyomPl/hxaJzLlPQSY3s9RfogYr369/OrazINCoJ9xNqORV3fRwkQWhLK3g==
 
-graphql-compose@^8.1.0:
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/graphql-compose/-/graphql-compose-8.1.0.tgz#d58375ba59a1471c2bbe17ad817c6d33bffa1ba9"
-  integrity sha512-vaoD/4m4biGYIUmIPzYPAq0DgQ4cPvcOtuf4lDPD6IxX+o6oQS8BPWIXPIBa3C9VPriNzpUapiOCQYQvAN+2iA==
+graphql-compose@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/graphql-compose/-/graphql-compose-9.0.0.tgz#5f90432c64e2fcfdac2a987959812c09dfc7ab30"
+  integrity sha512-278GbRLoQqjKl2S7oP6we/e2MJWkLEpVb84gslSG3fHS8Y+OvafxAWfEbJ2qBDC62O27P4AwKEWO9/9O67VR8A==
   dependencies:
     "@types/object-path" "^0.11.0"
     graphql-type-json "0.3.2"

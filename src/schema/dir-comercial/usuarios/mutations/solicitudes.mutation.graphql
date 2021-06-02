@@ -1,4 +1,5 @@
 type Mutation
 {
     regSolicitudServ(solicitudServ: SolicitudServInput): ResSolicitudServ
+    aprovRechSolicitud(_id: ID!, valor: Boolean!): ResSolicitudServ
 }
