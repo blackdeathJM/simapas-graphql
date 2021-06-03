@@ -3,15 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="Solicitud de servicio">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/models/solicitudServ.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/models/solicitudServ.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/resolvers/solicitudes.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/resolvers/solicitudes.mutation.resolver.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/solicitudes.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/solicitudes.mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/tipos.type.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/tipos.type.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/inputs/solicitudServ.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/inputs/solicitudServ.input.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/mutations/solicitudes.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/mutations/solicitudes.mutation.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/types/solicitudServ.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/types/solicitudServ.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +223,9 @@
       <workItem from="1622597482526" duration="74000" />
       <workItem from="1622597645787" duration="1043000" />
       <workItem from="1622636664027" duration="3321000" />
-      <workItem from="1622646307413" duration="10083000" />
+      <workItem from="1622646307413" duration="10108000" />
+      <workItem from="1622735237497" duration="646000" />
+      <workItem from="1622736288896" duration="2083000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -408,7 +402,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622497374508</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Solicitud de servicio">
+      <created>1622669923042</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1622669923042</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

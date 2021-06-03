@@ -22,7 +22,7 @@ export class SolicitudesMutationService extends ResolversOperacionesService
     {
         const res = await this.buscarUnoYActualizar(COLECCION.SOLICITUDES,
             {_id: new ObjectId(_id)},
-            {$set: {pagoServRealizado: valor, observaciones: 'Preuba de observaciones'}}, {returnDocument: "after"});
+            {$set: {pagoServRealizado: valor}}, {returnDocument: "after"});
         return respDocumento(res);
     }
 }
