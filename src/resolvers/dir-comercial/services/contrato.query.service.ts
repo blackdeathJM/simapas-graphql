@@ -3,8 +3,8 @@ import {IContextData} from "../../../interfaces/context-data-interface";
 
 export class ContratoQueryService extends ResolversOperacionesService
 {
-    constructor(root: object, variables: object, context: IContextData)
+    constructor(root: object, context: IContextData)
     {
-        super(root, variables, context);
+        super(root, context);
     }
 }
