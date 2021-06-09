@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="Solicitud de servicio">
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="trabajando en folios">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/departamentos/services/departamento-query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/departamentos/services/departamento-query.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/resultados/resultados.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/resultados/resultados.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +51,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/build/schema/presidencia/docExterna/docExterna.graphql" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/public/uploads/temp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/public/uploads/per" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -64,9 +66,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\per" />
       <recent name="D:\Documents\proyectos\backend\simapas-graphql\src\public\uploads\temp" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\perfil" />
-      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\per" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Documents\proyectos\backend\simapas-graphql\src\resolvers" />
@@ -225,6 +227,10 @@
       <workItem from="1622646307413" duration="10108000" />
       <workItem from="1622735237497" duration="646000" />
       <workItem from="1622736288896" duration="2083000" />
+      <workItem from="1623173592286" duration="697000" />
+      <workItem from="1623179871208" duration="1203000" />
+      <workItem from="1623188695631" duration="3537000" />
+      <workItem from="1623201679127" duration="682000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>

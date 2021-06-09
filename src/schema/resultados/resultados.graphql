@@ -21,9 +21,9 @@ type ResInstalacionSPag
     documento: InstalacionType
     documentos: [InstalacionType]
 }
+
 type RespDepto
 {
-    info: InfoPaginacion
     estatus: Boolean!
     mensaje: String!
     documento: DeptoType
