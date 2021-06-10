@@ -25,4 +25,12 @@ export class SolicitudesMutationService extends ResolversOperacionesService
             {$set: {pagoServRealizado: valor}}, {returnDocument: "after"});
         return respDocumento(res);
     }
+
+    async _actualizarSolicitud(_id: string, observaciones: string, aprobadoServ: boolean, ejecutadaPor: string)
+    {
+        const res = await this.buscarUnoYActualizar(COLECCION.SOLICITUDES,
+            {_id: new ObjectId(_id)}, {$set: {observaciones, aprobadoServ, ejecutadaPor}}, {returnDocument: "after"});
+
+        return respDocumento(res);
+    }
 }

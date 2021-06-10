@@ -12,7 +12,10 @@ export const mutationColeIndividuales: IResolvers =
                 async aprovRechSolicitud(_, {_id, valor}, {db})
                 {
                     return new SolicitudesMutationService(_, {db})._aprovRechSolicitud(_id, valor);
+                },
+                async actualizarSolicitud(_, {_id, observaciones, aprobadoServ, ejecutadaPor}, {db})
+                {
+                    return new SolicitudesMutationService(_, {db})._actualizarSolicitud(_id, observaciones, aprobadoServ, ejecutadaPor);
                 }
-
             }
     }
