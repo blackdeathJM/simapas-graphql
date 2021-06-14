@@ -56,7 +56,6 @@ export interface IContrato
     fechaAlta: string;
     sector: number;
     ruta: number;
-    giro: string;
     zona: string;
     activo: boolean;
     esPrincipal: boolean;

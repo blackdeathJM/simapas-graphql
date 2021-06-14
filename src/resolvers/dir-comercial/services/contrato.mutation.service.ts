@@ -16,7 +16,6 @@ export class ContratoMutationService extends ResolversOperacionesService
     async _regContrato(idCliente: string, contrato: IContrato)
     {
         contrato.rpu = randomUUID().toUpperCase();
-
         const regContrato = await this.buscarUnoYActualizar(COLECCION.CLIENTES, {_id: new ObjectId(idCliente)},
             {$addToSet: {contratos: contrato}}, {returnDocument: "after"});
         return respDocumento(regContrato);

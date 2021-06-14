@@ -21,7 +21,6 @@ type ContratoType
     fechaAlta: String
     sector: Int
     ruta: Int
-    giro: String
     zona: String
     activo: Boolean
     esPrincipal: Boolean
