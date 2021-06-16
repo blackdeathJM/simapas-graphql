@@ -25,7 +25,7 @@ export class NotificacionMutationService extends ResolversOperacionesService
 
     async _eliminarNotificacion(_id: string)
     {
-        return await this.buscarUnoYEleminiar(COLECCION.NOT, {_id: new ObjectId(_id)}, {}).then(
+        return await this.buscarUnoYEliminar(COLECCION.NOT, {_id: new ObjectId(_id)}, {}).then(
             resultado =>
             {
                 return respDocumento(resultado);

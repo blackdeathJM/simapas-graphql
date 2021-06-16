@@ -105,7 +105,7 @@ class UsuarioMutationService extends ResolversOperacionesService
 
     async _eliminarUsuario(_id: string)
     {
-        const resultado = await this.buscarUnoYEleminiar(COLECCION.USUARIOS, {_id: new ObjectId(_id)}, {});
+        const resultado = await this.buscarUnoYEliminar(COLECCION.USUARIOS, {_id: new ObjectId(_id)}, {});
         return {estatus: resultado.estatus, mensaje: resultado.mensaje, usuario: resultado.elemento}
     }
 }

@@ -242,7 +242,7 @@ class ResolversOperacionesService
         return await this.context.db?.collection(coleccion).aggregate(agregacion).toArray();
     }
 
-    protected async buscarUnoYEleminiar(coleccion: string, filtro: object, opciones: object)
+    protected async buscarUnoYEliminar(coleccion: string, filtro: object, opciones: object)
     {
         try
         {

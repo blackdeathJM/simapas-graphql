@@ -12,9 +12,9 @@ export const mutationCliente: IResolvers =
                     return new ClienteMutationService(_,  {db})._regCliente(cliente);
                 },
                 // ==============CONTRATOS=====================================
-                async regContrato(_, {idCliente, contrato}, {db})
+                async regContrato(_, {idCliente, contrato, idSolicitud}, {db})
                 {
-                    return new ContratoMutationService(_,  {db})._regContrato(idCliente, contrato);
+                    return new ContratoMutationService(_,  {db})._regContrato(idCliente, contrato, idSolicitud);
                 }
             }
     }
