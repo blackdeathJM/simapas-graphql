@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="trabajando en folios">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/resolvers/cliente.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/resolvers/cliente.mutation.resolver.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/contrato.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/contrato.mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/notificaciones/services/notificacion.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/notificaciones/services/notificacion.mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/mutations/cliente.mutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/dir-comercial/usuarios/mutations/cliente.mutation.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +241,12 @@
       <workItem from="1623636344746" duration="3424000" />
       <workItem from="1623658880208" duration="7761000" />
       <workItem from="1623700477104" duration="3525000" />
-      <workItem from="1623797927965" duration="8105000" />
+      <workItem from="1623797927965" duration="8251000" />
+      <workItem from="1623853828587" duration="5879000" />
+      <workItem from="1623868909300" duration="211000" />
+      <workItem from="1624297149394" duration="3000" />
+      <workItem from="1624314086165" duration="3018000" />
+      <workItem from="1624322466309" duration="632000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -451,7 +451,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623640037793</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="trabajando en folios">
+      <created>1623813115678</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1623813115678</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

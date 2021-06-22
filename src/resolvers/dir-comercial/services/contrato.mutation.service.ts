@@ -16,17 +16,39 @@ export class ContratoMutationService extends ResolversOperacionesService
 
     async _regContrato(idCliente: string, contrato: IContrato, idSolicitud: string)
     {
-        contrato.rpu = randomUUID().toUpperCase();
         contrato.fechaAlta = moment().toISOString();
-        contrato.noContrato = randomInt(10000000).toString();
         contrato.activo = true;
-        const regContrato = await this.buscarUnoYActualizar(COLECCION.CLIENTES, {_id: new ObjectId(idCliente)},
-            {$addToSet: {contratos: contrato}}, {returnDocument: "after"});
+
+        let bucle = true;
+        do
+        {
+            contrato.rpu = await randomUUID().toUpperCase();
+            contrato.noContrato = await randomInt(10000000).toString();
+
+            let res = await this.buscarUnElemento(COLECCION.CLIENTES, {contratos: {$elemMatch: {$or: [{rpu: contrato.rpu, noContrato: contrato.noContrato}]}}}, {});
+            console.log(res);
+            bucle = res.estatus
+        } while (bucle);
+
 
         const eliminarSolicitud = await this.buscarUnoYEliminar(COLECCION.SOLICITUDES, {_id: new ObjectId(idSolicitud)}, {});
+        console.log('Eliminar', eliminarSolicitud);
 
+        if (eliminarSolicitud.estatus)
+        {
+            const regContrato = await this.buscarUnoYActualizar(COLECCION.CLIENTES, {_id: new ObjectId(idCliente)},
+                {$addToSet: {contratos: contrato}}, {returnDocument: "after"});
 
-        return respDocumento(regContrato);
+            return respDocumento(regContrato);
+
+        } else
+        {
+            return {
+                estatus: false,
+                mensaje: 'No se pudo eliminar la solicitud',
+                documento: null
+            }
+        }
     }
 
     // async contratoAleatorio(num: number): Promise<string>
