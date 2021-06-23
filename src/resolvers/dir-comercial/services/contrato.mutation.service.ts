@@ -1,11 +1,12 @@
 import ResolversOperacionesService from "../../../services/resolver-operaciones";
 import {IContrato} from "../models/cliente.interface";
 import {COLECCION} from "../../../config/global";
-import {ObjectId} from "bson";
+import {ObjectId, Timestamp} from "bson";
 import {respDocumento} from "../../../services/respuestas-return";
 import {IContextData} from "../../../interfaces/context-data-interface";
 import {randomUUID, randomInt} from "crypto";
 import moment from "moment";
+import {ClientSession, Db, MongoCallback, TransactionOptions, WithTransactionCallback} from "mongodb";
 
 export class ContratoMutationService extends ResolversOperacionesService
 {
@@ -14,10 +15,11 @@ export class ContratoMutationService extends ResolversOperacionesService
         super(root, context);
     }
 
-    async _regContrato(idCliente: string, contrato: IContrato, idSolicitud: string)
+    async _regContrato(idCliente: string, contrato: IContrato, idSolicitud: string, db: Db)
     {
         contrato.fechaAlta = moment().toISOString();
         contrato.activo = true;
+
 
         let bucle = true;
         do

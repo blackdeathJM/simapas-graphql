@@ -14,7 +14,7 @@ export const mutationCliente: IResolvers =
                 // ==============CONTRATOS=====================================
                 async regContrato(_, {idCliente, contrato, idSolicitud}, {db})
                 {
-                    return new ContratoMutationService(_,  {db})._regContrato(idCliente, contrato, idSolicitud);
+                    return new ContratoMutationService(_,  {db})._regContrato(idCliente, contrato, idSolicitud, db);
                 }
             }
     }
