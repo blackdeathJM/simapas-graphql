@@ -43,11 +43,6 @@ export class ContratoMutationService extends ResolversOperacionesService
 
         try
         {
-            // const transaccionResultado = await session.withTransaction(async () =>
-            // {
-            //     console.log('entro en la transacción', session)
-            // }, opcionesTran);
-
             session.startTransaction(opcionesTran);
 
             const eliminarSolicitud = await this.buscarUnoYEliminar(COLECCION.SOLICITUDES, {_id: new ObjectId(idSolicitud)}, {session});

@@ -2,7 +2,6 @@ import ResolversOperacionesService from "../../../services/resolver-operaciones"
 import {IContextData} from "../../../interfaces/context-data-interface";
 import {COLECCION} from "../../../config/global";
 import {respArreglosSPag, respDocumento} from "../../../services/respuestas-return";
-import {ICliente} from "../models/cliente.interface";
 import {findIndex} from "lodash";
 
 export class ClienteQueryService extends ResolversOperacionesService
@@ -31,10 +30,9 @@ export class ClienteQueryService extends ResolversOperacionesService
     {
         const buscarRef = await this.buscarUnElemento(COLECCION.CLIENTES,
             {contratos: {$elemMatch: {noMedidor: noMedidor}}}, {});
-        // let cliente = buscarRef.elemento as ICliente;
-        // cliente.contratos = cliente.contratos.filter(v => v.noMedidor === noMedidor);
+
+        console.log('ref', buscarRef);
         const indice = findIndex(buscarRef.elemento.contratos, (idx: any) => idx.noMedidor === noMedidor);
-        console.log('indice', indice);
         buscarRef.elemento.contratos.splice(indice, 1);
         console.log(buscarRef.elemento.contratos);
         return respDocumento(buscarRef);
