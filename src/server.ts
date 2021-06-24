@@ -19,7 +19,7 @@ async function init()
 
     const pubsub = new PubSub();
     const database = new Database();
-    const db = await database.init();
+    const {db, tr} = await database.init();
     // const corsOpts = cors({origin: '*', credentials: false});
     //
     // app.use(corsOpts);
@@ -46,7 +46,7 @@ async function init()
     {
         const token = (req) ? req.headers.authorization : connection.authorization;
         const contexto = (req) ? req.headers.context : connection.context;
-        return {db, token, pubsub, contexto};
+        return {db, token, pubsub, contexto, tr};
     };
     const server = new ApolloServer({
         schema,
@@ -76,4 +76,4 @@ async function init()
     );
 }
 
-init().then();
+init().catch(e => console.log(e));

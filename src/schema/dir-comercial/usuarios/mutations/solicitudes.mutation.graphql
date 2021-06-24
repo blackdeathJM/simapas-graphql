@@ -1,6 +1,6 @@
 type Mutation
 {
     regSolicitudServ(solicitudServ: SolicitudServInput): ResSolicitudServ
-    aprovRechSolicitud(_id: ID!, valor: Boolean!): ResSolicitudServ
+    realizarPago(_id: ID!, valor: Boolean!): ResSolicitudServ
     actualizarSolicitud(_id: ID!, observaciones: String, aprobadoServ: Boolean!, ejecutadaPor: String!): ResSolicitudServ
 }

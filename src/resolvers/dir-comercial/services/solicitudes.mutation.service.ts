@@ -18,7 +18,7 @@ export class SolicitudesMutationService extends ResolversOperacionesService
         return respDocumento(regSolicitud);
     }
 
-    async _aprovRechSolicitud(_id: string, valor: boolean)
+    async _realizarPago(_id: any, valor: any)
     {
         const res = await this.buscarUnoYActualizar(COLECCION.SOLICITUDES,
             {_id: new ObjectId(_id)},

@@ -9,9 +9,9 @@ export const mutationColeIndividuales: IResolvers =
                 {
                     return new SolicitudesMutationService(_, {db})._regSolicitudServ(solicitudServ);
                 },
-                async aprovRechSolicitud(_, {_id, valor}, {db})
+                async realizarPago(_, {_id, valor}, {db})
                 {
-                    return new SolicitudesMutationService(_, {db})._aprovRechSolicitud(_id, valor);
+                    return new SolicitudesMutationService(_, {db})._realizarPago(_id, valor);
                 },
                 async actualizarSolicitud(_, {_id, observaciones, aprobadoServ, ejecutadaPor}, {db})
                 {

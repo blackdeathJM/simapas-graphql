@@ -1,12 +1,12 @@
 import ResolversOperacionesService from "../../../services/resolver-operaciones";
 import {IContrato} from "../models/cliente.interface";
 import {COLECCION} from "../../../config/global";
-import {ObjectId, Timestamp} from "bson";
+import {ObjectId} from "bson";
 import {respDocumento} from "../../../services/respuestas-return";
 import {IContextData} from "../../../interfaces/context-data-interface";
 import {randomUUID, randomInt} from "crypto";
 import moment from "moment";
-import {ClientSession, Db, MongoCallback, TransactionOptions, WithTransactionCallback} from "mongodb";
+import {MongoClient, TransactionOptions} from "mongodb";
 
 export class ContratoMutationService extends ResolversOperacionesService
 {
@@ -15,7 +15,7 @@ export class ContratoMutationService extends ResolversOperacionesService
         super(root, context);
     }
 
-    async _regContrato(idCliente: string, contrato: IContrato, idSolicitud: string, db: Db)
+    async _regContrato(idCliente: string, contrato: IContrato, idSolicitud: string, tr: MongoClient)
     {
         contrato.fechaAlta = moment().toISOString();
         contrato.activo = true;
@@ -32,35 +32,60 @@ export class ContratoMutationService extends ResolversOperacionesService
         } while (bucle);
 
 
-        const eliminarSolicitud = await this.buscarUnoYEliminar(COLECCION.SOLICITUDES, {_id: new ObjectId(idSolicitud)}, {});
+        const session = tr.startSession();
 
-        if (eliminarSolicitud.estatus)
+        const opcionesTran: TransactionOptions =
+            {
+                readPreference: 'primary',
+                readConcern: {level: 'local'},
+                writeConcern: {w: 'majority'}
+            };
+
+        try
         {
-            const regContrato = await this.buscarUnoYActualizar(COLECCION.CLIENTES, {_id: new ObjectId(idCliente)},
-                {$addToSet: {contratos: contrato}}, {returnDocument: "after"});
+            // const transaccionResultado = await session.withTransaction(async () =>
+            // {
+            //     console.log('entro en la transacción', session)
+            // }, opcionesTran);
 
-            return respDocumento(regContrato);
+            session.startTransaction(opcionesTran);
 
-        } else
+            const eliminarSolicitud = await this.buscarUnoYEliminar(COLECCION.SOLICITUDES, {_id: new ObjectId(idSolicitud)}, {session});
+            console.log(eliminarSolicitud);
+
+            if (eliminarSolicitud.elemento)
+            {
+                const regContrato = await this.buscarUnoYActualizar(COLECCION.CLIENTES, {_id: new ObjectId(idCliente)},
+                    {$addToSet: {contratos: contrato}}, {returnDocument: "after", session});
+
+                if (regContrato.elemento)
+                {
+                    await session.commitTransaction();
+                    return respDocumento(regContrato);
+                } else
+                {
+                    await session.abortTransaction();
+                }
+            } else
+            {
+                return {
+                    estatus: false,
+                    mensaje: 'No se encontro solicitud de servicio, para generar el contrato',
+                    elemento: null
+                }
+            }
+
+        } catch (e)
         {
             return {
                 estatus: false,
-                mensaje: 'No se pudo eliminar la solicitud',
-                documento: null
+                mensaje: e,
+                elemento: null
             }
+        } finally
+        {
+            session.endSession();
         }
-    }
 
-    // async contratoAleatorio(num: number): Promise<string>
-    // {
-    //     const caracteres = '0123456789';
-    //     let resultado = '';
-    //     const longitud = caracteres.length;
-    //
-    //     for (let i = 0; i < num; i++)
-    //     {
-    //         resultado += caracteres.charAt(Math.floor(Math.random() * longitud));
-    //     }
-    //     return resultado;
-    // }
+    }
 }
