@@ -36,7 +36,7 @@ export class ClienteQueryService extends ResolversOperacionesService
         const indice = findIndex(buscarRef.elemento.contratos, (idx: any) => idx.noMedidor === noMedidor);
         console.log('indice', indice);
         buscarRef.elemento.contratos.splice(indice, 1);
-        console.log(buscarRef);
+        console.log(buscarRef.elemento.contratos);
         return respDocumento(buscarRef);
     }
 }
