@@ -31,10 +31,11 @@ export class ClienteQueryService extends ResolversOperacionesService
         const buscarRef = await this.buscarUnElemento(COLECCION.CLIENTES,
             {contratos: {$elemMatch: {noMedidor: noMedidor}}}, {});
 
-        console.log('ref', buscarRef);
-        const indice = findIndex(buscarRef.elemento.contratos, (idx: any) => idx.noMedidor === noMedidor);
-        buscarRef.elemento.contratos.splice(indice, 1);
-        console.log(buscarRef.elemento.contratos);
+        if (buscarRef.estatus)
+        {
+            const indice = findIndex(buscarRef.elemento.contratos, (idx: any) => idx.noMedidor === noMedidor);
+            buscarRef.elemento.contratos = buscarRef.elemento.contratos.splice(indice, 1)
+        }
         return respDocumento(buscarRef);
     }
 }
