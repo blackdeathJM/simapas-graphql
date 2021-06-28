@@ -46,7 +46,6 @@ export class ContratoMutationService extends ResolversOperacionesService
             session.startTransaction(opcionesTran);
 
             const eliminarSolicitud = await this.buscarUnoYEliminar(COLECCION.SOLICITUDES, {_id: new ObjectId(idSolicitud)}, {session});
-            console.log(eliminarSolicitud);
 
             if (eliminarSolicitud.elemento)
             {
