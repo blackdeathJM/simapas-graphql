@@ -1,6 +1,7 @@
 import {IContextData} from "../interfaces/context-data-interface";
 import {paginacion} from "../lib/paginacion";
 import {IPaginacion} from "../interfaces/paginacion-interface";
+import {Sort} from "mongodb";
 
 class ResolversOperacionesService
 {
@@ -10,7 +11,7 @@ class ResolversOperacionesService
     {
     }
 
-    protected async buscarSinPaginacion(coleccion: string, filtro: object, opciones: object, ordenar: object)
+    protected async buscarSinPaginacion(coleccion: string, filtro: object, opciones: object, ordenar: Sort)
     {
         try
         {
@@ -44,7 +45,7 @@ class ResolversOperacionesService
         }
     }
 
-    protected async buscar(coleccion: string, filtro: object, opciones: object, ordenar: object)
+    protected async buscar(coleccion: string, filtro: object, opciones: object, ordenar: Sort)
     {
         try
         {
@@ -148,10 +149,11 @@ class ResolversOperacionesService
             return await this.context.db!.collection(coleccion).insertOne(documento, opciones).then(
                 (res) =>
                 {
+                    console.log('agregar', res);
                     return {
                         estatus: true,
                         mensaje: `Un documento se ha insertado correctamente`,
-                        elemento: res.ops[0]
+                        elemento: null
                     }
                 }
             ).catch(
@@ -174,42 +176,42 @@ class ResolversOperacionesService
         }
     }
 
-    protected async agregarVarios(coleccion: string, documento: object[], opciones: object)
-    {
-        try
-        {
-            return await this.context.db!.collection(coleccion).insertMany(documento, opciones).then((res) =>
-            {
-                console.log('insertar muchos', res);
-                return {
-                    estatus: true,
-                    mensaje: 'Documentos insertados correctamente',
-                    elemento: res.ops
-                }
-            }).catch((e) =>
-            {
-                return {
-                    estatus: false,
-                    mensaje: e,
-                    elemento: null
-                }
-            })
-        } catch (e)
-        {
-            return {
-                estatus: false,
-                mensaje: 'Ocurrio un error inesperado al tratar de registrar los multiples documentos',
-                elemento: null
-            }
-        }
-    }
+    // protected async agregarVarios(coleccion: string, documento: object[], opciones: object)
+    // {
+    //     try
+    //     {
+    //         return await this.context.db!.collection(coleccion).insertMany(documento, opciones).then((res) =>
+    //         {
+    //             console.log('respuesta', res);
+    //             return {
+    //                 estatus: true,
+    //                 mensaje: 'Documentos insertados correctamente',
+    //                 elemento: res.ops
+    //             }
+    //         }).catch((e) =>
+    //         {
+    //             return {
+    //                 estatus: false,
+    //                 mensaje: e,
+    //                 elemento: null
+    //             }
+    //         })
+    //     } catch (e)
+    //     {
+    //         return {
+    //             estatus: false,
+    //             mensaje: 'Ocurrio un error inesperado al tratar de registrar los multiples documentos',
+    //             elemento: null
+    //         }
+    //     }
+    // }
 
     protected async buscarUnoYActualizar(coleccion: string, filtro: object, actualizar: object, opciones: object)
     {
         try
         {
             return await this.context.db!.collection(coleccion).findOneAndUpdate(filtro, actualizar, opciones).then(
-                res =>
+                (res) =>
                 {
                     return {
                         estatus: true,
@@ -239,7 +241,7 @@ class ResolversOperacionesService
 
     protected async agregacion(coleccion: string, agregacion: object[])
     {
-        return await this.context.db?.collection(coleccion).aggregate(agregacion).toArray();
+        return this.context.db?.collection(coleccion).aggregate(agregacion).toArray();
     }
 
     protected async buscarUnoYEliminar(coleccion: string, filtro: object, opciones: object)

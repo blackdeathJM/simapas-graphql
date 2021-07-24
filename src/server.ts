@@ -1,7 +1,8 @@
-import express from 'express';
+import express, {json} from 'express';
 import compression from 'compression';
 import bodyParser from 'body-parser';
-import {ApolloServer, PubSub} from "apollo-server-express";
+import {ApolloServer} from "apollo-server-express";
+import {PubSub} from 'graphql-subscriptions';
 import {createServer} from 'http';
 import Database from "./config/database";
 import path from "path";
@@ -9,20 +10,17 @@ import {router} from "./configMuter/docs.routes";
 import {IContext} from "./interfaces/context-interface";
 import schema from "./schema";
 import {graphqlHTTP} from "express-graphql";
+import {SubscriptionServer} from "subscriptions-transport-ws";
+import {execute, subscribe} from "graphql";
 
 async function init()
 {
     const app = express();
-    // const emitirEvento = new EventEmitter();
-    // emitirEvento.setMaxListeners(1000);
-    // const pubsub = new PubSub({eventEmitter: emitirEvento});
 
     const pubsub = new PubSub();
     const database = new Database();
     const {db, tr} = await database.init();
-    // const corsOpts = cors({origin: '*', credentials: false});
-    //
-    // app.use(corsOpts);
+
     app.use(compression());
     app.use(bodyParser.json()).use(bodyParser.urlencoded({extended: true}));
     app.use(express.static(path.join(__dirname, 'public')));
@@ -48,13 +46,13 @@ async function init()
         const contexto = (req) ? req.headers.context : connection.context;
         return {db, token, pubsub, contexto, tr};
     };
+
     const server = new ApolloServer({
         schema,
         context,
-        playground: true,
         introspection: true
     });
-
+    await server.start();
     server.applyMiddleware({app});
 
     // app.get('/', expressPlayground({endpoint: '/graphql'}));
@@ -63,15 +61,18 @@ async function init()
     app.use('/file', router);
 
     const httpServer = createServer(app);
+    const subscriptionServer = SubscriptionServer.create({schema, execute, subscribe}, {server: httpServer, path: server.graphqlPath});
+
+    ['SIGINT', 'SIGTERM'].forEach(signal => {process.on(signal, () => subscriptionServer.close())});
+
     const PORT = process.env.PORT || 5003;
-    server.installSubscriptionHandlers(httpServer);
     httpServer.listen({port: 5002}, () =>
         {
             console.log('env', process.env.BASEDATOS);
             console.log('==============================SERVIDOR============================');
             console.log(`Sistema comercial Graphql http://localhost:${PORT}${server.graphqlPath}`);
             console.log('==============================SOCKET============================');
-            console.log(`Sistema comercial susbcripciones con Graphql ws://localhost:${PORT}${server.subscriptionsPath}`);
+            console.log(`Sistema comercial susbcripciones con Graphql ws://localhost:${PORT}${server}`);
         }
     );
 }

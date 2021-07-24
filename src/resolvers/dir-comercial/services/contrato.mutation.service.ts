@@ -6,7 +6,7 @@ import {respDocumento} from "../../../services/respuestas-return";
 import {IContextData} from "../../../interfaces/context-data-interface";
 import {randomUUID, randomInt} from "crypto";
 import moment from "moment";
-import {MongoClient, TransactionOptions} from "mongodb";
+import {MongoClient, ReadConcern, ReadPreference, TransactionOptions} from "mongodb";
 
 export class ContratoMutationService extends ResolversOperacionesService
 {
@@ -34,16 +34,20 @@ export class ContratoMutationService extends ResolversOperacionesService
 
         const session = tr.startSession();
 
-        const opcionesTran: TransactionOptions =
-            {
-                readPreference: 'primary',
-                readConcern: {level: 'local'},
-                writeConcern: {w: 'majority'}
-            };
+        // const opcionesTran: TransactionOptions =
+        //     {
+        //         readPreference: ReadPreference.fromString('primary'),
+        //         readConcern: {level: "available"},
+        //         writeConcern: {w: "majority"}
+        //
+        //         readPreference: 'primary',
+        //             readConcern: {level: 'local'},
+        //         writeConcern: {w: 'majority'}
+        //     };
 
         try
         {
-            session.startTransaction(opcionesTran);
+            session.startTransaction();
 
             const eliminarSolicitud = await this.buscarUnoYEliminar(COLECCION.SOLICITUDES, {_id: new ObjectId(idSolicitud)}, {session});
 
@@ -78,7 +82,7 @@ export class ContratoMutationService extends ResolversOperacionesService
             }
         } finally
         {
-            session.endSession();
+            await session.endSession();
         }
 
     }

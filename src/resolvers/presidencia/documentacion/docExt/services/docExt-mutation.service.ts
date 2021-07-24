@@ -66,7 +66,7 @@ class DocExtMutationService extends ResolversOperacionesService
             async resultado =>
             {
                 const usuarios: string[] = [];
-                resultado.elemento.usuarioDestino.forEach((u: IUsuarioDestinoDocExt) =>
+                resultado.elemento?.usuarioDestino.forEach((u: IUsuarioDestinoDocExt) =>
                 {
                     usuarios.push(u.usuario);
                 });

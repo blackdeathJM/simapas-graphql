@@ -1,6 +1,6 @@
 import {IResolvers} from "graphql-tools";
 import {PUB_SUB} from "../../config/global";
-import {withFilter} from "apollo-server-express";
+import {withFilter} from 'graphql-subscriptions';
 
 const usuarioSubscriptionResolver: IResolvers =
     {

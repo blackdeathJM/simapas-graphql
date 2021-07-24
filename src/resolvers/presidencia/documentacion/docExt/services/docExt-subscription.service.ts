@@ -1,6 +1,6 @@
 import {Db} from "mongodb";
 import {PUB_SUB} from "../../../../../config/global";
-import {PubSub} from 'apollo-server-express'
+import {PubSub} from 'graphql-subscriptions';
 import DocExtQueryService from "./docExt-query.service";
 import DocUsuarioQueryService from "../../../../usuarios/documentos/services/doc-usuario-query.service";
 import {subprocesos} from "../models/constantes";

@@ -1,4 +1,4 @@
-import {PubSub} from "apollo-server";
+import {PubSub} from 'graphql-subscriptions';
 import {Db} from "mongodb";
 import {NotificacionQueryService} from "./notificacion.query.service";
 import {PUB_SUB} from "../../../../config/global";

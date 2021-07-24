@@ -55,7 +55,7 @@ class DocUsuarioMutationService extends ResolversOperacionesService
         documento.folio = await formatoFolio(documento.folio, documento.tipoDoc, this.context.db!);
 
         return await this.agregarUnElemento(COLECCION.DOC_EXTERNA, documento, {}).then(
-            async resultado =>
+            async (resultado: any) =>
             {
                 if (refDoc)
                 {
@@ -84,7 +84,7 @@ class DocUsuarioMutationService extends ResolversOperacionesService
         const usuarios: string[] = [];
         const resultado = await this.buscarUnElemento(COLECCION.DOC_EXTERNA, {_id: new ObjectId(_id)}, {});
 
-        resultado.elemento.usuarioDestino.forEach((u: IUsuarioDestinoDocExt) => usuarios.push(u.usuario));
+        resultado.elemento?.usuarioDestino.forEach((u: IUsuarioDestinoDocExt) => usuarios.push(u.usuario));
         const folio = await formatoFolio(centroGestor, 'OFICIO', this.context.db!);
         return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA,
             {_id: new ObjectId(_id), usuarioDestino: {$elemMatch: {usuario}}},

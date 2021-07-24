@@ -1,5 +1,5 @@
 import {IResolvers} from "graphql-tools";
-import {withFilter} from "apollo-server-express";
+import {withFilter} from 'graphql-subscriptions';
 import {PUB_SUB} from "../../../config/global";
 import {INotificacion} from "./model/notificacion.interface";
 

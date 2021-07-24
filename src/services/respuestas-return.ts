@@ -1,3 +1,5 @@
+import {Document} from "bson";
+
 export function respArreglosPag(resultado: {
         estatus: boolean; elementos: object; mensaje: string;
         info: { pagina: number; saltar: number; paginas: number; total: number; elementosPorPagina: number }
@@ -23,7 +25,8 @@ export function respArreglosSPag(resultado: {
     }
 }
 
-export function respDocumento(resultado: { elemento: object; estatus: boolean; mensaje: string } | { elemento: null; estatus: boolean; mensaje: string })
+export function respDocumento(resultado: { elemento: Document | undefined; estatus: boolean; mensaje: string } |
+    { elemento: null; estatus: boolean; mensaje: string })
 {
-    return {estatus: resultado!.estatus, mensaje: resultado!.mensaje, documento: resultado!.elemento};
+    return {resultado};
 }

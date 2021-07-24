@@ -7,7 +7,7 @@ const queryDeptos: IResolvers =
             {
                 async obtenerDeptos(_, {}, {db})
                 {
-                    return new DepartamentoQueryService(_, {db}).listaElementos();
+                    return new DepartamentoQueryService(_, {db})._obtenerDeptos();
                 },
                 async departamentoID(_, {_id}, {db})
                 {

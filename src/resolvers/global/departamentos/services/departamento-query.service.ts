@@ -9,7 +9,7 @@ class DepartamentoQueryService extends ResolversOperacionesService
     constructor(root: object, context: IContextData)
     {super(root, context);}
 
-    async listaElementos()
+    async _obtenerDeptos()
     {
         const resultado = await this.buscarSinPaginacion(COLECCION.DEPARTAMENTOS, {}, {}, {});
         return respArreglosSPag(resultado);

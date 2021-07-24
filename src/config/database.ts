@@ -1,6 +1,5 @@
 import {Db, MongoClient} from 'mongodb';
-import chalk from 'chalk';
-
+import assert from 'assert';
 export interface IConexionMongo
 {
     db: Db;
@@ -11,13 +10,9 @@ class Database
 {
     async init()
     {
-        const client = await MongoClient.connect(String(process.env.BASEDATOS), {useUnifiedTopology: true, useNewUrlParser: true});
-        if (client.isConnected())
-        {
-            console.log('====================DATABASE==================');
-            console.log(`STATUS: ${chalk.cyanBright('En linea')}`);
-            console.log(`DATABASE: ${chalk.greenBright(client.db().databaseName)}`);
-        }
+        const client = new MongoClient(String(process.env.BASEDATOS));
+        await client.connect();
+
 
         const mongo: IConexionMongo =
             {

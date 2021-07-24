@@ -33,8 +33,9 @@ export class ClienteQueryService extends ResolversOperacionesService
 
         if (buscarRef.estatus)
         {
-            const indice = findIndex(buscarRef.elemento.contratos, (idx: any) => idx.noMedidor === noMedidor);
-            buscarRef.elemento.contratos = buscarRef.elemento.contratos.splice(indice, 1)
+            const indice = findIndex(buscarRef.elemento?.contratos, (idx: any) => idx.noMedidor === noMedidor);
+            // @ts-ignore
+            buscarRef.elemento.contratos = buscarRef.elemento?.contratos.splice(indice, 1)
         }
         return respDocumento(buscarRef);
     }

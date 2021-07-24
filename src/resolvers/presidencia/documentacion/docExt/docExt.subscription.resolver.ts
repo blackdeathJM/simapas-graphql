@@ -1,6 +1,6 @@
 import {IResolvers} from "graphql-tools";
 import {PUB_SUB} from "../../../../config/global";
-import {PubSub, withFilter} from "apollo-server-express";
+import {PubSub, withFilter} from 'graphql-subscriptions';
 import {IDocExt} from "./models/docExt.interface";
 
 let filtro: boolean = false;

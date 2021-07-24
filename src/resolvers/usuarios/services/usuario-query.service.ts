@@ -38,7 +38,7 @@ class UsuarioQueryService extends ResolversOperacionesService
                         token: null
                     }
                 }
-                if (!bcryptjs.compareSync(contrasena, res.elemento.contrasena))
+                if (!bcryptjs.compareSync(contrasena, res.elemento?.contrasena))
                 {
                     return {
                         estatus: false,
@@ -46,7 +46,7 @@ class UsuarioQueryService extends ResolversOperacionesService
                         token: null
                     }
                 }
-                delete res.elemento.contrasena
+                delete res.elemento?.contrasena
                 return {
                     estatus: true,
                     mensaje: `Login correcto`,

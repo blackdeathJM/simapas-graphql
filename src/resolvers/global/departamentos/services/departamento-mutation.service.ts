@@ -15,7 +15,8 @@ class DepartamentoMutationService extends ResolversOperacionesService
         return await this.agregarUnElemento(COLECCION.DEPARTAMENTOS, departamento, {}).then(
             resultado =>
             {
-                return respDocumento(resultado);
+                // return respDocumento(resultado);
+                return null;
             })
     }
 
@@ -23,6 +24,7 @@ class DepartamentoMutationService extends ResolversOperacionesService
     {
         const resultado = await this.buscarUnoYActualizar(COLECCION.DEPARTAMENTOS, {_id: new ObjectId(departamento._id)},
             {$set: {nombre: departamento.nombre, centroGestor: departamento.centroGestor}}, {returnDocument: "after"});
+        console.log(resultado);
         return respDocumento(resultado);
     }
 }
