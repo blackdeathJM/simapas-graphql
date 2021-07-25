@@ -109,7 +109,7 @@ class DocExtQueryService extends ResolversOperacionesService
     {
         const ano = new Date().getFullYear();
         const resultado = await this.contarDocumentos(COLECCION.DOC_EXTERNA, {tipoDoc: 'OFICIO', ano, ref: false, folio: {$ne: null}}, {});
-        const respusta = await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {folio: {$regex: resultado.total.toString()}}, {}, {});
+        const respusta = await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {folio: {$regex: resultado.total?.toString()}}, {}, {});
         return respArreglosSPag(respusta);
     }
 }

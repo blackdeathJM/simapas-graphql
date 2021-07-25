@@ -1,4 +1,4 @@
-import {IDepartamento} from "../../departamentos/model/departamento.interface";
+import {IDepartamento} from "../../../presidencia/departamentos/model/departamento.interface";
 
 export interface IOrdenesTrabajo
 {

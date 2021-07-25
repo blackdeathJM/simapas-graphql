@@ -7,7 +7,7 @@ const mutationDeptos: IResolvers =
             {
                 async registroDepto(_, {departamento}, {db})
                 {
-                    return new DepartamentoMutationService(_, {db})._registrarElemento(departamento);
+                    return new DepartamentoMutationService(_, {db})._registroDepto(departamento);
                 },
                 async actualizarDepto(_, {departamento}, {db})
                 {

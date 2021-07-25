@@ -14,7 +14,7 @@ export class SolicitudesMutationService extends ResolversOperacionesService
 
     async _regSolicitudServ(solicitudServ: ISolicitudServ)
     {
-        const regSolicitud = await this.agregarUnElemento(COLECCION.SOLICITUDES, solicitudServ, {});
+        const regSolicitud = await this.agregarUnDocumento(COLECCION.SOLICITUDES, solicitudServ, {});
         return respDocumento(regSolicitud);
     }
 

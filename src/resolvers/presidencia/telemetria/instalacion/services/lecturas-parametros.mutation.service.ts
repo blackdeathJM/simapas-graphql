@@ -25,7 +25,7 @@ export class LecturasParametrosMutationService extends ResolversOperacionesServi
 
         const actualizar = nvaProp(`parametrosElectricos.${parametro}`, parametrosElectricos);
 
-        const existe = await this.buscarUnElemento(COLECCION.TELEMETRIA, Object.assign(idDocumento, consulta), {});
+        const existe = await this.buscarUnDocumento(COLECCION.TELEMETRIA, Object.assign(idDocumento, consulta), {});
 
 
         if (existe.estatus)

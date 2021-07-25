@@ -15,7 +15,7 @@ export class NotificacionMutationService extends ResolversOperacionesService
 
     async _regNotificacion(notificacion: INotificacion)
     {
-        return await this.agregarUnElemento(COLECCION.NOT, notificacion, {}).then(
+        return await this.agregarUnDocumento(COLECCION.NOT, notificacion, {}).then(
             async resultado =>
             {
                 await notNotificacion(this.context.pubsub!, this.context.db!, notificacion.receptor);

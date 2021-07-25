@@ -21,13 +21,13 @@ class UsuarioQueryService extends ResolversOperacionesService
 
     async _buscarUsuario(usuario: string)
     {
-        const resultado = await this.buscarUnElemento(COLECCION.USUARIOS, {usuario}, {});
+        const resultado = await this.buscarUnDocumento(COLECCION.USUARIOS, {usuario}, {});
         return respDocumento(resultado);
     }
 
     async _login(usuario: string, contrasena: string)
     {
-        return await this.buscarUnElemento(COLECCION.USUARIOS, {usuario}, {}).then(
+        return await this.buscarUnDocumento(COLECCION.USUARIOS, {usuario}, {}).then(
             async res =>
             {
                 if (!res.estatus)
@@ -38,7 +38,7 @@ class UsuarioQueryService extends ResolversOperacionesService
                         token: null
                     }
                 }
-                if (!bcryptjs.compareSync(contrasena, res.elemento?.contrasena))
+                if (!bcryptjs.compareSync(contrasena, res.documento?.contrasena))
                 {
                     return {
                         estatus: false,
@@ -46,7 +46,7 @@ class UsuarioQueryService extends ResolversOperacionesService
                         token: null
                     }
                 }
-                delete res.elemento?.contrasena
+                delete res.documento?.contrasena
                 return {
                     estatus: true,
                     mensaje: `Login correcto`,

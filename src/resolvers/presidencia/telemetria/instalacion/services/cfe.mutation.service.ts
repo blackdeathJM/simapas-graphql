@@ -39,7 +39,7 @@ export class CfeMutationService extends ResolversOperacionesService
 
     async _regReciboCfe(_id: string, medidor: string, reciboCfe: IRecibosCfe)
     {
-        const buscarRecibo = await this.buscarUnElemento(COLECCION.TELEMETRIA,
+        const buscarRecibo = await this.buscarUnDocumento(COLECCION.TELEMETRIA,
             {_id: new ObjectId(_id), medidores: {$elemMatch: {medidor, recibos: {$elemMatch: {mes: reciboCfe.mes, ano: reciboCfe.ano}}}}}, {});
 
         if (buscarRecibo.estatus)

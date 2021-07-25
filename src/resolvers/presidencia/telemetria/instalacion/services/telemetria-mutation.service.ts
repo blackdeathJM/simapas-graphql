@@ -15,7 +15,7 @@ export class TelemetriaMutationService extends ResolversOperacionesService
     {
         const ipEncontrada = await this.buscarIpDuplicadas(ip);
 
-        if (ipEncontrada.elementos?.length !== 0)
+        if (ipEncontrada.documentos?.length !== 0)
         {
             return {
                 estatus: false,
@@ -51,7 +51,7 @@ export class TelemetriaMutationService extends ResolversOperacionesService
                 });
         } else
         {
-            if (ipEncontrada.elementos?.length !== 0)
+            if (ipEncontrada.documentos?.length !== 0)
             {
                 return {
                     estatus: false,

@@ -14,9 +14,9 @@ export class OrdenesTrabajoMutationService extends ResolversOperacionesService
     async _regOrdenTrabajo(ordenTrabajo: IOrdenesTrabajo)
     {
         const ultimoNoOrden = await this.contarDocumentos(COLECCION.ORDENES_TRAB, {}, {});
-        ordenTrabajo.noOrden = ultimoNoOrden.total + 1;
+        ordenTrabajo.noOrden = ultimoNoOrden.total! + 1;
 
-        const registro = await this.agregarUnElemento(COLECCION.ORDENES_TRAB, ordenTrabajo, {});
+        const registro = await this.agregarUnDocumento(COLECCION.ORDENES_TRAB, ordenTrabajo, {});
         return respDocumento(registro);
     }
 }

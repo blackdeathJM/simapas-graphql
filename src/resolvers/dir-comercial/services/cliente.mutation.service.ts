@@ -15,7 +15,7 @@ export class ClienteMutationService extends ResolversOperacionesService
 
     async _regCliente(cliente: ICliente)
     {
-        const registroCliente = await this.agregarUnElemento(COLECCION.CLIENTES, cliente, {});
+        const registroCliente = await this.agregarUnDocumento(COLECCION.CLIENTES, cliente, {});
         return respDocumento(registroCliente);
     }
 }

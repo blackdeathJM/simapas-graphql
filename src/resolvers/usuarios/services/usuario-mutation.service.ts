@@ -6,7 +6,6 @@ import {ObjectId} from 'bson';
 import JWT from "../../../lib/jwt";
 import {IUsuario} from "../models/usuario-interface";
 import {respDocumento} from "../../../services/respuestas-return";
-import {ICliente} from "../../dir-comercial/models/cliente.interface";
 
 class UsuarioMutationService extends ResolversOperacionesService
 {
@@ -17,18 +16,18 @@ class UsuarioMutationService extends ResolversOperacionesService
 
     async _registroUsuario(usuario: IUsuario)
     {
-        const comprobarUsuario = await this.buscarUnElemento(COLECCION.USUARIOS, {usuario: usuario.usuario}, {});
+        const comprobarUsuario = await this.buscarUnDocumento(COLECCION.USUARIOS, {usuario: usuario.usuario}, {});
         if (!comprobarUsuario.estatus)
         {
             usuario.contrasena = bcryptjs.hashSync(usuario.contrasena, 10);
-            return await this.agregarUnElemento(COLECCION.USUARIOS, usuario, {}).then(
+            return await this.agregarUnDocumento(COLECCION.USUARIOS, usuario, {}).then(
                 async respuesta =>
                 {
                     return respDocumento(respuesta);
                 })
         } else
         {
-            return {estatus: comprobarUsuario.estatus, mensaje: comprobarUsuario.mensaje, elemento: comprobarUsuario.elemento}
+            return {estatus: comprobarUsuario.estatus, mensaje: comprobarUsuario.mensaje, elemento: comprobarUsuario.documento}
         }
     }
 
@@ -42,14 +41,14 @@ class UsuarioMutationService extends ResolversOperacionesService
             const res = await this.buscarUnoYActualizar(COLECCION.USUARIOS,
                 filtro,
                 {$pull: {role}}, {returnDocument: "after"});
-            usuario = res.elemento as IUsuario;
+            usuario = res.documento as IUsuario;
             await this.nvoRole(usuario);
             return respDocumento(res);
         } else
         {
             const res = await this.buscarUnoYActualizar(COLECCION.USUARIOS, filtro,
                 {$addToSet: {role}}, {returnDocument: "after"});
-            usuario = res.elemento as IUsuario;
+            usuario = res.documento as IUsuario;
             await this.nvoRole(usuario);
             return respDocumento(res);
         }
@@ -68,20 +67,20 @@ class UsuarioMutationService extends ResolversOperacionesService
 
     async _actializarContrasena(usuario: string, actualContrasena: string, nvaContrasena: string, esAdmin: boolean)
     {
-        const buscarUsuario = await this.buscarUnElemento(COLECCION.USUARIOS, {usuario}, {});
+        const buscarUsuario = await this.buscarUnDocumento(COLECCION.USUARIOS, {usuario}, {});
 
-        if (buscarUsuario.elemento)
+        if (buscarUsuario.documento)
         {
-            if (bcryptjs.compareSync(actualContrasena, buscarUsuario.elemento.contrasena) || esAdmin)
+            if (bcryptjs.compareSync(actualContrasena, buscarUsuario.documento.contrasena) || esAdmin)
             {
-                buscarUsuario.elemento.contrasena = bcryptjs.hashSync(nvaContrasena, 10);
+                buscarUsuario.documento.contrasena = bcryptjs.hashSync(nvaContrasena, 10);
 
                 return await this.buscarUnoYActualizar(COLECCION.USUARIOS,
-                    {usuario}, {$set: {contrasena: buscarUsuario.elemento.contrasena}}, {returnDocument: "after"}).then(
+                    {usuario}, {$set: {contrasena: buscarUsuario.documento.contrasena}}, {returnDocument: "after"}).then(
                     async respuesta =>
                     {
-                        delete respuesta.elemento?.contrasena;
-                        const nvoToken = respuesta.elemento;
+                        delete respuesta.documento?.contrasena;
+                        const nvoToken = respuesta.documento;
                         return {
                             estatus: respuesta.estatus,
                             mensaje: respuesta.mensaje,
@@ -110,7 +109,7 @@ class UsuarioMutationService extends ResolversOperacionesService
     async _eliminarUsuario(_id: string)
     {
         const resultado = await this.buscarUnoYEliminar(COLECCION.USUARIOS, {_id: new ObjectId(_id)}, {});
-        return {estatus: resultado.estatus, mensaje: resultado.mensaje, usuario: resultado.elemento}
+        return {estatus: resultado.estatus, mensaje: resultado.mensaje, usuario: resultado.documento}
     }
 }
 

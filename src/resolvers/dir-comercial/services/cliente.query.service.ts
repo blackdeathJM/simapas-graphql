@@ -28,12 +28,12 @@ export class ClienteQueryService extends ResolversOperacionesService
 
     async _datosRef(noMedidor: string)
     {
-        const buscarRef = await this.buscarUnElemento(COLECCION.CLIENTES,
+        const buscarRef = await this.buscarUnDocumento(COLECCION.CLIENTES,
             {contratos: {$elemMatch: {noMedidor: noMedidor}}}, {});
 
         if (buscarRef.estatus)
         {
-            const indice = findIndex(buscarRef.elemento?.contratos, (idx: any) => idx.noMedidor === noMedidor);
+            const indice = findIndex(buscarRef.documento?.contratos, (idx: any) => idx.noMedidor === noMedidor);
             // @ts-ignore
             buscarRef.elemento.contratos = buscarRef.elemento?.contratos.splice(indice, 1)
         }

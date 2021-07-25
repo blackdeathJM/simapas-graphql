@@ -15,9 +15,9 @@ class DocExtMutationService extends ResolversOperacionesService
     {
         documento.ano = new Date().getFullYear();
         const totalDocs = await this.contarDocumentos(COLECCION.DOC_EXTERNA, {tipoDoc: documento.tipoDoc, ano: documento.ano}, {});
-        documento.noSeguimiento = totalDocs.total + 1;
+        documento.noSeguimiento = totalDocs.total! + 1;
 
-        return await this.agregarUnElemento(COLECCION.DOC_EXTERNA, documento, {}).then(
+        return await this.agregarUnDocumento(COLECCION.DOC_EXTERNA, documento, {}).then(
             async resultado =>
             {
                 const usuarios: string[] = [];
@@ -66,7 +66,7 @@ class DocExtMutationService extends ResolversOperacionesService
             async resultado =>
             {
                 const usuarios: string[] = [];
-                resultado.elemento?.usuarioDestino.forEach((u: IUsuarioDestinoDocExt) =>
+                resultado.documento?.usuarioDestino.forEach((u: IUsuarioDestinoDocExt) =>
                 {
                     usuarios.push(u.usuario);
                 });

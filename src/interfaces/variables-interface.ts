@@ -1,4 +1,4 @@
-import {IDepartamento} from "../resolvers/global/departamentos/model/departamento.interface";
+import {IDepartamento} from "../resolvers/presidencia/departamentos/model/departamento.interface";
 import {IUsuario} from "../resolvers/usuarios/models/usuario-interface";
 import {IDocExt} from "../resolvers/presidencia/documentacion/docExt/models/docExt.interface";
 import {IPaginacion} from "./paginacion-interface";

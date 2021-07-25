@@ -10,23 +10,25 @@ class DepartamentoMutationService extends ResolversOperacionesService
     constructor(root: object, context: IContextData)
     {super(root, context);}
 
-    async _registrarElemento(departamento: IDepartamento)
+    async _registroDepto(departamento: IDepartamento)
     {
-        return await this.agregarUnElemento(COLECCION.DEPARTAMENTOS, departamento, {}).then(
-            resultado =>
-            {
-                // return respDocumento(resultado);
-                return null;
-            })
+        const res = await this.agregarUnDocumento(COLECCION.DEPARTAMENTOS, departamento, {});
+        return {
+            ...res
+        }
     }
 
     async _actualizarElemento(departamento: IDepartamento)
     {
-        const resultado = await this.buscarUnoYActualizar(COLECCION.DEPARTAMENTOS, {_id: new ObjectId(departamento._id)},
-            {$set: {nombre: departamento.nombre, centroGestor: departamento.centroGestor}}, {returnDocument: "after"});
-        console.log(resultado);
-        return respDocumento(resultado);
+        // const resultado = await this.buscarUnoYActualizar(COLECCION.DEPARTAMENTOS, {_id: new ObjectId(departamento._id)},
+        //     {$set: {nombre: departamento.nombre, centroGestor: departamento.centroGestor}}, {returnDocument: "after"});
+        // return {
+        //     estatus: resultado.estatus,
+        //     mensaje: resultado.mensaje,
+        //     documento: resultado.elemento,
+        // }
     }
+
 }
 
 export default DepartamentoMutationService;

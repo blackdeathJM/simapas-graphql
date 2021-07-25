@@ -27,7 +27,7 @@ export class ContratoMutationService extends ResolversOperacionesService
             contrato.rpu = await randomUUID().toUpperCase();
             contrato.noContrato = await randomInt(10000000).toString();
 
-            let res = await this.buscarUnElemento(COLECCION.CLIENTES, {contratos: {$elemMatch: {$or: [{rpu: contrato.rpu, noContrato: contrato.noContrato}]}}}, {});
+            let res = await this.buscarUnDocumento(COLECCION.CLIENTES, {contratos: {$elemMatch: {$or: [{rpu: contrato.rpu, noContrato: contrato.noContrato}]}}}, {});
             bucle = res.estatus;
         } while (bucle);
 
@@ -51,12 +51,12 @@ export class ContratoMutationService extends ResolversOperacionesService
 
             const eliminarSolicitud = await this.buscarUnoYEliminar(COLECCION.SOLICITUDES, {_id: new ObjectId(idSolicitud)}, {session});
 
-            if (eliminarSolicitud.elemento)
+            if (eliminarSolicitud.documento)
             {
                 const regContrato = await this.buscarUnoYActualizar(COLECCION.CLIENTES, {_id: new ObjectId(idCliente)},
                     {$addToSet: {contratos: contrato}}, {returnDocument: "after", session});
 
-                if (regContrato.elemento)
+                if (regContrato.documento)
                 {
                     await session.commitTransaction();
                     return respDocumento(regContrato);

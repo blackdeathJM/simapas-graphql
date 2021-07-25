@@ -39,7 +39,7 @@ class DocUsuarioMutationService extends ResolversOperacionesService
         let buscarElemento: any;
         if (refDoc)
         {
-            buscarElemento = await this.buscarUnElemento(COLECCION.DOC_EXTERNA, {
+            buscarElemento = await this.buscarUnDocumento(COLECCION.DOC_EXTERNA, {
                 noSeguimiento: refDoc, tipoDoc: documento.tipoDoc,
                 usuarioDestino: {$elemMatch: {usuario: documento.usuarioFolio}}
             }, {});
@@ -51,10 +51,10 @@ class DocUsuarioMutationService extends ResolversOperacionesService
 
         documento.ano = new Date().getFullYear();
         const totalDocs = await this.contarDocumentos(COLECCION.DOC_EXTERNA, {tipoDoc: documento.tipoDoc, ano: documento.ano}, {});
-        documento.noSeguimiento = totalDocs.total + 1;
+        documento.noSeguimiento = totalDocs.total! + 1;
         documento.folio = await formatoFolio(documento.folio, documento.tipoDoc, this.context.db!);
 
-        return await this.agregarUnElemento(COLECCION.DOC_EXTERNA, documento, {}).then(
+        return await this.agregarUnDocumento(COLECCION.DOC_EXTERNA, documento, {}).then(
             async (resultado: any) =>
             {
                 if (refDoc)
@@ -82,9 +82,9 @@ class DocUsuarioMutationService extends ResolversOperacionesService
     async _genFolioRespDoc(_id: string, usuario: string, centroGestor: string)
     {
         const usuarios: string[] = [];
-        const resultado = await this.buscarUnElemento(COLECCION.DOC_EXTERNA, {_id: new ObjectId(_id)}, {});
+        const resultado = await this.buscarUnDocumento(COLECCION.DOC_EXTERNA, {_id: new ObjectId(_id)}, {});
 
-        resultado.elemento?.usuarioDestino.forEach((u: IUsuarioDestinoDocExt) => usuarios.push(u.usuario));
+        resultado.documento?.usuarioDestino.forEach((u: IUsuarioDestinoDocExt) => usuarios.push(u.usuario));
         const folio = await formatoFolio(centroGestor, 'OFICIO', this.context.db!);
         return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA,
             {_id: new ObjectId(_id), usuarioDestino: {$elemMatch: {usuario}}},

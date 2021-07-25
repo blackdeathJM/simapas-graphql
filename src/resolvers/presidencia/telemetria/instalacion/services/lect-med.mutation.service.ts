@@ -21,7 +21,7 @@ export class LectMedMutationService extends ResolversOperacionesService
         const agregarSubDoc = nvaProp(`${lect}.${tipo}`, lecturas);
 
 
-        const existeDocumento = await this.buscarUnElemento(COLECCION.TELEMETRIA, Object.assign(idDoc, consultaAno), {});
+        const existeDocumento = await this.buscarUnDocumento(COLECCION.TELEMETRIA, Object.assign(idDoc, consultaAno),{} );
 
         // Verificamos que la lectura exista tomando el ano como id principal del subdocumento
         if (existeDocumento.estatus)

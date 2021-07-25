@@ -17,7 +17,7 @@ class InstalacionMutationService extends ResolversOperacionesService
         delete instalacion._id;
         instalacion.fechaRet = '';
 
-        return await this.agregarUnElemento(COLECCION.TELEMETRIA, instalacion, {}).then(
+        return await this.agregarUnDocumento(COLECCION.TELEMETRIA, instalacion, {}).then(
             resultado =>
             {
                 return respDocumento(resultado);
