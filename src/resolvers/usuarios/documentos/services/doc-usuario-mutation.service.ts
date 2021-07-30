@@ -51,7 +51,7 @@ class DocUsuarioMutationService extends ResolversOperacionesService
 
         documento.ano = new Date().getFullYear();
         const totalDocs = await this.contarDocumentos(COLECCION.DOC_EXTERNA, {tipoDoc: documento.tipoDoc, ano: documento.ano}, {});
-        documento.noSeguimiento = totalDocs.total! + 1;
+        documento.noSeguimiento = totalDocs.total + 1;
         documento.folio = await formatoFolio(documento.folio, documento.tipoDoc, this.context.db!);
 
         return await this.agregarUnDocumento(COLECCION.DOC_EXTERNA, documento, {}).then(

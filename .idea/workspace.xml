@@ -3,37 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="Departamento">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/variables-interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/cliente.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/cliente.mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/cliente.query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/cliente.query.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/contrato.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/contrato.mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/solicitudes.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/solicitudes.mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/departamentos/departamento.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/departamentos/departamento.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/departamentos/departamento.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/departamentos/departamento.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/departamentos/model/departamento.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/departamentos/model/departamento.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/departamentos/services/departamento-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/departamentos/services/departamento-mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/departamentos/services/departamento-query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/departamentos/services/departamento-query.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/notificaciones/services/notificacion.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/notificaciones/services/notificacion.mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/models/ordenes-trabajo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/models/ordenes-trabajo.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/services/ordenes-trabajo.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/services/ordenes-trabajo.mutation.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/departamentos/services/departamento-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/departamentos/services/departamento-mutation.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/services/docExt-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/services/docExt-mutation.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/services/docExt-query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/services/docExt-query.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/cfe.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/cfe.mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/instalacion.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/instalacion.mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/lect-med.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/lect-med.mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/lecturas-parametros.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/lecturas-parametros.mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/telemetria-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/services/telemetria-mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/services/doc-usuario-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/services/doc-usuario-mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-query.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/global/departamentos/departamento.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/departamentos/departamento.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/global/departamentos/departamento.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/departamentos/departamento.input.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/global/departamentos/departamentoMutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/departamentos/departamentoMutation.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/global/departamentos/departamentoQuery.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/departamentos/departamentoQuery.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/respuestas-return.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/respuestas-return.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +43,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+    <property name="NEW_TOOLWINDOW_STRIPE_DEFAULTS" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
@@ -186,7 +161,10 @@
       <workItem from="1627083667976" duration="12897000" />
       <workItem from="1627145819187" duration="6376000" />
       <workItem from="1627189969976" duration="4627000" />
-      <workItem from="1627200221070" duration="4767000" />
+      <workItem from="1627200221070" duration="8325000" />
+      <workItem from="1627599131251" duration="743000" />
+      <workItem from="1627603508266" duration="3086000" />
+      <workItem from="1627663748971" duration="1353000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -293,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627146575791</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Departamento">
+      <created>1627205083223</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1627205083223</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

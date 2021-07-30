@@ -2,7 +2,6 @@ import ResolversOperacionesService from "../../../../services/resolver-operacion
 import {IContextData} from "../../../../interfaces/context-data-interface";
 import {COLECCION} from "../../../../config/global";
 import {ObjectId} from 'bson';
-import {respDocumento} from "../../../../services/respuestas-return";
 import {IDepartamento} from "../model/departamento.interface";
 
 class DepartamentoMutationService extends ResolversOperacionesService
@@ -20,13 +19,11 @@ class DepartamentoMutationService extends ResolversOperacionesService
 
     async _actualizarElemento(departamento: IDepartamento)
     {
-        // const resultado = await this.buscarUnoYActualizar(COLECCION.DEPARTAMENTOS, {_id: new ObjectId(departamento._id)},
-        //     {$set: {nombre: departamento.nombre, centroGestor: departamento.centroGestor}}, {returnDocument: "after"});
-        // return {
-        //     estatus: resultado.estatus,
-        //     mensaje: resultado.mensaje,
-        //     documento: resultado.elemento,
-        // }
+        const res = await this.buscarUnoYActualizar(COLECCION.DEPARTAMENTOS, {_id: new ObjectId(departamento._id)},
+            {$set: {nombre: departamento.nombre, centroGestor: departamento.centroGestor}}, {returnDocument: "after"});
+        return {
+            ...res
+        }
     }
 
 }

@@ -141,7 +141,7 @@ class ResolversOperacionesService
             {
                 return {
                     estatus: true,
-                    mensaje: `Un documento se ha insertado correctamente, - ${res.insertedId}`,
+                    mensaje: `Un documento se ha insertado correctamente`,
                     documento: documento
                 }
             } else
@@ -160,6 +160,7 @@ class ResolversOperacionesService
             }
         }
     }
+
 
     // protected async agregarVarios(coleccion: string, documento: object[], opciones: object)
     // {
@@ -197,7 +198,6 @@ class ResolversOperacionesService
         try
         {
             const res = await this.context.db!.collection(coleccion).findOneAndUpdate(filtro, actualizar, opciones);
-
             if (res.ok === 1)
             {
                 return {
@@ -266,7 +266,7 @@ class ResolversOperacionesService
 
         try
         {
-            const res = await this.context.db?.collection(coleccion).countDocuments(consulta, opciones);
+            const res = await this.context.db!.collection(coleccion).countDocuments(consulta, opciones);
 
             if (res !== 0 || res !== undefined)
             {
