@@ -13,7 +13,6 @@ class ResolversOperacionesService
 
     protected async buscarSinPaginacion(coleccion: string, filtro: object, opciones: object, ordenar: Sort)
     {
-
         try
         {
             const res = await this.context.db!.collection(coleccion).find(filtro, opciones).sort(ordenar).toArray();

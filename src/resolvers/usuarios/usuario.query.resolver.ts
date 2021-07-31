@@ -7,7 +7,7 @@ const queryUsuarios: IResolvers =
             {
                 async obtenerUsuarios(_, {}, {db})
                 {
-                    return new UsuarioQueryService(_, {db})._listarUsuarios();
+                    return new UsuarioQueryService(_, {db})._obtenerUsuarios();
                 },
                 async buscarUsuario(_, {usuario}, {db})
                 {

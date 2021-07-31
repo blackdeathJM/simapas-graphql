@@ -13,10 +13,12 @@ class UsuarioQueryService extends ResolversOperacionesService
         super(root, context);
     }
 
-    async _listarUsuarios()
+    async _obtenerUsuarios()
     {
-        const resultado = await this.buscarSinPaginacion(COLECCION.USUARIOS, {}, {}, {});
-        return respArreglosSPag(resultado);
+        const res = await this.buscarSinPaginacion(COLECCION.USUARIOS, {}, {}, {nombre: -1});
+        return {
+            ...res
+        }
     }
 
     async _buscarUsuario(usuario: string)
@@ -27,17 +29,12 @@ class UsuarioQueryService extends ResolversOperacionesService
 
     async _login(usuario: string, contrasena: string)
     {
-        return await this.buscarUnDocumento(COLECCION.USUARIOS, {usuario}, {}).then(
-            async res =>
+        try
+        {
+            const res = await this.buscarUnDocumento(COLECCION.USUARIOS, {usuario}, {});
+
+            if (res.documento)
             {
-                if (!res.estatus)
-                {
-                    return {
-                        estatus: false,
-                        mensaje: `No se encotro un usuario con esos datos`,
-                        token: null
-                    }
-                }
                 if (!bcryptjs.compareSync(contrasena, res.documento?.contrasena))
                 {
                     return {
@@ -46,14 +43,30 @@ class UsuarioQueryService extends ResolversOperacionesService
                         token: null
                     }
                 }
-                delete res.documento?.contrasena
+                delete res.documento.contrasena
                 return {
                     estatus: true,
                     mensaje: `Login correcto`,
                     token: new JWT().firmar({res})
                 }
+
+
+            } else
+            {
+                return {
+                    estatus: false,
+                    mensaje: `No se encotro un usuario con esos datos`,
+                    token: null
+                }
             }
-        )
+        } catch (e)
+        {
+            return {
+                estatus: false,
+                mensaje: `Ocurrio un error inesperado: ${e}`,
+                token: null
+            }
+        }
     }
 }
 

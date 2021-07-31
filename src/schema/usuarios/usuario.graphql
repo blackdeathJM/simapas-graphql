@@ -5,8 +5,11 @@ type UsuarioType
     nombre: String!
     usuario: String!
     contrasena: String!
-    role: [String]
     img: String!
+    email: String
+    estatus: String
+    role: [String]
+
     departamento: DeptoType
 }
 

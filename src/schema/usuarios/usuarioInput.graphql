@@ -1,10 +1,12 @@
 input UsuarioInput
 {
     _id: ID
+    departamentoID: ID!
     nombre: String!
     usuario: String!
     contrasena: String!
-    role: [String]
     img: String
-    departamentoID: ID!
+    email: String
+    estatus: String
+    role: [String]
 }

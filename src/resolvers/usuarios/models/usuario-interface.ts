@@ -1,10 +1,12 @@
 export interface IUsuario
 {
     _id?: string;
+    departamentoID: string;
     nombre: string;
     usuario: string;
     contrasena: string,
-    role: string[];
     img: string;
-    departamentoID: string;
+    email: string;
+    estatus: string;
+    role: string[];
 }
