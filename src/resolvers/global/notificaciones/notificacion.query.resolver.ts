@@ -1,5 +1,6 @@
-import {IResolvers} from "graphql-tools";
+// import {IResolvers} from "graphql-tools";
 import {NotificacionQueryService} from "./services/notificacion.query.service";
+import {IResolvers} from "graphql-middleware/dist/types";
 
 const queryNotificacion: IResolvers =
     {

@@ -10,7 +10,6 @@ const typeDefs = mergeTypes(typesArray, {all: true});
 
 const schema: GraphQLSchema = makeExecutableSchema({
     typeDefs,
-    resolvers,
-    resolverValidationOptions: {requireResolversForResolveType: "ignore"}
+    resolvers
 });
 export default schema;

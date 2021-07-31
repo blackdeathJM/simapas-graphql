@@ -1,7 +1,8 @@
-import {IResolvers} from "graphql-tools";
+// import {IResolvers} from "graphql-tools";
 import {withFilter} from 'graphql-subscriptions';
 import {PUB_SUB} from "../../../config/global";
 import {INotificacion} from "./model/notificacion.interface";
+import {IResolvers} from "graphql-middleware/dist/types";
 
 let filtro: boolean = false;
 const notSubscription: IResolvers =

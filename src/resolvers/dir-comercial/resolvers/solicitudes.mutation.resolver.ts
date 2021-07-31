@@ -1,5 +1,6 @@
-import {IResolvers} from "graphql-tools";
+// import {IResolvers} from "graphql-tools";
 import {SolicitudesMutationService} from "../services/solicitudes.mutation.service";
+import {IResolvers} from "graphql-middleware/dist/types";
 
 export const mutationColeIndividuales: IResolvers =
     {

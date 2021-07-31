@@ -1,5 +1,6 @@
-import {IResolvers} from "graphql-tools";
+// import {IResolvers} from "graphql-tools";
 import {OrdenesTrabajoQueryService} from "./services/ordenes-trabajo.query.service";
+import {IResolvers} from "graphql-middleware/dist/types";
 
 export const queryOrdenesTrabajo: IResolvers =
     {

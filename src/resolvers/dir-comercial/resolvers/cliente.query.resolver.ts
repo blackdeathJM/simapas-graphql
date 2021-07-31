@@ -1,5 +1,6 @@
-import {IResolvers} from "graphql-tools";
+// import {IResolvers} from "graphql-tools";
 import {ClienteQueryService} from "../services/cliente.query.service";
+import {IResolvers} from "graphql-middleware/dist/types";
 
 export const queryCliente: IResolvers =
     {

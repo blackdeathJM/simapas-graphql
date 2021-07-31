@@ -1,6 +1,7 @@
-import {IResolvers} from "graphql-tools";
+// import {IResolvers} from "graphql-tools";
 import {COLECCION} from "../config/global";
 import {ObjectId} from "bson";
+import {IResolvers} from "graphql-middleware/dist/types";
 
 const typesRelacionar: IResolvers =
     {

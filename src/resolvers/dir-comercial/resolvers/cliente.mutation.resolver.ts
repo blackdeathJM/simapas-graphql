@@ -1,6 +1,7 @@
-import {IResolvers} from "graphql-tools";
+// import {IResolvers} from "graphql-tools";
 import {ClienteMutationService} from "../services/cliente.mutation.service";
 import {ContratoMutationService} from "../services/contrato.mutation.service";
+import {IResolvers} from "graphql-middleware/dist/types";
 
 export const mutationCliente: IResolvers =
     {

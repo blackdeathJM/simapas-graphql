@@ -1,5 +1,6 @@
-import {IResolvers} from "graphql-tools";
+// import {IResolvers} from "graphql-tools";
 import {OrdenesTrabajoMutationService} from "./services/ordenes-trabajo.mutation.service";
+import {IResolvers} from "graphql-middleware/dist/types";
 
 export const mutationOrdenTrabajo: IResolvers =
     {

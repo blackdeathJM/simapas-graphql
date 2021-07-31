@@ -1,5 +1,6 @@
-import {IResolvers} from "graphql-tools";
+// import {IResolvers} from "graphql-tools";
 import DocUsuarioMutationService from "./services/doc-usuario-mutation.service";
+import {IResolvers} from "graphql-middleware/dist/types";
 
 const mutationDocUsuario: IResolvers =
     {

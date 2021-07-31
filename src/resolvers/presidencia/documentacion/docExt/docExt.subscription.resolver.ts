@@ -1,7 +1,8 @@
-import {IResolvers} from "graphql-tools";
+// import {IResolvers} from "graphql-tools";
 import {PUB_SUB} from "../../../../config/global";
 import {PubSub, withFilter} from 'graphql-subscriptions';
 import {IDocExt} from "./models/docExt.interface";
+import {IResolvers} from "graphql-middleware/dist/types";
 
 let filtro: boolean = false;
 const docExtSubscription: IResolvers =

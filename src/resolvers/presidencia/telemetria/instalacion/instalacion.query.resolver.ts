@@ -1,6 +1,7 @@
-import {IResolvers} from "graphql-tools";
+// import {IResolvers} from "graphql-tools";
 import InstalacionQueryService from "./services/instalacion.query.service";
 import {CfeQueryService} from "./services/cfe.query.service";
+import {IResolvers} from "graphql-middleware/dist/types";
 
 const queryTelemetria: IResolvers =
     {

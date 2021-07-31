@@ -1,10 +1,11 @@
-import {IResolvers} from "graphql-tools";
+// import {IResolvers} from "graphql-tools";
 import InstalacionMutationService from "./services/instalacion.mutation.service";
 import {TelemetriaMutationService} from "./services/telemetria-mutation.service";
 import {MotorBombaMutationService} from "./services/motor-bomba-mutation.service";
 import {LecturasParametrosMutationService} from "./services/lecturas-parametros.mutation.service";
 import {LectMedMutationService} from "./services/lect-med.mutation.service";
 import {CfeMutationService} from "./services/cfe.mutation.service";
+import {IResolvers} from "graphql-middleware/dist/types";
 
 const mutationTelemetria: IResolvers =
     {

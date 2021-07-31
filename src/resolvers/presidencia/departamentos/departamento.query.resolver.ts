@@ -1,5 +1,6 @@
-import {IResolvers} from "graphql-tools";
+// import {IResolvers} from "graphql-tools";
 import DepartamentoQueryService from "./services/departamento-query.service";
+import {IResolvers} from "graphql-middleware/dist/types";
 
 const queryDeptos: IResolvers =
     {

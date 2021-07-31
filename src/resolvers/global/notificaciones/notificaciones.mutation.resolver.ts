@@ -1,5 +1,6 @@
-import {IResolvers} from "graphql-tools";
+// import {IResolvers} from "graphql-tools";
 import {NotificacionMutationService} from "./services/notificacion.mutation.service";
+import {IResolvers} from "graphql-middleware/dist/types";
 
 const mutationNotificacion: IResolvers =
     {

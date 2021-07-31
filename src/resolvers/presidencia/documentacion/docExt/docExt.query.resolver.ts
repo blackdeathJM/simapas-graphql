@@ -1,5 +1,6 @@
-import {IResolvers} from "graphql-tools";
+// import {IResolvers} from "graphql-tools";
 import DocExtQueryService from "./services/docExt-query.service";
+import {IResolvers} from "graphql-middleware/dist/types";
 
 const queryDocExt: IResolvers =
     {

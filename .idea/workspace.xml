@@ -3,13 +3,32 @@
   <component name="ChangeListManager">
     <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="login">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/jwt.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/jwt.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/models/usuario-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/models/usuario-interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-query.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/resolvers/cliente.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/resolvers/cliente.mutation.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/resolvers/cliente.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/resolvers/cliente.query.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/resolvers/solicitudes.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/resolvers/solicitudes.mutation.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/resolvers/solicitudes.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/resolvers/solicitudes.query.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/notificaciones/notificacion.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/notificaciones/notificacion.query.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/notificaciones/notificaciones.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/notificaciones/notificaciones.mutation.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/notificaciones/notificaciones.subscription.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/notificaciones/notificaciones.subscription.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/ordenes-trabajo.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/ordenes-trabajo.mutation.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/ordenes-trabajo.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/ordenes-trabajo/ordenes-trabajo.query.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/departamentos/departamento.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/departamentos/departamento.mutation.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/departamentos/departamento.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/departamentos/departamento.query.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/docExt.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/docExt.mutation.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/docExt.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/docExt.query.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/docExt.subscription.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/docExt.subscription.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/instalacion.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/instalacion.mutation.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/instalacion.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/telemetria/instalacion/instalacion.query.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/resolversMap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/resolversMap.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/tipos.type.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/tipos.type.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/doc.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/doc.mutation.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/doc.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/doc.query.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.mutation.resolver.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.query.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/usuarios/usuario.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/usuarios/usuario.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/usuarios/usuarioInput.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/usuarios/usuarioInput.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/resolver-operaciones.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.subscription.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.subscription.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +188,8 @@
       <workItem from="1627663748971" duration="2782000" />
       <workItem from="1627672317319" duration="3166000" />
       <workItem from="1627691348207" duration="2027000" />
-      <workItem from="1627738200968" duration="1883000" />
+      <workItem from="1627738200968" duration="3636000" />
+      <workItem from="1627759182375" duration="79000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -290,7 +310,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627665974309</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="login">
+      <created>1627741414666</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1627741414666</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
