@@ -1,5 +1,5 @@
 // import {IResolvers} from "graphql-tools";
-import unionMutationResolver from "./unionMutation";
+import {unionMutationResolver} from "./unionMutation";
 import unionQueryResolver from "./unionQuery";
 import unionSubscriptionResolver from "./unionSubscription";
 import unionTypeResolver from "./unionTypes";

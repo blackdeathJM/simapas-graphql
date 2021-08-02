@@ -1,0 +1,103 @@
+import compression from "compression";
+import express, {Application} from "express";
+import cors from "cors";
+import {ApolloServer} from "apollo-server-express";
+
+import {createServer, Server as HTTPServer} from "http";
+import {execute, GraphQLSchema, subscribe} from "graphql";
+import {graphqlHTTP} from "express-graphql";
+import {PubSub} from 'graphql-subscriptions';
+import Database from "./config/database";
+import {SubscriptionServer} from "subscriptions-transport-ws";
+import {router} from "./configMuter/docs.routes";
+import {IContext} from "./interfaces/context-interface";
+
+export class Server
+{
+    private app!: Application;
+    private httpServer!: HTTPServer;
+    private subscriptionServer!: SubscriptionServer;
+    private readonly puerto = process.env.PORT
+    private server!: ApolloServer;
+    private pubsub = new PubSub();
+    private database = new Database();
+
+    // private schema!: GraphQLSchema;
+
+    constructor(public schema: GraphQLSchema)
+    {
+        if (schema === undefined)
+        {
+            throw new Error("Necesitas un esquema para poder trabajar con graphql");
+        }
+
+        this.initialize();
+    }
+
+    private initialize()
+    {
+        this.configExpress();
+        this.configDataBase();
+        this.configApolloServer();
+        this.configRoutes();
+        this.createServer();
+    }
+
+    private configExpress()
+    {
+        this.app = express();
+        this.app.use(cors());
+        this.app.use(compression);
+
+    }
+
+    private configDataBase()
+    {
+
+    }
+
+    private async configApolloServer()
+    {
+
+        const context = ({req, connection}: IContext) =>
+        {
+            const token = (req) ? req.headers.authorization : connection.authorization;
+            const contexto = (req) ? req.headers.context : connection.context;
+            // return {db, token, pubsub, contexto, tr};
+        }
+
+        this.server = new ApolloServer({
+            schema: this.schema,
+            introspection: true
+        });
+
+        await this.server.start().then();
+
+        this.server.applyMiddleware({app: this.app});
+    }
+
+    private configRoutes()
+    {
+
+        this.app.use("/graphql", graphqlHTTP({schema: this.schema}));
+        this.app.use('/file', router);
+    }
+
+    private createServer()
+    {
+        this.httpServer = createServer(this.app);
+        this.subscriptionServer = SubscriptionServer.create({schema: this.schema, execute, subscribe},
+            {server: this.httpServer, path: this.server.graphqlPath});
+
+        ['SIGINT', 'SIGTERM'].forEach(signal => {process.on(signal, () => this.subscriptionServer.close())});
+    }
+
+    listen(callback: (port: number) => void): void
+    {
+        this.httpServer.listen({port: this.puerto}, () =>
+        {
+            callback(+this.puerto!)
+        });
+    }
+}
+

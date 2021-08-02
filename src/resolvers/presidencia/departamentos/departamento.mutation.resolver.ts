@@ -1,8 +1,7 @@
-// import {IResolvers} from "graphql-tools";
-import DepartamentoMutationService from "./services/departamento-mutation.service";
+import {DepartamentoMutationService} from "./services/departamento-mutation.service";
 import {IResolvers} from "graphql-middleware/dist/types";
 
-const mutationDeptos: IResolvers =
+export const mutationDeptos: IResolvers =
     {
         Mutation:
             {
@@ -16,4 +15,3 @@ const mutationDeptos: IResolvers =
                 },
             }
     };
-export default mutationDeptos;

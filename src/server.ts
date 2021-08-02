@@ -1,4 +1,4 @@
-import express, {json} from 'express';
+import express from 'express';
 import compression from 'compression';
 import bodyParser from 'body-parser';
 import {ApolloServer} from "apollo-server-express";
@@ -8,7 +8,7 @@ import Database from "./config/database";
 import path from "path";
 import {router} from "./configMuter/docs.routes";
 import {IContext} from "./interfaces/context-interface";
-import schema from "./schema";
+import {schema} from "./schema";
 import {graphqlHTTP} from "express-graphql";
 import {SubscriptionServer} from "subscriptions-transport-ws";
 import {execute, subscribe} from "graphql";
@@ -20,8 +20,8 @@ async function init()
     const pubsub = new PubSub();
     const database = new Database();
     const {db, tr} = await database.init();
-
     app.use(compression());
+
     app.use(bodyParser.json()).use(bodyParser.urlencoded({extended: true}));
     app.use(express.static(path.join(__dirname, 'public')));
 
@@ -52,6 +52,7 @@ async function init()
         context,
         introspection: true
     });
+
     await server.start();
     server.applyMiddleware({app});
 
@@ -66,7 +67,8 @@ async function init()
     ['SIGINT', 'SIGTERM'].forEach(signal => {process.on(signal, () => subscriptionServer.close())});
 
     const PORT = process.env.PORT || 5003;
-    httpServer.listen({port: 5002}, () =>
+
+    httpServer.listen({port: PORT}, () =>
         {
             console.log('env', process.env.BASEDATOS);
             console.log('==============================SERVIDOR============================');

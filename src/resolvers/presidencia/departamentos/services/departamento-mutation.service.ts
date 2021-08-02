@@ -4,7 +4,7 @@ import {COLECCION} from "../../../../config/global";
 import {ObjectId} from 'bson';
 import {IDepartamento} from "../model/departamento.interface";
 
-class DepartamentoMutationService extends ResolversOperacionesService
+export class DepartamentoMutationService extends ResolversOperacionesService
 {
     constructor(root: object, context: IContextData)
     {super(root, context);}
@@ -27,5 +27,3 @@ class DepartamentoMutationService extends ResolversOperacionesService
     }
 
 }
-
-export default DepartamentoMutationService;

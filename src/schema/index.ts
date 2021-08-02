@@ -8,8 +8,8 @@ import resolvers from "../resolvers/resolversMap";
 const typesArray = fileLoader(path.join(__dirname, './**/*.graphql'));
 const typeDefs = mergeTypes(typesArray, {all: true});
 
-const schema: GraphQLSchema = makeExecutableSchema({
+export const schema: GraphQLSchema = makeExecutableSchema({
     typeDefs,
     resolvers
 });
-export default schema;
+
