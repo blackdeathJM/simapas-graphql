@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="trabajando en folios">
+    <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="Actualizacion de dependencias">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
@@ -166,7 +166,9 @@
       <workItem from="1626342615043" duration="595000" />
       <workItem from="1627882183326" duration="1302000" />
       <workItem from="1627885974841" duration="1248000" />
-      <workItem from="1628060747411" duration="1490000" />
+      <workItem from="1628060747411" duration="1523000" />
+      <workItem from="1628237027894" duration="1653000" />
+      <workItem from="1628321583293" duration="1697000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -266,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624619762219</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Actualizacion de dependencias">
+      <created>1628075277381</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1628075277382</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,6 +295,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="trabajando en folios" />
-    <option name="LAST_COMMIT_MESSAGE" value="trabajando en folios" />
+    <MESSAGE value="Actualizacion de dependencias" />
+    <option name="LAST_COMMIT_MESSAGE" value="Actualizacion de dependencias" />
   </component>
 </project>
