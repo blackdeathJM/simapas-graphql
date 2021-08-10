@@ -1,8 +1,8 @@
 // import {IResolvers} from "graphql-tools";
-import UsuarioQueryService from "./services/usuario-query.service";
 import {IResolvers} from "graphql-middleware/dist/types";
+import {UsuarioQueryService} from "./services/usuario-query.service";
 
-const queryUsuarios: IResolvers =
+export const queryUsuarios: IResolvers =
     {
         Query:
             {
@@ -10,9 +10,9 @@ const queryUsuarios: IResolvers =
                 {
                     return new UsuarioQueryService(_, {db})._obtenerUsuarios();
                 },
-                async buscarUsuario(_, {usuario}, {db})
+                async obtenerUsuario(_, {_id}, {db})
                 {
-                    return new UsuarioQueryService(_, {db})._buscarUsuario(usuario);
+                    return new UsuarioQueryService(_, {db})._obtenerUsuario(_id);
                 },
                 async login(_, {usuario, contrasena}, {db})
                 {
@@ -20,4 +20,3 @@ const queryUsuarios: IResolvers =
                 },
             }
     };
-export default queryUsuarios;

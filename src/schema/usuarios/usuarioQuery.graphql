@@ -3,7 +3,7 @@ type Query
     "USUARIO - Obtener la lista de todos los usuarios"
     obtenerUsuarios: ResUsuario
     "USUARIO - Buscar usuarios por su nombre de usuarios"
-    buscarUsuario(usuario: String!): ResUsuario
+    obtenerUsuario(_id: ID!): ResUsuario
     "USUARIO - Inicio de sesion"
     login(usuario: String!,  contrasena: String!): ResUsuarioToken!
 }

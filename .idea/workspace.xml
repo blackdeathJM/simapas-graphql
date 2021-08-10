@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="Actualizacion de dependencias">
+    <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="trabajando en folios">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-query.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/usuario.query.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/usuarios/usuarioQuery.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/usuarios/usuarioQuery.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +29,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="0e4hiz9y" />
+  </component>
   <component name="ProjectId" id="1mra8Gwz8gIhIHNHYbmVkoe3qfB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -43,7 +48,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/build/schema/presidencia/docExterna/docExterna.graphql" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/public/uploads/pre" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/public/uploads/per" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -53,14 +58,14 @@
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="D:\Documents\proyectos\backend\simapas-graphql\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="D:\Documents\Proyectos\Backend\simapas-graphql\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\per" />
       <recent name="D:\Documents\proyectos\backend\simapas-graphql\src\public\uploads\pre" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\perfil" />
-      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\per" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\resolvers\global\notificaciones" />
@@ -169,6 +174,11 @@
       <workItem from="1628060747411" duration="1523000" />
       <workItem from="1628237027894" duration="1653000" />
       <workItem from="1628321583293" duration="1697000" />
+      <workItem from="1628403073531" duration="1065000" />
+      <workItem from="1628459593020" duration="1547000" />
+      <workItem from="1628518157873" duration="1635000" />
+      <workItem from="1628559327886" duration="51000" />
+      <workItem from="1628559565390" duration="602000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>

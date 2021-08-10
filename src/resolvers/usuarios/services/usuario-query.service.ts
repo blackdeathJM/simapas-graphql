@@ -4,9 +4,10 @@ import {COLECCION} from "../../../config/global";
 import bcryptjs from "bcryptjs";
 import JWT from "../../../lib/jwt";
 import {respArreglosSPag, respDocumento} from "../../../services/respuestas-return";
+import {ObjectId} from "bson";
 
 
-class UsuarioQueryService extends ResolversOperacionesService
+export class UsuarioQueryService extends ResolversOperacionesService
 {
     constructor(root: object, context: IContextData)
     {
@@ -21,10 +22,12 @@ class UsuarioQueryService extends ResolversOperacionesService
         }
     }
 
-    async _buscarUsuario(usuario: string)
+    async _obtenerUsuario(_id: string)
     {
-        const resultado = await this.buscarUnDocumento(COLECCION.USUARIOS, {usuario}, {});
-        return respDocumento(resultado);
+        const res = await this.buscarUnDocumento(COLECCION.USUARIOS, {_id: new ObjectId(_id)}, {});
+        return {
+            ...res
+        }
     }
 
     async _login(usuario: string, contrasena: string)
@@ -69,5 +72,3 @@ class UsuarioQueryService extends ResolversOperacionesService
         }
     }
 }
-
-export default UsuarioQueryService;
