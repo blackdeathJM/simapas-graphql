@@ -1,4 +1,4 @@
-import {PubSub} from "apollo-server";
+import {PubSub} from 'graphql-subscriptions';
 import {Db} from "mongodb";
 import {COLECCION, PUB_SUB} from "../../../config/global";
 

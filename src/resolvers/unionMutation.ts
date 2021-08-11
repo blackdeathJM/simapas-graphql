@@ -1,4 +1,3 @@
-// import {merge} from 'lodash';
 import GMR from 'graphql-merge-resolvers';
 import {mutationDeptos} from "./presidencia/departamentos/departamento.mutation.resolver";
 import mutationDocExt from "./presidencia/documentacion/docExt/docExt.mutation.resolver";

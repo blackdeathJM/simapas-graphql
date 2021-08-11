@@ -1,5 +1,5 @@
 import {Db} from "mongodb";
-import {PubSub} from "apollo-server-express";
+import {PubSub} from 'graphql-subscriptions';
 
 export interface IContextData
 {

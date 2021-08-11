@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="trabajando en folios">
+    <list default="true" id="e9b3d981-495e-48bf-a699-828ad23adbd8" name="Changes" comment="Actualizacion de dependencias">
+      <change afterPath="$PROJECT_DIR$/src/servidor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/context-data-interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/context-data-interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nvaConfig/app.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nvaConfig/server.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/tipos.type.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/tipos.type.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/unionTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario.subscription.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario.subscription.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +36,6 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MacroExpansionManager">
-    <option name="directoryName" value="0e4hiz9y" />
-  </component>
   <component name="ProjectId" id="1mra8Gwz8gIhIHNHYbmVkoe3qfB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -44,7 +52,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/build/schema/presidencia/docExterna/docExterna.graphql" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/public/uploads/per" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/public/uploads/pre" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -54,16 +62,19 @@
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="D:\Documents\Proyectos\Backend\simapas-graphql\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="D:\Documents\proyectos\backend\simapas-graphql\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\per" />
       <recent name="D:\Documents\proyectos\backend\simapas-graphql\src\public\uploads\pre" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\perfil" />
+      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\per" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\proyectos\backend\simapas-graphql\src" />
+      <recent name="D:\Documents\proyectos\backend\simapas-graphql\src\confActual" />
+      <recent name="D:\Documents\proyectos\backend\simapas-graphql\src\nvaConfig" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\resolvers\global\notificaciones" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\resolvers\usuarios\documentos\services" />
     </key>
@@ -71,7 +82,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="" />
+      <changelist id="e9b3d981-495e-48bf-a699-828ad23adbd8" name="Changes" comment="Actualizacion de dependencias" />
       <created>1610254007620</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -169,12 +180,10 @@
       <workItem from="1627885974841" duration="1248000" />
       <workItem from="1628060747411" duration="1523000" />
       <workItem from="1628237027894" duration="1653000" />
-      <workItem from="1628321583293" duration="1697000" />
-      <workItem from="1628403073531" duration="1065000" />
-      <workItem from="1628459593020" duration="1547000" />
-      <workItem from="1628518157873" duration="1635000" />
-      <workItem from="1628559327886" duration="51000" />
-      <workItem from="1628559565390" duration="805000" />
+      <workItem from="1628321583293" duration="2306000" />
+      <workItem from="1628657057121" duration="975000" />
+      <workItem from="1628658050724" duration="255000" />
+      <workItem from="1628658320422" duration="15184000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -281,12 +290,12 @@
       <option name="project" value="LOCAL" />
       <updated>1628075277382</updated>
     </task>
-    <task id="LOCAL-00016" summary="trabajando en folios">
-      <created>1628560560434</created>
+    <task id="LOCAL-00016" summary="Actualizacion de dependencias">
+      <created>1628330270999</created>
       <option name="number" value="00016" />
       <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1628560560434</updated>
+      <updated>1628330270999</updated>
     </task>
     <option name="localTasksCounter" value="17" />
     <servers />
@@ -307,8 +316,8 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Actualizacion de dependencias" />
     <MESSAGE value="trabajando en folios" />
-    <option name="LAST_COMMIT_MESSAGE" value="trabajando en folios" />
+    <MESSAGE value="Actualizacion de dependencias" />
+    <option name="LAST_COMMIT_MESSAGE" value="Actualizacion de dependencias" />
   </component>
 </project>
