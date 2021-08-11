@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="trabajando en folios">
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +26,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="ewijdsby" />
+  </component>
   <component name="ProjectId" id="1mra8Gwz8gIhIHNHYbmVkoe3qfB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -35,13 +37,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
+    <property name="NEW_TOOLWINDOW_STRIPE_DEFAULTS" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/build/schema/presidencia/docExterna/docExterna.graphql" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/public/uploads/perfil" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/public/uploads/per" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -56,8 +59,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\perfil" />
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\per" />
+      <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\public\uploads\perfil" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Documents\Proyectos\Backend\simapas-graphql\src\resolvers\global\notificaciones" />
@@ -140,6 +143,9 @@
       <workItem from="1611540307165" duration="214000" />
       <workItem from="1611540829331" duration="571000" />
       <workItem from="1625622631358" duration="317000" />
+      <workItem from="1628562324393" duration="2224000" />
+      <workItem from="1628597484779" duration="1545000" />
+      <workItem from="1628649586642" duration="1259000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
