@@ -3,7 +3,7 @@ import {PUB_SUB} from "../../config/global";
 import {withFilter} from 'graphql-subscriptions';
 import {IResolvers} from "graphql-middleware/dist/types";
 
-const usuarioSubscriptionResolver: IResolvers =
+export const usuarioSubscriptionResolver: IResolvers =
     {
         Subscription:
             {
@@ -17,4 +17,3 @@ const usuarioSubscriptionResolver: IResolvers =
                     }
             }
     };
-export default usuarioSubscriptionResolver;

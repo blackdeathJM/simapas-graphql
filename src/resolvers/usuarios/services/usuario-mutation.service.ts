@@ -7,7 +7,7 @@ import JWT from "../../../lib/jwt";
 import {IUsuario} from "../models/usuario-interface";
 import {respDocumento} from "../../../services/respuestas-return";
 
-class UsuarioMutationService extends ResolversOperacionesService
+export class UsuarioMutationService extends ResolversOperacionesService
 {
     constructor(root: object, context: IContextData)
     {
@@ -20,14 +20,16 @@ class UsuarioMutationService extends ResolversOperacionesService
         if (!comprobarUsuario.estatus)
         {
             usuario.contrasena = bcryptjs.hashSync(usuario.contrasena, 10);
-            return await this.agregarUnDocumento(COLECCION.USUARIOS, usuario, {}).then(
-                async respuesta =>
-                {
-                    return respDocumento(respuesta);
-                })
+            const res = await this.agregarUnDocumento(COLECCION.USUARIOS, usuario, {});
+            console.log('res', res);
+            return {
+                ...res
+            }
         } else
         {
-            return {estatus: comprobarUsuario.estatus, mensaje: comprobarUsuario.mensaje, elemento: comprobarUsuario.documento}
+            return {
+                ...comprobarUsuario
+            }
         }
     }
 
@@ -43,14 +45,18 @@ class UsuarioMutationService extends ResolversOperacionesService
                 {$pull: {role}}, {returnDocument: "after"});
             usuario = res.documento as IUsuario;
             await this.nvoRole(usuario);
-            return respDocumento(res);
+            return {
+                ...res
+            };
         } else
         {
             const res = await this.buscarUnoYActualizar(COLECCION.USUARIOS, filtro,
                 {$addToSet: {role}}, {returnDocument: "after"});
             usuario = res.documento as IUsuario;
             await this.nvoRole(usuario);
-            return respDocumento(res);
+            return {
+                ...res
+            };
         }
     }
 
@@ -113,4 +119,3 @@ class UsuarioMutationService extends ResolversOperacionesService
     }
 }
 
-export default UsuarioMutationService;

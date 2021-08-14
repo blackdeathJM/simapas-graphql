@@ -1,8 +1,8 @@
 // import {IResolvers} from "graphql-tools";
-import UsuarioMutationService from "./services/usuario-mutation.service";
+import {UsuarioMutationService} from "./services/usuario-mutation.service";
 import {IResolvers} from "graphql-middleware/dist/types";
 
-const mutationUsuarios: IResolvers =
+export const mutationUsuarios: IResolvers =
     {
         Mutation:
             {
@@ -26,4 +26,3 @@ const mutationUsuarios: IResolvers =
                 }
             }
     };
-export default mutationUsuarios;
