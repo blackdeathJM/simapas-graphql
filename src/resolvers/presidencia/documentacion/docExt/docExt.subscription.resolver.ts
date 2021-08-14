@@ -19,7 +19,7 @@ const docExtSubscription: IResolvers =
                     },
                 docSubProceso:
                     {
-                        subscribe: withFilter((_: void, __: void, {pubsub}) => pubsub.asyncIterator(PUB_SUB.DOC_EXT_USUSUBPROCESO),
+                        subscribe: withFilter((_: void, __: void, {pubsub}) => pubsub.asyncIterator(PUB_SUB.DOC_EXT_SUB_PROCESO),
                             (payload, variables) =>
                             {
                                 payload.docSubProceso.forEach((d: IDocExt) =>

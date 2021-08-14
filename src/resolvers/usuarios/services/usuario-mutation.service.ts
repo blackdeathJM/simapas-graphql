@@ -5,7 +5,7 @@ import bcryptjs from 'bcryptjs';
 import {ObjectId} from 'bson';
 import JWT from "../../../lib/jwt";
 import {IUsuario} from "../models/usuario-interface";
-import {respDocumento} from "../../../services/respuestas-return";
+import {cambioRol} from "./usuario.subscription.service";
 
 export class UsuarioMutationService extends ResolversOperacionesService
 {
@@ -21,7 +21,6 @@ export class UsuarioMutationService extends ResolversOperacionesService
         {
             usuario.contrasena = bcryptjs.hashSync(usuario.contrasena, 10);
             const res = await this.agregarUnDocumento(COLECCION.USUARIOS, usuario, {});
-            console.log('res', res);
             return {
                 ...res
             }
@@ -35,7 +34,6 @@ export class UsuarioMutationService extends ResolversOperacionesService
 
     async _actualizarRole(_id: string, role: string, esActualizar: boolean)
     {
-        // cuando es verdadero se quiera el rol cuando es false se agrega
         let usuario: IUsuario;
         const filtro = {_id: new ObjectId(_id)};
         if (esActualizar)
@@ -44,7 +42,9 @@ export class UsuarioMutationService extends ResolversOperacionesService
                 filtro,
                 {$pull: {role}}, {returnDocument: "after"});
             usuario = res.documento as IUsuario;
-            await this.nvoRole(usuario);
+            // await this.nvoRole(usuario);
+            await cambioRol(this.context.pubsub!, this.context.db!, usuario.usuario);
+            console.log("esActualizar", res);
             return {
                 ...res
             };
@@ -53,7 +53,9 @@ export class UsuarioMutationService extends ResolversOperacionesService
             const res = await this.buscarUnoYActualizar(COLECCION.USUARIOS, filtro,
                 {$addToSet: {role}}, {returnDocument: "after"});
             usuario = res.documento as IUsuario;
-            await this.nvoRole(usuario);
+
+            console.log('else', res);
+            // await this.nvoRole(usuario);
             return {
                 ...res
             };
@@ -65,6 +67,7 @@ export class UsuarioMutationService extends ResolversOperacionesService
         usuario.contrasena = '******';
 
         const nvoRol = {usuario: usuario.usuario, token: new JWT().firmar(usuario)};
+
         return await this.context.pubsub!.publish(PUB_SUB.NOT_CAMBIO_ROLE,
             {
                 cambiarRoleUsuario: nvoRol

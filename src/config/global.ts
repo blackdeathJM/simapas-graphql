@@ -21,7 +21,7 @@ export enum COLECCION
 export enum PUB_SUB
 {
     DOC_EXT = 'todosDocsExtSub',
-    DOC_EXT_USUSUBPROCESO = 'usuariosSubproceso',
+    DOC_EXT_SUB_PROCESO = 'usuariosSubproceso',
     NOT_CAMBIO_ROLE = 'usuarioCambioRole',
     NOT_NOTIFICACION = 'docSubProceso'
 }
