@@ -2,7 +2,7 @@
 import DocUsuarioMutationService from "./services/doc-usuario-mutation.service";
 import {IResolvers} from "graphql-middleware/dist/types";
 
-const mutationDocUsuario: IResolvers =
+export const mutationDocUsuario: IResolvers =
     {
         Mutation:
             {
@@ -30,4 +30,3 @@ const mutationDocUsuario: IResolvers =
                 }
             }
     }
-export default mutationDocUsuario;

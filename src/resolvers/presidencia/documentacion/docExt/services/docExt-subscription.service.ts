@@ -7,10 +7,8 @@ import {subprocesos} from "../models/constantes";
 
 export async function notTodosDocsExt(pubsub: PubSub, db: Db)
 {
-    return await new DocExtQueryService({}, {db})._todosDocsExt('ENTREGADO').then(async res =>
-    {
-        return await pubsub.publish(PUB_SUB.DOC_EXT, {todosDocsExtSub: res.documentos});
-    });
+    const res = await new DocExtQueryService({}, {db})._todosDocsExt('ENTREGADO');
+    return await pubsub.publish(PUB_SUB.DOC_EXT, {todosDocsExtSub: res.documentos});
 }
 
 export async function notUsuarioSubProceso(pubsub: PubSub, db: Db, usuarios: string[])

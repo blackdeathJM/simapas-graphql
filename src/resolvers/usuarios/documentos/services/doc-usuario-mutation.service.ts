@@ -85,7 +85,9 @@ class DocUsuarioMutationService extends ResolversOperacionesService
         const resultado = await this.buscarUnDocumento(COLECCION.DOC_EXTERNA, {_id: new ObjectId(_id)}, {});
 
         resultado.documento?.usuarioDestino.forEach((u: IUsuarioDestinoDocExt) => usuarios.push(u.usuario));
+
         const folio = await formatoFolio(centroGestor, 'OFICIO', this.context.db!);
+
         return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA,
             {_id: new ObjectId(_id), usuarioDestino: {$elemMatch: {usuario}}},
             {$set: {folio, usuarioFolio: usuario, proceso: 'TERMINADO', "usuarioDestino.$.subproceso": 'TERMINADO'}},
@@ -94,7 +96,9 @@ class DocUsuarioMutationService extends ResolversOperacionesService
             {
                 await notTodosDocsExt(this.context.pubsub!, this.context.db!);
                 await notUsuarioSubProceso(this.context.pubsub!, this.context.db!, usuarios);
-                return respDocumento(res);
+                return {
+                    ...res
+                };
             });
     }
 

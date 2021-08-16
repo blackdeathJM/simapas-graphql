@@ -43,8 +43,7 @@ export class UsuarioMutationService extends ResolversOperacionesService
                 {$pull: {role}}, {returnDocument: "after"});
             usuario = res.documento as IUsuario;
             // await this.nvoRole(usuario);
-            await cambioRol(this.context.pubsub!, this.context.db!, usuario.usuario);
-            console.log("esActualizar", res);
+            // await cambioRol(this.context.pubsub!, this.context.db!, usuario.usuario);
             return {
                 ...res
             };
@@ -53,8 +52,6 @@ export class UsuarioMutationService extends ResolversOperacionesService
             const res = await this.buscarUnoYActualizar(COLECCION.USUARIOS, filtro,
                 {$addToSet: {role}}, {returnDocument: "after"});
             usuario = res.documento as IUsuario;
-
-            console.log('else', res);
             // await this.nvoRole(usuario);
             return {
                 ...res

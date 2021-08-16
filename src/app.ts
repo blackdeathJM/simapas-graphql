@@ -21,6 +21,7 @@ export class Server
     private readonly puerto = process.env.PORT || 3003
     private pubsub = new PubSub();
     private database = new Database();
+    private context: any;
 
     constructor(private schema: GraphQLSchema)
     {
@@ -52,11 +53,10 @@ export class Server
     {
         const {db, tr} = await this.database.init();
 
-        const context = ({req, connection}: IContext) =>
+        this.context = ({req, connection}: IContext) =>
         {
             const token = (req) ? req.headers.authorization : connection.authorization;
             const contexto = (req) ? req.headers.context : connection.context;
-
             return {db, token, pubsub: this.pubsub, contexto, tr};
         }
 
@@ -64,7 +64,7 @@ export class Server
             schema: this.schema,
             introspection: true,
             validationRules: [depthLimit(4)],
-            context
+            context: this.context
         });
 
         await server.start().then();
@@ -83,10 +83,11 @@ export class Server
     private createServer()
     {
         this.httpServer = createServer(this.app);
-        const subscriptionServer = SubscriptionServer.create({schema: this.schema, execute, subscribe},
+        const subscriptionServer = SubscriptionServer.create(
+            {schema: this.schema, execute, subscribe},
             {server: this.httpServer, path: '/graphql'});
 
-        ['SIGINT', 'SIGTERM'].forEach(signal => {process.on(signal, () => subscriptionServer.close())});
+        ['SIGINT', 'SIGTERM'].forEach(signal => {process.on(signal, () => subscriptionServer.close());});
     }
 
     listen(callback: (port: number) => void): void
@@ -97,4 +98,3 @@ export class Server
         });
     }
 }
-
