@@ -83,15 +83,17 @@ export class Server
     private createServer()
     {
         this.httpServer = createServer(this.app);
-        const subscriptionServer = SubscriptionServer.create(
-            {schema: this.schema, execute, subscribe},
-            {server: this.httpServer, path: '/graphql'});
+        // const subscriptionServer = SubscriptionServer.create(
+        //     {schema: this.schema, execute, subscribe},
+        //     {server: this.httpServer, path: '/graphql'});
 
-        ['SIGINT', 'SIGTERM'].forEach(signal => {process.on(signal, () => subscriptionServer.close());});
+        // ['SIGINT', 'SIGTERM'].forEach(signal => {process.on(signal, () => subscriptionServer.close());});
     }
 
     listen(callback: (port: number) => void): void
     {
+        new SubscriptionServer({execute, subscribe, schema: this.schema}, {server: this.httpServer, path: 'graphql'});
+
         this.httpServer.listen(this.puerto, () =>
         {
             callback(+this.puerto)
