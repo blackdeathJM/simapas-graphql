@@ -9,7 +9,7 @@ import {queryOrdenesTrabajo} from "./global/ordenes-trabajo/ordenes-trabajo.quer
 import {queryCliente} from "./dir-comercial/resolvers/cliente.query.resolver";
 import {querySolicitudes} from "./dir-comercial/resolvers/solicitudes.query.resolver";
 
-const unionQueryResolver = GMR.merge(
+export const unionQueryResolver = GMR.merge(
     [
         queryDocExt,
         queryDocUsuario,
@@ -21,5 +21,3 @@ const unionQueryResolver = GMR.merge(
         queryCliente,
         querySolicitudes
     ]);
-
-export default unionQueryResolver;

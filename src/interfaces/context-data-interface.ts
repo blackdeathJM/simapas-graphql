@@ -1,5 +1,5 @@
 import {Db} from "mongodb";
-import {PubSub} from 'graphql-subscriptions';
+import {PubSub} from "graphql-subscriptions";
 
 export interface IContextData
 {

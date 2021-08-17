@@ -5,7 +5,6 @@ import {ApolloServer} from "apollo-server-express";
 
 import {createServer, Server as HTTPServer} from "http";
 import {execute, GraphQLSchema, subscribe} from "graphql";
-import {PubSub} from 'graphql-subscriptions';
 
 import {SubscriptionServer} from "subscriptions-transport-ws";
 
@@ -13,6 +12,8 @@ import Database from "./config/database";
 import {IContext} from "./interfaces/context-interface";
 import {router} from "./configMuter/docs.routes";
 import depthLimit from "graphql-depth-limit";
+import {PubSub} from "graphql-subscriptions";
+
 
 export class Server
 {
@@ -37,8 +38,8 @@ export class Server
     {
         this.configExpress();
         this.configApolloServer().then();
-        this.configRoutes();
         this.createServer();
+        this.configRoutes();
     }
 
     private configExpress()
@@ -83,17 +84,21 @@ export class Server
     private createServer()
     {
         this.httpServer = createServer(this.app);
-        // const subscriptionServer = SubscriptionServer.create(
-        //     {schema: this.schema, execute, subscribe},
-        //     {server: this.httpServer, path: '/graphql'});
-
-        // ['SIGINT', 'SIGTERM'].forEach(signal => {process.on(signal, () => subscriptionServer.close());});
+        const subscriptionServer = SubscriptionServer.create({
+                schema: this.schema, execute, subscribe, onConnect()
+                {
+                    console.log("conectado");
+                }, onDisconnect()
+                {
+                    console.log("Desconectado");
+                }
+            },
+            {server: this.httpServer, path: '/graphql'});
+        ['SIGINT', 'SIGTERM'].forEach(signal => {process.on(signal, () => subscriptionServer.close());});
     }
 
     listen(callback: (port: number) => void): void
     {
-        new SubscriptionServer({execute, subscribe, schema: this.schema}, {server: this.httpServer, path: 'graphql'});
-
         this.httpServer.listen(this.puerto, () =>
         {
             callback(+this.puerto)

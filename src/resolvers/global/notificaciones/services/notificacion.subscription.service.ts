@@ -1,7 +1,7 @@
-import {PubSub} from 'graphql-subscriptions';
 import {Db} from "mongodb";
 import {NotificacionQueryService} from "./notificacion.query.service";
 import {PUB_SUB} from "../../../../config/global";
+import {PubSub} from "graphql-subscriptions";
 
 export async function notNotificacion(pubsub: PubSub, db: Db, usuarios: string[])
 {
