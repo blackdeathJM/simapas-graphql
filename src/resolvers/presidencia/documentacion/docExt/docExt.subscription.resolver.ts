@@ -2,10 +2,11 @@ import {PUB_SUB} from "../../../../config/global";
 import {withFilter} from 'graphql-subscriptions';
 import {IDocExt} from "./models/docExt.interface";
 import {IResolvers} from "graphql-middleware/dist/types";
+import {pubsub} from "../../../../app";
 
 let filtro: boolean = false;
 
-export const docExtSubscription: IResolvers=
+export const docExtSubscription: IResolvers =
     {
         Subscription:
             {
@@ -15,7 +16,10 @@ export const docExtSubscription: IResolvers=
                         // {
                         //         return pubsub.asyncIterator([PUB_SUB.DOC_EXT]);
                         // }
-                        subscribe: (_, __, {pubsub}) => pubsub.asyncIterator([PUB_SUB.DOC_EXT])
+                        subscribe: () =>
+                        {
+                            return pubsub.asyncIterator([PUB_SUB.DOC_EXT]);
+                        }
                     },
                 docSubProceso:
                     {

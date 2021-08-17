@@ -6,7 +6,7 @@ import {ApolloServer} from "apollo-server-express";
 import {createServer, Server as HTTPServer} from "http";
 import {execute, GraphQLSchema, subscribe} from "graphql";
 
-import {SubscriptionServer} from "subscriptions-transport-ws";
+import {ConnectionContext, SubscriptionServer} from "subscriptions-transport-ws";
 
 import Database from "./config/database";
 import {IContext} from "./interfaces/context-interface";
@@ -14,13 +14,13 @@ import {router} from "./configMuter/docs.routes";
 import depthLimit from "graphql-depth-limit";
 import {PubSub} from "graphql-subscriptions";
 
-
+export const pubsub = new PubSub();
 export class Server
 {
     private app!: Application;
     private httpServer!: HTTPServer;
     private readonly puerto = process.env.PORT || 3003
-    private pubsub = new PubSub();
+    // private pubsub = new PubSub();
     private database = new Database();
     private context: any;
 
@@ -58,7 +58,7 @@ export class Server
         {
             const token = (req) ? req.headers.authorization : connection.authorization;
             const contexto = (req) ? req.headers.context : connection.context;
-            return {db, token, pubsub: this.pubsub, contexto, tr};
+            return {db, token, pubsub: pubsub, contexto, tr};
         }
 
         const server = new ApolloServer({
@@ -85,9 +85,9 @@ export class Server
     {
         this.httpServer = createServer(this.app);
         const subscriptionServer = SubscriptionServer.create({
-                schema: this.schema, execute, subscribe, onConnect()
+                schema: this.schema, execute, subscribe, async onConnect(connectionParams: Object, webSocket: WebSocket, context: ConnectionContext)
                 {
-                    console.log("conectado");
+                    return context;
                 }, onDisconnect()
                 {
                     console.log("Desconectado");

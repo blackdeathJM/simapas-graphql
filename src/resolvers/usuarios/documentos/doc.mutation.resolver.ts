@@ -1,12 +1,10 @@
-// import {IResolvers} from "graphql-tools";
-import DocUsuarioMutationService from "./services/doc-usuario-mutation.service";
+import {DocUsuarioMutationService} from "./services/doc-usuario-mutation.service";
 import {IResolvers} from "graphql-middleware/dist/types";
 
 export const mutationDocUsuario: IResolvers =
     {
         Mutation:
             {
-                // Actualizar el docUrl del usuarios donde subira la respuesta que guardaremos de manera temporal
                 async acDocUrlEnUsuarioDestino(_, {_id, usuario, docUrl, subproceso}, {pubsub, db})
                 {
                     return new DocUsuarioMutationService(_, {pubsub, db})._acDocUrlEnUsuarioDestino(_id, usuario, docUrl, subproceso);
@@ -19,12 +17,12 @@ export const mutationDocUsuario: IResolvers =
                 {
                     return new DocUsuarioMutationService(_, {pubsub, db})._genFolioRespDoc(_id, usuario, centroGestor);
                 },
-                docRespUrlAcuseUrl(_, {_id, documento, proceso, usuario, esInterno, esDocRespUrl}, {pubsub, db})
+                async docRespUrlAcuseUrl(_, {_id, documento, proceso, usuario, esInterno, esDocRespUrl}, {pubsub, db})
                 {
                     return new DocUsuarioMutationService(_, {pubsub, db})._docRespUrlAcuseUrl(_id, documento, proceso, usuario, esInterno,
                         esDocRespUrl);
                 },
-                terminarDocUsuario(_, {_id}, {db})
+                async terminarDocUsuario(_, {_id}, {db})
                 {
                     return new DocUsuarioMutationService(_, {db})._terminarDocUsuario(_id);
                 }

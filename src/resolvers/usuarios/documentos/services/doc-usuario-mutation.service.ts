@@ -9,7 +9,7 @@ import {formatoFolio} from "./funcionesDocs";
 import moment from "moment";
 
 
-class DocUsuarioMutationService extends ResolversOperacionesService
+export class DocUsuarioMutationService extends ResolversOperacionesService
 {
     constructor(root: object, context: IContextData)
     {
@@ -149,5 +149,3 @@ class DocUsuarioMutationService extends ResolversOperacionesService
             })
     }
 }
-
-export default DocUsuarioMutationService;
