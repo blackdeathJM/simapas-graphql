@@ -3,10 +3,9 @@ import {docExtSubscription} from "./presidencia/documentacion/docExt/docExt.subs
 import {usuarioSubscriptionResolver} from "./usuarios/usuario.subscription.resolver";
 import notSubscription from "./global/notificaciones/notificaciones.subscription.resolver";
 
-const unionSubscriptionResolver = GMR.merge(
+export const unionSubscriptionResolver = GMR.merge(
     [
         docExtSubscription,
         usuarioSubscriptionResolver,
         notSubscription
     ]);
-export default unionSubscriptionResolver;

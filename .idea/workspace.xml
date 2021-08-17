@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99f9ee1a-03d2-48fa-b512-72d44dc79152" name="Default Changelist" comment="Perfil">
+    <list default="true" id="e9b3d981-495e-48bf-a699-828ad23adbd8" name="Changes" comment="Actualizacion del rol">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/resolversMap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/resolversMap.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/unionSubscription.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionSubscription.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +28,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MacroExpansionManager">
-    <option name="directoryName" value="sh788ak6" />
   </component>
   <component name="ProjectId" id="1mra8Gwz8gIhIHNHYbmVkoe3qfB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -58,7 +57,7 @@
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="D:\Documents\Proyectos\Backend\simapas-graphql\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="D:\Documents\proyectos\backend\simapas-graphql\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -78,6 +77,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+      <changelist id="e9b3d981-495e-48bf-a699-828ad23adbd8" name="Changes" comment="Actualizacion de dependencias" />
       <created>1610254007620</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -182,11 +182,11 @@
       <workItem from="1628755782348" duration="1289000" />
       <workItem from="1628760191657" duration="999000" />
       <workItem from="1628915735991" duration="3296000" />
-      <workItem from="1628931251902" duration="2844000" />
-      <workItem from="1628953773661" duration="12834000" />
-      <workItem from="1628987764802" duration="3059000" />
-      <workItem from="1629106258793" duration="2647000" />
-      <workItem from="1629129999026" duration="1847000" />
+      <workItem from="1628931251902" duration="2903000" />
+      <workItem from="1629199124677" duration="1239000" />
+      <workItem from="1629201005679" duration="8000" />
+      <workItem from="1629201604095" duration="167000" />
+      <workItem from="1629201822048" duration="1690000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -307,21 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628681544918</updated>
     </task>
-    <task id="LOCAL-00018" summary="trabajando en folios">
-      <created>1628956417273</created>
+    <task id="LOCAL-00018" summary="Actualizacion del rol">
+      <created>1628940012011</created>
       <option name="number" value="00018" />
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
-      <updated>1628956417273</updated>
+      <updated>1628940012011</updated>
     </task>
-    <task id="LOCAL-00019" summary="Perfil">
-      <created>1629131135378</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1629131135379</updated>
-    </task>
-    <option name="localTasksCounter" value="20" />
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,10 +333,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="trabajando en folios" />
     <MESSAGE value="Actualizacion de dependencias" />
     <MESSAGE value="Actualizacion de apollo-server-express 3" />
-    <MESSAGE value="trabajando en folios" />
-    <MESSAGE value="Perfil" />
-    <option name="LAST_COMMIT_MESSAGE" value="Perfil" />
+    <MESSAGE value="Actualizacion del rol" />
+    <option name="LAST_COMMIT_MESSAGE" value="Actualizacion del rol" />
   </component>
 </project>
