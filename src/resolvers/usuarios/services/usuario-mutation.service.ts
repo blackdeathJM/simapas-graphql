@@ -79,33 +79,31 @@ export class UsuarioMutationService extends ResolversOperacionesService
             {
                 buscarUsuario.documento.contrasena = bcryptjs.hashSync(nvaContrasena, 10);
 
-                return await this.buscarUnoYActualizar(COLECCION.USUARIOS,
-                    {usuario}, {$set: {contrasena: buscarUsuario.documento.contrasena}}, {returnDocument: "after"}).then(
-                    async respuesta =>
-                    {
-                        delete respuesta.documento?.contrasena;
-                        const nvoToken = respuesta.documento;
-                        return {
-                            estatus: respuesta.estatus,
-                            mensaje: respuesta.mensaje,
-                            token: new JWT().firmar({nvoToken})
-                        }
-                    }
-                )
+                const res = await this.buscarUnoYActualizar(COLECCION.USUARIOS,
+                    {usuario}, {$set: {contrasena: buscarUsuario.documento.contrasena}}, {returnDocument: "after"});
+
+
+                delete res.documento?.contrasena;
+                return {
+                    estatus: res.estatus,
+                    mensaje: res.mensaje,
+                    documento: null
+                }
+
             } else
             {
                 return {
                     estatus: false,
                     mensaje: `Las contrasenas no son iguales`,
-                    token: null
+                    documento: null
                 }
             }
         } else
         {
             return {
                 estatus: false,
-                mensaje: buscarUsuario.mensaje,
-                token: null
+                mensaje: 'Documento vacio',
+                documento: null
             }
         }
     }

@@ -24,8 +24,8 @@ export class ContratoMutationService extends ResolversOperacionesService
         let bucle = true;
         do
         {
-            contrato.rpu = await randomUUID().toUpperCase();
-            contrato.noContrato = await randomInt(10000000).toString();
+            contrato.rpu = randomUUID().toUpperCase();
+            contrato.noContrato = randomInt(10000000).toString();
 
             let res = await this.buscarUnDocumento(COLECCION.CLIENTES, {contratos: {$elemMatch: {$or: [{rpu: contrato.rpu, noContrato: contrato.noContrato}]}}}, {});
             bucle = res.estatus;

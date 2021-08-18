@@ -7,5 +7,5 @@ type Mutation
     "USUARIO - Actualizar role"
     actualizarRole(_id: ID! role: String!, esActualizar: Boolean!): ResUsuario!
     "USUARIO - Actualizar contrasena"
-    actualizarContrasena(usuario: String!, actualContrasena: String!, nvaContrasena: String!, esAdmin: Boolean!): ResUsuarioToken!
+    actualizarContrasena(usuario: String!, actualContrasena: String!, nvaContrasena: String!, esAdmin: Boolean!): ResUsuario
 }
