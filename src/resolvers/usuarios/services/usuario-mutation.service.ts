@@ -5,7 +5,6 @@ import bcryptjs from 'bcryptjs';
 import {ObjectId} from 'bson';
 import JWT from "../../../lib/jwt";
 import {IUsuario} from "../models/usuario-interface";
-import {cambioRol} from "./usuario.subscription.service";
 
 export class UsuarioMutationService extends ResolversOperacionesService
 {
@@ -42,8 +41,7 @@ export class UsuarioMutationService extends ResolversOperacionesService
                 filtro,
                 {$pull: {role}}, {returnDocument: "after"});
             usuario = res.documento as IUsuario;
-            // await this.nvoRole(usuario);
-            // await cambioRol(this.context.pubsub!, this.context.db!, usuario.usuario);
+            await this.nvoRole(usuario);
             return {
                 ...res
             };
@@ -52,7 +50,7 @@ export class UsuarioMutationService extends ResolversOperacionesService
             const res = await this.buscarUnoYActualizar(COLECCION.USUARIOS, filtro,
                 {$addToSet: {role}}, {returnDocument: "after"});
             usuario = res.documento as IUsuario;
-            // await this.nvoRole(usuario);
+            await this.nvoRole(usuario);
             return {
                 ...res
             };

@@ -1,6 +1,7 @@
 import {PUB_SUB} from "../../config/global";
 import {withFilter} from 'graphql-subscriptions';
 import {IResolvers} from "graphql-middleware/dist/types";
+import {pubsub} from "../../app";
 
 export const usuarioSubscriptionResolver: IResolvers =
     {
@@ -8,12 +9,10 @@ export const usuarioSubscriptionResolver: IResolvers =
             {
                 cambiarRoleUsuario:
                     {
-                        subscribe: withFilter((_: void, __: void, {pubsub}) => pubsub.asyncIterator(PUB_SUB.NOT_CAMBIO_ROLE),
+                        subscribe: withFilter(() => pubsub.asyncIterator(PUB_SUB.NOT_CAMBIO_ROLE),
                             (payload, variables) =>
                             {
-                                const res = payload.cambiarRoleUsuario.usuario === variables.usuario;
-                                console.log('subscription', res);
-                                return res;
+                                return payload.cambiarRoleUsuario.usuario === variables.usuario;
                             })
                     }
             }

@@ -20,7 +20,6 @@ export class Server
     private app!: Application;
     private httpServer!: HTTPServer;
     private readonly puerto = process.env.PORT || 3003
-    // private pubsub = new PubSub();
     private database = new Database();
     private context: any;
 
