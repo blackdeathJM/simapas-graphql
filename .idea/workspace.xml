@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e9b3d981-495e-48bf-a699-828ad23adbd8" name="Changes" comment="configurando subscripciones para el servidor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/contrato.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/dir-comercial/services/contrato.mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/usuarios/usuarioMutation.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/usuarios/usuarioMutation.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +187,11 @@
       <workItem from="1629201822048" duration="2314000" />
       <workItem from="1629223599138" duration="28000" />
       <workItem from="1629281621894" duration="3730000" />
-      <workItem from="1629313824365" duration="3251000" />
+      <workItem from="1629313824365" duration="3274000" />
+      <workItem from="1629340845909" duration="1858000" />
+      <workItem from="1629376640018" duration="6000" />
+      <workItem from="1629376825611" duration="2064000" />
+      <workItem from="1629389134670" duration="3230000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -330,7 +333,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629223617550</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="configurando subscripciones para el servidor">
+      <created>1629321108931</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1629321108931</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
