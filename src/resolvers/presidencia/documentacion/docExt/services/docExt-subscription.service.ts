@@ -15,12 +15,10 @@ export async function notTodosDocsExt(pubsub: PubSub, db: Db)
 
 export async function notUsuarioSubProceso(pubsub: PubSub, db: Db, usuarios: string[])
 {
-    return usuarios.filter(async u =>
+    usuarios.filter(async u =>
     {
-        return await new DocUsuarioQueryService({}, {db})._doscUsuarioSubproceso(u, subprocesos).then(
-            async res =>
-            {
-                return await pubsub.publish(PUB_SUB.DOC_EXT_SUB_PROCESO, {docSubProceso: res.documentos});
-            })
+        const res = await new DocUsuarioQueryService({}, {db})._doscUsuarioSubproceso(u, subprocesos);
+
+        await pubsub.publish(PUB_SUB.DOC_EXT_SUB_PROCESO, {docSubProceso: res.documentos});
     });
 }

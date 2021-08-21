@@ -12,10 +12,6 @@ export const docExtSubscription: IResolvers =
             {
                 todosDocsExtSub:
                     {
-                        // subscribe: (_, __, {pubsub}) =>
-                        // {
-                        //         return pubsub.asyncIterator([PUB_SUB.DOC_EXT]);
-                        // }
                         subscribe: () =>
                         {
                             return pubsub.asyncIterator([PUB_SUB.DOC_EXT]);
@@ -23,14 +19,15 @@ export const docExtSubscription: IResolvers =
                     },
                 docSubProceso:
                     {
-                        subscribe: withFilter((_: void, __: void, {pubsub}) => pubsub.asyncIterator(PUB_SUB.DOC_EXT_SUB_PROCESO),
+                        subscribe: withFilter(( ) => pubsub.asyncIterator(PUB_SUB.DOC_EXT_SUB_PROCESO),
                             (payload, variables) =>
                             {
+                                console.log(payload, variables);
                                 payload.docSubProceso.forEach((d: IDocExt) =>
                                 {
                                     d.usuarioDestino.forEach(value =>
                                     {
-                                        filtro = value.usuario === variables.usuario;
+                                        return filtro = value.usuario === variables.usuario;
                                     })
                                 });
                                 return filtro;

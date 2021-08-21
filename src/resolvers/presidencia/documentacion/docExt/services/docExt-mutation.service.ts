@@ -6,7 +6,7 @@ import {respDocumento} from "../../../../../services/respuestas-return";
 import {IDocExt, IUsuarioDestinoDocExt} from "../models/docExt.interface";
 import {notUsuarioSubProceso} from "./docExt-subscription.service";
 
-class DocExtMutationService extends ResolversOperacionesService
+export class DocExtMutationService extends ResolversOperacionesService
 {
     constructor(root: object, context: IContextData)
     {super(root, context);}
@@ -14,21 +14,23 @@ class DocExtMutationService extends ResolversOperacionesService
     async _regDocExt(documento: IDocExt)
     {
         documento.ano = new Date().getFullYear();
+
         const totalDocs = await this.contarDocumentos(COLECCION.DOC_EXTERNA, {tipoDoc: documento.tipoDoc, ano: documento.ano}, {});
         documento.noSeguimiento = totalDocs.total + 1;
 
-        return await this.agregarUnDocumento(COLECCION.DOC_EXTERNA, documento, {}).then(
-            async resultado =>
-            {
-                const usuarios: string[] = [];
-                documento.usuarioDestino.forEach(value =>
-                {
-                    usuarios.push(value.usuario);
-                });
-                await notUsuarioSubProceso(this.context.pubsub!, this.context.db!, usuarios);
-                return respDocumento(resultado);
-            }
-        )
+        const res = await this.agregarUnDocumento(COLECCION.DOC_EXTERNA, documento, {});
+        const usuarios: string[] = [];
+
+        documento.usuarioDestino.forEach(value =>
+        {
+            usuarios.push(value.usuario);
+        });
+
+        await notUsuarioSubProceso(this.context.pubsub!, this.context.db!, usuarios);
+        return {
+            ...res
+        }
+
     }
 
     async _desactivarNot(_id: string, usuario: string)
@@ -114,4 +116,3 @@ class DocExtMutationService extends ResolversOperacionesService
     }
 }
 
-export default DocExtMutationService;
