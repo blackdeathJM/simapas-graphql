@@ -15,6 +15,7 @@ import depthLimit from "graphql-depth-limit";
 import {PubSub} from "graphql-subscriptions";
 
 export const pubsub = new PubSub();
+
 export class Server
 {
     private app!: Application;
@@ -84,13 +85,7 @@ export class Server
     {
         this.httpServer = createServer(this.app);
         const subscriptionServer = SubscriptionServer.create({
-                schema: this.schema, execute, subscribe, async onConnect(connectionParams: Object, webSocket: WebSocket, context: ConnectionContext)
-                {
-                    return context;
-                }, onDisconnect()
-                {
-                    console.log("Desconectado");
-                }
+                schema: this.schema, execute, subscribe
             },
             {server: this.httpServer, path: '/graphql'});
         ['SIGINT', 'SIGTERM'].forEach(signal => {process.on(signal, () => subscriptionServer.close());});

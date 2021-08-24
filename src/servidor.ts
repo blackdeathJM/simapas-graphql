@@ -23,7 +23,7 @@ async function init()
     const {db, tr} = await database.init();
     app.use(compression());
 
-    app.use(bodyParser.json()).use(bodyParser.urlencoded({extended: true}));
+    // app.use(bodyParser.json()).use(bodyParser.urlencoded({extended: true}));
     app.use(express.static(path.join(__dirname, 'public')));
 
     app.use(function (req, res, next)

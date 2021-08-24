@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e9b3d981-495e-48bf-a699-828ad23adbd8" name="Changes" comment="configurando subscripciones para el servidor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/docExt.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/docExt.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/docExt.subscription.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/docExt.subscription.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/services/docExt-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/services/docExt-mutation.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/services/docExt-subscription.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/services/docExt-subscription.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servidor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/servidor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,6 +198,13 @@
       <workItem from="1629470238226" duration="1195000" />
       <workItem from="1629496898851" duration="1133000" />
       <workItem from="1629568209549" duration="3543000" />
+      <workItem from="1629580639463" duration="1320000" />
+      <workItem from="1629617330881" duration="1192000" />
+      <workItem from="1629657744786" duration="1363000" />
+      <workItem from="1629683003801" duration="1197000" />
+      <workItem from="1629736281271" duration="907000" />
+      <workItem from="1629753900685" duration="2740000" />
+      <workItem from="1629765243572" duration="918000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -360,7 +367,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629516682690</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="configurando subscripciones para el servidor">
+      <created>1629580852336</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1629580852336</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
