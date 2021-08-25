@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9b3d981-495e-48bf-a699-828ad23adbd8" name="Changes" comment="configurando subscripciones para el servidor">
-      <change afterPath="$PROJECT_DIR$/src/resolvers/upload/upload.resolver.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resolvers/upload/upload.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schema/uploads/upload.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/docExt.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/docExt.mutation.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/departamentos/departamento.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/departamentos/departamento.query.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/upload/upload.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/upload/upload.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/upload/upload.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/upload/upload.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/uploads/upload.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/uploads/upload.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +207,8 @@
       <workItem from="1629753900685" duration="2740000" />
       <workItem from="1629765243572" duration="984000" />
       <workItem from="1629824542614" duration="9631000" />
-      <workItem from="1629842260103" duration="6111000" />
+      <workItem from="1629842260103" duration="6181000" />
+      <workItem from="1629855783881" duration="6301000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -387,7 +385,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629772213415</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="configurando subscripciones para el servidor">
+      <created>1629850918285</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1629850918285</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

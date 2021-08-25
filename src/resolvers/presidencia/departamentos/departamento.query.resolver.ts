@@ -1,19 +1,18 @@
-// import {IResolvers} from "graphql-tools";
 import DepartamentoQueryService from "./services/departamento-query.service";
-import {IResolvers} from "graphql-middleware/dist/types";
+import {Db} from "mongodb";
 
-const queryDeptos: IResolvers =
+export const queryDeptos =
     {
         Query:
             {
-                async obtenerDeptos(_, {}, {db})
+                obtenerDeptos: async (_: object, __: object, param: { db: Db }) =>
                 {
-                    return new DepartamentoQueryService(_, {db})._obtenerDeptos();
+                    return new DepartamentoQueryService(_, {db: param.db})._obtenerDeptos()
                 },
-                async departamentoID(_, {_id}, {db})
+
+                departamentoID: async (_: object, args: { _id: string }, param: { db: Db }) =>
                 {
-                    return new DepartamentoQueryService(_, {db}).elementoDetalle(_id);
+                    return new DepartamentoQueryService(_, {db: param.db}).elementoDetalle(args._id);
                 }
             }
     };
-export default queryDeptos;

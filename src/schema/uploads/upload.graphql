@@ -9,5 +9,5 @@ type FileType
 
 type Mutation
 {
-    subirArchivos(file: Upload!, multiple: Boolean): FileType
+    subirArchivos(file: Upload, multiple: Boolean): FileType
 }

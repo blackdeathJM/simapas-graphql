@@ -5,7 +5,7 @@ export class UploadService
     async _subirArchivos(file: any, multiple: boolean)
     {
         const {createReadStream, filename, mimetype, encoding} = await file;
-        console.log('respu', createReadStream, filename, mimetype, encoding);
+        console.log('respu', createReadStream, filename, mimetype, encoding, multiple);
         //
         // const stream = createReadStream();
         //

@@ -1,14 +1,16 @@
-import {IResolvers} from "graphql-middleware/dist/types";
 import {UploadService} from "./upload.service";
+import {GraphQLUpload} from "graphql-upload";
 
-export const uploadMutation: IResolvers =
+
+export const uploadMutation =
     {
+        Upload: GraphQLUpload,
         Mutation:
             {
-                async subirArchivos(_, {file, multiple})
+
+                subirArchivos: async (_: object, args: { file: File, multiple: boolean }) =>
                 {
-                    console.log('resolver', file, multiple);
-                    return new UploadService()._subirArchivos(file, multiple);
+                    return new UploadService()._subirArchivos(args.file, args.multiple);
                 }
             }
     }
