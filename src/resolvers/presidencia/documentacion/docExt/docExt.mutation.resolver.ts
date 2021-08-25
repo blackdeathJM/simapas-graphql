@@ -2,7 +2,7 @@
 import {DocExtMutationService} from "./services/docExt-mutation.service";
 import {IResolvers} from "graphql-middleware/dist/types";
 
-const mutationDocExt: IResolvers =
+export const mutationDocExt: IResolvers =
     {
         Mutation:
             {
@@ -34,4 +34,3 @@ const mutationDocExt: IResolvers =
                 }
             }
     };
-export default mutationDocExt;

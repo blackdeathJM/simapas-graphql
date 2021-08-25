@@ -6,13 +6,15 @@ import {ApolloServer} from "apollo-server-express";
 import {createServer, Server as HTTPServer} from "http";
 import {execute, GraphQLSchema, subscribe} from "graphql";
 
-import {ConnectionContext, SubscriptionServer} from "subscriptions-transport-ws";
+import {SubscriptionServer} from "subscriptions-transport-ws";
 
 import Database from "./config/database";
 import {IContext} from "./interfaces/context-interface";
 import {router} from "./configMuter/docs.routes";
 import depthLimit from "graphql-depth-limit";
 import {PubSub} from "graphql-subscriptions";
+
+import {graphqlUploadExpress} from "graphql-upload";
 
 export const pubsub = new PubSub();
 
@@ -74,6 +76,7 @@ export class Server
 
     private configRoutes()
     {
+        this.app.use(graphqlUploadExpress());
         this.app.use('/file', router);
         this.app.get('/', function (_, res)
         {

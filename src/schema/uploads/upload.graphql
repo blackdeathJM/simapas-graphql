@@ -1,0 +1,13 @@
+scalar Upload
+
+type FileType
+{
+    filename: String
+    mimetype: String
+    encoding: String
+}
+
+type Mutation
+{
+    subirArchivos(file: Upload!, multiple: Boolean): FileType
+}
