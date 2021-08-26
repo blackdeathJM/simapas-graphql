@@ -8,9 +8,13 @@ export const uploadMutation =
         Mutation:
             {
 
-                subirArchivos: async (_: object, args: { file: File, multiple: boolean }) =>
+                subidaSimple: async (_: object, args: { file: any }) =>
                 {
-                    return new UploadService()._subirArchivos(args.file, args.multiple);
+                    return new UploadService()._subidaSimple(args.file);
+                },
+                subidaMultiple: async (_:object, args: { files: any }) =>
+                {
+                    return new UploadService()._subidaMultiple(args.files)
                 }
             }
     }

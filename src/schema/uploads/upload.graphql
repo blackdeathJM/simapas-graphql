@@ -9,5 +9,6 @@ type FileType
 
 type Mutation
 {
-    subirArchivos(file: Upload!, multiple: Boolean!): FileType
+    subidaSimple(file: Upload!): FileType
+    subidaMultiple(files: [Upload!]!): FileType
 }
