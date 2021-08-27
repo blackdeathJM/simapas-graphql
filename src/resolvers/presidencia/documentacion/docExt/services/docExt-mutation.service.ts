@@ -14,9 +14,19 @@ export class DocExtMutationService extends ResolversOperacionesService
 
     async _regDocExt(documento: IDocExt, archivo: any, carpeta: string)
     {
-        // const r = await new UploadService()._subir(archivo, documento.);
+        console.log(documento);
+        const r = await new UploadService()._subir(archivo, carpeta);
 
+        if (r.length === 0)
+        {
+            return {
+                estatus: false,
+                mesaje: `Hubo un problema con el archivo no se pudo subir al servidor no se pudo continuar con la operacion vuelve a intentarlo mas tarde`,
+                documento: null
+            }
+        }
         documento.ano = new Date().getFullYear();
+        documento.docUrl = r[0];
 
         const totalDocs = await this.contarDocumentos(COLECCION.DOC_EXTERNA, {tipoDoc: documento.tipoDoc, ano: documento.ano}, {});
         documento.noSeguimiento = totalDocs.total + 1;
@@ -34,16 +44,6 @@ export class DocExtMutationService extends ResolversOperacionesService
             ...res
         }
 
-    }
-
-    async _desactivarNot(_id: string, usuario: string)
-    {
-        return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(_id), usuarioDestino: {$elemMatch: {usuario}}},
-            {$set: {notificarAdministrador: false, "usuarioDestino.$.notificarRespDelUsuario": false}}, {returnDocument: "after"}).then(
-            resultado =>
-            {
-                return respDocumento(resultado);
-            })
     }
 
     async _aprobarRechazarDoc(_id: string, usuario: string, subproceso: string, observaciones: string)

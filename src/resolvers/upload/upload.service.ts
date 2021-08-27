@@ -1,6 +1,5 @@
 import fs from 'fs-extra';
 import path from "path";
-import * as util from "util";
 import {randomUUID} from "crypto";
 
 export class UploadService
@@ -29,6 +28,7 @@ export class UploadService
                 const ruta = path.resolve(__dirname, `../../public/uploads/${carpeta}/${nvoNombre}`);
 
                 const stream = createReadStream();
+
                 if (!fs.existsSync(checarRuta))
                 {
                     fs.mkdirSync(checarRuta);
@@ -36,7 +36,7 @@ export class UploadService
 
                 const salida = fs.createWriteStream(ruta);
                 stream.pipe(salida);
-                await salida.close();
+                salida.close();
                 arreglo.push(nvoNombre);
             }
 

@@ -1,9 +1,7 @@
 type Mutation
 {
     "DOC EXTERNA: Registro de los documentos externos"
-    regDocExt(docExt: DocExtInput!, archivo: Upload!, carpeta: String!):ResDocEx
-    "Desactivar notificaciones"
-    desactivarNot(_id: ID!, usuario: String!): ResDocExSinPag
+    regDocExt(docExt: DocExtInput!, archivo: [Upload!]!, carpeta: String!):ResDocEx
     "DOC EXTERNA: Mandar observaciones y rechazar el documento"
     aprobarRechazarDoc(_id: ID!, usuario: String!, subproceso: String!, observaciones: String!): ResDocEx
     "DOC: EXTERNA: Dar por terminado el documento anticipado"

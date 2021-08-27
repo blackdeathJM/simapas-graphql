@@ -1,36 +1,35 @@
 // import {IResolvers} from "graphql-tools";
 import {DocExtMutationService} from "./services/docExt-mutation.service";
-import {IResolvers} from "graphql-middleware/dist/types";
+import {IDocExt} from "./models/docExt.interface";
+import {PubSub} from "graphql-subscriptions";
+import {Db} from "mongodb";
 
-export const mutationDocExt: IResolvers =
+export const mutationDocExt =
     {
         Mutation:
             {
                 // PASO 1: Registrar el documento externo
-                async regDocExt(_, {docExt, archivo, carpeta}, {pubsub, db})
+
+
+                regDocExt: async (_: object, ar: { docExt: IDocExt, archivo: any, carpeta: string }, pa: { pubsub: PubSub, db: Db }) =>
                 {
-                    return new DocExtMutationService(_,  {pubsub, db})._regDocExt(docExt, archivo, carpeta);
+                    return new DocExtMutationService(_, {pubsub: pa.pubsub, db: pa.db})._regDocExt(ar.docExt, ar.archivo, ar.carpeta);
                 },
-                async desactivarNot(_, {_id, usuario}, {db})
+                aprobarRechazarDoc: async (_: object, ar: { _id: string, usuario: string, subproceso: string, observaciones: string }, pa: { pubsub: PubSub, db: Db }) =>
                 {
-                    return new DocExtMutationService(_,  {db})._desactivarNot(_id, usuario);
+                    return new DocExtMutationService(_, {pubsub: pa.pubsub, db: pa.db})._aprobarRechazarDoc(ar._id, ar.usuario, ar.subproceso, ar.observaciones);
                 },
-                // Rechazar el documento y mandar observaciones cambiamos el subproceso a RECHAZADO y notificamos al usuarios y mandamos notificacion
-                async aprobarRechazarDoc(_, {_id, usuario, subproceso, observaciones}, {pubsub, db})
+                acDarPorEntregado: async (_: object, ar: { _id: string }, pa: { pubsub: PubSub, db: Db }) =>
                 {
-                    return new DocExtMutationService(_,  {pubsub, db})._aprobarRechazarDoc(_id, usuario, subproceso, observaciones);
+                    return new DocExtMutationService(_, {pubsub: pa.pubsub, db: pa.db})._darPorEntregado(ar._id);
                 },
-                async acDarPorEntregado(_, {_id}, {pubsub, db})
+                acInfoDoc: async (_: object, ar: { documento: IDocExt }, pa: { pubsub: PubSub, db: Db }) =>
                 {
-                    return new DocExtMutationService(_,  {pubsub, db})._darPorEntregado(_id);
+                    return new DocExtMutationService(_, {pubsub: pa.pubsub, db: pa.db})._acInfoDoc(ar.documento);
                 },
-                async acInfoDoc(_, {documento}, {pubsub, db})
+                quitarUsuario: async (_: object, ar: { _id: string, usuarioDestino: string }, pa: { pubsub: PubSub, db: Db }) =>
                 {
-                    return new DocExtMutationService(_,  {pubsub, db})._acInfoDoc(documento);
-                },
-                async quitarUsuario(_, {_id, usuarioDestino}, {pubsub, db})
-                {
-                    return new DocExtMutationService(_,  {pubsub, db})._quitarUsuario(_id, usuarioDestino)
+                    return new DocExtMutationService(_, {pubsub: pa.pubsub, db: pa.db})._quitarUsuario(ar._id, ar.usuarioDestino)
                 }
             }
     };
