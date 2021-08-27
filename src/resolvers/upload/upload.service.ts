@@ -1,57 +1,52 @@
-// import {finished} from "stream/promises";
-
 import fs from 'fs-extra';
 import path from "path";
-import {finished} from "stream/promises";
 import * as util from "util";
+import {randomUUID} from "crypto";
 
 export class UploadService
 {
     async _subidaSimple(file: any, carpeta: string)
     {
         const {createReadStream, filename, mimetype, encoding} = await file;
-        console.log('+++', createReadStream, filename, mimetype, encoding);
-
-        // Promise.all(res).then(r => console.log(r));
-        // const stream = createReadStream();
-        //
-        // const out = require('fs').createWriteStream('local-file-output.txt');
-        // stream.pipe(out);
-        // // await finished(out);
-        //
-        // return { filename, mimetype, encoding };
     }
 
-    async _subir(files: any, carpeta: string)
+    async _subir(files: any, carpeta: string): Promise<string[]>
     {
-        const res = await Promise.all(files);
-
-        for (const value of res)
+        const arreglo: string[] = [];
+        const ano = new Date().getFullYear();
+        try
         {
-            const {createReadStream, filename, mimetype, encoding} = value as any;
-            const prefijo = filename.split('-', 1).shift();
-            const checarRuta = path.join(__dirname, `../../public/uploads/${carpeta}`);
-            const ruta = path.resolve(__dirname, `../../public/uploads/${carpeta}/${filename}`);
-            console.log(checarRuta);
-            console.log(fs.existsSync(checarRuta));
-            console.log('prefijo');
+            const res = await Promise.all(files);
 
-
-            if (!fs.existsSync(checarRuta))
+            for (const value of res)
             {
-                fs.mkdirSync(checarRuta);
+                const {createReadStream, filename} = value as any;
+
+                const nvoNombre = carpeta + '-' + ano + randomUUID() + '.' + filename.split('.').pop();
+
+                const checarRuta = path.join(__dirname, `../../public/uploads/${carpeta}`);
+
+                const ruta = path.resolve(__dirname, `../../public/uploads/${carpeta}/${nvoNombre}`);
+
+                const stream = createReadStream();
+                if (!fs.existsSync(checarRuta))
+                {
+                    fs.mkdirSync(checarRuta);
+                }
+
+                const salida = fs.createWriteStream(ruta);
+                stream.pipe(salida);
+                await salida.close();
+                arreglo.push(nvoNombre);
             }
 
-            if (fs.existsSync(ruta))
-            {
-                console.log('si existe el archivo');
-            }
-
-            // const stream = createReadStream();
-            // const salida = fs.createWriteStream(ubicacion);
-            // stream.pipe(salida);
-            // const finished = util.promisify(stream.finished);
-            // await finished(salida);
+            return arreglo;
+        } catch (e)
+        {
+            console.log('error subir archivo', e);
+            return [];
         }
     }
 }
+
+

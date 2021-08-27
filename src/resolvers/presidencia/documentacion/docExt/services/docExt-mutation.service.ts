@@ -5,14 +5,17 @@ import {ObjectId} from 'bson';
 import {respDocumento} from "../../../../../services/respuestas-return";
 import {IDocExt, IUsuarioDestinoDocExt} from "../models/docExt.interface";
 import {notUsuarioSubProceso} from "./docExt-subscription.service";
+import {UploadService} from "../../../../upload/upload.service";
 
 export class DocExtMutationService extends ResolversOperacionesService
 {
     constructor(root: object, context: IContextData)
     {super(root, context);}
 
-    async _regDocExt(documento: IDocExt)
+    async _regDocExt(documento: IDocExt, archivo: any, carpeta: string)
     {
+        // const r = await new UploadService()._subir(archivo, documento.);
+
         documento.ano = new Date().getFullYear();
 
         const totalDocs = await this.contarDocumentos(COLECCION.DOC_EXTERNA, {tipoDoc: documento.tipoDoc, ano: documento.ano}, {});

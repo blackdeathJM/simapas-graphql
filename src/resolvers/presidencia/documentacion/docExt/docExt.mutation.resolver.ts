@@ -7,9 +7,9 @@ export const mutationDocExt: IResolvers =
         Mutation:
             {
                 // PASO 1: Registrar el documento externo
-                async regDocExt(_, {docExt}, {pubsub, db})
+                async regDocExt(_, {docExt, archivo, carpeta}, {pubsub, db})
                 {
-                    return new DocExtMutationService(_,  {pubsub, db})._regDocExt(docExt);
+                    return new DocExtMutationService(_,  {pubsub, db})._regDocExt(docExt, archivo, carpeta);
                 },
                 async desactivarNot(_, {_id, usuario}, {db})
                 {
