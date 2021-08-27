@@ -1,14 +1,7 @@
 scalar Upload
 
-type FileType
-{
-    filename: String
-    mimetype: String
-    encoding: String
-}
-
 type Mutation
 {
-    subidaSimple(file: Upload!): FileType
-    subidaMultiple(files: [Upload!]!): FileType
+    subidaSimple(file: Upload!, carpeta: String!): Boolean!
+    subir(files: [Upload!]!, carpeta: String!): Boolean
 }
