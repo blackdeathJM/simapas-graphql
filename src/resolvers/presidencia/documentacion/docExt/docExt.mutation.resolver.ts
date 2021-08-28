@@ -8,9 +8,6 @@ export const mutationDocExt =
     {
         Mutation:
             {
-                // PASO 1: Registrar el documento externo
-
-
                 regDocExt: async (_: object, ar: { docExt: IDocExt, archivo: any, carpeta: string }, pa: { pubsub: PubSub, db: Db }) =>
                 {
                     return new DocExtMutationService(_, {pubsub: pa.pubsub, db: pa.db})._regDocExt(ar.docExt, ar.archivo, ar.carpeta);
