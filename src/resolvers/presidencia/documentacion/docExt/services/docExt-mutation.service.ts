@@ -12,10 +12,9 @@ export class DocExtMutationService extends ResolversOperacionesService
     constructor(root: object, context: IContextData)
     {super(root, context);}
 
-    async _regDocExt(documento: IDocExt, archivo: any, carpeta: string)
+    async _regDocExt(documento: IDocExt, file: any, carpeta: string)
     {
-        console.log(documento);
-        const r = await new UploadService()._subir(archivo, carpeta);
+        const r = await new UploadService()._subir(file, carpeta);
 
         if (r.length === 0)
         {

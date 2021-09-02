@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9b3d981-495e-48bf-a699-828ad23adbd8" name="Changes" comment="configurando subscripciones para el servidor">
+      <change afterPath="$PROJECT_DIR$/src/schema/uploads/scalar.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/docExt.mutation.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/docExt.mutation.resolver.ts" afterDir="false" />
@@ -19,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="GraphQL File" />
         <option value="TypeScript File" />
+        <option value="GraphQL File" />
       </list>
     </option>
   </component>
@@ -207,7 +208,11 @@
       <workItem from="1629953092487" duration="1388000" />
       <workItem from="1629958803785" duration="8247000" />
       <workItem from="1630043084550" duration="12004000" />
-      <workItem from="1630078129996" duration="5187000" />
+      <workItem from="1630078129996" duration="5491000" />
+      <workItem from="1630115562078" duration="2481000" />
+      <workItem from="1630180844613" duration="1665000" />
+      <workItem from="1630187042259" duration="8801000" />
+      <workItem from="1630548945422" duration="2057000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -363,7 +368,21 @@
       <option name="project" value="LOCAL" />
       <updated>1629971733821</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="configurando subscripciones para el servidor">
+      <created>1630094690689</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1630094690690</updated>
+    </task>
+    <task id="LOCAL-00024" summary="configurando subscripciones para el servidor">
+      <created>1630119365317</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1630119365317</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

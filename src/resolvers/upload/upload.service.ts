@@ -11,7 +11,7 @@ export class UploadService
 
     async _subir(files: any, carpeta: string): Promise<string[]>
     {
-        const arreglo: string[] = [];
+        const listaNombres: string[] = [];
         const ano = new Date().getFullYear();
         try
         {
@@ -36,11 +36,10 @@ export class UploadService
 
                 const salida = fs.createWriteStream(ruta);
                 stream.pipe(salida);
-                salida.close();
-                arreglo.push(nvoNombre);
+                listaNombres.push(nvoNombre);
             }
 
-            return arreglo;
+            return listaNombres;
         } catch (e)
         {
             console.log('error subir archivo', e);

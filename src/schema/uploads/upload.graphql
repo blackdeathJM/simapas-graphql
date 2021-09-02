@@ -1,5 +1,3 @@
-scalar Upload
-
 type Mutation
 {
     subidaSimple(file: Upload!, carpeta: String!): Boolean!

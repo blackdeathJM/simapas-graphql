@@ -3,14 +3,16 @@ import {DocExtMutationService} from "./services/docExt-mutation.service";
 import {IDocExt} from "./models/docExt.interface";
 import {PubSub} from "graphql-subscriptions";
 import {Db} from "mongodb";
+import {GraphQLUpload} from "graphql-upload";
 
 export const mutationDocExt =
     {
+        Upload: GraphQLUpload,
         Mutation:
             {
-                regDocExt: async (_: object, ar: { docExt: IDocExt, archivo: any, carpeta: string }, pa: { pubsub: PubSub, db: Db }) =>
+                regDocExt: async (_: object, ar: { docExt: IDocExt, file: any, carpeta: string }, pa: { pubsub: PubSub, db: Db }) =>
                 {
-                    return new DocExtMutationService(_, {pubsub: pa.pubsub, db: pa.db})._regDocExt(ar.docExt, ar.archivo, ar.carpeta);
+                    return new DocExtMutationService(_, {pubsub: pa.pubsub, db: pa.db})._regDocExt(ar.docExt, ar.file, ar.carpeta);
                 },
                 aprobarRechazarDoc: async (_: object, ar: { _id: string, usuario: string, subproceso: string, observaciones: string }, pa: { pubsub: PubSub, db: Db }) =>
                 {
