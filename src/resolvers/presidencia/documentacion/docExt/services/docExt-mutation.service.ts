@@ -45,24 +45,6 @@ export class DocExtMutationService extends ResolversOperacionesService
 
     }
 
-    async _aprobarRechazarDoc(_id: string, usuario: string, subproceso: string, observaciones: string)
-    {
-        return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA,
-            {_id: new ObjectId(_id), usuarioDestino: {$elemMatch: {usuario}}},
-            {
-                $set: {
-                    "usuarioDestino.$.subproceso": subproceso, "usuarioDestino.$.observaciones": observaciones
-                }
-            },
-            {returnDocument: "after"}).then(
-            async resultado =>
-            {
-                await notUsuarioSubProceso(this.context.pubsub!, this.context.db!, [usuario]);
-                return respDocumento(resultado);
-            }
-        )
-    }
-
     async _darPorEntregado(_id: string)
     {
         return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(_id)},
