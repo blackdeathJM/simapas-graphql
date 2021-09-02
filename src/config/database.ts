@@ -1,12 +1,11 @@
 import {Db, MongoClient} from 'mongodb';
-import assert from 'assert';
 export interface IConexionMongo
 {
     db: Db;
     tr: MongoClient
 }
 
-class Database
+export class Database
 {
     async init()
     {
@@ -23,4 +22,3 @@ class Database
     }
 }
 
-export default Database;

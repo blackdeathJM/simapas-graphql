@@ -4,11 +4,6 @@ import {randomUUID} from "crypto";
 
 export class UploadService
 {
-    async _subidaSimple(file: any, carpeta: string)
-    {
-        const {createReadStream, filename, mimetype, encoding} = await file;
-    }
-
     async _subir(files: any, carpeta: string): Promise<string[]>
     {
         const listaNombres: string[] = [];

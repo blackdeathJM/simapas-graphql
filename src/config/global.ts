@@ -1,9 +1,8 @@
-import environments from "./environments";
+import {environments} from "./environments";
 
 if (process.env.NODE_ENV !== 'production')
 {
-    const environment = environments;
-    console.log(environment);
+    console.log(environments);
 }
 
 export enum COLECCION

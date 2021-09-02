@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 import path from 'path';
 
-const environments = dotenv.config({path: path.join(__dirname, '.env')});
+export const environments = dotenv.config({path: path.join(__dirname, '.env')});
 
 if (process.env.NODE_ENV !== 'production')
 {
@@ -10,4 +10,3 @@ if (process.env.NODE_ENV !== 'production')
         throw  environments.error;
     }
 }
-export default environments;

@@ -3,11 +3,9 @@ import {DocExtMutationService} from "./services/docExt-mutation.service";
 import {IDocExt} from "./models/docExt.interface";
 import {PubSub} from "graphql-subscriptions";
 import {Db} from "mongodb";
-import {GraphQLUpload} from "graphql-upload";
 
 export const mutationDocExt =
     {
-        Upload: GraphQLUpload,
         Mutation:
             {
                 regDocExt: async (_: object, ar: { docExt: IDocExt, file: any, carpeta: string }, pa: { pubsub: PubSub, db: Db }) =>

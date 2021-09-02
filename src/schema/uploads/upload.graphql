@@ -1,6 +1,9 @@
 type Mutation
 {
-    subidaSimple(file: Upload!, carpeta: String!): Boolean!
-
     subir(files: [Upload!]!, carpeta: String!): Boolean
+}
+
+type Query
+{
+    obtenerImgs(carpeta: String!, nombre: String!): String
 }

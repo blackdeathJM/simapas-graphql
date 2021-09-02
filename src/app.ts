@@ -8,7 +8,7 @@ import {execute, GraphQLSchema, subscribe} from "graphql";
 
 import {SubscriptionServer} from "subscriptions-transport-ws";
 
-import Database from "./config/database";
+import {Database} from "./config/database";
 import {IContext} from "./interfaces/context-interface";
 import {router} from "./configMuter/docs.routes";
 import depthLimit from "graphql-depth-limit";
