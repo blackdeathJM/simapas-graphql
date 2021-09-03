@@ -31,7 +31,11 @@ export class UploadService
 
                 const salida = fs.createWriteStream(ruta);
                 stream.pipe(salida);
-                listaNombres.push(nvoNombre);
+
+                if (fs.existsSync(ruta))
+                {
+                    listaNombres.push(nvoNombre);
+                }
             }
 
             return listaNombres;
