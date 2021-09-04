@@ -1,7 +1,5 @@
 type Query
 {
-    "DOC EXTERNA: Consultar todos los documentos pro proceso"
-    todosDocsExt(proceso: String!): ResDocExSinPag
     "DOC EXTERNA: Obtener documentos por proceso"
     docExtProceso(proceso: PROCESOS_DOC!): ResDocExSinPag
     "DOC EXTERNA: busqueda en toda la coleccion"
