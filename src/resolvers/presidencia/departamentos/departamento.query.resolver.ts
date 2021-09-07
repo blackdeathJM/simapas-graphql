@@ -7,12 +7,12 @@ export const queryDeptos =
             {
                 obtenerDeptos: async (_: object, __: object, param: { db: Db }) =>
                 {
-                    return new DepartamentoQueryService(_, {db: param.db})._obtenerDeptos()
+                    return await new DepartamentoQueryService(_, {db: param.db})._obtenerDeptos()
                 },
 
                 departamentoID: async (_: object, args: { _id: string }, param: { db: Db }) =>
                 {
-                    return new DepartamentoQueryService(_, {db: param.db}).elementoDetalle(args._id);
+                    return await new DepartamentoQueryService(_, {db: param.db}).elementoDetalle(args._id);
                 }
             }
     };

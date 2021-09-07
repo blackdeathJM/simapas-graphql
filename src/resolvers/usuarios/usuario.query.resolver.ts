@@ -1,22 +1,21 @@
-// import {IResolvers} from "graphql-tools";
-import {IResolvers} from "graphql-middleware/dist/types";
 import {UsuarioQueryService} from "./services/usuario-query.service";
+import {Db} from "mongodb";
 
-export const queryUsuarios: IResolvers =
+export const queryUsuarios =
     {
         Query:
             {
-                async obtenerUsuarios(_, {}, {db})
+                obtenerUsuarios: async (_: object, {}, p: { db: Db }) =>
                 {
-                    return new UsuarioQueryService(_, {db})._obtenerUsuarios();
+                    return await new UsuarioQueryService(_, {db: p.db})._obtenerUsuarios();
                 },
-                async obtenerUsuario(_, {_id}, {db})
+                obtenerUsuario: async (_: object, a: { _id: string }, p: { db: Db }) =>
                 {
-                    return new UsuarioQueryService(_, {db})._obtenerUsuario(_id);
+                    return await new UsuarioQueryService(_, {db: p.db})._obtenerUsuario(a._id);
                 },
-                async login(_, {usuario, contrasena}, {db})
+                login: async (_: object, a: { usuario: string, contrasena: string }, p: { db: Db }) =>
                 {
-                    return new UsuarioQueryService(_, {db})._login(usuario, contrasena);
+                    return await new UsuarioQueryService(_, {db: p.db})._login(a.usuario, a.contrasena);
                 },
             }
     };

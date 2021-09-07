@@ -5,29 +5,23 @@ const queryDocExt =
     {
         Query:
             {
-                criterio: (_: object, a: { consulta: string }, p: { db: Db }) =>
+                criterio: async (_: object, a: { consulta: string }, p: { db: Db }) =>
                 {
-                    return new DocExtQueryService(_, {db: p.db})._criterio(a.consulta);
+                    return await new DocExtQueryService(_, {db: p.db})._criterio(a.consulta);
                 },
-
-
-
-
-
+                porUsuario: async (_: object, a: { usuario: string }, p: { db: Db }) =>
+                {
+                    return await new DocExtQueryService(_, {db: p.db})._porUsuario(a.usuario);
+                },
+                entreFechas: async (_: object, a: { fechaI: string, fechaF: string }, p: { db: Db }) =>
+                {
+                    return await new DocExtQueryService(_, {db: p.db})._entreFechas(a.fechaI, a.fechaF);
+                },
 
 
                 docExtProceso: (_: object, a: { proceso: string }, p: { db: Db }) =>
                 {
                     return new DocExtQueryService(_, {db: p.db})._docExtProceso(a.proceso);
-                },
-                // consultar documentos por usuarios sera usado por el admistrador
-                todosLosDocsPorUsuario: (_: object, a: { usuario: string }, p: { db: Db }) =>
-                {
-                    return new DocExtQueryService(_, {db: p.db})._todosLosDocsPorUsuario(a.usuario);
-                },
-                docsEntreFechas: (_: object, a: { fechaRecepcionInicial: string, fechaRecepcionFinal: string }, p: { db: Db }) =>
-                {
-                    return new DocExtQueryService(_, {db: p.db})._busquedaEntreFechas(a.fechaRecepcionInicial, a.fechaRecepcionFinal);
                 },
                 docPorTipo: (_: object, a: { tipoDoc: string }, p: { db: Db }) =>
                 {

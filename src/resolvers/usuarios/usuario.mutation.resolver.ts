@@ -1,28 +1,31 @@
 // import {IResolvers} from "graphql-tools";
 import {UsuarioMutationService} from "./services/usuario-mutation.service";
 import {IResolvers} from "graphql-middleware/dist/types";
+import {IUsuario} from "./models/usuario-interface";
+import {Db} from "mongodb";
+import {PubSub} from "graphql-subscriptions";
 
-export const mutationUsuarios: IResolvers =
+export const mutationUsuarios =
     {
         Mutation:
             {
-                async registroUsuario(_, {usuario}, {db})
+                registroUsuario: async (_: object, a: { usuario: IUsuario }, p: { db: Db }) =>
                 {
-                    return new UsuarioMutationService(_, {db})._registroUsuario(usuario);
+                    return await new UsuarioMutationService(_, {db: p.db})._registroUsuario(a.usuario);
                 },
 
-                async actualizarRole(_, {_id, role, esActualizar}, {pubsub, db})
+                actualizarRole: async (_: object, a: { _id: string, role: string, esActualizar: boolean }, p: { pubsub: PubSub, db: Db }) =>
                 {
-                    return new UsuarioMutationService(_, {pubsub, db})._actualizarRole(_id, role, esActualizar);
+                    return await new UsuarioMutationService(_, {pubsub: p.pubsub, db: p.db})._actualizarRole(a._id, a.role, a.esActualizar);
                 },
 
-                async actualizarContrasena(_, {usuario, actualContrasena, nvaContrasena, esAdmin}, {db})
+                actualizarContrasena: async (_: object, a: { usuario: string, actualContrasena: string, nvaContrasena: string, esAdmin: boolean }, p: { db: Db }) =>
                 {
-                    return new UsuarioMutationService(_, {db})._actializarContrasena(usuario, actualContrasena, nvaContrasena, esAdmin);
+                    return await new UsuarioMutationService(_, {db: p.db})._actializarContrasena(a.usuario, a.actualContrasena, a.nvaContrasena, a.esAdmin);
                 },
-                async eliminarUsuario(_, {_id}, {db})
+                eliminarUsuario: async (_: object, a: { _id: string }, p: { db: Db }) =>
                 {
-                    return new UsuarioMutationService(_, {db})._eliminarUsuario(_id);
+                    return await new UsuarioMutationService(_, {db: p.db})._eliminarUsuario(a._id);
                 }
             }
     };

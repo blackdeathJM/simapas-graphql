@@ -1,17 +1,19 @@
 import {DepartamentoMutationService} from "./services/departamento-mutation.service";
 import {IResolvers} from "graphql-middleware/dist/types";
+import {IDepartamento} from "./model/departamento.interface";
+import {Db} from "mongodb";
 
-export const mutationDeptos: IResolvers =
+export const mutationDeptos =
     {
         Mutation:
             {
-                async registroDepto(_, {departamento}, {db})
+                registroDepto: async (_: object, a: { departamento: IDepartamento }, p: { db: Db }) =>
                 {
-                    return new DepartamentoMutationService(_, {db})._registroDepto(departamento);
+                    return await new DepartamentoMutationService(_, {db: p.db})._registroDepto(a.departamento);
                 },
-                async actualizarDepto(_, {departamento}, {db})
+                actualizarDepto: async (_: object, a: { departamento: IDepartamento }, p: { db: Db }) =>
                 {
-                    return new DepartamentoMutationService(_, {db})._actualizarElemento(departamento);
+                    return await new DepartamentoMutationService(_, {db: p.db})._actualizarElemento(a.departamento);
                 },
             }
     };

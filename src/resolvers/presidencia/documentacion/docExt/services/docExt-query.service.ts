@@ -11,6 +11,7 @@ class DocExtQueryService extends ResolversOperacionesService
 
     async _criterio(consulta: string)
     {
+        console.log('consultqa', consulta);
         const res = await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA,
             {
                 $or: [{noSeguimiento: parseInt(consulta)}, {identificadorDoc: {$regex: consulta, $options: "i"}},
@@ -20,19 +21,36 @@ class DocExtQueryService extends ResolversOperacionesService
                     {fechaRecepcion: {$regex: consulta}}, {fechaLimiteEntrega: {$regex: consulta, $options: "i"}},
                     {fechaTerminado: {$regex: consulta, $options: "i"}}]
             },
-            {noSeguimiento: -1}, {});
+            {}, {noSeguimiento: -1});
 
         return {
             ...res
         }
-        // return await this.buscar(COLECCION.DOC_EXTERNA, {$text: {$search: valores[0], $caseSensitive: false, $diacriticSensitive : false}},
-        // {}, {}).then(
-        //     resultado =>
-        //     {
-        //         return respArreglosPag(resultado);
-        //     }
-        // )
     }
+
+    async _porUsuario(usuario: string)
+    {
+        const res = await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {usuarioFolio: usuario}, {}, {noSeguimiento: -1});
+        return {
+            ...res
+        }
+    }
+
+    async _entreFechas(fechaI: string, fechaF: string)
+    {
+        const res = await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA,
+            {$and: [{fechaRecepcion: {$gte: fechaI}}, {fechaRecepcion: {$lte: fechaF}}]}, {}, {noSeguimiento: -1});
+
+        return {
+            ...res
+        }
+    }
+
+
+
+
+
+
 
     async _docExtProceso(proceso: string)
     {
@@ -40,28 +58,6 @@ class DocExtQueryService extends ResolversOperacionesService
             async resultado =>
             {
                 return respArreglosSPag(resultado)
-            }
-        )
-    }
-
-    async _todosLosDocsPorUsuario(usuario: string)
-    {
-        return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {$or: [{usuarioFolio: usuario}, {usuarioDestino: {$elemMatch: {usuario}}}]},
-            {noSeguimiento: -1}, {}).then(
-            async resultado =>
-            {
-                return respArreglosSPag(resultado);
-            }
-        )
-    }
-
-    async _busquedaEntreFechas(fechaRecepcionInicial: string, fechaRecepcionFinal: string)
-    {
-        return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA,
-            {$and: [{fechaRecepcion: {$gte: fechaRecepcionInicial}}, {fechaRecepcion: {$lte: fechaRecepcionFinal}}]}, {noSeguimiento: -1}, {}).then(
-            async resultado =>
-            {
-                return respArreglosSPag(resultado);
             }
         )
     }
