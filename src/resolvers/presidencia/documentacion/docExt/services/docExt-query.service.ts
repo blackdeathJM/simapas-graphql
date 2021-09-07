@@ -9,19 +9,9 @@ class DocExtQueryService extends ResolversOperacionesService
     constructor(root: object, context: IContextData)
     {super(root, context);}
 
-    async _docExtProceso(proceso: string)
+    async _criterio(consulta: string)
     {
-        return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {proceso}, {noSeguimiento: -1}, {}).then(
-            async resultado =>
-            {
-                return respArreglosSPag(resultado)
-            }
-        )
-    }
-
-    async _busquedaGral(consulta: string)
-    {
-        return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA,
+        const res = await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA,
             {
                 $or: [{noSeguimiento: parseInt(consulta)}, {identificadorDoc: {$regex: consulta, $options: "i"}},
                     {folio: {$regex: consulta, $options: "i"}},
@@ -30,11 +20,11 @@ class DocExtQueryService extends ResolversOperacionesService
                     {fechaRecepcion: {$regex: consulta}}, {fechaLimiteEntrega: {$regex: consulta, $options: "i"}},
                     {fechaTerminado: {$regex: consulta, $options: "i"}}]
             },
-            {noSeguimiento: -1}, {}).then(
-            resultado =>
-            {
-                return respArreglosSPag(resultado);
-            })
+            {noSeguimiento: -1}, {});
+
+        return {
+            ...res
+        }
         // return await this.buscar(COLECCION.DOC_EXTERNA, {$text: {$search: valores[0], $caseSensitive: false, $diacriticSensitive : false}},
         // {}, {}).then(
         //     resultado =>
@@ -42,6 +32,16 @@ class DocExtQueryService extends ResolversOperacionesService
         //         return respArreglosPag(resultado);
         //     }
         // )
+    }
+
+    async _docExtProceso(proceso: string)
+    {
+        return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {proceso}, {noSeguimiento: -1}, {}).then(
+            async resultado =>
+            {
+                return respArreglosSPag(resultado)
+            }
+        )
     }
 
     async _todosLosDocsPorUsuario(usuario: string)

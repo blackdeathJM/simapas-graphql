@@ -1,9 +1,9 @@
 type Query
 {
+    "Buscar documentos por criterio enviado"
+    criterio(consulta: String!): ResDocExSinPag
     "DOC EXTERNA: Obtener documentos por proceso"
     docExtProceso(proceso: PROCESOS_DOC!): ResDocExSinPag
-    "DOC EXTERNA: busqueda en toda la coleccion"
-    busquedaGral(consulta: String!): ResDocExSinPag
     "DOC EXTERNA: Obtener todos los documentos que esten entre fechas"
     docsEntreFechas(fechaRecepcionInicial: String!, fechaRecepcionFinal: String!): ResDocExSinPag
     "DOC EXTERNA: Obtiene todos los documentos por usuarios"

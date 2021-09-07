@@ -16,10 +16,10 @@ const notSubscription: IResolvers =
                             {
                                 payload.notificar.forEach((noti: INotificacion) =>
                                 {
-                                    noti.receptor.forEach((rec: string) =>
-                                    {
-                                        filtro = rec === variables.receptor
-                                    });
+                                    // noti.receptor.forEach((rec: string) =>
+                                    // {
+                                    //     filtro = rec === variables.receptor
+                                    // });
                                 });
                                 return filtro;
                             })

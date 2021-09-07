@@ -3,7 +3,6 @@ import {COLECCION} from "../../../../config/global";
 import {ObjectId} from "bson";
 import {respDocumento} from "../../../../services/respuestas-return";
 import {IContextData} from "../../../../interfaces/context-data-interface";
-import {notTodosDocsExt, notUsuarioSubProceso} from "../../../presidencia/documentacion/docExt/services/docExt-subscription.service";
 import {IDocExt, IUsuarioDestinoDocExt} from "../../../presidencia/documentacion/docExt/models/docExt.interface";
 import {formatoFolio} from "./funcionesDocs";
 import moment from "moment";
@@ -28,7 +27,6 @@ export class DocUsuarioMutationService extends ResolversOperacionesService
             {returnDocument: "after"}).then(
             async resultado =>
             {
-                await notTodosDocsExt(this.context.pubsub!, this.context.db!);
                 return respDocumento(resultado)
             }
         )
@@ -94,8 +92,6 @@ export class DocUsuarioMutationService extends ResolversOperacionesService
             {returnDocument: "after"}).then(
             async res =>
             {
-                await notTodosDocsExt(this.context.pubsub!, this.context.db!);
-                await notUsuarioSubProceso(this.context.pubsub!, this.context.db!, usuarios);
                 return {
                     ...res
                 };
@@ -134,7 +130,6 @@ export class DocUsuarioMutationService extends ResolversOperacionesService
         return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, filtro, actualizar, {returnDocument: "after"}).then(
             async resultado =>
             {
-                await notTodosDocsExt(this.context.pubsub!, this.context.db!)
                 return respDocumento(resultado);
             })
     }

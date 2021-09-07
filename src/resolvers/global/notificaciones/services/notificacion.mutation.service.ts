@@ -18,7 +18,7 @@ export class NotificacionMutationService extends ResolversOperacionesService
         return await this.agregarUnDocumento(COLECCION.NOT, notificacion, {}).then(
             async resultado =>
             {
-                await notNotificacion(this.context.pubsub!, this.context.db!, notificacion.receptor);
+                // await notNotificacion(this.context.pubsub!, this.context.db!, notificacion.receptor);
                 return respDocumento(resultado);
             });
     }

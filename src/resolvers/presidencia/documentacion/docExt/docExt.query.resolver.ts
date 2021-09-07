@@ -5,6 +5,17 @@ const queryDocExt =
     {
         Query:
             {
+                criterio: (_: object, a: { consulta: string }, p: { db: Db }) =>
+                {
+                    return new DocExtQueryService(_, {db: p.db})._criterio(a.consulta);
+                },
+
+
+
+
+
+
+
                 docExtProceso: (_: object, a: { proceso: string }, p: { db: Db }) =>
                 {
                     return new DocExtQueryService(_, {db: p.db})._docExtProceso(a.proceso);
@@ -17,10 +28,6 @@ const queryDocExt =
                 docsEntreFechas: (_: object, a: { fechaRecepcionInicial: string, fechaRecepcionFinal: string }, p: { db: Db }) =>
                 {
                     return new DocExtQueryService(_, {db: p.db})._busquedaEntreFechas(a.fechaRecepcionInicial, a.fechaRecepcionFinal);
-                },
-                busquedaGral: (_: object, a: { consulta: string }, p: { db: Db }) =>
-                {
-                    return new DocExtQueryService(_, {db: p.db})._busquedaGral(a.consulta);
                 },
                 docPorTipo: (_: object, a: { tipoDoc: string }, p: { db: Db }) =>
                 {

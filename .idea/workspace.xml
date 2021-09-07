@@ -3,10 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="e9b3d981-495e-48bf-a699-828ad23adbd8" name="Changes" comment="configurando subscripciones para el servidor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/notificaciones/model/notificacion.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/notificaciones/model/notificacion.interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/notificaciones/notificaciones.subscription.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/notificaciones/notificaciones.subscription.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/global/notificaciones/services/notificacion.mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/global/notificaciones/services/notificacion.mutation.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/docExt.query.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/docExt.query.resolver.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/services/docExt-query.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/services/docExt-query.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/services/docExt-subscription.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/presidencia/documentacion/docExt/services/docExt-subscription.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/services/doc-usuario-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/documentos/services/doc-usuario-mutation.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/global/notificaciones/notificaciones.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/global/notificaciones/notificaciones.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema/global/notificaciones/notificaciones.input.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/global/notificaciones/notificaciones.input.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.query.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/presidencia/docExterna/docExterna.query.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +215,11 @@
       <workItem from="1630560440646" duration="10104000" />
       <workItem from="1630643478540" duration="2851000" />
       <workItem from="1630651749150" duration="3384000" />
-      <workItem from="1630731687176" duration="19000" />
+      <workItem from="1630731687176" duration="328000" />
+      <workItem from="1630803957204" duration="777000" />
+      <workItem from="1630823182284" duration="5812000" />
+      <workItem from="1630916421702" duration="639000" />
+      <workItem from="1630991820099" duration="309000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -377,7 +389,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630580515061</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="configurando subscripciones para el servidor">
+      <created>1630731742777</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1630731742777</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

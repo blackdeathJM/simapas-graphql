@@ -1,10 +1,13 @@
 type NotificacionType
 {
     _id: ID
-    descripcion: String
-    emisor: String
-    receptor: [String]
-    fechaEnvio: String
-    visto: Boolean
-    prioridad: String
+    id: String
+    icon: String
+    image: String
+    title: String
+    description: String
+    time: String
+    link: String
+    useRouter: Boolean
+    read: Boolean
 }
