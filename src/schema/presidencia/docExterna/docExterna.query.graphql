@@ -5,12 +5,12 @@ type Query
     "DOC EXTERNA: Obtiene todos los documentos por usuarios"
     porUsuario(usuario: String): ResDocExSinPag
     entreFechas(fechaI: String!, fechaF: String!): ResDocExSinPag
-
+    porTipo(tipoDoc: String!): ResDocExSinPag
 
     "DOC EXTERNA: Obtener documentos por proceso"
     docExtProceso(proceso: PROCESOS_DOC!): ResDocExSinPag
     "Consultar documentos por tipo de documento"
-    docPorTipo(tipoDoc: String!): ResDocExSinPag,
+
     "Todos los documentos"
     todosLosDocs: ResDocExSinPag
     "Filtar los documentos si es interno o externo"

@@ -62,7 +62,7 @@ class DocExtQueryService extends ResolversOperacionesService
         )
     }
 
-    async _docPorTipo(tipoDoc: string)
+    async _porTipo(tipoDoc: string)
     {
         return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {tipoDoc, ano: new Date().getFullYear()}, {}, {noSeguimiento: -1}).then(
             resultado =>
