@@ -9,7 +9,6 @@ type Query
 
     "DOC EXTERNA: Obtener documentos por proceso"
     docExtProceso(proceso: PROCESOS_DOC!): ResDocExSinPag
-    "Consultar documentos por tipo de documento"
 
     "Todos los documentos"
     todosLosDocs: ResDocExSinPag

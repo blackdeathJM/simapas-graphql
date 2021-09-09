@@ -51,7 +51,7 @@
     "@types/jsonwebtoken": "^8.5.5",
     "@types/lodash": "^4.14.172",
     "@types/mkdirp": "^1.0.2",
-    "@types/node": "^16.7.13",
+    "@types/node": "^16.9.0",
     "bson": "^4.5.1",
     "nodemon": "^2.0.12",
     "ts-node": "^10.2.1",

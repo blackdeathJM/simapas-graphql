@@ -11,7 +11,6 @@ class DocExtQueryService extends ResolversOperacionesService
 
     async _criterio(consulta: string)
     {
-        console.log('consultqa', consulta);
         const res = await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA,
             {
                 $or: [{noSeguimiento: parseInt(consulta)}, {identificadorDoc: {$regex: consulta, $options: "i"}},
@@ -46,10 +45,13 @@ class DocExtQueryService extends ResolversOperacionesService
         }
     }
 
-
-
-
-
+    async _porTipo(tipoDoc: string)
+    {
+        const res = await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {tipoDoc, ano: new Date().getFullYear()}, {}, {noSeguimiento: -1});
+        return {
+            ...res
+        }
+    }
 
 
     async _docExtProceso(proceso: string)
@@ -60,15 +62,6 @@ class DocExtQueryService extends ResolversOperacionesService
                 return respArreglosSPag(resultado)
             }
         )
-    }
-
-    async _porTipo(tipoDoc: string)
-    {
-        return await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {tipoDoc, ano: new Date().getFullYear()}, {}, {noSeguimiento: -1}).then(
-            resultado =>
-            {
-                return respArreglosSPag(resultado);
-            })
     }
 
     async _todosLosDocs()
