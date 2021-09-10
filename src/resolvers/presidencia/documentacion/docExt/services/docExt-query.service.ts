@@ -45,11 +45,17 @@ class DocExtQueryService extends ResolversOperacionesService
         }
     }
 
-    async _porTipo(tipoDoc: string)
+    async _porTipo(tipoDoc: string, oficio: string, interno: boolean)
     {
-        const res = await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {tipoDoc, ano: new Date().getFullYear()}, {}, {noSeguimiento: -1});
-        return {
-            ...res
+        if (oficio)
+        {
+            const res = await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {tipoDoc, ano: new Date().getFullYear(), interno}, {}, {noSeguimiento: -1});
+        } else
+        {
+            const res = await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {tipoDoc, ano: new Date().getFullYear()}, {}, {noSeguimiento: -1});
+            return {
+                ...res
+            }
         }
     }
 

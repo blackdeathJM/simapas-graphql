@@ -17,9 +17,9 @@ const queryDocExt =
                 {
                     return await new DocExtQueryService(_, {db: p.db})._entreFechas(a.fechaI, a.fechaF);
                 },
-                porTipo: (_: object, a: { tipoDoc: string }, p: { db: Db }) =>
+                porTipo: (_: object, a: { tipoDoc: string, oficio: string, interno: boolean }, p: { db: Db }) =>
                 {
-                    return new DocExtQueryService(_, {db: p.db})._porTipo(a.tipoDoc)
+                    return new DocExtQueryService(_, {db: p.db})._porTipo(a.tipoDoc, a.oficio, a.interno)
                 },
 
 
@@ -27,6 +27,7 @@ const queryDocExt =
                 {
                     return new DocExtQueryService(_, {db: p.db})._docExtProceso(a.proceso);
                 },
+
                 todosLosDocs: (_: object, __: object, p: { db: Db }) =>
                 {
                     return new DocExtQueryService(_, {db: p.db})._todosLosDocs();
