@@ -2,11 +2,10 @@ type Query
 {
     "Buscar documentos por criterio enviado"
     criterio(consulta: String): ResDocExSinPag
-    "DOC EXTERNA: Obtiene todos los documentos por usuarios"
     porUsuario(usuario: String): ResDocExSinPag
     entreFechas(fechaI: String!, fechaF: String!): ResDocExSinPag
-
-    porTipo(tipoDoc: String!, oficio: String, interno: Boolean): ResDocExSinPag
+    porTipo(tipoDoc: String!, esInterno: Boolean): ResDocExSinPag
+    ultimoFolio: ResDocExSinPag
 
     "DOC EXTERNA: Obtener documentos por proceso"
     docExtProceso(proceso: PROCESOS_DOC!): ResDocExSinPag
@@ -15,6 +14,4 @@ type Query
     todosLosDocs: ResDocExSinPag
     "Filtar los documentos si es interno o externo"
     intOExt(esInterno: Boolean!): ResDocEx
-    "Obtener el ultimoFolio"
-    ultimoFolio: ResDocExSinPag
 }

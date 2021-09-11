@@ -4,7 +4,7 @@ import {COLECCION} from "../../../../../config/global";
 import {respArreglosSPag} from "../../../../../services/respuestas-return";
 
 
-class DocExtQueryService extends ResolversOperacionesService
+export class DocExtQueryService extends ResolversOperacionesService
 {
     constructor(root: object, context: IContextData)
     {super(root, context);}
@@ -45,20 +45,27 @@ class DocExtQueryService extends ResolversOperacionesService
         }
     }
 
-    async _porTipo(tipoDoc: string, oficio: string, interno: boolean)
+    async _porTipo(tipoDoc: string, esInterno: boolean)
     {
-        if (oficio)
-        {
-            const res = await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {tipoDoc, ano: new Date().getFullYear(), interno}, {}, {noSeguimiento: -1});
-        } else
-        {
-            const res = await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {tipoDoc, ano: new Date().getFullYear()}, {}, {noSeguimiento: -1});
-            return {
-                ...res
-            }
+        const res = await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {tipoDoc, ano: new Date().getFullYear(), esInterno}, {}, {noSeguimiento: -1});
+        console.log('resp', res);
+        return {
+            ...res
         }
     }
 
+    async _ultimoFolio()
+    {
+        const ano = new Date().getFullYear();
+
+        const resultado = await this.contarDocumentos(COLECCION.DOC_EXTERNA, {tipoDoc: 'OFICIO', ano, folio: {$ne: null}}, {});
+
+        const res = await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {folio: {$regex: resultado.total.toString()}}, {}, {});
+
+        return {
+            ...res
+        }
+    }
 
     async _docExtProceso(proceso: string)
     {
@@ -89,14 +96,4 @@ class DocExtQueryService extends ResolversOperacionesService
                 return respArreglosSPag(resultado);
             })
     }
-
-    async _ultimoFolio()
-    {
-        const ano = new Date().getFullYear();
-        const resultado = await this.contarDocumentos(COLECCION.DOC_EXTERNA, {tipoDoc: 'OFICIO', ano, ref: false, folio: {$ne: null}}, {});
-        const respusta = await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {folio: {$regex: resultado.total.toString()}}, {}, {});
-        return respArreglosSPag(respusta);
-    }
 }
-
-export default DocExtQueryService;

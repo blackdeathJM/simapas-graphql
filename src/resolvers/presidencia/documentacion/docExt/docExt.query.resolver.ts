@@ -1,7 +1,7 @@
-import DocExtQueryService from "./services/docExt-query.service";
+import {DocExtQueryService} from "./services/docExt-query.service";
 import {Db} from "mongodb";
 
-const queryDocExt =
+export const queryDocExt =
     {
         Query:
             {
@@ -17,9 +17,13 @@ const queryDocExt =
                 {
                     return await new DocExtQueryService(_, {db: p.db})._entreFechas(a.fechaI, a.fechaF);
                 },
-                porTipo: (_: object, a: { tipoDoc: string, oficio: string, interno: boolean }, p: { db: Db }) =>
+                porTipo: (_: object, a: { tipoDoc: string, esInterno: boolean }, p: { db: Db }) =>
                 {
-                    return new DocExtQueryService(_, {db: p.db})._porTipo(a.tipoDoc, a.oficio, a.interno)
+                    return new DocExtQueryService(_, {db: p.db})._porTipo(a.tipoDoc, a.esInterno)
+                },
+                ultimoFolio: (_: object, __: object, p: { db: Db }) =>
+                {
+                    return new DocExtQueryService(_, {db: p.db})._ultimoFolio();
                 },
 
 
@@ -35,11 +39,6 @@ const queryDocExt =
                 intOExt: (_: object, a: { esInterno: boolean }, p: { db: Db }) =>
                 {
                     return new DocExtQueryService(_, {db: p.db})._intOExt(a.esInterno);
-                },
-                ultimoFolio: (_: object, __: object, p: { db: Db }) =>
-                {
-                    return new DocExtQueryService(_, {db: p.db})._ultimoFolio();
                 }
             }
     };
-export default queryDocExt;

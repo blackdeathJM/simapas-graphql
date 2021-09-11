@@ -1,5 +1,5 @@
 import GMR from 'graphql-merge-resolvers';
-import queryDocExt from "./presidencia/documentacion/docExt/docExt.query.resolver";
+import {queryDocExt} from "./presidencia/documentacion/docExt/docExt.query.resolver";
 import {queryDeptos} from "./presidencia/departamentos/departamento.query.resolver";
 import {queryUsuarios} from "./usuarios/usuario.query.resolver";
 import queryTelemetria from "./presidencia/telemetria/instalacion/instalacion.query.resolver";
