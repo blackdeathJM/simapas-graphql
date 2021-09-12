@@ -16,6 +16,7 @@ export class DocExtMutationService extends ResolversOperacionesService
     {
         const r = await new UploadService()._subir(file, carpeta);
 
+        console.log(r);
         if (r.length === 0)
         {
             return {

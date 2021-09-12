@@ -48,7 +48,6 @@ export class DocExtQueryService extends ResolversOperacionesService
     async _porTipo(tipoDoc: string, esInterno: boolean)
     {
         const res = await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {tipoDoc, ano: new Date().getFullYear(), esInterno}, {}, {noSeguimiento: -1});
-        console.log('resp', res);
         return {
             ...res
         }
@@ -61,7 +60,7 @@ export class DocExtQueryService extends ResolversOperacionesService
         const resultado = await this.contarDocumentos(COLECCION.DOC_EXTERNA, {tipoDoc: 'OFICIO', ano, folio: {$ne: null}}, {});
 
         const res = await this.buscarSinPaginacion(COLECCION.DOC_EXTERNA, {folio: {$regex: resultado.total.toString()}}, {}, {});
-
+        console.log(res);
         return {
             ...res
         }

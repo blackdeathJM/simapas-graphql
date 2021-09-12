@@ -14,7 +14,7 @@ export class UploadService
 
             for (const value of res)
             {
-                const {createReadStream, filename} = value as any;
+                const {createReadStream, filename} = await value as any;
 
                 const nvoNombre = carpeta + '-' + ano + randomUUID() + '.' + filename.split('.').pop();
 
@@ -30,14 +30,11 @@ export class UploadService
                 }
 
                 const salida = fs.createWriteStream(ruta);
+
+                console.log(salida);
                 stream.pipe(salida);
-
-                if (fs.existsSync(ruta))
-                {
-                    listaNombres.push(nvoNombre);
-                }
+                listaNombres.push(nvoNombre);
             }
-
             return listaNombres;
         } catch (e)
         {
