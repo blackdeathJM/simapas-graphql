@@ -1,20 +1,20 @@
 import fs from 'fs-extra';
 import path from "path";
 import {randomUUID} from "crypto";
+import {IFileStream} from "./upload.interface";
 
 export class UploadService
 {
-    async _subir(files: any, carpeta: string): Promise<string[]>
+    async _subir(files: Promise<IFileStream[]>, carpeta: string): Promise<string[]>
     {
         const listaNombres: string[] = [];
         const ano = new Date().getFullYear();
+
         try
         {
-            const res = await Promise.all(files);
-
-            for (const value of res)
+            for (const value of await files)
             {
-                const {createReadStream, filename} = await value as any;
+                const {createReadStream, filename} = await value;
 
                 const nvoNombre = carpeta + '-' + ano + randomUUID() + '.' + filename.split('.').pop();
 
@@ -30,8 +30,6 @@ export class UploadService
                 }
 
                 const salida = fs.createWriteStream(ruta);
-
-                console.log(salida);
                 stream.pipe(salida);
                 listaNombres.push(nvoNombre);
             }

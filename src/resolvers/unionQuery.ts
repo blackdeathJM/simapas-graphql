@@ -8,7 +8,6 @@ import queryNotificacion from "./global/notificaciones/notificacion.query.resolv
 import {queryOrdenesTrabajo} from "./global/ordenes-trabajo/ordenes-trabajo.query.resolver";
 import {queryCliente} from "./dir-comercial/resolvers/cliente.query.resolver";
 import {querySolicitudes} from "./dir-comercial/resolvers/solicitudes.query.resolver";
-import {uploadQueryResolver} from "./upload/uploadQuery.resolver";
 
 export const unionQueryResolver = GMR.merge(
     [
@@ -20,6 +19,5 @@ export const unionQueryResolver = GMR.merge(
         queryTelemetria,
         queryOrdenesTrabajo,
         queryCliente,
-        querySolicitudes,
-        uploadQueryResolver
+        querySolicitudes
     ]);

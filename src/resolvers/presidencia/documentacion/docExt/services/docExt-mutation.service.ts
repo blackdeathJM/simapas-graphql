@@ -6,13 +6,14 @@ import {respDocumento} from "../../../../../services/respuestas-return";
 import {IDocExt, IUsuarioDestinoDocExt} from "../models/docExt.interface";
 import {notUsuarioSubProceso} from "./docExt-subscription.service";
 import {UploadService} from "../../../../upload/upload.service";
+import {IFileStream} from "../../../../upload/upload.interface";
 
 export class DocExtMutationService extends ResolversOperacionesService
 {
     constructor(root: object, context: IContextData)
     {super(root, context);}
 
-    async _regDocExt(documento: IDocExt, file: any, carpeta: string)
+    async _regDocExt(documento: IDocExt, file: Promise<IFileStream[]>, carpeta: string)
     {
         const r = await new UploadService()._subir(file, carpeta);
 
