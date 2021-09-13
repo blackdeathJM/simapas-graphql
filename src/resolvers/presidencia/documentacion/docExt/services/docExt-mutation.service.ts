@@ -16,8 +16,6 @@ export class DocExtMutationService extends ResolversOperacionesService
     async _regDocExt(documento: IDocExt, file: Promise<IFileStream[]>, carpeta: string)
     {
         const r = await new UploadService()._subir(file, carpeta);
-
-        console.log(r);
         if (r.length === 0)
         {
             return {
@@ -45,6 +43,24 @@ export class DocExtMutationService extends ResolversOperacionesService
             ...res
         }
 
+    }
+
+    async _quitarUsuario(_id: string, usuario: string)
+    {
+        const res = await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(_id)},
+            {$pull: {"usuarioDestino": {usuario}}}, {returnDocument: "after", sort: {noSeguimiento: -1}});
+
+
+        // const nvosUsuarios: string[] = [];
+        // nvosUsuarios.push(usuario);
+
+        // Subscripcion para quitar el usuario
+        // await notUsuarioSubProceso(this.context.pubsub!, this.context.db!, nvosUsuarios);
+
+
+        return {
+            ...res
+        }
     }
 
     async _darPorEntregado(_id: string)
@@ -86,19 +102,6 @@ export class DocExtMutationService extends ResolversOperacionesService
                     return respDocumento(resultado);
                 })
         })
-    }
-
-    async _quitarUsuario(_id: string, usuario: string)
-    {
-        return await this.buscarUnoYActualizar(COLECCION.DOC_EXTERNA, {_id: new ObjectId(_id)},
-            {$pull: {"usuarioDestino": {usuario}}}, {returnDocument: "after", sort: {noSeguimiento: -1}}).then(
-            async resultado =>
-            {
-                const nvosUsuarios: string[] = [];
-                nvosUsuarios.push(usuario);
-                await notUsuarioSubProceso(this.context.pubsub!, this.context.db!, nvosUsuarios);
-                return respDocumento(resultado);
-            })
     }
 }
 

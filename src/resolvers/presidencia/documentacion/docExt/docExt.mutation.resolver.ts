@@ -22,7 +22,7 @@ export const mutationDocExt =
                 },
                 quitarUsuario: async (_: object, ar: { _id: string, usuarioDestino: string }, pa: { pubsub: PubSub, db: Db }) =>
                 {
-                    return new DocExtMutationService(_, {pubsub: pa.pubsub, db: pa.db})._quitarUsuario(ar._id, ar.usuarioDestino)
+                    return new DocExtMutationService(_, {pubsub: pa.pubsub, db: pa.db})._quitarUsuario(ar._id, ar.usuarioDestino);
                 }
             }
     };
