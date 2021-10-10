@@ -53,7 +53,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/build/schema/presidencia/docExterna/docExterna.graphql" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/public/uploads/pre" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -63,7 +63,7 @@
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="D:\Documents\proyectos\backend\simapas-graphql\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="D:\Documents\Proyectos\Backend\simapas-graphql\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -214,6 +214,15 @@
       <workItem from="1631690404013" duration="1752000" />
       <workItem from="1632980707828" duration="2279000" />
       <workItem from="1632989975279" duration="1199000" />
+      <workItem from="1633257443566" duration="597000" />
+      <workItem from="1633285656752" duration="1856000" />
+      <workItem from="1633356943731" duration="314000" />
+      <workItem from="1633357399854" duration="855000" />
+      <workItem from="1633365612439" duration="880000" />
+      <workItem from="1633609534506" duration="1017000" />
+      <workItem from="1633612319653" duration="1226000" />
+      <workItem from="1633891343824" duration="281000" />
+      <workItem from="1633891996558" duration="569000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
