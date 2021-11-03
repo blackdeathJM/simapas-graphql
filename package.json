@@ -50,7 +50,7 @@
     "subscriptions-transport-ws": "^0.9.19",
     "type-graphql": "^1.1.1",
     "uuidv4": "^6.2.11",
-    "validator": "^13.6.0",
+    "validator": "^13.7.0",
     "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
