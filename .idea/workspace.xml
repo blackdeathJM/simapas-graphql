@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9b3d981-495e-48bf-a699-828ad23adbd8" name="Changes" comment="configurando subscripciones para el servidor">
+    <list default="true" id="e9b3d981-495e-48bf-a699-828ad23adbd8" name="Changes" comment="Actualizacion de dependencias">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
@@ -226,7 +226,8 @@
       <workItem from="1633894458044" duration="433000" />
       <workItem from="1633894911842" duration="1230000" />
       <workItem from="1634089761935" duration="839000" />
-      <workItem from="1636032066839" duration="1536000" />
+      <workItem from="1636032066839" duration="3184000" />
+      <workItem from="1636118304786" duration="2120000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -445,7 +446,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633892585787</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Actualizacion de dependencias">
+      <created>1636036361442</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1636036361442</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -465,10 +473,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="trabajando en folios" />
-    <MESSAGE value="Actualizacion de dependencias" />
     <MESSAGE value="Actualizacion de apollo-server-express 3" />
     <MESSAGE value="Actualizacion del rol" />
     <MESSAGE value="configurando subscripciones para el servidor" />
-    <option name="LAST_COMMIT_MESSAGE" value="configurando subscripciones para el servidor" />
+    <MESSAGE value="Actualizacion de dependencias" />
+    <option name="LAST_COMMIT_MESSAGE" value="Actualizacion de dependencias" />
   </component>
 </project>
