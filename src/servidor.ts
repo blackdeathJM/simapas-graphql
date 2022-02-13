@@ -9,7 +9,7 @@ import {SubscriptionServer} from "subscriptions-transport-ws";
 import {execute, subscribe} from "graphql";
 import {IContext} from "./interfaces/context-interface";
 import {schema} from "./schema";
-import Database from "./config/database";
+import {Database} from "./config/database";
 import {router} from "./configMuter/docs.routes";
 import depthLimit from "graphql-depth-limit";
 import {ApolloServerPluginLandingPageGraphQLPlayground} from "apollo-server-core";

@@ -40,7 +40,7 @@ export class UsuarioMutationService extends ResolversOperacionesService
             const res = await this.buscarUnoYActualizar(COLECCION.USUARIOS,
                 filtro,
                 {$pull: {role}}, {returnDocument: "after"});
-            usuario = res.documento as IUsuario;
+            usuario = res.documento as unknown as IUsuario;
             await this.nvoRole(usuario);
             return {
                 ...res
@@ -49,7 +49,7 @@ export class UsuarioMutationService extends ResolversOperacionesService
         {
             const res = await this.buscarUnoYActualizar(COLECCION.USUARIOS, filtro,
                 {$addToSet: {role}}, {returnDocument: "after"});
-            usuario = res.documento as IUsuario;
+            usuario = res.documento as unknown as IUsuario;
             await this.nvoRole(usuario);
             return {
                 ...res

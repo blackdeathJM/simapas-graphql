@@ -4,6 +4,9 @@
     <list default="true" id="e9b3d981-495e-48bf-a699-828ad23adbd8" name="Changes" comment="Actualizacion de dependencias">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/.env" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-mutation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/usuarios/services/usuario-mutation.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servidor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/servidor.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +38,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1mra8Gwz8gIhIHNHYbmVkoe3qfB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
@@ -63,7 +69,7 @@
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="D:\Documents\Proyectos\Backend\simapas-graphql\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PyCharm 2021.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -237,7 +243,24 @@
       <workItem from="1637935448207" duration="1038000" />
       <workItem from="1638294139724" duration="620000" />
       <workItem from="1638295179661" duration="73000" />
-      <workItem from="1638318671801" duration="297000" />
+      <workItem from="1638318671801" duration="576000" />
+      <workItem from="1639501019088" duration="150000" />
+      <workItem from="1639780087925" duration="2231000" />
+      <workItem from="1643775888931" duration="2111000" />
+      <workItem from="1643781650421" duration="19000" />
+      <workItem from="1643782073719" duration="10000" />
+      <workItem from="1643782158372" duration="8000" />
+      <workItem from="1643782231550" duration="28000" />
+      <workItem from="1643782297206" duration="38000" />
+      <workItem from="1643859120374" duration="41000" />
+      <workItem from="1643922276564" duration="1045000" />
+      <workItem from="1644026832686" duration="600000" />
+      <workItem from="1644088087939" duration="617000" />
+      <workItem from="1644104316514" duration="734000" />
+      <workItem from="1644105077810" duration="15000" />
+      <workItem from="1644105105580" duration="635000" />
+      <workItem from="1644300775345" duration="1066000" />
+      <workItem from="1644740436431" duration="221000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -498,7 +521,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637936260700</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Actualizacion de dependencias">
+      <created>1638319202462</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1638319202462</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -514,7 +544,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="trabajando en folios" />
