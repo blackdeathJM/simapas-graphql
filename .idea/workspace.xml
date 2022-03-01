@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9b3d981-495e-48bf-a699-828ad23adbd8" name="Changes" comment="Actualizacion de dependencias">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/VSWorkspaceState.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/VSWorkspaceState.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/simapas-graphql/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/simapas-graphql/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/slnx.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/slnx.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/configMuter/almacenamientoMulter.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/configMuter/docs.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/configMuter/docs.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/configMuter/docs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/configMuter/docs.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/configMuter/filtroMulter.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +65,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="D:\Documents\Proyectos\Backend\simapas-graphql\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -275,7 +268,8 @@
       <workItem from="1645723540606" duration="606000" />
       <workItem from="1645798122302" duration="219000" />
       <workItem from="1646000980304" duration="243000" />
-      <workItem from="1646001433378" duration="411000" />
+      <workItem from="1646001433378" duration="2823000" />
+      <workItem from="1646104190000" duration="1019000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -550,7 +544,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644740915328</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Actualizacion de dependencias">
+      <created>1646002071632</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1646002071633</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
