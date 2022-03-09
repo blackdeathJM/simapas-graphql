@@ -1,4 +1,3 @@
-import GMR from 'graphql-merge-resolvers';
 import {mutationDeptos} from "./presidencia/departamentos/departamento.mutation.resolver";
 import {mutationDocExt} from "./presidencia/documentacion/docExt/docExt.mutation.resolver";
 import {mutationUsuarios} from "./usuarios/usuario.mutation.resolver";
@@ -10,7 +9,7 @@ import {mutationCliente} from "./dir-comercial/resolvers/cliente.mutation.resolv
 import {mutationColeIndividuales} from "./dir-comercial/resolvers/solicitudes.mutation.resolver";
 import {uploadMutation} from "./upload/upload.resolver";
 
-export const unionMutationResolver = GMR.merge(
+export const unionMutationResolver =
     [
         mutationDocExt,
         mutationDocUsuario,
@@ -22,4 +21,4 @@ export const unionMutationResolver = GMR.merge(
         mutationCliente,
         mutationColeIndividuales,
         uploadMutation
-    ]);
+    ];

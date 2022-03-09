@@ -1,4 +1,3 @@
-import GMR from 'graphql-merge-resolvers';
 import {queryDocExt} from "./presidencia/documentacion/docExt/docExt.query.resolver";
 import {queryDeptos} from "./presidencia/departamentos/departamento.query.resolver";
 import {queryUsuarios} from "./usuarios/usuario.query.resolver";
@@ -9,7 +8,7 @@ import {queryOrdenesTrabajo} from "./global/ordenes-trabajo/ordenes-trabajo.quer
 import {queryCliente} from "./dir-comercial/resolvers/cliente.query.resolver";
 import {querySolicitudes} from "./dir-comercial/resolvers/solicitudes.query.resolver";
 
-export const unionQueryResolver = GMR.merge(
+export const unionQueryResolver =
     [
         queryDocExt,
         queryDocUsuario,
@@ -20,4 +19,4 @@ export const unionQueryResolver = GMR.merge(
         queryOrdenesTrabajo,
         queryCliente,
         querySolicitudes
-    ]);
+    ];
