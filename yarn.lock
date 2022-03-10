@@ -1435,11 +1435,6 @@ graphql-executor@0.0.18:
   resolved "https://registry.yarnpkg.com/graphql-executor/-/graphql-executor-0.0.18.tgz#6aa4b39e1ca773e159c2a602621e90606df0109a"
   integrity sha512-upUSl7tfZCZ5dWG1XkOvpG70Yk3duZKcCoi/uJso4WxJVT6KIrcK4nZ4+2X/hzx46pL8wAukgYHY6iNmocRN+g==
 
-graphql-import-node@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/graphql-import-node/-/graphql-import-node-0.0.4.tgz#0522f058978c7e1b99d1e6be1b851ee17007b111"
-  integrity sha512-okpdABQIgIM0qdx9Mfgdu6fTsFEazZmHZdEU34cijkUj9D1db1SyPRGHPxbXmbacamhEF41ckxpCAgHiGliryQ==
-
 graphql-middleware@^6.1.15:
   version "6.1.15"
   resolved "https://registry.yarnpkg.com/graphql-middleware/-/graphql-middleware-6.1.15.tgz#d59ccb6e21db5d1e22a8a00d332f277794990280"
