@@ -3,15 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e9b3d981-495e-48bf-a699-828ad23adbd8" name="Changes" comment="Actualizacion de dependencias">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config/.env" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/resolversMap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/resolversMap.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionMutation.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionQuery.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/unionSubscription.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionSubscription.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resolvers/unionTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers/unionTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schema/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="sis-comercial" />
+        <entry key="$PROJECT_DIR$" value="documentacion" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -293,6 +285,10 @@
       <workItem from="1646849624923" duration="1448000" />
       <workItem from="1646851263267" duration="138000" />
       <workItem from="1646851597352" duration="13000" />
+      <workItem from="1646852732956" duration="118000" />
+      <workItem from="1646880323218" duration="100000" />
+      <workItem from="1646880441911" duration="582000" />
+      <workItem from="1646882433991" duration="1281000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -595,7 +591,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646797939490</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Actualizacion de dependencias">
+      <created>1646852804383</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1646852804383</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
