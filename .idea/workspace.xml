@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e9b3d981-495e-48bf-a699-828ad23adbd8" name="Changes" comment="Actualizacion de dependencias">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/.env" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/.env" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,7 +287,7 @@
       <workItem from="1646852732956" duration="118000" />
       <workItem from="1646880323218" duration="100000" />
       <workItem from="1646880441911" duration="582000" />
-      <workItem from="1646882433991" duration="1281000" />
+      <workItem from="1646882433991" duration="2027000" />
     </task>
     <task id="LOCAL-00001" summary="trabajando en folios">
       <created>1610338266195</created>
@@ -598,7 +597,21 @@
       <option name="project" value="LOCAL" />
       <updated>1646852804383</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Actualizacion de dependencias">
+      <created>1646883804665</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1646883804665</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Actualizacion de dependencias">
+      <created>1646884046896</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1646884046897</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
